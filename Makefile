@@ -1,17 +1,24 @@
 MF=$(filter-out feynmf.mf, $(wildcard *.mf))
 
-MF1=$(MF:.mf=.tfm)
-MF2=$(MF:.mf=.600pk)
+LIST1=$(MF:.mf=.tfm)
+LIST2=$(MF:.mf=.600pk)
+LIST3=$(MF:.mf=.t1)
+LIST4=$(MF:.mf=.2602gf)
 
 all:
-	latex phd.tex
+	for f in $(MF); do mf $$f; done;
 
-ps: all
-	dvips phd.dvi &> /dev/null
+	latex phd.tex
+	dvips phd.dvi
 
 pdf:
+	for f in $(MF); do mf $$f; done;
+
 	pdflatex phd.tex
 
 clean:
-	rm -fr *.pdf *.ps *.dvi *.aux *.log $(MF) $(MF1) $(MF2)
+	rm -fr *.pdf *.ps *.dvi *.aux *.log $(MF) $(LIST1) $(LIST2) $(LIST3) $(LIST4)
+
+commit:
+	git commit -a -m=""
 

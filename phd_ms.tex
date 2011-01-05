@@ -302,14 +302,64 @@ Les équations de Maxwell publiées dans leur forme définitives en 1873 ont enseig
   \boxed{\mathcal{L}_\mathrm{QED}=\left[\sum_{l=e,\mu,\tau}\bar l\left(i\slashed\partial-m_l\right)l-e\,\bar l\slashed A l\right]-\frac{1}{4}F_{\mu\nu}F^{\mu\nu}}
 \end{equation}
 
-* TODO * feynman diagramme * TODO *\\
-* TODO * feynman diagramme * TODO *\\
-* TODO * feynman diagramme * TODO *\\
-* TODO * feynman diagramme * TODO *\\
-* TODO * feynman diagramme * TODO *\\
-* TODO * feynman diagramme * TODO *\\
-* TODO * feynman diagramme * TODO *\\
-* TODO * feynman diagramme * TODO *\\
+\begin{figure}[!htb]
+  \begin{center}
+
+  \begin{tabular}{ccc}
+
+    \begin{fmffile}{qed_graph1}
+      \fmfframe(1,7)(1,7){ 
+       \begin{fmfgraph*}(110,62)
+        \fmfleft{i1,i2}
+        \fmfright{o1}
+        \fmf{fermion}{i1,v1,i2}
+        \fmf{photon}{v1,o1}
+        \fmfdot{v1}
+        \fmflabel{$e^-$}{i1}
+        \fmflabel{$e^+$}{i2}
+        \fmflabel{$\gamma$}{o1}
+       \end{fmfgraph*}
+      }
+    \end{fmffile}
+
+    &
+
+    \begin{fmffile}{qed_graph1}
+      \fmfframe(1,7)(1,7){ 
+       \begin{fmfgraph*}(110,62)
+        \fmfleft{i1,i2}
+        \fmfright{o1}
+        \fmf{fermion}{i1,v1,i2}
+        \fmf{photon}{v1,o1}
+        \fmfdot{v1}
+        \fmflabel{$\mu^-$}{i1}
+        \fmflabel{$\mu^+$}{i2}
+        \fmflabel{$\gamma$}{o1}
+       \end{fmfgraph*}
+      }
+    \end{fmffile}
+
+    &
+
+    \begin{fmffile}{qed_graph1}
+      \fmfframe(1,7)(1,7){ 
+       \begin{fmfgraph*}(110,62)
+        \fmfleft{i1,i2}
+        \fmfright{o1}
+        \fmf{fermion}{i1,v1,i2}
+        \fmf{photon}{v1,o1}
+        \fmfdot{v1}
+        \fmflabel{$\tau^-$}{i1}
+        \fmflabel{$\tau^+$}{i2}
+        \fmflabel{$\gamma$}{o1}
+       \end{fmfgraph*}
+      }
+    \end{fmffile}
+
+    \end{tabular}
+
+  \end{center}
+\end{figure}
 
 Remarque : l'électrodynamique quantique est une théorie renormalisable.
 
@@ -326,14 +376,65 @@ Au final le lagrangien QCD est :
 
 avec $ \slashed G^\beta_\alpha=\gamma_\mu G^\mu_a(T^a)^\beta_\alpha $ où $ T^a $ sont les générateurs de $ SU(3)_\mathrm{C} $ et $ a=1\ldots\left\{dim(SU(3)_\mathrm{C})=8\right\} $. Les gluons changent la couleur des quarks.\\
 
-* TODO * feynman diagramme * TODO *\\
-* TODO * feynman diagramme * TODO *\\
-* TODO * feynman diagramme * TODO *\\
-* TODO * feynman diagramme * TODO *\\
-* TODO * feynman diagramme * TODO *\\
-* TODO * feynman diagramme * TODO *\\
-* TODO * feynman diagramme * TODO *\\
-* TODO * feynman diagramme * TODO *\\
+\begin{figure}[!htb]
+  \begin{center}
+
+  \begin{tabular}{ccc}
+
+    \begin{fmffile}{qcd_graph1}
+      \fmfframe(1,7)(1,7){ 
+       \begin{fmfgraph*}(110,62)
+        \fmfleft{i1,i2}
+        \fmfright{o1}
+        \fmf{fermion}{i1,v1,i2}
+        \fmf{gluon}{v1,o1}
+        \fmfdot{v1}
+        \fmflabel{$q$}{i1}
+        \fmflabel{$\bar q$}{i2}
+        \fmflabel{$g$}{o1}
+       \end{fmfgraph*}
+      }
+    \end{fmffile}
+
+    &
+
+    \begin{fmffile}{qcd_graph2}
+      \fmfframe(1,7)(1,7){ 
+       \begin{fmfgraph*}(110,62)
+        \fmfleft{i1,i2}
+        \fmfright{o1}
+        \fmf{gluon}{i1,v1,i2}
+        \fmf{gluon}{v1,o1}
+        \fmfdot{v1}
+        \fmflabel{$g1$}{i1}
+        \fmflabel{$g2$}{i2}
+        \fmflabel{$g3$}{o1}
+       \end{fmfgraph*}
+      }
+    \end{fmffile}
+
+    &
+
+    \begin{fmffile}{qcd_graph3}
+      \fmfframe(1,7)(1,7){ 
+       \begin{fmfgraph*}(110,62)
+        \fmfleft{i1,i2}
+        \fmfright{o1,o2}
+        \fmf{gluon}{i1,v1,i2}
+        \fmf{gluon}{o1,v1,o2}
+        \fmfdot{v1}
+        \fmflabel{$g1$}{i1}
+        \fmflabel{$g2$}{i2}
+        \fmflabel{$g3$}{o1}
+        \fmflabel{$g4$}{o2}
+       \end{fmfgraph*}
+      }
+    \end{fmffile}
+
+    \end{tabular}
+
+  \end{center}
+\end{figure}
 
 Remarque 1 : la chromodynamique quantique est une interaction à portée limité du fait du confinement des quarks dans les hadrons et de l'effet de hadronisation\footnote{Du fait de l'importance de l'interaction forte, lors de la séparation de deux quarks, l'énergie nécessaire est plus grande que la masse des quarks si bien que de nouveaux quarks et de nouveaux états liés sont créés.}. En effet, nous pouvons faire l'analogie avec l'électromagnétisme. Cette interaction est de portée infinie tandis que l'interaction électromagnétique de Van der Waals inter-moléculaire est de portée finie.\\
 
