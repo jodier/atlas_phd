@@ -1,0 +1,351 @@
+\chapter{Le modèle standard}
+
+\newpage
+
+\section{Le lagrangien du MS}
+
+\subsection{Théorie lagrangienne des champs}
+
+
+\newpage
+
+\subsection{Scalaires et spineurs (symétries de l'espace-temps)}
+
+Les symétries d'espace et utilisées en théorie quantique des champs pour construire le modèle standard de la physique des particules sont celles de la relativité restreinte. Elles forment le groupe de Poincaré qui est un groupe de Lie non compact à 10 dimensions constitué des sous-groupes suivants : le groupe abélien des translations dans le temps (un générateur $ P^0 = H $) et l'espace (trois générateurs $ P^i $), le groupe des rotation d'espace (trois générateurs $ J^i $) et enfin le groupe des boosts de Lorentz (trois générateurs $ K^i $). Il est possible de former un nouveau générateur $ J^{\mu\nu} $ tel que $ J^i=\frac{1}{2}\varepsilon^{ijk}J_{jk} $ et $ K^i=J^{0i} $ qui satisfait à l'algèbre de Lie $ SO(3,1) $ :
+\begin{displaymath}
+  \begin{array}{cc}
+    J^{\mu\nu}=\left(\begin{array}{cccc}
+      0 & K_x & K_y & K_z \\
+      -K_x & 0 & J_z & -J_y \\
+      -K_y & -J_z & 0 & J_x \\
+      -K_z & J_y & -J_x & 0 \\
+    \end{array}\right)
+  &
+    \begin{array}{l}
+      \left[P^\mu,P^\nu\right]=0 \\
+      \left[J^{\mu\nu},P^\rho\right]=i(\eta^{\nu\rho}P^\mu-\eta^{\mu\rho}P^\nu) \\
+      \left[J^{\mu\nu},J^{\rho\sigma}\right]=i(\eta^{\nu\rho}J^{\mu\sigma}-\eta^{\mu\rho}J^{\nu\sigma}+\eta^{\mu\sigma}J^{\nu\rho}-\eta^{\nu\sigma}J^{\mu\rho})\\
+    \end{array}
+  \end{array}
+\end{displaymath}
+
+En introduidant $ \vec J_+=\frac{1}{2}(\vec J+i\vec K) $ et $ \vec J_-=\frac{1}{2}(\vec J-i\vec K) $, les relations de commutation se découplent pour donner :
+\begin{displaymath}
+  \left[J^i_+,J^j_+\right]=i\,\varepsilon^{ijk}J_{+k}\hspace{0.33cm};\hspace{0.33cm}\left[J^i_-,J^j_-\right]=i\,\varepsilon^{ijk}J_{-k}\hspace{0.33cm};\hspace{0.33cm}\left[J^i_+,J^j_-\right]=0\hspace{0.33cm}\Rightarrow\hspace{0.33cm}2\times\bar2
+\end{displaymath}
+
+Les représentation irréductibles du groupe de Lorentz correspondent au couple $ (j_+,j_-) $ de dimension $ (2j_++1)(2j_-+1) $ où les valeurs propres de $ J^2_\pm $ sont $ j_\pm(j_\pm+1) $. Elles conduisent aux définitions des \emph{scalaires} et des \emph{spineurs} : $ (0,0) $ représente un scalaire noté $ \phi $, $ (\frac{1}{2},0) $ représente un \emph{spineur de Weyl} indicé sans point et noté $ \xi_\alpha $ $ (\alpha=1,2) $, enfin, $ (0,\frac{1}{2}) $ représente un \emph{spineur} de \emph{Weyl} indicé avec point et noté $ \bar\xi_{\dot\alpha} $ $ (\dot\alpha=1,2) $. Les scalaires sont associés aux bosons et commutent (équation \ref{scalaire_commutation}). Les spineurs de Weil sont associés aux fermions et anticommutent (équation \ref{spineur_commutation}).
+
+\begin{equation}\label{scalaire_commutation}
+  \left[\phi_1,\phi_2\right]=0\hspace{0.33cm}\mathrm{et}\hspace{0.33cm}\left[\phi^\dag_1,\phi^\dag_2\right]=0
+\end{equation}
+\begin{equation}\label{spineur_commutation}
+  \left\{\xi^\alpha,\chi^\beta\right\}=0\hspace{0.33cm}\mathrm{et}\hspace{0.33cm}\left\{\bar\xi^{\dot\alpha},\bar\chi^{\dot\beta}\right\}=0
+\end{equation}
+
+\subsection{Champs scalaires (spin $ 0 $)}
+
+Les champs scalaires permettent de décrire les particules sans spin (par exemple les pions neutres ou bien les sleptons en supersymétrie). Le lagrangien ne peut dépendre que du champ et de ses dérivées. Il doit être invariant relativiste et hermitien. Les quantités $ \phi^2 $ et $ \partial_\mu\phi\partial^\mu\phi $ sont de bons candidats comme lagrangien de masse et comme lagrangien cinétique :
+\begin{equation}\label{lagrangien_scalaire}
+  \boxed{\mathcal{L}_\mathrm{masse}\propto m\phi^2}\hspace{0.33cm}\mathrm{et}\hspace{0.33cm}\boxed{\mathcal{L}_\mathrm{cin\acute{e}tique}\propto\partial_\mu\phi\partial^\mu\phi}
+\end{equation}
+
+\subsection{Champs vecteurs (spin $ 1 $)}
+
+Nous verrons que les champs vecteurs permettent de décrire les bosons de jauge qui véhiculent les interactions. De même que pour le champ scalaire, le lagrangien ne peut dépendre que du champ et de ses dérivées. Il doit être invariant relativiste et hermitien. Les quantités $ \partial_\mu A_\nu\partial^\mu A^\nu $ et $ \partial_\mu A_\nu\partial^\nu A^\mu $ sont de bons candidats. En introduisant le tenseur de Faraday $ F^{\mu\nu}=\partial^\mu A^\nu-\partial^\nu A^\mu $, le lagrangien peut s'écrire :
+\begin{displaymath}\label{lagrangien_vecteur}
+  \boxed{\mathcal{L}_\mathrm{cin\acute{e}tique}\propto\partial_\mu A_\nu\partial^\mu A^\nu+\partial_\mu A_\nu\partial^\nu A^\mu=\frac{1}{2}F_{\mu\nu}F^{\mu\nu}}
+\end{displaymath}
+
+\newpage
+
+\subsection{Champs spineurs (spin $ \pm\frac{1}{2} $)}
+
+Nous verrons que les champs spineurs permettent de décrire les fermions, c'est-à-dire les particules qui constituent la matière.
+
+\subsubsection{Lagrangien de masse}
+
+Cherchons comment se transforme un spineur sous une transformation de Lorentz :
+\begin{equation}
+  \xi_\alpha\to\xi^{'}_\alpha=(M)^{\ \beta}_\alpha\xi_\beta\hspace{0.33cm}\mathrm{et}\hspace{0.33cm}\xi^\alpha\to\xi^{'\alpha}=(M^{-1})^{T\alpha}_{\ \ \beta}\xi^\beta
+\end{equation}
+\begin{equation}
+  \bar\eta_{\dot\alpha}\to\bar\eta^{'}_{\dot\alpha}=(N)^{\ \dot\beta}_{\dot\alpha}\bar\eta_{\dot\beta}\hspace{0.33cm}\mathrm{et}\hspace{0.33cm}\bar\eta^{\dot\alpha}\to\bar\eta^{'\dot\alpha}=(N^{-1})^{T\dot\alpha}_{\ \ \dot\beta}\bar\eta^{\dot\beta}
+\end{equation}
+
+Au premier ordre, $ M(\vec\theta,\vec\beta)=\bbone_2-i\frac{\vec\sigma}{2}.\vec\theta-\frac{\vec\sigma}{2}.\vec\beta $, $ N=M^* $ où $ \vec\sigma $ représente les \emph{matrices de Pauli}. Remarquant que $ i\sigma^2=\varepsilon $ $ (\varepsilon^{12}=-\varepsilon^{21}=1) $, on montre simplement que $ (M^{-1})^T=(i\sigma^2)M(i\sigma^2)^T $. Il vient que le tenseur de Levi-Civita sert à monter ou descendre des indices des spineurs de Weyl. Il en découle directement des égalités suivantes :
+\begin{equation}
+  \varepsilon^{\alpha\beta}=\varepsilon^{\dot\alpha\dot\beta}=-\varepsilon^{\beta\alpha}=-\varepsilon^{\dot\beta\dot\alpha}\hspace{0.33cm}\mathrm{et}\hspace{0.33cm}\varepsilon^{\alpha\beta}=\varepsilon^{\dot\alpha\dot\beta}=-\varepsilon_{\beta\alpha}=-\varepsilon_{\dot\beta\dot\alpha}
+\end{equation}
+\begin{equation}
+  \boxed{\xi^\alpha=\varepsilon^{\alpha\beta}\xi_\beta\hspace{0.33cm}\mathrm{et}\hspace{0.33cm}\bar\eta^{\dot\alpha}=\varepsilon^{\dot\alpha\dot\beta}\bar\eta_{\dot\beta}}
+\end{equation}
+\begin{equation}
+  \bar\eta_{\dot\alpha}=\left(\eta_\alpha\right)^*\hspace{0.33cm}\mathrm{et}\hspace{0.33cm}\bar\eta^{\dot\alpha}=\left(\eta^\alpha\right)^*
+\end{equation}
+\begin{equation}
+  \chi\xi=\chi^\alpha\xi_\alpha=\varepsilon^{\alpha\beta}\chi_\beta\xi_\alpha=-\varepsilon^{\beta\alpha}\chi_\beta\xi_\alpha=\varepsilon^{\beta\alpha}\xi_\alpha\chi_\beta=\xi\chi
+\end{equation}
+\begin{equation}
+  \bar\chi\bar\xi=\bar\xi\bar\chi
+\end{equation}
+\begin{equation}
+  \left(\chi\xi\right)^\dag=\left(\chi^\alpha\xi_\alpha\right)^\dag=\bar\xi_{\dot\alpha}\bar\chi^{\dot\alpha}=\bar\chi_{\dot\alpha}\bar\xi^{\dot\alpha}=\bar\chi\bar\xi
+\end{equation}
+
+Comme $ \chi\xi+\bar\chi\bar\xi $ est invariant relativiste et hermitien, il est un bon candidat comme terme de masse dans un lagrangien :
+\begin{equation}
+  \boxed{\mathcal{L}_\mathrm{masse}\propto m\left(\chi\xi+\bar\chi\bar\xi\right)}
+\end{equation}
+
+\subsubsection{Lagrangien cinétique}
+
+Introduction les vecteurs et tenseurs formés à partir des matrices de Pauli :
+\begin{equation}
+  \left(\sigma^\mu\right)_{\alpha\dot\beta}=\left(\bbone_2;+\sigma^i\right)_{\alpha\dot\beta}\hspace{0.33cm}\mathrm{et}\hspace{0.33cm}\left(\bar\sigma^\mu\right)^{\dot\alpha\beta}=\left(\bbone_2;-\sigma^i\right)^{\dot\alpha\beta}
+\end{equation}
+\begin{equation}
+  \left(\sigma^{\mu\nu}\right)^{\ \beta}_\alpha=\frac{1}{4}\left[\left(\sigma^\mu\right)_{\alpha\dot\alpha}\left(\bar\sigma^\nu\right)^{\dot\alpha\beta}-\left(\sigma^\nu\right)_{\alpha\dot\alpha}\left(\bar\sigma^\mu\right)^{\dot\alpha\beta}\right]
+\end{equation}
+\begin{equation}
+  \left(\bar\sigma^{\mu\nu}\right)^{\dot\alpha}_{\ \dot\beta}=\frac{1}{4}\left[\left(\bar\sigma^\mu\right)^{\dot\alpha\alpha}\left(\sigma^\nu\right)_{\alpha\dot\beta}-\left(\bar\sigma^\nu\right)^{\dot\alpha\alpha}\left(\sigma^\mu\right)_{\alpha\dot\beta}\right]
+\end{equation}
+L'opérateur formé de la contraction de l'impulsion avec les matrices de Pauli $ \left\{p_\mu\propto i\partial_\mu\right\}\sigma^\mu $ est naturellement hermitien car $ p_\mu $ est hermitien et $ \sigma_\mu $ est hermitien. De plus, il est invariant relativiste est se transforme de la façon suivante : $ p'_\mu\sigma^\mu=M\,p_u\sigma^\mu M^\dag $ soit encore avec les indices $ p'_\mu\left(\sigma^\mu\right)_{\alpha\dot\alpha}=(M)^{\ \beta}_\alpha(M)^{\ \dot\beta}_{\dot\alpha}\,p_u\left(\sigma^\mu\right)_{\beta\dot\beta} $. On montre également, de façon immédiate, que :
+\begin{equation}
+  \left(\chi\sigma^\mu\bar\xi\right)^\dag=\xi\sigma^\mu\bar\chi
+\end{equation}
+
+Comme $ \chi\sigma_\mu\partial^\mu\bar\xi $ est invariant relativiste et hermitien, il est un bon candidat comme terme cinétique dans un lagrangien :
+\begin{equation}
+  \boxed{\mathcal{L}_\mathrm{cin\acute{e}tique}\propto i\chi\sigma_\mu\partial^\mu\bar\xi+hc}
+\end{equation}
+
+Remarque : Si on pose $ \theta^i=\frac{1}{2}\varepsilon^{ijk}\theta_{jk} $ et $ \beta^i=\theta^{i0} $ alors $ M(\vec\theta,\vec\beta)=\exp\left(-\frac{i}{2}S_{\mu\nu}\theta^{\mu\nu}\right)\approx\bbone_2-i\frac{\vec\sigma}{2}.\vec\theta-\frac{\vec\sigma}{2}.\vec\beta $ et $ S^{\mu\nu}=i\sigma^{\mu\nu} $ pour la représentation $ (\frac{1}{2},0) $, $ S^{\mu\nu}=i\bar\sigma^{\mu\nu} $ pour la représentation $ (0,\frac{1}{2}) $.\\
+
+On montre aussi les égalités suivantes :
+\begin{equation}
+  \chi\sigma^{\mu\nu}\xi=-\xi\sigma^{\mu\nu}\chi\hspace{0.33cm}\mathrm{et}\hspace{0.33cm}\bar\chi\bar\sigma^{\mu\nu}\bar\xi=-\bar\xi\bar\sigma^{\mu\nu}\bar\chi
+\end{equation}
+\begin{equation}
+  \left(\chi\sigma^{\mu\nu}\xi\right)^\dag=\bar\chi\bar\sigma^{\mu\nu}\bar\xi
+\end{equation}
+et
+\begin{equation}
+  \sigma^\mu\bar\sigma^\nu+\sigma^\mu\bar\sigma^\nu=2g^{\mu\nu}
+\end{equation}
+\begin{equation}
+  \bar\sigma^\mu\sigma^\nu+\bar\sigma^\mu\sigma^\nu=2g^{\mu\nu}
+\end{equation}
+
+\subsubsection{Matrices de Dirac}
+
+Les particules physiques seront représentées par un bispineur formé de deux spineurs de Weyl, l'un de la représentation $ (\frac{1}{2},0) $ et l'autre de la représentation $ (0,\frac{1}{2}) $ :
+\begin{equation}
+  \Psi=\left(\begin{array}{c}
+    \chi_\alpha \\
+    \bar\eta^{\dag\dot a} \\
+  \end{array}\right)
+  \hspace{0.33cm}\mathrm{et}\hspace{0.33cm}
+  \bar\Psi=\left(\begin{array}{cc}
+    \chi^\alpha & \bar\eta^\dag_{\dot a} \\
+  \end{array}\right)=\Psi^\dag\gamma^0
+\end{equation}
+
+On introduit alors les matrices de Dirac (représentation de Weyl):
+\begin{equation}
+  \gamma^\mu=\left(\begin{array}{cc} 0 & \left(\sigma^\mu\right)_{\alpha\dot\beta} \\ \left(\bar\sigma^\mu\right)^{\dot\alpha\beta} & 0 \\ \end{array}\right)\hspace{0.33cm};\hspace{0.33cm}\gamma^5=\frac{i}{2!}\varepsilon_{\mu\nu\alpha\beta}\gamma^\mu\gamma^\nu\gamma^\alpha\gamma^\beta=\left(\begin{array}{cc} -\bbone_2 & 0 \\ 0 & +\bbone_2 \\ \end{array}\right)
+\end{equation}%=i\gamma^0\gamma^1\gamma^2\gamma^3
+\begin{equation}
+  \sigma^{\mu\nu}=\frac{i}{2}\left[\gamma^\mu,\gamma^\nu\right]=2i\left(\begin{array}{cc} \left(\sigma^{\mu\nu}\right)^{\ \beta}_\alpha & 0 \\ 0 & \left(\bar\sigma^{\mu\nu}\right)^{\dot\alpha}_{\ \dot\beta} \\ \end{array}\right)
+\end{equation}
+
+Les matrices de Dirac satisfont à l'algèbre de Clifford, en effet, l'anticommutateur donne $ \left\{\gamma^\mu,\gamma^\nu\right\}=2g^{\mu\nu} $. Il est possible de réécrire les lagrangiens précédents en utilisant des bispineurs :
+\begin{equation}\label{lagrangien_spineur}
+  \boxed{\mathcal{L}_\mathrm{masse}\propto m\bar\Psi\Psi}\hspace{0.33cm}\mathrm{et}\hspace{0.33cm}\boxed{\mathcal{L}_\mathrm{cin\acute{e}tique}\propto i\bar\Psi\gamma_\mu\partial^\mu\Psi\equiv i\bar\Psi\slashed\partial\Psi}
+\end{equation}
+
+\subsubsection{Projecteurs}
+
+Introduisons les opérateurs suivants formés à partir des matrices $ \gamma^5 $:
+\begin{equation}
+  P_L=\frac{1-\gamma^5}{2}=\left(\begin{array}{cc} \bbone_2 & 0 \\ 0 & 0 \\ \end{array}\right)\hspace{0.33cm}\mathrm{et}\hspace{0.33cm}P_R=\frac{1+\gamma^5}{2}=\left(\begin{array}{cc} 0 & 0 \\ 0 & \bbone_2 \\ \end{array}\right)
+\end{equation}
+
+Il ont toutes les caractéristiques de projecteurs, en effet, il est immédiat de montrer que $ P^2_{L,R}=P_{L,R} $ et que $ P_L+P_R=\bbone_4 $. Ces opérateurs permettent de sélectionner les composantes de chiralité left ($ L $) pour $ P_L $ et right ($ R $) pour $ P_R $ d'un bispineur. En possant:
+\begin{equation}
+  \Psi\equiv\left(\begin{array}{c}
+    \Psi_L \\
+    \Psi_R \\
+  \end{array}\right)
+\end{equation}
+
+il vient alors :
+\begin{equation}
+  \boxed{\Psi_L=P_L\Psi\hspace{0.33cm}\mathrm{et}\hspace{0.33cm}\Psi_R=P_R\Psi}
+\end{equation}
+
+\newpage
+
+\subsection{Transformation de jauge}
+
+La notion d'invariance de jauge fut introduite en 1929 par Hermann Weyl dans une tentative d'unification de l'électromagnétisme et de la gravitation. Ce fut un échec mais l'idée fut reprise par Paul Dirac puis généralisée par Chen Ning Yang et Robert Mills. Plus tard, les théories de jauge permirent la construction du modèle standard.
+
+\subsection{Invariance de jauge locales abéliennes}
+
+Afin d'illustrer le concept d'invariance de jauge locale abélienne, nous partons du lagrangien d'une particule fermionique (équation \ref{lagrangien_spineur}). Il est simple de montrer que ce lagrangien reste invariant par une transformation de phase appliquée sur les champs fermioniques :
+\begin{equation}
+  \Psi(x)\rightarrow\Psi'(x)=e^{-ig\chi}\Psi(x)\hspace{0.33cm}\mathrm{,}\hspace{0.33cm}\bar\Psi(x)\rightarrow\bar\Psi'(x)=e^{+ig\chi}\bar\Psi(x)\hspace{0.33cm}\mathrm{et}\hspace{0.33cm}\bar\Psi(x)\Psi(x)=\bbone
+\end{equation}
+
+avec $ g $ une constante de couplage et $ \chi $ une constante arbitraire, d'où :
+\begin{eqnarray}
+  \mathcal{L}\rightarrow\mathcal{L'}&=&e^{+ig\chi}\bar\Psi(x)\left(i\slashed\partial-m\right)e^{-ig\chi}\Psi(x)\nonumber\\
+                                    &=&\underbrace{e^{+ig\chi}e^{-ig\chi}}_{\bbone}\bar\Psi(x)\left(i\slashed\partial-m\right)\Psi(x)=\mathcal{L}\nonumber
+\end{eqnarray}
+
+On dit que le lagrangien $ \mathcal{L} $ est invariant par transformation de \emph{jauge globale}. Qu'en est-il si le paramètre $ \chi $ est une fonction des coordonnées :
+\begin{eqnarray}
+  \mathcal{L}\rightarrow\mathcal{L'}&=&e^{+ig\chi(x)}\bar\Psi(x)\left(i\slashed\partial-m\right)e^{-ig\chi(x)}\Psi(x)\nonumber\\
+                                    &=&e^{+ig\chi(x)}\bar\Psi(x)\left(i\slashed\partial e^{-ig\chi(x)}\right)\Psi(x)+\mathcal{L}\neq\mathcal{L}\nonumber
+\end{eqnarray}
+
+On dit que le lagrangien $ \mathcal{L} $ n'est pas invariant par transformation de \emph{jauge locale}. Afin d'y remédier, modifions le en utilisant la nouvelle dérivée :
+\begin{eqnarray}
+  \boxed{D_\mu\equiv\partial_\mu+igA_\mu(x)}
+\end{eqnarray}
+
+à la place de $ \partial_\mu $ où $ A_\mu $ est un champ dit de jauge, $ D_\mu $ est appelé \emph{dérivée covariante}. L'objectif est d'absorber le terme $ i\slashed\partial e^{-ig\chi(x)} $. Il suffit alors d'imposer les transformations suivantes:
+\begin{equation}
+  \Psi(x)\rightarrow e^{-ig\chi(x)}\Psi(x)
+\end{equation}
+\begin{equation}
+  D_\mu(x)\rightarrow e^{-ig\chi(x)}D_\mu(x)
+\end{equation}
+\begin{equation}\label{jauge_photon}
+  A_\mu(x)\rightarrow A_\mu(x)+\partial_\mu\chi(x)
+\end{equation}
+
+Vérifions que le lagrangien d'un boson jauge vecteur (équation \ref{lagrangien_vecteur}) reste invariant par la transformation de jauge qui vient d'apparaitre (équation \ref{jauge_photon}):
+\begin{eqnarray}
+  \mathcal{L}\rightarrow\mathcal{L'}&=&F'_{\mu\nu}F'^{\mu\nu}\nonumber\\
+                                    &=&\left[\partial_\mu(A_\nu(x)+\partial_\nu\chi(x))-\partial_\nu(A_\mu(x)+\partial_\mu\chi(x))\right]^2\nonumber\\
+                                    &=&\left[\underbrace{\partial_\mu A_\nu(x)-\partial_\nu A_\mu(x)}_{F_{\mu\nu}}+\underbrace{\partial_\mu\partial_\nu\chi(x)-\partial_\nu\partial_\mu\chi(x)}_{0}\right]^2=\mathcal{L}\nonumber
+\end{eqnarray}
+
+Nous avons finalement :
+\begin{equation}
+  \boxed{\mathcal{L}\propto\bar\Psi\left(i\slashed D-m\right)\Psi=\bar\Psi\left(i\slashed\partial-m\right)\Psi-g\bar\Psi\slashed A\Psi}
+\end{equation}
+
+Il apparait alors un terme d'interaction entre deux fermions via $ \Psi $ et $ \bar\Psi $ et un boson de jauge via $ A^\mu $. Ce dernier est forcément de masse nulle car l'ajout d'un terme de masse $ m^2A_\mu A^\mu $ briserait l'invariance du jauge du lagrangien. Nous verrons ultérieurement que ce modèle simple permet la description de l'interaction électromagnétique.
+
+\subsection{Invariance de jauge locales non-abéliennes}
+
+Soit $ U $ un groupe Lie (unitaire et continu) quelconque de dimension finie $ dim(U) $. Le champ fermionique se transforme par $ U $ comme précédemment :
+\begin{equation}
+  \Psi(x)\rightarrow\Psi'(x)=U(x)\Psi(x)\hspace{0.33cm}\mathrm{,}\hspace{0.33cm}\bar\Psi(x)\rightarrow\bar\Psi'(x)=\bar\Psi(x)U^\dag(x)\hspace{0.33cm}\mathrm{et}\hspace{0.33cm}\bar\Psi(x)\Psi(x)=\bbone
+\end{equation}
+
+L'opérateur $ U $ peut s'exprimer de la façon suivante :
+\begin{equation}
+  U(x)=\exp\left(-ig\sum^{dim(U)}_{a=1}\chi_a(x)T^a\right)\equiv\exp\left(-ig\vec\chi(x).\vec T\right)\equiv\exp\left(-ig\chi(x)\right)
+\end{equation}
+
+où $ g $ représente une constante de couplage, $ \chi_a(x) $ représente les coordonnées du groupe et $ T_a $ représente les générateurs du groupe avec $ a=1\ldots dim(U) $. Le commutateur des générateurs permet de faire apparaitre les coefficients de structure du groupe $ C^{\ \ c}_{ab} $ qui satisfont à la relation de Jacobi :
+\begin{equation}
+  \left[T_a,T_b\right]=iC^{\ \ c}_{ab}\,T_c\hspace{0.33cm}\mathrm{,}\hspace{0.33cm}C^{\ \ c}_{ab}=-C^{\ \ c}_{ba}\hspace{0.33cm}\mathrm{et}\hspace{0.33cm}C^{\ \ a}_{mn}C^{\ \ b}_{ap}+C^{\ \ a}_{np}C^{\ \ b}_{am}+C^{\ \ a}_{pm}C^{\ \ b}_{an}=0
+\end{equation}
+
+Le lagrangien (équation \ref{lagrangien_spineur}) est invariant de jauge locale non-abélienne si nous le modifions en utilisant la nouvelle dérivée :
+\begin{eqnarray}
+  \boxed{D_\mu\equiv\partial_\mu+igW^a_\mu(x)T_a\equiv\partial_\mu+ig\vec W_\mu(x).\vec T\equiv\partial_\mu+igW_\mu(x)}
+\end{eqnarray}
+
+à la place de $ \partial_\mu $ où $ W^a_\mu $ est un vecteur de champs dit de jauge, $ D_\mu $ est appelé \emph{dérivée covariante}. Il suffit alors d'imposer les transformations suivantes:
+\begin{equation}
+  \Psi(x)\rightarrow e^{-ig\vec\chi(x).\vec T}\Psi(x)
+\end{equation}
+\begin{equation}
+  D_\mu(x)\rightarrow e^{-ig\vec\chi(x).\vec T}D_\mu(x)
+\end{equation}
+\begin{equation}
+  A_\mu(x)\rightarrow A_\mu(x)+\partial_\mu(\vec\chi.\vec T)(x)
+\end{equation}
+
+Nous avons finalement :
+\begin{equation}
+  \boxed{\mathcal{L}\propto\bar\Psi\left(i\slashed D-m\right)\Psi=\bar\Psi\left(i\slashed\partial-m\right)\Psi-g\sum^{dim(U)}_{a=0}\bar\Psi\slashed W_aT^a\Psi}
+\end{equation}
+
+Le tenseur de Faraday qui intervient dans le lagrangien d'une particule vecteur (équation \ref{lagrangien_vecteur}) prend une forme plus compliquée :
+\begin{eqnarray}
+  F_{\mu\nu} & = & D_\mu W_\nu-D_\nu W_\mu\nonumber\\
+             & = & \left(\partial_\mu+igW_\mu\right)W_\nu-\left(\partial_\nu+igW_\nu\right)W_\mu\nonumber\\
+             & = & (\partial_\mu W_\nu-\partial_\nu W_\mu)-ig\left[W_\mu,W_\nu\right]\nonumber
+\end{eqnarray}
+
+soit encore :
+\begin{equation}\label{tenseur_faraday_non_abelien}
+  \boxed{F^a_{\mu\nu}=(\partial_\mu W^a_\nu-\partial_\nu W^a_\mu)+gC^{\ \ a}_{bc}W^b_\mu W^c_\nu}
+\end{equation}\\
+
+Ces résultats découverts dans les années 1950 sont connus sous le nom de \emph{théorie de Yang-Mills}. Les principales conséquence sont : i) le nombre de bosons de jauge est la dimension du groupe de jauge. ii) Contrairement à la théorie de jauge abélienne, la théorie de jauge non-abélienne autorise le couplage des bosons de jauge entre eux (équation \ref{tenseur_faraday_non_abelien}).
+
+\newpage
+
+\subsection{Électrodynamique quantique}
+
+L'électrodynamique quantique (QED) est la première théorie quantique des champs vérifiée expérimentalement. Son développement fut initié par Paul Dirac en 1927. Son premier grand succès fut la découverte du positron en 1932 par Carl David Anderson. Richard Feynman la qualifiait de \og bijou de la physique \fg.
+
+Les équations de Maxwell publiées dans leur forme définitives en 1873 ont enseigné que la lumière et l'électromagnétisme sont étroitement liés et qu'une transformation de jauge du potentiel vecteur $ A_\mu=(\phi,A_i) $ similaire à celle de l'équation \ref{jauge_photon} laisse invariants les résultats physiques. Il est possible de montrer que les équations de Maxwell sans source peuvent être dérivées à partir du lagrangien d'un champ vecteur (équation \ref{lagrangien_vecteur}). L'expérience a montrée qu'il existe trois générations de fermions chargés appelés \emph{leptons}. Ils correspondent respectivement aux électrons ($ e $), aux muons ($ \mu $) et aux taus ($ \tau $), ils ont une charge électrique élémentaire $ q=-e\approx-1,6\times10^{-19} C $ et sont tels que $ m_e=0.510998910\pm0.000000013\MeV < m_\mu=105.658367\pm0.000004\MeV < m_\tau=1776.82\pm0.16\MeV $. A partir des leptons, les composantes \og sources \fg\ des équations de Maxwell peuvent être dérivées à partir du lagrangien d'un champ spineur (équation \ref{lagrangien_spineur}). Au final le lagrangien QED est :
+\begin{equation}
+  \boxed{\mathcal{L}_\mathrm{QED}=\left[\sum_{l=e,\mu,\tau}\bar l\left(i\slashed\partial-m_l\right)l-e\,\bar l\slashed A l\right]-\frac{1}{4}F_{\mu\nu}F^{\mu\nu}}
+\end{equation}
+
+* TODO * feynman diagramme * TODO *\\
+* TODO * feynman diagramme * TODO *\\
+* TODO * feynman diagramme * TODO *\\
+* TODO * feynman diagramme * TODO *\\
+* TODO * feynman diagramme * TODO *\\
+* TODO * feynman diagramme * TODO *\\
+* TODO * feynman diagramme * TODO *\\
+* TODO * feynman diagramme * TODO *\\
+
+Remarque : l'électrodynamique quantique est une théorie renormalisable.
+
+\subsection{Chromodynamique quantique}
+
+La chromodynamique quantique fut proposée en 1973 par Hugh David Politzer, Frank Wilczek et David Gross pour tenter de comprendre la structure des hadrons (baryons et mesons). Les expériences ont montré qu'ils sont composés de \emph{quarks} et qu'ils sont soumis à l'interaction forte. Il est admit qu'il existe six saveurs de quarks répartis dans deux familles. La première pour les quarks de charge $ \frac{2}{3}e $ et la seconde pour les quarks de charge $ -\frac{1}{3}e $. De même que pour les leptons, les quarks sont classés en trois générations : $ \binom{u}{d} $, $ \binom{c}{s} $ et $ \binom{t}{b} $.
+
+L'expérience montre qu'il existe des baryons constitués de trois quarks de même saveur, citons l'exemple du $ \Delta^{++} $ formé de trois quarks $ u $. Comme cette particule est un fermion, elle doit satisfaire au principe d'exclusion de Pauli qui impose une fonction d'onde antisymétrique. Il fut nécessaire d'introduire un degrés quantique supplémentaire : la \emph{couleur}. Un quark est associé à une couleur, rouge, bleu, jaune par exemple, elle-même associée à une représentation fondamentale du groupe $ SU(3)_\mathrm{C} $. Dans la nature, seules des particules non colorées sont observée. Elles sont donc constituées de trois quarks avec trois couleurs différentes (rouge+bleu+jaune=noir) pour les baryons ou bien de deux quarks avec une couleur et sont anti-couleur (rouge+anti-rouge=noir) pour les mesons. Comme le groupe $ SU(3) $ possède huit générateurs, il existe huit bosons de jauge appelés \emph{gluons}.
+
+Au final le lagrangien QCD est :
+\begin{equation}
+  \boxed{\mathcal{L}_\mathrm{QCD}=\left[\sum_{q=u,d,c,s,t,b}\sum_{\alpha,\beta=r,b,j}\bar q^\alpha_a\left(i\slashed\partial-m_q\right)\delta^\beta_\alpha q^a_\beta-g\,\bar q^\alpha_a\slashed G^\beta_\alpha q^a_\beta\right]-\frac{1}{4}F^a_{\mu\nu}F^{\mu\nu}_a}
+\end{equation}
+
+avec $ \slashed G^\beta_\alpha=\gamma_\mu G^\mu_a(T^a)^\beta_\alpha $ où $ T^a $ sont les générateurs de $ SU(3)_\mathrm{C} $ et $ a=1\ldots\left\{dim(SU(3)_\mathrm{C})=8\right\} $. Les gluons changent la couleur des quarks.\\
+
+* TODO * feynman diagramme * TODO *\\
+* TODO * feynman diagramme * TODO *\\
+* TODO * feynman diagramme * TODO *\\
+* TODO * feynman diagramme * TODO *\\
+* TODO * feynman diagramme * TODO *\\
+* TODO * feynman diagramme * TODO *\\
+* TODO * feynman diagramme * TODO *\\
+* TODO * feynman diagramme * TODO *\\
+
+Remarque 1 : la chromodynamique quantique est une interaction à portée limité du fait du confinement des quarks dans les hadrons et de l'effet de hadronisation\footnote{Du fait de l'importance de l'interaction forte, lors de la séparation de deux quarks, l'énergie nécessaire est plus grande que la masse des quarks si bien que de nouveaux quarks et de nouveaux états liés sont créés.}. En effet, nous pouvons faire l'analogie avec l'électromagnétisme. Cette interaction est de portée infinie tandis que l'interaction électromagnétique de Van der Waals inter-moléculaire est de portée finie.\\
+
+Remarque 2 : la chromodynamique quantique est une théorie renormalisable.
+
+\newpage
+
+\subsection{Interaction faible}
+
+L'histoire de l'interaction faible commence dés 1896 par la découverte de la radioactivité naturelle par Antoine Henri Becquerel. Le premier modèle effectif fut élaboré par Enrico Fermi en 1933 pour décrire la radioactivité $ \beta^- $. A cet occasion, il fut prédit l'existence du neutrino :
+\begin{equation}
+  n\rightarrow p+e^-+\bar\nu_e
+\end{equation}
+
+Les expériences ont permit de  un certain nombre de propriété
