@@ -298,7 +298,7 @@ Ces résultats découverts dans les années 1950 sont connus sous le nom de \emph{t
 L'électrodynamique quantique (QED) est la première théorie quantique des champs vérifiée expérimentalement. Son développement fut initié par Paul Dirac en 1927. Son premier grand succès fut la découverte du positron en 1932 par Carl David Anderson. Richard Feynman la qualifiait de \og bijou de la physique \fg.
 
 Les équations de Maxwell publiées dans leur forme définitives en 1873 ont enseigné que la lumière et l'électromagnétisme sont étroitement liés et qu'une transformation de jauge du potentiel vecteur $ A_\mu=(\phi,A_i) $ similaire à celle de l'équation \ref{jauge_photon} laisse invariants les résultats physiques. Il est possible de montrer que les équations de Maxwell sans source peuvent être dérivées à partir du lagrangien d'un champ vecteur (équation \ref{lagrangien_vecteur}). L'expérience a montrée qu'il existe trois générations de fermions chargés appelés \emph{leptons}. Ils correspondent respectivement aux électrons ($ e $), aux muons ($ \mu $) et aux taus ($ \tau $), ils ont une charge électrique élémentaire $ q=-e\approx-1,6\times10^{-19} C $ et sont tels que $ m_e=0.510998910\pm0.000000013\MeV < m_\mu=105.658367\pm0.000004\MeV < m_\tau=1776.82\pm0.16\MeV $. Avec les leptons, les composantes \og sources \fg\ des équations de Maxwell peuvent être dérivées à partir du lagrangien d'un champ spineur (équation \ref{lagrangien_spineur}). Au final le lagrangien QED est :
-\begin{equation}
+\begin{equation}\label{lagrangien_qed}
   \boxed{\mathcal{L}_\mathrm{QED}=\left[\sum_{l=e,\mu,\tau}\bar l\left(i\slashed\partial-m_l\right)l-e\,\bar l\slashed A l\right]-\frac{1}{4}F_{\mu\nu}F^{\mu\nu}}
 \end{equation}
 
@@ -370,7 +370,7 @@ La chromodynamique quantique fut proposée en 1973 par Hugh David Politzer, Frank
 De plus, l'expérience montre qu'il existe des baryons constitués de trois quarks de même saveur, citons l'exemple du $ \Delta^{++} $ formé de trois quarks $ u $. Comme cette particule est un fermion, elle doit satisfaire au principe d'exclusion de Pauli qui impose une fonction d'onde antisymétrique. Il fut nécessaire d'introduire un degrés quantique supplémentaire : la \emph{couleur}. Un quark est associé à une couleur (rouge, bleu, jaune par exemple) elle-même associée à une représentation fondamentale du groupe $ SU(3)_\mathrm{C} $. Dans la nature, seules des particules non colorées sont observées. Elles sont donc constituées de trois quarks avec trois couleurs différentes (rouge+bleu+jaune=noir) pour les baryons ou bien de deux quarks avec une couleur et sont anti-couleur (rouge+anti-rouge=noir, etc\ldots) pour les mesons. Comme le groupe $ SU(3) $ possède huit générateurs, il existe huit bosons de jauge appelés \emph{gluons}.
 
 Au final le lagrangien QCD est :
-\begin{equation}
+\begin{equation}\label{lagrangien_qcd}
   \boxed{\mathcal{L}_\mathrm{QCD}=\left[\sum_{q=u,d,c,s,t,b}\sum_{\alpha,\beta=r,b,j}\bar q^\alpha_a\left(i\slashed\partial-m_q\right)\delta^\beta_\alpha q^a_\beta-g\,\bar q^\alpha_a\slashed G^\beta_\alpha q^a_\beta\right]-\frac{1}{4}F^a_{\mu\nu}F^{\mu\nu}_a}
 \end{equation}
 
@@ -450,7 +450,7 @@ blabla blabla blabla blabla blabla blabla blabla blabla blabla blabla blabla bla
 
 Les expériences ont permit de découvrir un certain nombre de propriétés propres à l'interaction faible : i) Pour les particules (resp. anti-partucules) la composante right (resp. left) n'a pas de charge faible. ii) Pour les particules (resp. anti-partucules) la composante left (resp. right) a une charge faible et interagit par paires de particules. Si on introduit la notion d'isospin faible $ I^\mathrm{W} $ dont la troisième composante $ I^\mathrm{W}_3 $ est interprété comme la charge faible, les particules peuvent être classées en doublets d'isospin faible :
 \begin{equation}
-  \Psi_1\equiv\binom{\nu_e}{e}_\mathrm{L}\ ;\ \binom{\nu_\mu}{\mu}_\mathrm{L}\ ;\ \ldots=\binom{u}{d}_\mathrm{L}\ ;\ \binom{s}{c}_\mathrm{L}\ ;\ \ldots\hspace{0.33cm}\mathrm{pour}\hspace{0.33cm}\binom{I^\mathrm{W}_3=+\frac{1}{2}}{I^\mathrm{W}_3=-\frac{1}{2}}
+  \Psi_1\equiv\binom{\nu_e}{e}_\mathrm{L}\ ;\ \binom{\nu_\mu}{\mu}_\mathrm{L}\ ;\ \binom{\nu_\tau}{\tau}_\mathrm{L} ;\ \binom{u}{d}_\mathrm{L}\ ;\ \binom{s}{c}_\mathrm{L}\ ;\ \binom{t}{b}_\mathrm{L}\hspace{0.33cm}\mathrm{pour}\hspace{0.33cm}\binom{I^\mathrm{W}_3=+\frac{1}{2}}{I^\mathrm{W}_3=-\frac{1}{2}}
 \end{equation}
 
 et en singulets d'isospin:
@@ -484,16 +484,56 @@ Le lagrangien de l'interaction électrofaible (équation \ref{lagrangien_electrofa
   \mathcal{L}_\mathrm{CC}=\frac{g}{2}\bar\Psi_1\gamma^\mu\left(\sigma_1W^1_\mu+\sigma_2W^2_\mu\right)\Psi^1
 \end{equation}
 
-Si l'on pose $ W^\pm_\mu=\frac{1}{\sqrt{2}}\left(W^1_\mu\mp iW^2_\mu\right) $ alors $ \sigma_1W^1_\mu+\sigma_2W^2_\mu=\sqrt{2}\left(\begin{array}{cc}0&W^-_\mu\\W^+_\mu&0\end{array}\right) $, le lagrangien peut se réécrire :
+Si on introduit les bosons $ W^\pm $ en posant $ W^\pm_\mu=\frac{1}{\sqrt{2}}\left(W^1_\mu\mp iW^2_\mu\right) $ alors $ \sigma_1W^1_\mu+\sigma_2W^2_\mu=\sqrt{2}\left(\begin{array}{cc}0&W^-_\mu\\W^+_\mu&0\end{array}\right) $, le lagrangien se réécrit :
 \begin{eqnarray}
   \mathcal{L}_\mathrm{CC} & = & \frac{g}{\sqrt{2}}\left(\bar f_L\ \bar f'_L\right)\gamma^\mu\left(\begin{array}{cc}0&W^-_\mu\\W^+_\mu&0\end{array}\right)\binom{f_L}{f'_L}\nonumber\\
                           & = & \frac{g}{\sqrt{2}}\left[\bar f_L\gamma^\mu W^-_\mu f'_L+\bar f'_L\gamma^\mu W^+_\mu f_L\right]
 \end{eqnarray}
 
-En utilisant l'expression des projecteurs (équations \ref{projecteurs}), le lagrangien peut se réécrire sous sa forme définitive :
+En utilisant l'expression du projecteur vers la composante de chiralité left (équation \ref{projecteurs}), le lagrangien se réécrit sous sa forme définitive :
 \begin{equation}
   \boxed{\mathcal{L}_\mathrm{CC}=\frac{g}{2\sqrt{2}}\left[\bar f\gamma^\mu(1-\gamma^5)W^-_\mu f'+\bar f'\gamma^\mu(1-\gamma^5)W^+_\mu f\right]}
 \end{equation}
 
 \subsubsection{Le courant neutre}
+
+Le lagrangien de l'interaction électrofaible (équation \ref{lagrangien_electrofaible}) contient une partie faisant intervenir un courant neutre :
+\begin{equation}
+  \mathcal{L}_\mathrm{CN}=\sum^3_{j=1}\bar\Psi_j\gamma^\mu\left(g\frac{\sigma_3}{2}W^3_\mu+g'Y_iB_\mu\right)\Psi^j
+\end{equation}
+
+Si on introduit le bosons $ Z $ et le photon $ A $ en posant :
+\begin{equation}
+  \left(\begin{array}{c}W^3_\mu\\B_\mu\end{array}\right)=\left(\begin{array}{cc}\cos\theta_W&+\sin\theta_W\\-\sin\theta_W&\cos\theta_W\end{array}\right)\left(\begin{array}{c}Z_\mu\\A_\mu\end{array}\right)
+\end{equation}
+
+\noindent où $ \theta_W $ est un angle de mélange appelé angle de Weinberg. Remarquant de plus que le lagrangien peut se scinder en deux composantes, l'une ne faisant intervenir que le boson $ Z $ et l'autre ne faisant intervenir que le photon $ A $ : $ \mathcal{L}_\mathrm{CN}=\mathcal{L}^Z_\mathrm{CN}+\mathcal{L}^A_\mathrm{CN} $, le lagrangien se réécrit :
+\begin{equation}
+  \boxed{\mathcal{L}^Z_\mathrm{CN}=\sum^3_{j=1}\bar\Psi_j\gamma^\mu\left(g\frac{\sigma_3}{2}\cos\theta_W-g'Y_i\sin\theta_W\right)Z_\mu\Psi^j}
+\end{equation}
+\begin{equation}
+  \boxed{\mathcal{L}^A_\mathrm{CN}=\sum^3_{j=1}\bar\Psi_j\gamma^\mu\left(g\frac{\sigma_3}{2}\sin\theta_W+g'Y_i\cos\theta_W\right)A_\mu\Psi^j}
+\end{equation}
+
+Comme nous souhaitons que l'interaction électrofaible contienne l'interaction électromagnétique, le lagrangien $ \mathcal{L}^A_\mathrm{CN} $ doit être équivalent au lagrangien de la QED (équation \ref{lagrangien_qed}). Il suffit pou cela d'imposer la relation suivante :
+\begin{equation}
+  e\,Q_j\equiv g\frac{\sigma_3}{2}\sin\theta_W+g'Y_j\cos\theta_W
+\end{equation}
+
+\noindent où $ e $ est la change électrique élémentaire et $ e\,Q_j $ la change électrique du fermion $ j $. Par identification, on arrive aux résultats suivants :
+\begin{equation}
+  Y_1=Q_f-\frac{1}{2}\hspace{0.33cm}\mathrm{,}\hspace{0.33cm}Y_2=Q_f\hspace{0.33cm}\mathrm{et}\hspace{0.33cm}Y_3=Q_{f'}
+\end{equation}
+\begin{equation}
+  e=g\sin\theta_W=g'\cos\theta_W=\frac{gg'}{\sqrt{g^2+g'^2}}
+\end{equation}
+\begin{equation}
+  \cos\theta_W=\frac{g}{\sqrt{g^2+g'^2}}\hspace{0.33cm}\mathrm{,}\hspace{0.33cm}\sin\theta_W=\frac{g'}{\sqrt{g^2+g'^2}}
+\end{equation}
+
+En utilisant l'expression du projecteur vers la composante de chiralité left (équation \ref{projecteurs}), et après développement, le lagrangien $ \mathcal{L}^Z_\mathrm{CN} $ se réécrit sous sa forme définitive :
+\begin{eqnarray}
+           \mathcal{L}^Z_\mathrm{CN}=\frac{e}{\sin\theta_W\cos\theta_W} \left[\bar f\phantom{'}\gamma^\mu\left(+\frac{1}{4}-Q_{f\phantom{'}}\sin^2\theta_W-\frac{\gamma^5}{4}\right)f\phantom{'}\right.+\phantom{Z_\mu}\nonumber\\
+  \phantom{\mathcal{L}^Z_\mathrm{CN}=\frac{e}{\sin\theta_W\cos\theta_W}}\left.\bar f         ' \gamma^\mu\left(-\frac{1}{4}-Q_{f         ' }\sin^2\theta_W+\frac{\gamma^5}{4}\right)f         ' \right]          Z_\mu
+\end{eqnarray}
 
