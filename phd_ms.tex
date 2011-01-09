@@ -34,7 +34,7 @@ En introduidant $ \vec J_+=\frac{1}{2}(\vec J+i\vec K) $ et $ \vec J_-=\frac{1}{
   \left[J^i_+,J^j_+\right]=i\,\varepsilon^{ijk}J_{+k}\hspace{0.33cm};\hspace{0.33cm}\left[J^i_-,J^j_-\right]=i\,\varepsilon^{ijk}J_{-k}\hspace{0.33cm};\hspace{0.33cm}\left[J^i_+,J^j_-\right]=0\hspace{0.33cm}\Rightarrow\hspace{0.33cm}2\times\bar2
 \end{displaymath}
 
-Les représentation irréductibles du groupe de Lorentz correspondent au couple $ (j_+,j_-) $ de dimension $ (2j_++1)(2j_-+1) $ où les valeurs propres de $ J^2_\pm $ sont $ j_\pm(j_\pm+1) $. Elles conduisent aux définitions des \emph{scalaires} et des \emph{spineurs} : $ (0,0) $ représente un scalaire noté $ \phi $, $ (\frac{1}{2},0) $ représente un \emph{spineur de Weyl} indicé sans point et noté $ \xi_\alpha $ $ (\alpha=1,2) $, enfin, $ (0,\frac{1}{2}) $ représente un \emph{spineur} de \emph{Weyl} indicé avec point et noté $ \bar\xi_{\dot\alpha} $ $ (\dot\alpha=1,2) $. Les scalaires sont associés aux bosons et commutent (équation \ref{scalaire_commutation}). Les spineurs de Weil sont associés aux fermions et anticommutent (équation \ref{spineur_commutation}).
+Nous reconnaissons $ SU(2) $, les représentation irréductibles du groupe de Lorentz correspondent au couple $ (j_+,j_-) $ de dimension $ (2j_++1)(2j_-+1) $ où les valeurs propres de $ J^2_\pm $ sont $ j_\pm(j_\pm+1) $. Elles conduisent aux définitions des \emph{scalaires} et des \emph{spineurs} : $ (0,0) $ représente un scalaire noté $ \phi $, $ (\frac{1}{2},0) $ représente un \emph{spineur de Weyl} indicé sans point et noté $ \xi_\alpha $ $ (\alpha=1,2) $, enfin, $ (0,\frac{1}{2}) $ représente un \emph{spineur} de \emph{Weyl} indicé avec point et noté $ \bar\xi_{\dot\alpha} $ $ (\dot\alpha=1,2) $. Les scalaires sont associés aux bosons et commutent (équation \ref{scalaire_commutation}). Les spineurs de Weil sont associés aux fermions et anticommutent (équation \ref{spineur_commutation}).
 
 \begin{equation}\label{scalaire_commutation}
   \left[\phi_1,\phi_2\right]=0\hspace{0.33cm}\mathrm{et}\hspace{0.33cm}\left[\phi^\dag_1,\phi^\dag_2\right]=0
@@ -45,7 +45,7 @@ Les représentation irréductibles du groupe de Lorentz correspondent au couple $ 
 
 \subsection{Champs scalaires (spin $ 0 $)}
 
-Les champs scalaires permettent de décrire les particules sans spin (par exemple les pions neutres ou bien les sleptons en supersymétrie). Le lagrangien ne peut dépendre que du champ et de ses dérivées. Il doit être invariant relativiste et hermitien. Les quantités $ \phi^2 $ et $ \partial_\mu\phi\partial^\mu\phi $ sont de bons candidats comme lagrangien de masse et comme lagrangien cinétique :
+Les champs scalaires permettent de décrire les particules sans spin (par exemple les pions neutres ou bien les sleptons en supersymétrie). Le lagrangien ne peut dépendre que du champ et de ses dérivées. Il doit être invariant relativiste et hermitien. Les quantités $ \phi^2 $ et $ \partial_\mu\phi\partial^\mu\phi $ sont respectivement de bons candidats comme lagrangien de masse et comme lagrangien cinétique :
 \begin{equation}\label{lagrangien_scalaire}
   \boxed{\mathcal{L}_\mathrm{masse}\propto m\phi^2}\hspace{0.33cm}\mathrm{et}\hspace{0.33cm}\boxed{\mathcal{L}_\mathrm{cin\acute{e}tique}\propto\partial_\mu\phi\partial^\mu\phi}
 \end{equation}
@@ -61,7 +61,7 @@ Nous verrons que les champs vecteurs permettent de décrire les bosons de jauge q
 
 \subsection{Champs spineurs (spin $ \pm\frac{1}{2} $)}
 
-Nous verrons que les champs spineurs permettent de décrire les fermions, c'est-à-dire les particules qui constituent la matière.
+Nous verrons que les champs spineurs permettent de décrire les fermions, c'est-à-dire les particules qui constituent la matière et qui satisfont au principe d'exclusion de Pauly.
 
 \subsubsection{Lagrangien de masse}
 
@@ -151,7 +151,7 @@ Les particules physiques seront représentées par un bispineur formé de deux spin
   \end{array}\right)=\Psi^\dag\gamma^0
 \end{equation}
 
-On introduit alors les matrices de Dirac (représentation de Weyl):
+On introduit alors les matrices de Dirac dans la représentation de Weyl :
 \begin{equation}
   \gamma^\mu=\left(\begin{array}{cc} 0 & \left(\sigma^\mu\right)_{\alpha\dot\beta} \\ \left(\bar\sigma^\mu\right)^{\dot\alpha\beta} & 0 \\ \end{array}\right)\hspace{0.33cm};\hspace{0.33cm}\gamma^5=\frac{i}{2!}\varepsilon_{\mu\nu\alpha\beta}\gamma^\mu\gamma^\nu\gamma^\alpha\gamma^\beta=\left(\begin{array}{cc} -\bbone_2 & 0 \\ 0 & +\bbone_2 \\ \end{array}\right)
 \end{equation}%=i\gamma^0\gamma^1\gamma^2\gamma^3
@@ -167,7 +167,7 @@ Les matrices de Dirac satisfont à l'algèbre de Clifford, en effet, l'anticommuta
 \subsubsection{Projecteurs}
 
 Introduisons les opérateurs suivants formés à partir des matrices $ \gamma^5 $:
-\begin{equation}
+\begin{equation}\label{projecteurs}
   P_L=\frac{1-\gamma^5}{2}=\left(\begin{array}{cc} \bbone_2 & 0 \\ 0 & 0 \\ \end{array}\right)\hspace{0.33cm}\mathrm{et}\hspace{0.33cm}P_R=\frac{1+\gamma^5}{2}=\left(\begin{array}{cc} 0 & 0 \\ 0 & \bbone_2 \\ \end{array}\right)
 \end{equation}
 
@@ -210,9 +210,9 @@ On dit que le lagrangien $ \mathcal{L} $ est invariant par transformation de \em
 \end{eqnarray}
 
 On dit que le lagrangien $ \mathcal{L} $ n'est pas invariant par transformation de \emph{jauge locale}. Afin d'y remédier, modifions le en utilisant la nouvelle dérivée :
-\begin{eqnarray}
+\begin{equation}
   \boxed{D_\mu\equiv\partial_\mu+igA_\mu(x)}
-\end{eqnarray}
+\end{equation}
 
 à la place de $ \partial_\mu $ où $ A_\mu $ est un champ dit de jauge, $ D_\mu $ est appelé \emph{dérivée covariante}. L'objectif est d'absorber le terme $ i\slashed\partial e^{-ig\chi(x)} $. Il suffit alors d'imposer les transformations suivantes:
 \begin{equation}
@@ -228,7 +228,7 @@ On dit que le lagrangien $ \mathcal{L} $ n'est pas invariant par transformation 
 Vérifions que le lagrangien d'un boson jauge vecteur (équation \ref{lagrangien_vecteur}) reste invariant par la transformation de jauge qui vient d'apparaitre (équation \ref{jauge_photon}):
 \begin{eqnarray}
   \mathcal{L}\rightarrow\mathcal{L'}&=&F'_{\mu\nu}F'^{\mu\nu}\nonumber\\
-                                    &=&\left[\partial_\mu(A_\nu(x)+\partial_\nu\chi(x))-\partial_\nu(A_\mu(x)+\partial_\mu\chi(x))\right]^2\nonumber\\
+                                    &=&\left[D_\mu(A_\nu(x)+\partial_\nu\chi(x))-D_\nu(A_\mu(x)+\partial_\mu\chi(x))\right]^2\nonumber\\
                                     &=&\left[\underbrace{\partial_\mu A_\nu(x)-\partial_\nu A_\mu(x)}_{F_{\mu\nu}}+\underbrace{\partial_\mu\partial_\nu\chi(x)-\partial_\nu\partial_\mu\chi(x)}_{0}\right]^2=\mathcal{L}\nonumber
 \end{eqnarray}
 
@@ -257,9 +257,9 @@ où $ g $ représente une constante de couplage, $ \chi_a(x) $ représente les coor
 \end{equation}
 
 Le lagrangien (équation \ref{lagrangien_spineur}) est invariant de jauge locale non-abélienne si nous le modifions en utilisant la nouvelle dérivée :
-\begin{eqnarray}
+\begin{equation}
   \boxed{D_\mu\equiv\partial_\mu+igW^a_\mu(x)T_a\equiv\partial_\mu+ig\vec W_\mu(x).\vec T\equiv\partial_\mu+igW_\mu(x)}
-\end{eqnarray}
+\end{equation}
 
 à la place de $ \partial_\mu $ où $ W^a_\mu $ est un vecteur de champs dit de jauge, $ D_\mu $ est appelé \emph{dérivée covariante}. Il suffit alors d'imposer les transformations suivantes:
 \begin{equation}
@@ -281,12 +281,12 @@ Le tenseur de Faraday qui intervient dans le lagrangien d'une particule vecteur 
 \begin{eqnarray}
   F_{\mu\nu} & = & D_\mu W_\nu-D_\nu W_\mu\nonumber\\
              & = & \left(\partial_\mu+igW_\mu\right)W_\nu-\left(\partial_\nu+igW_\nu\right)W_\mu\nonumber\\
-             & = & (\partial_\mu W_\nu-\partial_\nu W_\mu)-ig\left[W_\mu,W_\nu\right]\nonumber
+             & = & (\partial_\mu W_\nu-\partial_\nu W_\mu)+ig\left[W_\mu,W_\nu\right]\nonumber
 \end{eqnarray}
 
 soit encore :
 \begin{equation}\label{tenseur_faraday_non_abelien}
-  \boxed{F^a_{\mu\nu}=(\partial_\mu W^a_\nu-\partial_\nu W^a_\mu)+gC^{\ \ a}_{bc}W^b_\mu W^c_\nu}
+  \boxed{F^a_{\mu\nu}=(\partial_\mu W^a_\nu-\partial_\nu W^a_\mu)-gC^{\ \ a}_{bc}W^b_\mu W^c_\nu}
 \end{equation}\\
 
 Ces résultats découverts dans les années 1950 sont connus sous le nom de \emph{théorie de Yang-Mills}. Les principales conséquence sont : i) le nombre de bosons de jauge est la dimension du groupe de jauge. ii) Contrairement à la théorie de jauge abélienne, la théorie de jauge non-abélienne autorise le couplage des bosons de jauge entre eux (équation \ref{tenseur_faraday_non_abelien}).
@@ -297,7 +297,7 @@ Ces résultats découverts dans les années 1950 sont connus sous le nom de \emph{t
 
 L'électrodynamique quantique (QED) est la première théorie quantique des champs vérifiée expérimentalement. Son développement fut initié par Paul Dirac en 1927. Son premier grand succès fut la découverte du positron en 1932 par Carl David Anderson. Richard Feynman la qualifiait de \og bijou de la physique \fg.
 
-Les équations de Maxwell publiées dans leur forme définitives en 1873 ont enseigné que la lumière et l'électromagnétisme sont étroitement liés et qu'une transformation de jauge du potentiel vecteur $ A_\mu=(\phi,A_i) $ similaire à celle de l'équation \ref{jauge_photon} laisse invariants les résultats physiques. Il est possible de montrer que les équations de Maxwell sans source peuvent être dérivées à partir du lagrangien d'un champ vecteur (équation \ref{lagrangien_vecteur}). L'expérience a montrée qu'il existe trois générations de fermions chargés appelés \emph{leptons}. Ils correspondent respectivement aux électrons ($ e $), aux muons ($ \mu $) et aux taus ($ \tau $), ils ont une charge électrique élémentaire $ q=-e\approx-1,6\times10^{-19} C $ et sont tels que $ m_e=0.510998910\pm0.000000013\MeV < m_\mu=105.658367\pm0.000004\MeV < m_\tau=1776.82\pm0.16\MeV $. A partir des leptons, les composantes \og sources \fg\ des équations de Maxwell peuvent être dérivées à partir du lagrangien d'un champ spineur (équation \ref{lagrangien_spineur}). Au final le lagrangien QED est :
+Les équations de Maxwell publiées dans leur forme définitives en 1873 ont enseigné que la lumière et l'électromagnétisme sont étroitement liés et qu'une transformation de jauge du potentiel vecteur $ A_\mu=(\phi,A_i) $ similaire à celle de l'équation \ref{jauge_photon} laisse invariants les résultats physiques. Il est possible de montrer que les équations de Maxwell sans source peuvent être dérivées à partir du lagrangien d'un champ vecteur (équation \ref{lagrangien_vecteur}). L'expérience a montrée qu'il existe trois générations de fermions chargés appelés \emph{leptons}. Ils correspondent respectivement aux électrons ($ e $), aux muons ($ \mu $) et aux taus ($ \tau $), ils ont une charge électrique élémentaire $ q=-e\approx-1,6\times10^{-19} C $ et sont tels que $ m_e=0.510998910\pm0.000000013\MeV < m_\mu=105.658367\pm0.000004\MeV < m_\tau=1776.82\pm0.16\MeV $. Avec les leptons, les composantes \og sources \fg\ des équations de Maxwell peuvent être dérivées à partir du lagrangien d'un champ spineur (équation \ref{lagrangien_spineur}). Au final le lagrangien QED est :
 \begin{equation}
   \boxed{\mathcal{L}_\mathrm{QED}=\left[\sum_{l=e,\mu,\tau}\bar l\left(i\slashed\partial-m_l\right)l-e\,\bar l\slashed A l\right]-\frac{1}{4}F_{\mu\nu}F^{\mu\nu}}
 \end{equation}
@@ -324,7 +324,7 @@ Les équations de Maxwell publiées dans leur forme définitives en 1873 ont enseig
 
     &
 
-    \begin{fmffile}{qed_graph1}
+    \begin{fmffile}{qed_graph2}
       \fmfframe(1,7)(1,7){ 
        \begin{fmfgraph*}(110,62)
         \fmfleft{i1,i2}
@@ -341,7 +341,7 @@ Les équations de Maxwell publiées dans leur forme définitives en 1873 ont enseig
 
     &
 
-    \begin{fmffile}{qed_graph1}
+    \begin{fmffile}{qed_graph3}
       \fmfframe(1,7)(1,7){ 
        \begin{fmfgraph*}(110,62)
         \fmfleft{i1,i2}
@@ -361,13 +361,13 @@ Les équations de Maxwell publiées dans leur forme définitives en 1873 ont enseig
   \end{center}
 \end{figure}
 
-Remarque : l'électrodynamique quantique est une théorie renormalisable.
+Remarque : L'électrodynamique quantique est une théorie renormalisable.
 
 \subsection{Chromodynamique quantique}
 
-La chromodynamique quantique fut proposée en 1973 par Hugh David Politzer, Frank Wilczek et David Gross pour tenter de comprendre la structure des hadrons (baryons et mesons). Les expériences ont montré qu'ils sont composés de \emph{quarks} et qu'ils sont soumis à l'interaction forte. Il est admit qu'il existe six saveurs de quarks répartis dans deux familles. La première pour les quarks de charge $ \frac{2}{3}e $ et la seconde pour les quarks de charge $ -\frac{1}{3}e $. De même que pour les leptons, les quarks sont classés en trois générations : $ \binom{u}{d} $, $ \binom{c}{s} $ et $ \binom{t}{b} $.
+La chromodynamique quantique fut proposée en 1973 par Hugh David Politzer, Frank Wilczek et David Gross pour tenter de comprendre la structure des hadrons (baryons et mesons). Les expériences ont montré qu'ils sont composés de \emph{quarks} et qu'ils sont soumis à l'interaction forte. Il est admit qu'il existe six saveurs de quarks répartis en deux familles. La première pour les quarks de charge électrique $ +\frac{2}{3}e $ et la seconde pour les quarks de charge électrique $ -\frac{1}{3}e $. De même que pour les leptons, les quarks sont classés en trois générations : $ \binom{u}{d} $, $ \binom{c}{s} $ et $ \binom{t}{b} $.
 
-L'expérience montre qu'il existe des baryons constitués de trois quarks de même saveur, citons l'exemple du $ \Delta^{++} $ formé de trois quarks $ u $. Comme cette particule est un fermion, elle doit satisfaire au principe d'exclusion de Pauli qui impose une fonction d'onde antisymétrique. Il fut nécessaire d'introduire un degrés quantique supplémentaire : la \emph{couleur}. Un quark est associé à une couleur, rouge, bleu, jaune par exemple, elle-même associée à une représentation fondamentale du groupe $ SU(3)_\mathrm{C} $. Dans la nature, seules des particules non colorées sont observée. Elles sont donc constituées de trois quarks avec trois couleurs différentes (rouge+bleu+jaune=noir) pour les baryons ou bien de deux quarks avec une couleur et sont anti-couleur (rouge+anti-rouge=noir) pour les mesons. Comme le groupe $ SU(3) $ possède huit générateurs, il existe huit bosons de jauge appelés \emph{gluons}.
+De plus, l'expérience montre qu'il existe des baryons constitués de trois quarks de même saveur, citons l'exemple du $ \Delta^{++} $ formé de trois quarks $ u $. Comme cette particule est un fermion, elle doit satisfaire au principe d'exclusion de Pauli qui impose une fonction d'onde antisymétrique. Il fut nécessaire d'introduire un degrés quantique supplémentaire : la \emph{couleur}. Un quark est associé à une couleur (rouge, bleu, jaune par exemple) elle-même associée à une représentation fondamentale du groupe $ SU(3)_\mathrm{C} $. Dans la nature, seules des particules non colorées sont observées. Elles sont donc constituées de trois quarks avec trois couleurs différentes (rouge+bleu+jaune=noir) pour les baryons ou bien de deux quarks avec une couleur et sont anti-couleur (rouge+anti-rouge=noir, etc\ldots) pour les mesons. Comme le groupe $ SU(3) $ possède huit générateurs, il existe huit bosons de jauge appelés \emph{gluons}.
 
 Au final le lagrangien QCD est :
 \begin{equation}
@@ -436,17 +436,64 @@ avec $ \slashed G^\beta_\alpha=\gamma_\mu G^\mu_a(T^a)^\beta_\alpha $ où $ T^a $
   \end{center}
 \end{figure}
 
-Remarque 1 : la chromodynamique quantique est une interaction à portée limité du fait du confinement des quarks dans les hadrons et de l'effet de hadronisation\footnote{Du fait de l'importance de l'interaction forte, lors de la séparation de deux quarks, l'énergie nécessaire est plus grande que la masse des quarks si bien que de nouveaux quarks et de nouveaux états liés sont créés.}. En effet, nous pouvons faire l'analogie avec l'électromagnétisme. Cette interaction est de portée infinie tandis que l'interaction électromagnétique de Van der Waals inter-moléculaire est de portée finie.\\
+Remarque 1 : La chromodynamique quantique est une interaction à portée limité du fait du confinement des quarks dans les hadrons et de l'effet de hadronisation\footnote{Du fait de l'importance de l'interaction forte, lors de la séparation de deux quarks, l'énergie nécessaire est plus grande que la masse des quarks si bien que de nouveaux quarks et de nouveaux états liés sont créés.}. En effet, nous pouvons faire l'analogie avec l'électromagnétisme, cette interaction est de portée infinie tandis que l'interaction électromagnétique de Van der Waals inter-moléculaire est de portée finie.\\
 
-Remarque 2 : la chromodynamique quantique est une théorie renormalisable.
+Remarque 2 : La chromodynamique quantique est une théorie renormalisable.
 
-\newpage
-
-\subsection{Interaction faible}
+\subsection{Interaction électrofaible}
 
 L'histoire de l'interaction faible commence dés 1896 par la découverte de la radioactivité naturelle par Antoine Henri Becquerel. Le premier modèle effectif fut élaboré par Enrico Fermi en 1933 pour décrire la radioactivité $ \beta^- $. A cet occasion, il fut prédit l'existence du neutrino :
 \begin{equation}
   n\rightarrow p+e^-+\bar\nu_e
 \end{equation}
+blabla blabla blabla blabla blabla blabla blabla blabla blabla blabla blabla blabla blabla blabla blabla blabla blabla blabla blabla blabla blabla blabla blabla blabla blabla blabla blabla blabla blabla blabla blabla blabla blabla blabla blabla blabla blabla blabla blabla blabla blabla blabla blabla blabla blabla blabla blabla blabla.
 
-Les expériences ont permit de  un certain nombre de propriété
+Les expériences ont permit de découvrir un certain nombre de propriétés propres à l'interaction faible : i) Pour les particules (resp. anti-partucules) la composante right (resp. left) n'a pas de charge faible. ii) Pour les particules (resp. anti-partucules) la composante left (resp. right) a une charge faible et interagit par paires de particules. Si on introduit la notion d'isospin faible $ I^\mathrm{W} $ dont la troisième composante $ I^\mathrm{W}_3 $ est interprété comme la charge faible, les particules peuvent être classées en doublets d'isospin faible :
+\begin{equation}
+  \Psi_1\equiv\binom{\nu_e}{e}_\mathrm{L}\ ;\ \binom{\nu_\mu}{\mu}_\mathrm{L}\ ;\ \ldots=\binom{u}{d}_\mathrm{L}\ ;\ \binom{s}{c}_\mathrm{L}\ ;\ \ldots\hspace{0.33cm}\mathrm{pour}\hspace{0.33cm}\binom{I^\mathrm{W}_3=+\frac{1}{2}}{I^\mathrm{W}_3=-\frac{1}{2}}
+\end{equation}
+
+et en singulets d'isospin:
+\begin{equation}
+  \begin{array}{ccccccccccccc}
+    \Psi_2 & \equiv & (\nu_e)_R & ; & (\nu_\mu)_R & ; & (\nu_\tau)_R & ; & (u)_R & ; & (s)_R & ; & (t)_R\hspace{0.33cm}\mathrm{pour}\hspace{0.33cm}(I^\mathrm{W}_3=0)\\
+    \Psi_3 & \equiv & (  e  )_R & ; & (  \mu  )_R & ; & (  \tau  )_R & ; & (d)_R & ; & (c)_R & ; & (b)_R\hspace{0.33cm}\mathrm{pour}\hspace{0.33cm}(I^\mathrm{W}_3=0)
+  \end{array}
+\end{equation}
+
+En 1953, la formule de Gell-Mann-Nishijima fut découverte. Elle introduit un nouveau nombre quantique interne appelé \emph{hypercharge} (notée $ Y $) qui relie la charge électrique à la troisième composante de l'isospin faible :
+\begin{equation}
+  Q=I_3+\frac{1}{2}Y
+\end{equation}
+
+Il est évident que les doublets de fermions gauches ont une hypercharge $ Y=-1 $. Le modèle standard de Glashow, Salam et Weinberg (modèle GSW) est basé sur le groupe de jauge $ G $ formé du produit direct du groupe $ SU(2) $ pour l'isospin faible et $ U(1) $ pour l'hypercharge :
+\begin{equation}
+  G=SU(2)\times U(1)
+\end{equation}
+
+En posant $ g $, $ g' $ et $ Y_j $, des constantes de couplage et $ \sigma^a $, les matrices de Pauli, il est alors possible d'écrire le lagrangien de l'interaction électrofaible :
+\begin{eqnarray}\label{lagrangien_electrofaible}
+  \mathcal{L}_\mathrm{GSW} & = & \sum^3_{j=1}i\bar\Psi_j\slashed D\Psi^j-\frac{1}{4}W^a_{\mu\nu}W^{\mu\nu}_a-\frac{1}{4}B_{\mu\nu}B^{\mu\nu}\nonumber\\
+                           & = & \left[ \sum^3_{j=1}i\bar\Psi_j\slashed\partial\Psi^j-g\bar\Psi_j\frac{\sigma^a}{2}\slashed W_a\Psi^j-g'\bar\Psi_jY_j\slashed B\Psi^j\right]-\frac{1}{4}W^a_{\mu\nu}W^{\mu\nu}_a-\frac{1}{4}B_{\mu\nu}B^{\mu\nu}
+\end{eqnarray}
+
+\subsubsection{Les courants chargés}
+
+Le lagrangien de l'interaction électrofaible (équation \ref{lagrangien_electrofaible}) contient une partie faisant intervenir des courants chargés :
+\begin{equation}
+  \mathcal{L}_\mathrm{CC}=\frac{g}{2}\bar\Psi_1\gamma^\mu\left(\sigma_1W^1_\mu+\sigma_2W^2_\mu\right)\Psi^1
+\end{equation}
+
+Si l'on pose $ W^\pm_\mu=\frac{1}{\sqrt{2}}\left(W^1_\mu\mp iW^2_\mu\right) $ alors $ \sigma_1W^1_\mu+\sigma_2W^2_\mu=\sqrt{2}\left(\begin{array}{cc}0&W^-_\mu\\W^+_\mu&0\end{array}\right) $, le lagrangien peut se réécrire :
+\begin{eqnarray}
+  \mathcal{L}_\mathrm{CC} & = & \frac{g}{\sqrt{2}}\left(\bar f_L\ \bar f'_L\right)\gamma^\mu\left(\begin{array}{cc}0&W^-_\mu\\W^+_\mu&0\end{array}\right)\binom{f_L}{f'_L}\nonumber\\
+                          & = & \frac{g}{\sqrt{2}}\left[\bar f_L\gamma^\mu W^-_\mu f'_L+\bar f'_L\gamma^\mu W^+_\mu f_L\right]
+\end{eqnarray}
+
+En utilisant l'expression des projecteurs (équations \ref{projecteurs}), le lagrangien peut se réécrire sous sa forme définitive :
+\begin{equation}
+  \boxed{\mathcal{L}_\mathrm{CC}=\frac{g}{2\sqrt{2}}\left[\bar f\gamma^\mu(1-\gamma^5)W^-_\mu f'+\bar f'\gamma^\mu(1-\gamma^5)W^+_\mu f\right]}
+\end{equation}
+
+\subsubsection{Le courant neutre}
+
