@@ -159,9 +159,9 @@ On introduit alors les matrices de Dirac dans la représentation de Weyl :
   \sigma^{\mu\nu}=\frac{i}{2}\left[\gamma^\mu,\gamma^\nu\right]=2i\left(\begin{array}{cc} \left(\sigma^{\mu\nu}\right)^{\ \beta}_\alpha & 0 \\ 0 & \left(\bar\sigma^{\mu\nu}\right)^{\dot\alpha}_{\ \dot\beta} \\ \end{array}\right)
 \end{equation}
 
-Les matrices de Dirac satisfont à l'algèbre de Clifford, en effet, l'anticommutateur donne $ \left\{\gamma^\mu,\gamma^\nu\right\}=2g^{\mu\nu} $. Il est possible de réécrire les lagrangiens précédents en utilisant des bispineurs :
+Les matrices de Dirac satisfont à l'algèbre de Clifford, en effet, l'anticommutateur de deux matrices donne : $ \left\{\gamma^\mu,\gamma^\nu\right\}=2g^{\mu\nu} $. Il est possible de réécrire les lagrangiens précédents en utilisant des bispineurs :
 \begin{equation}\label{lagrangien_spineur}
-  \boxed{\mathcal{L}_\mathrm{masse}\propto m\bar\Psi\Psi}\hspace{0.33cm}\mathrm{et}\hspace{0.33cm}\boxed{\mathcal{L}_\mathrm{cin\acute{e}tique}\propto i\bar\Psi\gamma_\mu\partial^\mu\Psi\equiv i\bar\Psi\slashed\partial\Psi}
+  \boxed{\mathcal{L}_\mathrm{masse}\propto m\bar\Psi\Psi}\hspace{0.33cm}\mathrm{et}\hspace{0.33cm}\boxed{\mathcal{L}_\mathrm{cin\acute{e}tique}\propto i\bar\Psi\gamma_\mu\partial^\mu\Psi\equiv i\bar\Psi\slashed\partial\Psi\equiv i\partial_\mu j^\mu}
 \end{equation}
 
 \subsubsection{Projecteurs}
@@ -453,7 +453,7 @@ Les expériences ont permit de découvrir un certain nombre de propriétés propres 
   \Psi_1\equiv\binom{\nu_e}{e}_\mathrm{L}\ ;\ \binom{\nu_\mu}{\mu}_\mathrm{L}\ ;\ \binom{\nu_\tau}{\tau}_\mathrm{L} ;\ \binom{u}{d}_\mathrm{L}\ ;\ \binom{s}{c}_\mathrm{L}\ ;\ \binom{t}{b}_\mathrm{L}\hspace{0.33cm}\mathrm{pour}\hspace{0.33cm}\binom{I^\mathrm{W}_3=+\frac{1}{2}}{I^\mathrm{W}_3=-\frac{1}{2}}
 \end{equation}
 
-et en singulets d'isospin:
+et en singulets d'isospin faible :
 \begin{equation}
   \begin{array}{ccccccccccccc}
     \Psi_2 & \equiv & (\nu_e)_R & ; & (\nu_\mu)_R & ; & (\nu_\tau)_R & ; & (u)_R & ; & (s)_R & ; & (t)_R\hspace{0.33cm}\mathrm{pour}\hspace{0.33cm}(I^\mathrm{W}_3=0)\\
@@ -507,7 +507,7 @@ Si on introduit le bosons $ Z $ et le photon $ A $ en posant :
   \left(\begin{array}{c}W^3_\mu\\B_\mu\end{array}\right)=\left(\begin{array}{cc}+\cos\theta_W&+\sin\theta_W\\-\sin\theta_W&+\cos\theta_W\end{array}\right)\left(\begin{array}{c}Z_\mu\\A_\mu\end{array}\right)
 \end{equation}
 
-\noindent où $ \theta_W $ est un angle de mélange appelé angle de Weinberg. Remarquant de plus que le lagrangien peut se scinder en deux composantes, l'une ne faisant intervenir que le boson $ Z $ et l'autre ne faisant intervenir que le photon $ A $ : $ \mathcal{L}_\mathrm{CN}=\mathcal{L}^Z_\mathrm{CN}+\mathcal{L}^A_\mathrm{CN} $, le lagrangien se réécrit :
+\noindent où $ \theta_W $ est un angle de mélange appelé angle de Weinberg. Remarquant de plus que le lagrangien peut se scinder en deux composantes, l'une ne faisant intervenir que le boson $ Z $ et l'autre ne faisant intervenir que le photon $ A $ : $ \mathcal{L}_\mathrm{CN}=\mathcal{L}^Z_\mathrm{CN}+\mathcal{L}^A_\mathrm{CN} $, on peut écrire :
 \begin{equation}
   \boxed{\mathcal{L}^Z_\mathrm{CN}=\sum^3_{j=1}\bar\Psi_j\gamma^\mu\left(g\frac{\sigma_3}{2}\cos\theta_W-g'Y_i\sin\theta_W\right)Z_\mu\Psi^j}
 \end{equation}
@@ -527,9 +527,6 @@ Comme nous souhaitons que l'interaction électrofaible contienne l'interaction él
 \begin{equation}
   e=g\sin\theta_W=g'\cos\theta_W=\frac{gg'}{\sqrt{g^2+g'^2}}
 \end{equation}
-\begin{equation}
-  \cos\theta_W=\frac{g}{\sqrt{g^2+g'^2}}\hspace{0.33cm}\mathrm{,}\hspace{0.33cm}\sin\theta_W=\frac{g'}{\sqrt{g^2+g'^2}}
-\end{equation}
 
 En utilisant l'expression du projecteur vers la composante de chiralité left (équation \ref{projecteurs}), et après développement, le lagrangien $ \mathcal{L}^Z_\mathrm{CN} $ se réécrit sous sa forme définitive :
 \begin{eqnarray}
@@ -537,3 +534,155 @@ En utilisant l'expression du projecteur vers la composante de chiralité left (éq
   \phantom{\mathcal{L}^Z_\mathrm{CN}=\frac{e}{\sin\theta_W\cos\theta_W}}\left.\bar f         ' \gamma^\mu\left(-\frac{1}{4}-Q_{f         ' }\sin^2\theta_W+\frac{\gamma^5}{4}\right)f         ' \right]          Z_\mu
 \end{eqnarray}
 
+\subsubsection{Diagrammes de feynman}
+
+Les couplages élémentaires entre un doublet de fermions left et un boson de jauge sont les suivants :
+\begin{figure}[!htb]
+  \begin{center}
+
+    \begin{fmffile}{gsw_graph1}
+      \fmfframe(1,7)(1,7){ 
+       \begin{fmfgraph*}(110,62)
+        \fmfleft{i1,i2}
+        \fmfright{o1}
+        \fmf{fermion}{i1,v1,i2}
+        \fmf{photon}{v1,o1}
+        \fmfdot{v1}
+        \fmflabel{$f$}{i1}
+        \fmflabel{$\bar f'$}{i2}
+        \fmflabel{$W$}{o1}
+        \fmflabel{$-i\frac{e}{\sqrt{2}\sin\theta_W}\gamma_\mu\frac{1-\gamma^5}{2}$\ }{v1}
+       \end{fmfgraph*}
+      }
+    \end{fmffile}
+
+    \begin{tabular}{ccc}
+
+    \begin{fmffile}{gsw_graph2}
+      \fmfframe(1,7)(1,7){ 
+       \begin{fmfgraph*}(110,62)
+        \fmfleft{i1,i2}
+        \fmfright{o1}
+        \fmf{fermion}{i1,v1,i2}
+        \fmf{photon}{v1,o1}
+        \fmfdot{v1}
+        \fmflabel{$f$}{i1}
+        \fmflabel{$\bar f$}{i2}
+        \fmflabel{$Z$}{o1}
+        \fmflabel{$-i\frac{e}{\sin\theta_W\cos\theta_W}\gamma_\mu\frac{c^f_V-c^f_A\gamma^5}{2}\ $}{v1}
+       \end{fmfgraph*}
+      }
+    \end{fmffile}
+
+    & \hspace{1.0cm} &
+
+    \begin{fmffile}{gsw_graph3}
+      \fmfframe(1,7)(1,7){ 
+       \begin{fmfgraph*}(110,62)
+        \fmfleft{i1,i2}
+        \fmfright{o1}
+        \fmf{fermion}{i1,v1,i2}
+        \fmf{photon}{v1,o1}
+        \fmfdot{v1}
+        \fmflabel{$f$}{i1}
+        \fmflabel{$\bar f$}{i2}
+        \fmflabel{$\gamma$}{o1}
+        \fmflabel{$-ieQ_f\gamma_\mu\ $}{v1}
+       \end{fmfgraph*}
+      }
+    \end{fmffile}
+
+    \end{tabular}
+
+  \end{center}
+\end{figure}
+
+Remarque : Dans le modèle standard de la physique de particule, comme les neutrinos n'interagissent que via l'interaction faible alors leur composante right n'existe pas.
+
+\newpage
+
+Les couplages élémentaires entre les bosons de jauge sont les suivants :
+\begin{figure}[!htb]
+  \begin{center}
+
+    \begin{tabular}{ccc}
+
+    \begin{fmffile}{gsw_graph4}
+      \fmfframe(1,7)(1,7){ 
+       \begin{fmfgraph*}(110,62)
+        \fmfleft{i1,i2}
+        \fmfright{o1}
+        \fmf{photon}{i1,v1,i2}
+        \fmf{photon}{v1,o1}
+        \fmfdot{v1}
+        \fmflabel{$W^+$}{i1}
+        \fmflabel{$W^-$}{i2}
+        \fmflabel{$\gamma,Z$}{o1}
+       \end{fmfgraph*}
+      }
+    \end{fmffile}
+
+    & \hspace{1.0cm} &
+
+    \begin{fmffile}{gsw_graph5}
+      \fmfframe(1,7)(1,7){ 
+       \begin{fmfgraph*}(110,62)
+        \fmfleft{i1,i2}
+        \fmfright{o1,o2}
+        \fmf{photon}{i1,v1,i2}
+        \fmf{photon}{o1,v1,o2}
+        \fmfdot{v1}
+        \fmflabel{$W^+$}{i1}
+        \fmflabel{$W^-$}{i2}
+        \fmflabel{$W^+,\gamma,\gamma,Z$}{o1}
+        \fmflabel{$W^-,\gamma,     Z,Z$}{o2}
+       \end{fmfgraph*}
+      }
+    \end{fmffile}
+
+    \end{tabular}
+
+  \end{center}
+\end{figure}
+
+\subsection{Matrice CKM}
+
+Pour des quarks, l'expérience montre que les processus qui ne conservent pas la saveur sont défavorisés par rapport à ceux qui la conservent. En 1963, Nicola Cabibbo propose une explication pour les processus avec $ |\Delta S|=1 $ ($ S $ est l'étrangeté). Comme les quarks $ u $ et $ s $ ont les mêmes nombres quantiques, exception faite de la masse et de l'étrangeté, on peut supposé que les états propres de saveur soient en réalité une combinaison des quarks $ d $ et $ s $ :
+\begin{equation}
+  \left(\begin{array}{c}d'\\s'\end{array}\right)=\left(\begin{array}{cc}+\cos\theta_C&+\sin\theta_C\\-\sin\theta_C&+\cos\theta_C\end{array}\right)\left(\begin{array}{c}d\\s\end{array}\right)
+\end{equation}
+
+où $ \theta_C $ est appelé angle de Cabibbo. Ce mélange peut se généraliser à toutes les générations de quarks en introduisant la matrice unitaire de Cabibbo-Kobayashi-Maskawa (matrice CKM) :
+\begin{equation}
+  M_\mathrm{CKM}=\left(
+  \begin{array}{ccc}
+    c_{12}c_{13} & s_{12} c_{13} & s_{13}e^{-i\delta_{13}}\\
+    -s_{12}c_{23}-c_{12}s_{23}s_{13}e^{i\delta_{13}} & +c_{12}c_{23}-s_{12}s_{23}s_{13}e^{i\delta_{13}} & s_{23}c_{13}\\
+    +s_{12}s_{23}-c_{12}c_{23}s_{13}e^{i\delta_{13}} & -c_{12}s_{23}-s_{12}c_{23}s_{13}e^{i\delta_{13}} & c_{23}c_{13}
+  \end{array}
+  \right)
+\end{equation}
+\begin{equation}
+  \left(\begin{array}{c}d'\\s'\\b'\end{array}\right)=M_\mathrm{CKM}\left(\begin{array}{c}d\\s\\b\end{array}\right)
+\end{equation}
+
+où $ \theta_{12} $, $ \theta_{12} $, $ \theta_{23} $ sont des angles de mélange, $ \delta $ une phase de violation CP, $ s_{ij}\equiv\sin\theta_{ij} $ et enfin $ c_{ij}\equiv\cos\theta_{ij} $. Les valeurs expérimentales des angles de mélange ont été déterminés expérimentalement et mènent à :
+\begin{equation}
+  M_\mathrm{CKM}=\left(
+  \begin{array}{ccc}
+    0,97383^{+0,00024}_{-0,00023} & 0,2272^{+0,0010}_{-0,0010} & (3,96^{+0,09}_{-0,09})\times 10^{-3}\\
+    0,2271^{+0,0010}_{-0,0010} & 0,97296^{+0,00024}_{-0,00024} & (42,21^{+0,10}_{-0,80})\times 10^{-3}\\
+    (8,14^{+0,32}_{-0,64})\times 10^{-3} & (41,61^{+0,12}_{-0,78})\times 10^{-3} & 0,999100^{+0,000034}_{-0,000004}
+  \end{array}
+  \right)
+\end{equation}
+
+\subsection{Des bosons massifs}
+
+Nous avons vu que pour assurer l'invariance de jauge d'un lagrangien dans le cadre d'une théorie quantique des champs, les bosons de jauge doivent être nécessairement de masse nulle. C'est le cas, par exemple, du photon pour l'interaction électromagnétique et des gluons pour l'interaction forte.
+
+En 1983, après la découverte des bosons $ W^\pm $ et $ Z $ au CERN, il fut confirmé de façon indiscutable que ces trois bosons possèdent une masse importante. Actuellement, la masse mesurée du $ W^\pm $ est de $ 80.403(29)\GeV $ et la masse mesurée du $ Z $ est de $ 91.1876(21)\GeV $.
+
+Le premier modèle expliquant l'acquisition de masse par les particules fut proposé en 1964 parallèlement par Gerry Guralnik, Carl Richard Hagen, et Tom Kibble, Robert Brout et François Englert ainsi que par Peter Higgs. Ce modèle est désormais connu sous le nom de \emph{mécanisme de Higgs}. Il est un pilier du modèle standard de la physique des particules cependant, sa principale prédiction, le \emph{boson de Higgs}, n'a toujours pas été observé.
+
+\subsection{Le mécanisme de Higgs}
