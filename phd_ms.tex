@@ -2,7 +2,7 @@
 
 \newpage
 
-\section{Le lagrangien du MS}
+\section{Le lagrangien du modèle standard}
 
 \subsection{Théorie lagrangienne des champs}
 
@@ -59,7 +59,7 @@ Nous verrons que les champs vecteurs permettent de décrire les bosons de jauge q
 
 \newpage
 
-\subsection{Champs spineurs (spin $ \pm\frac{1}{2} $)}
+\subsection{Champs spineurs (spin $ \frac{1}{2} $)}
 
 Nous verrons que les champs spineurs permettent de décrire les fermions, c'est-à-dire les particules qui constituent la matière et qui satisfont au principe d'exclusion de Pauly.
 
@@ -164,6 +164,8 @@ Les matrices de Dirac satisfont à l'algèbre de Clifford, en effet, l'anticommuta
   \boxed{\mathcal{L}_\mathrm{masse}\propto m\bar\Psi\Psi}\hspace{0.33cm}\mathrm{et}\hspace{0.33cm}\boxed{\mathcal{L}_\mathrm{cin\acute{e}tique}\propto i\bar\Psi\gamma_\mu\partial^\mu\Psi\equiv i\bar\Psi\slashed\partial\Psi\equiv i\partial_\mu j^\mu}
 \end{equation}
 
+où $ j^\mu $ s'interprète comme une densité de courant fermionique.
+
 \subsubsection{Projecteurs}
 
 Introduisons les opérateurs suivants formés à partir des matrices $ \gamma^5 $:
@@ -186,11 +188,11 @@ il vient alors :
 
 \newpage
 
-\subsection{Transformation de jauge}
+\subsection{Transformations de jauge}
 
 La notion d'invariance de jauge fut introduite en 1929 par Hermann Weyl dans une tentative d'unification de l'électromagnétisme et de la gravitation. Ce fut un échec mais l'idée fut reprise par Paul Dirac puis généralisée par Chen Ning Yang et Robert Mills. Plus tard, les théories de jauge permirent la construction du modèle standard.
 
-\subsection{Invariance de jauge locales abéliennes}
+\subsubsection{Invariance de jauge locales abéliennes}
 
 Afin d'illustrer le concept d'invariance de jauge locale abélienne, nous partons du lagrangien d'une particule fermionique (équation \ref{lagrangien_spineur}). Il est simple de montrer que ce lagrangien reste invariant par une transformation de phase appliquée sur les champs fermioniques :
 \begin{equation}
@@ -239,7 +241,7 @@ Nous avons finalement :
 
 Il apparait alors un terme d'interaction entre deux fermions via $ \Psi $ et $ \bar\Psi $ et un boson de jauge via $ A^\mu $. Ce dernier est forcément de masse nulle car l'ajout d'un terme de masse $ m^2A_\mu A^\mu $ briserait l'invariance du jauge du lagrangien. Nous verrons ultérieurement que ce modèle simple permet la description de l'interaction électromagnétique.
 
-\subsection{Invariance de jauge locales non-abéliennes}
+\subsubsection{Invariance de jauge locales non-abéliennes}
 
 Soit $ U $ un groupe Lie (unitaire et continu) quelconque de dimension finie $ dim(U) $. Le champ fermionique se transforme par $ U $ comme précédemment :
 \begin{equation}
@@ -361,7 +363,7 @@ Les équations de Maxwell publiées dans leur forme définitives en 1873 ont enseig
   \end{center}
 \end{figure}
 
-Remarque : L'électrodynamique quantique est une théorie renormalisable.
+Remarque : L'électrodynamique quantique est une théorie renormalisable (voir annexe ???).
 
 \subsection{Chromodynamique quantique}
 
@@ -438,7 +440,7 @@ avec $ \slashed G^\beta_\alpha=\gamma_\mu G^\mu_a(T^a)^\beta_\alpha $ où $ T^a $
 
 Remarque 1 : La chromodynamique quantique est une interaction à portée limité du fait du confinement des quarks dans les hadrons et de l'effet de hadronisation\footnote{Du fait de l'importance de l'interaction forte, lors de la séparation de deux quarks, l'énergie nécessaire est plus grande que la masse des quarks si bien que de nouveaux quarks et de nouveaux états liés sont créés.}. En effet, nous pouvons faire l'analogie avec l'électromagnétisme, cette interaction est de portée infinie tandis que l'interaction électromagnétique de Van der Waals inter-moléculaire est de portée finie.\\
 
-Remarque 2 : La chromodynamique quantique est une théorie renormalisable.
+Remarque 2 : La chromodynamique quantique est une théorie renormalisable (voir annexe ???).
 
 \subsection{Interaction électrofaible}
 
@@ -468,7 +470,7 @@ En 1953, la formule de Gell-Mann-Nishijima fut découverte. Elle introduit un nou
 
 Il est évident que les doublets de fermions gauches ont une hypercharge $ Y=-1 $. Le modèle standard de Glashow, Salam et Weinberg (modèle GSW) est basé sur le groupe de jauge $ G $ formé du produit direct du groupe $ SU(2) $ pour l'isospin faible et $ U(1) $ pour l'hypercharge :
 \begin{equation}
-  G=SU(2)\times U(1)
+  G=SU(2)_L\times U(1)_Y
 \end{equation}
 
 En posant $ g $, $ g' $ et $ Y_j $, des constantes de couplage et $ \sigma^a $, les matrices de Pauli, il est alors possible d'écrire le lagrangien de l'interaction électrofaible :
@@ -507,7 +509,7 @@ Si on introduit le bosons $ Z $ et le photon $ A $ en posant :
   \left(\begin{array}{c}W^3_\mu\\B_\mu\end{array}\right)=\left(\begin{array}{cc}+\cos\theta_W&+\sin\theta_W\\-\sin\theta_W&+\cos\theta_W\end{array}\right)\left(\begin{array}{c}Z_\mu\\A_\mu\end{array}\right)
 \end{equation}
 
-\noindent où $ \theta_W $ est un angle de mélange appelé angle de Weinberg. Remarquant de plus que le lagrangien peut se scinder en deux composantes, l'une ne faisant intervenir que le boson $ Z $ et l'autre ne faisant intervenir que le photon $ A $ : $ \mathcal{L}_\mathrm{CN}=\mathcal{L}^Z_\mathrm{CN}+\mathcal{L}^A_\mathrm{CN} $, on peut écrire :
+où $ \theta_W $ est un angle de mélange appelé angle de Weinberg, $ \sin\theta_W=0.23120\pm0.00015 $ expérimentalement. Remarquant de plus que le lagrangien peut se scinder en deux composantes, l'une ne faisant intervenir que le boson $ Z $ et l'autre ne faisant intervenir que le photon $ A $ : $ \mathcal{L}_\mathrm{CN}=\mathcal{L}^Z_\mathrm{CN}+\mathcal{L}^A_\mathrm{CN} $, on peut écrire :
 \begin{equation}
   \boxed{\mathcal{L}^Z_\mathrm{CN}=\sum^3_{j=1}\bar\Psi_j\gamma^\mu\left(g\frac{\sigma_3}{2}\cos\theta_W-g'Y_i\sin\theta_W\right)Z_\mu\Psi^j}
 \end{equation}
@@ -525,7 +527,7 @@ Comme nous souhaitons que l'interaction électrofaible contienne l'interaction él
   Y_1=Q_f-\frac{1}{2}\hspace{0.33cm}\mathrm{,}\hspace{0.33cm}Y_2=Q_f\hspace{0.33cm}\mathrm{et}\hspace{0.33cm}Y_3=Q_{f'}
 \end{equation}
 \begin{equation}
-  e=g\sin\theta_W=g'\cos\theta_W=\frac{gg'}{\sqrt{g^2+g'^2}}
+  e=g\sin\theta_W=g'\cos\theta_W=\frac{gg'}{\sqrt{g^2+g'^2}}\hspace{0.33cm}\mathrm{,}\hspace{0.33cm}Z_\mu=\frac{g'B_\mu-gA^3_\mu}{\sqrt{g^2+g'^2}}\hspace{0.33cm}\mathrm{et}\hspace{0.33cm}A_\mu=\frac{g'B_\mu+gA^3_\mu}{\sqrt{g^2+g'^2}}
 \end{equation}
 
 En utilisant l'expression du projecteur vers la composante de chiralité left (équation \ref{projecteurs}), et après développement, le lagrangien $ \mathcal{L}^Z_\mathrm{CN} $ se réécrit sous sa forme définitive :
@@ -653,7 +655,7 @@ Pour des quarks, l'expérience montre que les processus qui ne conservent pas la 
 \end{equation}
 
 où $ \theta_C $ est appelé angle de Cabibbo. Ce mélange peut se généraliser à toutes les générations de quarks en introduisant la matrice unitaire de Cabibbo-Kobayashi-Maskawa (matrice CKM) :
-\begin{equation}
+\begin{equation}\label{matrice_ckm}
   M_\mathrm{CKM}=\left(
   \begin{array}{ccc}
     c_{12}c_{13} & s_{12} c_{13} & s_{13}e^{-i\delta_{13}}\\
@@ -679,10 +681,279 @@ où $ \theta_{12} $, $ \theta_{12} $, $ \theta_{23} $ sont des angles de mélange,
 
 \subsection{Des bosons massifs}
 
-Nous avons vu que pour assurer l'invariance de jauge d'un lagrangien dans le cadre d'une théorie quantique des champs, les bosons de jauge doivent être nécessairement de masse nulle. C'est le cas, par exemple, du photon pour l'interaction électromagnétique et des gluons pour l'interaction forte.
+Dans le cadre d'une théorie quantique des champs, nous avons vu que pour assurer l'invariance de jauge d'un lagrangien, les bosons de jauge doivent être nécessairement de masse nulle. C'est le cas, par exemple, du photon pour l'interaction électromagnétique et des gluons pour l'interaction forte.
 
-En 1983, après la découverte des bosons $ W^\pm $ et $ Z $ au CERN, il fut confirmé de façon indiscutable que ces trois bosons possèdent une masse importante. Actuellement, la masse mesurée du $ W^\pm $ est de $ 80.403(29)\GeV $ et la masse mesurée du $ Z $ est de $ 91.1876(21)\GeV $.
+En 1983, après la découverte des bosons $ W^\pm $ et $ Z $ au Cern, il fut confirmé de façon indiscutable que ces trois bosons possèdent une masse importante. Actuellement, la masse mesurée du $ W^\pm $ est $ M_W=80.403(29)\GeV $ et la masse mesurée du $ Z $ est $ M_Z=91.1876(21)\GeV $.
 
-Le premier modèle expliquant l'acquisition de masse par les particules fut proposé en 1964 parallèlement par Gerry Guralnik, Carl Richard Hagen, et Tom Kibble, Robert Brout et François Englert ainsi que par Peter Higgs. Ce modèle est désormais connu sous le nom de \emph{mécanisme de Higgs}. Il est un pilier du modèle standard de la physique des particules cependant, sa principale prédiction, le \emph{boson de Higgs}, n'a toujours pas été observé.
+Le premier modèle expliquant l'acquisition de masse par les particules fut proposé en 1964 parallèlement par Gerry Guralnik, Carl Richard Hagen, et Tom Kibble, Robert Brout et François Englert ainsi que par Peter Higgs (figure \ref{photographie}). Ce modèle est désormais connu sous le nom de \emph{mécanisme de Higgs}. Il est un pilier du modèle standard de la physique des particules, cependant, sa principale prédiction, le \emph{boson de Higgs}, n'a toujours pas été observé.
 
 \subsection{Le mécanisme de Higgs}
+
+Nous allons montrer que le mécanisme de Higgs permet l'acquisition de masse par brisure spontanée de la symétrie $ SU(2)_L\times U(1)_Y $. Commençons par introduire un doublet de champs scalaires complexes d'isospin faible avec une hypercharge $ Y=\frac{1}{2} $ :
+\begin{equation}
+  \boxed{\Phi_L=\binom{\Phi^+}{\Phi^0}\equiv\frac{1}{\sqrt{2}}\binom{\Phi_1+i\Phi_2}{\Phi_3+i\Phi_4}}
+\end{equation}
+
+Introduisons également le lagrangien $ \mathcal{L}_\mathrm{Higgs} $ du champ $ \Phi_L $ ainsi que le potentiel $ V_\mathrm{Higgs} $ du champ $ \Phi_L $ :
+\begin{equation}
+  \boxed{\mathcal{L}_\mathrm{Higgs}=\left(D_\mu\Phi_L\right)^\dag\left(D^\mu\Phi_L\right)-V_\mathrm{Higgs}(\Phi^\dag_L\Phi_L)}
+\end{equation}
+\begin{equation}
+  \boxed{V_\mathrm{Higgs}(\Phi^\dag_L\Phi_L)\equiv\mu^2\Phi^\dag_L\Phi_L+\lambda(\Phi^\dag_L\Phi_L)^2}
+\end{equation}
+
+Pour que le potentiel $ V_\mathrm{Higgs} $ soit borné et possède un ou plusieurs états fondamentaux, il faut nécessairement $ \lambda $ positif. Deux situations sont à distinguer selon les cas où le paramètre $ \mu^2 $ est respectivement positif ou négatif (figure \ref{potientiel_higgs}). Regardons par exemple les solutions de l'équation $ dV_\mathrm{Higgs}(\Phi^\dag_L\Phi_L)/d\Phi_3=0 $, $ \Phi_{1,2,4}=0 $ :
+\begin{itemize}
+  \item $ \mu^2>0 $ $ \Rightarrow $ un minimum trivial $ \left<0\right|\Phi_L\left|0\right>=0 $
+  \item $ \mu^2<0 $ $ \Rightarrow $ $ \left\{\begin{array}{l} \mathrm{un\ minimum\ trivial\ }\left<0\right|\Phi_L\left|0\right>=0 \\ \mathrm{un\ minimum\ non\ trivial\ }\boxed{\left<0\right|\Phi_L\left|0\right>=-\frac{\mu^2}{\lambda}\equiv\frac{v}{\sqrt{2}}} \end{array}\right. $
+\end{itemize}
+
+\begin{figure}[htbp]
+  \begin{center}
+
+    \begin{tabular}{ccc}
+    \includegraphics[height=4.1cm, keepaspectratio]{phd_ms/potentiel_higgs_1}
+    &\ \ \ \ \ \ \ &
+    \includegraphics[height=4.0cm, keepaspectratio]{phd_ms/potentiel_higgs_2}
+    \\
+    (a)
+    &\ \ \ \ \ \ \ &
+    (b)
+    \end{tabular}
+
+  \end{center}
+  \caption{\label{potientiel_higgs}(a) Représentation du potentiel de Higgs avec $ \mu^2>0 $. (b) Représentation du potentiel de Higgs avec $ \mu^2<0 $}
+\end{figure}
+
+Introduisons maintenant une transformation de jauge locale qui laisse invariant le lagrangien $ \mathcal{L}_\mathrm{Higgs} $ :
+\begin{equation}
+  \Phi'_L\rightarrow\Phi_L=\exp\left(i\frac{\sigma^a}{2}\chi_a(x)\right)\Phi'_L
+\end{equation}
+
+Il est possible de faire un choix de jauge pour choisir une configuration particulière du champ $ \Phi_L $ (astuce diabolique !) :
+\begin{equation}
+  \boxed{\Phi'_L\rightarrow\Phi_{0,L}=\frac{1}{\sqrt{2}}\binom{0}{v+h(x)}}
+\end{equation}
+
+Cette configuration brise la symétrie $ SU(2)_L $. Nous voyons ainsi apparaitre $ h(x) $ le champs scalaire associé au \emph{boson de Higgs}. Regardons maintenant comment sont générées les masses des bosons $ W^\pm $ et $ Z $. Essayons de calculer les termes de masses du lagrangien $ \mathcal{L}_\mathrm{Higgs} $ dans la limite où $ h(x) \rightarrow 0 $ :
+\begin{equation}
+  \mathcal{L}_\mathrm{M_W,M_Z}\equiv\lim_{h(x) \rightarrow 0}(D_\mu\Phi_{0,L})^\dag(D^\mu\Phi_{0,L})
+\end{equation}
+
+\newpage
+
+\begin{eqnarray*}
+  D_\mu\Phi_{0,L} & = & \left[\partial_\mu+ig\frac{\sigma^a}{2}W^a_\mu+ig'\left\{Y=\frac{1}{2}\right\}B_\mu\right]\binom{0}{\frac{v}{\sqrt{2}}}\\
+                  & = & \left[i\frac{g}{2}\left(\begin{array}{cc} +W^3_\mu & W^1_\mu-iW^2_\mu \\ W^1_\mu+iW^2_\mu & -W^3_\mu \end{array}\right)+i\frac{g'}{2}\left(\begin{array}{cc} B_\mu & 0 \\ 0 & B_\mu \end{array}\right)\right]\binom{0}{\frac{v}{\sqrt{2}}}\\
+                  & = & \frac{i}{2}\frac{v}{\sqrt{2}}\left(\begin{array}{c} gW^1_\mu-igW^2_\mu \\ g'B_\mu-gW^3_\mu \end{array}\right)
+\end{eqnarray*}
+
+En utilisant les expressions ??? et ???, on obtient :
+\begin{displaymath}
+  D_\mu\Phi_{0,L}=\frac{i}{2}\frac{v}{\sqrt{2}}\left(\begin{array}{c} \sqrt{2}gW^+_\mu \\ \sqrt{g^2+g'^2}Z_\mu \end{array}\right)\mathrm{,}
+\end{displaymath}
+
+et finalement :
+\begin{equation}
+  \boxed{\mathcal{L}_\mathrm{M_W,M_Z}=\left(\frac{vg}{2}\right)^2W^-_\mu W^{-\mu}+\left(\frac{vg}{2}\right)^2W^+_\mu W^{+\mu}+\left(\frac{v\sqrt{g^2+g'^2}}{2}\right)^2Z_\mu Z^\mu}
+\end{equation}
+\begin{equation}
+  \boxed{M_W=\frac{vg}{2}\hspace{0.33cm}\mathrm{,}\hspace{0.33cm}M_Z=\frac{v\sqrt{g^2+g'^2}}{2}\hspace{0.33cm}\mathrm{et}\hspace{0.33cm}M_A=0}
+\end{equation}
+\begin{equation}
+  \boxed{\frac{M_W}{M_Z}=\cos\theta_W<1}
+\end{equation}
+
+Si on développe le lagrangien $ \mathcal{L}_\mathrm{Higgs} $ sans faire tendre le champs de Higgs vers zéro, il apparait la masse du boson de Higgs :
+\begin{equation}
+  \boxed{M_\mathrm{Higgs}=\sqrt{-2\mu^2}}
+\end{equation}
+
+La masse du boson de Higgs est un \underline{paramètre libre} du modèle standard de la physique de la physique des particules. Il reste maintenant à déterminer comment font les fermions pour acquérir une masse. Examinons le couplage de Yakawa entre le doublets des leptons et le champ $ \Phi_{0,L} $  dans la limite où $ h(x) \rightarrow 0 $ :
+\begin{eqnarray}
+  \mathcal{L}_\mathrm{Yukawa\,leptons} & = & \sum_{l=e,\mu,\tau}-G_l\left[\left(\bar\nu_l\ \ \bar l_L\right)\binom{0}{\frac{v}{\sqrt{2}}}l_R+\bar l_R\left(0\ \ \frac{v}{\sqrt{2}}\right)\binom{\nu_l}{l_L}\right]\nonumber\\
+                              & = & \sum_{l=e,\mu,\tau}-G_l\frac{v}{\sqrt{2}}\left(\bar l_Ll_R+\bar l_R l_L\right)\nonumber
+\end{eqnarray}
+
+c'est-à-dire :
+\begin{equation}
+  \boxed{\mathcal{L}_\mathrm{Yukawa\,leptons}=\sum_{l=e,\mu,\tau}-G_l\frac{v}{\sqrt{2}}\bar ll}
+\end{equation}
+
+et en utilisant la matrice CMK (équation \ref{matrice_ckm}):
+\begin{equation}
+  \boxed{\mathcal{L}_\mathrm{Yukawa\,quarks}=\sum_{q=u,d,c,s,t,b}-G_q\frac{v}{\sqrt{2}}\bar qq}
+\end{equation}
+
+où les coefficients $ G $ sont appelés les couplages de Yukawa. Au final, le modèle de Higgs permet d'expliquer l'origine des masses des bosons $ W^\pm $ et $ Z $ ainsi que celles de tous les fermions. Dans le modèle standard minimal de la physique des particules, les neutrinos ont une masse nulle.
+
+\newpage
+
+\begin{figure}[htbp]
+  \begin{center}
+
+    \begin{tabular}{cc}
+    \includegraphics[height=5cm, keepaspectratio]{phd_ms/groupe_1}
+    &
+    \includegraphics[height=5cm, keepaspectratio]{phd_ms/groupe_2}
+    \\
+    (a)
+    &
+    (b)
+    \end{tabular}
+
+  \end{center}
+  \caption{\label{photographie}(a) Photographie de Tom Kibble, Gerry Guralnik, Carl Richard Hagen, François Englert et Robert Brout lors de la remise du Prix Sakurai 2010. (b) Photographie de Peter Higgs.}
+\end{figure}
+
+\subsection{Tableaux récapitulatifs}
+
+\newpage
+
+\section{La masse du boson de Higgs}
+
+Le modèle standard a été testé avec grande précision, néanmoins, la découverte du boson de Higgs n'a toujours pas eu lieue à cause de sa masse importante et de ses faibles sections efficaces d'interaction. L'objectif de cette section est de déterminer théoriquement des limites inférieure et supérieur à la masse du boson de Higgs puis de faire l'état des lieu des limites expérimentales établies auprès d'expériences comme le Large Electron Positron collider (LEP) au Cern et le Tevatron au Fermilab.
+
+\subsection{Limites théoriques}
+
+\subsubsection{Argument de trivialité}
+
+Le calcul des corrections radiatives qui interviennent dans le calcul de section efficace du processus $ HH\to HH $ fait intervenir des corrections divergentes qui nécessitent une renormalisation de la constante de couplage $ \lambda $ (figure \ref{higgs_autocouplage} (b)).
+
+\begin{figure}[!htb]
+  \begin{center}
+
+    \begin{tabular}{ccc}
+
+    \begin{fmffile}{higgs_graph1}
+      \fmfframe(1,7)(1,7){ 
+       \begin{fmfgraph*}(110,62)
+        \fmfleft{i1,i2}
+        \fmfright{o1,o2}
+        \fmf{dashes}{i1,v1,i2}
+        \fmf{dashes}{o1,v1,o2}
+        \fmfdot{v1}
+        \fmflabel{$H$}{i1}
+        \fmflabel{$H$}{i2}
+        \fmflabel{$H$}{o1}
+        \fmflabel{$H$}{o2}
+        \fmflabel{$\ \propto\lambda=\frac{M^2_\mathrm{Higgs}}{2v^2}$}{v1}
+       \end{fmfgraph*}
+      }
+    \end{fmffile}
+
+    &
+
+    \begin{fmffile}{higgs_graph2}
+      \fmfframe(1,7)(1,7){ 
+       \begin{fmfgraph*}(110,62)
+        \fmfleft{i1,i2}
+        \fmfright{o1,o2}
+        \fmf{dashes}{i1,v1,o1}
+        \fmf{dashes}{i2,v2,o2}
+        \fmf{dashes,tension=0.5,left=0.75,label=$H$}{v1,v2}
+        \fmf{dashes,tension=0.5,right=0.75,label=$H$}{v1,v2}
+        \fmfdot{v1}
+        \fmfdot{v2}
+        \fmflabel{$H$}{i1}
+        \fmflabel{$H$}{i2}
+        \fmflabel{$H$}{o1}
+        \fmflabel{$H$}{o2}
+       \end{fmfgraph*}
+      }
+    \end{fmffile}
+
+    &
+
+    \begin{fmffile}{higgs_graph3}
+      \fmfframe(1,7)(1,7){ 
+       \begin{fmfgraph*}(110,62)
+        \fmfleft{i1,i2}
+        \fmfright{o1,o2}
+        \fmf{dashes}{i1,v1}
+        \fmf{dashes}{i2,v2}
+        \fmf{dashes}{o1,v4}
+        \fmf{dashes}{o2,v3}
+        \fmf{fermion,tension=0.5,label=$t$,l.side=left}{v1,v2,v3}
+        \fmf{fermion,tension=0.5,label=$t$,l.side=left}{v3,v4,v1}
+        \fmfdot{v1}
+        \fmfdot{v2}
+        \fmfdot{v3}
+        \fmfdot{v4}
+        \fmflabel{$H$}{i1}
+        \fmflabel{$H$}{i2}
+        \fmflabel{$H$}{o1}
+        \fmflabel{$H$}{o2}
+       \end{fmfgraph*}
+      }
+    \end{fmffile}
+
+    \\
+
+    (a) & (b) & (c)
+
+    \end{tabular}
+
+  \end{center}
+  \caption{\label{higgs_autocouplage}Quelques diagrammes contribuant à l'autocouplage quadrilinéaire du boson de Higgs : zéro boucle (a), une boucle (b) et (c).}
+\end{figure}
+
+Selon Landau, Abrikosov et Khalatnikov, la relation entre la charge observable $ g(\Lambda) $ et la charge nue $ g(\Lambda_0) $, pour les théories de champs renormalisables, est donnée par l'expression (voir annexe ???) :
+\begin{equation}
+  g(\Lambda)=\frac{g(\Lambda_0)}{1-\beta_2g(\Lambda_0)\ln\frac{\Lambda^2}{\Lambda^2_0}}\hspace{0.33cm}\mathrm{soit\ encore}\hspace{0.33cm}\frac{1}{g(\Lambda)}=\frac{1}{g(\Lambda_0)}-\beta_2\ln\frac{\Lambda^2}{\Lambda^2_0}
+\end{equation}
+
+où $ \Lambda_0 $ est une énergie de référence. Pour déterminer cette formule, il faut résoudre les équations du groupe de renormalisation (RGE) en ne gardant que le terme d'ordre $ 2 $ :
+\begin{equation}
+  \beta(t)\equiv\frac{dg(t)}{dt}=\Lambda\frac{dg(\Lambda)}{d\Lambda}=\beta_2g^2(\Lambda)\cancel{+\beta_3g^3(\Lambda)+\ldots}
+\end{equation}
+
+en posant :
+\begin{equation}
+  \hspace{0.33cm}t\equiv\frac{1}{2}\ln\frac{\Lambda^2}{\Lambda^2_0}\Rightarrow dt=\frac{d\Lambda}{\Lambda}
+\end{equation}
+
+Dans le cadre du modèle standard, pour le couplage $ \lambda $, les RGE du secteur de Higgs pur sont connues jusqu'à trois boucles et s'écrivent :
+\begin{equation}
+  \frac{d\lambda}{dt}=\frac{3}{4\pi^2}\lambda^2-\frac{39}{32\pi^4}\lambda^3+\frac{7176+4032\zeta(3)}{(16\pi^2)^3}\lambda^4
+\end{equation}
+
+ce qui mène à :
+\begin{equation}
+  \boxed{\frac{1}{\lambda(\Lambda)}=\frac{1}{\lambda(v)}-\frac{3}{4\pi^2}\ln\frac{\Lambda^2}{v^2}}
+\end{equation}
+
+\newpage
+
+Précédemment, nous avons montré que le couplage $ \lambda $ est positif. Lorsque $ \Lambda\to+\infty $, pour respecter la condition $ \lambda(\Lambda)>0 $, il faut imposer $ \lambda(\Lambda_0)\to0 $. La théorie devient alors triviale c'est-à-dire une théorie de champs libres. Pour résoudre ce paradoxe, il faut supposer l'existence d'une énergie limite $ \Lambda_{cut} $ au delà de laquelle le modèle standard n'est plus valide. Cette coupure fournit alors une limite supérieure au couplage $ \lambda $ mais aussi une limite supérieure à la masse de boson de Higgs :
+\begin{equation}
+  \boxed{M^2_\mathrm{Higgs}=2\lambda v<\frac{8\pi^2v^2}{3\ln\frac{\Lambda^2_{cut}}{v^2}}}
+\end{equation}
+
+En prenant $ \Lambda_{cut} $ à l'échelle d'énergie de grande unification $ \Lambda_\mathrm{GUT}\sim10^{16}\GeV $ :
+\begin{equation}
+  \boxed{M_\mathrm{Higgs}<\sqrt{\frac{8\pi^2v^2}{3\ln\frac{\Lambda^2_\mathrm{GUT}}{v^2}}}=160\GeV}
+\end{equation}
+
+En prenant $ \Lambda_{cut} $ à l'échelle d'énergie du modèle standard $ \Lambda_\mathrm{MS}\sim10^{3}\GeV $ :
+\begin{equation}
+  \boxed{M_\mathrm{Higgs}<\sqrt{\frac{8\pi^2v^2}{3\ln\frac{\Lambda^2_\mathrm{MS}}{v^2}}}=700\GeV}
+\end{equation}
+
+En l'absence de la découverte d'un boson de Higgs léger ($ M_\mathrm{Higgs}<1\TeV $), les signe d'une nouvelle physique devraient apparaitre à l'échelle du $ \TeV $. La figure \ref{prediction} montre les bornes supérieure et inférieure sur la masse du boson de Higgs en fonction l'échelle d'énergie $ \Lambda $.
+
+\begin{figure}[htbp]
+  \begin{center}
+    \includegraphics[width=7cm, keepaspectratio]{phd_ms/prediction}
+  \end{center}
+  \caption{\label{prediction}Bornes supérieure et inférieure sur la masse du boson de Higgs en fonction l'échelle d'énergie $ \Lambda $. La masse du quark est $ 175\GeV $, et $ \alpha_S=0.118 $.}
+\end{figure}
+
+\subsubsection{Argument de stabilité du vide}
+
+\newpage
+
+\subsection{Limites expérimentales}
+
+\section{Limites du modèle standard}
+
