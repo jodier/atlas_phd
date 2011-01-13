@@ -705,7 +705,7 @@ Introduisons également le lagrangien $ \mathcal{L}_\mathrm{Higgs} $ du champ $ \
 Pour que le potentiel $ V_\mathrm{Higgs} $ soit borné et possède un ou plusieurs états fondamentaux, il faut nécessairement $ \lambda $ positif. Deux situations sont à distinguer selon les cas où le paramètre $ \mu^2 $ est respectivement positif ou négatif (figure \ref{potientiel_higgs}). Regardons par exemple les solutions de l'équation $ dV_\mathrm{Higgs}(\Phi^\dag_L\Phi_L)/d\Phi_3=0 $, $ \Phi_{1,2,4}=0 $ :
 \begin{itemize}
   \item $ \mu^2>0 $ $ \Rightarrow $ un minimum trivial $ \left<0\right|\Phi_L\left|0\right>=0 $
-  \item $ \mu^2<0 $ $ \Rightarrow $ $ \left\{\begin{array}{l} \mathrm{un\ minimum\ trivial\ }\left<0\right|\Phi_L\left|0\right>=0 \\ \mathrm{un\ minimum\ non\ trivial\ }\boxed{\left<0\right|\Phi_L\left|0\right>=-\frac{\mu^2}{\lambda}\equiv\frac{v}{\sqrt{2}}} \end{array}\right. $
+  \item $ \mu^2<0 $ $ \Rightarrow $ $ \left\{\begin{array}{l} \mathrm{un\ minimum\ trivial\ }\left<0\right|\Phi_L\left|0\right>=0 \\ \mathrm{un\ minimum\ non\ trivial\ }\boxed{\left<0\right|\Phi_L\left|0\right>=-\frac{\mu^2}{\lambda}\equiv v^2} \end{array}\right. $
 \end{itemize}
 
 \begin{figure}[htbp]
@@ -727,7 +727,7 @@ Pour que le potentiel $ V_\mathrm{Higgs} $ soit borné et possède un ou plusieurs
 
 Introduisons maintenant une transformation de jauge locale qui laisse invariant le lagrangien $ \mathcal{L}_\mathrm{Higgs} $ :
 \begin{equation}
-  \Phi'_L\rightarrow\Phi_L=\exp\left(i\frac{\sigma^a}{2}\chi_a(x)\right)\Phi'_L
+  \Phi'_L\rightarrow\Phi_L=\exp\left(i\frac{\sigma^a}{2}\frac{\chi_a(x)}{v}\right)\Phi'_L
 \end{equation}
 
 Il est possible de faire un choix de jauge pour choisir une configuration particulière du champ $ \Phi_L $ (astuce diabolique !) :
@@ -758,10 +758,10 @@ et finalement :
   \boxed{\mathcal{L}_\mathrm{M_W,M_Z}=\left(\frac{vg}{2}\right)^2W^-_\mu W^{-\mu}+\left(\frac{vg}{2}\right)^2W^+_\mu W^{+\mu}+\left(\frac{v\sqrt{g^2+g'^2}}{2}\right)^2Z_\mu Z^\mu}
 \end{equation}
 \begin{equation}
-  \boxed{M_W=\frac{vg}{2}\hspace{0.33cm}\mathrm{,}\hspace{0.33cm}M_Z=\frac{v\sqrt{g^2+g'^2}}{2}\hspace{0.33cm}\mathrm{et}\hspace{0.33cm}M_A=0}
+  \boxed{M_{W^\pm}=\frac{vg}{2}\hspace{0.33cm}\mathrm{,}\hspace{0.33cm}M_Z=\frac{v\sqrt{g^2+g'^2}}{2}\hspace{0.33cm}\mathrm{et}\hspace{0.33cm}M_A=0}
 \end{equation}
 \begin{equation}
-  \boxed{\frac{M_W}{M_Z}=\cos\theta_W<1}
+  \boxed{\frac{M_{W^\pm}}{M_Z}=\cos\theta_W<1}
 \end{equation}
 
 Si on développe le lagrangien $ \mathcal{L}_\mathrm{Higgs} $ sans faire tendre le champs de Higgs vers zéro, il apparait la masse du boson de Higgs :
@@ -771,21 +771,21 @@ Si on développe le lagrangien $ \mathcal{L}_\mathrm{Higgs} $ sans faire tendre l
 
 La masse du boson de Higgs est un \underline{paramètre libre} du modèle standard de la physique de la physique des particules. Il reste maintenant à déterminer comment font les fermions pour acquérir une masse. Examinons le couplage de Yakawa entre le doublets des leptons et le champ $ \Phi_{0,L} $  dans la limite où $ h(x) \rightarrow 0 $ :
 \begin{eqnarray}
-  \mathcal{L}_\mathrm{Yukawa\,leptons} & = & \sum_{l=e,\mu,\tau}-G_l\left[\left(\bar\nu_l\ \ \bar l_L\right)\binom{0}{\frac{v}{\sqrt{2}}}l_R+\bar l_R\left(0\ \ \frac{v}{\sqrt{2}}\right)\binom{\nu_l}{l_L}\right]\nonumber\\
-                              & = & \sum_{l=e,\mu,\tau}-G_l\frac{v}{\sqrt{2}}\left(\bar l_Ll_R+\bar l_R l_L\right)\nonumber
+  \mathcal{L}_\mathrm{Yukawa\,leptons} & = & \sum_{l=e,\mu,\tau}-\lambda_l\left[\left(\bar\nu_l\ \ \bar l_L\right)\binom{0}{\frac{v}{\sqrt{2}}}l_R+\bar l_R\left(0\ \ \frac{v}{\sqrt{2}}\right)\binom{\nu_l}{l_L}\right]\nonumber\\
+                              & = & \sum_{l=e,\mu,\tau}-\lambda_l\frac{v}{\sqrt{2}}\left(\bar l_Ll_R+\bar l_R l_L\right)\nonumber
 \end{eqnarray}
 
 c'est-à-dire :
 \begin{equation}
-  \boxed{\mathcal{L}_\mathrm{Yukawa\,leptons}=\sum_{l=e,\mu,\tau}-G_l\frac{v}{\sqrt{2}}\bar ll}
+  \boxed{\mathcal{L}_\mathrm{Yukawa\,leptons}=\sum_{l=e,\mu,\tau}-\lambda_l\frac{v}{\sqrt{2}}\bar ll}
 \end{equation}
 
 et en utilisant la matrice CMK (équation \ref{matrice_ckm}):
 \begin{equation}
-  \boxed{\mathcal{L}_\mathrm{Yukawa\,quarks}=\sum_{q=u,d,c,s,t,b}-G_q\frac{v}{\sqrt{2}}\bar qq}
+  \boxed{\mathcal{L}_\mathrm{Yukawa\,quarks}=\sum_{q=u,d,c,s,t,b}-\lambda_q\frac{v}{\sqrt{2}}\bar qq}
 \end{equation}
 
-où les coefficients $ G $ sont appelés les couplages de Yukawa. Au final, le modèle de Higgs permet d'expliquer l'origine des masses des bosons $ W^\pm $ et $ Z $ ainsi que celles de tous les fermions. Dans le modèle standard minimal de la physique des particules, les neutrinos ont une masse nulle.
+où les coefficients $ \lambda_l $ et $ \lambda_q $ sont appelés les couplages de Yukawa. Au final, le modèle de Higgs permet d'expliquer l'origine des masses des bosons $ W^\pm $ et $ Z $ ainsi que celles de tous les fermions. Dans le modèle standard minimal de la physique des particules, les neutrinos ont une masse nulle.
 
 \newpage
 
@@ -806,13 +806,91 @@ où les coefficients $ G $ sont appelés les couplages de Yukawa. Au final, le mod
   \caption{\label{photographie}(a) Photographie de Tom Kibble, Gerry Guralnik, Carl Richard Hagen, François Englert et Robert Brout lors de la remise du Prix Sakurai 2010. (b) Photographie de Peter Higgs.}
 \end{figure}
 
+\subsection{La gravitation}
+
+D'un point de vue classique, la gravitation est décrite par la théorie de la relativité générale. Elle fut établie en 1925 par Albert Einstein et permet une description remarquable de l'univers et des objets astrophysiques. D'un point de vue quantique, il n'existe actuellement aucune théorie complètement satisfaisante même si de bons candidats existent, citons par exemple la supergravité, la théorie des cordes, la théorie des supercordes ou encore la gravitation à boucles. Il faut cependant noter que l'interactions gravitationnelle entre des particules fondamentales est extrêmement faible, au moins trente ordres de grandeur de moins que l'interaction faible. Dans la pratique, la gravitation est tout simplement ignorée.
+
+Mathématiquement, le célèbre théorème de topologie \emph{no-go} de Sidney Coleman et Jeffrey Mandula affirme qu'il n'existe pas de représentation unitaire de dimension finie pour un groupe non compact. C'est pourquoi une description de la gravitation n'est pas possible dans le cadre du modèle standard.
+
 \subsection{Tableaux récapitulatifs}
+
+blabla blabla blabla blabla blabla blabla blabla blabla blabla blabla blabla blabla blabla blabla blabla blabla blabla blabla blabla blabla blabla blabla blabla blabla blabla blabla blabla blabla blabla blabla blabla blabla blabla blabla blabla blabla blabla blabla blabla blabla blabla blabla blabla blabla blabla blabla blabla blabla.
+
+\begin{table}[!htb]
+  \begin{center}
+
+    \begin{tabular}{|l|c|c|c|c|}
+      \hline
+      Interactions & Forte & Électromagnétique & Faible & Gravitationnelle \\
+      \hline
+      \hline
+      Boson(s) & 8 gluons & 1 photon & $ Z $ et $ W^\pm $ & graviton(s) \\
+      \hline
+      $ \mathrm{Spin}^\mathrm{Parite} $ & $ 1^- $ & $ 1^- $ & $ 1^- $, $ 1^+ $ & $ 2^+ $ \\
+      \hline
+      Masse(s) & 0 & 0 & & 0 \\
+      \hline
+      Portée & $ \infty $, confinée $ <10^{-15} $ m & $ \infty $ & $ <10^{-18} $ m & $ \infty $ \\
+      \hline
+      Source & couleur & charge électrique & charge faible & énergie/masse \\
+      \hline
+      Couplage & $ \alpha_S=0.118\pm0.003 $ & $ \alpha $ & & $ \sim4.6\times10^{-40} $ \\
+      \hline
+    \end{tabular}
+
+  \end{center}
+  \caption{Tableau récapitulatif interactions fondamentales.}
+\end{table}
+
+\newpage
+
+\begin{table}[!htb]
+  \begin{center}
+
+    \begin{tabular}{|l|c|c|c|}
+      \hline
+        Quantité & Int. forte & \ Int. EM\  & Int. faible \\
+      \hline
+      \hline
+        Énergie-impulsion & & & \\
+        Moment cinétique total & & & \\
+        Parité de charge $ C $ & & & \\
+        Parité d'espace $ P $ & & & \\
+        Renversement du temps $ T $ & & & \\
+        $Q$ (charge électrique) & & & \\
+        $L_e$ (nb. électronique) & & & \\
+        $L_\mu$ (nb. muonique) & & & \\
+        $L_\tau$ (nb. tauonique) & & & \\
+        B (nb. baryonique) & & & \\
+        I (isospin fort) & & & \\
+        I3 (isospin fort) & & & \\
+        S (étrangeté) & & & \\
+        C (charme) & & & \\
+        B (bottom) & & & \\
+        T (top) & & & \\
+        Parité-G & & & \\
+        CPT & & & \\
+      \hline
+    \end{tabular}
+
+  \end{center}
+  \caption{Tableau récapitulatif des lois de conservations du modèle standard.}
+\end{table}
+
+\begin{table}[!htb]
+  \begin{center}
+
+    
+
+  \end{center}
+  \caption{Tableau récapitulatif des paramètres du modèle standard.}
+\end{table}
 
 \newpage
 
 \section{La masse du boson de Higgs}
 
-Le modèle standard a été testé avec grande précision, néanmoins, la découverte du boson de Higgs n'a toujours pas eu lieue à cause de sa masse importante et de ses faibles sections efficaces d'interaction. L'objectif de cette section est de déterminer théoriquement des limites inférieure et supérieur à la masse du boson de Higgs puis de faire l'état des lieu des limites expérimentales établies auprès d'expériences comme le Large Electron Positron collider (LEP) au Cern et le Tevatron au Fermilab.
+Le modèle standard a été testé avec grande précision, néanmoins, la découverte du boson de Higgs n'a toujours pas eu lieue à cause de sa faible section efficace d'interaction. L'objectif de cette section est de déterminer théoriquement des limites inférieure et supérieur à la masse du boson de Higgs puis de faire l'état des lieu des limites expérimentales établies auprès d'expériences comme le Large Electron Positron collider (LEP) au Cern et le Tevatron au Fermilab.
 
 \subsection{Limites théoriques}
 
@@ -837,7 +915,7 @@ Le calcul des corrections radiatives qui interviennent dans le calcul de section
         \fmflabel{$H$}{i2}
         \fmflabel{$H$}{o1}
         \fmflabel{$H$}{o2}
-        \fmflabel{$\ \propto\lambda=\frac{M^2_\mathrm{Higgs}}{2v^2}$}{v1}
+        \fmflabel{$\ \propto\left\{\lambda=\frac{M^2_\mathrm{Higgs}}{2v^2}\right\}$}{v1}
        \end{fmfgraph*}
       }
     \end{fmffile}
@@ -925,9 +1003,9 @@ ce qui mène à :
 
 \newpage
 
-Précédemment, nous avons montré que le couplage $ \lambda $ est positif. Lorsque $ \Lambda\to+\infty $, pour respecter la condition $ \lambda(\Lambda)>0 $, il faut imposer $ \lambda(\Lambda_0)\to0 $. La théorie devient alors triviale c'est-à-dire une théorie de champs libres. Pour résoudre ce paradoxe, il faut supposer l'existence d'une énergie limite $ \Lambda_{cut} $ au delà de laquelle le modèle standard n'est plus valide. Cette coupure fournit alors une limite supérieure au couplage $ \lambda $ mais aussi une limite supérieure à la masse de boson de Higgs :
+Précédemment, nous avons montré que le couplage $ \lambda $ est positif. Lorsque $ \Lambda\to+\infty $, pour respecter la condition $ \lambda(\Lambda)>0 $, il faut imposer $ \lambda(\Lambda_0)\to0 $. La théorie devient alors triviale c'est-à-dire une théorie de champs libres. Pour résoudre ce paradoxe, il faut supposer l'existence d'une énergie limite $ \Lambda_{cut} $ au delà de laquelle le modèle n'est plus valide. Cette coupure fournit alors une limite supérieure au couplage $ \lambda $ mais aussi une limite supérieure à la masse de boson de Higgs :
 \begin{equation}
-  \boxed{M^2_\mathrm{Higgs}=2\lambda v<\frac{8\pi^2v^2}{3\ln\frac{\Lambda^2_{cut}}{v^2}}}
+  \boxed{M^2_\mathrm{Higgs}=2\lambda v^2<\frac{8\pi^2v^2}{3\ln\frac{\Lambda^2_{cut}}{v^2}}}
 \end{equation}
 
 En prenant $ \Lambda_{cut} $ à l'échelle d'énergie de grande unification $ \Lambda_\mathrm{GUT}\sim10^{16}\GeV $ :
@@ -940,20 +1018,51 @@ En prenant $ \Lambda_{cut} $ à l'échelle d'énergie du modèle standard $ \Lambda_
   \boxed{M_\mathrm{Higgs}<\sqrt{\frac{8\pi^2v^2}{3\ln\frac{\Lambda^2_\mathrm{MS}}{v^2}}}=700\GeV}
 \end{equation}
 
-En l'absence de la découverte d'un boson de Higgs léger ($ M_\mathrm{Higgs}<1\TeV $), les signe d'une nouvelle physique devraient apparaitre à l'échelle du $ \TeV $. La figure \ref{prediction} montre les bornes supérieure et inférieure sur la masse du boson de Higgs en fonction l'échelle d'énergie $ \Lambda $.
+En l'absence de la découverte d'un boson de Higgs léger ($ M_\mathrm{Higgs}<1\TeV $), les signe d'une nouvelle physique devraient apparaitre à l'échelle du $ \TeV $. La figure \ref{prediction} montre les bornes supérieure et inférieure sur la masse du boson de Higgs en fonction l'échelle d'énergie $ \Lambda_\mathrm{cut} $.
 
 \begin{figure}[htbp]
   \begin{center}
     \includegraphics[width=7cm, keepaspectratio]{phd_ms/prediction}
   \end{center}
-  \caption{\label{prediction}Bornes supérieure et inférieure sur la masse du boson de Higgs en fonction l'échelle d'énergie $ \Lambda $. La masse du quark est $ 175\GeV $, et $ \alpha_S=0.118 $.}
+  \caption{\label{prediction}Bornes théoriques supérieure et inférieure de la masse du boson de Higgs en fonction l'échelle d'énergie $ \Lambda $ obtenues à partir des arguments de trivialité et de stabilité du vide. La masse du quark top est $ m_t=175\GeV $, et $ \alpha_S=0.118 $.}
 \end{figure}
 
 \subsubsection{Argument de stabilité du vide}
 
+Considérons maintenant la prise en compte d'une boucle de quarks top (figure \ref{higgs_autocouplage} (c)). Dans la limite où $ \lambda $ est petit, l'équation du groupe de renormalisation s'écrit :
+\begin{equation}
+  \frac{d\lambda}{dt}=\frac{1}{8\pi^2}\left[\frac{3}{16}\left(2g^4+\left(g^2+g'^2\right)^2\right)-3\lambda^4_t\right]
+\end{equation}
+
+où $ \lambda_t $ est le couplage de Yukawa du quart top.
+
 \newpage
 
-\subsection{Limites expérimentales}
+Cette équation se résout en :
+\begin{equation}
+  \boxed{\lambda(\Lambda)=\lambda(\Lambda_0)+\frac{1}{8\pi^2}\left[\frac{3}{16}\left(2g^4+\left(g^2+g'^2\right)^2\right)-3\lambda^4_t\right]\ln\frac{\Lambda^2}{\Lambda^2_0}}
+\end{equation}
 
-\section{Limites du modèle standard}
+Pour que $ \lambda(\Lambda) $ reste positif, la masse du boson de Higgs soit satisfaire à :
+\begin{equation}
+  \boxed{M^2_\mathrm{Higgs}>\frac{v^2}{4\pi^2}\left[3\lambda^4_y-\frac{3}{16}\left(2g^4+\left(g^2+g'^2\right)^2\right)\right]\frac{\Lambda^2_\mathrm{cut}}{v^2}}
+\end{equation}
+
+En prenant $ \Lambda_{cut} $ à l'échelle d'énergie de grande unification $ \Lambda_\mathrm{GUT}\sim10^{16}\GeV $ :
+\begin{equation}
+  M^2_\mathrm{Higgs}>???
+\end{equation}
+
+En prenant $ \Lambda_{cut} $ à l'échelle d'énergie du modèle standard $ \Lambda_\mathrm{MS}\sim10^{3}\GeV $ :
+\begin{equation}
+  M^2_\mathrm{Higgs}>???
+\end{equation}
+
+La figure \ref{prediction} montre les bornes supérieure et inférieure sur la masse du boson de Higgs en fonction l'échelle d'énergie $ \Lambda_\mathrm{cut} $.
+
+\newpage
+
+%\subsection{Limites expérimentales}
+
+%\section{Limites du modèle standard}
 
