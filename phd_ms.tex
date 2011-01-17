@@ -224,7 +224,7 @@ On dit que le lagrangien $ \mathcal{L} $ n'est pas invariant par transformation 
   D_\mu(x)\rightarrow e^{-ig\chi(x)}D_\mu(x)
 \end{equation}
 \begin{equation}\label{jauge_photon}
-  A_\mu(x)\rightarrow A_\mu(x)+\partial_\mu\chi(x)
+  A_\mu(x)\rightarrow A_\mu(x)+\frac{1}{g}\partial_\mu\chi(x)
 \end{equation}
 
 Vérifions que le lagrangien d'un boson jauge vecteur (équation \ref{lagrangien_vecteur}) reste invariant par la transformation de jauge qui vient d'apparaitre (équation \ref{jauge_photon}):
@@ -271,7 +271,7 @@ Le lagrangien (équation \ref{lagrangien_spineur}) est invariant de jauge locale 
   D_\mu(x)\rightarrow e^{-ig\vec\chi(x).\vec T}D_\mu(x)
 \end{equation}
 \begin{equation}
-  A_\mu(x)\rightarrow A_\mu(x)+\partial_\mu(\vec\chi.\vec T)(x)
+  A_\mu(x)\rightarrow A_\mu(x)+\frac{1}{g}\partial_\mu\vec\chi(x).\vec T
 \end{equation}
 
 Nous avons finalement :
@@ -828,7 +828,7 @@ où les coefficients $ \lambda_l $ et $ \lambda_q $ sont appelés les couplages de
         \fmflabel{$W$}{i1}
         \fmflabel{$W$}{i2}
         \fmflabel{$H$}{o1}
-        \fmflabel{$igM_Wg_{\mu\nu}\ $}{v1}
+        \fmflabel{$i\frac{e}{\sin\theta_W}M_Wg_{\mu\nu}\ $}{v1}
        \end{fmfgraph*}
       }
     \end{fmffile}
@@ -846,7 +846,7 @@ où les coefficients $ \lambda_l $ et $ \lambda_q $ sont appelés les couplages de
         \fmflabel{$Z$}{i1}
         \fmflabel{$Z$}{i2}
         \fmflabel{$H$}{o1}
-        \fmflabel{$i\frac{g}{\cos\theta_W}M_Zg_{\mu\nu}\ $}{v1}
+        \fmflabel{$i\frac{e}{\sin\theta_W\cos\theta_W}M_Zg_{\mu\nu}\ $}{v1}
        \end{fmfgraph*}
       }
     \end{fmffile}
@@ -868,7 +868,7 @@ où les coefficients $ \lambda_l $ et $ \lambda_q $ sont appelés les couplages de
         \fmflabel{$f$}{i1}
         \fmflabel{$\bar f$}{i2}
         \fmflabel{$H$}{o1}
-        \fmflabel{$-i\frac{g}{2}\frac{m_f}{M_W}$}{v1}
+        \fmflabel{$-i\frac{e}{2\sin\theta_W}\frac{m_f}{M_W}$}{v1}
        \end{fmfgraph*}
       }
     \end{fmffile}
@@ -886,7 +886,7 @@ où les coefficients $ \lambda_l $ et $ \lambda_q $ sont appelés les couplages de
         \fmflabel{$H$}{i1}
         \fmflabel{$H$}{i2}
         \fmflabel{$H$}{o1}
-        \fmflabel{$-i\frac{3g}{2}\frac{M_\mathrm{Higgs}}{M_W}\ $}{v1}
+        \fmflabel{$-i\frac{3e}{2\sin\theta_W}\frac{M_\mathrm{Higgs}}{M_W}\ $}{v1}
        \end{fmfgraph*}
       }
     \end{fmffile}
@@ -898,13 +898,13 @@ où les coefficients $ \lambda_l $ et $ \lambda_q $ sont appelés les couplages de
     \end{tabular}
 
   \end{center}
-  \caption{Couplages trilinéaires du boson de Higgs avec les bosons $ W^\pm $ et $ Z $, (a) et (b), avec les fermions (couplages de Yukawa), (c) et auto-couplage (d).}
+  \caption{Couplages trilinéaires du boson de Higgs avec les bosons $ W^\pm $ et $ Z $, (a) et (b), avec les fermions (couplages de Yukawa), (c) et autocouplage (d).}
 \end{figure}
 
 \begin{figure}[!htb]
   \begin{center}
 
-    \begin{tabular}{ccc}
+    \begin{tabular}{ccccc}
 
     \begin{fmffile}{higgs_grap5}
       \fmfframe(1,7)(1,7){ 
@@ -918,12 +918,12 @@ où les coefficients $ \lambda_l $ et $ \lambda_q $ sont appelés les couplages de
         \fmflabel{$W$}{i2}
         \fmflabel{$H$}{o1}
         \fmflabel{$H$}{o2}
-        \fmflabel{$\ i\frac{g^2}{2}g_{\mu\nu}$}{v1}
+        \fmflabel{$\ i\frac{e^2}{2\sin^2\theta_W}g_{\mu\nu}$}{v1}
        \end{fmfgraph*}
       }
     \end{fmffile}
 
-    &
+    & \ &
 
     \begin{fmffile}{higgs_graph6}
       \fmfframe(1,7)(1,7){ 
@@ -937,12 +937,12 @@ où les coefficients $ \lambda_l $ et $ \lambda_q $ sont appelés les couplages de
         \fmflabel{$Z$}{i2}
         \fmflabel{$H$}{o1}
         \fmflabel{$H$}{o2}
-        \fmflabel{$\ i\frac{g^2}{2\cos^2\theta_W}g_{\mu\nu}$}{v1}
+        \fmflabel{$\ i\frac{e^2}{2\sin^2\theta_W\cos^2\theta_W}g_{\mu\nu}$}{v1}
        \end{fmfgraph*}
       }
     \end{fmffile}
 
-    &
+    & \ &
 
     \begin{fmffile}{higgs_graph7}
       \fmfframe(1,7)(1,7){ 
@@ -956,19 +956,19 @@ où les coefficients $ \lambda_l $ et $ \lambda_q $ sont appelés les couplages de
         \fmflabel{$H$}{i2}
         \fmflabel{$H$}{o1}
         \fmflabel{$H$}{o2}
-        \fmflabel{$\ -i\frac{3g^2}{4}\frac{M^2_\mathrm{Higgs}}{M^2_W}$}{v1}
+        \fmflabel{$\ -i\frac{3e^2}{4\sin\theta_W}\frac{M^2_\mathrm{Higgs}}{M^2_W}$}{v1}
        \end{fmfgraph*}
       }
     \end{fmffile}
 
     \\
 
-    (a) & (b) & (c)
+    (a) & & (b) & & (c)
 
     \end{tabular}
 
   \end{center}
-  \caption{Couplages quadrilinéaires du boson de Higgs avec les bosons $ W^\pm $ et $ Z $, (a) et (b) et auto-couplage, (c).}
+  \caption{Couplages quadrilinéaires du boson de Higgs avec les bosons $ W^\pm $ et $ Z $, (a) et (b) et autocouplage, (c).}
 \end{figure}
 
 \subsection{La gravitation}
@@ -1013,24 +1013,24 @@ Mathématiquement, le célèbre théorème de topologie \emph{no-go} de Sidney Colema
         Quantité & Int. forte & \ Int. EM\  & Int. faible \\
       \hline
       \hline
-        \small Énergie-impulsion & & & \\
-        \small Moment cinétique total & & & \\
-        \small Parité de charge $ \mathcal{C} $ & & & \\
-        \small Parité d'espace $ \mathcal{P} $ & & & \\
-        \small Renversement du temps $ \mathcal{T} $ & & & \\
-        \small $ Q $ (charge électrique) & & & \\
-        \small $ L_e $ (nb. électronique) & & & \\
-        \small $ L_\mu $ (nb. muonique) & & & \\
-        \small $ L_\tau $ (nb. tauonique) & & & \\
-        \small B (nb. baryonique) & & & \\
-        \small I (isospin fort) & & & \\
-        \small I3 (isospin fort) & & & \\
-        \small S (étrangeté) & & & \\
-        \small C (charme) & & & \\
-        \small B (bottom) & & & \\
-        \small T (top) & & & \\
-        \small Parité-$ \mathcal{G}\equiv\mathcal{C}e^{i\pi I_2} $ & & & \\
-        \small $ \mathcal{CPT} $ & & & \\
+        \small Énergie-impulsion & $ \hspace{1.0cm}\bullet\hspace{1.0cm} $ & $ \hspace{1.0cm}\bullet\hspace{1.0cm} $ & $ \hspace{1.0cm}\bullet\hspace{1.0cm} $ \\
+        \small Moment cinétique total & $ \bullet $ & $ \bullet $ & $ \bullet $ \\
+        \small Parité de charge $ \mathcal{C} $ & $ \bullet $ & $ \bullet $ & \\
+        \small Parité d'espace $ \mathcal{P} $ & $ \bullet $ & $ \bullet $ & \\
+        \small Renversement du temps $ \mathcal{T} $ & $ \bullet $ & $ \phantom{\bullet} $ & \\
+        \small $ Q $ (charge électrique) & $ \bullet $ & $ \bullet $ & $ \bullet $ \\
+        \small $ L_e $ (nb. électronique) & $ \bullet $ & $ \bullet $ & $ \bullet $ \\
+        \small $ L_\mu $ (nb. muonique) & $ \bullet $ & $ \bullet $ & $ \bullet $ \\
+        \small $ L_\tau $ (nb. tauonique) & $ \bullet $ & $ \bullet $ & $ \bullet $ \\
+        \small $ B $ (nb. baryonique) & $ \bullet $ & $ \bullet $ & \\
+        \small $ I $ (isospin fort) & $ \bullet $ & $ \phantom{\bullet} $ & \\
+        \small $ I_3 $ (isospin fort) & $ \bullet $ & $ \bullet $ & \\
+        \small $ S $ (étrangeté) & $ \bullet $ & $ \bullet $ & \\
+        \small $ C $ (charme) & $ \bullet $ & $ \bullet $ & \\
+        \small $ B $ (bottom) & $ \bullet $ & $ \bullet $ & \\
+        \small $ T $ (top) & $ \bullet $ & $ \bullet $ & \\
+        \small Parité-$ \mathcal{G}\equiv\mathcal{C}e^{i\pi I_2} $ & $ \bullet $ & $ \phantom{\bullet} $ & \\
+        \small $ \mathcal{CPT} $ & $ \bullet $ & $ \bullet $ & $ \bullet $ \\
       \hline
     \end{tabular}
 
@@ -1062,7 +1062,7 @@ Mathématiquement, le célèbre théorème de topologie \emph{no-go} de Sidney Colema
 
 \section{La masse du boson de Higgs}
 
-Le modèle standard a été testé avec grande précision, néanmoins, la découverte du boson de Higgs n'a toujours pas eu lieue à cause de sa faible section efficace d'interaction. L'objectif de cette section est de déterminer théoriquement des limites inférieure et supérieur à la masse du boson de Higgs puis de faire l'état des lieu des limites expérimentales établies auprès d'expériences comme le Large Electron Positron collider (LEP) au Cern et le Tevatron au Fermilab.
+Le modèle standard a été testé avec grande précision, néanmoins, le boson de Higgs n'a pas encore été observé à cause de sa faible section efficace d'interaction. L'objectif de cette section est de déterminer théoriquement des limites inférieure et supérieure à la masse du boson de Higgs puis de faire l'état des lieus des limites expérimentales établies auprès d'expériences comme le Large Electron Positron collider (LEP) au Cern et le Tevatron au Fermilab.
 
 \subsection{Limites théoriques}
 
@@ -1145,7 +1145,7 @@ Le calcul des corrections radiatives qui interviennent dans le calcul de section
     \end{tabular}
 
   \end{center}
-  \caption{\label{higgs_autocouplage}Quelques diagrammes contribuant à l'autocouplage quadrilinéaire du boson de Higgs : zéro boucle (a), une boucle (b) et (c).}
+  \caption{\label{higgs_autocouplage}Quelques diagrammes contribuants à l'autocouplage quadrilinéaire du boson de Higgs : zéro boucle, (a), une boucle, (b) et (c).}
 \end{figure}
 
 Selon Landau, Abrikosov et Khalatnikov, la relation entre la charge observable $ g(\Lambda) $ et la charge \emph{nue} $ g(\Lambda_0) $, pour les théories de champs renormalisables, est donnée par l'expression (voir annexe ???) :
@@ -1190,13 +1190,13 @@ En prenant $ \Lambda_{cut} $ à l'échelle d'énergie du modèle standard $ \Lambda_
   \boxed{M_\mathrm{Higgs}<\sqrt{\frac{8\pi^2v^2}{3\ln\frac{\Lambda^2_\mathrm{MS}}{v^2}}}=700\GeV}
 \end{equation}
 
-En l'absence de la découverte d'un boson de Higgs léger ($ M_\mathrm{Higgs}<1\TeV $), les signe d'une nouvelle physique devraient apparaitre à l'échelle du $ \TeV $. La figure \ref{prediction} montre les bornes supérieure et inférieure sur la masse du boson de Higgs en fonction l'échelle d'énergie $ \Lambda_\mathrm{cut} $.
+En l'absence de la découverte d'un boson de Higgs léger ($ M_\mathrm{Higgs}<1\TeV $), les signe d'une nouvelle physique devraient apparaitre à l'échelle du $ \TeV $. La figure \ref{prediction} montre les bornes supérieure et inférieure de la masse du boson de Higgs en fonction l'échelle d'énergie $ \Lambda_\mathrm{cut} $.
 
 \begin{figure}[htbp]
   \begin{center}
     \includegraphics[width=7cm, keepaspectratio]{phd_ms/prediction}
   \end{center}
-  \caption{\label{prediction}Bornes théoriques supérieure et inférieure de la masse du boson de Higgs en fonction l'échelle d'énergie $ \Lambda $ obtenues à partir des arguments de trivialité et de stabilité du vide. La masse du quark top est $ m_t=175\GeV $, et $ \alpha_S=0.118 $.}
+  \caption{\label{prediction}Bornes théoriques supérieure et inférieure de la masse du boson de Higgs en fonction de l'échelle d'énergie $ \Lambda $ obtenues à partir des arguments de trivialité et de stabilité du vide. La masse du quark top est $ m_t=175\GeV $, et $ \alpha_S=0.118 $.}
 \end{figure}
 
 \subsubsection{Argument de stabilité du vide}
@@ -1230,7 +1230,7 @@ En prenant $ \Lambda_{cut} $ à l'échelle d'énergie du modèle standard $ \Lambda_
   M^2_\mathrm{Higgs}>???
 \end{equation}
 
-La figure \ref{prediction} montre les bornes supérieure et inférieure sur la masse du boson de Higgs en fonction l'échelle d'énergie $ \Lambda_\mathrm{cut} $.
+La figure \ref{prediction} montre les bornes supérieure et inférieure de la masse du boson de Higgs en fonction l'échelle d'énergie $ \Lambda_\mathrm{cut} $.
 
 \subsection{Limites expérimentales}
 
