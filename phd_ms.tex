@@ -1,11 +1,149 @@
 \chapter{Le modèle standard}
 
+\section{Présentation historique}
+
 \newpage
 
 \section{Le lagrangien du modèle standard}
 
+Cette section est consacrée à la construction mathématique de la théorie du modèle standard de la physique des particules. Afin de de rendre sa lecture aisée, quelques rappels élémentaires de calcul tensoriel sont disponibles annexe 1. Dans un premier temps, nous allons introduire la théorie lagrangienne des champs qui offre un cadre un très naturel et polyvalent. Puis nous allons voir comment la notion de bosons et de fermions apparait directement à partir de considérations simples de théorie des groupes. Ensuite, nous introduirons le concept central de champs de jauge ce qui permettra la construction de l'électrodynamique quantique, de la chromodynamique quantique et de l'interaction électrofaible. Finalement, nous décrirons le très célèbre modèle de Higgs qui permet d'expliquer l'origine des masses des particules.
+
 \subsection{Théorie lagrangienne des champs}
 
+\subsubsection{Coordonnées généralisées}
+
+En mécanique, on emploie la notion de \emph{particule} ou \emph{point matériel}, c'est-à-dire d'objet d'extension spatiale infiniment petite auquel est associé différentes propriétés intrinsèques comme la masse, la charge électrique, etc\dots\\
+
+Le mouvement d'une particule est identifié par son \emph{vecteur de position} (tenseur de rang un) noté $ \vec r $ et de coordonnées $ r^i $. La \emph{vitesse} d'une particule est définie par :
+\begin{displaymath}
+  \vec v=\dot{\vec r}=\frac{d\vec r}{dt}
+\end{displaymath}
+
+Pour déterminer la position de $ N $ particules dans un espace de dimension $ d $, il faut connaître $ N $ vecteurs positions soit $ d\times N $ coordonnées. 
+
+\newtheorem*{th2_1}{Définition}
+\begin{th2_1}
+  En présence de $ k $ contraintes particulières, on dit que le système possède $ d\times N-k $ \emph{degrés de liberté} (DDL).
+\end{th2_1}
+
+\newtheorem*{th2_2}{Définition}
+\begin{th2_2}
+  Un système qui possède $ n $ degrés de liberté possède $ n $ \emph{coordonnées généralisées} $ q^i $ ($ i=1,\dots,n $) qui caractérisent complètement la position et $ n $ \emph{vitesses généralisées} $ \dot q^i=\frac{dq^i}{dt} $.
+\end{th2_2}
+
+\begin{figure}[!h]
+  \centering
+  \includegraphics[scale=0.2]{phd_ms/meca1}
+\end{figure}
+
+\textbf{Exemples} :
+\begin{itemize}
+  \item Un pendule plan, 1 DDL suivant $ \vec u_\theta $ : $ \{q^1=\theta\} $,  $ \{\dot q^1=r\dot\theta\} $.
+  \item Un skieur, 2 DDL suivant $ \vec u_x $ et $ \vec u_y $ : $ \{q^1=x $, $ q^2=y\} $,\\$ \phantom{zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz}\{\dot q^1=\dot x $, $ \dot q^2=\dot y\} $.
+\end{itemize}
+
+\newpage
+
+\subsubsection{Principe de moindre action et lagrangien}
+
+La formulation la plus générale des lois du mouvement est celle du principe de moindre action où le contenu physique est caractérisé par une fonction scalaire appelée lagrangien (noté $ L $). Comme l'univers est homogène et isotrope et que les lois de la physique ne changent pas au cours du temps, le lagrangien ne dépend que de la position $ q^i $ et de sa dérivée $ \dot q^i $ :
+\begin{displaymath}
+  L\left(q^1,\dots,q^n;\dot q^1,\dots,\dot q^n\right)\equiv L\left(q^i,\dot q^i\right)
+\end{displaymath}
+
+On suppose qu'aux instants $ t=t_1 $ et $ t=t_2 $ le système occupe des positions connues caractérisées par les vecteurs de position $ q^i(t_1) $ et $ q^i(t_2) $.
+
+\newtheorem*{th2_3}{Définition}
+\begin{th2_3}
+  On appelle \emph{action lagrangienne} la fonctionnelle définie telle que :
+  \begin{equation}
+    \boxed{S\equiv\int_{t_1}^{t_2}dt\,L\left(q^i,\dot q^i\right)}
+  \end{equation}
+\end{th2_3}
+
+\newtheorem*{th2_4}{Principe de moindre action}
+\begin{th2_4}
+  Entre les deux positions $ q^i(t_1) $ et $ q^i(t_2) $, le système se meut de façon à ce que l'action $ S $ soit extrémale\footnote{Ici par extrémale, il faut entendre la plus grande possible.}.
+\end{th2_4}
+
+\subsubsection{Equations d'Euler-Lagrange}
+
+\indent Soit $ S $ l'action d'une particule le long d'une trajectoire physique (trait plein).\\
+\indent Soit $ S' $ une action telle que $ S'=S+\delta S $ (trait pointillé).\\
+\begin{figure}[!h]
+  \centering
+  \includegraphics[scale=0.15]{phd_ms/meca2}
+\end{figure}
+
+Pour que $ S $ et $ S' $ coïncident il faut : $ \delta S=0 $ :
+\begin{eqnarray*}
+  \delta S & = & \delta\int_{t_1}^{t_2}L\left(q^i,\dot q^i\right)dt \\
+           & = & \int_{t_1}^{t_2}\left(\frac{\partial L}{\partial q_i}\delta q_i+\frac{\partial L}{\partial\dot q_i}\delta\dot q_i\right)dt\\
+           & = & \underbrace{\left[\frac{\partial L}{\partial\dot q_i}\delta q_i\right]_{t_1}^{t_2}}_0-\int_{t_1}^{t_2}\left(\frac{d}{dt}\frac{\partial L}{\partial\dot q_i}\delta q_i-\frac{\partial L}{\partial q_i}\delta q_i\right)dt\\
+           & = & \int_{t_1}^{t_2}\left(\frac{d}{dt}\frac{\partial L}{\partial\dot q_i}-\frac{\partial L}{\partial q_i}\right)\delta q_i\,dt=0
+\end{eqnarray*}
+
+$ \forall\,\delta q_i $, $ \delta S=0 $ implique :
+\begin{equation}\label{euler_lagrange}
+  \boxed{\frac{d}{dt}\frac{\partial L}{\partial\dot q_i}-\frac{\partial L}{\partial q_i}=0}
+\end{equation}\\
+
+C'est les équations d'Euler-Lagrange, elles permettent de déterminer les équations du mouvement d'un système quelconque.
+
+\newpage
+
+Observons l'équation \ref{euler_lagrange}, elle contient $ n $ équations différentielles d'ordre 2 en $ q^i $, $ i=1\cdots n $. De telles équations s'intégrent et donnent des solutions uniques pour des conditions initiales $ q^i(t_0=0) $ et $ \dot q^i(t_0=0) $ connues.
+
+\newtheorem*{th2_5}{Définition}
+\begin{th2_5}
+  On appelle \emph{moment conjugué} à $ q^i $ la quantité :
+  \begin{equation}
+    \boxed{p^i\equiv\frac{\partial L}{\partial\dot q_i}}
+  \end{equation}
+\end{th2_5}
+
+\newtheorem*{th2_6}{Définition}
+\begin{th2_6}
+  On appelle \emph{force} la quantité :
+  \begin{equation}
+    \boxed{F^i\equiv\frac{\partial L}{\partial q_i}}
+  \end{equation}
+\end{th2_6}
+
+Les équations d'Euler-Lagrange peuvent se réécrire :
+\begin{equation}
+  \boxed{\dot p^i=F^i}
+\end{equation}
+
+Une force implique une variation de moment. Sous forme vectorielle, $ \frac{d\vec p}{dt}=\vec F $, les équations d'Euler-Lagrange sont appelées équations de Newton.\\
+
+Une difficulté apparait, la dimension de temps est traitée différemment des dimensions d'espace. C'est pourquoi, il est préférable de décrire les particules en terme de champs, grandeurs définies en tout point de l'espace-temps, plutôt qu'en terme d'entités ponctuelles :
+\begin{equation}
+  \begin{array}{l}
+    q^i(t)\rightarrow\phi(q^\alpha)\\
+    \\
+    \dot q^i(t)\rightarrow\partial_\mu\phi(q^\alpha)
+  \end{array}
+\end{equation}
+\begin{eqnarray}
+  S & = & \int_{t_1}^{t_2}dt\,\underbrace{L\left(q^i,\dot q^i\right)}_{\int d^3x\,\mathcal{L}\left(\phi(q^i,t),\partial_\mu\phi(q^i,t)\right)}\nonumber\\
+    & = & \int d^4x\,\mathcal{L}\left(\phi(q^i,t),\partial_\mu\phi(q^i,t)\right)
+\end{eqnarray}
+
+où $ \mathcal{L} $ est appelé densité de lagrangien (simplement lagrangien par la suite). Par application du principe de moindre action, nous obtenons :
+\begin{eqnarray*}
+  \delta S & = & \delta\int_{t_1}^{t_2}\mathcal{L}\left(\phi(q^\alpha),\partial_\mu\phi(q^\alpha)\right)d^4x \\
+           & = & \int_{t_1}^{t_2}\left(\frac{\partial\mathcal{L}}{\partial\phi}\delta\phi+\frac{\partial\mathcal{L}}{\partial\left(\partial_\mu\phi\right)}\delta\left(\partial_\mu\phi\right)\right)d^4x\\
+           & = & \underbrace{\left[\frac{\partial\mathcal{L}}{\partial\left(\partial_\mu\phi\right)}\delta\phi\right]_{t_1}^{t_2}}_0-\int_{t_1}^{t_2}\left(\partial_\mu\frac{\partial\mathcal{L}}{\partial\left(\partial_\mu\phi\right)}\delta\phi-\frac{\partial\mathcal{L}}{\partial\phi}\delta\phi\right)d^4x\\
+           & = & \int_{t_1}^{t_2}\left(\partial_\mu\frac{\partial\mathcal{L}}{\partial\left(\partial_\mu\phi\right)}-\frac{\partial\mathcal{L}}{\partial\phi}\right)\delta\phi\,d^4x=0
+\end{eqnarray*}
+
+$ \forall\,\delta q_i $, $ \delta S=0 $ implique :
+\begin{equation}\label{euler_lagrange}
+  \boxed{\partial_\mu\frac{\partial\mathcal{L}}{\partial\left(\partial_\mu\phi\right)}-\frac{\partial\mathcal{L}}{\partial\phi}=0}
+\end{equation}\\
+
+C'est les équations de champ d'Euler-Lagrange, elles permettent de déterminer les équations de champ d'un système quelconque.
 
 \newpage
 
