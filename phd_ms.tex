@@ -31,7 +31,7 @@ Pour déterminer la position de $ N $ particules dans un espace de dimension $ d 
   Un système qui possède $ n $ degrés de liberté possède $ n $ \emph{coordonnées généralisées} $ q^i $ ($ i=1,\dots,n $) qui caractérisent complètement la position et $ n $ \emph{vitesses généralisées} $ \dot q^i=\frac{dq^i}{dt} $.
 \end{th2_2}
 
-\begin{figure}[!h]
+\begin{figure}[!ht]
   \centering
   \includegraphics[scale=0.2]{phd_ms/meca1}
 \end{figure}
@@ -70,7 +70,7 @@ On suppose qu'aux instants $ t=t_1 $ et $ t=t_2 $ le système occupe des position
 
 \indent Soit $ S $ l'action d'une particule le long d'une trajectoire physique (trait plein).\\
 \indent Soit $ S' $ une action telle que $ S'=S+\delta S $ (trait pointillé).\\
-\begin{figure}[!h]
+\begin{figure}[!ht]
   \centering
   \includegraphics[scale=0.15]{phd_ms/meca2}
 \end{figure}
@@ -138,7 +138,7 @@ où $ \mathcal{L} $ est appelé densité de lagrangien (simplement lagrangien par l
            & = & \int_{t_1}^{t_2}\left(\partial_\mu\frac{\partial\mathcal{L}}{\partial\left(\partial_\mu\phi\right)}-\frac{\partial\mathcal{L}}{\partial\phi}\right)\delta\phi\,d^4x=0
 \end{eqnarray*}
 
-$ \forall\,\delta q_i $, $ \delta S=0 $ implique :
+$ \forall\,\delta\phi $, $ \delta S=0 $ implique :
 \begin{equation}\label{euler_lagrange}
   \boxed{\partial_\mu\frac{\partial\mathcal{L}}{\partial\left(\partial_\mu\phi\right)}-\frac{\partial\mathcal{L}}{\partial\phi}=0}
 \end{equation}\\
@@ -172,7 +172,7 @@ En introduidant $ \vec J_+=\frac{1}{2}(\vec J+i\vec K) $ et $ \vec J_-=\frac{1}{
   \left[J^i_+,J^j_+\right]=i\,\varepsilon^{ijk}J_{+k}\hspace{0.33cm};\hspace{0.33cm}\left[J^i_-,J^j_-\right]=i\,\varepsilon^{ijk}J_{-k}\hspace{0.33cm};\hspace{0.33cm}\left[J^i_+,J^j_-\right]=0\hspace{0.33cm}\Rightarrow\hspace{0.33cm}2\times\bar2
 \end{displaymath}
 
-Nous reconnaissons $ SU(2) $, les représentation irréductibles du groupe de Lorentz correspondent au couple $ (j_+,j_-) $ de dimension $ (2j_++1)(2j_-+1) $ où les valeurs propres de $ J^2_\pm $ sont $ j_\pm(j_\pm+1) $. Elles conduisent aux définitions des \emph{scalaires} et des \emph{spineurs} : $ (0,0) $ représente un scalaire noté $ \phi $, $ (\frac{1}{2},0) $ représente un \emph{spineur de Weyl} indicé sans point et noté $ \xi_\alpha $ $ (\alpha=1,2) $, enfin, $ (0,\frac{1}{2}) $ représente un \emph{spineur} de \emph{Weyl} indicé avec point et noté $ \bar\xi_{\dot\alpha} $ $ (\dot\alpha=1,2) $. Les scalaires sont associés aux bosons et commutent (équation \ref{scalaire_commutation}). Les spineurs de Weil sont associés aux fermions et anticommutent (équation \ref{spineur_commutation}).
+Nous reconnaissons $ SU(2) $, les représentation irréductibles du groupe de Lorentz correspondent au couple $ (j_+,j_-) $ de dimension $ (2j_++1)(2j_-+1) $ où les valeurs propres de $ J^2_\pm $ sont $ j_\pm(j_\pm+1) $. Elles conduisent aux définitions des \emph{scalaires} et des \emph{spineurs} : $ (0,0) $ représente un scalaire noté $ \phi $, $ (\frac{1}{2},0) $ représente un \emph{spineur de Weyl} indicé sans point et noté $ \xi_\alpha $ $ (\alpha=1,2) $, enfin, $ (0,\frac{1}{2}) $ représente un \emph{spineur} de \emph{Weyl} indicé avec point et noté $ \bar\xi_{\dot\alpha} $ $ (\dot\alpha=1,2) $. Les scalaires sont associés aux bosons et commutent (équation \ref{scalaire_commutation}). Les spineurs de Weyl sont associés aux fermions et anticommutent (équation \ref{spineur_commutation}).
 
 \begin{equation}\label{scalaire_commutation}
   \left[\phi_1,\phi_2\right]=0\hspace{0.33cm}\mathrm{et}\hspace{0.33cm}\left[\phi^\dag_1,\phi^\dag_2\right]=0
@@ -238,9 +238,9 @@ Comme $ \chi\xi+\bar\chi\bar\xi $ est invariant relativiste et hermitien, il est
 
 \subsubsection{Lagrangien cinétique}
 
-Introduction les vecteurs et tenseurs formés à partir des matrices de Pauli :
+Introduisons les vecteurs et tenseurs formés à partir des matrices de Pauli :
 \begin{equation}
-  \left(\sigma^\mu\right)_{\alpha\dot\beta}=\left(\bbone_2;+\sigma^i\right)_{\alpha\dot\beta}\hspace{0.33cm}\mathrm{et}\hspace{0.33cm}\left(\bar\sigma^\mu\right)^{\dot\alpha\beta}=\left(\bbone_2;-\sigma^i\right)^{\dot\alpha\beta}
+  \left(\sigma^\mu\right)_{\alpha\dot\beta}=\left(\bbone_2;+\sigma^i\right)_{\alpha\dot\beta}\hspace{0.33cm}\mathrm{;}\hspace{0.33cm}\left(\bar\sigma^\mu\right)^{\dot\alpha\beta}=\left(\bbone_2;-\sigma^i\right)^{\dot\alpha\beta}
 \end{equation}
 \begin{equation}
   \left(\sigma^{\mu\nu}\right)^{\ \beta}_\alpha=\frac{1}{4}\left[\left(\sigma^\mu\right)_{\alpha\dot\alpha}\left(\bar\sigma^\nu\right)^{\dot\alpha\beta}-\left(\sigma^\nu\right)_{\alpha\dot\alpha}\left(\bar\sigma^\mu\right)^{\dot\alpha\beta}\right]
@@ -255,7 +255,7 @@ L'opérateur formé de la contraction de l'impulsion avec les matrices de Pauli $ 
 
 Comme $ \chi\sigma_\mu\partial^\mu\bar\xi $ est invariant relativiste et hermitien, il est un bon candidat comme terme cinétique dans un lagrangien :
 \begin{equation}
-  \boxed{\mathcal{L}_\mathrm{cin\acute{e}tique}\propto i\chi\sigma_\mu\partial^\mu\bar\xi+hc}
+  \boxed{\mathcal{L}_\mathrm{cin\acute{e}tique}\propto i\chi\sigma_\mu\partial^\mu\bar\xi+\mathrm{h.c.}}
 \end{equation}
 
 Remarque : Si on pose $ \theta^i=\frac{1}{2}\varepsilon^{ijk}\theta_{jk} $ et $ \beta^i=\theta^{i0} $ alors $ M(\vec\theta,\vec\beta)=\exp\left(-\frac{i}{2}S_{\mu\nu}\theta^{\mu\nu}\right)\approx\bbone_2-i\frac{\vec\sigma}{2}.\vec\theta-\frac{\vec\sigma}{2}.\vec\beta $ et $ S^{\mu\nu}=i\sigma^{\mu\nu} $ pour la représentation $ (\frac{1}{2},0) $, $ S^{\mu\nu}=i\bar\sigma^{\mu\nu} $ pour la représentation $ (0,\frac{1}{2}) $.\\
@@ -297,7 +297,7 @@ On introduit alors les matrices de Dirac dans la représentation de Weyl :
   \sigma^{\mu\nu}=\frac{i}{2}\left[\gamma^\mu,\gamma^\nu\right]=2i\left(\begin{array}{cc} \left(\sigma^{\mu\nu}\right)^{\ \beta}_\alpha & 0 \\ 0 & \left(\bar\sigma^{\mu\nu}\right)^{\dot\alpha}_{\ \dot\beta} \\ \end{array}\right)
 \end{equation}
 
-Les matrices de Dirac satisfont à l'algèbre de Clifford, en effet, l'anticommutateur de deux matrices donne : $ \left\{\gamma^\mu,\gamma^\nu\right\}=2g^{\mu\nu} $. Il est possible de réécrire les lagrangiens précédents en utilisant des bispineurs :
+Les matrices de Dirac satisfont à l'algèbre de Clifford, en effet, l'anticommutateur de deux matrices $ \gamma $ donne : $ \left\{\gamma^\mu,\gamma^\nu\right\}=2g^{\mu\nu} $. Il est possible de réécrire les lagrangiens précédents en utilisant des bispineurs :
 \begin{equation}\label{lagrangien_spineur}
   \boxed{\mathcal{L}_\mathrm{masse}\propto m\bar\Psi\Psi}\hspace{0.33cm}\mathrm{et}\hspace{0.33cm}\boxed{\mathcal{L}_\mathrm{cin\acute{e}tique}\propto i\bar\Psi\gamma_\mu\partial^\mu\Psi\equiv i\bar\Psi\slashed\partial\Psi\equiv i\partial_\mu j^\mu}
 \end{equation}
@@ -306,12 +306,12 @@ où $ j^\mu $ s'interprète comme une densité de courant fermionique.
 
 \subsubsection{Projecteurs}
 
-Introduisons les opérateurs suivants formés à partir des matrices $ \gamma^5 $:
+Introduisons les opérateurs suivants formés à partir de la matrice $ \gamma^5 $:
 \begin{equation}\label{projecteurs}
   P_L=\frac{1-\gamma^5}{2}=\left(\begin{array}{cc} \bbone_2 & 0 \\ 0 & 0 \\ \end{array}\right)\hspace{0.33cm}\mathrm{et}\hspace{0.33cm}P_R=\frac{1+\gamma^5}{2}=\left(\begin{array}{cc} 0 & 0 \\ 0 & \bbone_2 \\ \end{array}\right)
 \end{equation}
 
-Il ont toutes les caractéristiques de projecteurs, en effet, il est immédiat de montrer que $ P^2_{L,R}=P_{L,R} $ et que $ P_L+P_R=\bbone_4 $. Ces opérateurs permettent de sélectionner les composantes de chiralité gauche ($ L $) pour $ P_L $ et droite ($ R $) pour $ P_R $ d'un bispineur. En possant:
+Il ont toutes les caractéristiques de projecteurs, en effet, il est immédiat de montrer que $ P^2_{L,R}=P_{L,R} $ et que $ P_L+P_R=\bbone_4 $. Pour un bispineur, ces opérateurs permettent de sélectionner les composantes de chiralité gauche ($ L $) pour $ P_L $ et droite ($ R $) pour $ P_R $. En possant:
 \begin{equation}
   \Psi\equiv\left(\begin{array}{c}
     \Psi_L \\
@@ -330,7 +330,7 @@ il vient alors :
 
 La notion d'invariance de jauge fut introduite en 1929 par Hermann Weyl dans une tentative d'unification de l'électromagnétisme et de la gravitation. Ce fut un échec mais l'idée fut reprise par Paul Dirac puis généralisée par Chen Ning Yang et Robert Mills. Plus tard, les théories de jauge permirent la construction du modèle standard.
 
-\subsubsection{Invariance de jauge locales abéliennes}
+\subsubsection{Invariance de jauge locale abélienne}
 
 Afin d'illustrer le concept d'invariance de jauge locale abélienne, nous partons du lagrangien d'une particule fermionique (équation \ref{lagrangien_spineur}). Il est simple de montrer que ce lagrangien reste invariant par une transformation de phase appliquée sur les champs fermioniques :
 \begin{equation}
@@ -379,7 +379,7 @@ Nous avons finalement :
 
 Il apparait alors un terme d'interaction entre deux fermions via $ \Psi $ et $ \bar\Psi $ et un boson de jauge via $ A^\mu $. Ce dernier est forcément de masse nulle car l'ajout d'un terme de masse $ m^2A_\mu A^\mu $ briserait l'invariance du jauge du lagrangien. Nous verrons ultérieurement que ce modèle simple permet la description de l'interaction électromagnétique.
 
-\subsubsection{Invariance de jauge locales non-abéliennes}
+\subsubsection{Invariance de jauge locale non-abélienne}
 
 Soit $ U $ un groupe Lie (unitaire et continu) quelconque de dimension finie $ dim(U) $. Le champ fermionique se transforme par $ U $ comme précédemment :
 \begin{equation}
@@ -442,7 +442,7 @@ Les équations de Maxwell publiées dans leur forme définitives en 1873 ont enseig
   \boxed{\mathcal{L}_\mathrm{QED}=\left[\sum_{l=e,\mu,\tau}\bar l\left(i\slashed\partial-m_l\right)l-e\,\bar l\slashed A l\right]-\frac{1}{4}F_{\mu\nu}F^{\mu\nu}}
 \end{equation}
 
-\begin{figure}[!h]
+\begin{figure}[!ht]
   \begin{center}
 
   \begin{tabular}{ccc}
@@ -519,7 +519,7 @@ Au final le lagrangien QCD est :
 
 avec $ \slashed G^\beta_\alpha=\gamma_\mu G^\mu_a(\frac{T^a}{2})^\beta_\alpha $ où $ \frac{T^a}{2} $ sont les générateurs de $ SU(3)_\mathrm{C} $ et $ a=1\ldots\left\{dim(SU(3)_\mathrm{C})=8\right\} $. Les gluons changent la couleur des quarks.\\
 
-\begin{figure}[!h]
+\begin{figure}[!ht]
   \begin{center}
 
   \begin{tabular}{ccc}
@@ -680,10 +680,10 @@ En utilisant l'expression du projecteur vers la composante de chiralité gauche (
   \phantom{\mathcal{L}^Z_\mathrm{CN}=\frac{e}{\sin\theta_W\cos\theta_W}}\left.\bar f         ' \gamma^\mu\left(-\frac{1}{4}-Q_{f         ' }\sin^2\theta_W+\frac{\gamma^5}{4}\right)f         ' \right]          Z_\mu
 \end{eqnarray}
 
-\subsubsection{Diagrammes de feynman}
+\subsubsection{Diagrammes de Feynman}
 
 Les couplages élémentaires entre un doublet de fermions gauche et un boson de jauge sont les suivants :
-\begin{figure}[!h]
+\begin{figure}[!ht]
   \begin{center}
 
     \begin{fmffile}{gsw_graph1}
@@ -748,7 +748,7 @@ Remarque : Dans le modèle standard de la physique de particule, comme les neutri
 \newpage
 
 Les couplages élémentaires entre les bosons de jauge sont les suivants :
-\begin{figure}[!h]
+\begin{figure}[!ht]
   \begin{center}
 
     \begin{tabular}{ccc}
@@ -852,7 +852,7 @@ Pour que le potentiel $ V_\mathrm{Higgs} $ soit borné et possède un ou plusieurs
   \item $ \mu^2<0 $ $ \Rightarrow $ $ \left\{\begin{array}{l} \mathrm{un\ extremum\ trivial\ }\left<0\right|\Phi_L\left|0\right>=0 \\ \mathrm{un\ extremum\ non\ trivial\ }\boxed{\left<0\right|\Phi_L\left|0\right>=-\frac{\mu^2}{\lambda}\equiv v^2} \end{array}\right. $
 \end{itemize}
 
-\begin{figure}[!h]
+\begin{figure}[!ht]
   \begin{center}
 
     \begin{tabular}{ccc}
@@ -913,7 +913,7 @@ Si on développe le lagrangien $ \mathcal{L}_\mathrm{Higgs} $ sans faire tendre l
   \boxed{M_\mathrm{Higgs}=\sqrt{-2\mu^2}}
 \end{equation}
 
-La masse du boson de Higgs est un \underline{paramètre libre} du modèle standard de la physique de la physique des particules. Il reste maintenant à déterminer comment les fermions acquièrent une masse. Examinons le couplage de Yakawa entre le doublets des leptons et le champ $ \Phi_{0,L} $  dans la limite où $ h(x) \rightarrow 0 $ :
+La masse du boson de Higgs est un \underline{paramètre libre} du modèle standard de la physique de la physique des particules. Il reste maintenant à déterminer comment les fermions acquièrent une masse. Examinons le couplage de trilinéaire Yakawa entre le doublets des leptons et le champ $ \Phi_{0,L} $  dans la limite où $ h(x) \rightarrow 0 $ :
 \begin{eqnarray}
   \mathcal{L}_\mathrm{Yukawa\,leptons} & = & \sum_{l=e,\mu,\tau}-\lambda_l\left[\left(\bar\nu_l\ \ \bar l_L\right)\binom{0}{\frac{v}{\sqrt{2}}}l_R+\bar l_R\left(0\ \ \frac{v}{\sqrt{2}}\right)\binom{\nu_l}{l_L}\right]\nonumber\\
                               & = & \sum_{l=e,\mu,\tau}-\lambda_l\frac{v}{\sqrt{2}}\left(\bar l_Ll_R+\bar l_R l_L\right)\nonumber
@@ -929,7 +929,7 @@ et en utilisant la matrice CMK (équation \ref{matrice_ckm}):
   \boxed{\mathcal{L}_\mathrm{Yukawa\,quarks}=\sum_{q=u,d,c,s,t,b}-\lambda_q\frac{v}{\sqrt{2}}\bar qq}
 \end{equation}
 
-où les coefficients $ \lambda_l $ et $ \lambda_q $ sont appelés les couplages de Yukawa. Au final, le modèle de Higgs permet d'expliquer l'origine des masses des bosons $ W^\pm $ et $ Z $ ainsi que celles de tous les fermions. Dans le modèle standard minimal de la physique des particules, les neutrinos ont une masse nulle. Des mesures expérimentales ont cependant montrée que les neutrinos ont une très faible de masse inférieure à l'électron volte.
+où les coefficients $ \lambda_l $ et $ \lambda_q $ sont appelés les couplages de Yukawa. Au final, le modèle de Higgs permet d'expliquer l'origine des masses des bosons $ W^\pm $ et $ Z $ ainsi que celles de tous les fermions. Dans le modèle standard minimal de la physique des particules, les neutrinos ont une masse nulle. Des mesures expérimentales ont cependant montrée qu'ils ont une très faible de masse inférieure à l'électron volte.
 
 \newpage
 
@@ -973,7 +973,7 @@ Si nous supposons que $ m_-=0 $, alors $ m^M_Lm^M_R = m^Dm^D $ et seuls les neut
 
 \newpage
 
-\begin{figure}[!h]
+\begin{figure}[!ht]
   \begin{center}
 
     \begin{tabular}{cc}
@@ -992,7 +992,7 @@ Si nous supposons que $ m_-=0 $, alors $ m^M_Lm^M_R = m^Dm^D $ et seuls les neut
 
 \subsection{Couplages du boson de Higgs}
 
-\begin{figure}[!h]
+\begin{figure}[!ht]
   \begin{center}
 
   \begin{tabular}{ccc}
@@ -1081,7 +1081,7 @@ Si nous supposons que $ m_-=0 $, alors $ m^M_Lm^M_R = m^Dm^D $ et seuls les neut
   \caption{Couplages trilinéaires du boson de Higgs avec les bosons $ W^\pm $ et $ Z $, (a) et (b), avec les fermions (couplages de Yukawa), (c) et autocouplage (d).}
 \end{figure}
 
-\begin{figure}[!h]
+\begin{figure}[!ht]
   \begin{center}
 
     \begin{tabular}{ccccc}
@@ -1159,7 +1159,7 @@ Mathématiquement, le célèbre théorème de topologie \emph{no-go} de Sidney Colema
 
 \subsection{Tableaux récapitulatifs}
 
-\begin{table}[!h]
+\begin{table}[!ht]
   \begin{center}
 
     \begin{tabular}{|l|c|c|c|c|}
@@ -1185,12 +1185,12 @@ Mathématiquement, le célèbre théorème de topologie \emph{no-go} de Sidney Colema
   \caption{Tableau récapitulatif interactions fondamentales.}
 \end{table}
 
-\begin{table}[!h]
+\begin{table}[!ht]
   \begin{center}
 
     \begin{tabular}{|l|c|c|}
       \hline
-        Paramètre & Masse & Erreurs \\
+        Paramètre & Valeur & Incertitudes \\
       \hline
       \hline
         Masse de l'électron $ m_e $ & & \\
@@ -1234,7 +1234,7 @@ Le modèle standard a été testé avec grande précision, néanmoins, le boson de Hig
 
 Le calcul des corrections radiatives qui interviennent dans le calcul de section efficace du processus $ HH\to HH $ fait intervenir des corrections divergentes qui nécessitent une renormalisation de la constante de couplage $ \lambda $ (figure \ref{higgs_autocouplage} (b)).
 
-\begin{figure}[!h]
+\begin{figure}[!ht]
   \begin{center}
 
     \begin{tabular}{ccc}
@@ -1387,16 +1387,149 @@ La figure \ref{prediction} montre les bornes supérieure et inférieure de la mass
 
 \newpage
 
-\begin{figure}[!h]
+\begin{figure}[!ht]
   \begin{center}
     \includegraphics[width=7cm, keepaspectratio]{phd_ms/prediction}
   \end{center}
   \caption{\label{prediction}Bornes théoriques supérieure et inférieure de la masse du boson de Higgs en fonction de l'échelle d'énergie $ \Lambda $ obtenues à partir des arguments de trivialité et de stabilité du vide. La masse du quark top est $ m_t=175\GeV $, et $ \alpha_S=0.118 $.}
 \end{figure}
 
-\subsection{Limites expérimentales}
+\subsection{Limites expérimentales sur collisionneur}
+
+\subsubsection{Limites indirectes}
+
+Les expériences menées auprès du LEP, du SLC et du Tevatron ont permis de mesurer les paramètres du secteur électrofaible avec une précision suffisante pour tester le modèle standard au-delà du premier ordre des perturbations. La mesure indirecte de la masse du boson de Higgs est basée sur les corrections radiatives à la masse du boson $ Z $. Les diagrammes de Feynman de la figure \ref{higgs_correction} montrent les principales contributions. La première (figure \ref{higgs_correction} (a)) est proportionnelle à $ m^2_t $. Cette dépendance avait permis de prédire la masse du quark top en 1994 par Gerard't Hooft et Martinus Veltmanavant avant sa découverte par les expériences CDF en 1994 puis DØ en 1995. La seconde (figure \ref{higgs_correction} (b)) est proportionnelle à $ \ln M_\mathrm{Higgs} $.
+
+La figure \ref{} (a) montre la comparaison entre la détermination indirecte de la masse du boson de Higgs (LEP1, SLD) et détermination directe de la masse du boson de Higgs (LEP2, Tevatron). Ces résultats tendent à favoriser une faible masse.
+
+\begin{figure}[!ht]
+  \begin{center}
+
+    \begin{tabular}{ccc}
+
+    \begin{fmffile}{higgs_exp_graph1}
+      \fmfframe(1,7)(1,7){
+       \begin{fmfgraph*}(110,62)
+        \fmfleft{i1}
+        \fmfright{o1}
+        \fmf{photon}{i1,v1}
+        \fmf{photon}{v2,o1}
+        \fmf{fermion,left,tension=0.5,label=$t$}{v1,v2}
+        \fmf{fermion,left,tension=0.5,label=$t$}{v2,v1}
+	\fmfdot{v1,v2}
+        \fmflabel{$Z$}{i1}
+        \fmflabel{$Z$}{o1}
+       \end{fmfgraph*}
+      }
+    \end{fmffile}
+
+
+    & \hspace{1cm} &
+
+    \begin{fmffile}{higgs_exp_graph2}
+      \fmfframe(1,7)(1,7){
+       \begin{fmfgraph*}(110,62)
+        \fmfleft{i1}
+        \fmfright{o1}
+        \fmf{photon}{i1,v1}
+        \fmf{photon}{v2,o1}
+        \fmf{photon,left,tension=0.5,label=$Z$}{v1,v2}
+        \fmf{dashes,left,tension=0.5,label=$H$}{v2,v1}
+	\fmfdot{v1,v2}
+        \fmflabel{$Z$}{i1}
+        \fmflabel{$Z$}{o1}
+       \end{fmfgraph*}
+      }
+    \end{fmffile}
+
+    \\
+
+    (a) & & (b)
+
+    \end{tabular}
+
+  \end{center}
+  \caption{\label{higgs_correction}Principales corrections radiatives à la masse du boson $ Z $ sensibles à la masse du quark top (a) et à la masse du boson de Higgs (b).}
+\end{figure}
+
+Parallèlement, un ajustement global des paramètres du secteur électrofaible a été réalisé. La figure \ref{} (b) montre la distribution $ \Delta\chi^2=\chi^2-\chi^2_\mathrm{min} $ en fonction de la masse du boson de Higgs. Elle impose les contraintes $ M_\mathrm{Higgs}=96^{+60}_{-38}\GeV $ et $ M_\mathrm{Higgs}<219\GeV $ à $ 95\% $ de niveau de confiance. Ces résultats tendent toujours à favoriser une faible masse.
+
+\begin{figure}[!ht]
+  \begin{center}
+
+    \begin{tabular}{cc}
+
+    \includegraphics[width=6.5cm, keepaspectratio]{phd_ms/exp1}
+
+    &
+
+    \includegraphics[width=6.5cm, keepaspectratio]{phd_ms/exp2}
+
+    \\
+
+    (a) & (b)
+
+    \end{tabular}
+
+  \end{center}
+  \caption{\label{}Blabla.}
+\end{figure}
+
+\subsubsection{Limites directes}
+
+Le LEP a activement recherché le boson de Higgs. Les deux principaux canaux étudiés furent $ ee\to Z^*\to ZH $ (aussi appelé Higgs-strahlung) et $ H\to b\bar b $.
+
+\paragraph{a) Higgs-strahlung}
+
+L'étude du Higgs-strahlung (figure \ref{}) permet l'explorer les régions de très faible masse en mesurant l'énergie de recul qu'acquirent les boson en rayonnant un boson de Higgs. Durant la première phase de prise de donnée du LEP, aucun signal ne fut détecter dans aucune des quatre principales expériences Aleph, Delphi, Opal et L3. Durant la seconde phase de prise de donnée du LEP, avec une énergie dans le centre de masse atteignant $ 209\GeV $, le Higgs-strahlung fut le canal principal de production. La combinaison des résultats des quatre expériences permit d'établir la contrainte $ M_\mathrm{Higgs}>114.4\GeV $ à $ 95\% $ de niveau de confiance.
+
+\begin{figure}[!ht]
+  \begin{center}
+
+    \begin{fmffile}{higgs_exp_graph4}
+      \fmfframe(1,7)(1,7){
+       \begin{fmfgraph*}(110,62)
+         \fmfleft{i1,i2}
+         \fmfright{o1,o2}
+         \fmf{fermion}{i1,v1,i2}
+         \fmf{photon,label=$Z^*$}{v1,v2}
+         \fmf{photon}{v2,o1}
+         \fmf{dashes}{v2,o2}
+        \fmflabel{$e$}{i1}
+        \fmflabel{$e$}{i2}
+        \fmflabel{$Z$}{o1}
+        \fmflabel{$H$}{o2}
+       \end{fmfgraph*}
+      }
+    \end{fmffile}
+
+  \end{center}
+  \caption{\label{uioiu}.}
+\end{figure}
+
+\paragraph{b) $ H\to b\bar b $}
+
+\begin{figure}[!ht]
+  \begin{center}
+    \includegraphics[width=10cm, keepaspectratio]{phd_ms/aleph}
+  \end{center}
+  \caption{\label{}Blabla.}
+\end{figure}
 
 \newpage
 
-\section{Les limites du modèle standard}
+\paragraph{c) Résultats au Tevatron}
+
+Plus récemment, les expériences DØ et CDF au Tevatron ont accumulé suffisamment de statistique afin de poser des limites en s'appuyant sur l'étude des canaux $ H\to WW $, $ H\to ZZ $, $ WH\to l\nu b\bar b $, $ WH/ZH\to qqb\bar b $, $ WH/ZH\to METb\bar b $, $ ZH\to llb\bar b $, $ H\to\gamma\gamma $, $ H\to\tau\tau $, $ H\to b\bar b $, etc...
+
+\begin{figure}[!ht]
+  \begin{center}
+    \includegraphics[width=9cm, keepaspectratio]{phd_ms/exp3}
+  \end{center}
+  \caption{\label{}Blabla.}
+\end{figure}
+
+%\newpage
+
+%\section{Les limites du modèle standard}
 
