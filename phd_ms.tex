@@ -1,6 +1,6 @@
 \chapter{Le modèle standard}
 
-\section{Présentation historique}
+\section{Présentation générale}
 
 \newpage
 \noindent\\
@@ -96,7 +96,7 @@ C'est les équations d'Euler-Lagrange, elles permettent de déterminer les équatio
 
 \newpage
 
-Observons l'équation \ref{euler_lagrange}, elle contient $ n $ équations différentielles d'ordre 2 en $ q^i $, $ i=1\cdots n $. De telles équations s'intégrent et donnent des solutions uniques pour des conditions initiales $ q^i(t_0=0) $ et $ \dot q^i(t_0=0) $ connues.
+Observons l'équation \ref{euler_lagrange}, elle contient $ n $ équations différentielles d'ordre deux en $ q^i $ ($ i=1,\dots,n $). De telles équations s'intégrent et donnent des solutions uniques pour des conditions initiales $ q^i(t_0=0) $ et $ \dot q^i(t_0=0) $ connues.
 
 \newtheorem*{th2_5}{Définition}
 \begin{th2_5}
@@ -452,7 +452,7 @@ Les équations de Maxwell publiées dans leur forme définitive en 1873 ont enseign
   \begin{tabular}{ccc}
 
     \begin{fmffile}{qed_graph1}
-      \fmfframe(1,7)(1,7){ 
+      \fmfframe(1,7)(1,7){
        \begin{fmfgraph*}(110,62)
         \fmfleft{i1,i2}
         \fmfright{o1}
@@ -470,7 +470,7 @@ Les équations de Maxwell publiées dans leur forme définitive en 1873 ont enseign
     &
 
     \begin{fmffile}{qed_graph2}
-      \fmfframe(1,7)(1,7){ 
+      \fmfframe(1,7)(1,7){
        \begin{fmfgraph*}(110,62)
         \fmfleft{i1,i2}
         \fmfright{o1}
@@ -488,7 +488,7 @@ Les équations de Maxwell publiées dans leur forme définitive en 1873 ont enseign
     &
 
     \begin{fmffile}{qed_graph3}
-      \fmfframe(1,7)(1,7){ 
+      \fmfframe(1,7)(1,7){
        \begin{fmfgraph*}(110,62)
         \fmfleft{i1,i2}
         \fmfright{o1}
@@ -518,7 +518,7 @@ De plus, l'expérience montre qu'il existe des baryons constitués de trois quarks
 
 Au final le lagrangien QCD est :
 \begin{equation}\label{lagrangien_qcd}
-  \boxed{\mathcal{L}_\mathrm{QCD}=\left[\sum_{q=u,d,c,s,t,b}\sum_{\alpha,\beta=r,b,j}\bar q^\alpha_a\left(i\slashed\partial-m_q\right)\delta^\beta_\alpha q^a_\beta-g\,\bar q^\alpha_a\slashed G^\beta_\alpha q^a_\beta\right]-\frac{1}{4}F^a_{\mu\nu}F^{\mu\nu}_a}
+  \boxed{\mathcal{L}_\mathrm{QCD}=\left[\sum_{q=u,d,c,s,t,b}\sum_{\alpha,\beta=r,b,j}\bar q^\alpha_a\left(i\slashed\partial-m_q\right)\delta^\beta_\alpha q^a_\beta-g_s\,\bar q^\alpha_a\slashed G^\beta_\alpha q^a_\beta\right]-\frac{1}{4}F^a_{\mu\nu}F^{\mu\nu}_a}
 \end{equation}
 
 avec $ \slashed G^\beta_\alpha=\gamma_\mu G^\mu_a(\frac{T^a}{2})^\beta_\alpha $ où $ \frac{T^a}{2} $ sont les générateurs de $ SU(3)_\mathrm{C} $ et $ a=1\ldots\left\{dim(SU(3)_\mathrm{C})=8\right\} $. Les gluons changent la couleur des quarks.\\
@@ -529,7 +529,7 @@ avec $ \slashed G^\beta_\alpha=\gamma_\mu G^\mu_a(\frac{T^a}{2})^\beta_\alpha $ 
   \begin{tabular}{ccc}
 
     \begin{fmffile}{qcd_graph1}
-      \fmfframe(1,7)(1,7){ 
+      \fmfframe(1,7)(1,7){
        \begin{fmfgraph*}(110,62)
         \fmfleft{i1,i2}
         \fmfright{o1}
@@ -539,7 +539,7 @@ avec $ \slashed G^\beta_\alpha=\gamma_\mu G^\mu_a(\frac{T^a}{2})^\beta_\alpha $ 
         \fmflabel{$q$}{i1}
         \fmflabel{$\bar q$}{i2}
         \fmflabel{$g$}{o1}
-        \fmflabel{$-ig_s\frac{T^\alpha}{2}\gamma_\mu\ $}{v1}
+        \fmflabel{$-ig_s\frac{T^a}{2}\gamma_\mu\ $}{v1}
        \end{fmfgraph*}
       }
     \end{fmffile}
@@ -547,7 +547,7 @@ avec $ \slashed G^\beta_\alpha=\gamma_\mu G^\mu_a(\frac{T^a}{2})^\beta_\alpha $ 
     &
 
     \begin{fmffile}{qcd_graph2}
-      \fmfframe(1,7)(1,7){ 
+      \fmfframe(1,7)(1,7){
        \begin{fmfgraph*}(110,62)
         \fmfleft{i1,i2}
         \fmfright{o1}
@@ -564,7 +564,7 @@ avec $ \slashed G^\beta_\alpha=\gamma_\mu G^\mu_a(\frac{T^a}{2})^\beta_\alpha $ 
     &
 
     \begin{fmffile}{qcd_graph3}
-      \fmfframe(1,7)(1,7){ 
+      \fmfframe(1,7)(1,7){
        \begin{fmfgraph*}(110,62)
         \fmfleft{i1,i2}
         \fmfright{o1,o2}
@@ -584,7 +584,7 @@ avec $ \slashed G^\beta_\alpha=\gamma_\mu G^\mu_a(\frac{T^a}{2})^\beta_\alpha $ 
   \end{center}
 \end{figure}
 
-Remarque 1 : La chromodynamique quantique est une interaction à portée limitée du fait du confinement des quarks dans les hadrons et de l'effet de hadronisation\footnote{Du fait de l'importance de l'interaction forte, lors de la séparation de deux quarks, l'énergie nécessaire est plus grande que la masse des quarks si bien que de nouveaux quarks et de nouveaux états liés sont créés.}. En effet, nous pouvons faire l'analogie avec l'électromagnétisme, cette interaction est de portée infinie tandis que l'interaction électromagnétique de Van der Waals inter-moléculaire est de portée finie.\\
+Remarque 1 : La chromodynamique quantique est une interaction à portée limitée du fait du confinement des quarks dans les hadrons et de l'effet de hadronisation\footnote{Du fait de l'importance de l'interaction forte, pour séparer deux quarks, il faut apporter une l'énergie plus grande que la masse des quarks si bien que de nouveaux quarks et de nouveaux états liés sont créés.}. En effet, nous pouvons faire l'analogie avec l'électromagnétisme, cette interaction est de portée infinie tandis que l'interaction électromagnétique de Van der Waals inter-moléculaire est de portée finie.\\
 
 Remarque 2 : La chromodynamique quantique est une théorie renormalisable (voir annexe ???).
 
@@ -597,7 +597,7 @@ L'histoire de l'interaction faible commence dés 1896 par la découverte de la rad
 
 Le premier modèle effectif fut élaboré par Enrico Fermi en 1933 pour décrire la radioactivité $ \beta^- $ ainsi que le désintégration $ \beta^+ $ qui venait d'être découverte en 1933, par Irène Curie et Frédéric Joliot juste après la découverte du neutron en 1932 par James Chadwick.
 
-Par la suite, les expériences ont permis de découvrir un certain nombre de propriétés propres à l'interaction faible : i) Pour les particules (resp. antiparticules) la composante droite (resp. gauche) n'a pas de charge faible. ii) Pour les particules (resp. antiparticules) la composante gauche (resp. droite) a une charge faible et interagit par paires de particules. iii) Si on introduit la notion d'isospin faible $ I^\mathrm{W} $ dont la troisième composante $ I^\mathrm{W}_3 $ est interprétée comme la charge faible, les particules peuvent être classées en doublets d'isospin faible :
+Par la suite, les expériences ont permis de découvrir un certain nombre de propriétés de l'interaction faible : i) Pour les particules (resp. antiparticules) la composante droite (resp. gauche) n'a pas de charge faible. ii) Pour les particules (resp. antiparticules) la composante gauche (resp. droite) a une charge faible et interagit par paires de particules. iii) Si on introduit la notion d'isospin faible $ I^\mathrm{W} $ dont la troisième composante $ I^\mathrm{W}_3 $ est interprétée comme la charge faible, les particules peuvent être classées en doublets d'isospin faible :
 \begin{equation}
   \Psi_1\equiv\binom{\nu_e}{e}_\mathrm{L}\ ;\ \binom{\nu_\mu}{\mu}_\mathrm{L}\ ;\ \binom{\nu_\tau}{\tau}_\mathrm{L} ;\ \binom{u}{d}_\mathrm{L}\ ;\ \binom{s}{c}_\mathrm{L}\ ;\ \binom{t}{b}_\mathrm{L}\hspace{0.33cm}\mathrm{pour}\hspace{0.33cm}\binom{I^\mathrm{W}_3=+\frac{1}{2}}{I^\mathrm{W}_3=-\frac{1}{2}}
 \end{equation}
@@ -692,7 +692,7 @@ Les couplages élémentaires entre un doublet de fermions gauche et un boson de ja
   \begin{center}
 
     \begin{fmffile}{gsw_graph1}
-      \fmfframe(1,7)(1,7){ 
+      \fmfframe(1,7)(1,7){
        \begin{fmfgraph*}(110,62)
         \fmfleft{i1,i2}
         \fmfright{o1}
@@ -710,7 +710,7 @@ Les couplages élémentaires entre un doublet de fermions gauche et un boson de ja
     \begin{tabular}{ccc}
 
     \begin{fmffile}{gsw_graph2}
-      \fmfframe(1,7)(1,7){ 
+      \fmfframe(1,7)(1,7){
        \begin{fmfgraph*}(110,62)
         \fmfleft{i1,i2}
         \fmfright{o1}
@@ -728,7 +728,7 @@ Les couplages élémentaires entre un doublet de fermions gauche et un boson de ja
     & \hspace{1.0cm} &
 
     \begin{fmffile}{gsw_graph3}
-      \fmfframe(1,7)(1,7){ 
+      \fmfframe(1,7)(1,7){
        \begin{fmfgraph*}(110,62)
         \fmfleft{i1,i2}
         \fmfright{o1}
@@ -759,7 +759,7 @@ Les couplages élémentaires entre les bosons de jauge sont les suivants :
     \begin{tabular}{ccc}
 
     \begin{fmffile}{gsw_graph4}
-      \fmfframe(1,7)(1,7){ 
+      \fmfframe(1,7)(1,7){
        \begin{fmfgraph*}(110,62)
         \fmfleft{i1,i2}
         \fmfright{o1}
@@ -776,7 +776,7 @@ Les couplages élémentaires entre les bosons de jauge sont les suivants :
     & \hspace{1.0cm} &
 
     \begin{fmffile}{gsw_graph5}
-      \fmfframe(1,7)(1,7){ 
+      \fmfframe(1,7)(1,7){
        \begin{fmfgraph*}(110,62)
         \fmfleft{i1,i2}
         \fmfright{o1,o2}
@@ -918,7 +918,7 @@ Si on développe le lagrangien $ \mathcal{L}_\mathrm{Higgs} $ sans faire tendre l
   \boxed{M_\mathrm{Higgs}=\sqrt{-2\mu^2}}
 \end{equation}
 
-La masse du boson de Higgs est un \underline{paramètre libre} du modèle standard de la physique des particules. Il reste maintenant à déterminer comment les fermions acquièrent une masse. Examinons le couplage de trilinéaire Yakawa entre le doublet des leptons et le champ $ \Phi_{0,L} $  dans la limite où $ h(x) \rightarrow 0 $ :
+La masse du boson de Higgs est un paramètre libre du modèle standard de la physique des particules. Il reste maintenant à déterminer comment les fermions acquièrent une masse. Examinons le couplage trilinéaire de Yukawa entre le doublet des leptons et le champ $ \Phi_{0,L} $  dans la limite où $ h(x) \rightarrow 0 $ :
 \begin{eqnarray}
   \mathcal{L}_\mathrm{Yukawa\,leptons} & = & \sum_{l=e,\mu,\tau}-\lambda_l\left[\left(\bar\nu_l\ \ \bar l_L\right)\binom{0}{\frac{v}{\sqrt{2}}}l_R+\bar l_R\left(0\ \ \frac{v}{\sqrt{2}}\right)\binom{\nu_l}{l_L}\right]\nonumber\\
                               & = & \sum_{l=e,\mu,\tau}-\lambda_l\frac{v}{\sqrt{2}}\left(\bar l_Ll_R+\bar l_R l_L\right)\nonumber
@@ -934,7 +934,7 @@ et en utilisant la matrice CMK (équation \ref{matrice_ckm}):
   \boxed{\mathcal{L}_\mathrm{Yukawa\,quarks}=\sum_{q=u,d,c,s,t,b}-\lambda_q\frac{v}{\sqrt{2}}\bar qq}
 \end{equation}
 
-où les coefficients $ \lambda_l $ et $ \lambda_q $ sont appelés les couplages de Yukawa. Au final, le modèle de Higgs permet d'expliquer l'origine des masses des bosons $ W^\pm $ et $ Z $ ainsi que celles de tous les fermions. Dans le modèle standard minimal de la physique des particules, les neutrinos ont une masse nulle. Des mesures expérimentales ont cependant montrée qu'ils ont une très faible de masse inférieure à l'électron volte.
+où les coefficients $ \lambda_l $ et $ \lambda_q $ sont appelés les couplages de Yukawa. Au final, le modèle de Higgs permet d'expliquer l'origine des masses des bosons $ W^\pm $ et $ Z $ ainsi que celles de tous les fermions. Il faut cependant noter que dans le modèle standard minimal de la physique des particules, les neutrinos ont une masse nulle. Des mesures expérimentales ont cependant montrée qu'ils ont une très faible de masse inférieure à l'électron volt.
 
 \newpage
 
@@ -945,7 +945,7 @@ Le mécanisme See-Saw (mécanisme balançoire) permet de construire un lagrangien d
   \nu_s=\left(\begin{array}{c}\nu_{s,1}\\\vdots\\\nu_{s,n}\end{array}\right)\hspace{0.33cm}\mathrm{et}\hspace{0.33cm}\nu=\left(\begin{array}{c}\nu_1\\\nu_2\\\nu_3\end{array}\right)
 \end{equation}
 
-Il est possible de construire deux type de termes de lagrangiens de masse, un premier de Dirac et un second de Majorana\footnote{A l'inverse des particules de Dirac, les particules de Majorana sont leurs propres antiparticules.} :
+Il est possible de construire deux types de termes de lagrangiens de masse, un premier de Dirac et un second de Majorana\footnote{A l'inverse des particules de Dirac, les particules de Majorana sont leurs propres antiparticules.} :
 \begin{equation}
   \mathcal{L}_D=\bar\nu_{s,i}\left(\mathcal{M}_D\right)^{ik}\nu_k
 \end{equation}
@@ -1003,7 +1003,7 @@ Si nous supposons que $ m_-=0 $, alors $ m^M_Lm^M_R = m^Dm^D $ et seuls les neut
   \begin{tabular}{ccc}
 
     \begin{fmffile}{higgs_graph1}
-      \fmfframe(1,7)(1,7){ 
+      \fmfframe(1,7)(1,7){
        \begin{fmfgraph*}(110,62)
         \fmfleft{i1,i2}
         \fmfright{o1}
@@ -1021,7 +1021,7 @@ Si nous supposons que $ m_-=0 $, alors $ m^M_Lm^M_R = m^Dm^D $ et seuls les neut
     & \hspace{2.0cm} &
 
     \begin{fmffile}{higgs_graph2}
-      \fmfframe(1,7)(1,7){ 
+      \fmfframe(1,7)(1,7){
        \begin{fmfgraph*}(110,62)
         \fmfleft{i1,i2}
         \fmfright{o1}
@@ -1043,7 +1043,7 @@ Si nous supposons que $ m_-=0 $, alors $ m^M_Lm^M_R = m^Dm^D $ et seuls les neut
     \\ & & \\
 
     \begin{fmffile}{higgs_graph3}
-      \fmfframe(1,7)(1,7){ 
+      \fmfframe(1,7)(1,7){
        \begin{fmfgraph*}(110,62)
         \fmfleft{i1,i2}
         \fmfright{o1}
@@ -1061,7 +1061,7 @@ Si nous supposons que $ m_-=0 $, alors $ m^M_Lm^M_R = m^Dm^D $ et seuls les neut
     & \hspace{2.0cm} &
 
     \begin{fmffile}{higgs_graph4}
-      \fmfframe(1,7)(1,7){ 
+      \fmfframe(1,7)(1,7){
        \begin{fmfgraph*}(110,62)
         \fmfleft{i1,i2}
         \fmfright{o1}
@@ -1092,7 +1092,7 @@ Si nous supposons que $ m_-=0 $, alors $ m^M_Lm^M_R = m^Dm^D $ et seuls les neut
     \begin{tabular}{ccccc}
 
     \begin{fmffile}{higgs_grap5}
-      \fmfframe(1,7)(1,7){ 
+      \fmfframe(1,7)(1,7){
        \begin{fmfgraph*}(110,62)
         \fmfleft{i1,i2}
         \fmfright{o1,o2}
@@ -1111,7 +1111,7 @@ Si nous supposons que $ m_-=0 $, alors $ m^M_Lm^M_R = m^Dm^D $ et seuls les neut
     & \ &
 
     \begin{fmffile}{higgs_graph6}
-      \fmfframe(1,7)(1,7){ 
+      \fmfframe(1,7)(1,7){
        \begin{fmfgraph*}(110,62)
         \fmfleft{i1,i2}
         \fmfright{o1,o2}
@@ -1130,7 +1130,7 @@ Si nous supposons que $ m_-=0 $, alors $ m^M_Lm^M_R = m^Dm^D $ et seuls les neut
     & \ &
 
     \begin{fmffile}{higgs_graph7}
-      \fmfframe(1,7)(1,7){ 
+      \fmfframe(1,7)(1,7){
        \begin{fmfgraph*}(110,62)
         \fmfleft{i1,i2}
         \fmfright{o1,o2}
@@ -1158,7 +1158,7 @@ Si nous supposons que $ m_-=0 $, alors $ m^M_Lm^M_R = m^Dm^D $ et seuls les neut
 
 \subsection{La gravitation}
 
-D'un point de vue classique, la gravitation est décrite par la théorie de la relativité générale. Elle fut établie en 1925 par Albert Einstein et permet une description remarquable de l'univers et des objets astrophysiques. D'un point de vue quantique, il n'existe actuellement aucune théorie complètement satisfaisante même si de bons candidats existent, citons par exemple la supergravité, la théorie des cordes, la théorie des supercordes ou encore la gravitation à boucles. Il faut cependant noter que l'interaction gravitationnelle entre des particules fondamentales est extrêmement faible, au moins trente ordres de grandeur de moins que l'interaction faible. Dans la pratique, la gravitation est tout simplement ignorée.
+D'un point de vue classique, la gravitation est décrite par la théorie de la relativité générale. Elle fut établie en 1915 par Albert Einstein et permet une description remarquable de l'univers et des objets astrophysiques. D'un point de vue quantique, il n'existe actuellement aucune théorie complètement satisfaisante même si de bons candidats existent, citons par exemple la supergravité, la théorie des supercordes ou encore la gravitation à boucles. Il faut cependant noter que l'interaction gravitationnelle entre des particules fondamentales est extrêmement faible, au moins trente ordres de grandeur de moins que l'interaction faible. Dans la pratique, la gravitation est tout simplement ignorée.
 
 Mathématiquement, le célèbre théorème de topologie \emph{no-go} de Sidney Coleman et Jeffrey Mandula affirme qu'il n'existe pas de représentation unitaire de dimension finie pour un groupe non compact. C'est pourquoi une description de la gravitation n'est pas possible dans le cadre du modèle standard.
 
@@ -1245,7 +1245,7 @@ Le calcul des corrections radiatives qui interviennent dans le calcul de section
     \begin{tabular}{ccc}
 
     \begin{fmffile}{higgs_theo_graph1}
-      \fmfframe(1,7)(1,7){ 
+      \fmfframe(1,7)(1,7){
        \begin{fmfgraph*}(110,62)
         \fmfleft{i1,i2}
         \fmfright{o1,o2}
@@ -1264,7 +1264,7 @@ Le calcul des corrections radiatives qui interviennent dans le calcul de section
     &
 
     \begin{fmffile}{higgs_theo_graph2}
-      \fmfframe(1,7)(1,7){ 
+      \fmfframe(1,7)(1,7){
        \begin{fmfgraph*}(110,62)
         \fmfleft{i1,i2}
         \fmfright{o1,o2}
@@ -1285,7 +1285,7 @@ Le calcul des corrections radiatives qui interviennent dans le calcul de section
     &
 
     \begin{fmffile}{higgs_theo_graph3}
-      \fmfframe(1,7)(1,7){ 
+      \fmfframe(1,7)(1,7){
        \begin{fmfgraph*}(110,62)
         \fmfleft{i1,i2}
         \fmfright{o1,o2}
@@ -1403,7 +1403,7 @@ La figure \ref{prediction} montre les bornes supérieure et inférieure de la mass
 
 \subsubsection{Limites indirectes}
 
-Les expériences menées auprès du LEP, du SLC et du Tevatron ont permis de mesurer les paramètres du secteur électrofaible avec une précision suffisante pour tester le modèle standard au-delà du premier ordre des perturbations. La mesure indirecte de la masse du boson de Higgs est basée sur les corrections radiatives à la masse du boson $ Z $. Les diagrammes de Feynman de la figure \ref{higgs_correction} montrent les deux principales contributions. La première (figure \ref{higgs_correction} (a)) est proportionnelle à $ m^2_t $. Cette dépendance avait permis de prédire la masse du quark top en 1994 par Gerard't Hooft et Martinus Veltmanavant avant sa découverte par les expériences CDF en 1994 puis DØ en 1995. La seconde (figure \ref{higgs_correction} (b)) est proportionnelle à $ \ln M_\mathrm{Higgs} $.
+Les expériences menées auprès du LEP, du SLC et du Tevatron ont permis de mesurer les paramètres du secteur électrofaible avec une précision suffisante pour tester le modèle standard au-delà du premier ordre des perturbations. La mesure indirecte de la masse du boson de Higgs est basée sur les corrections radiatives de la masse du boson $ Z $. Les diagrammes de Feynman de la figure \ref{higgs_correction} montrent les deux principales contributions. La première (figure \ref{higgs_correction} (a)) est proportionnelle à $ m^2_t $. Cette dépendance avait permis de prédire la masse du quark top en 1994 par Gerard't Hooft et Martinus Veltmanavant avant sa découverte par les expériences CDF en 1994 puis DØ en 1995. La seconde (figure \ref{higgs_correction} (b)) est proportionnelle à $ \ln(M_\mathrm{Higgs}) $.
 
 La figure \ref{higgs_exp1} (a) montre la comparaison entre la détermination indirecte de la masse du boson de Higgs (LEP1, SLD) et détermination directe de la masse du boson de Higgs (LEP2, Tevatron). Ces résultats tendent à favoriser une faible masse.
 
@@ -1477,14 +1477,14 @@ Parallèlement, un ajustement global des paramètres du secteur électrofaible a ét
     \end{tabular}
 
   \end{center}
-  \caption{\label{higgs_exp1}(a) Régions de masse du boson de Higgs possibles obtenues par détermination indirecte (ligne pointillée) et par détermination directe (ligne pleine) dans l'espace $ m_t $-$ m_W $. (b) Distribution $ \Delta\chi^2=\chi^2-\chi^2_\mathrm{min} $ issue de l'ajustement global des paramètres su secteur électrofaible en fonction de la masse du boson de Higgs. La région de gauche est exclue par la détermination directe LEP.}
+  \caption{\label{higgs_exp1}(a) Régions de masse du boson de Higgs possibles obtenues par détermination indirecte (ligne pointillée) et par détermination directe (ligne pleine) dans l'espace $ m_t $-$ m_W $. (b) Distribution $ \Delta\chi^2=\chi^2-\chi^2_\mathrm{min} $ issue de l'ajustement global des paramètres du secteur électrofaible en fonction de la masse du boson de Higgs. La région de gauche est exclue par détermination directe LEP.}
 \end{figure}
 
 \subsubsection{Limites directes}
 
 \paragraph{a) Résultats du LEP}
 
-L'étude du Higgs-strahlung $ ee\to Z^*\to ZH $ (figure \ref{higgs_strahlung}) permet l'explorer les régions de très faible masse en mesurant l'énergie de recul qu'acquirent les bosons $ Z $ en rayonnant un boson de Higgs. Durant la première phase de prise de donnée du LEP, aucun signal ne fut détecter dans aucune des quatre principales expériences Aleph, Delphi, Opal et L3. Durant la seconde phase de prise de donnée du LEP, avec une énergie dans le centre de masse atteignant $ 209\GeV $ et une luminosité intégrée de $ 2400\,\mathrm{pb}^{-1} $, le Higgs-strahlung fut le canal principal de production. La combinaison des résultats des quatre expériences permit d'établir la contrainte $ M_\mathrm{Higgs}>114.4\GeV $ à $ 95\% $ de niveau de confiance.
+L'étude du Higgs-strahlung $ ee\to Z^*\to ZH $ (figure \ref{higgs_strahlung}) permet l'explorer les régions de très faible masse en mesurant l'énergie de recul qu'acquirent les bosons $ Z $ excités en rayonnant un boson de Higgs. Durant la première phase de prise de données du LEP, aucun signal ne fut détecter dans aucune des quatre principales expériences Aleph, Delphi, Opal et L3. Durant la seconde phase de prise de donnée du LEP, avec une énergie dans le centre de masse atteignant $ 209\GeV $ et une luminosité intégrée de $ 2400\,\mathrm{pb}^{-1} $, le Higgs-strahlung fut le canal principal de production. La combinaison des résultats des quatre expériences permit d'établir la contrainte $ M_\mathrm{Higgs}>114.4\GeV $ à $ 95\% $ de niveau de confiance.
 
 \begin{figure}[!ht]
   \begin{center}
@@ -1495,7 +1495,7 @@ L'étude du Higgs-strahlung $ ee\to Z^*\to ZH $ (figure \ref{higgs_strahlung}) pe
          \fmfleft{i1,i2}
          \fmfright{o1,o2}
          \fmf{fermion}{i1,v1,i2}
-         \fmf{photon,label=$Z^*$}{v1,v2}
+         \fmf{photon,label=$Z^*$,label.side=right}{v1,v2}
          \fmf{photon}{v2,o1}
          \fmf{dashes}{v2,o2}
         \fmflabel{$e$}{i1}
@@ -1510,20 +1510,20 @@ L'étude du Higgs-strahlung $ ee\to Z^*\to ZH $ (figure \ref{higgs_strahlung}) pe
   \caption{\label{higgs_strahlung}Production du boson de Higgs par Higgs-strahlung.}
 \end{figure}
 
-Le boson de Higgs se désintégrant principalement en paire de quarks $ b $, particules les plus lourdes accessibles d'un point de vue de la cinématique. Les trois principales topologies qui furent étudiées, qui s'appuie sur utilisation d'algorithmes d'étiquetage des quarks b, sont $ Z^*\to b\bar bq\bar q $, $ Z^*\to b\bar b\nu\bar\nu=b\bar bMET $ et $ Z^*\to b\bar bl^+l^- $. Les états finaux faisant intervenir des tau furent également pris en compte. Durant les derniers moi de prise de donnée, un petit excès à $ 1.7\sigma $ fut observé à une masse invariante de $ \sim115\GeV $. Excès insuffisant pour conclure à une évidence ($ 3\sigma $) ou une découverte ($ 5\sigma $). La figure \ref{event_display} montre le candidat $ HZ $ de plus grand poids observé dans l'expérience Aleph.
+Le boson de Higgs se désintégrant principalement en paire de quarks $ b $, particules les plus lourdes accessibles d'un point de vue de la cinématique. Les trois principales topologies qui furent étudiées, en s'appuyant sur utilisation d'algorithmes d'étiquetage des quarks b, sont $ Z^*\to b\bar bq\bar q $, $ Z^*\to b\bar b\nu\bar\nu=b\bar bMET $ et $ Z^*\to b\bar bl^+l^- $. Les états finaux faisant intervenir des tau furent également pris en compte. Durant les derniers mois de prise de donnée, un petit excès à $ 1.7\sigma $ fut observé à une masse invariante de $ \sim115\GeV $. Excès insuffisant pour conclure à une évidence ($ 3\sigma $) ou une découverte ($ 5\sigma $). La figure \ref{event_display} montre le candidat $ HZ $ de plus grand poids observé dans l'expérience Aleph.
 
 \begin{figure}[!ht]
   \begin{center}
     \includegraphics[width=14cm, keepaspectratio]{phd_ms/aleph}
   \end{center}
-  \caption{\label{event_display}Candidat $ HZ $ de plus grand poids observé dans l'expérience Aleph. Il est possible d'observer deux jets issus de vertex déplacés avec masse invariante de $ 114.3\GeV $ et deux jets légers issus d'un boson $ Z $ avec une masse invariante de $ 91\GeV $.}
+  \caption{\label{event_display}Candidat $ HZ $ de plus grand poids observé dans l'expérience Aleph. Il contient deux jets issus de vertex déplacés avec masse invariante de $ 114.3\GeV $ et deux jets légers issus d'un boson $ Z $ avec une masse invariante de $ 91\GeV $.}
 \end{figure}
 
 \newpage
 
 \paragraph{b) Résultats du Tevatron}
 
-Plus récemment, les expériences DØ et CDF au Tevatron ont accumulé suffisamment de statistique afin de poser des limites en s'appuyant sur l'étude des canaux $ H\to WW $, $ H\to ZZ $, $ WH\to l\nu b\bar b $, $ WH/ZH\to qqb\bar b $, $ WH/ZH\to METb\bar b $, $ ZH\to llb\bar b $, $ H\to\gamma\gamma $, $ H\to\tau\tau $, $ H\to b\bar b $, etc... Les résultats sont représentés sur la figure \ref{higgs_exp2}. Le région qui s'étend de $ 158\GeV $ jusqu'à $ 175\GeV $ est exclue à $ 95\% $ de niveau de confiance.
+Plus récemment, les expériences DØ et CDF au Tevatron ont accumulé suffisamment de statistique afin de poser des limites en s'appuyant sur l'étude des canaux $ H\to WW $, $ H\to ZZ $, $ WH\to l\nu b\bar b $, $ WH/ZH\to qqb\bar b $, $ WH/ZH\to METb\bar b $, $ ZH\to llb\bar b $, $ H\to\gamma\gamma $, $ H\to\tau\tau $, $ H\to b\bar b $, etc... Les résultats sont représentés sur la figure \ref{higgs_exp2} où la région qui s'étend de $ 158\GeV $ jusqu'à $ 175\GeV $ est exclue à $ 95\% $ de niveau de confiance.
 
 \begin{figure}[!ht]
   \begin{center}

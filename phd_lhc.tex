@@ -1,0 +1,221 @@
+\chapter{La physique du Higgs au LHC}
+
+\section{L'Organisation Européenne pour la Recherche Nucléaire}
+
+L'Organisation Européenne pour la Recherche Nucléaire (Cern\footnote{Acronyme provisoire institué en 1952 pour Conseil Européenne pour la Recherche Nucléaire}) est le plus important centre de recherche en physique de particules au monde. Il est situé à cheval sur la frontière franco-suisse à quelques kilomètres de Genève sur les communes de Meyrin (ch), Ferney-Voltaire (fr) et Saint-Genis-Pouilly (fr).
+
+A la fin de la seconde guerre mondiale, la recherche européenne en physique était moribonde alors qu'elle fut à son apogée, au sommet de sa gloire, quelques années auparavant. C'est sous l'impulsion de de Louis de Broglie que l'idée d'une organisation européenne dédiée à la recherche en physique nucléaire fut envisagée au cours de la conférence européenne de la culture tenue à Lausanne en 1949.
+
+Le Conseil Européen pour la Recherche Nucléaire fut proposée en 1952 avec le soutient de l'Organisation des Nations unies pour l'éducation, la science et la culture (UNESCO). Le 29 septembre 1954, la convention Cern fut ratifiée par 12 états européens fondateurs\footnote{Ils seront ultérieurement rejoints par l'Autriche (1959), l'Espagne (1961), le Portugal (1985), la Finlande (1991), la Pologne (1991), la Hongrie (1992), la République tchèque (1993), la Slovaquie (1993) et la Bulgarie (1999).}, l'Allemagne, la Belgique, le Danemark, la France, la Grèce, l'Italie, la Norvège, le Royaume-Uni, la Suède, la Suisse, les Pays-Bas et la République fédérative socialiste de Yougoslavie. Le Cern fut créé et porte officiellement le nom d'\emph{Organisation Européenne pour la Recherche Nucléaire est officiellement}.
+
+A l'heure actuelle, la physique des particules est la principale activité de recherche menée au Cern. Il dispose du plus important complexe d'accélérateurs de particules au monde. Le tableau \ref{cern_events} montre les principaux évènements au Cern.
+
+\begin{table}[!ht]
+  \begin{center}
+
+    \begin{tabular}{|l|l|l|l|}
+      \hline
+      \hline
+        \small Date & Événement & \small Date & Événement\\
+      \hline
+        \small 1957 & \small Le premier accélérateur est mis en service	& \small 1986 & \small Les collisions d'ions lourds débutent\\
+        \small 1959 & \small Le PS est mis en service			& \small 1989 & \small Le géant LEP est mis en service\\
+        \small 1968 & \small Georges Charpak révolutionne la détection	& \small 1990 & \small Tim Berners-Lee invente le Web\\
+        \small 1971 & \small Le premier collisionneur proton-proton	& \small 1993 & \small Asymétrie matière-antimatière\\
+        \small 1973 & \small Les courants neutres sont révélés		& \small 1995 & \small Première observation d'antihydrogène\\
+        \small 1976 & \small Le SPS est mis en service			& \small 2002 & \small Capture d'atomes d'antihydrogène\\
+        \small 1983 & \small Les particules W et Z sont découvertes	& \small 2008 & \small Le LHC est mis en service\\
+      \hline
+    \end{tabular}
+
+  \end{center}
+  \caption{\label{cern_events}Tableau récapitulatif des principaux évènements au Cern.}
+\end{table}
+
+\section{Le Grand Collisionneur de Hadrons}
+
+\subsection{Présentation}
+
+\begin{figure}[!ht]
+  \begin{center}
+
+    \begin{tabular}{ccc}
+    \includegraphics[height=5.65cm, keepaspectratio]{phd_lhc/dipole2}
+    &&
+    \includegraphics[height=6.35cm, keepaspectratio]{phd_lhc/dipole1}
+    \\
+    (a)
+    &&
+    (b)
+    \end{tabular}
+
+  \end{center}
+  \caption{\label{dipole}blabla}
+\end{figure}
+
+\subsection{Injection}
+
+%\begin{figure}[!ht]
+%  \begin{center}
+%    \includegraphics[height=12.5cm, keepaspectratio]{phd_lhc/cac}
+%  \end{center}
+%  \caption{\label{cac}Représentation synthétique du complexe d'accélérateurs au Cern. Le LHC est représenté en bleu foncé avec ces quatre principales expériences Atlas, CMS, LHCb et Alice.}
+%\end{figure}
+
+\newpage
+
+\section{Production du boson de Higgs}
+
+Dans les collisionneurs hadroniques $ pp $ ou $ p\bar p $ et plus spécifiquement au LHC, la production du boson de Higgs s'effectue principalement via les canaux suivants :
+\begin{itemize}
+ \item Production par fusion de gluons, $ gg\to H $, figure \ref{production_higgs} (a).
+ \item Production par fusion de bosons vecteurs, $ VV\to H $, figure \ref{production_higgs} (b).
+ \item Production par Higgs-strahlung, $ qq\to V^*\to VH $, $ V=W,Z $, figure \ref{production_higgs} (c).
+ \item Production par fusion de quarks top, $qq,gg\to bbH $ ou $ gg\to ttH $, figure \ref{production_higgs} (d).
+\end{itemize}
+
+\indent\\\indent La figure \ref{section_efficace_production_higgs} montre les sections efficaces des canaux de production du boson de Higgs pour une énergie dans le centre de masse nominale de $ 14\TeV $. C'est la fusion de gluons qui domine très largement sur deux ordres de grandeur.
+
+\begin{figure}[!ht]
+  \begin{center}
+
+  \begin{tabular}{ccc}
+
+    \begin{fmffile}{prod_graph1}
+      \fmfframe(0,0)(0,0){
+       \begin{fmfgraph*}(100,90)
+        \fmfbottom{P1,P2}
+        \fmftop{P1',H',P2'}
+        \fmf{fermion,tension=2,label=$P_1$}{P1,g1}
+        \fmf{fermion,tension=2,label=$P_2$}{P2,g2}
+        \fmfblob{.16w}{g1,g2}
+        \fmf{gluon}{g1,v1}
+        \fmf{gluon}{v2,g2}
+        \fmf{fermion,tension=.6,label.side=right,label=$t$}{H,v1,v2,H}
+        \fmfdot{H,v1,v2}
+        \fmf{dashes,lab=$H$}{H,H'}
+        \fmf{fermion}{g1,P1'}
+        \fmf{fermion}{g2,P2'}
+        \fmffreeze
+        \renewcommand{\P}[3]{\fmfi{plain}{vpath(__#1,__#2) shifted (thick*(#3))}}
+        \P{P1}{g1}{2,0}
+        \P{P1}{g1}{-2,1}
+        \P{P2}{g2}{2,1}
+        \P{P2}{g2}{-2,0}
+        \P{g1}{P1'}{-2,-1}
+        \P{g1}{P1'}{2,0}
+        \P{g2}{P2'}{-2,0}
+        \P{g2}{P2'}{2,-1}
+       \end{fmfgraph*}
+      }
+    \end{fmffile}
+
+    & \ &
+
+    \begin{fmffile}{prod_graph2}
+      \fmfframe(1,7)(1,7){
+       \begin{fmfgraph*}(110,50)
+        \fmfleft{i1,i2}
+        \fmfright{o1,o2,o3}
+        \fmf{fermion}{i1,v1,o1}
+        \fmf{dashes}{v3,o2}
+        \fmf{fermion}{i2,v2,o3}
+        \fmf{photon,label=$\phantom{tttt}V$}{v1,v3}
+        \fmf{photon,label=$\phantom{tttt}V$}{v2,v3}
+        \fmflabel{$q$}{i1}
+        \fmflabel{$q$}{i2}
+        \fmflabel{$q$}{o1}
+        \fmflabel{$H$}{o2}
+        \fmflabel{$q$}{o3}
+       \end{fmfgraph*}
+      }
+    \end{fmffile}
+
+    \\
+
+    (a) & \ & (b)
+
+    \\\\
+
+    \begin{fmffile}{prod_graph3}
+      \fmfframe(1,7)(1,7){
+       \begin{fmfgraph*}(110,50)
+         \fmfleft{i1,i2}
+         \fmfright{o1,o2}
+         \fmf{fermion}{i1,v1,i2}
+         \fmf{photon,label=$V^*$}{v1,v2}
+         \fmf{photon}{v2,o1}
+         \fmf{dashes}{v2,o2}
+        \fmflabel{$q$}{i1}
+        \fmflabel{$q$}{i2}
+        \fmflabel{$V$}{o1}
+        \fmflabel{$H$}{o2}
+       \end{fmfgraph*}
+      }
+    \end{fmffile}
+
+    & \ &
+
+    \begin{fmffile}{prod_graph4}
+      \fmfframe(1,7)(1,7){
+       \begin{fmfgraph*}(110,50)
+        \fmfleft{i1,i2}
+        \fmfright{o1,o2,o3}
+        \fmf{gluon}{i1,v1}
+        \fmf{gluon}{i2,v2}
+        \fmf{fermion}{o1,v1}
+        \fmf{fermion,label=$\phantom{tttt}t$,label.side=right}{v1,v3}
+        \fmf{dashes}{v3,o2}
+        \fmf{fermion,label=$\phantom{tttt}t$,label.side=right}{v3,v2}
+        \fmf{fermion}{v2,o3}
+        \fmflabel{$g$}{i1}
+        \fmflabel{$g$}{i2}
+        \fmflabel{$q$}{o1}
+        \fmflabel{$H$}{o2}
+        \fmflabel{$q$}{o3}
+       \end{fmfgraph*}
+      }
+    \end{fmffile}
+
+    \\\\
+
+    (c) & \ & (d)
+
+    \end{tabular}
+
+  \end{center}
+  \caption{\label{production_higgs}(a) Production par fusion de gluons rayonnés par les partons $ P_1 $ et $ P_2 $. (b) Production par fusion de bosons vecteurs. (c) Production par Higgs-strahlung. (d) Production par fusion de quarks top.}
+\end{figure}
+
+\begin{figure}[!ht]
+  \begin{center}
+    \includegraphics[height=5.5cm, keepaspectratio]{phd_lhc/xsection_production_higgs}
+  \end{center}
+  \caption{\label{section_efficace_production_higgs}Section efficace des canaux de production du boson de Higgs au LHC pour énergie dans le centre de masse nominale de $ 14\TeV $. Les corrections QCD au premier ordre 1 sont prises en compte sauf pour $ ttH $ pour lequel $ \textrm{K-factor}\equiv\frac{\sigma_{NLO}}{\sigma_{LO}}\approx20\% $.}
+\end{figure}
+
+\newpage
+
+\section{Signatures du boson de Higgs}
+
+La figure \ref{rapport_branchement_higgs} montre les rapports de branchement des différents modes de désintégration du boson de Higgs dans la restriction du modèle standard. Il apparait deux régions de masse qu'il convient d'étudier séparément :
+\begin{itemize}
+ \item $ 80\GeV<M_\textrm{Higgs}<130\GeV $ : les désintégrations en paires de quarks $ b $, en paires de $ \tau $ et en paires de quarks $ c $ dominent, néanmoins, à cause de l'environnement hadronique important, seule la désintégration en paires de photons, $ H\to\gamma\gamma $, est exploitable. Il s'agit du canal privilégié pour l'étude du boson de Higgs léger.
+ \item $ 130\GeV<M_\textrm{Higgs}<800\GeV $ : les désintégrations en paires de bosons vecteurs dominent. Le canal $ H\to WW $ a un rapport de branchement plus grand que le canal $ H\to ZZ $, néanmoins, il est techniquement plus simple de reconstruire une paire de bosons $ Z $ qui se désintègre en quatre leptons isolés (électrons ou muons). Il s'agit du \emph{golden channel} pour l'étude du boson de Higgs.
+\end{itemize}
+
+\begin{figure}[!ht]
+  \begin{center}
+    \includegraphics[height=5.5cm, keepaspectratio]{phd_lhc/bratio_higgs}
+  \end{center}
+  \caption{\label{rapport_branchement_higgs}Rapports de branchement des différents modes de désintégration du boson de Higgs dans la restriction du modèle standard.}
+\end{figure}
+
+\subsection{$ H\to\gamma\gamma $}
+
+\subsection{$ H\to ZZ^*\to4l $}
+
+\subsection{$ H\to WW^*\to2l2\nu $}
+
+\section{Les générateurs d'évènement}
+
