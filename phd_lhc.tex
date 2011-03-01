@@ -38,10 +38,10 @@ A l'heure actuelle, la physique des particules est la principale activité de rec
 
 Le Large Hadron Collider (LHC), officiellement approuvé en décembre 1994, et inauguré le 21 octobre 2008, est le plus puissant collisionneur proton-proton et ions lourds au monde. Il a été construit dans le tunnel circulaire de son prédécesseur ($ 26.659km $ de circonférence), le Large Electron Positron collider (LEP). Son objectif est de produire des milliards de collisions de protons par seconde à ultra haute énergie. Pour cela, deux faisceaux, qui se propagent à sens contraires, sont accélérés jusqu'à une énergie nominale de $ 7\TeV $ avant d'entrer en collision avec une énergie $ \sqrt{s}=14\TeV $ dans le centre de masse. Une paramètre important pour un collisionneur est sa luminosité instantanée. Elle est définie par le nombre de collisions par unité de surface et par unité de temps :
 \begin{equation}
-  L=\frac{N^2_pn_bf}{4\pi\sigma}
+  L=\frac{N^2_pn_bf}{4\pi\sigma_x\sigma_y}
 \end{equation}
 
-\noindent où $ N_p $ est le nombre de protons par paquets, $ n_b $ le nombre de paquets par faisceau, $ \sigma $ la dispersion transversale du faisceau et $ f $ la fréquence de révolution. La luminosité instantanée nominale attendue au LHC est de $ \sim10^{38}cm^{-2}s^{-1} $.
+\noindent où $ N_p $ est le nombre de protons par paquets, $ n_b $ le nombre de paquets par faisceau, $ \sigma_{x,y} $ les composantes de la dispersion transversale du faisceau et $ f $ la fréquence de révolution des paquets. La luminosité instantanée nominale attendue au LHC est de $ \sim10^{34}cm^{-2}s^{-1} $.
 
 L'accélération des protons est réalisée par un champ magnétique de $ 8.7 $ Teslas générés par 1792 dipôles supraconducteurs au niobium-titane. La focalisation du faisceau est assurée par 392 quadrupôles supraconducteurs. Les deux tubes sont placés dans un même cryostat à une température de $ 1.9K $. Les figures \ref{dipole} (a) et \ref{dipole} (b) montrent le détail des dipôles du LHC. Le tableau \ref{lhc_a} montre les principales caractéristiques du LHC. Enfin, la figure \ref{lhc_b} montre une représentation synthétique du LHC avec ses quatre principales expériences Atlas, CMS, LHCb et Alice.
 
@@ -77,18 +77,18 @@ Remarque : Les collisionneurs à protons sont préférables aux collisionneurs élec
         Paramètre & Valeur\\
       \hline
         Circonférence de l'anneau & $ 26.659km $\\
-        Énergie nominale (centre de masse) & $ \sqrt{s}=7\TeV $\\
-        Luminosité nominale de l'accélérateur & $ L=10^{34}cm^{-2}s^{-1} $\\
-        Temps entre deux croisement de faisceaux & $ 25ns$\\
-        Nombre de protons par paquets & $ 1.15\times10^{11} $\\
+        Énergie nominale (centre de masse) & $ \sqrt{s}=14\TeV $\\
+        Luminosité nominale de l'accélérateur & $ L\sim10^{34}cm^{-2}s^{-1} $\\
+        Fréquence de croisement des faisceaux & $ \sim40 $ MHz ($ 25ns$)\\
+        Nombre de protons par paquets & $ \sim1.15\times10^{11} $\\
         Nombre de paquets & $ 2808 $\\
-        Dispersion de la position du point de croisement & $ \left\{ \begin{array}{l} \sigma_{xy}=16\mu m \\ \sigma_{\,\,z\,\,}=5.6cm \end{array} \right. $\\
-        Angle entre les faisceaux aux points de croisement & $ 285\mu rad $\\
-        Durée de vie du faisceau & $ 22 $ heures\\
-        Durée de vie de la luminosité & $ 10 $ heures\\
-        Temps de recharge du faisceau & $ \sim2 $ heures\\
-        Champ magnétique des dipôles & $ 8.7 $ Teslas (NbTi)\\
-        Température des dipôles & $ 1.9K $ (hélium)\\
+        Dispersion de la position du point de croisement & $ \left\{ \begin{array}{l} \sigma_{x,y}\sim16\mu m \\ \sigma_{\,\,z\,\,}\sim5.6cm \end{array} \right. $\\
+        Angle entre les faisceaux aux points de croisement & $ \sim285\mu rad $\\
+        Durée de vie du faisceau & $ \sim22 $ heures\\
+        Durée de vie de la luminosité & $ \sim10 $ heures\\
+        Temps de recharge des faisceaux & $ \sim2 $ heures\\
+        Champ magnétique des dipôles & $ \sim8.7 $ Teslas (NbTi)\\
+        Température des dipôles & $ \sim1.9K $ (hélium)\\
       \hline
     \end{tabular}
 
@@ -117,7 +117,7 @@ Le temps de remplissage du LHC est de sept minutes environ alors que le temps d'
   \begin{center}
     \includegraphics[height=10.5cm, keepaspectratio]{phd_lhc/cac}
   \end{center}
-  \caption{\label{cac}Représentation synthétique du complexe d'accélérateurs au Cern. Le LHC est représenté en bleu foncé avec ses quatre principales expériences Atlas, CMS, LHCb et Alice.}
+  \caption{\label{cac}Représentation synthétique du complexe d'accélérateurs au Cern. Le LHC est représenté en bleu foncé avec ses quatre principales expériences Atlas, CMS, Alice et LHCb.}
 \end{figure}
 
 \newpage
@@ -281,7 +281,7 @@ Les jets ont tendance à créer des pions tels que des $ \pi^0 $ ou encore des $ \
 
 Ce canal est privilégié dans la région des grandes masses : $ 130\GeV<M_\textrm{Higgs}<800\GeV $. Le chapitre ??? est dédié à la préparation de la recherche du boson de Higgs dans ce canal. Observons la largeur partielle de désintégration du processus $ \Gamma(H\to VV) $ où $ V $ est un boson vecteur $ W^\pm $ ou $ Z $ :
 \begin{displaymath}
-  \Gamma(H\to VV)=\frac{G_\mu M^3_\textrm{Higg}}{16\sqrt{\pi}}\delta_v\sqrt{1-4x}\left(1-4x+12x^2\right)\hspace{0.33cm}\mathrm{avec}\hspace{0.33cm}x\equiv\frac{M_V}{M_\textrm{Higgs}}\mathrm{,}\hspace{0.17cm}\delta_W=2\hspace{0.17cm}\mathrm{et}\hspace{0.17cm}\delta_Z=1
+  \Gamma(H\to VV)=\frac{G_\mu M^3_\textrm{Higg}}{16\sqrt{\pi}}\delta_v\sqrt{1-4x}\left(1-4x+12x^2\right)\hspace{0.38cm}\mathrm{avec}\hspace{0.38cm}x\equiv\frac{M_V}{M_\textrm{Higgs}}\mathrm{,}\hspace{0.17cm}\delta_W=2\hspace{0.17cm}\mathrm{et}\hspace{0.17cm}\delta_Z=1
 \end{displaymath}
 
 Pour $ M_\textrm{Higgs} $ suffisamment grande, la largeur $ \Gamma(H\to WW) $ est deux fois plus grande que la largeur $ \Gamma(H\to ZZ) $. Si nous supposons qu'aucun autre canal n'est accessible d'un point de vue de la cinématique, alors les rapports de branchement sont respectivement $ 2/3 $ pour $ H\to WW $ et $ 1/3 $ pour $ H\to ZZ $. Cependant, de par sa signature très claire avec quatre leptons isolés dans l'état final ($ eeee $, $ ee\mu\mu $ ou $\mu\mu\mu\mu $), le canal de désintégration $ H\to ZZ\to4l $ est le canal le plus intéressant pour la recherche du boson de Higgs.
@@ -326,4 +326,39 @@ La figure \ref{potentiel_decouverte_higgs} (b) montre le potentiel de découverte
 \end{figure}
 
 \section{Les générateurs d'évènements}
+
+\newpage
+
+\section{Les expériences auprès du LHC}
+
+\newpage
+
+\begin{figure}[!ht]
+  \begin{center}
+
+  \begin{tabular}{cc}
+
+    \includegraphics[height=4.0cm, keepaspectratio]{phd_lhc/atlas}
+    &
+    \includegraphics[height=4.0cm, keepaspectratio]{phd_lhc/cms}
+    \\
+    (a) & (b)
+    \\
+    \includegraphics[height=4.0cm, keepaspectratio]{phd_lhc/alice}
+    &
+    \includegraphics[height=4.0cm, keepaspectratio]{phd_lhc/lhcb}
+    \\
+    (c) & (d)
+    \\
+    \includegraphics[height=4.0cm, keepaspectratio]{phd_lhc/totem}
+    &
+    \includegraphics[height=4.0cm, keepaspectratio]{phd_lhc/lhcf}
+    \\
+    (e) & (f)
+
+  \end{tabular}
+
+  \end{center}
+  \caption{\label{detecteurs}Détecteur Atlas (a), détecteur CMS (b), détecteur Alice (c), détecteur LHCb (d), détecteur Totem (e) et détecteur LHCf (f).}
+\end{figure}
 
