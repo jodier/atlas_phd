@@ -2,7 +2,7 @@
 
 \newpage
 
-\noindent\\\\\\\\\\
+\noindent\\
 
 \begin{figure}[!ht]
   \begin{center}
@@ -11,7 +11,7 @@
   \caption{\label{atlas_1}Représentation générale en image de synthèses du détecteur Atlas.}
 \end{figure}
 
-\noindent\\\\\\\\\\
+\noindent\\
 
 \begin{figure}[!ht]
   \begin{center}
@@ -21,17 +21,51 @@
   \caption{\label{atlas_2}Représentation générale en photographie du détecteur Atlas.}
 \end{figure}
 
+\noindent\\
+
+\begin{table}[!ht]
+  \begin{center}
+
+    \begin{tabular}{|l|l|c|}
+      \hline
+      \hline
+        Sous-détecteur & Résolution & Couverture en pseudo-rapidité $ \eta $\\
+      \hline
+        trajectographe interne & $ \frac{\sigma_{p_T}}{p_T}=0.05\%p_T\oplus1\% $ & $ \pm2.5 $\\
+      \hline
+        Calorimètre électromagnétique & $ \frac{\sigma_E}{E}=\frac{10\%}{\sqrt{E}}\oplus0.7\% $ & $ \pm3.2 $\\
+      \hline
+        Calorimètre hadronique & $ \frac{\sigma_E}{E}=\frac{50\%}{\sqrt{E}}\oplus3\% $ (tonneau) & $ \pm3.2 $\\
+                               & $ \frac{\sigma_E}{E}=\frac{100\%}{\sqrt{E}}\oplus10\% $ (bouchons) & $ 3.2<|\eta|<4.9 $\\
+      \hline
+        Spectromètre à muons & $ \frac{\sigma_{p_T}}{p_T}=10\%p_T $ à $ p_T=1\TeV $ & $ \pm2.7 $\\
+      \hline
+    \end{tabular}
+
+  \end{center}
+  \caption{\label{performances}Performances générales du détecteur Atlas où l'énergie $ E $ et l'impulsion transverse $ p_T $ sont exprimés en $ \GeV $.}
+\end{table}
+
 \newpage
 
 \section{Le système d'aimants}
 
+Pour courber la trajectoire des particules chargées (afin de mesurer leur impulsion et leur charge électrique), un imposant système d'aimants supraconducteurs a été développé pour le détecteur Atlas. Il est constitué de quatre aimants distinctes :
+
+\begin{itemize}
+  \item Un aimant solénoïdal qui fournit un champ magnétique d'une valeur de $ 2 $ Teslas suivant l'axe $ z $. Il mesure $ 5.3m $ de long pour $ 2.5m $ de diamètre et englobe complètement les trajectographes.
+  \item Un aimant toroïdal pour la partie tonneau du détecteur Atlas formé de 8 bobines supraconductrices. Elles mesurent $ 25m $ de long pour $ 5m $ de large et fournit un champ magnétique d'une valeur de $ 0.5 $ Teslas.
+  \item Deux aimants toroïdaux pour les parties bouchons du détecteur Atlas formés de 8 bobines supraconductrices. Elles mesurent $ 5m $ de long pour $ 5m $ de large et fournissent un champ magnétique d'une valeur de $ 1.0 $ Teslas.
+\end{itemize}
 
 \begin{figure}[!ht]
   \begin{center}
     \includegraphics[height=6.0cm, keepaspectratio]{phd_atlas/aimants}
   \end{center}
-  \caption{\label{aimants}Représentation générale en image de synthèses du détecteur Atlas.}
+  \caption{\label{aimants}Représentation générale en image de synthèses du système d'aimants détecteur Atlas (en rouge).}
 \end{figure}
+
+La figure \ref{aimants} montre une représentation générale en image de synthèses du système d'aimants détecteur Atlas. Alors que le champ solénoïdal courbe la trajectoire des particules suivant l'angle azimutale $ \phi $, Les champs toroïdaux courbent la trajectoire des particules suivant l'angle $ \theta $ ou encore suivant la pseudo-rapidité $ \eta=-\ln\tan\frac{\theta}{2} $.
 
 \newpage
 
@@ -88,12 +122,12 @@ L'installation dans Atlas a été terminée en juin 2007. Actuellement, environ $ 9
 \begin{figure}[!ht]
   \begin{center}
 
-  \begin{tabular}{cc}
+  \begin{tabular}{ccc}
     \includegraphics[height=5.5cm, keepaspectratio]{phd_atlas/pixel_electonique1}
-    &
+    &&
     \includegraphics[height=5.5cm, keepaspectratio]{phd_atlas/pixel_electonique2}
     \\
-    (a) & (b)
+    (a) && (b)
   \end{tabular}
 
   \end{center}
@@ -135,15 +169,15 @@ Situé autour du SCT, le TRT est le troisième trajectographe du détecteur Atlas.
   \caption{\label{trt_identification}Probabilité de déposer des coups de haut seuil en fonction du facteur $ \gamma $ de Lorentz pour des pions et pour des électrons.}
 \end{figure}
 
-\subsection{Matériel dans le détecteur interne}
+\subsection{Matériel dans le trajectographe interne}
 
-L'efficacité de reconstruction des traces à faibles impulsion transverse est limitée par la présence de matière. De plus, une densité trop importante est préjudiciable à la reconstruction et à l'identification des électrons et des photons en initiant des gerbes électromagnétiques prématurées, par bremsstrahlung $ e^\pm\to e^\pm\gamma $ et par production de paires $ \gamma\to e^+e^-$, avant les calorimètres. La figure \ref{materiel} montre la distribution de la quantité de matériel à la sortie de l'enveloppe du détecteur interne exprimé en longueur de radiation $ X_0 $ en fonction de la pseudo-rapidité $ |\eta| $.
+L'efficacité de reconstruction des traces à faibles impulsion transverse est limitée par la présence de matière. De plus, une densité trop importante est préjudiciable à la reconstruction et à l'identification des électrons et des photons en initiant des gerbes électromagnétiques prématurées, par bremsstrahlung $ e^\pm\to e^\pm\gamma $ et par production de paires $ \gamma\to e^+e^-$, avant les calorimètres. La figure \ref{materiel} montre la distribution de la quantité de matériel à la sortie de l'enveloppe du trajectographe interne exprimé en longueur de radiation $ X_0 $ en fonction de la pseudo-rapidité $ |\eta| $.
 
 \begin{figure}[!ht]
   \begin{center}
     \includegraphics[height=5.5cm, keepaspectratio]{phd_atlas/materiel}
   \end{center}
-  \caption{\label{materiel}Distribution de la quantité de matériel à la sortie de l'enveloppe du détecteur interne exprimé en longueur de radiation $ X_0 $ en fonction de la pseudo-rapidité $ |\eta| $.}
+  \caption{\label{materiel}Distribution de la quantité de matériel à la sortie de l'enveloppe du trajectographe interne exprimé en longueur de radiation $ X_0 $ en fonction de la pseudo-rapidité $ |\eta| $.}
 \end{figure}
 
 \section{La calorimétrie}
