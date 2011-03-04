@@ -2,6 +2,18 @@
 
 \section{Présentation générale}
 
+Le détecteur Atlas est un détecteur géant et généraliste dédié à la physique des particules. Fruit de plus de quinze années de travail par les membres de la collaboration Atlas\footnote{En 2011, la collaboration Atlas compte plus de 2500 chercheurs répartis dans 167 instituts pour 35 pays}, il a été officiellement inauguré le 21 octobre 2008. Avec un volume $ \{L=46m\}\times\{l=25m\}\times\{h=25m\} $ et une masse de 7000 tonnes, c'est le plus gros détecteur jamais construit sur Terre. Le détecteur Atlas est situé au Cern, sur la commune de Meyrin, dans une caverne artificielle de volume $ \{L=55m\}\times\{l=35m\}\times\{h=40m\} $ à $ 80m $ sous terre. La communication avec la surface s'effectue par l'intermédiaire de deux puits d'un diamètre de $ ???m $. Ce détecteur est une des quatre principales expériences basée au LHC avec CMS, Alice et LHCb. Il a été conçu pour collecter un maximum d'information sur les collisions proton-proton et ions lourds en reconstruisant avec précision la topologie des évènements. Ses principaux champs d'investigation sont la recherche du boson de Higgs, la recherche de processus physiques au-delà du modèle standard, les mesures de précision sur le quark top et l'étude des collisions d'ions lourds. Le détecteur Atlas est doté d'une structure en \emph{poupée russe} en superposant plusieurs couches cylindriques de détecteurs.\\
+
+\noindent\ \ \ De l'intérieur vers l'extérieur, il nous rencontrons :
+\begin{itemize}
+  \item un \textbf{trajectographe interne} qui permet de reconstruire les traces des particules chargées issus du vertex d'interaction. Grâce à un puissant champ solénoïdal, la connaissance des traces, qui s'enroulent en hélice, permet de reconstruire l'impulsion des particules.\\
+  \item un \textbf{système de calorimétrique} qui permet de reconstruire l'énergie des particules électromagnétiques (électrons, photons, etc\dots) et hadroniques (jets, bayons, mésons, etc\dots) grâce à sa très grande densité.\\
+  \item un \textbf{spectromètre à muons} qui est un trajectographe externe permettant de reconstruire traces des muons. Grâce à un puissant champ toroïdal, la connaissance des traces, qui sont courbées, permet de reconstruire l'impulsion des muons.\\
+  \item un \textbf{système de déclenchement} (trigger system) qui permet une sélection les évènements susceptibles de présenter un intérêt au niveau des études de physique.\\
+\end{itemize}
+
+La figure \ref{atlas_1} montre une représentation générale en image de synthèses du détecteur Atlas. La figure \ref{atlas_2} (a) montre une photographie en grand angle du détecteur Atlas. La figure \ref{atlas_2} (b) montre une coupe transversale du détecteur Atlas, nous pouvons observer le trajectographe interne en jaune, le système de calorimètres électromagnétique en vert, le système de calorimètres hadronique en orange et le spectromètre à muons en bleu. Le tableau \ref{performances} montre les performances des quatre principaux sous-détecteurs du détecteur Atlas. Sont repportées les résolutions en énergie et en impulsion ainsi que les couvertures des sous-détecteurs.
+
 \newpage
 
 \begin{figure}[!ht]
@@ -34,7 +46,7 @@
       \hline
         Sous-détecteur & Résolution & Couverture en pseudo-rapidité $ \eta $\\
       \hline
-        trajectographe interne & $ \frac{\sigma_{p_T}}{p_T}=0.05\%p_T\oplus1\% $ & $ \pm2.5 $\\
+        Trajectographe interne & $ \frac{\sigma_{p_T}}{p_T}=0.05\%p_T\oplus1\% $ & $ \pm2.5 $\\
       \hline
         Calorimètre électromagnétique & $ \frac{\sigma_E}{E}=\frac{10\%}{\sqrt{E}}\oplus0.7\% $ & $ \pm3.2 $\\
       \hline
@@ -52,6 +64,17 @@
 \newpage
 
 \section{Le système de coordonnées}
+
+\newcolumntype{V}{>{\centering\arraybackslash} m{.4\linewidth} }
+
+Afin de repérer les particules dans le détecteur Atlas, trois systèmes de coordonnées ont été définis. Le premier est un simple système cartésien muni d'une base orthonormale $ (\vec x,\vec y,\vec z) $. Le vecteur $ \vec z $ suit la direction des faisceaux et les vecteurs $ \vec x $ et $ \vec y $ sont définis comme sur la figure \ref{atlas_2} (b). Le deuxième est caractérisé par la base $ (\vec u_\theta,\vec u_\phi,\vec z) $ où $ \theta $ est l'angle polaire dans le plan $ (\vec x,\vec y) $ et $ \phi $ est l'angle azimutal autour du vecteur $ \vec z $. Enfin, le troisième système de coordonnées, qui est le système de coordonnées naturel du détecteur Atlas, est caractérisé par la base $ (\vec u_\eta,\vec u_\phi,\vec z) $ où est la pseudo-rapidité définie par la relation suivante :
+\begin{equation}
+  \begin{tabular}{VV}
+    $ \boxed{\eta=-\ln\tan\frac{\theta}{2}} $ & \includegraphics[height=3.0cm, keepaspectratio]{phd_atlas/pseudorapidite}
+  \end{tabular}
+\end{equation}
+
+Pour une particule ultra-relativiste, la pseudo-rapidité est équivalant à la rapidité $ y=\operatorname{arctanh}\frac{v}{c} $, les différences de pseudo-rapidité sont alors invariantes par boost de Lorentz. Les distances entre particules sont souvent exprimées à l'aide de la métrique $ dR^2=d\eta^2+d\phi^2 $.
 
 \section{Le système d'aimants}
 
@@ -78,7 +101,7 @@ Pour courber la trajectoire des particules chargées (afin de mesurer leur impuls
   \caption{\label{aimants}Représentation générale en image de synthèses du système d'aimants détecteur Atlas (en rouge) (a). Sonde de Hall utilisée pour la cartographie du champ solénoïdal (b).}
 \end{figure}
 
-La figure \ref{aimants} montre une représentation générale en image de synthèses du système d'aimants détecteur Atlas. Alors que le champ solénoïdal courbe la trajectoire des particules suivant l'angle azimutale $ \phi $, Les champs toroïdaux courbent la trajectoire des particules suivant l'angle $ \theta $ ou encore suivant la pseudo-rapidité $ \eta=-\ln\tan\frac{\theta}{2} $.
+La figure \ref{aimants} montre une représentation générale en image de synthèses du système d'aimants détecteur Atlas. Alors que le champ solénoïdal courbe la trajectoire des particules suivant l'angle azimutale $ \phi $, Les champs toroïdaux courbent la trajectoire des particules suivant l'angle $ \theta $ ou encore suivant la pseudo-rapidité $ \eta $.
 
 \newpage
 
