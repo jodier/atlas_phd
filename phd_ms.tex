@@ -18,7 +18,7 @@ Cette section est consacrée à la construction mathématique de la théorie du modè
 
 En mécanique, on emploie la notion de \emph{particule} ou \emph{point matériel}, c'est-à-dire d'objet d'extension spatiale infiniment petite auquel est associé différentes propriétés intrinsèques comme la masse, la charge électrique, etc\dots\\
 
-Le mouvement d'une particule est identifié par son \emph{vecteur de position} (un tenseur de rang 1) noté $ \vec r $ et de coordonnées $ r^i $. La \emph{vitesse} d'une particule est définie par :
+Le mouvement d'une particule est identifié par son \emph{vecteur de position} (tenseur de rang 1) noté $ \vec r $ et de coordonnées $ r^i $. La \emph{vitesse} d'une particule est définie par :
 \begin{displaymath}
   \vec v=\dot{\vec r}=\frac{d\vec r}{dt}
 \end{displaymath}
@@ -88,15 +88,15 @@ Pour que $ S $ et $ S' $ coïncident il faut : $ \delta S=0 $ :
 \end{eqnarray*}
 
 $ \forall\,\delta q_i $, $ \delta S=0 $ implique :
-\begin{equation}\label{euler_lagrange}
+\begin{equation}\label{euler_lagrange1}
   \boxed{\frac{d}{dt}\frac{\partial L}{\partial\dot q_i}-\frac{\partial L}{\partial q_i}=0}
 \end{equation}\\
 
-C'est les équations d'Euler-Lagrange, elles permettent de déterminer les équations du mouvement d'un système quelconque.
+Ce sont les équations d'Euler-Lagrange, elles permettent de déterminer les équations du mouvement d'un système quelconque.
 
 \newpage
 
-Observons l'équation \ref{euler_lagrange}, elle contient $ n $ équations différentielles d'ordre deux en $ q^i $ ($ i=1,\dots,n $). De telles équations s'intégrent et donnent des solutions uniques pour des conditions initiales $ q^i(t_0=0) $ et $ \dot q^i(t_0=0) $ connues.
+Observons l'équation \ref{euler_lagrange1}, elle contient $ n $ équations différentielles d'ordre deux en $ q^i $ ($ i=1,\dots,n $). De telles équations s'intégrent et donnent des solutions uniques pour des conditions initiales $ q^i(t_0=0) $ et $ \dot q^i(t_0=0) $ connues.
 
 \newtheorem*{th2_5}{Définition}
 \begin{th2_5}
@@ -143,17 +143,17 @@ où $ \mathcal{L} $ est appelé densité de lagrangien (simplement lagrangien par l
 \end{eqnarray*}
 
 $ \forall\,\delta\phi $, $ \delta S=0 $ implique :
-\begin{equation}\label{euler_lagrange}
+\begin{equation}\label{euler_lagrange2}
   \boxed{\partial_\mu\frac{\partial\mathcal{L}}{\partial\left(\partial_\mu\phi\right)}-\frac{\partial\mathcal{L}}{\partial\phi}=0}
 \end{equation}\\
 
-C'est les équations de champ d'Euler-Lagrange, elles permettent de déterminer les équations de champ d'un système quelconque.
+Ce sont les équations de champ d'Euler-Lagrange, elles permettent de déterminer les équations de champ d'un système quelconque.
 
 \newpage
 
 \subsection{Scalaires et spineurs (symétries de l'espace-temps)}
 
-Les symétries d'espace et utilisées en théorie quantique des champs pour construire le modèle standard de la physique des particules sont celles de la relativité restreinte. Elles forment le groupe de Poincaré qui est un groupe de Lie non compact à 10 dimensions constitué des sous-groupes suivants : le groupe abélien des translations dans le temps (un générateur $ P^0 = H $) et l'espace (trois générateurs $ P^i $), le groupe des rotation d'espace (trois générateurs $ J^i $) et enfin le groupe des boosts de Lorentz (trois générateurs $ K^i $). Il est possible de former un nouveau générateur $ J^{\mu\nu} $ tel que $ J^i=\frac{1}{2}\varepsilon^{ijk}J_{jk} $ et $ K^i=J^{0i} $ qui satisfait à l'algèbre de Lie $ SO(3,1) $ :
+Les symétries d'espace utilisées en théorie quantique des champs pour construire le modèle standard de la physique des particules sont celles de la relativité restreinte. Elles forment le groupe de Poincaré qui est un groupe de Lie non compact à 10 dimensions constitué des sous-groupes suivants : le groupe abélien des translations dans le temps (un générateur $ P^0 = H $) et l'espace (trois générateurs $ P^i $), le groupe des rotation d'espace (trois générateurs $ J^i $) et enfin le groupe des boosts de Lorentz (trois générateurs $ K^i $). Il est possible de former un nouveau générateur $ J^{\mu\nu} $ tel que $ J^i=\frac{1}{2}\varepsilon^{ijk}J_{jk} $ et $ K^i=J^{0i} $ qui satisfait à l'algèbre de Lie $ SO(3,1) $ :
 \begin{displaymath}
   \begin{array}{cc}
     J^{\mu\nu}=\left(\begin{array}{cccc}
@@ -176,7 +176,7 @@ En introduidant $ \vec J_+=\frac{1}{2}(\vec J+i\vec K) $ et $ \vec J_-=\frac{1}{
   \left[J^i_+,J^j_+\right]=i\,\varepsilon^{ijk}J_{+k}\hspace{0.33cm};\hspace{0.33cm}\left[J^i_-,J^j_-\right]=i\,\varepsilon^{ijk}J_{-k}\hspace{0.33cm};\hspace{0.33cm}\left[J^i_+,J^j_-\right]=0\hspace{0.33cm}\Rightarrow\hspace{0.33cm}2\times\bar2
 \end{displaymath}
 
-Nous reconnaissons $ SU(2) $, les représentation irréductibles du groupe de Lorentz correspondent au couple $ (j_+,j_-) $ de dimension $ (2j_++1)(2j_-+1) $ où les valeurs propres de $ J^2_\pm $ sont $ j_\pm(j_\pm+1) $. Elles conduisent aux définitions des \emph{scalaires} et des \emph{spineurs} : $ (0,0) $ représente un scalaire noté $ \phi $, $ (\frac{1}{2},0) $ représente un \emph{spineur de Weyl} indicé sans point et noté $ \xi_\alpha $ $ (\alpha=1,2) $, enfin, $ (0,\frac{1}{2}) $ représente un \emph{spineur} de \emph{Weyl} indicé avec point et noté $ \bar\xi_{\dot\alpha} $ $ (\dot\alpha=1,2) $. Les scalaires sont associés aux bosons et commutent (équation \ref{scalaire_commutation}). Les spineurs de Weyl sont associés aux fermions et anticommutent (équation \ref{spineur_commutation}).
+Nous reconnaissons $ SU(2) $, les représentations irréductibles du groupe de Lorentz correspondent au couple $ (j_+,j_-) $ de dimension $ (2j_++1)(2j_-+1) $ où les valeurs propres de $ J^2_\pm $ sont $ j_\pm(j_\pm+1) $. Elles conduisent aux définitions des \emph{scalaires} et des \emph{spineurs} : $ (0,0) $ représente un scalaire noté $ \phi $, $ (\frac{1}{2},0) $ représente un \emph{spineur de Weyl} indicé sans point et noté $ \xi_\alpha $ $ (\alpha=1,2) $, enfin, $ (0,\frac{1}{2}) $ représente un \emph{spineur} de \emph{Weyl} indicé avec point et noté $ \bar\xi_{\dot\alpha} $ $ (\dot\alpha=1,2) $. Les scalaires sont associés aux bosons et commutent (équation \ref{scalaire_commutation}). Les spineurs de Weyl sont associés aux fermions et anticommutent (équation \ref{spineur_commutation}).
 
 \begin{equation}\label{scalaire_commutation}
   \left[\phi_1,\phi_2\right]=0\hspace{0.33cm}\mathrm{et}\hspace{0.33cm}\left[\phi^\dag_1,\phi^\dag_2\right]=0
@@ -315,7 +315,7 @@ Introduisons les opérateurs suivants formés à partir de la matrice $ \gamma^5 $:
   P_L=\frac{1-\gamma^5}{2}=\left(\begin{array}{cc} \bbone_2 & 0 \\ 0 & 0 \\ \end{array}\right)\hspace{0.33cm}\mathrm{et}\hspace{0.33cm}P_R=\frac{1+\gamma^5}{2}=\left(\begin{array}{cc} 0 & 0 \\ 0 & \bbone_2 \\ \end{array}\right)
 \end{equation}
 
-Il ont toutes les caractéristiques de projecteurs, en effet, il est immédiat de montrer que $ P^2_{L,R}=P_{L,R} $ et que $ P_L+P_R=\bbone_4 $. Pour un bispineur, ces opérateurs permettent de sélectionner les composantes de chiralité gauche ($ L $) pour $ P_L $ et droite ($ R $) pour $ P_R $. En possant:
+Ils ont toutes les caractéristiques de projecteurs, en effet, il est immédiat de montrer que $ P^2_{L,R}=P_{L,R} $ et que $ P_L+P_R=\bbone_4 $. Pour un bispineur, ces opérateurs permettent de sélectionner les composantes de chiralité gauche ($ L $) pour $ P_L $ et droite ($ R $) pour $ P_R $. En posant:
 \begin{equation}
   \Psi\equiv\left(\begin{array}{c}
     \Psi_L \\
@@ -1484,7 +1484,7 @@ Parallèlement, un ajustement global des paramètres du secteur électrofaible a ét
 
 \paragraph{a) Résultats du LEP}
 
-L'étude du Higgs-strahlung $ ee\to Z^*\to ZH $ (figure \ref{higgs_strahlung}) permet l'explorer les régions de très faible masse en mesurant l'énergie de recul qu'acquirent les bosons $ Z $ excités en rayonnant un boson de Higgs. Durant la première phase de prise de données du LEP, aucun signal ne fut détecter dans aucune des quatre principales expériences Aleph, Delphi, Opal et L3. Durant la seconde phase de prise de donnée du LEP, avec une énergie dans le centre de masse atteignant $ 209\GeV $ et une luminosité intégrée de $ 2400\,\mathrm{pb}^{-1} $, le Higgs-strahlung fut le canal principal de production. La combinaison des résultats des quatre expériences permit d'établir la contrainte $ M_\mathrm{Higgs}>114.4\GeV $ à $ 95\% $ de niveau de confiance.
+L'étude du Higgs-strahlung $ ee\to Z^*\to ZH $ (figure \ref{higgs_strahlung}) permet l'explorer les régions de très faible masse en mesurant l'énergie de recul qu'acquirent les bosons $ Z $ excités en rayonnant un boson de Higgs. Durant la première phase de prise de données du LEP, aucun signal ne fut détecté dans aucune des quatre expériences Aleph, Delphi, Opal et L3. Durant la seconde phase de prise de données du LEP, avec une énergie dans le centre de masse atteignant $ 209\GeV $ et une luminosité intégrée de $ 2400\,\mathrm{pb}^{-1} $, le Higgs-strahlung fut le canal principal de production. La combinaison des résultats des quatre expériences permit d'établir la contrainte $ M_\mathrm{Higgs}>114.4\GeV $ à $ 95\% $ de niveau de confiance.
 
 \begin{figure}[!ht]
   \begin{center}
@@ -1510,7 +1510,7 @@ L'étude du Higgs-strahlung $ ee\to Z^*\to ZH $ (figure \ref{higgs_strahlung}) pe
   \caption{\label{higgs_strahlung}Production du boson de Higgs par Higgs-strahlung.}
 \end{figure}
 
-Le boson de Higgs se désintégrant principalement en paire de quarks $ b $, particules les plus lourdes accessibles d'un point de vue de la cinématique. Les trois principales topologies qui furent étudiées, en s'appuyant sur utilisation d'algorithmes d'étiquetage des quarks b, sont $ Z^*\to b\bar bq\bar q $, $ Z^*\to b\bar b\nu\bar\nu=b\bar bMET $ et $ Z^*\to b\bar bl^+l^- $. Les états finaux faisant intervenir des tau furent également pris en compte. Durant les derniers mois de prise de donnée, un petit excès à $ 1.7\sigma $ fut observé à une masse invariante de $ \sim115\GeV $. Excès insuffisant pour conclure à une évidence ($ 3\sigma $) ou une découverte ($ 5\sigma $). La figure \ref{event_display} montre le candidat $ HZ $ de plus grand poids observé dans l'expérience Aleph.
+Le boson de Higgs se désintégrant principalement en paire de quarks $ b $, particules les plus lourdes accessibles d'un point de vue de la cinématique. Les trois principales topologies qui furent étudiées, en s'appuyant sur utilisation d'algorithmes d'étiquetage des quarks b, sont $ Z^*\to b\bar bq\bar q $, $ Z^*\to b\bar b\nu\bar\nu=b\bar bMET $ et $ Z^*\to b\bar bl^+l^- $. Les états finaux faisant intervenir des tau furent également pris en compte. Durant les derniers mois de prise de données, un petit excès à $ 1.7\sigma $ fut observé à une masse invariante de $ \sim115\GeV $. Excès insuffisant pour conclure à une évidence ($ 3\sigma $) ou une découverte ($ 5\sigma $). La figure \ref{event_display} montre le candidat $ HZ $ de plus grand poids observé dans l'expérience Aleph.
 
 \begin{figure}[!ht]
   \begin{center}
