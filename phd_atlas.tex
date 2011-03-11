@@ -7,7 +7,7 @@ Le détecteur Atlas est un détecteur géant et généraliste dédié à la physique des
 \noindent\ \ \ De l'intérieur vers l'extérieur, il nous rencontrons :
 \begin{itemize}
   \item un \textbf{trajectographe interne} qui permet de reconstruire les traces des particules chargées issues du vertex d'interaction. Grâce à un fort champ solénoïdal, la connaissance des traces, qui s'enroulent en hélices, permet de reconstruire l'impulsion des particules.
-  \item un \textbf{système de calorimétrique} qui permet de reconstruire l'énergie des particules électromagnétiques (électrons, photons, etc\dots) et hadroniques (jets, bayons, mésons, etc\dots) grâce à son milieu très dense.
+  \item un \textbf{système de calorimétrique} qui permet de reconstruire l'énergie des particules électromagnétiques (électrons, photons, etc\dots) et hadroniques (bayons, mésons et jets) grâce à son milieu très dense.
   \item un \textbf{spectromètre à muons} qui est un trajectographe externe permettant de reconstruire traces des muons. Grâce à un fort champ toroïdal, la connaissance des traces, qui sont courbées, permet de reconstruire l'impulsion des muons.
   \item un \textbf{système de déclenchement} (trigger system) qui permet une sélection les évènements susceptibles de présenter un intérêt au niveau des études de physique.\\
 \end{itemize}
@@ -58,7 +58,7 @@ La figure \ref{atlas_1} montre une représentation générale en image de synthèses
     \end{tabular}
 
   \end{center}
-  \caption{\label{performances}Performances générales du détecteur Atlas où l'énergie $ E $ et l'impulsion transverse $ p_T $ sont exprimés en $ \GeV $.}
+  \caption{\label{performances}Performances générales du détecteur Atlas où l'énergie $ E $ et l'impulsion transverse $ p_T $ sont exprimés en $ \GeV $. Ces résultats ont été validés lors des faisceaux tests.}
 \end{table}
 
 \newpage
@@ -242,27 +242,118 @@ L'efficacité de reconstruction des traces à faibles impulsion transverse est lim
 
 \section{La calorimétrie}
 
+Le détecteur Atlas dispose d'un important système calorimétrique dont objectif est de mesurer précisément l'énergie des particules électromagnétiques (électrons, photons, etc\dots) et hadroniques (baryons, mésons et jets). Il doit permettre l'identification des particules ainsi que la mesure de l'énergie transverse manquante $ E_{T_\textrm{miss}} $ qui est centrale dans l'étude des processus électrofaibles avec bosons W et neutrinos ou dans l'étude des processus faisant intervenir la supersymétrie car la conservation de la R-parité interdit l'interaction entre une particule et une super-particule.
+
+Le système calorimétrique est placé juste après le trajectographe interne. Il dispose d'une importante couverture angulaire, $ 0<\phi<2\pi $ pour l'angle azimutal et $ |\eta|<4.0 $ pour la pseudo-rapidité ainsi qu'une bonne résolution en énergie (cf. tableau \ref{performances}) dans le domaine d'énergie $ [20,100]\GeV $. Il peut reconstruire la direction d'origine des photons.
+
+Le principe élémentaire d'un calorimètre est de fournir un milieu très dense à l'intérieur duquel les particules, au delà de quelques centaines de $ \MeV $, subissent successivement le bremsstrahlung $ e^\pm\to e^\pm\gamma $ et la production de paires $ \gamma\to e^+e^-$. Il \og suffit \fg\ alors de mesurer la quantité d'énergie déposée afin de remontrer à l'énergie des particules incidentes. Le calorimètre électromagnétique (resp. hadronique) est un calorimètre à échantillonnage constitué de couches d'absorbeurs (acier et plomb (resp. fer)) et de couches actives (argon liquide et électrodes (resp. tuiles scintillantes)). Le système calorimétrique global est dit \emph{non compensant} car la réponse électromagnétique et la réponse hadronique sont différentes. Cette particularité est prise en compte au niveau de la reconstruction des particules.
+
+La figure \ref{calo1} montre une représentation générale en image de synthèses du système calorimétrique du détecteur Atlas où nous pouvons observer :
+\begin{itemize}
+  \item Un pré-échantillonneur
+  \item Le calorimètre électromagnétique constitué de :
+  \begin{itemize}
+    \item Un tonneau à argon liquide (LAr EM Barrel)
+    \item Deux bouchons à argon liquide (LAr EM Endcap)
+    \item Deux calorimètres vers l'avant (LAr forward calorimeter)
+  \end{itemize}
+  \item Le hadronique électromagnétique constitué de :
+  \begin{itemize}
+    \item Un tonneau à tuiles (Tile Barrel)
+    \item ??? gap(s) à tuiles (Tile Gap)
+    \item Deux tonneaux à tuiles étendus (Extended Tile Barrel)
+    \item Deux bouchons à argon liquide (LAr Hadronic Endcap)
+    \item Deux calorimètres vers l'avant (LAr forward calorimeter)
+  \end{itemize}
+\end{itemize}
+
 \begin{figure}[!ht]
   \begin{center}
-    \includegraphics[height=8.0cm, keepaspectratio]{phd_atlas/calo}
+    \includegraphics[height=10.25cm, keepaspectratio]{phd_atlas/calo}
   \end{center}
-  \caption{\label{calo}Représentation générale en image de synthèses du système calorimétrique du détecteur Atlas.}
+  \caption{\label{calo1}Représentation générale en image de synthèses du système calorimétrique du détecteur Atlas.}
 \end{figure}
+
+La figure \ref{calo2} (a) montre une représentation générale en image de synthèses du système calorimétrique bouchon du détecteur Atlas. Le tonneaux et les bouchons des calorimètres à argon liquide sont contenus dans des cryostats distincts maintenus à la température de $ 88.5K $.
+
+Les dimensions en épaisseur des différents calorimètres ont été sélectionnées de sorte que les gerbes électromagnétiques et hadroniques soient entièrement contenues. La figure \ref{calo2} (b) montre la distribution de la quantité de matière, en unité de longueur d'interaction\footnote{La longueur de radiation $ X_0 $ représente la longueur de matière nécessaire pour une perte d'énergie relative d'environ $ 63\% $ de l'énergie de l'électron.}, en fonction de la pseudo-rapidité $ \eta $ pour les principaux sous-systèmes calorimétriques.
+
+\begin{figure}[!ht]
+  \begin{center}
+
+  \begin{tabular}{cc}
+    \includegraphics[height=5.5cm, keepaspectratio]{phd_atlas/bouchon}
+    &
+    \includegraphics[height=5.5cm, keepaspectratio]{phd_atlas/materiel-2}
+    \\
+    (a) & (b)
+  \end{tabular}
+
+  \end{center}
+  \caption{\label{calo2}Représentation générale en image de synthèses du système calorimétrique bouchon du détecteur Atlas (a). Distribution de la quantité de matière en fonction de la pseudo-rapidité $ \eta $ pour les principaux sous-systèmes calorimétriques (b).}
+\end{figure}
+
+\subsection{Le calorimètre électromagnétique}
+
+Le chapitre 5 sera dédié à la présentation des éléments fondamentaux de la calorimétrie ainsi qu'à la présentation détaillée du calorimètre électromagnétique à argon liquide en insistant sur sa géométrie, sur ses performances et sur son système de calibration électronique.
+
+Le calorimètre électromagnétique du détecteur Atlas a été étudié pout mesurer l'énergie des électrons et des photons. Il est particulièrement optimisé  pour la recherche du boson de Higgs dans les canaux $ H\to\gamma\gamma $ et $ H\to ZZ^{(*)}\to4l $ et la recherche de nouveaux bosons de jauge lourds génériquement appelés $ W' $ et $ Z' $.
+
+Sa particularité se situe au niveau de la forme de ses électrodes, elles sont pliées en accordéon afin d'assurer une herméticité parfaite. De plus, elles sont subdivisées en trois compartiments, le premier pour la détection des débuts de gerbes avec sa fine segmentation en $ \eta-\phi $, le second pour la détection des corps de gerbes et le troisième pour la détection de fins de gerbes et pour la détermination des fuites vers le calorimètre hadronique avec sa segmentation plus grossière. Les figures \ref{electrodes} (a) et (b) montrent respectivement une représentation schématique des électrodes du calorimètre électromagnétique à argon liquide et un fragment du calorimètre électromagnétique à argon liquide.
 
 \begin{figure}[!ht]
   \begin{center}
 
   \begin{tabular}{ccc}
-    \includegraphics[height=4.5cm, keepaspectratio]{phd_atlas/electrodes-1}
+    \includegraphics[height=4.0cm, keepaspectratio]{phd_atlas/electrodes-1}
     &&
-    \includegraphics[height=4.5cm, keepaspectratio]{phd_atlas/electrodes-2}
+    \includegraphics[height=4.0cm, keepaspectratio]{phd_atlas/electrodes-2}
     \\
     (a) && (b)
   \end{tabular}
 
   \end{center}
-  \caption{\label{calo}Représentation schématique des électrodes du calorimètre électromagnétique à argon liquide du détecteur Atlas. En haut, électrodes de la partie tonneau, en bas, électrodes des deux roues de la partie bouchon (a). Photographie d'un fragment du calorimètre électromagnétique à argon liquide du détecteur Atlas (b).}
+  \caption{\label{electrodes}Représentation schématique des électrodes du calorimètre électromagnétique à argon liquide du détecteur Atlas. En haut, électrodes de la partie tonneau, en bas, électrodes des deux roues de la partie bouchon (a). Photographie d'un fragment du calorimètre électromagnétique à argon liquide du détecteur Atlas (b).}
 \end{figure}
+
+\newpage
+
+\subsection{Le calorimètre hadronique}
+
+Avec une épaisseur de dix longueurs d'interaction, voir figure \ref{calo2} (b), le calorimètre hadronique est conçu pour absorber l'immense majorité des hadrons et limité ainsi le bruit dans le spectromètre à muons. Deux principales techniques ont été mises en \oe uvre pour la réalisation du calorimètre hadronique.
+
+\paragraph{Dans le région $ \eta<1.7 $,} le tonneau du calorimètre hadronique est constitué d'une alternance de plaques d'acier de $ 14mm $ et de tuiles scintillantes en polystyrène dopé de 3mm. Celles-ci émettent, par désexcitation moléculaire, un rayonnement ultraviolet qui est collecté par des fibres optiques, décalé vers le rouge puis envoyé vers des photomultiplicateurs situés à l'arrière du sous-détecteur. Ce calorimètre est segmenté longitudinalement en trois compartiments et les fibres optiques sont groupés de façon quasi projective suivant $ \eta $, voir figures \ref{caloh} (a) et \ref{caloh} (b). La granularité des cellules de lecture est de $ \Delta\eta\times\Delta\phi=0.1\times0.1 $ pour les deux premiers compartiments et de $ \Delta\eta\times\Delta\phi=0.2\times0.1 $ pour le troisième compartiment ce qui représente au total 4672 canaux de lecture.
+
+\paragraph{Dans le région $ 1.5<|\eta|<3.2 $,} les deux bouchons utilisent une technique similaire à celle du calorimètre électronique. En effet, les radiations trop importantes l'utilisation des tuiles scintillantes. Le milieu absorbant est constitué de plaques de cuivre en alternance avec le milieu actif constitué d'argon liquide et d'électrodes. Ces calorimètres sont situés dans les mêmes cryostats que les calorimètres électromagnétiques bouchon. La granularité des cellules de lecture est de $ \Delta\eta\times\Delta\phi=0.1\times0.1 $ pour $ 1.5<|\eta|<2.5 $ et de $ \Delta\eta\times\Delta\phi=0.2\times0.2 $ pour $ 2.5<|\eta|<3.2 $ ce qui représente au total 5632 canaux de lecture.\\
+
+La résolution en énergie a été validée sous faisceaux tests, elle est de $ \sigma/E=50\%/\sqrt{E[\GeV]}$ $\oplus$ $3\% $, voir tableau \ref{performances}. Une non linéarité de $ ???\% $ est également observée. Actuellement, une précision de l'ordre de $ 1\% $ est atteinte sur la reconstruction de l'énergie des jets.
+
+Au démarrage du LHC, pour le calorimètre à tuiles, 244 modules sur les 246 présents étaient fonctionnels pour la physique. Pour le calorimètre à argon liquide, $ 15\% $ des cellules étaient affectées pas une alimentation à basse tension défectueuse. C'est problèmes on été résolus lors du premier arrêt technique du LHC.\\\\
+
+\begin{figure}[!ht]
+  \begin{center}
+
+  \begin{tabular}{ccc}
+    \includegraphics[height=5.5cm, keepaspectratio]{phd_atlas/tail1}
+    &&
+    \includegraphics[height=5.5cm, keepaspectratio]{phd_atlas/tail2}
+    \\
+    (a) && (b)
+  \end{tabular}
+
+  \end{center}
+  \caption{\label{caloh}Représentation schématique d'un module à tuile scintillante du calorimètre hadronique (a). Photographie de l'assemblage des bouchons du calorimètre hadronique (b).}
+\end{figure}
+
+\newpage
+
+\subsection{Le calorimètre vers l'avant}
+
+Le calorimètre vers l'avant (ou Forward Calorimeter ou FCal) est le dernier système calorimétrique installé sur le détecteur Atlas. Il est situé à très grande pseudo-rapidité, après les bouchons, au-delà de $ \eta=3.1 $, jusqu'au tube à vide du LHC à $ \eta=4.9 $. Il est placé dans les mêmes cryostats que les bouchons électromagnétiques et hadroniques à $ 1.2m $ calorimètre électromagnétique, voir figure \ref{calo1}. Ce positionnement est problématique du triple point de vue qu'il expose le FCal à un flux de radiations très élevé, $ ???\textrm{Gy} $ par ans, à un tau de comptage très élevé et qu'une très grande densité est nécessaire pour contenir les gerbes. Le FCal est subdivisé en trois compartiments, le premier calorimétrique, les deux autres hadroniques. La figure \ref{calo2} (b) montre l'épaisseur du FCal, en unité de longueur d'interaction, celle-ci est supérieure à 10. Une technique basée sur l'argon liquide est employée ici aussi, le matériau absorbant est constitué d'une matrice en cuivre, pour le premier compartiment et en tungstène\footnote{Tungstène signifie \fg pierre lourde \og\ en Suédois, sa densité est de $ 19.25g\,cm^{-3} $.} pour les deux autres. Cette matrice est percée par des tubes coaxiaux dirigés parallèlement à l'axe du faisceau. Des cylindres intérieurs et les contours extérieurs des tubes font office d'électrodes. Ils sont séparés par un espace contenant une épaisseur de $ 250\mu m $ à $ 500\mu m $ d'argon liquide. Le principal objectif du FCal est l'identification des particules, c'est pourquoi il a une granularité moins fine que précédemment de $ \Delta\eta\times\Delta\phi\sim0.2\times0.2 $. La figure \ref{fcal} montre une représentation schématique de la structure des électrodes du premier compartiment du FCal autour du tube à vide.
+
+La résolution en énergie a été validée sous faisceaux tests, elle est de $ \sigma/E=(28.5\pm1)\%/\sqrt{E[\GeV]}\oplus3\% $ pour les électrons et $ \sigma/E=(94.2\pm1.6)\%/\sqrt{E[\GeV]}\oplus3\% $ pour les pions. La précision de l'énergie transverse manquante est de $ 0.5\sqrt{\sum E_{T_i}} $ où $ E_{T_i} $ est l'énergie transverse des chacune des particules de l'événement considéré.
+
+Au démarrage du LHC, la haute tension a été configurer à moins de $ 25\% $ de sa valeur nominale qui est de $ ???V $.\\\\\\
 
 \begin{figure}[!ht]
   \begin{center}
@@ -278,52 +369,45 @@ L'efficacité de reconstruction des traces à faibles impulsion transverse est lim
   \end{tabular}
 
   \end{center}
-  \caption{\label{calo}Représentation schématique de la structure des électrodes du premier compartiment du FCal (a). Photographie de l'assemblage du FCal (b).}
+  \caption{\label{fcal}Représentation schématique de la structure des électrodes du premier compartiment du FCal (a). Photographie de l'assemblage du FCal (b).}
 \end{figure}
 
-\begin{figure}[!ht]
-  \begin{center}
+\newpage
 
-  \begin{tabular}{ccc}
-    \includegraphics[height=5.5cm, keepaspectratio]{phd_atlas/tail1}
-    &&
-    \includegraphics[height=5.5cm, keepaspectratio]{phd_atlas/tail2}
-    \\
-    (a) && (b)
-  \end{tabular}
+\section{Le spectromètre à muons}
 
-  \end{center}
-  \caption{\label{calo}Représentation schématique d'un module à tuile scintillante du calorimètre hadronique (a). Photographie de l'assemblage des bouchons du calorimètre hadronique (b).}
-\end{figure}
+Comme les muons sont des particules au minimum d'ionisation, ils sont les seuls à pourvoir traverser le trajectographe et le système calorimétrique du détecteur Atlas (exception faite des neutrinos et des particules supersymétriques). Avec sa couverture $ \eta<2.7 $, le spectromètre à muons permet de mesurer l'impulsion des muons avec précision. Quelque soit la position dans la couverture du spectromètre, le champ magnétique est proportionnel à la trajectoire des nuons dont la déflexion est assurée par l'aimant toroïdale tonneau pour $ \eta<1.4 $, par une combinaison de l'aimant toroïdale tonneau et des aimants toroïdaux bouchons pour $ 1.4<\eta<1.6 $ et par les aimants toroïdaux bouchons pour $ 1.6<\eta<2.7 $.
 
-\begin{figure}[!ht]
+Deux techniques sont mises en \oe uvre dans le spectromètre à muons : i) les chambres de précision, constituées de chambres à tubes (MDT pour Monitored Drift Tubes) et de chambres à fils proportionnelles (SCS pour Cathode Strip Chamber). ii) les chambres de déclenchement à réponse rapide ($ <10ns $), constituées chambres à plaques résistives (RPC pour Resistive Plate Chamber) et les chambres à fils très minces (TGC pour Thin Gap Chamber). Le spectromètre à muons se compose de trois couches concentriques pour la partie tonneau et deux fois deux roues pour les parties tonneaux. La figure \ref{spectro} montre une représentation synthétique du spectromètre à muons du détecteur Atlas sous différentes vues.
+
+\subsection{Les chambres de précision}
+
+Au niveau du tonneau, trois couches concentriques de MDT sont respectivement placées à $ R=5m $, $ R=7.5m $ et $ R=10m $. Au niveau des bouchons, deux fois deux roues concentriques, orthogonales au faisceau, sont respectivement placées à $ z=1.4m $, $ z=10.8m $ et $ z=21.5m $. Le détail est représenté sur la figure \ref{spectro} (c). Précisons que la région $ 2<|\eta|<2.7 $ de la couche la plus interne n'est pas équipé de MDT mais de de CSC avec une réponse plus rapide et une sensibilité moindre aux neutrons.
+
+Il y a 1000 MDT pour une surface d'environ $ 5500m^2 $. Celles-ci sont constituées de 3 à 8 tubes de dérive d'un diamètre de $ 3cm $ fonctionnant sous une différence de potentiel de $ 3080V $ avec un fil central en tungstène-rhénium. Les tubes sont remplis d'un mélange gazeux formé de $ 93\% $ de $ \mathrm{Ar} $ et $ 7\% $ de $ \mathrm{CO}_2 $. La résolution intrinsèque des MDT est de $ 80\mu m $, et la résolution sur la mesure de $ \eta $ est de $ 35\mu m $.
+
+Les SCS sont assemblés en deux fois deux disques, un grand et un petit, de huit chambres. Chaque chambre contient quatre plans de SCS permettant quatre mesures indépendantes de la pseudo-rapidité $ \eta $ et de l'angle azimutal $ \phi $. Les SCS sont de chambres à fils proportionnelles qui contiennent deux cathodes segmentées, l'une à bandes parallèles aux fils, pour la mesure la première coordonnée, l'autre à bandes perpendiculaires aux fils, pour la mesure de la seconde coordonnée. La position est obtenue par interpolation entre les charges induites sur les bandes cathodiques voisines. La résolution sur la mesure de $ \eta $ est de $ 60\mu m $ et la résolution sur la mesure de $ \phi $ est de $ 5\mu m $.
+
+
+\subsection{Les chambres de déclenchement}
+
+\begin{figure}[!p]
   \begin{center}
 
   \begin{tabular}{cc}
-    \includegraphics[height=5.5cm, keepaspectratio]{phd_atlas/bouchon}
+    \includegraphics[height=7.0cm, keepaspectratio]{phd_atlas/muon1}
     &
-    \includegraphics[height=5.5cm, keepaspectratio]{phd_atlas/materiel-2}
+    \includegraphics[height=7.0cm, keepaspectratio]{phd_atlas/muon2}
     \\
     (a) & (b)
   \end{tabular}
 
-  \end{center}
-  \caption{\label{calo}Représentation générale en image de synthèses du système calorimétrique bouchon du détecteur Atlas (a).}
-\end{figure}
-
-\begin{figure}[!ht]
-  \begin{center}
-
-  \begin{tabular}{ccc}
-    \includegraphics[height=5.5cm, keepaspectratio]{phd_atlas/muon1}
-    &&
-    \includegraphics[height=5.5cm, keepaspectratio]{phd_atlas/muon2}
-    \\
-    (a) && (b)
+  \begin{tabular}{c}
+    \\ \\ \includegraphics[height=10.25cm, keepaspectratio]{phd_atlas/muon3} \\ (c)
   \end{tabular}
 
   \end{center}
-  \caption{\label{calo}Représentation schématique du spectromètre à muons du détecteur Atlas, vue longitudinale (a), vue radiale (b).}
+  \caption{\label{calo}Représentation synthétique du spectromètre à muons du détecteur Atlas, vue longitudinale (a), vue radiale (b), vue en coupe (c).}
 \end{figure}
 
 \begin{figure}[!ht]
@@ -338,8 +422,12 @@ L'efficacité de reconstruction des traces à faibles impulsion transverse est lim
   \end{tabular}
 
   \end{center}
-  \caption{\label{calo}Blablabla.}
+  \caption{\label{spectro}Blablabla.}
 \end{figure}
+
+\newpage
+
+\section{Le système de déclenchement}
 
 \begin{figure}[!ht]
   \begin{center}
