@@ -1,0 +1,145 @@
+\chapter{Première physique à basse énergie}
+
+\section{Reconstruction des photons et des électrons}
+
+\subsection{Photons}
+
+\subsection{Conversions}
+
+\newpage
+
+\subsection{Calibration des amas électromagnétiques}
+
+Pour déterminer l'énergie d'une particule à partir d'un amas de taille fixe, il faut tenir compte de l'énergie déposée : i) en amont du calorimètre. ii) dans la matière située entre le pré-échantillonneur et l'accordéon. iii) en aval du calorimètre. iv) en dehors de l'amas (fuites latérales). Pour ce faite, la méthode de calibration par des poids longitudinaux a été mise en \oe uvre. Cette méthode est décrite en détail dans ???. L'énergie calibrée $ E_\textrm{calib} $ s'exprime comme :
+\begin{equation}
+  E_\textrm{calib}=s\times\left(b+w_0E_\textrm{PS}+E_1+E_2+w_3E_3\right)
+\end{equation}
+
+où $ E_\textrm{PS} $, $ E_1 $, $ E_2 $ et $ E_3 $ sont respectivement les énergies déposées dans le pré-échantillonneur, dans le premier compartiment, dans le second compartiment et dans le troisième compartiment. Les coefficients $ s $, $ b $, $ w_0 $ et $ w_3 $ sont appelés poids longitudinaux. Ils permettent de tenir compte des pertes en énergie évoquées au début de ce paragraphe. Comme la gamme en énergie est restreinte, inférieure à quelque $ \GeV $, il a été considéré que les coefficients des poids longitudinaux sont indépendants de l'énergie. Des photons issus de $ \pi^0 $ d'événements de biais minimums simulés ont été utilisés afin d'extraire les constantes grâce à une simple minimisation $\chi^2 $ entre l'énergie calibrée $ E_\textrm{calib} $ et l'énergie vraie $ E_\textrm{vraie} $, c'est-à-dire $ \frac{E_\textrm{calib}-E_\textrm{vraie}}{\sigma^2_E} $ où $ \sigma^2_E $ est la résolution en énergie du calorimètre. La figure ??? montre les coefficients des poids longitudinaux $ s $, $ b $, $ w_0 $ et $ w_3 $ en fonction de la valeur absolue de la pseudo-rapidité $ |\eta| $. La granularité choisie correspond à la largeur des cellules du second compartiment, soit $ \Delta\eta=0.025$. Aucune dépendance suivant l'angle azimutale n'est attendue.
+
+
+\begin{figure}[!ht]
+  \begin{center}
+
+  \begin{tabular}{ccc}
+    \includegraphics[height=5.0cm, keepaspectratio]{phd_low/lw_s}
+    &&
+    \includegraphics[height=5.0cm, keepaspectratio]{phd_low/lw_b}
+    \\
+    \includegraphics[height=5.0cm, keepaspectratio]{phd_low/lw_w0}
+    &&
+    \includegraphics[height=5.0cm, keepaspectratio]{phd_low/lw_w3}
+  \end{tabular}
+
+  \end{center}
+  \caption{Coefficients des poids longitudinaux $ s $, $ b $, $ w_0 $ et $ w_3 $ en fonction de la valeur absolue de la pseudo-rapidité $ |\eta| $.}
+\end{figure}
+
+Cette calibration est limitée par la supposée non dépendance en énergie ainsi que par la présence de queues non gaussiennes dans les distributions. Des tentatives de calibration plus fines ont été tentées afin de tenir compte de ces limitations mais n'ont pas données de résultats satisfaisants à cause des fluctuations à ces basses énergies.
+
+\newpage
+
+\section{Reconstruction des $ \pi^0 $ et des $ \eta^0 $}
+
+Dans cette section, je montre l'analyse de la reconstruction des $ \pi^0 $ et des $ \eta^0 $ que j'ai réalisé avec les premières données 2009 à $ \sqrt{s}=900\GeV $ et avec les données 2010 de la période D à $ \sqrt{s}=7\TeV $. Je me suis attaché à reconstruire les $ \pi^0 $ sans photons converti $ \pi^0\to\gamma\gamma $, les $ \pi^0 $ avec un photon converti $ \pi^0\to\gamma e^+e^- $, les $ \pi^0 $ avec deux photons convertis $ \pi^0\to e^+e^-e^+e^- $. Comme le $ \eta^0 $ est le méson le plus léger après le $ \pi^0 $, une étude similaire a été menée. Nous verrons cependant que le fond est plus important dans la région du $ \eta^0 $.
+
+\subsection{Caractéristiques des $ \pi^0 $ et des $ \eta^0 $}
+
+Les derniers chiffres à jour, pour la physique des particules, sont disponible auprès du \emph{Particle Data Group} (PDG). Le $ \pi^0 $ est un méson constitué de quarks $ u $, $ \bar u $, $ d $ et $ \bar d $ soit encore, d'après le modèle des quarks, $ \left|\pi^0\right>=\frac{\left|u\bar u\right>+\left|d\bar d\right>}{\sqrt{2}} $. Sa masse est $ m_{\pi^0\,PDG}=134,9766\pm0.0006\MeV $. Le $ \pi^0 $ possède deux principaux modes de désintégration :
+\begin{center}
+  \begin{tabular}{|c|c|}
+    \hline
+    \hline
+    Canal & Rapport de branchement\\
+    \hline
+    $ \pi^0\to\gamma\gamma $ & $ \Gamma_i/\Gamma=\left(98,823\pm0.034\right)\% $\\
+    \hline
+    $ \pi^0\to e^+e^-\gamma $ & $ \Gamma_i/\Gamma=\left(1,174\pm0.035\right)\% $\\
+    \hline
+  \end{tabular}
+\end{center}
+
+Le $ \eta^0 $ est un méson étrange constitué de quards $ u $, $ \bar u $, $ d $, $ \bar d $, $ s $ et $ \bar s $ soit encore, d'après le modèle des quarks, $ \left|\eta^0\right>=\frac{\left|u\bar u\right>+\left|d\bar d\right>+2\left|s\bar s\right>}{\sqrt{6}} $. Sa masse est $ m_{\eta^0\,PDG}=547,853\pm0.024\MeV $. Le $ \eta^0 $ possède deux principaux modes de désintégration :
+\begin{center}
+  \begin{tabular}{|c|c|}
+    \hline
+    \hline
+    Canal & Rapport de branchement\\
+    \hline
+    $ \eta^0\to\gamma\gamma $ & $ \Gamma_i/\Gamma=\left(39,31\pm0.20\right)\% $\\
+    \hline
+    $ \eta^0\to\pi^0\pi^0\pi^0 $ & $ \Gamma_i/\Gamma=\left(32,57\pm0.23\right)\% $\\
+    \hline
+  \end{tabular}
+\end{center}
+
+\subsection{Désintégration des $ \pi^0 $ et des $ \eta^0 $}
+
+Soient $ E_1 $ et $ E_2 $ les énergies, dans le référentiel du laboratoire, de deux photons $ \gamma_1 $ et $ \gamma_2 $ issus d'un $ \pi^0 $ ou d'un $ \eta^0 $ et $ \alpha $ l'angle d'ouverture entre $ \gamma_1 $ et $ \gamma_2 $. Si on suppose que le photon $ \gamma_1 $ se propage dans la direction $ z $, alors, les 4-vecteurs énergie-impulsion s'écrivent $ p^\mu_{\gamma_1}=\left(E_1;0,0,E_1\right) $ et $ p^\mu_{\gamma_2}=\left(E_2;E_1\sin\alpha,0,E_1\cos\alpha\right) $ d'où :
+\begin{equation}
+  p^\mu_{\gamma\gamma}=p^\mu_{\gamma_1}+p^\mu_{\gamma_2}=\left(E_1+E_2;E_1\sin\alpha,0,E_1\underbrace{(1+\cos\alpha)}_{2\sin^2\frac{\alpha}{2}}\right)
+\end{equation}
+et
+\begin{eqnarray}\label{masse_pizero}
+  m_{\gamma\gamma}&=&\sqrt{p_\mu^{\gamma\gamma}p^\mu_{\gamma\gamma}}\nonumber\\
+           &=&\sqrt{4E_1E_2\sin^2\frac{\alpha}{2}}
+\end{eqnarray}
+
+Remarque : Dans le cas général, les deux photons se propagent dans le plan $ x-y $, alors $ p^\mu_{\gamma_1}=\left(E_1;E_1\sin\theta_1,0,E_1\cos\theta_1\right) $ et $ p^\mu_{\gamma_2}=\left(E_2;-E_2\sin\theta_2,0,E_1\cos\theta_2\right) $ où $ \theta_1 $ et $ \theta_2 $ sont respectivement les angles entre les photons $ \gamma_1 $ et $ \gamma_2 $ et la direction de propagation du $ \pi^0 $ ou du $ \eta^0 $, $ \alpha\equiv\theta_1+\theta_2 $. Ces définitions mènent également à l'équation \ref{masse_pizero}.\\
+
+Exprimons l'angle $ \alpha $ en fonction de la masse :
+\begin{equation}
+  \alpha=2\arcsin\frac{m_{\gamma\gamma}}{\sqrt{4E_1E_2}}
+\end{equation}
+
+Cette quantité est minimale pour $ E_1=E_2=E_{\gamma\gamma}/2 $ d'où :
+\begin{equation}
+  \alpha_\textrm{min}=2\arcsin\frac{m_{\gamma\gamma}}{E_{\gamma\gamma}}
+\end{equation}
+
+La figure \ref{} (a) montre la désintégration d'un $ \pi^0 $ ou d'un $ \eta^0 $ dans le référentiel du laboratoire. La figure \ref{} (b) montre l'angle d'ouverture des deux photons en fonction de l'énergie $ E_{\gamma\gamma} $ de la paire $ \gamma\gamma $. Plus l'énergie est grande, plus l'angle d'ouverture est petit. L'étude sera limitée à une énergie de quelques $ \GeV $ car le calorimètre électromagnétique ne permet pas de distinguer deux photons avec un écart en pseudo-rapidité inférieur à $ \Delta\eta=0.1 $. 
+
+\begin{figure}[!ht]
+  \begin{center}
+
+  \begin{tabular}{ccc}
+    \includegraphics[height=5.25cm, keepaspectratio]{phd_low/desintegration}
+    &&
+    \includegraphics[height=5.25cm, keepaspectratio]{phd_low/alpha_min}
+    \\
+    (a) && (b)
+  \end{tabular}
+
+  \end{center}
+  \caption{Désintégration d'un $ \pi^0 $ ou d'un $ \eta^0 $ dans le référentiel du laboratoire (a). Angle d'ouverture des deux photons en fonction de l'énergie $ E_{\gamma\gamma} $ de la paire $ \gamma\gamma $ (b).}
+\end{figure}
+
+Étudions rapidement la distribution $ \frac{dN}{d\alpha} $ dans le référentiel du laboratoire. Supposons toujours que le $ \pi^0 $ ou le $ \eta^0 $ se propage suivant la direction $ z $, alors, nous définissons l'angle $ \theta^* $ comme l'angle du photon $ \gamma_1 $ par rapport à la direction $ z $ dans le référentiel au repos. La désintégration est isotopique, nous pouvons écrire :
+\begin{equation}
+  \frac{dN}{d\cos\theta^*}=\frac{1}{2}\hspace{0.75cm}\Rightarrow\hspace{0.75cm}\frac{dN}{d\alpha}=\frac{dN}{d\cos\theta^*}\frac{d\cos\theta^*}{d\alpha}=\frac{1}{2}\frac{d\cos\theta^*}{d\alpha}
+\end{equation}
+
+Il est simple de montrer que $ cos\theta^*=\frac{1}{\beta}\sqrt{1-\frac{1}{\gamma^2\sin^2\alpha}} $ d'où en dérivant :
+\begin{equation}
+  \frac{dN}{d\alpha}=\frac{1}{\gamma\beta}\frac{\cos\alpha/2}{4\sin^2\alpha/2}\frac{1}{\sqrt{\gamma^2\sin^2\alpha-1}}
+\end{equation}
+et encore:
+\begin{equation}
+  \boxed{N(\alpha)=\int d\alpha\,\frac{1}{\gamma\beta}\frac{\cos\alpha/2}{4\sin^2\alpha/2}\frac{1}{\sqrt{\gamma^2\sin^2\alpha-1}}}
+\end{equation}
+
+La figure \ref{} montre l'allure de la distribution $ N(\alpha) $ pour une énergie $ E_{\gamma\gamma}=???\MeV $. Cette distribution est piquée en $ \alpha_\textrm{min} $ et s'annule en $ \alpha_\textrm{max}=\pi $.
+
+\newpage
+
+\begin{figure}[!ht]
+  \begin{center}
+    \includegraphics[height=5.25cm, keepaspectratio]{phd_low/alpha_min}
+  \end{center}
+  \caption{Distribution $ N(\alpha) $ pour une énergie $ E_{\gamma\gamma}=???\MeV $.}
+\end{figure}
+
+\subsection{Sélection des photons}
+
+\subsection{Sélection des conversions}
+
