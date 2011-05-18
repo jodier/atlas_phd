@@ -1,0 +1,583 @@
+\chapter{Reconstruction des électrons et des photons}
+
+Dans ce chapitre, nous allons aborder la reconstruction et la sélection des électrons et les photons dans le détecteur Atlas.
+
+Lorsque les données sont enregistrées, les informations de plusieurs sous-détecteurs (trajectographe interne (pixels, SCT, TRT), calorimètres électromagnétique et hadronique) sont disponibles. Le travail de reconstruction consiste a rassembler ces informations afin de former des topologies propres à chaque particules, on parle à ce niveau de candidats électrons ou photons. Vient ensuite le travail de sélection. Il consiste en l'application d'un certain nombre de coupures (= critère de sélection) afin d'éliminer les candidats qui ne correspondent pas aux particules recherchées. La sélection doit simultanément maximiser la pureté et l'efficacité.
+
+Nous allons aborder la reconstruction et la sélection des élections, des photons non convertis et des photons convertis en se limitant à la zone de précision du calo électromagnétique soit $ \eta<2.47 $. Les particules de haute pseudo-rapidité reconstruites dans le FCal ne seront pas abordées.
+
+\section{Reconstruction des traces}
+
+Le trajectographe interne du détecteur Atlas a été décrit dans le chapitre 3. Nous allons décrire succinctement la reconstruction des traces de particules chargées. La reconstruction des traces est effectuée en trois étapes.
+
+La première étape consiste en l'identification des impacts (ou coups) via les informations recueillies auprès de l'électronique des sous-détecteurs pixels, SCT, TRT.
+
+La seconde étape consiste à former des germes de traces en reliant les points d'impact des trois couches des pixels et la première du SCT (couches les plus internes). Ensuite, le filtre de Kalman, évoqué au cours du précédant chapitre, permet d'étendre les germes de traces, couche après couche, jusqu'au TRT en ajoutant uniquement les points d'impact compatibles avec les prédictions. Un ajustement est réalisé afin de former les candidats traces. Cet algorithme est dit \og intérieur-extérieur \fg.
+
+La troisième étape consiste à refaire une reconstruction des traces en utilisant la méthode des transformées de Hough. Dans sa version simple, la transformée de Hough permet de détecter des lignes mais elle peut être généralisée afin de reconnaître n'importe quelle forme géométrique. Dans le cas des traces de particules, chaque hélice est représentée par un vecteur paramétrique à deux dimensions qui contient la direction de la trace (angle $ \theta $) et son rayon de courbure  (longueur $ \rho_c $). En transformant toutes les hélices qui passent par un point d'impact, c'est-à-dire en calculant les couples $ \binom{\theta}{\rho_c} $, on forme une courbe unique dans l'espace de Hough. Si deux courbes se coupent, le couple $ \binom{\theta}{\rho_c} $ correspond à un fragment d'hélice qui relit les deux points. Cet algorithme permet de reconstruire les traces qui ne pointent pas vers le centre du détecteur (conversions, particules à longues durées de vie, etc\dots). Un ajustement est réalisé afin de former les candidats traces. Cet algorithme est dit \og extérieur-intérieur \fg.\\
+
+Une fois les candidats traces formés, seuls sont conservés les paramètres cinématique ($ \eta $, $ \phi $, $ p_T $ au point d'approche minimal de l'axe du faisceaux (= perigée) qui est caractérisé par le paramètre d'impact $ d_0 $ et la distance $ z_0 $ voir figure \ref{d0z0}) et les nombres de points d'impacts dans les différents sous-détecteurs.\\
+
+Remarque 1 : Les ajustements des traces tiennent potentiellement compte du Bremsstrahlung et de la diffusion multiple.\\
+
+Remarque 2 : Comme nous l'avons évoqué au chapitre précédant, il convient de distinguer les traces qui ont des points d'impact dans les détecteurs silicium (pixel et SCT), qui sont de haute précision, des traces qui n'ont des points d'impact que dans le TRT, ou la reconstruction de la pseudo-rapidité $ \eta $ est mal déterminée car le TRT ne permet pas une mesure de la coordonnée $ z $.
+
+\begin{figure}[!ht]
+  \begin{center}
+    \includegraphics[height=6cm, keepaspectratio]{phd_reco/d0z0}
+  \end{center}
+  \caption{\label{d0z0}Définition du paramètre d'impact $ d_0 $ et la distance $ z_0 $ au point d'approche minimal de l'axe du faisceaux (= perigée).}
+\end{figure}
+
+\section{Reconstruction amas calorimétriques}
+
+Le principe de fonctionnement du calorimètre électromagnétique et la reconstruction de l'énergie dans les cellules a été présentée au chapitre 3. Nous allons décrire comment sont reconstruits les amas de cellules calorimétriques. Les deux algorithmes les plus couramment utilisés sont \emph{softe} et \emph{egamma}. Le premier part d'une trace reconstruite et lui associe un dépôt calorimétrique. Le second, le plus utilisé, \og travaille \fg\,uniquement au niveau du calorimètre.
+
+\subsection{L'algorithme \emph{softe}}
+
+Cet algorithme se base sur les traces de qualité soit au moins deux coups dans les pixels et au moins un dans la première couche, au moins 9 coups dans le silicium (pixel et sct) et enfin au moins 20 coups dans le TRT. Afin de limiter le bruit de fond (provenant des $ pi^0 $ par exemple), au moins un coup TRT de haut seuil est demandé. Cette limitation réduit l'acceptante de \emph{softe} à $ |\eta|<2 $. De plus, une coupure sur l'impulsion transverse $ p_T>2\GeV $ est demandée.
+
+Les traces ainsi sélectionnées sont extrapolées jusqu'au calorimètre électromagnétique ou un amas formé de $ 5\times5 $ cellules, ou encore $ \Delta\eta\times\Delta\phi=(5\times0.025)\times(5\times0.025) $. Si l'amas passe les coupures $ f_1=\frac{E_1}{E}>3\% $, $ f_3=\frac{E_3}{E}<5\% $ et $ E/p_{T\,trk}>0.7 $, où $ f_1 $ et $ f_2 $ sont respectivement la fraction d'énergie dans le premier compartiment et la fraction d'énergie dans le troisième compartiment, $ E $ l'énergie totale déposée dans l'amas et $ p_{T\,trk} $ l'impulsion transverse de la trace, alors, le candidat électron est conservé.
+
+\subsection{L'algorithme à fenêtre coulissante \emph{egamma}}
+
+Cet algorithme se base uniquement sur des critères calorimétriques. Il est basé sur l'emploi d'un algorithme dit à \og fenêtre coulissante \fg. La reconstruction se déroule en quatre étapes.
+
+Premièrement, les trois compartiments du calorimètre sont découpés en tours virtuelles à la granularité du second compartiment soit encore $ \Delta\eta\times\Delta\phi=0.025\times0.025 $.
+
+Deuxièmement, une fenêtre de $ 3\times 5 $ tour est déplacée sur l'ensemble des tours. Si l'énergie transverse, à l'intérieur de l'amas ainsi formé, est supérieur à $ 2.5\GeV $, où $ E_t=E\sin\theta=E/\cosh\eta $, alors la position de le fenêtre est ajustée afin de maximiser l'énergie mesurée, nous obtenons un candidat amas.
+
+Troisièmement, de même que dans le chapitre précédant lors de la reconstruction des photons de basse énergie, les mas qui se recouvrent, à une distance inférieure à deux cellules dans le deuxième compartiment, soit encore $ |\eta_{cl1}-\eta_{cl2}|<0.05 $ et $ |\phi_{cl1}-\phi_{cl2}|<0.05 $, sont retirés, on ne garde que l'amas de plus grande énergie transverse.
+
+Finalement des coupures sur les fractions d'énergie dans le près-échantillonneur et dans les trois compartiments sont appliquées afin de tester, de façon lâche, la présence d'une gerbe électromagnétique : $ f_{ps}=\frac{E_{ps}}{E_{cl}}<0.9 $, $ f_1=\frac{E_1}{E_{cl}}<0.8 $, $ f_2=\frac{E2}{E_{cl}}<0.98 $ et $ f_3=\frac{E3}{E_{cl}}<0.8 $, où $ f_{ps} $, $ f_1 $, $ f_2 $ et $ f_3 $ sont respectivement les fractions d'énergie déposées dans le pré-échantillonneur, dans le premier compartiment, dans le deuxième compartiment et dans le troisième compartiment.
+
+\subsection{Comparaison \emph{softe} et \emph{egamma}}
+
+Des études sur de la simulation Monte-carlo ont montré que pour des électrons d'énergie transverse inférieure à $ 5\GeV $, l'efficacité de reconstruction de \emph{softe} est supérieure de $ 10\% $ à l'efficacité de reconstruction de \emph{egamma}. Au-delà d'une énergie transverse de $ 5\GeV $, la différence devient négligeable.
+
+Comme la couverture en pseudo-rapidité est meilleure pour \emph{egamma}, $ |\eta|<2.47 $, que pour \emph{softe}, $ |\eta<2 $, la suite de ce chapitre est suppose la reconstruction des candidats électrons et photons à partir de l'algorithme \emph{egamma}.
+
+
+
+
+
+
+
+
+
+
+
+
+\newpage
+
+\section{Séparation électrons/photons}
+
+Trivialement, la distinction entre un électron et un photon est simple. Un électron est associé à une trace du trajectographe interne, un photon n'est pas associé à une trace du trajectographe interne. Cependant, certains cas sont plus ambigus. Une trace peut être associée à l'amas calorimétrique d'un photon par simple hasard, les électrons peuvent être convertis en paires d'électrons. Nous allons décrire les processus qui permettent la séparation entre électrons et photons.
+
+\subsection{Association des traces et des amas}
+
+La première étape dans la reconstruction des électrons ou des photons consiste à essayer d'associer des traces du trajectographe interne avec des amas calorimétriques. La procédé a été décrit dans le chapitre précédant /réf{}, nous conservons exactement la même définition :
+\begin{equation}\label{veto1}
+  \hspace{1.7cm}\left|\eta_{ext}-\eta_{cl}\right|<0.05
+\end{equation}
+\begin{equation}\label{veto2}
+  -0.1<q\left(\phi_{ext}-\phi_{cl}\right)<0.05
+\end{equation}
+
+Pour les traces n'ayant que des coups dans le TRT, seule la comparaison entre les angles azimutaux est possible. Les traces ainsi sélectionnées sont extrapolées jusqu'au second compartiment ou la quantité $ dR=\sqrt{(\eta_{cl\,s2}-\eta_{trk})^2-(\phi_{cl\,s2}-\phi_{trk})^2} $ est calculée. Une priorité est définie, d'autant plus grande que le nombre de coups dans le silicium est grand et que $ dR $ est petit. La trace la plus grande priorité est sélectionnée.
+
+\subsection{Reconstruction des conversions}
+
+Les candidats conversions sont reconstruits à partir de la collection des traces du trajectographe interne. L'algorithme a déjà été détaillé au chapitre précédant. Les principales coupures appliquées concernent la quantité $ D-R_1-R_2 $, la plus courte distance d'approche et la quantité de l'ajustement au niveau des vertex de conversion.
+
+\subsection{Processus de décision}
+
+\paragraph{Électrons} Dans le conteneur \emph{électrons}, sont placés les candidats électrons formés d'un amas calorimétrique associé à une trace. Il a été décidé de maximiser l'efficacité de reconstruction des électrons lorsqu'un cas est ambigu, le conteneur \emph{électrons} est prioritaire.
+
+\paragraph{Photons} Dans le conteneur \emph{photons}, sont placés les candidats photons formés d'un amas calorimétrique non associé à une trace. Pour les analyses d'avantage orientées photons qu'électrons, un mécanisme permet de récupérer les cas ambigus de photons convertis ou non convertis.\\
+
+Remarque : Dans tout les cas, il n'y a jamais de recouvrement entre le contenu du conteneur \emph{électrons} et le contenu du conteneur \emph{photons}.
+
+\paragraph{Récupération des électrons non convertis} Les candidats électrons qui possèdent une mauvaise association trace-amas peuvent être récupérés en tant que photons. C'est le cas des électrons associés à une trace TRT, sans coup dans le silicium, de faible avec une impulsion transverse $ p_{T\,trk}<2GeV $, des électrons avec un rapport $ E_{cl}/p_{T\,trk}>10 $ ou encore des électrons associés à une trace avec une impulsion transverse $ p_T<2\GeV $ sans être des électrons de conversion.
+
+\paragraph{Récupération des photons convertis} Les électrons de conversion peuvent être récupérés sous forme de photons. Les candidats électrons associés à une trace TRT, sans coup dans le silicium, avec $ pT>2\GeV $ et $ E_{cl}/p_{T\,trk}<10 $ sont également récupérés comme photons convertis.\\
+
+La figure \ref{processus} illustre le processus de décision pour les candidats électrons, photons non convertis et photons convertis.
+
+\begin{figure}[!ht]
+  \begin{center}
+    \includegraphics[height=9cm, keepaspectratio]{phd_reco/processus}
+  \end{center}
+  \caption{\label{processus}Processus de décision pour les candidats électrons, photons non convertis et photons convertis.}
+\end{figure}
+
+\subsection{Amas finaux}
+
+Les amas de $ 3\times5 $ cellules utilisés par l'algorithme \emph{egamma} ne sont pas les amas définitifs. Dans la partie tonneau du calorimètre, plusieurs tailles sont utilisées afin de tenir compte de l'interaction entre les particules et la matière. Les électrons finaux sont reconstruits avec des amas de $ 3\times7 $ cellules, les photons non convertis sont reconstruits avec des amas de $ 3\times5 $ cellules, enfin, les photons convertis sont reconstruits avec des amas de $ 3\times7 $ cellules si le rayon de conversion $ R $ est inférieur à $ 80cm $ et $ 3\times5 $ cellules sinon. Dans les parties bouchons du calorimètre, les particules électromagnétiques sont reconstruits avec des amas de $ 5\times5 $ cellules.
+
+\subsection{Correction des amas en position}
+
+Les position en pseudo-rapidité $ \eta $ et en angle azimutale $ \phi $ des amas est obtenu à partir du barycentre du dépôt d'énergie. Comme la granularité du calorimètre électromagnétique est finie, un biais sur la position $ \eta $ est observée de l'ordre du pour mille. Une correction a été extraite à partir de la simulation Monte-Carlo. La figure \ref{correction} montre d'un amas avant et après correction pour des électrons de 100GeV dans le premier compartiment du calorimètre électromagnétique.
+
+\begin{figure}[!ht]
+  \begin{center}
+    \includegraphics[height=5.0cm, keepaspectratio]{phd_reco/correction}
+  \end{center}
+  \caption{\label{correction}Position relative de l'ammas avant correction et après correction pour des électrons avec une énergie de $ 100\GeV $.}
+\end{figure}
+
+Une seconde correction est appliquée à la position $ \phi $ pour tenir compte de la structure en accordéon du calorimètre électromagnétique. Cette correction est de l'ordre de 0.2 mrad.\\
+
+La détermination de la position s'appuie sur la fine segmentation des deux premiers compartiments seulement :
+\begin{equation}
+  \eta_{cl}\equiv\frac{3\eta_{cl\,s1}E_{cl\,s1}+\eta_{cl\,s2}E_{cl\,s2}}{3E_{cl\,s1}+E_{cl\,s2}}
+\end{equation}
+\begin{equation}
+  \phi_{cl}\equiv\frac{3\phi_{cl\,s1}E_{cl\,s1}+\phi_{cl\,s2}E_{cl\,s2}}{3E_{cl\,s1}+E_{cl\,s2}}
+\end{equation}
+
+Les figures \ref{resolutions} a et b montrent respectivement la distribution de la résolution, de la position $ \eta $ et de la position $ \phi $ d'un amas de cellules pour des objets électromagnétiques avec une énergie de $ 100\GeV $.
+
+\begin{figure}[!ht]
+  \begin{center}
+
+  \begin{tabular}{ccc}
+    \includegraphics[height=5.0cm, keepaspectratio]{phd_reco/correction}
+    &&
+    \includegraphics[height=5.0cm, keepaspectratio]{phd_reco/correction}
+    \\
+    (a) && (b)
+  \end{tabular}
+
+  \end{center}
+  \caption{\label{resolutions}Résolution, de la position $ \eta $ (a) et de la position $ \phi $ (b) d'un amas de cellules pour des objets électromagnétiques avec une énergie de $ 100\GeV $.}
+\end{figure}
+
+\subsection{Correction des amas en énergie}
+
+De même qu'au chapitre précédant, les amas doivent être corrigés en énergie. Une carte des poids, en fonction de la pseudo-rapidité, a été établie et validée sous faisceaux tests. Cette calibration s'appuie sur des simulations réalisées avec GEANT4. De plus amples précisions sont disponibles dans \ref{}.
+
+Comme les poids ne dépendent pas de la position $ \phi $, une seconde calibration a été établie afin de tenir compte de la variation en épaisseur d'absorbeur traversée pour un centre de gerbe donné. L'effet sur la résolution de cette correction est de l'ordre de $ 0.5\% $.
+
+Enfin une dernière correction est appliquée afin de tenir compte de la taille finie des cellules et éviter les effets de bord (la particule passe au centre d'une cellule ou non). L'effet sur la résolution est de l'ordre de $ 1\% $.
+
+\subsection{Performance de la reconstruction}
+
+Après correction, la résolution en énergie pour la reconstruction des objets électromagnétiques est donnée par :
+\begin{equation}
+  \frac{\sigma(E)}{E}\approx\frac{0.3\GeV}{E}\oplus\frac{10\%}{\sqrt{E}}\oplus0.6\%
+\end{equation}
+
+La résolution angulaire des photons non convertis est directement celle du calorimètre électromagnétique, soit quelques mrad. Pour les photons convertis et pour les électrons, les performances combinées du trajectographe interne et du calorimètre électromagnétique mènent à une résolution angulaire de l'ordre de $ \sim0.5 mrad $.
+
+La figure ? montre les efficacités de reconstruction des objets électromagnétiques en fonction de la pseudo-rapidité (a) et de l'impulsion (b). Les efficacités sont très bonnes, $ \sim97\% $ pour les électrons de plus de $ 20\GeV $ et $ \sim99.8\% $ pour les photons.
+
+\section{Critères d'identification des électrons}
+
+Une fois la reconstruction des candidats électrons effectuée, il faut réaliser une sélection, en effet la fraction des vrais électrons est de l'ordre du dix millième pour les collisions à $ \sqrt{s}=7\TeV $. Ces critères sont basés sur : i) la forme des gerbes électromagnétiques et la fuite d'énergie dans le calorimètre hadronique ii) la qualité des traces et l'identification des particules avec le TRT (réjection des pions chargés). iii) la qualité de l'association traces-amas.
+
+\section{Variables d'identification}
+
+\subsection{Formes des gerbes électromagnétiques}
+
+Les variables de forme de gerbes électromagnétiques permettent de distinguer les gerbes électromagnétiques d'électrons des gerbes d'autres particules, tels que les hadrons. Plus particulièrement ce sont les variables d'extension longitudinale et d'extension latérale qui présentent le plus d'intérêt car, en règle générale, les gerbes hadroniques sont beaucoup plus pénétrantes et plus larges que les gerbes électromagnétiques.
+
+Remarque : Dans la simulation Monte-Carlo les variables de forme de gerbe électromagnétique sont sensibles à la connaissance de la matière avant et à l'intérieur du calorimètre électromagnétique.
+
+\subsection{Étalement des gerbes dans le second compartiment}
+
+Des variables ont été définies afin de caractériser l'étalement des gerbes électromagnétiques dans le second compartiment. Le rayon de Molière permet de construire un cône de rayon $ R_M $ à l'intérieur duquel $ 90\% $ de l'énergie d'une gerbe électromagnétique est contenue. Dans le calorimètre électromagnétique, le rayon de Molière est d'environ $ 10cm $. On déduit qu'un amas de 5 cellules d'extension latéral est suffisant pour contenir $ 90\% $ de l'énergie d'une gerbe. Cette taille est beaucoup plus grande pour les gerbes hadroniques si bien que deux nouvelles variables peuvent être introduites afin de distinguer les gerbes électromagnétiques des gerbes hadroniques. Il s'agit de la fraction d'énergie dans le c\oe ur de la gerbe pour les deux directions $ \eta $ et $ \phi $ respectivement appelées $ R_\eta $ et $ R_\phi $ :
+\begin{equation}
+  R_\eta=\frac{E^{s2}_{3\times7}}{E^{s2}_{7\times7}}\hspace{1cm}\textrm{;}\hspace{1cm}R_\phi=\frac{E^{s2}_{3\times3}}{E^{s2}_{3\times7}}
+\end{equation}
+
+où $ E^{s2}_{X\times Y} $ est l'énergie de l'amas de taille $ X\times Y $ dans le second compartiment. Dans la réalité, $ R_\phi $ est sensible aux effets du champ magnétique et n'est pas utilisée pour l'identification des électrons. Une autre variable discriminante est le second moment de la pseudo-rapidité des cellules d'un amas $ 3\times 5 $ pondérées par leur énergie :
+\begin{equation}
+  W_{\eta_2}=\sqrt{\frac{\sum E_i\eta^2_i}{\sum E_i}-\left(\frac{\sum E_i\eta_i}{\sum E_i}\right)^2}
+\end{equation}
+
+\subsection{Étalement des gerbes dans le premier compartiment}
+
+Des variables ont été définies afin de caractériser l'étalement des gerbes électromagnétiques dans le premier compartiment. Elles tirent partie de sa fine granularité en pseudo-rapidité sont particulièrement utiles pour identifier les photons issus de pions neutres.
+
+La différence en énergie entre la seconde cellule la plus énergique et la cellule la moins énergique est une variable discriminante : 
+\begin{equation}
+  \Delta E=E^{s1}_\textrm{2$ ^\textrm{nd} $ max}-E^{s1}_{min}
+\end{equation}
+
+La différence relative en énergie entre les deux cellules les plus énergétiques est une autre variable discriminante :
+\begin{equation}
+  R_{\Delta E}=\frac{E^{s1}_\textrm{1$ ^\textrm{st} $ max}-E^{s1}_\textrm{2$ ^\textrm{nd} $ max}}{E^{s1}_\textrm{1$ ^\textrm{st} $ max}+E^{s1}_\textrm{2$ ^\textrm{nd} $ max}}
+\end{equation}
+
+Pour les longueurs de gerbes trois variables présentent un intérêt. $ w^{3}_{\eta1} $ et $ w^{tot}_{\eta1}\equiv w_{stot} $ ont pour définition :
+\begin{equation}
+  w_{\eta1}=\sqrt{\frac{\sum E_i(i-i_{max})^2}{\sum E_i}}
+\end{equation}
+
+où $ i={-1,0,+1} $ pour $ W^{3}_{\eta1} $, $ i $ balaye une fenêtre $ \Delta\eta\Delta\phi=0.0625\times0.2 $ ($ \sim20 $ cellules en $ \eta $) pour $ W^{tot}_{\eta1} $ et $ i_{max} $ est l'index de la cellule la plus énergétique.
+
+Ajoutons encore :
+\begin{equation}
+  F_{side}=\frac{\sum^{+3}_{i=-3}E_i-\sum^{+1}_{i=-1}E_i}{\sum^{+1}_{i=-1}E_i}
+\end{equation}
+
+\noindent qui représente l'énergie en dehors du c\oe ur de la gerbe.
+
+\subsection{Fuite hadronique}
+
+Comme expliqué dans le chapitre 3, le calorimètre électromagnétique possède une longueur total de $ 24X_0 $ (24 longueurs de radiation) pour les gerbes électromagnétiques mais seulement une longueur de $ 2X_0 $ (2 longueurs de radiation) pour les gerbes hadroniques. La fuite en énergie dans le calorimètre hadronique des gerbes électromagnétiques est inférieure à $ 1\% $. On définit alors les variables :
+\begin{equation}
+  R_{had1}=\frac{E_{T\,had.1\,cl}}{E_{T\,EM\,cl}}\hspace{1cm}\textrm{et}\hspace{1cm}R_{had}=\frac{E_{T\,had.\,cl}}{E_{T\,EM\,cl}}
+\end{equation}
+
+\noindent comme nouvelle variable discriminante, où $ E_{T\,EM\,cl} $ est l'énergie transverse de l'amas dans le calorimètre électromagnétique, $ E_{T\,had.1\,cl} $ est l'énergie transverse de l'amas dans le premier compatiment du calorimètre hadronique et $ E_{T\,had.\,cl} $ est l'énergie transverse de l'amas dans le calorimètre hadronique.
+
+\subsection{Identification à partir des traces}
+
+Les électrons produits de façon prompt, près du vertex primaire, doivent laisser un nombre important de coups, de la première couche du détecteur interne, jusqu'au TRT. Il est possible de demander au moins un coup dans chaque couche du détecteur à pixel et au moins sept dans l'ensemble du silicium (pixels et SCT) ou encore un certain nombre de coups dans le TRT et tirer partie de l'identification des électrons en effectuant une sélection sur la fraction de coups haut seuil. Enfin une coupure sur le paramètre d'impact peut être appliquée afin de ne conserver que les électrons projectifs.
+
+\subsection{Combinaison traces-amas}
+
+Des coupures sur les distances entre la trace et l'amas associé peuvent être employées et une coupure sur le rapport entre l'énergie de l'amas et l'impulsion de la trace $ 0.7<E_{cl}/p_{trk}\lesssim4 $ peut également être utilisée.
+
+\section{Jeu de coupures standard et variable isEM}
+
+
+
+\begin{table}[!p]
+  \begin{center}
+
+  Sélection \emph{isEM loose}
+
+  \begin{tabularx}{15.5cm}{|X|l|c|}
+    \hline
+    \hline
+      Type & Description & Nom de variable \\
+    \hline
+      Acceptance du détecteur
+      &
+      $ |\eta|<2.47 $
+      &
+      \begin{minipage}{2cm}
+        \begin{itemize}
+          \item $ \eta $
+        \end{itemize}
+      \end{minipage}\\
+    \hline
+      Fuite hadronique
+      &
+      \begin{minipage}{7cm}
+        \medskip
+        \begin{itemize}
+          \item Rapport entre $ E_T $ de l'amas dans le premier compatiment du calorimètre hadronique et $ E_T $ de l'amas dans le calorimètre électromagnétique.
+          \item Rapport entre $ E_T $ de l'amas du calorimètre hadronique et $ E_T $ de l'amas dans le calorimètre électromagnétique.
+        \end{itemize}
+        \medskip
+      \end{minipage}
+      &
+      \begin{minipage}{2cm}
+        \begin{itemize}
+          \item $ R_{had1} $
+          \item $ R_{had} $
+        \end{itemize}
+      \end{minipage}\\
+    \hline
+      Second compartiment du calorimètre électomagnétique
+      &
+      \begin{minipage}{7cm}
+        \medskip
+        \begin{itemize}
+          \item Rapport en $ \eta $ de l'énergie dans des cellules $ 3\times3 $ et $ 7\times7 $.
+          \item Largeur latérale de la gerbe électromagnétique.
+        \end{itemize}
+        \medskip
+      \end{minipage}
+      &
+      \begin{minipage}{2cm}
+        \medskip
+        \begin{itemize}
+          \item $ R_\eta $
+          \item $ W_{\eta2} $
+        \end{itemize}
+        \medskip
+      \end{minipage}\\
+    \hline
+  \end{tabularx}
+
+  Sélection \emph{isEM medium}
+
+  \begin{tabularx}{15.5cm}{|X|l|c|}
+    \hline
+    \hline
+      Type & Description & Nom de variable \\
+    \hline
+      Premier compartiment du calorimètre électomagnétique
+      &
+      \begin{minipage}{7cm}
+        \medskip
+        \begin{itemize}
+          \item Largeur totale de la gerbe électromagnétique.
+          \item Rapport en la différence et la somme des énergies déposées dans les deux cellules les plus énergétiques.
+        \end{itemize}
+        \medskip
+      \end{minipage}
+      &
+      \begin{minipage}{2cm}
+        \begin{itemize}
+          \item $ w_{stot} $
+          \item $ E_\textrm{ratio} $
+        \end{itemize}
+      \end{minipage}\\
+    \hline
+      Qualité des traces
+      &
+      \begin{minipage}{7cm}
+        \medskip
+        \begin{itemize}
+          \item Au moins un impact dans les pixels.
+          \item Au moins sept impacts dans le silicium.
+          \item Paramètre d'impact tranverse plus petit que $ 5mm $.
+        \end{itemize}
+        \medskip
+      \end{minipage}
+      &
+      \begin{minipage}{2cm}
+        \begin{itemize}
+          \item $ nPix $
+          \item $ nSi $
+          \item $ d0 $
+        \end{itemize}
+      \end{minipage}\\
+    \hline
+      Association des traces
+      &
+      \begin{minipage}{7cm}
+        \medskip
+        \begin{itemize}
+          \item $ \Delta\eta $ entre la trace et l'amas plus petit que $ 0.01 $.
+        \end{itemize}
+        \medskip
+      \end{minipage}
+      &
+      \begin{minipage}{2cm}
+        \begin{itemize}
+          \item $ \Delta\eta_1 $
+        \end{itemize}
+      \end{minipage}\\
+    \hline
+  \end{tabularx}
+
+  Sélection \emph{isEM tight}
+
+  \begin{tabularx}{15.5cm}{|X|l|c|}
+    \hline
+    \hline
+      Type & Description & Nom de variable \\
+    \hline
+      b-layer
+      &
+      \begin{minipage}{7cm}
+        \medskip
+        \begin{itemize}
+          \item Au moins un impact dans le b-layer.
+        \end{itemize}
+        \medskip
+      \end{minipage}
+      &
+      \begin{minipage}{2cm}
+        \begin{itemize}
+          \item $ nBLayer $
+        \end{itemize}
+      \end{minipage}\\
+    \hline
+      Qualité des traces
+      &
+      \begin{minipage}{7cm}
+        \medskip
+        \begin{itemize}
+          \item Paramètre d'impact tranverse plus petit que $ 1mm $.
+        \end{itemize}
+        \medskip
+      \end{minipage}
+      &
+      \begin{minipage}{2cm}
+        \begin{itemize}
+          \item $ d0 $
+        \end{itemize}
+      \end{minipage}\\
+    \hline
+      Association des traces
+      &
+      \begin{minipage}{7cm}
+        \medskip
+        \begin{itemize}
+          \item $ \Delta\eta $ entre la trace et l'amas plus petit que $ 0.005 $.
+          \item $ \Delta\phi $ entre la trace et l'amas plus petit que $ 0.02 $.
+          \item Rapport entre l'énergie de l'amas et l'impulsion de la trace.
+        \end{itemize}
+        \medskip
+      \end{minipage}
+      &
+      \begin{minipage}{2cm}
+        \begin{itemize}
+          \item $ \Delta\eta_1 $
+          \item $ \Delta\phi_2 $
+          \item $ E/p $
+        \end{itemize}
+      \end{minipage}\\
+    \hline
+      TRT
+      &
+      \begin{minipage}{7cm}
+        \medskip
+        \begin{itemize}
+          \item Rapport en le nombre de coups TRT de haut seuil et nombre total $ >0.12 $.
+          \item Nombre de coups TRT.
+        \end{itemize}
+        \medskip
+      \end{minipage}
+      &
+      \begin{minipage}{2cm}
+        \begin{itemize}
+          \item nHT.
+          \item nTRT.
+        \end{itemize}
+      \end{minipage}\\
+    \hline
+      Conversions
+      &
+      \begin{minipage}{7cm}
+        \medskip
+        \begin{itemize}
+          \item Les électrons qui proviennent de photons convertis sont rejetés.
+        \end{itemize}
+        \medskip
+      \end{minipage}
+      &
+      \begin{minipage}{2cm}
+        \begin{itemize}
+          \item conv. bit
+        \end{itemize}
+      \end{minipage}\\
+    \hline
+
+    \hline
+  \end{tabularx}
+
+  \caption{Trois jeux de coupures standards pour la selection des électrons dans Atlas. De la plus forte à la plus faible, tight $ \Rightarrow $ medium $ \Rightarrow $ loose.}
+
+  \end{center}
+\end{table}
+
+\begin{figure}[!p]
+  \begin{center}
+
+  \begin{tabular}{ccc}
+    \includegraphics[height=7.0cm, keepaspectratio]{phd_reco/rhad1}
+    &&
+    \includegraphics[height=7.0cm, keepaspectratio]{phd_reco/weta2}
+    \\
+    (a) && (b)
+  \end{tabular}
+
+  \end{center}
+  \caption{???.}
+\end{figure}
+
+\begin{figure}[!p]
+  \begin{center}
+
+  \begin{tabular}{ccc}
+    \includegraphics[height=7.0cm, keepaspectratio]{phd_reco/reta}
+    &&
+    \includegraphics[height=7.0cm, keepaspectratio]{phd_reco/wstot}
+    \\
+    (a) && (b)
+  \end{tabular}
+
+  \end{center}
+  \caption{???.}
+\end{figure}
+
+\begin{figure}[!p]
+  \begin{center}
+
+  \begin{tabular}{ccc}
+    \includegraphics[height=7.0cm, keepaspectratio]{phd_reco/eratio}
+    &&
+    \includegraphics[height=7.0cm, keepaspectratio]{phd_reco/weta2}
+    \\
+    (a) && (b)
+  \end{tabular}
+
+  \end{center}
+  \caption{???.}
+\end{figure}
+
+\begin{figure}[!p]
+  \begin{center}
+
+  \begin{tabular}{ccc}
+    \includegraphics[height=7.0cm, keepaspectratio]{phd_reco/pixel}
+    &&
+    \includegraphics[height=7.0cm, keepaspectratio]{phd_reco/silicon}
+    \\
+    (a) && (b)
+  \end{tabular}
+
+  \end{center}
+  \caption{???.}
+\end{figure}
+
+\begin{figure}[!p]
+  \begin{center}
+
+  \begin{tabular}{ccc}
+    \includegraphics[height=7.0cm, keepaspectratio]{phd_reco/eoverp}
+    &&
+    \includegraphics[height=7.0cm, keepaspectratio]{phd_reco/d0}
+    \\
+    (a) && (b)
+  \end{tabular}
+
+  \end{center}
+  \caption{???.}
+\end{figure}
+
+\begin{figure}[!p]
+  \begin{center}
+
+  \begin{tabular}{ccc}
+    \includegraphics[height=7.0cm, keepaspectratio]{phd_reco/deltaeta1}
+    &&
+    \includegraphics[height=7.0cm, keepaspectratio]{phd_reco/deltaphi2}
+    \\
+    (a) && (b)
+  \end{tabular}
+
+  \end{center}
+  \caption{???.}
+\end{figure}
+
+\begin{figure}[!p]
+  \begin{center}
+
+  \begin{tabular}{ccc}
+    \includegraphics[height=7.0cm, keepaspectratio]{phd_reco/trthits}
+    &&
+    \includegraphics[height=7.0cm, keepaspectratio]{phd_reco/htratio}
+    \\
+    (a) && (b)
+  \end{tabular}
+
+  \end{center}
+  \caption{???.}
+\end{figure}
+
+\begin{figure}[!p]
+  \begin{center}
+    \includegraphics[height=7.0cm, keepaspectratio]{phd_reco/conversionbit}
+  \end{center}
+  \caption{???.}
+\end{figure}
