@@ -72,7 +72,7 @@ Comme la couverture en pseudo-rapidité est meilleure pour \emph{egamma}, $ |\eta
 
 \section{Séparation électrons/photons}
 
-Trivialement, la distinction entre un électron et un photon est simple. Un électron est associé à une trace du trajectographe interne, un photon n'est pas associé à une trace du trajectographe interne. Cependant, certains cas sont plus ambigus. Une trace peut être associée à l'amas calorimétrique d'un photon par simple hasard, les électrons peuvent être convertis en paires d'électrons. Nous allons décrire les processus qui permettent la séparation entre électrons et photons.
+Trivialement, la distinction entre un électron et un photon est simple. Un électron est associé à une trace du trajectographe interne, un photon n'est pas associé à une trace du trajectographe interne. Cependant, certains cas sont plus ambigus. Une trace peut être associée à l'amas calorimétrique d'un photon par simple hasard, les électrons peuvent être convertis en paires d'électrons. Nous allons décrire la procedure qui permet la séparation entre électrons et photons.
 
 \subsection{Association des traces et des amas}
 
@@ -90,7 +90,7 @@ Pour les traces n'ayant que des coups dans le TRT, seule la comparaison entre le
 
 Les candidats conversions sont reconstruits à partir de la collection des traces du trajectographe interne. L'algorithme a déjà été détaillé au chapitre précédant. Les principales coupures appliquées concernent la quantité $ D-R_1-R_2 $, la plus courte distance d'approche et la quantité de l'ajustement au niveau des vertex de conversion.
 
-\subsection{Processus de décision}
+\subsection{Procedure de décision}
 
 \paragraph{Électrons} Dans le conteneur \emph{électrons}, sont placés les candidats électrons formés d'un amas calorimétrique associé à une trace. Il a été décidé de maximiser l'efficacité de reconstruction des électrons lorsqu'un cas est ambigu, le conteneur \emph{électrons} est prioritaire.
 
@@ -102,13 +102,13 @@ Remarque : Dans tout les cas, il n'y a jamais de recouvrement entre le contenu d
 
 \paragraph{Récupération des photons convertis} Les électrons de conversion peuvent être récupérés sous forme de photons. Les candidats électrons associés à une trace TRT, sans coup dans le silicium, avec $ pT>2\GeV $ et $ E_{cl}/p_{T\,trk}<10 $ sont également récupérés comme photons convertis.\\
 
-La figure \ref{processus} illustre le processus de décision pour les candidats électrons, photons non convertis et photons convertis.
+La figure \ref{procedure} illustre l a procedure de décision pour les candidats électrons, photons non convertis et photons convertis.
 
 \begin{figure}[!ht]
   \begin{center}
-    \includegraphics[height=9cm, keepaspectratio]{phd_reco/processus}
+    \includegraphics[height=9cm, keepaspectratio]{phd_reco/procedure}
   \end{center}
-  \caption{\label{processus}Processus de décision pour les candidats électrons, photons non convertis et photons convertis.}
+  \caption{\label{procedure}Procedure de décision pour les candidats électrons, photons non convertis et photons convertis.}
 \end{figure}
 
 \subsection{Amas finaux}
