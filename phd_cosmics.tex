@@ -1,5 +1,67 @@
 \chapter{Validation de la simulation des variables de forme de gerbes électromagnétiques avec des muons cosmiques}
 
+Ce chapitre est basée sur une étude réalisée conjointement avec Olivier Arnaez et Truc Truc Truc. Elle consiste en la validation de la simulation des variables de forme de gerbes électromagnétiques avec des muons cosmiques. J'ai montré, au chapitre précédent, que l'identification des électrons et des photons est principalement basée sur des critères de forme de gerbes électromagnétiques. C'est pourquoi il fut intéressant de réaliser une validation des simulations sur les premières données cosmiques 2008 et 2009. Les résultats concernant les données 2008 et la première génération de simulations Monte-Carlo ont fait l'objet d'une note.
+
+\section{Données}
+
+\begin{table}[!ht]
+  \begin{center}
+
+  \begin{tabular}{|l|l|}
+    \hline
+    \hline
+      Écrémage & Description \\ 
+    \hline
+      \small{PixComm} & \begin{minipage}{12cm}Au moins une trace reconstruite dans le détecteur interne avec au moins un coup dans les pixels.\end{minipage} \\
+      \small{SCTComm} & \begin{minipage}{12cm}Au moins une trace reconstruite dans le détecteur interne avec au moins un coup dans le SCT.\end{minipage} \\
+      \small{IDComm} & Au moins une trace reconstruite dans le détecteur interne. \\
+      \small{IDProjComm} & \begin{minipage}{12cm}Au moins une trace projective reconstruite dans le détecteur interne. $ d_0<300mm $ et $ z_0<300mm $.\end{minipage} \\
+    \hline
+      \small{CaloComm} & Au moins un amas calorimétrique reconstruit. \\
+      \small{EMClustComm} & \begin{minipage}{12cm}Au moins un amas électromagnétique reconstruit avec l'algorithme \emph{egamma}.\end{minipage} \\
+      \small{EGamTauComm} & Au moins un électron, un photon ou un tau reconstruit.\\
+    \hline
+      \small{RPCComm} & Au moins une trace reconstruite dans le RPC avec deux coups. \\
+      \small{TGCComm} & Au moins une trace reconstruite dans le TGC avec deux coups. \\
+    \hline
+      \small{TileComm} & Au moins une trace reconstruite avec l'algorithme \emph{TileMuonFitter}. \\
+    \hline
+  \end{tabular}
+
+  \end{center}
+  \caption{Description des écrémages utilisés pour les événements cosmiques.}
+\end{table}
+
+\begin{table}[!ht]
+  \begin{center}
+
+  \begin{tabular}{|l|c|c|c|c|c|c|c|c|}
+    \hline
+    \hline
+      \small{Skimming/Trigger} & \tiny{IDCos.} & \tiny{L1Calo} & \tiny{L1CaloEM} & \tiny{RPCwBeam} & \tiny{TGCwBeam} & \tiny{Cos.$ \mu\downarrow $} & \tiny{Cos.$ \mu\uparrow $} & \tiny{TRT$ \mu $}\\
+    \hline
+      ESD & $ \star $ & $ \star $ & $ \star $ & $ \star $ & $ \star $ & $ \star $ & $ \star $ & $ \star $ \\
+      AOD & $ \star $ & $ \star $ & $ \star $ & $ \star $ & $ \star $ & $ \star $ & $ \star $ & $ \star $ \\
+      PixComm & $ \star $ & - & - & $ \star $ & $ \star $ & - & - & $ \star $ \\
+      SCTComm & $ \star $ & - & - & $ \star $ & $ \star $ & - & - & $ \star $ \\
+      IDComm & $ \star $ & - & - & $ \star $ & $ \star $ & - & - & $ \star $ \\
+      IDProjComm & $ \star $ & - & - & - & - & - & - & - \\
+      CaloComm & - & $ \star $ & $ \star $ & - & - & - & - & - \\
+      EMClustComm & - & - & $ \star $ & - & - & - & - & - \\
+      EGamTauComm & $ \star $ & - & $ \star $ & - & $ \star $ & - & - & - \\
+      RPCComm & - & - & - & $ \star $ & - & $ \star $ & - & - \\
+      TGCComm & - & - & - & - & $ \star $ & - & - & - \\
+      TileComm & - & - & - & - & - & - & $ \star $ & - \\
+    \hline
+  \end{tabular}
+
+  \end{center}
+  \caption{Formats de données disponibles en fonction du système de déclenchement et de l'écrémage.}
+\end{table}
+
+
+\section{Acceptance des données 2008 et 2009}
+
 \begin{figure}[!ht]
   \begin{center}
 
@@ -12,8 +74,10 @@
   \end{tabular}
 
   \end{center}
-  \caption{}
+  \caption{Angle azimutal $ \phi $ en fonction de la pseudo-rapidité $ \eta $ des amas d'énergie des évènements présélectionnés avec une énergie dans l'amas $ E>5\GeV $ et au moins un coups dans le silicium. Voie IDCosmic/EGamTauComm (a), voie L1CaloEM/EGamTauComm (b).}
 \end{figure}
+
+\section{Sélection des événements cosmiques}
 
 \begin{figure}[!ht]
   \begin{center}
@@ -27,7 +91,7 @@
   \end{tabular}
 
   \end{center}
-  \caption{}
+  \caption{Paramètres d'impact $ z_0 $ en fonction du paramètres d'impact $ d_0 $ des évènements présélectionnés avec une énergie dans l'amas $ E>5\GeV $ et au moins un coups dans le silicium. Voie IDCosmic/EGamTauComm (a), voie L1CaloEM/EGamTauComm (b).}
 \end{figure}
 
 \begin{figure}[!ht]
@@ -42,7 +106,7 @@
   \end{tabular}
 
   \end{center}
-  \caption{}
+  \caption{Angle azimutal $ \phi $ en fonction de la pseudo-rapidité $ \eta $ des amas d'énergie des évènements avant sélection. Données 2008 (a), données 2009 (b).}
 \end{figure}
 
 \begin{figure}[!ht]
@@ -57,8 +121,10 @@
   \end{tabular}
 
   \end{center}
-  \caption{Distribution des paramètres d'impact $ z_0 $ (a) et $ d_0 $ (b) pour les évènements présélectionnés avec une énergie dans l'amas supérieure à $ 5\GeV $.}
+  \caption{Distribution des paramètres d'impact $ z_0 $ (a) et $ d_0 $ (b) des évènements présélectionnés avec une énergie dans l'amas supérieure à $ 5\GeV $.}
 \end{figure}
+
+\subsection{Sélection sur le nombre de coups des traces}
 
 \begin{figure}[!ht]
   \begin{center}
@@ -74,8 +140,10 @@
   \end{tabular}
 
   \end{center}
-  \caption{Nombre de coups dans le TRT en fonction du nombre de coups dans le silicium pour les évènements présélectionnés avec une énergie dans l'amas $ E>5\GeV $ et au moins un coups dans le silicium. Première production de simulation Monte-Carlo (a), seconde production de simulation Monte-Carlo (b) et données (c).}
+  \caption{Nombre de coups dans le TRT en fonction du nombre de coups dans le silicium de la trace des évènements présélectionnés avec une énergie dans l'amas $ E>5\GeV $, une impulsion de la trace $ p_T>5\GeV $. Première production de simulation Monte-Carlo (a), seconde production de simulation Monte-Carlo (b) et données (c).}
 \end{figure}
+
+\subsection{Sélection sur les paramètres d'impact des traces}
 
 \begin{figure}[!ht]
   \begin{center}
@@ -91,8 +159,10 @@
   \end{tabular}
 
   \end{center}
-  \caption{Cartographie en $ \eta-\phi $ des amas d'énergie  pour les évènements présélectionnés avec une énergie dans l'amas $ E>5\GeV $ et au moins un coups dans le silicium. Première production de simulation Monte-Carlo (a), seconde production de simulation Monte-Carlo (b) et données (c).}
+  \caption{Angle azimutal $ \phi $ en fonction de la pseudo-rapidité $ \eta $ des amas d'énergie des évènements présélectionnés avec une énergie dans l'amas $ E>5\GeV $ et au moins un coups dans le silicium. Première production de simulation Monte-Carlo (a), seconde production de simulation Monte-Carlo (b) et données (c).}
 \end{figure}
+
+\subsection{Sélection sur les formes des événements de type \emph{collision}}
 
 \begin{figure}[!ht]
   \begin{center}
@@ -108,7 +178,7 @@
   \end{tabular}
 
   \end{center}
-  \caption{Paramètres d'impact $ z_0 $ en fonction du paramètres d'impact $ d_0 $ pour les évènements présélectionnés avec une énergie dans l'amas $ E>5\GeV $, une impulsion de la trace $ p_T>5\GeV $. Première production de simulation Monte-Carlo (a), seconde production de simulation Monte-Carlo (b) et données (c).}
+  \caption{Paramètres d'impact $ z_0 $ en fonction du paramètres d'impact $ d_0 $ des évènements présélectionnés avec une énergie dans l'amas $ E>5\GeV $ et au moins un coups dans le silicium. Première production de simulation Monte-Carlo (a), seconde production de simulation Monte-Carlo (b) et données (c).}
 \end{figure}
 
 \begin{figure}[!ht]
@@ -129,21 +199,29 @@
   \end{tabular}
 
   \end{center}
-  \caption{Distribution des paramètres d'impact $ z_0 $ (a) et $ d_0 $ (b) pour les évènements présélectionnés avec une énergie dans l'amas supérieure à $ 5\GeV $. Distribution des paramètres d'impact $ z_0 $ (c) et $ d_0 $ (d) pour les évènements sélectionnés avec une énergie dans l'amas $ E>5\GeV $, une impulsion de la trace $ p_T>5\GeV $, au moins un coup dans le silicium et enfin $ d_0<220mm $.}
+  \caption{Distribution des paramètres d'impact $ z_0 $ (a) et $ d_0 $ (b) des évènements présélectionnés avec une énergie dans l'amas supérieure à $ 5\GeV $. Distribution des paramètres d'impact $ z_0 $ (c) et $ d_0 $ (d) des évènements sélectionnés avec une énergie dans l'amas $ E>5\GeV $, une impulsion de la trace $ p_T>5\GeV $, au moins un coup dans le silicium et enfin $ d_0<220mm $.}
 \end{figure}
 
 \begin{figure}[!ht]
   \begin{center}
     \includegraphics[height=5.25cm, keepaspectratio]{phd_cosmics/spectrum}
   \end{center}
-  \caption{}
+  \caption{Distribution de l'énergie des amas après sélection pour les données et les deux productions de simulation Monte-Carlo.}
 \end{figure}
+
+\section{Variables dans le second compartiment}
+
+Au précédent chapitre, nous avons montré que les variables de forme de gerbe électromagnétiques sont les variables les plus discriminantes pour l'identification des électrons et des photons.\\
+
+Nous rappelons la définition de l'étalement latéral de la gerbe dans la direction $ \eta $ : $ R_\eta=\frac{E^{s2}_{3\times7}}{E^{s2}_{7\times7}} $ et dans la direction $ \phi $ : $ R_\phi=\frac{E^{s2}_{3\times3}}{E^{s2}_{3\times7}} $ où $ E^{s2}_{X\times Y} $ représente l'énergie de l'amas de taille $ X\times Y $ dans le second compartiment.
+
+La figure \ref{cosmics_reta} montre la distribution de la variable $ R_\eta $. Les deux générations de simulation Monte-Carlo sont en accord avec les données. La figure \ref{cosmics_phi} a) montre la distribution de la variable $ R_\phi $. Les deux générations de simulation Monte-Carlo décrivent un peu moins bien les données, néanmoins, la seconde génération de simulation Monte-Carlo est meilleure, ce résultat s'explique par l'ajout de la simulation de la diaphonie en les cellules du premier compartiment ainsi que du second compartiment. La figure \ref{cosmics_phi} b) montre la distribution de la variable $ R_\phi $ avec les champs magnétiques désactivés. L'effet est très faible $ <R_\phi>_\mathrm{champs}=0.969\pm0.002 $ et $ <R_\phi>_\mathrm{\barre{champs}}=0.971\pm0.002 $, pour les données et $ <R_\phi>_\mathrm{champs}=0.977\pm0.001 $ et $ <R_\phi>_\mathrm{\barre{champs}}=0.979\pm0.001 $, pour la simulation Monté-Carlo. De plus, l'évolution de la valeur moyenne est dans le bon sens car le champ magnétiques, qui est dirigé suivant la direction $ z $, a tendance à courber les particules suivant la direction $ \phi $. 
 
 \begin{figure}[!ht]
   \begin{center}
     \includegraphics[height=5.25cm, keepaspectratio]{phd_cosmics/reta}
   \end{center}
-  \caption{}
+  \caption{\label{cosmics_reta}Etalement latéral de la gerbe électromagnétique dans la direction $ \eta $ dans le second compartiment : rapport de l'énergie dans un amas $ \Delta\eta\times\Delta\phi=3\times7 $ par l'énergie dans un amas $ \Delta\eta\times\Delta\phi=7\times7 $.}
 \end{figure}
 
 \begin{figure}[!ht]
@@ -158,15 +236,38 @@
   \end{tabular}
 
   \end{center}
-  \caption{}
+  \caption{\label{cosmics_phi}Étalement latéral de la gerbe électromagnétique dans la direction $ \phi $ dans le second compartiment : rapport de l'énergie dans un amas $ \Delta\eta\times\Delta\phi=3\times3 $ par l'énergie dans un amas $ \Delta\eta\times\Delta\phi=3\times7 $. Champs magnétiques activés (a) et champs magnétiques désactivés (b) indisponible pour la première production de simulation Monte-Carlo.}
 \end{figure}
+
+Nous rappelons la définition du second moment de la pseudo-rapidité des cellules dans un amas $ \Delta\eta\times\Delta\phi=3\times5 $ pondérées par leur énergie :
+\begin{equation}
+  W_{\eta_2}=\sqrt{\frac{\sum E_i\eta^2_i}{\sum E_i}-\left(\frac{\sum E_i\eta_i}{\sum E_i}\right)^2}
+\end{equation}
+
+La figure \ref{cosmics_weta2} montre la distribution de la variable $ W_{\eta_2} $. Se même que précédemment, les deux génération de simulation Monte-Carlo décrivent raisonnablement bien les données. la seconde génération de simulation Monte-Carlo est meilleure.
 
 \begin{figure}[!ht]
   \begin{center}
     \includegraphics[height=5.25cm, keepaspectratio]{phd_cosmics/weta2}
   \end{center}
-  \caption{}
+  \caption{\label{cosmics_weta2}Second moment de la pseudo-rapidité des cellules d'un amas $ \Delta\eta\times\Delta\phi=3\times5 $ pondérées par leur énergie.}
 \end{figure}
+
+\section{Variables dans le premier compartiment}
+
+Le premier compartiment du calorimètre électromagnétique dispose d'un granularité huit fois plus fine que dans le second compartiment. Dans cette section, nous réalisons une étude de variables de forme de gerbes électromagnétiques dans le premier compartiment.
+
+Du fait de la position du premier compartiment à l'entrée du calorimètre électromagnétique et du fait de sa granularité, il conviendra de distinguer deux situations : la gerbe se déploie dans la partie inférieure du détecteur Atlas $ \phi<0 $ et la gerbe se déploie dans la partie supérieure du détecteur Atlas $ \phi>0 $. Ensuite, nous étudierons l'influence de la projectivité des gerbes.
+
+\section{Sens de déploiement des gerbes}
+
+La figure \ref{cosmics_sens} illustre le déploiement d'une gerbe électromagnétique dans la partie inférieure du détecteur Atlas ($ \phi<0 $) ainsi que dans la partie supérieure du détecteur Atlas ($ \phi>0 $). Le premier cas correspond à la situation normale pour des évènements de type \emph{collision}, c'est-à-dire, la gerbe est initiée dans le premier compartiment et se termine au niveau du troisième.\\
+
+Rappelons la définition de la variable $ F_{side} $ qui représente l'énergie en dehors du c\oe ur de la gerbe :
+\begin{equation}
+  F_{side}=\frac{\sum^{+3}_{i=-3}E_i-\sum^{+1}_{i=-1}E_i}{\sum^{+1}_{i=-1}E_i}
+\end{equation}
+
 
 \begin{figure}[!ht]
   \begin{center}
@@ -180,22 +281,7 @@
   \end{tabular}
 
   \end{center}
-  \caption{}
-\end{figure}
-
-\begin{figure}[!ht]
-  \begin{center}
-
-  \begin{tabular}{cc}
-    \includegraphics[height=5.25cm, keepaspectratio]{phd_cosmics/wstotDw}
-    &
-    \includegraphics[height=5.25cm, keepaspectratio]{phd_cosmics/wstotUp}
-    \\
-    (a) & (b)
-  \end{tabular}
-
-  \end{center}
-  \caption{}
+  \caption{\label{cosmics_sens}Déploiement d'un gerbe électromagnétique dans la partie inférieur du détecteur Atlas (a), dans la partie supérieur du détecteur Atlas (b). Le premier cas correspond à la situation normale pour des évènements de type \emph{collision}.}
 \end{figure}
 
 \begin{figure}[!ht]
@@ -210,7 +296,33 @@
   \end{tabular}
 
   \end{center}
-  \caption{}
+  \caption{Énergie en dehors du c\oe ur de la gerbe. Partie inférieur du détecteur Atlas (a), partie supérieur du détecteur Atlas (b).}
+\end{figure}
+
+\begin{figure}[!ht]
+  \begin{center}
+
+  \begin{tabular}{cc}
+    \includegraphics[height=5.25cm, keepaspectratio]{phd_cosmics/wstotDw}
+    &
+    \includegraphics[height=5.25cm, keepaspectratio]{phd_cosmics/wstotUp}
+    \\
+    (a) & (b)
+  \end{tabular}
+
+  \end{center}
+  \caption{Largeur totale de la gerbe électromagnétique. Partie inférieur du détecteur Atlas (a), partie supérieur du détecteur Atlas (b).}
+\end{figure}
+
+\section{Effet de l'angle projectivité $ \Delta\theta $}
+
+blablalba
+
+\begin{figure}[!ht]
+  \begin{center}
+    \includegraphics[height=5.5cm, keepaspectratio]{phd_cosmics/caloc}
+  \end{center}
+  \caption{Définition de langle de projectivité $ \Delta\theta $.}
 \end{figure}
 
 \begin{figure}[!ht]
@@ -225,7 +337,7 @@
   \end{tabular}
 
   \end{center}
-  \caption{}
+  \caption{Valeur moyenne de l'énergie en dehors du c\oe ur de la gerbe en de l'angle de projectivité. Partie inférieur du détecteur Atlas (a), partie supérieur du détecteur Atlas (b).}
 \end{figure}
 
 \begin{figure}[!ht]
@@ -234,13 +346,15 @@
   \begin{tabular}{cc}
     \includegraphics[height=5.25cm, keepaspectratio]{phd_cosmics/w3eta1DwTheta}
     &
-    \includegraphics[height=5.25cm, keepaspectratio]{phd_cosmics/w3eta1DwTheta}
+    \includegraphics[height=5.25cm, keepaspectratio]{phd_cosmics/w3eta1UpTheta}
     \\
     (a) & (b)
   \end{tabular}
 
   \end{center}
-  \caption{}
+  \caption{Valeur moyenne de la largeur du c\oe ur de la gerbe en de l'angle de projectivité. Partie inférieur du détecteur Atlas (a), partie supérieur du détecteur Atlas (b).}
 \end{figure}
 
+\section{Les calorimètres bouchons}
 
+blablalba
