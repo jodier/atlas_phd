@@ -57,22 +57,12 @@ Des études sur de la simulation Monte-carlo ont montré que pour des électrons d'
 
 Comme la couverture en pseudo-rapidité est meilleure pour \emph{egamma}, $ |\eta|<2.47 $, que pour \emph{softe}, $ |\eta<2 $, la suite de ce chapitre est suppose la reconstruction des candidats électrons et photons à partir de l'algorithme \emph{egamma}.
 
-
-
-
-
-
-
-
-
-
-
-
-\newpage
-
 \section{Séparation électrons/photons}
 
 Trivialement, la distinction entre un électron et un photon est simple. Un électron est associé à une trace du trajectographe interne, un photon n'est pas associé à une trace du trajectographe interne. Cependant, certains cas sont plus ambigus. Une trace peut être associée à l'amas calorimétrique d'un photon par simple hasard, les électrons peuvent être convertis en paires d'électrons. Nous allons décrire la procedure qui permet la séparation entre électrons et photons.
+
+\pagebreak
+\newpage
 
 \subsection{Association des traces et des amas}
 
@@ -94,11 +84,11 @@ Les candidats conversions sont reconstruits à partir de la collection des traces
 
 \paragraph{Électrons} Dans le conteneur \emph{électrons}, sont placés les candidats électrons formés d'un amas calorimétrique associé à une trace. Il a été décidé de maximiser l'efficacité de reconstruction des électrons lorsqu'un cas est ambigu, le conteneur \emph{électrons} est prioritaire.
 
-\paragraph{Photons} Dans le conteneur \emph{photons}, sont placés les candidats photons formés d'un amas calorimétrique non associé à une trace. Pour les analyses d'avantage orientées photons qu'électrons, un mécanisme permet de récupérer les cas ambigus de photons convertis ou non convertis.\\
+\paragraph{Photons} Dans le conteneur \emph{photons}, sont placés les candidats photons formés d'un amas calorimétrique non associé à une trace. Pour les analyses d'avantage orientées photons qu'électrons, un mécanisme permet de récupérer les cas ambigus de photons convertis ou de photons non convertis.\\
 
 Remarque : Dans tout les cas, il n'y a jamais de recouvrement entre le contenu du conteneur \emph{électrons} et le contenu du conteneur \emph{photons}.
 
-\paragraph{Récupération des électrons non convertis} Les candidats électrons qui possèdent une mauvaise association trace-amas peuvent être récupérés en tant que photons. C'est le cas des électrons associés à une trace TRT, sans coup dans le silicium, de faible avec une impulsion transverse $ p_{T\,trk}<2GeV $, des électrons avec un rapport $ E_{cl}/p_{T\,trk}>10 $ ou encore des électrons associés à une trace avec une impulsion transverse $ p_T<2\GeV $ sans être des électrons de conversion.
+\paragraph{Récupération des photons non convertis} Les candidats électrons qui possèdent une mauvaise association trace-amas peuvent être récupérés en tant que photons. C'est le cas des électrons associés à une trace TRT, sans coup dans le silicium, de faible avec une impulsion transverse $ p_{T\,trk}<2GeV $, des électrons avec un rapport $ E_{cl}/p_{T\,trk}>10 $ ou encore des électrons associés à une trace avec une impulsion transverse $ p_T<2\GeV $ sans être des électrons de conversion.
 
 \paragraph{Récupération des photons convertis} Les électrons de conversion peuvent être récupérés sous forme de photons. Les candidats électrons associés à une trace TRT, sans coup dans le silicium, avec $ pT>2\GeV $ et $ E_{cl}/p_{T\,trk}<10 $ sont également récupérés comme photons convertis.\\
 
@@ -191,7 +181,9 @@ Des variables ont été définies afin de caractériser l'étalement des gerbes élect
   R_\eta=\frac{E^{s2}_{3\times7}}{E^{s2}_{7\times7}}\hspace{1cm}\textrm{;}\hspace{1cm}R_\phi=\frac{E^{s2}_{3\times3}}{E^{s2}_{3\times7}}
 \end{equation}
 
-où $ E^{s2}_{X\times Y} $ représente l'énergie de l'amas de taille $ X\times Y $ dans le second compartiment. Dans la réalité, $ R_\phi $ est sensible aux effets du champ magnétique et n'est pas utilisée pour l'identification des électrons. Une autre variable discriminante est le second moment de la pseudo-rapidité des cellules d'un amas $ 3\times 5 $ pondérées par leur énergie :
+où $ E^{s2}_{X\times Y} $ représente l'énergie de l'amas de taille $ X\times Y $ dans le second compartiment.
+
+En pratique, $ R_\phi $ est sensible aux effets du champ magnétique et n'est pas utilisée pour l'identification des électrons. Une autre variable discriminante est le second moment de la pseudo-rapidité des cellules d'un amas $ 3\times 5 $ pondérées par leur énergie :
 \begin{equation}
   W_{\eta_2}=\sqrt{\frac{\sum E_i\eta^2_i}{\sum E_i}-\left(\frac{\sum E_i\eta_i}{\sum E_i}\right)^2}
 \end{equation}
@@ -239,13 +231,11 @@ Les électrons produits de façon prompt, près du vertex primaire, doivent laisser
 
 Des coupures sur les distances entre la trace et l'amas associé peuvent être employées et une coupure sur le rapport entre l'énergie de l'amas et l'impulsion de la trace $ 0.7<E_{cl}/p_{trk}\lesssim4 $ peut également être utilisée.
 
-\newpage
-
 \section{Jeu de coupures standards (coupures isEM)}
 
 Afin de mener des études de physique dans un cadre cohérent, il a été définit trois jeux standards de coupures de sélection nommées \emph{loose}, \emph{medium} et \emph{tight} et tels que \emph{tight} implique \emph{medium} implique \emph{loose}. Elles sont basées sur des coupures, appliquées sur les variables présentées précédemment, optimisées en régions d'énergie transverse $ E_T $ et de pseudo-rapidité $ \eta $. Le tableau \ref{isem} présente en détails le contenu de \emph{loose}, \emph{medium} et \emph{tight} pour les données 2011 à $ \sqrt{s}=7\TeV $. A chacun des trois jeux de coupures de sélection correspond une efficacité de sélection $ \varepsilon $ et un facteur de réjection des jets $ R_{jet} $. Les figures \ref{isEM1} (a) et (b) montrent respectivement les efficacité de sélection des électrons \emph{loose}, \emph{medium} et \emph{tight} en fonction de l'énergie transverse $ E_T $ et en fonction de la pseudo-rapidité $ \eta $. Elles sont respectivement de $ 94.32\% $, $ 90.00\% $ et $ 71.59\% $ pour les électrons \emph{loose}, \emph{medium} et \emph{tight} avec une énergie de $ 20\GeV $ issus de boson $ Z $. Le tableau \ref{isEM2} montre les efficacités intégrées ainsi que les facteur de réjections de jets pour les trois jeux de coupures de sélection.\\
 
-Remarque : Certaines études requièrent un critère d'isolation supplémentaire. Il existe plusieurs définitions basées sur la trajectographie ou la calorimétrie qui consistent à effectuer une coupure sur la fraction d'impulsion transverse (resp. d'énergie transverse) contenue dans un cône d'angle d'ouverture $ \theta $ divisé par l'impulsion transverse totale : $ \textrm{idIso}(\theta)=\sum p_T^{\textrm{cone }\theta}/p_T $ et $ \textrm{clIso}(\theta)=\sum E_T^{\textrm{cone }\theta}/p_T $. Il exite une seconde définition de \emph{medium} et \emph{tight} avec l'ajout d'une isolation basée sur des cônes $ \theta=30° $ qui pocèdent un haut pouvoir discriminant et une bonne résistance aux effets de l'empilement. L'isolation sera plus largement détaillée dans le dernier chapitre dédié à la préparation à la recherche du boson de Higgs dans le canal $ Z\to 4l $.
+Remarque : Certaines études requièrent un critère d'isolation supplémentaire. Il existe plusieurs définitions basées sur la trajectographie ou la calorimétrie qui consistent à effectuer une coupure sur la fraction d'impulsion transverse (resp. d'énergie transverse) contenue dans un cône d'angle d'ouverture $ \theta $ divisé par l'impulsion transverse totale : $ \textrm{idIso}(\theta)=\sum p_T^{\textrm{cone }\theta}/p_T $ et $ \textrm{clIso}(\theta)=\sum E_T^{\textrm{cone }\theta}/p_T $. Il exite une seconde définition de \emph{medium} et \emph{tight} avec l'ajout d'une isolation basée sur des cônes $ \theta=30° $ qui pocèdent un haut pouvoir discriminant et une bonne résistance aux effets de l'empilement. L'isolation sera plus largement détaillée dans le dernier chapitre dédié à la préparation à la recherche du boson de Higgs dans le canal $ Z\to 4l $.\\
 
 \begin{figure}[!ht]
   \begin{center}
@@ -284,7 +274,8 @@ Remarque : Certaines études requièrent un critère d'isolation supplémentaire. Il
   \end{center}
 \end{table}
 
-\newpage
+\section{Jeu de coupures standards++ (coupures isEM++)}
+
 
 \begin{table}[!p]
   \begin{center}
@@ -626,3 +617,4 @@ Remarque : Certaines études requièrent un critère d'isolation supplémentaire. Il
   \end{center}
   \caption{???.}
 \end{figure}
+
