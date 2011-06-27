@@ -1,6 +1,6 @@
 \chapter{Validation de la simulation des variables de forme de gerbes électromagnétiques avec des muons cosmiques}
 
-Ce chapitre est basée sur une étude réalisée conjointement avec Olivier Arnaez et Truc Truc Truc. Elle consiste en la validation de la simulation des variables de forme de gerbes électromagnétiques avec des muons cosmiques. J'ai montré, au chapitre précédent, que l'identification des électrons et des photons est principalement basée sur des critères de forme de gerbes électromagnétiques. C'est pourquoi il fut intéressant de réaliser une validation des simulations sur les premières données cosmiques 2008 et 2009. Les résultats concernant les données 2008 et la première génération de simulations Monte-Carlo ont fait l'objet d'une note.
+Ce chapitre est basée sur une étude réalisée conjointement avec Olivier Arnaez et Zhijun Liang. Elle consiste en la validation de la simulation des variables de forme de gerbes électromagnétiques avec des muons cosmiques. J'ai montré, au chapitre précédent, que l'identification des électrons et des photons est principalement basée sur des critères de forme de gerbes électromagnétiques. C'est pourquoi il fut intéressant de réaliser une validation des simulations sur les premières données cosmiques 2008 et 2009. Les résultats concernant les données 2008 et la première génération de simulations Monte-Carlo ont fait l'objet d'une note.
 
 \section{Méthode}
 
@@ -86,7 +86,7 @@ Pour les données 2009 uniquement, précisons que seuls des ESD étaient disponible
 
 \section{Choix du format de données}
 
-Les dépôts d'énergie calorimétriques sont reconstruits par l'algorithme standard, c'est-à-dire l'algorithme de reconstruction d'amas à fenêtre coulissante présentés au chapitre précédent. Nous verrons par la suite que la sélection des candidats requière une trace associée pour chaque amas. Il apparait immédiatement que les voies d'écrémage IDComm, IDProjComm (défavorable au niveau de la statistique), EMClustComm et enfin EGamTauComm présentent un intérêt car elles contiennent des traces et/ou des amas.
+Les dépôts d'énergie calorimétriques sont reconstruits par l'algorithme standard, c'est-à-dire l'algorithme de reconstruction d'amas à fenêtres coulissantes présentés au chapitre précédent. Nous verrons par la suite que la sélection des candidats requière une trace associée pour chaque amas. Il apparait immédiatement que les voies d'écrémage IDComm, IDProjComm (défavorable au niveau de la statistique), EMClustComm et enfin EGamTauComm présentent un intérêt car elles contiennent des traces et/ou des amas.
 
 Le choix définitif du format de données va se faire au niveau des performances des systèmes de déclenchement. Les deux systèmes de déclenchement pertinents pour cette analyse sont IDCosmics et L1CaloEM. EGamTauComm est la seule voie d'écrémage à proposer IDCosmics et L1CaloEM. IDCosmics correspond à une trace de muon reconstruite au niveau L2 et L1CaloEM correspond à un dépôt d'énergie significatif dans le calorimètre électromagnétique au niveau L1. Le format XXX-EGamTauComm signifie donc : événement avec au moins un objet électromagnétique reconstruit, photon, électron ou tau, ayant déclenché sur XXX où XXX sera IDCosmics ou L1CaloEM.\\
 
@@ -174,7 +174,7 @@ Pour la première génération comme pour la seconde génération de simulations Mont
 
 \section{Sélection des événements cosmiques}
 
-Les figures \ref{cosmics_d0z0_select} a) et \ref{cosmics_d0z0_select} b) montrent respectivement la distribution des paramètres d'impact $ z_0 $ et $ d_0 $ pour des candidats avant sélection pour les données et le deux générations de simulation Monte-Carlo.
+Les figures \ref{cosmics_d0z0_unselect} a) et \ref{cosmics_d0z0_select} b) montrent respectivement la distribution des paramètres d'impact $ z_0 $ et $ d_0 $ pour des candidats présélectionnés avec une énergie dans l'amas supérieure à $ 5\GeV $\footnote{Afin d'assurer de bonnes performances à l'algorithme de reconstruction d'amas à fenêtres coulissantes, réduire le bruit électromagnétique et d'être compatible avec les spécifications du système de déclenchement.} pour les données et les deux générations de simulation Monte-Carlo. Comme nous l'avons supposé dans la section précédente, les acceptances entre les données et les deux générations de simulation Monte-Carlo sont très différentes. Il est nécessaire de déterminer un jeu de coupures de sélection qui permette de sélectionner un ensemble de candidats d'acceptance similaire tout en concevant une statistique convenable.
 
 \begin{figure}[!h]
   \begin{center}
@@ -188,12 +188,12 @@ Les figures \ref{cosmics_d0z0_select} a) et \ref{cosmics_d0z0_select} b) montren
   \end{tabular}
 
   \end{center}
-  \caption{Distribution des paramètres d'impact $ z_0 $ (a) et $ d_0 $ (b) des candidats présélectionnés avec une énergie dans l'amas supérieure à $ 5\GeV $.}
+  \caption{\label{cosmics_d0z0_unselect}Distribution des paramètres d'impact $ z_0 $ (a) et $ d_0 $ (b) des candidats présélectionnés avec une énergie dans l'amas supérieure à $ 5\GeV $.}
 \end{figure}
 
 \subsection{Sélection sur le nombre de coups des traces}
 
-La figure \ref{cosmics_coups} montre le nombre de coups dans le TRT en fonction du nombre de coups dans le silicium (Pixels + SCT) pour des candidats présélectionnés avec une énergie dans l'amas $ E>5\GeV $. Après normalisation au nombre d'entrées dans les données, nous observons une très grande différence dans la première classe de l'histogramme, c'est-à-dire, pour les traces reconstruites au niveau du TRT seulement. Dans cette étude, nous proposons de ne conserver que les candidats avec au moins un coup dans les pixels.
+Afin d'être compatible avec les spécifications du système de déclenchement, nous ne considérerons que les traces pour lesquels $ p_T>5\GeV $. La figure \ref{cosmics_coups} montre le nombre de coups dans le TRT en fonction du nombre de coups dans le silicium (Pixels + SCT) pour des candidats présélectionnés avec une énergie dans l'amas $ E>5\GeV $. Après normalisation au nombre d'entrées dans les données, nous observons une très grande différence dans la première classe de l'histogramme, c'est-à-dire, pour les traces reconstruites au niveau du TRT seulement. Dans cette étude, nous proposons de ne conserver que les candidats avec au moins un coup dans les pixels.
 
 \begin{figure}[!h]
   \begin{center}
@@ -212,7 +212,9 @@ La figure \ref{cosmics_coups} montre le nombre de coups dans le TRT en fonction 
   \caption{\label{cosmics_coups}Nombre de coups dans le TRT en fonction du nombre de coups dans le silicium de la trace des candidats présélectionnés avec une énergie dans l'amas $ E>5\GeV $, une impulsion de la trace $ p_T>5\GeV $. Première production de simulation Monte-Carlo (a), seconde production de simulation Monte-Carlo (b) et données (c).}
 \end{figure}
 
-La figure \ref{cosmics_amas} montre la carte en angle azimutal et en pseudo-rapidité des amas électromagnétiques des candidats présélectionnés avec une énergie dans l'amas $ E>5\GeV $ et au moins un coups dans le silicium. Par convention, les traces dont l'impulsion est négative suivant la direction $ y $ sont associées à des amas dont la coordonnée $ \phi $ est négative. Les entrées situées dans la partie positive sont associées à des muons quasi-horizontaux ou peut être à des problèmes de précision sur les nombre flottants. L'accord entre les données et la simulation Monte-Carlo n'est pas encore parfait. Des critères de sélection supplémentaires sont nécessaires afin de disposer d'une acceptance équivalente.
+La figure \ref{cosmics_amas} montre la carte en angle azimutal et en pseudo-rapidité des amas électromagnétiques des candidats présélectionnés avec une énergie dans l'amas $ E>5\GeV $ et au moins un coups dans le silicium. Par convention, les traces dont l'impulsion est négative suivant la direction $ y $ sont associées à des amas dont la coordonnée $ \phi $ est négative. Les entrées situées dans la partie positive sont associées à des muons quasi-horizontaux ou peut être à des problèmes de précision sur les nombre flottants.
+
+L'accord entre les données et la simulation Monte-Carlo n'est pas encore parfait. Des critères de sélection supplémentaires sont nécessaires afin de disposer d'acceptances plus proches.
 
 \begin{figure}[!h]
   \begin{center}
@@ -237,7 +239,7 @@ La figure \ref{cosmics_coups} montre le paramètre d'impact $ d_0 $ en fonction d
 
 Les figures \ref{cosmics_d0z0_select} a) et \ref{cosmics_d0z0_select} b) rappellent respectivement la distribution des paramètres d'impact $ z_0 $ et $ d_0 $ pour des candidats avant sélection. Les figures \ref{cosmics_d0z0_select} c) et \ref{cosmics_d0z0_select} d) rappellent respectivement la distribution des paramètres d'impact $ z_0 $ et $ d_0 $ pour des candidats sélectionnés avec une énergie dans l'amas $ E>5\GeV $, au moins un coups dans le silicium et $ |d_0|<220mm $. Nous constatons que l'accord entre l'acceptance des données et des simulation Monte-Carlo et suffisamment bon pour l'étude que nous souhaitons mener.
 
-\begin{figure}[!h]
+\begin{figure}[!p]
   \begin{center}
 
   \begin{tabular}{ccc}
@@ -254,7 +256,7 @@ Les figures \ref{cosmics_d0z0_select} a) et \ref{cosmics_d0z0_select} b) rappell
   \caption{\label{cosmics_d0z0_select}Paramètres d'impact $ z_0 $ en fonction du paramètres d'impact $ d_0 $ des candidats présélectionnés avec une énergie dans l'amas $ E>5\GeV $ et au moins un coups dans le silicium. Première production de simulation Monte-Carlo (a), seconde production de simulation Monte-Carlo (b) et données (c).}
 \end{figure}
 
-\begin{figure}[!h]
+\begin{figure}[!p]
   \begin{center}
 
   \begin{tabular}{cc}
@@ -277,43 +279,54 @@ Les figures \ref{cosmics_d0z0_select} a) et \ref{cosmics_d0z0_select} b) rappell
 
 \subsection{Sélection des objets de type \emph{collisions}}
 
-La topologie des événements cosmiques étant très différente de la topologie de événements de type \emph{collision}, la figure \ref{} montre les vertex de production des objets é
+Comme, la topologie des événements cosmiques est très différente de la topologie de événements de type \emph{collisions}, nous souhaitons effectuer une sélection afin de se rapprocher au maximum de ces derniers. Si nous considérons des photons projectifs, créés au centre du détecteur Atlas, ils doivent déposer plus d'énergie dans le premier compartiment du calorimètre électromagnétique qu'un muon cosmique quelconque. Nous proposons d'effectuer une sélection sur la fraction d'énergie déposée dans le premier compartiment $ f_1\equiv E_1/(E_1+E_2+E_3) $ où $ E_1 $, $ E_2 $ et $ E_3 $ sont respectivement les énergies déposées dans le premier, le second et le troisième compartiment.
+
+La figure \ref{cosmics_f1} montre la distribution de la fraction d'énergie dans le premier compartiment pour les données cosmiques, les deux générations de simulations Monte-Carlo et pour des photons célibataires. Un coupure de sélection naturelle apparait : $ f_1>10\% $.
 
 \begin{figure}[!h]
-  \begin{center}
-    \includegraphics[height=5.25cm, keepaspectratio]{phd_cosmics/f1}
-  \end{center}
-  \caption{\label{cosmics_f1}Distribution de la fraction d'énergie dans le premier compartiment pour les candidats des données, des simulations Monte-Carlo et pour des photons célibataires.}
+  \begin{minipage}{1.0\textwidth}
+    \begin{center}
+      \includegraphics[height=5.25cm, keepaspectratio]{phd_cosmics/f1}
+    \end{center}
+  \end{minipage}
+  \caption{\label{cosmics_f1}Distribution de la fraction d'énergie dans le premier compartiment pour les données cosmiques, les deux générations de simulations Monte-Carlo et pour des photons célibataires.}
 \end{figure}
 
 \section{Sélection finale}
 
-\begin{table}[!ht]
+La figure \ref{cosmics_selection} (a) montre le résumé des coupures de sélection. La statistique consiste en 1958 candidats pour les données, 2168 candidats pour la première génération de simulation Monte-Carlo et 1524 candidats pour la seconde génération de simulation Monte-Carlo. La figure \ref{cosmics_selection} (b) montre la distribution de l'énergie des amas après sélection pour les données et les deux générations de simulation Monte-Carlo. L'accord est très bon.
+
+\begin{figure}[!ht]
   \begin{center}
 
-  \begin{tabular}{|l|l|}
-    \hline
-    \hline
-      Énergie des amas & $ E>5\GeV $\\
-    \hline
-      Impulsion des traces & $ p_T>5\GeV $\\
-    \hline
-      Acceptance géométrique & $ SiHit>0 $ et $ |d_0|<220mm $\\
-    \hline
-      Objets de type \emph{collisions} &  $ f_1>10\% $ \\
-    \hline
-  \end{tabular}
+    \begin{tabular}{lr}
+
+      \begin{minipage}{0.48\textwidth}
+        \begin{tabular}{|l|c|}
+          \hline
+          \hline
+            Énergie des amas & $ E>5\GeV $ \\
+          \hline
+            Impulsion des traces & $ p_T>5\GeV $ \\
+          \hline
+            Acceptance géométrique & $ SiHit>0 $ \\
+                                   & $ |d_0|<220mm $ \\
+          \hline
+            Objets de type \emph{collisions} &  $ f_1>10\% $ \\
+          \hline
+        \end{tabular}
+      \end{minipage}
+
+      &
+
+      \begin{minipage}{0.48\textwidth}
+        \includegraphics[height=5.25cm, keepaspectratio]{phd_cosmics/spectrum}
+      \end{minipage}
+
+    \end{tabular}
 
   \end{center}
-  \caption{\label{cosmics_selection}.}
-\end{table}
-
-
-\begin{figure}[!h]
-  \begin{center}
-    \includegraphics[height=5.25cm, keepaspectratio]{phd_cosmics/spectrum}
-  \end{center}
-  \caption{Distribution de l'énergie des amas après sélection pour les données et les deux productions de simulation Monte-Carlo.}
+  \caption{\label{cosmics_selection}Résumé des coupures de sélection (gauche). Distribution de l'énergie des amas après sélection pour les données et les deux générations de simulation Monte-Carlo (droite).}
 \end{figure}
 
 \section{Variables dans le second compartiment}
@@ -385,6 +398,9 @@ La figure \ref{cosmics_sens} illustre le déploiement d'une gerbe électromagnétiq
   \caption{\label{cosmics_sens}Déploiement d'un gerbe électromagnétique dans la partie inférieur du détecteur Atlas (a), dans la partie supérieur du détecteur Atlas (b). Le premier cas correspond à la situation normale pour des évènements de type \emph{collisions}.}
 \end{figure}
 
+\pagebreak
+\newpage
+
 Rappelons la définition de la variable $ F_{side} $ qui représente l'énergie en dehors du c\oe ur de la gerbe :
 \begin{equation}
   F_{side}=\frac{\sum^{+3}_{i=-3}E_i-\sum^{+1}_{i=-1}E_i}{\sum^{+1}_{i=-1}E_i}
@@ -406,6 +422,9 @@ La figure \ref{cosmics_fside} a) et b) montrent respectivement la distribution d
   \end{center}
   \caption{\label{cosmics_fside}Énergie en dehors du c\oe ur de la gerbe. Partie inférieur du détecteur Atlas (a), partie supérieur du détecteur Atlas (b).}
 \end{figure}
+
+\pagebreak
+\newpage
 
 Rappelons la définition de la largeur totale de la gerbe électromagnétique dans le premier compartiment :
 \begin{equation}
@@ -486,4 +505,12 @@ La figure \ref{cosmics_projw3eta1} montre la valeur moyenne de la distribution $
 
 \section{Les calorimètres bouchons}
 
-blablalba
+Une étude spécifique a été menée pour les calorimètres bouchons. Une certain nombre de difficultés furent à prendre en compte. Premièrement, la probabilité pour un muon de passé par les bouchons est plus faible d'un facteur $ ?? $ que la probabilité pour un muon de passé par le tonneau. Deuxièmement, il n'y a presque aucun amas associé à une trace car la probabilité qu'un muon projectif laisse en dépôt d'énergie dans les bouchons est très faible, $ \mathcal{O}(1) $ candidats pour les données 2008. Le système de déclenchement à utiliser est L1CaloEM, son efficacité est $ \sim28\% $ inférieure à celle de IDCosmics et les spécifications du système de déclenchement imposent une coupure en énergie plus élevées.
+
+\subsection{Sélection finale}
+
+\subsection{Variables dans le second compartiment}
+
+\subsection{Variables dans le premier compartiment}
+
+\section{Conclusion}
