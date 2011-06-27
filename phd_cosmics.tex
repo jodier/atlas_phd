@@ -128,9 +128,9 @@ Pour cette étude, le choix c'est finalement porté sur le format IDCosmic-EGamTau
 
 \section{Comparaison des données 2008 et 2009}
 
-Faut-il traiter les données 2008 et 2009 ensemble ou séparément? Pour répondre à cette question, il faut rechercher les sources de potentielles différences. D'un point de vue de la calorimétrie, ni la réponse du détecteur, ni la définition des variables de forme de gerbes électromagnétiques, ni les algorithmes de reconstruction n'ont changés. D'un point de vu de la trajectographie, quelques améliorations ont été apportées aux algorithmes de reconstruction des traces. Ceci peut influé au niveau du système de déclenchement IDCosmic et aussi au niveau de l'association trace-amas. Il convient alors de vérifier si l'accéptance change en les données 2008 et 2009.
+Faut-il traiter les données 2008 et 2009 ensemble ou séparément? Pour répondre à cette question, il faut rechercher les sources de potentielles différences. D'un point de vue de la calorimétrie, ni la réponse du détecteur, ni la définition des variables de forme de gerbes électromagnétiques, ni les algorithmes de reconstruction n'ont changés. D'un point de vu de la trajectographie, quelques améliorations ont été apportées aux algorithmes de reconstruction des traces. Ceci peut influé au niveau du système de déclenchement IDCosmic et aussi au niveau de l'association trace-amas. Il convient alors de vérifier si l'acceptance change en les données 2008 et 2009.
 
-La figure \ref{20082009a} montre l'angle angle azimutal $ \phi $ en fonction de la pseudo-rapidité $ \eta $ des amas d'énergie des candidats avant  pour les données 2008 (a) et pour les données 2009 (b). Les accéptances semblent similaires entre des deux lots de données. Les figures \ref{20082009b} (a) et \ref{20082009b} (b) montrent respectivement la distribution des paramètres d'impact $ z_0 $  et $ d_0 $ pour les données 2008 et 2009 après sélection. Les accéptances sont suffisamment similaires pour conclure à l'\textbf{utilisation cumulée des données 2008 et 2009}.
+La figure \ref{20082009a} montre l'angle angle azimutal $ \phi $ en fonction de la pseudo-rapidité $ \eta $ des amas d'énergie des candidats avant  pour les données 2008 (a) et pour les données 2009 (b). Les acceptances semblent similaires entre des deux lots de données. Les figures \ref{20082009b} (a) et \ref{20082009b} (b) montrent respectivement la distribution des paramètres d'impact $ z_0 $  et $ d_0 $ pour les données 2008 et 2009 après sélection. Les acceptances sont suffisamment similaires pour conclure à l'\textbf{utilisation cumulée des données 2008 et 2009}.
 
 \begin{figure}[!h]
   \begin{center}
@@ -164,10 +164,17 @@ La figure \ref{20082009a} montre l'angle angle azimutal $ \phi $ en fonction de 
 
 \section{Les simulations Monte-Carlo}
 
-La procédure de simulation d'événements cosmiques a été décrite au troisième chapitre. Pour cette analyse, précisons simplement que nous disposions de deux générations de simulations Monte-Carlo. La première fut produite en 2008 et reconstruite avec la même version d'Athena que les données 2008. Et la seconde fut produite en 2009 et reconstruite avec la même version d'Athena que les données 2009 et introduit, de plus, une simulation de la diaphonie entre les électrodes du calorimètre électromagnétique. Cette amélioration sera étudiée ultérieurement, nous verrons qu'elle permet d'améliorer l'accord entre les données et la simulation Monte-Carlo pour certaines variables.
+La procédure de simulation d'événements cosmiques a été décrite au troisième chapitre. Pour cette analyse, précisons simplement que nous disposions de deux générations de simulations Monte-Carlo avec muons simulés dans le volume du détecteur interne.
+
+La première génération fut produite en 2008 ($ 1.2\times10^7 $ événements) et reconstruite avec la même version d'Athena que les données 2008. Nous disposons d'échantillons où les champs magnétiques, torroïde \textbf{et} solénoïde, sont activés et d'échantillons où les champs magnétiques, torroïde \textbf{et} solénoïde, sont désactivés.
+
+La seconde génération fut produite en 2009 ($ 2.5\times10^6 $ événements) et reconstruite avec la même version d'Athena que les données 2009. La simulation de la diaphonie entre les électrodes du calorimètre électromagnétique a été grandement améliorée en introduisant, entre autre, la prise en compte de la diaphonie entres les cellules des deux premiers compartiments. Nous verrons ultérieurement que cela permet d'améliorer l'accord entre les données et la simulation Monte-Carlo pour certaines variables. Indiquons encore que l'environnement du détecteur atlas, forme de la caverne, puits de service et ascenseurs, sont mieux simulés. Seuls les échantillons où les champs magnétiques, torroïde \textbf{et} solénoïde, sont activés furent produits.
+
+Pour la première génération comme pour la seconde génération de simulations Monte-Carlo, \textbf{les systèmes de déclenchement n'ont pas été simulés}. Cette remarque est très importante, une sélection sera nécessaire afin de disposer d'une acceptance similaire en les données et les simulations Monte-Carlo.
 
 \section{Sélection des événements cosmiques}
 
+Les figures \ref{cosmics_d0z0_select} a) et \ref{cosmics_d0z0_select} b) montrent respectivement la distribution des paramètres d'impact $ z_0 $ et $ d_0 $ pour des candidats avant sélection pour les données et le deux générations de simulation Monte-Carlo.
 
 \begin{figure}[!h]
   \begin{center}
