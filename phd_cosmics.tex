@@ -279,7 +279,7 @@ Les figures \ref{cosmics_d0z0_select} a) et \ref{cosmics_d0z0_select} b) rappell
 
 \subsection{Sélection des objets de type \emph{collisions}}
 
-Comme, la topologie des événements cosmiques est très différente de la topologie de événements de type \emph{collisions}, nous souhaitons effectuer une sélection afin de se rapprocher au maximum de ces derniers. Si nous considérons des photons projectifs, créés au centre du détecteur Atlas, ils doivent déposer plus d'énergie dans le premier compartiment du calorimètre électromagnétique qu'un muon cosmique quelconque. Nous proposons d'effectuer une sélection sur la fraction d'énergie déposée dans le premier compartiment $ f_1\equiv E_1/(E_1+E_2+E_3) $ où $ E_1 $, $ E_2 $ et $ E_3 $ sont respectivement les énergies déposées dans le premier, le second et le troisième compartiment.
+Comme, la topologie des événements cosmiques est très différente de la topologie de objets de type \emph{collisions}, nous souhaitons effectuer une sélection afin de se rapprocher au maximum de ces derniers. Si nous considérons des photons projectifs, créés au centre du détecteur Atlas, ils doivent déposer plus d'énergie dans le premier compartiment du calorimètre électromagnétique qu'un muon cosmique quelconque. Nous proposons d'effectuer une sélection sur la fraction d'énergie déposée dans le premier compartiment $ f_1\equiv E_1/(E_1+E_2+E_3) $ où $ E_1 $, $ E_2 $ et $ E_3 $ sont respectivement les énergies déposées dans le premier, le second et le troisième compartiment.
 
 La figure \ref{cosmics_f1} montre la distribution de la fraction d'énergie dans le premier compartiment pour les données cosmiques, les deux générations de simulations Monte-Carlo et pour des photons célibataires. Un coupure de sélection naturelle apparait : $ f_1>10\% $.
 
@@ -452,7 +452,7 @@ La figure \ref{cosmics_fside} a) et b) montrent respectivement la distribution d
 
 \section{Effet de l'angle projectivité $ \Delta\theta $}
 
-Le calorimètre électromagnétique est conçu de telle façon que ses cellules soient orientées de façon projective et pointent vers le centre du détecteur Atlas. Il se trouve que la position du vertex primaire peut ne pas se trouver en $ (0,0,0) $ pour des événements de type \emph{collisions} (décalage de quelques cm suivant la direction $ z $ pour les collisions à $ 7\TeV $). De plus, des particules comme les quarks $ b $, qui ont un temps de vie relativement long, donnent lieu à des vertex déplacés. Il convient alors d'étudier les effets de la non-projectivité, les muons cosmiques sont des objets intéressants sur ce point.\\
+Le calorimètre électromagnétique est conçu de telle façon que ses cellules soient orientées de façon projective et pointent vers le centre du détecteur Atlas. Il se trouve que la position du vertex primaire peut ne pas se trouver en $ (0,0,0) $ pour des objets de type \emph{collisions} (décalage de quelques cm suivant la direction $ z $ pour les collisions à $ 7\TeV $). De plus, des particules comme les quarks $ b $, qui ont un temps de vie relativement long, donnent lieu à des vertex déplacés. Il convient alors d'étudier les effets de la non-projectivité, les muons cosmiques sont des objets intéressants sur ce point.\\
 
 Nous définissons la variable $ \Delta\theta $ comme l'angle entre la direction de la gerbe, reconstruite à partir des barycentres des dépôts d'énergie dans les trois compartiments et la direction modélisée par une droite qui passe par le barycentre du dépôt d'énergie (c'est-à-dire le centre de la gerbe) et le centre du détecteur Atlas. La figure \ref{cosmics_deltatheta} illustre cette définition.
 
@@ -505,9 +505,13 @@ La figure \ref{cosmics_projw3eta1} montre la valeur moyenne de la distribution $
 
 \section{Les calorimètres bouchons}
 
-Une étude spécifique a été menée pour les calorimètres bouchons. Une certain nombre de difficultés furent à prendre en compte. Premièrement, la probabilité pour un muon de passé par les bouchons est plus faible d'un facteur $ ?? $ que la probabilité pour un muon de passé par le tonneau. Deuxièmement, il n'y a presque aucun amas associé à une trace car la probabilité qu'un muon projectif laisse en dépôt d'énergie dans les bouchons est très faible, $ \mathcal{O}(1) $ candidats pour les données 2008. Le système de déclenchement à utiliser est L1CaloEM, son efficacité est $ \sim28\% $ inférieure à celle de IDCosmics et les spécifications du système de déclenchement imposent une coupure en énergie plus élevées.
+Une étude spécifique a été menée pour les calorimètres bouchons. Une certain nombre de difficultés furent à prendre en compte. Premièrement, la probabilité pour un muon de passé par les bouchons est plus faible d'un facteur $ \sim10 $ que la probabilité pour un muon de passé par le tonneau. Deuxièmement, il n'y a presque aucun amas associé à une trace car la probabilité qu'un muon projectif laisse en dépôt d'énergie dans les bouchons est très faible, $ \mathcal{O}(1) $ candidats pour les données 2008. Le système de déclenchement à utiliser est L1CaloEM, son efficacité est $ \sim28\% $ inférieure à celle de IDCosmics et les spécifications du système de déclenchement imposent une coupure en énergie plus élevée.
 
 \subsection{Sélection finale}
+
+Comme les amas électromagnétiques des candidats reconstruits dans les bouchons n'ont pas de trace associée, il n'est pas possible d'utiliser le paramètre d'impact comme critère de projectivité. De même que dans la section précédente, il est possible d'utiliser les angles $ \Delta\theta $ et $ \Delta\phi $. Nous avons choisi d'appliquer les coupures lâches suivantes : $ |\Delta\theta|<0.25 $ et $ |\Delta\phi|<0.25 $. Ces choix permettent de ne pas complètement tuer la statistique. De plus, nous demandons à ce que la position en $ \eta $ de la cellule la plus énergétique du seconde compartiment soit face à la région formée de plus ou moins huit cellules du premier compartiment autour de la cellule la plus énergétique du premier compartiment, se rappelant qu'une cellule du seconde compartiment est huit fois plus petite qu'un cellule du premier compartiment. Finalement, nous ré-appliquons la sélection $ f_1>10\% $ afin de ne conserver que les objets de type \emph{collisions}.
+
+Les données et simulations Monte-Carlo ont été effacées de de la grille de calcul en 2010. Il n'a pas été possible d'étudier ni les données 2009, ni la seconde production de simulation Monte-Carlo. Après sélection, il ne reste que $ 506 $ événements pour les données et $ 75 $ événements pour la simulation.
 
 \begin{figure}[!ht]
   \begin{center}
@@ -515,12 +519,10 @@ Une étude spécifique a été menée pour les calorimètres bouchons. Une certain nom
     \begin{tabular}{|l|c|}
       \hline
       \hline
-        Énergie des amas & $ E>5\GeV $ \\
+        Énergie des amas & $ E>14\GeV $ \\
       \hline
-        Impulsion des traces & $ p_T>5\GeV $ \\
-      \hline
-        Acceptance géométrique & $ SiHit>0 $ \\
-                               & $ |d_0|<220mm $ \\
+        Projectivité lâche & $ |\Delta\theta|<0.25 $ et $ |\Delta\phi|<0.25 $ \\
+                           & $ \eta_\textrm{hottest}^{s2}-\Delta\eta_\textrm{8 strips}<\eta_\textrm{hottest}^{s1}<\eta_\textrm{hottest}^{s2}+\Delta\eta_\textrm{8 strips} $ \\
       \hline
         Objets de type \emph{collisions} &  $ f_1>10\% $ \\
       \hline
@@ -531,6 +533,19 @@ Une étude spécifique a été menée pour les calorimètres bouchons. Une certain nom
 \end{figure}
 
 \subsection{Variables dans le second compartiment}
+
+\begin{figure}[!h]
+  \begin{center}
+  \begin{tabular}{cc}
+    \includegraphics[height=5.25cm, keepaspectratio]{phd_cosmics/retaGoodEndCap}
+    &
+    \includegraphics[height=5.25cm, keepaspectratio]{phd_cosmics/rphiGoodEndCap}
+    \\
+    (a) & (b)
+  \end{tabular}
+  \end{center}
+  \caption{\label{cosmics_retaphiendcap}Etalement latéral de la gerbe électromagnétique dans la direction $ \eta $ dans le second compartiment : rapport de l'énergie dans un amas $ \Delta\eta\times\Delta\phi=3\times7 $ par l'énergie dans un amas $ \Delta\eta\times\Delta\phi=7\times7 $ (a). Étalement latéral de la gerbe électromagnétique dans la direction $ \phi $ dans le second compartiment : rapport de l'énergie dans un amas $ \Delta\eta\times\Delta\phi=3\times3 $ par l'énergie dans un amas $ \Delta\eta\times\Delta\phi=3\times7 $ (b).}
+\end{figure}
 
 \subsection{Variables dans le premier compartiment}
 
