@@ -2,10 +2,55 @@
 
 \section{Présentation générale}
 
-\newpage
-\noindent\\
-\newpage
-\noindent\\
+Les modèle standard de la physique des particules est une théorie qui essaye de décrire mathématiquement les interactions/forces fondamentales qui dictent les propriétés de l'univers ainsi que son contenu. Ce modèle repose sur la mécanique quantique, la théorie de la relativité restreinte et la notion de particule (entités ponctuelles avec des propriétés quantiques).\\
+
+D'après nos connaissances actuelles, il existe quatre interactions fondamentales dans l'univers :
+
+\paragraph{L'interaction électromagnétique (EM)} Il s'agit d'une interaction qui s'exerce sur les particules qui possèdent une charge électrique. Elle est responsable de la cohésion de la matière. Elle est de portée infinie mais, globalement, son effet à grande échelle est négligeable à cause de la conservation de la charge électrique. L'interaction électromagnétique est véhiculée par une particule, le photon $ \gamma $.
+
+\paragraph{L'interaction forte} Il s'agit d'une interaction qui s'exerce sur les quarks qui composent les baryons (3 quarks : neutrons, protons, etc\dots) et les mésons (2 quarks : $ \pi^0 $, $ \eta $, etc\dots). Elle est responsable de la cohésion des noyaux d'atomes en s'opposant à l'interaction électromagnétique. Son intensité est très forte, elle est de portée infinie, néanmoins, des mécanismes en réduisent la portée à l'ångström. L'interaction forte est véhiculée par huit particules, les gluons $ g $.
+
+\paragraph{L'interaction faible} Il s'agit d'une interaction qui s'exerce sur toutes les particules. Elle intervient dans les processus de désintégration $ \beta^\pm $ et dans la fusion des noyaux d'atomes. Son intensité est très faible et elle est de portée finie. L'interaction faible est véhiculée par trois particules massives dont deux chargées, les $ W^+ $ et $ W^- $ et une non chargée, le $ Z $.
+
+\paragraph{L'interaction gravitationnelle} Il s'agit d'une interaction qui s'exerce sur toutes les particules (plus particulièrement sur la densité de masse $ \rho $ ou sur la densité d'énergie $ \epsilon $, avec $ \epsilon=\rho\,c^2 $, où $ c $ est la vitesse maximale de propagation de l'information dans le vide). Son intensité est extrêmement faible mais elle est de portée infinie ce qui en fait l'interaction dominante aux échelles cosmologiques. Elle n'est cependant pas décrite par le modèle standard de la physique de particules. L'interaction gravitationnelle serait véhiculée par une particule, le graviton.\\
+
+Nous pouvons comparer l'intensité des quatre interactions fondamentales avec leur constante de couplage : $ (\alpha_{forte}\approx0.118)>(\alpha_{EM}\approx\frac{1}{137})>(\alpha_{faible}\lessapprox10^{-5})>(\alpha_{grav.}\approx10^{-40}) $.
+
+\begin{figure}[!ht]
+  \begin{center}
+
+    \begin{tabular}{ccc}
+
+      \begin{minipage}{0.48\textwidth}
+        \includegraphics[height=8.0cm, keepaspectratio]{phd_ms/particules}
+      \end{minipage}
+
+      & \hspace{1cm} &
+
+      \begin{minipage}{0.48\textwidth}
+        \includegraphics[height=6.0cm, keepaspectratio]{phd_ms/higgs}
+      \end{minipage}
+
+      \\
+
+      (a) & & (b)
+
+    \end{tabular}
+
+  \end{center}
+  \caption{\label{zoo}Tableau des particules élémentaires prédites et observées du modèle standard (a). Boson de Higgs, non observé (b).}
+\end{figure}
+
+Nous définissons par fermions (en hommage à Enrico Fermi) les particules qui constitues la matière. Il s'agit des quarks et des leptons. Il existe trois générations de fermions. La première, la plus légère en masse, est constituée des quarks \emph{down} et \emph{up} (notés $ d $ et $ u $) puis des électrons (notés $ e $) et des neutrinos électroniques (notés $ \nu_e $) pour les leptons. La seconde est constituée des quarks \emph{strange} et \emph{charmed} (notés $ s $ et $ c $) puis des muons (notés $ \mu $) et des neutrinos muoniques (notés $ \nu_\mu $) pour les leptons. Et enfin la troisième, la plus lourde en masse, est constituée des quarks \emph{bottom} et \emph{top} (notés $ b $ et $ t $) puis des taus (notés $ \tau $) et des neutrinos tauiques (notés $ \nu_\tau $) pour les leptons. La matière ordinaire est uniquement constituée des fermions de la première génération car  ils sont stables.\\
+
+Nous définissons par bosons (en hommage à Satyendranath Bose) les particules qui constitues le rayonnement. Nous avons déjà présenté le photon $ \gamma $, les huit gluons $ g $, les bosons $ W^\pm $, le boson $ Z $ et le graviton. Il reste à présenté une particule, le boson de Higgs (en hommage à Peter Ware Higgs). IL n'a pas encore été observé mais il constitu un pilier du modèle standard de la physique des particules. Son existence permettrait  d'expliquée l'origine de la masse d'une façon très élégante.\\
+
+Il faut encore préciser qu'à chaque particule, est associée une antiparticule qui a ses nombres quantiques opposée (charge, nombre leptonique et baryonique, saveur, isospin, etc\dots) mais qui conserve la même masse et le même spin. Certaines particules comme le photon sont leurs propres antiparticules.\\
+
+La figure \ref{zoo} montre l'ensemble des particules du modèle standard de la physique des particules. Sont également indiques la masse, la charge électrique et le spin.\\
+
+Dans la suite de ce chapitre, nous allons réaliser une dérivation mathématique du modèle standard de la physique des particules afin de donner quelques élément de phénoménologie. Ensuite, nous donnerons un bref aperçu de l'état des lieu de la recherche du boson de Higgs.
+
 \newpage
 
 \section{Le lagrangien du modèle standard}
@@ -37,7 +82,7 @@ Pour déterminer la position de $ N $ particules dans un espace de dimension $ d 
 
 \begin{figure}[!ht]
   \centering
-  \includegraphics[scale=0.2]{phd_ms/meca1}
+  \includegraphics[scale=0.3]{phd_ms/meca1}
 \end{figure}
 
 \textbf{Exemples} :
@@ -834,7 +879,7 @@ En théorie quantique des champs, nous avons vu que pour assurer l'invariance de 
 
 En 1983, après la découverte des bosons $ W^\pm $ et $ Z $ au Cern, il fut confirmé de façon indiscutable que ces trois particules possèdent une masse importante. Actuellement, la masse mesurée du $ W^\pm $ est $ M_W=80.403(29)\GeV $ et la masse mesurée du $ Z $ est $ M_Z=91.1876(21)\GeV $.
 
-Le premier modèle expliquant l'acquisition de masse par les particules fut proposé en 1964 parallèlement par Gerry Guralnik, Carl Richard Hagen, et Tom Kibble, Robert Brout et François Englert (figure \ref{photographie} a) ainsi que par Peter Higgs (figure \ref{photographie} b). Ce modèle est désormais connu sous le nom de \emph{mécanisme de Higgs}. C'est un pilier du modèle standard de la physique des particules, cependant, une des ses principales prédictions, le \emph{boson de Higgs}, n'a toujours pas été vérifiée expérimentalement.
+Le premier modèle expliquant l'acquisition de masse par les particules fut proposé en 1964 parallèlement par Gerry Guralnik, Carl Richard Hagen, et Tom Kibble, Robert Brout et François Englert (figure \ref{photographie} a) ainsi que par Peter Ware Higgs (figure \ref{photographie} b). Ce modèle est désormais connu sous le nom de \emph{mécanisme de Higgs}. C'est un pilier du modèle standard de la physique des particules, cependant, une des ses principales prédictions, le \emph{boson de Higgs}, n'a toujours pas été vérifiée expérimentalement.
 
 \subsection{Le mécanisme de Higgs}
 
@@ -992,7 +1037,7 @@ Si nous supposons que $ m_-=0 $, alors $ m^M_Lm^M_R = m^Dm^D $ et seuls les neut
     \end{tabular}
 
   \end{center}
-  \caption{\label{photographie}(a) Photographie de Tom Kibble, Gerry Guralnik, Carl Richard Hagen, François Englert et Robert Brout lors de la remise du Prix Sakurai 2010. (b) Photographie de Peter Higgs.}
+  \caption{\label{photographie}(a) Photographie de Tom Kibble, Gerry Guralnik, Carl Richard Hagen, François Englert et Robert Brout lors de la remise du Prix Sakurai 2010. (b) Photographie de Peter Ware Higgs.}
 \end{figure}
 
 \subsection{Le secteur de Higgs}
@@ -1176,55 +1221,57 @@ Mathématiquement, le célèbre théorème de topologie \emph{no-go} de Sidney Colema
       \hline
       $ \mathrm{Spin}^\mathrm{Parite} $ & $ 1^- $ & $ 1^- $ & $ 1^- $, $ 1^+ $ & $ 2^+ $ \\
       \hline
-      Masse & 0 & 0 & & 0 \\
+      Masse (GeV) & 0 & 0 & $ 80 $ et $ 91 $ & 0 \\
       \hline
-      Portée & $ \infty $\footnotesize, confinée $ <10^{-15} $ m & $ \infty $ & $ <10^{-18} $ m & $ \infty $ \\
+      Portée (m) & $ \infty $\footnotesize, confinée $ <10^{-10} $ & $ \infty $ & $ <10^{-18} $ & $ \infty $ \\
       \hline
       Source & couleur & charge électrique & charge faible & énergie/masse \\
       \hline
-      Couplage & $ \alpha_S=0.118\pm0.003 $ & $ \alpha $ & & $ \sim4.6\times10^{-40} $ \\
+      Couplage & $ \alpha_S\lessapprox0.118 $ & $ \alpha\approx\frac{1}{137} $ & $ \alpha_W\lessapprox10^-5 $ & $ \sim4.6\times10^{-40} $ \\
       \hline
     \end{tabular}
 
   \end{center}
-  \caption{Tableau récapitulatif interactions fondamentales.}
+  \caption{Tableau récapitulatif des interactions fondamentales.}
 \end{table}
 
 \begin{table}[!ht]
   \begin{center}
 
-    \begin{tabular}{|l|c|c|}
-      \hline
-        Paramètre & Valeur & Incertitudes \\
-      \hline
-      \hline
-        Masse de l'électron $ m_e $ & & \\
-        Masse du muon $ m_\mu $ & & \\
-        Masse du tauon $ m_\tau $ & & \\
-      \hline
-        Masse du quark $ u $ & & \\
-        Masse du quark $ d $ & & \\
-        Masse du quark $ s $ & & \\
-        Masse du quark $ c $ & & \\
-        Masse du quark $ b $ & & \\
-        Masse du quark $ t $ & & \\
-      \hline
-        Angle CKM $ \theta{12} $ & & \\
-        Angle CKM $ \theta{23} $ & & \\
-        Angle CKM $ \theta{13} $ & & \\
-        Phase CKM $ \delta{13} $ & & \\
-      \hline
-        Couplage $ U(1) $ & & \\
-        Couplage $ SU(2) $ & & \\
-        Angle de Weinberg $ \theta_W $ & & \\
-      \hline
-        Couplage du Higgs $ \mu $ & & \\
-        Autocouplage du Higgs $ \lambda $ & & \\
-      \hline
-    \end{tabular}
+%    \begin{tabular}{|l|c|c|}
+%      \hline
+%        Paramètre & Valeur & Incertitudes \\
+%      \hline
+%      \hline
+%        Masse de l'électron $ m_e $ & & \\
+%        Masse du muon $ m_\mu $ & & \\
+%        Masse du tauon $ m_\tau $ & & \\
+%      \hline
+%        Masse du quark $ u $ & & \\
+%        Masse du quark $ d $ & & \\
+%        Masse du quark $ s $ & & \\
+%        Masse du quark $ c $ & & \\
+%        Masse du quark $ b $ & & \\
+%        Masse du quark $ t $ & & \\
+%      \hline
+%        Angle CKM $ \theta{12} $ & & \\
+%        Angle CKM $ \theta{23} $ & & \\
+%        Angle CKM $ \theta{13} $ & & \\
+%        Phase CKM $ \delta{13} $ & & \\
+%      \hline
+%        Couplage $ U(1) $ & & \\
+%        Couplage $ SU(2) $ & & \\
+%        Angle de Weinberg $ \theta_W $ & & \\
+%      \hline
+%        Couplage du Higgs $ \mu $ & & \\
+%        Autocouplage du Higgs $ \lambda $ & & \\
+%      \hline
+%    \end{tabular}
+
+    \includegraphics[height=8.5cm, keepaspectratio]{phd_ms/valeurs}
 
   \end{center}
-  \caption{Tableau récapitulatif des paramètres du modèle standard (2011).}
+  \caption{Tableau récapitulatif des paramètres du modèle standard (juillet 2010). Mesures effectuées par les expériences LEP, SLC et Tevatron, prédictions théorique et différence absolue en unité de l'erreur de mesure totale $ \sigma $.}
 \end{table}
 
 \newpage
@@ -1535,4 +1582,6 @@ Plus récemment, les expériences DØ et CDF au Tevatron ont accumulé suffisamment 
 \newpage
 
 \section{Les limites du modèle standard}
+
+Par construction, le modèle standard de la physique des particules ne peut pas être considéré comme une théorie définitive. Comme nous l'avons déjà mentionné, sa première limitation réside en son incapacité à décrire l'interaction gravitationnelle à cause du célèbre théorème de topologie \emph{no go}. Il ne permet pas de justifier le nombre de génération de particule si bien, qu'actuellement, des investigations sont menées afin de découvrir une hypothétique quatrième génération de particules.
 
