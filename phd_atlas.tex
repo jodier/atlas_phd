@@ -430,11 +430,184 @@ Précisons également que 1800 sondes à effet Hall, placées sur les MDT et le cryo
 
 \section{Le système de déclenchement}
 
+Au fonctionnement nominal, au niveau du détecteur Atlas, le LHC produira des collisions toutes les $ 25ns $ ($ 50ns $ actuellement en 2011) soit une fréquence de croisement de $ 40MHz $ ($ 20MHz $ actuellement en 2011). La quantité de données brut nécessaire pour représenter un événement est de $ \sim1.6Mbye $ sachant que la bande passant est limitée à $ \sim320\textrm{ Mbyte}/s $, soit encore une fréquence de $ \sim200Hz $. Il est nécessaire d'effectuer une sélection des événements à concerner avec le meilleur taux de réjection possible ($ \sim200000 $). Pour information, avec une luminosité de $\sim10^{33}cm^{-2}s^{-1} $ en 2011, le taux de production du boson $ Z $ est de $ \sim??Hz $ et le taux de production d'un boson de Higgs d'une masse de $ ???\GeV $ est de $ \sim??mHz $.
+
+Dans ce but, le détecteur Atlas dispose d'un système de déclenchement sur trois niveaux dont le principe général est exposé sur la figure \ref{trigger} :
+
+\paragraph{Déclenchement de niveau 1 (L1)} Il s'agit d'un déclenchement matériel rapide qui est basé sur l'utilisation de FPGA (Field-programmable Gate Array). Il doit effectuer sa prise de décision en $ \sim25\mu s $. Il s'appuie sur le système calorimétrique ainsi que sur le spectromètre à muons. Pour le calorimètre, il recherche des dépôts d'énergie caractéristiques de particules telles que les électrons, les photons, les taus ou encore les jets. Les informations électromagnétiques sont collectées par des tours de déclenchement formées de quatre cellules en pseudo-rapidité et de quatre cellules en angle azimutal soit encore $ \Delta\eta\times\Delta\phi=0.1\times0.1 $.
+
+Des muons de hautes énergie, de l'énergie manquante ou encore une grande énergie transverse totale servent au déclenchement.
+
+Après avoir effectué des coupures de sélection, le système de déclenchement de niveau 1 définit de régions d'intérêt (RoI) qui serviront de point de départ au système de déclenchement de niveau 2. Au final, le tau d'événements sélectionnés est inférieur à $ 75kHz $.
+
+\paragraph{Déclenchement de niveau 2 (L2)} Il s'agit d'un déclenchement logiciel rapide qui reconstruit les événements autour des régions d'intérêt définies par le système de déclenchement de niveau 1. Il doit effectué sa prise de décision en $ \sim40ms $ et ne traite que $ \sim2\% $ du total de chaque événement. Au final, le tau d'événements sélectionnés est de $ \sim1kHz $.
+
+\paragraph{Le filtre d'événements (EF)} Il s'agit d'un déclenchement logiciel qui reconstruit reconstruit entièrement l'événement hors-ligne, avec des algorithmes quasi identiques à ceux utilisés pour l'analyse. Au final, le tau d'événements sélectionnés est de $ \sim100kHz $. Il propose des critères de déclenchements optimisés pour chaque type d'analyse. Prenons le cas des électrons. Nous verrons au chapitre 6 qu'il existe trois critères de sélection des électrons avec un taux de réjection croissant : lâche (= loose), intermédiaire (= medium) et strict (= tight). Les voies de déclenchements suivantes sont disponible (liste non exhaustive) : EF\_e20\_medium soit au moins un électron medium d'énergie transverse supérieur à $ 20\GeV $ reconstruit dans l'événement (taux EF: $ 53Hz $, taux L1: $ 8.3kHz $ à $ 10^{33}cm^{-2}s^{-1} $), EF\_2e15\_medium soit au moins deux électrons medium d'énergie transverse supérieur à $ 15\GeV $ reconstruit dans l'événement (taux EF: $ 1.2Hz $, taux L1: $ 5.6kHz $ à $ 10^{33}cm^{-2}s^{-1} $), etc\dots.
+
 \begin{figure}[!ht]
   \begin{center}
-    \includegraphics[height=8.0cm, keepaspectratio]{phd_atlas/trigger}
+    \includegraphics[height=7.4cm, keepaspectratio]{phd_atlas/trigger}
   \end{center}
-  \caption{\label{calo}Représentation schématique du système de déclenchement du détecteur Atlas.}
+  \caption{\label{trigger}Représentation schématique du système de déclenchement du détecteur Atlas.}
+\end{figure}
+
+Remarque 1 : Afin d'économiser la bande passante, les voies des déclenchement peuvent être réévaluée (prescaled) à chaque niveau de déclenchement par un c\oe fficient $ p $ qui indique que seule la fraction $ \frac{1}{p} $ des événements qui déclenchent sont conservés.\\
+
+Remarque 2 : La voie des déclenchement EF\_e20\_medium (taux EF: $ 53Hz $, taux L1: $ 8.3kHz $) est la voie des déclenchement utilisée en 2011, avec une luminosité instantanée de $ 10^{33}cm^{-2}s^{-1} $, pour les analyses basées sur les électrons. Les figures \ref{EFe20medium} (a) et \ref{EFe20medium} (b) montrent respectivement l'efficacité de cette voie des déclenchement en fonction de l'énergie transverse et en fonction de la pseudo-rapidité. L'efficacité et supérieure à $ 98\% $ pour peu que l'on se place sur le plateau au delà de $ \sim22.5\GeV $.
+
+\begin{figure}[!h]
+  \begin{center}
+
+  \begin{tabular}{cc}
+    \includegraphics[height=5.25cm, keepaspectratio]{phd_atlas/EF_e20_medium_1}
+    &
+    \includegraphics[height=5.25cm, keepaspectratio]{phd_atlas/EF_e20_medium_2}
+    \\
+    (a) & (b)
+  \end{tabular}
+
+  \end{center}
+  \caption{\label{EFe20medium}Performances de la voie de déclenchement EF\_e20\_medium (étude réalisée sur des électrons provenant de bosons Z) en fonction de l'énergie transverse (a) et en fonction de la pseudo-rapidité (b).}
+\end{figure}
+
+Les figures \ref{rates} (a) et \ref{rates} (b) montrent respectivement les taux de déclenchement totaux des niveaux L1, L2 et EF en fonction du temps pour le run 167707 (année 2011, pic de luminosité) et pour le run ??? (année 2011).
+
+\begin{figure}[!h]
+  \begin{center}
+
+  \begin{tabular}{cc}
+    \includegraphics[height=5.25cm, keepaspectratio]{phd_atlas/rates2010}
+    &
+    \includegraphics[height=5.25cm, keepaspectratio]{phd_atlas/rates2010}
+    \\
+    (a) & (b)
+  \end{tabular}
+
+  \end{center}
+  \caption{\label{rates}Taux de déclenchement totaux des niveaux L1, L2 et EF en fonction du temps pour le run 167707 (année 2011, pic de luminosité) (a) et pour le run ??? (année 2011) (b).}
+\end{figure}
+
+Une analyse dédiée au choix du système de déclenchement pour l'études $ H\to ZZ^{(*)}\to4l $ en fonction de la luminosité sera présentée au chapitre 8.
+
+\section{Statut du détecteur Atlas}
+
+les tableaux \ref{statut1}, \ref{statut2}, \ref{statut3} et \ref{statut4} montrent respectivement le résumé du nombre de canaux, de la fraction de canaux opérationnels et de la couverture en pseudo-rapidité du trajectographe interne, du système calorimétrique, du spectromètre à muons et du système de déclenchement du détecteur Atlas le 9 novembre 2010 et le 12 mai 2011. La fraction de canaux opérationnels est très bonne, elle est supérieure à $ 97\% $ dans tous les cas. Au niveau du calorimètre électromagnétique, les principales sources de problèmes sont les alimentations basse tension et les problèmes de transmetteurs optiques (OTX).
+
+Les figures \ref{OTXs} (a) et \ref{OTXs} (b) montrent respectivement la distribution du nombre d'OTX défectueux en fonction du temps et la longueur d'onde de l'OTX en fonction de son numéro de série. Il est observé que les OTX défectueux (en noir et rouge) présentent un longueur d'onde généralement inférieure à $ 1nm $. Durant l'arrêt technique de l'hivers 2010, les cartes qui possédaient des OTX défectueux ont été remplacées.
+
+\begin{table}[!h]
+  \begin{center}
+
+  Trajectographe interne
+
+  \begin{tabular}{|l|c|c|c|}
+    \hline
+    \hline
+      Sous-détecteur & Pixel & SCT & TRT \\
+    \hline
+      Nombre de canaux & $ 80 M $ & $ 6.3 M $ & $ 350 k $ \\
+    \hline
+      \begin{minipage}{5.5cm} Fraction de canaux opérationnels\\(9 novembre 2010) \end{minipage} & $ 97.3\% $ & $ 99.2\% $ & $ 97.1\% $ \\
+    \hline
+      \begin{minipage}{5.5cm} Fraction de canaux opérationnels\\(12 mai 2011) \end{minipage} & $ 96.9\% $ & $ 99.1\% $ & $ 97.5\% $ \\
+    \hline
+      Couverture en pseudo-rapidité & $ |\eta|<2.5 $ & $ |\eta|<2.5 $ & $ |\eta|<2.0 $ \\
+    \hline
+  \end{tabular}
+
+  \end{center}
+
+  \caption{\label{statut1}Statut du trajectographe interne du détecteur Atlas.}
+\end{table}
+
+\begin{table}[!h]
+  \begin{center}
+
+  Système calorimétrique
+
+  \begin{tabular}{|l|c|c|c|c|}
+    \hline
+    \hline
+      Sous-détecteur & EM & HEC & FCal & Tile \\
+    \hline
+      Nombre de canaux & $ 170 k $ & $ 5600 $ & $ 3500 $ & $ 9800 $ \\
+    \hline
+      \begin{minipage}{5.5cm} Fraction de canaux opérationnels\\(9 novembre 2010) \end{minipage} & $ 97.9\% $ & $ 99.9\% $ & $ 100\% $ & $ 96.8\% $ \\
+    \hline
+      \begin{minipage}{5.5cm} Fraction de canaux opérationnels\\(12 mai 2011) \end{minipage} & $ 99.5\% $ & $ 99.6\% $ & $ 99.8\% $ & $ 97.9\% $ \\
+    \hline
+      Couverture en pseudo-rapidité & $ |\eta|<3.2 $ & $ 1.5<|\eta|<3.2 $ & $ 3.1<|\eta|<4.9 $ & $ |\eta|<1.7 $ \\
+    \hline
+  \end{tabular}
+
+  \end{center}
+
+  \caption{\label{statut2}Statut du système calorimétrique du détecteur Atlas.}
+\end{table}
+
+\begin{table}[!h]
+  \begin{center}
+
+  Spectromètre à muons
+
+  \begin{tabular}{|l|c|c|c|c|}
+    \hline
+    \hline
+      Sous-détecteur & MDT & CSC & RPC & TGC \\
+    \hline
+      Nombre de canaux & $ 350 k $ & $ 31 k $ & $ 370 k $ & $ 320 k $ \\
+    \hline
+      \begin{minipage}{5.5cm} Fraction de canaux opérationnels\\(9 novembre 2010) \end{minipage} & $ 99.5\% $ & $ 98.5\% $ & $ 97\% $ & $ 98.4\% $ \\
+    \hline
+      \begin{minipage}{5.5cm} Fraction de canaux opérationnels\\(12 mai 2011) \end{minipage} & $ 99.8\% $ & $ 98.5\% $ & $ 97\% $ & $ 98.4\% $ \\
+    \hline
+      Couverture en pseudo-rapidité & $ |\eta|<2.7 $ & $ 2.0<|\eta|<2.7 $ & $ |\eta|<1.05 $ & $ 1.05<|\eta|<2.7 $ \\
+    \hline
+  \end{tabular}
+
+  \end{center}
+
+  \caption{\label{statut3}Statut du spectromètre à muons du détecteur Atlas.}
+\end{table}
+
+\begin{table}[!h]
+  \begin{center}
+
+  Système de déclenchement de niveau 1
+
+  \begin{tabular}{|l|c|c|c|}
+    \hline
+    \hline
+      Sous-détecteur & Calorimètres & RPC & TGC \\
+    \hline
+      Nombre de canaux & $ 7160 $ & $ 370 k $ & $ 320 k $ \\
+    \hline
+      \begin{minipage}{5.5cm} Fraction de canaux opérationnels\\(9 novembre 2010) \end{minipage} & $ 99.9\% $ & $ 99.5\% $ & $ 100\% $ \\
+    \hline
+      \begin{minipage}{5.5cm} Fraction de canaux opérationnels\\(12 mai 2011) \end{minipage} & $ 99.9\% $ & $ 99.5\% $ & $ 100\% $ \\
+    \hline
+      Couverture en pseudo-rapidité & $ |\eta|<4.9 $ & $ |\eta|<1.05 $ & $ 1.05<|\eta|<2.4 $ \\
+    \hline
+  \end{tabular}
+
+  \end{center}
+
+  \caption{\label{statut4}Statut du système de déclenchement du détecteur Atlas.}
+\end{table}
+
+\begin{figure}[!h]
+  \begin{center}
+
+  \begin{tabular}{cc}
+    \includegraphics[height=5.0cm, keepaspectratio]{phd_atlas/OTX1}
+    &
+    \includegraphics[height=5.0cm, keepaspectratio]{phd_atlas/OTX2}
+    \\
+    (a) & (b)
+  \end{tabular}
+
+  \end{center}
+  \caption{\label{OTXs}Distribution du nombre d'OTX défectueux en fonction du temps (a) et la longueur d'onde de l'OTX en fonction de son numéro de série (b).}
 \end{figure}
 
 \section{La chaîne d'analyse}
