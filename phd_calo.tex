@@ -1,2 +1,84 @@
 \chapter{Mise en \oe uvre du calorimètre électromagnétique à argon liquide}
 
+Dans ce chapitre, nous rappellerons les notions élémentaires de calorimétrie avant de décrire les calorimètres à argon liquide, tonneau et bouchons, du détecteur Atlas. Nous discuterons ensuite de la calibration électronique de ces sous détecteurs dans laquelle j'ai été impliqué.
+
+\section{Calorimétrie}
+
+Le rôle premier d'un calorimètre est la mesure de l'énergie des particules. On parle de calorimètre électromagnétique si le détecteur est conçu dans le but de mesurer l'énergie de particules électromagnétiques telles que les électrons ou les photons et on parle de calorimètre hadronique si le but est de mesurer l'énergie de particules hadroniques. Le second rôle est la mesure de la position du dépôt.
+
+Le principe de base calorimètre consiste à placer un milieu très dense sur la trajectoire des particules afin qu'elles déposent une partie ou l'intégralité de leur énergie sous forme de gerbes.
+
+\subsection{Interaction électrons/photons et matière}
+
+TODO
+
+\subsection{Deux type de calorimètres}
+
+TODO
+
+\newpage
+
+\section{Le calorimètre électromagnétique à argon liquide}
+
+Le calorimètre électromagnétique du détecteur Atlas est composé d'une partie tonneau et de deux parties bouchons aux extrémités. Ces dernières sont constituées d'une grande roue de précision et d'une petite roue. De même que les calorimètres vers l'avant (voir le chapitre précédent) et les bouchons du calorimètre hadronique, il s'agit de calorimètres à échantillonnage où le milieu actif est constitué d'électrodes de cuivre immergées dans de l'argon liquide avec un milieu absorbant est formé de plaques métalliques de plomb. Il s'agit d'une technologie robuste, déjà utilisée par les expériences SLD ou D$ \varnothing $, qui est bien maitrisée et qui dispose d'une bonne tenue dans le temps. L'abordeur ainsi que les électrodes sont pliées en accordéon. Cette particularité inédite confère au calorimètre électromagnétique du détecteur Atlas une herméticité parfaite.
+
+La partie tonneau du calorimètre électromagnétique pocède une couverture angulaire $ |\eta|<1.475 $ pour la pseudo-rapidité et $ 0<|\phi|<2\pi $ pour l'angle azimutal. La partie bouchons du calorimètre électromagnétique pocède une couverture angulaire $ 1.37<|\eta|<2.5 $ (resp. $ 2.5<|\eta|<3.2 $) pour la pseudo-rapidité dans la grande roue (resp. pour la petite roue). La région $ 1.37<|\eta|<1.52 $, qui est appelée \emph{crack}, est une région dédiée aux services.
+
+\begin{figure}[!ht]
+  \begin{center}
+    \includegraphics[height=9.25cm, keepaspectratio]{phd_calo/electrodes}
+  \end{center}
+  \caption{Représentation schématique des électrodes du calorimètre électromagnétique du détecteur Atlas. Partie tonneau (en haut), partie bouchon grande roue (en bas à droite) et petite roue (en bas à gauche). Les trois compartiments sont clairement visibles.}
+\end{figure}
+
+La figure \ref{} rappelle la résolution en énergie ainsi que la résolution angulaire des calorimètres du détecteur Atlas. A titre de comparaison, nous donnons la résolution en énergie du calorimètre homogène à cristaux de tungstate de plomb du détecteur CMS : $ \frac{\sigma(E)}{E}=\frac{3\%}{\sqrt{E}}\oplus0.6\% $. Celle-ci est, par conception, légèrement meilleure que pour le détecteur Atlas, néanmoins, grâce à sa fine segmentation et son détecteur de pieds de gerbes, le calorimètres électromagnétique du détecteur Atlas dispose d'une très bonne résolution angulaire. Il est tout particulièrement adapté à la recherche du boson de Higgs dans les canaux $ H\to\gamma\gamma $ et $ H\to ZZ^{(*)}\to4l $ où encore à la recherche d'hypothétiques bosons lourds tels que les $ W' $ ou les $ Z' $ qui se désintègrent en leptons de haute énergie.
+
+\begin{table}[!ht]
+  \begin{center}
+
+    \begin{tabular}{|l|l|c|c|}
+      \hline
+      \hline
+        \small Sous-détecteur & \small Résolution en énergie & \small Résolution angulaire & \small Non linéarité\\
+      \hline
+        \small Calo. électromagnétique & $ \frac{\sigma_E}{E}=\frac{10\%}{\sqrt{E}}\oplus0.7\% $ & $ \frac{50mrad}{\sqrt{E}} $ & $ <0.5\% $\\
+      \hline
+        \small Calo. hadronique & $ \frac{\sigma_E}{E}=\frac{50\%}{\sqrt{E}}\oplus3\% $ (tonneau) & & $ <2.0\% $\\
+                                      & $ \frac{\sigma_E}{E}=\frac{100\%}{\sqrt{E}}\oplus10\% $ (bouchons) & & \\
+      \hline
+
+    \end{tabular}
+
+  \end{center}
+  \caption{Performances générales du détecteur Atlas où l'énergie $ E $ et l'impulsion transverse $ p_T $ sont exprimés en $ \GeV $. Ces résultats ont été validés lors des faisceaux tests.}
+\end{table}
+
+Le calorimètre électromagnétique du détecteur Atlas est partagé en trois compartiments S1, S2 et S3. Ils sont disposés de l'intérieur vers l'extérieur et possèdent une granularité en pseudo-rapidité et en angle azimutal décroissante.
+
+\paragraph{Le premier compartiment, S1}, est très finement segmenté. La taille typique des cellules est $\Delta\eta\times\Delta\phi=0.003\times0.018 $ d'où son surnom de \og \emph{strips} \fg\,en anglais, c'est-à-dire  \og bandes \fg. Il permet de mesurer précisément la position des objets électromagnétiques ce qui s'avère utile pour l'identification des photons ainsi que pour la réjection des $ \pi^0 $ qui se désintègrent en paires de photons angulairement très proches.
+
+\paragraph{Le second compartiment, S2}, est huit fois moins segmenté suivant $ \eta $ que le compartiment S1. La taille typique des cellules est $\Delta\eta\times\Delta\phi=0.025\times0.025 $. Il permet de mesurer les dépôt d'énergie du corps des gerbes électromagnétiques.
+
+\paragraph{Le troisième compartiment, S3}, est deux fois moins segmenté suivant $ \eta $ que le compartiment S2. La taille typique des cellules est $\Delta\eta\times\Delta\phi=0.05\times0.025 $. Il permet de mesurer les dépôt d'énergie des fin de gerbes électromagnétiques et permet également de caractériser la fuite vers le calorimètre hadronique.\\
+
+Précisons également la présence d'un pré-échantillonneur, le PS, dont le but est de corriger l'énergie perdue avant le calorimètre. Sa couverture angulaire est de $ |\eta|<1.8 $.
+
+\begin{figure}[!ht]
+  \begin{center}
+    \includegraphics[height=7.5cm, keepaspectratio]{phd_calo/calo1}
+  \end{center}
+  \caption{Représentation schématique des trois compartiments et de la segmentation en pseudo-rapidité et en angle azimutal du calorimètre électromagnétique du détecteur Atlas.}
+\end{figure}
+
+Les performances du calorimètre électromagnétique ont été mesurées à l'aide de faisceaux de test, à l'aide de données cosmiques et à l'aide des premières données. Écrivons des façon générique la résolution en énergie sous la forme :
+\begin{equation}
+  \frac{\sigma(E)}{E}=\frac{a}{\sqrt{E}}\oplus c
+\end{equation}
+
+où $ a $ est le terme d'échantillonnage et $ b $ est le terme constant qui domine à haute énergie.\\
+
+Les études réalisées sur faisceaux de test fournissent $ a\approx10\%\GeV^\frac{1}{2} $ et $ c\approx0.2\% $ pour le tonneau et $ a\approx11,4\%\GeV^\frac{1}{2} $ et $ c\approx0.35\% $ pour les bouchons. Ces résultats sont en accord avec les spécifications du détecteur Atlas.
+
+La mesure de la masse invariante de paires d'électrons issus de bosons $ Z $ avec les données 2010 fournissent $ c\approx1.2\pm0.1\textrm{(stat.)}\pm0.3\textrm{(syst.)}\% $ pour le tonneau, $ c\approx1.8\pm0.4\textrm{(stat.)}\pm0.2\textrm{(syst.)}\% $ pour la grande roue des bouchons et $ c\approx3.3\pm0.2\textrm{(stat.)}\pm1.0\textrm{(syst.)}\% $ pour la petite roue des bouchons. Comme l'inter-calibration des régions en $ \eta $ et en $ \phi $ n'était pas possible, à cause de la statistique, les nombres sont légèrement supérieurs à ceux attendus.
+
+La linéarité de la réponse a été mesurée sur un module avec des faisceaux de test. La non-linéarité est inférieure à $ 1\% $ sur la gamme d'énergie qui s'étend de $ 15\GeV $ à $ 180\GeV $. Elle fut également mesurée avec des faisceaux de test combinés en ajoutant de la matière afin de reproduire les conditions réelles. Elle est inférieure à $ 1\% $ sur la gamme d'énergie qui s'étend de $ 15\GeV $ à $ 180\GeV $. La non-linéarité est finallement inférieure à $ 0.5\% $ sur la gamme d'énergie qui s'étend de $ 20\GeV $ à $ 180\GeV $.

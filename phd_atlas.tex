@@ -44,7 +44,7 @@ La figure \ref{atlas_1} montre une représentation générale en image de synthèses
     \begin{tabular}{|l|l|c|}
       \hline
       \hline
-        \small Sous-détecteur & \small Résolution & \small Couverture en pseudo-rapidité\\
+        \small Sous-détecteur & \small Résolution en énergie & \small Couverture en pseudo-rapidité\\
       \hline
         \small Trajectographe interne & $ \frac{\sigma_{p_T}}{p_T}=0.05\%p_T\oplus1\% $ & $ \pm2.5 $\\
       \hline
@@ -343,7 +343,7 @@ Au démarrage du LHC, pour le calorimètre à tuiles, 244 modules sur les 246 prése
 
 Le calorimètre vers l'avant (ou Forward Calorimeter ou FCal) est le dernier système calorimétrique installé dans le détecteur Atlas. Il est situé à très grande pseudo-rapidité, après les bouchons, au-delà de $ \eta=3.1 $, jusqu'au tube à vide du LHC à $ \eta=4.9 $. Il est placé dans les mêmes cryostats que les bouchons électromagnétiques et hadroniques à $ 1.2m $ calorimètre électromagnétique, voir figure \ref{calo1}. Ce positionnement est problématique du triple point de vue qu'il expose le FCal à un flux de radiations très élevé, $ ???\textrm{Gy} $ par ans, à un tau de comptage très élevé et qu'une très grande densité est nécessaire pour contenir les gerbes dans un espacement réduit. Le FCal est subdivisé en trois compartiments, le premier calorimétrique, les deux autres hadroniques. La figure \ref{calo2} (b) montre l'épaisseur du FCal, en unité de longueur d'interaction, celle-ci est supérieure à 10. Ici aussi, une technique basée sur l'argon liquide est employée, le matériau absorbant est constitué d'une matrice en cuivre, pour le premier compartiment et en tungstène\footnote{Tungstène signifie \og pierre lourde \fg\ en Suédois, sa densité est de $ 19.25g\,cm^{-3} $.} pour les deux autres. Cette matrice est percée par des tubes coaxiaux dirigés parallèlement à l'axe du faisceau. Des cylindres intérieurs et les contours extérieurs des tubes font office d'électrodes. Ils sont séparés par un espace contenant une épaisseur de $ 375\mu m $ d'argon liquide. Le principal objectif du FCal est l'identification des particules, c'est pourquoi il a une granularité moins fine que précédemment de $ \Delta\eta\times\Delta\phi\sim0.2\times0.2 $. La figure \ref{fcal} montre une représentation schématique de la structure des électrodes du premier compartiment du FCal autour du tube à vide.
 
-La résolution en énergie a été validée sous faisceaux tests, elle est de $ \sigma/E=(28.5\pm1)\%/\sqrt{E[\GeV]}\oplus3\% $ pour les électrons et $ \sigma/E=(94.2\pm1.6)\%/\sqrt{E[\GeV]}\oplus3\% $ pour les pions. La précision de l'énergie transverse manquante est de $ 0.5\sqrt{\sum E_{T_i}} $ où $ E_{T_i} $ est l'énergie transverse des chacune des particules de l'événement considéré.
+La résolution en énergie a été validée sous faisceaux tests, elle est de $ \sigma/E=(28.5\pm1)\%/\sqrt{E[\GeV]}\oplus3\% $ pour les électrons et $ \sigma/E=(94.2\pm1.6)\%/\sqrt{E[\GeV]}\oplus3\% $ pour les pions chargés. La précision de l'énergie transverse manquante est de $ 0.5\sqrt{\sum E_{T_i}} $ où $ E_{T_i} $ est l'énergie transverse des chacune des particules de l'événement considéré.
 
 Au démarrage du LHC, par raison de sécurité, la haute tension a été configurer en dessous de $ 25\% $ de sa valeur nominale ($ 25\%\times???V $).\\\\\\
 
@@ -432,7 +432,7 @@ Précisons également que 1800 sondes à effet Hall, placées sur les MDT et le cryo
 
 Au fonctionnement nominal, au niveau du détecteur Atlas, le LHC produira des collisions toutes les $ 25ns $ ($ 50ns $ actuellement en 2011) soit une fréquence de croisement de $ 40MHz $ ($ 20MHz $ actuellement en 2011). La quantité de données brut nécessaire pour représenter un événement est de $ \sim1.6Mbye $ sachant que la bande passant est limitée à $ \sim320\textrm{ Mbyte}/s $, soit encore une fréquence de $ \sim200Hz $. Il est nécessaire d'effectuer une sélection des événements à concerner avec le meilleur taux de réjection possible ($ \sim200000 $). Pour information, avec une luminosité de $\sim10^{33}cm^{-2}s^{-1} $ en 2011, le taux de production du boson $ Z $ est de $ \sim??Hz $ et le taux de production d'un boson de Higgs d'une masse de $ ???\GeV $ est de $ \sim??mHz $.
 
-Dans ce but, le détecteur Atlas dispose d'un système de déclenchement sur trois niveaux dont le principe général est exposé sur la figure \ref{trigger} :
+Dans ce but, le détecteur Atlas dispose d'un système de déclenchement sur trois niveaux dont le principe général est exposé sur la figure \ref{trigger}.
 
 \paragraph{Déclenchement de niveau 1 (L1)} Il s'agit d'un déclenchement matériel rapide qui est basé sur l'utilisation de FPGA (Field-programmable Gate Array). Il doit effectuer sa prise de décision en $ \sim25\mu s $. Il s'appuie sur le système calorimétrique ainsi que sur le spectromètre à muons. Pour le calorimètre, il recherche des dépôts d'énergie caractéristiques de particules telles que les électrons, les photons, les taus ou encore les jets. Les informations électromagnétiques sont collectées par des tours de déclenchement formées de quatre cellules en pseudo-rapidité et de quatre cellules en angle azimutal soit encore $ \Delta\eta\times\Delta\phi=0.1\times0.1 $.
 
@@ -476,9 +476,9 @@ Les figures \ref{rates} (a) et \ref{rates} (b) montrent respectivement les taux 
   \begin{center}
 
   \begin{tabular}{cc}
-    \includegraphics[height=5.25cm, keepaspectratio]{phd_atlas/rates2010}
+    \includegraphics[height=5.0cm, keepaspectratio]{phd_atlas/rates2010}
     &
-    \includegraphics[height=5.25cm, keepaspectratio]{phd_atlas/rates2010}
+    \includegraphics[height=5.0cm, keepaspectratio]{phd_atlas/rates2010}
     \\
     (a) & (b)
   \end{tabular}
@@ -493,7 +493,9 @@ Une analyse dédiée au choix du système de déclenchement pour l'études $ H\to ZZ^
 
 les tableaux \ref{statut1}, \ref{statut2}, \ref{statut3} et \ref{statut4} montrent respectivement le résumé du nombre de canaux, de la fraction de canaux opérationnels et de la couverture en pseudo-rapidité du trajectographe interne, du système calorimétrique, du spectromètre à muons et du système de déclenchement du détecteur Atlas le 9 novembre 2010 et le 12 mai 2011. La fraction de canaux opérationnels est très bonne, elle est supérieure à $ 97\% $ dans tous les cas. Au niveau du calorimètre électromagnétique, les principales sources de problèmes sont les alimentations basse tension et les problèmes de transmetteurs optiques (OTX).
 
-Les figures \ref{OTXs} (a) et \ref{OTXs} (b) montrent respectivement la distribution du nombre d'OTX défectueux en fonction du temps et la longueur d'onde de l'OTX en fonction de son numéro de série. Il est observé que les OTX défectueux (en noir et rouge) présentent un longueur d'onde généralement inférieure à $ 1nm $. Durant l'arrêt technique de l'hivers 2010, les cartes qui possédaient des OTX défectueux ont été remplacées.
+\newpage
+
+Les figures \ref{OTXs} (a) et \ref{OTXs} (b) montrent respectivement la distribution du nombre d'OTX défectueux en fonction du temps et la longueur d'onde des l'OTX en fonction de leur numéro de série. Il est observé que les OTX défectueux (en noir et rouge) présentent un longueur d'onde généralement inférieure à $ 1nm $. Durant l'arrêt technique de l'hivers 2010, les cartes qui possédaient des OTX défectueux ont été remplacées.
 
 \begin{table}[!h]
   \begin{center}
@@ -607,7 +609,7 @@ Les figures \ref{OTXs} (a) et \ref{OTXs} (b) montrent respectivement la distribu
   \end{tabular}
 
   \end{center}
-  \caption{\label{OTXs}Distribution du nombre d'OTX défectueux en fonction du temps (a) et la longueur d'onde de l'OTX en fonction de son numéro de série (b).}
+  \caption{\label{OTXs}Distribution du nombre d'OTX défectueux en fonction du temps (a) et longueur d'onde des l'OTX en fonction de leur numéro de série (b).}
 \end{figure}
 
 \section{Programme de physique}
