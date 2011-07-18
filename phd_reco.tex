@@ -164,11 +164,11 @@ Après correction, la résolution en énergie pour la reconstruction des objets éle
 
 La résolution angulaire des photons non convertis est directement celle du calorimètre électromagnétique, soit quelques mrad. Pour les photons convertis et pour les électrons, les performances combinées du trajectographe interne et du calorimètre électromagnétique mènent à une résolution angulaire de l'ordre de $ \sim0.5 mrad $.
 
-La figure ? montre les efficacités de reconstruction des objets électromagnétiques en fonction de la pseudo-rapidité (a) et de l'impulsion (b). Les efficacités sont très bonnes, $ \sim97\% $ pour les électrons de plus de $ 20\GeV $ et $ \sim99.8\% $ pour les photons.
+Les efficacités sont très bonnes, pour des électrons de plus de $ 20\GeV $, elle est supérieure à $ \sim97\% $ et pour les photons, elle est supérieure à $ \sim99.8\% $.
 
 \section{Critères d'identification des électrons}
 
-Une fois la reconstruction des candidats électrons effectuée, il faut réaliser une sélection, en effet la fraction des vrais électrons est de l'ordre du dix millième pour les collisions à $ \sqrt{s}=7\TeV $. Ces critères sont basés sur : i) la forme des gerbes électromagnétiques et la fuite d'énergie dans le calorimètre hadronique ii) la qualité des traces et l'identification des particules avec le TRT (réjection des pions chargés). iii) la qualité de l'association traces-amas.
+Une fois la reconstruction des candidats électrons effectuée, il faut réaliser une sélection, en effet, la fraction des vrais électrons est de l'ordre du dix millième pour les collisions à $ \sqrt{s}=7\TeV $. Ces critères sont basés sur : i) la forme des gerbes électromagnétiques et la fuite d'énergie dans le calorimètre hadronique ii) la qualité des traces et l'identification des particules avec le TRT (réjection des pions chargés). iii) la qualité de l'association traces-amas.
 
 \section{Variables d'identification}
 
@@ -180,14 +180,14 @@ Remarque : Dans la simulation Monte-Carlo les variables de forme de gerbe électr
 
 \subsection{Étalement des gerbes dans le second compartiment}
 
-Des variables ont été définies afin de caractériser l'étalement des gerbes électromagnétiques dans le second compartiment. Le rayon de Molière permet de construire un cône de rayon $ R_M $ à l'intérieur duquel $ 90\% $ de l'énergie d'une gerbe électromagnétique est contenue. Dans le calorimètre électromagnétique, le rayon de Molière est d'environ $ 10cm $. On déduit qu'un amas de 5 cellules d'extension latéral est suffisant pour contenir $ 90\% $ de l'énergie d'une gerbe. Cette taille est beaucoup plus grande pour les gerbes hadroniques si bien que deux nouvelles variables peuvent être introduites afin de distinguer les gerbes électromagnétiques des gerbes hadroniques. Il s'agit de la fraction d'énergie dans le c\oe ur de la gerbe pour les deux directions $ \eta $ et $ \phi $ respectivement appelées $ R_\eta $ et $ R_\phi $ :
+Des variables ont été définies afin de caractériser l'étalement des gerbes électromagnétiques dans le second compartiment. Le rayon de Molière permet de construire un cône de rayon $ R_M $ à l'intérieur duquel $ 90\% $ de l'énergie d'une gerbe électromagnétique est contenue. Dans le calorimètre électromagnétique, le rayon de Molière est d'environ $ 10cm $. On déduit qu'un amas de 5 cellules d'extension latéral est suffisant pour contenir $ 90\% $ de l'énergie d'une gerbe. Cette taille est beaucoup plus grande pour les gerbes hadroniques si bien que deux nouvelles variables peuvent être introduites afin de distinguer les gerbes électromagnétiques des gerbes hadroniques. Il s'agit de la fraction d'énergie du c\oe ur de la gerbe dans les deux directions $ \eta $ et $ \phi $ respectivement appelées $ R_\eta $ et $ R_\phi $ :
 \begin{equation}
   R_\eta=\frac{E^{s2}_{3\times7}}{E^{s2}_{7\times7}}\hspace{1cm}\textrm{;}\hspace{1cm}R_\phi=\frac{E^{s2}_{3\times3}}{E^{s2}_{3\times7}}
 \end{equation}
 
 où $ E^{s2}_{X\times Y} $ représente l'énergie de l'amas de taille $ X\times Y $ dans le second compartiment.
 
-En pratique, $ R_\phi $ est sensible aux effets du champ magnétique et n'est pas utilisée pour l'identification des électrons. Une autre variable discriminante est le second moment de la pseudo-rapidité des cellules d'un amas $ 3\times 5 $ pondérées par leur énergie :
+En pratique, $ R_\phi $ est sensible aux effets du champ magnétique et n'est pas utilisée pour l'identification des électrons. Une autre variable discriminante est le second moment de la pseudo-rapidité des cellules d'un amas $ 3\times 5 $ pondérée par leur énergie :
 \begin{equation}
   W_{\eta_2}=\sqrt{\frac{\sum E_i\eta^2_i}{\sum E_i}-\left(\frac{\sum E_i\eta_i}{\sum E_i}\right)^2}
 \end{equation}
@@ -293,7 +293,7 @@ On introduit \emph{medium++} (\emph{intermédiaire++}). Sa définition est la même
 
 La figure \ref{isEMpp1} montre l'efficacité (préliminaire) de sélection des électrons \emph{medium}, \emph{medium++} et \emph{tight} en fonction de la pseudo-rapidité $ \eta $. Il apparait que l'efficacité de \emph{medium++} est plus proche de \emph{medium} que de \emph{tight}, elle est supérieure à $ 80\% $.
 
-La voie de déclenchement EF\_e20\_medium++ présente un taux de déclenchement de $ \sim17.5Hz $ à la luminosité instantanées de $ 10^{33}cm^{-2}s^{-1} $. Les figures \ref{isEMpp2} (a) et (b) (resp. (c) et (d)) montrent l'efficacité (préliminaire) de la voie de déclenchement EF\_e20\_medium (resp. de la voie de déclenchement EF\_e20\_medium++) en fonction de l'énergie transverse $ E_T $ et en fonction de la pseudo-rapidité $ \eta $. À première vue, EF\_e20\_medium++ ne semble pas introduire de perte importante d'efficacité, elle est supérieure à $ 95\% $ sur le plateau de la distribution.
+La voie de déclenchement EF\_e20\_medium++ présente un taux de déclenchement de $ \sim17.5Hz $ à la luminosité instantanées de $ 10^{33}cm^{-2}s^{-1} $. Les figures \ref{isEMpp2} (a) et (b) (resp. (c) et (d)) montrent l'efficacité (préliminaire) de la voie de déclenchement EF\_e20\_medium (resp. de la voie de déclenchement EF\_e20\_medium++) en fonction de l'énergie transverse $ E_T $ et en fonction de la pseudo-rapidité $ \eta $. A première vue,  l'efficacité de EF\_e20\_medium++ reste supérieure à $ 95\% $ sur le plateau des distributions.
 
 \begin{figure}[!p]
   \begin{center}
@@ -322,6 +322,10 @@ La voie de déclenchement EF\_e20\_medium++ présente un taux de déclenchement de 
   \end{center}
   \caption{\label{isEMpp2}Efficacité (préliminaire) de la voie de déclenchement EF\_e20\_medium (resp. de la voie de déclenchement EF\_e20\_medium++) en fonction de l'énergie transverse $ E_T $ (a) (resp. (c)) et en fonction de la pseudo-rapidité $ \eta $ (b) (resp. (d)).}
 \end{figure}
+
+\section{Distributions}
+
+Les figures \ref{distrib_b} à \ref{distrib_e} montrent la distribution des variables utilisées par les coupures standards isEM et isEM++, avec la simulation Monte-Carlo, pour des électrons isolés, pour des électrons non isolés, pour le bruit de fond des électrons et pour des hadrons.
 
 \begin{table}[!p]
   \begin{center}
@@ -564,7 +568,7 @@ La voie de déclenchement EF\_e20\_medium++ présente un taux de déclenchement de 
   \end{tabular}
 
   \end{center}
-  \caption{???.}
+  \caption{\label{distrib_b}Distribution de la fuite en énergie dans le premier compartiment du calorimètre hadronique (a). Distribution du second moment de la pseudo-rapidité des cellules d'un amas $ 3\times5 $ pondérée par leur énergie dans $ S2 $ (b).}
 \end{figure}
 
 \begin{figure}[!p]
@@ -579,7 +583,7 @@ La voie de déclenchement EF\_e20\_medium++ présente un taux de déclenchement de 
   \end{tabular}
 
   \end{center}
-  \caption{???.}
+  \caption{Distributions de la fraction d'énergie du le c\oe ur de la gerbe dans la directions $ \eta $ $ R_\eta=\frac{E^{s2}_{3\times7}}{E^{s2}_{7\times7}} $ (a). Distribution de la largeur totale de la gerbe électromagnétique dans S1 (b).}
 \end{figure}
 
 \begin{figure}[!p]
@@ -588,43 +592,20 @@ La voie de déclenchement EF\_e20\_medium++ présente un taux de déclenchement de 
   \begin{tabular}{ccc}
     \includegraphics[height=7.0cm, keepaspectratio]{phd_reco/eratio}
     &&
-    \includegraphics[height=7.0cm, keepaspectratio]{phd_reco/weta2}
-    \\
-    (a) && (b)
-  \end{tabular}
-
-  \end{center}
-  \caption{???.}
-\end{figure}
-
-\begin{figure}[!p]
-  \begin{center}
-
-  \begin{tabular}{ccc}
-    \includegraphics[height=7.0cm, keepaspectratio]{phd_reco/pixel}
-    &&
-    \includegraphics[height=7.0cm, keepaspectratio]{phd_reco/silicon}
-    \\
-    (a) && (b)
-  \end{tabular}
-
-  \end{center}
-  \caption{???.}
-\end{figure}
-
-\begin{figure}[!p]
-  \begin{center}
-
-  \begin{tabular}{ccc}
     \includegraphics[height=7.0cm, keepaspectratio]{phd_reco/eoverp}
-    &&
-    \includegraphics[height=7.0cm, keepaspectratio]{phd_reco/d0}
     \\
     (a) && (b)
   \end{tabular}
 
   \end{center}
-  \caption{???.}
+  \caption{Distribution du rapport entre la différence et la somme des deux cellules de S1 les plus énergétiques (a). Distribution du rapport entre l'énergie $ E $ et l'impulsion $ p $ (b).}
+\end{figure}
+
+\begin{figure}[!p]
+  \begin{center}
+    \includegraphics[height=7.0cm, keepaspectratio]{phd_reco/d0}
+  \end{center}
+  \caption{Distribution du paramètre d'impact.}
 \end{figure}
 
 \begin{figure}[!p]
@@ -639,7 +620,22 @@ La voie de déclenchement EF\_e20\_medium++ présente un taux de déclenchement de 
   \end{tabular}
 
   \end{center}
-  \caption{???.}
+  \caption{Distribution de la différence en pseudo-rapidité $ \eta $ entre les amas et les traces (a). Distribution de la différence en angle azimutal $ \phi $ entre les amas et les traces (b).}
+\end{figure}
+
+\begin{figure}[!p]
+  \begin{center}
+
+  \begin{tabular}{ccc}
+    \includegraphics[height=7.0cm, keepaspectratio]{phd_reco/pixel}
+    &&
+    \includegraphics[height=7.0cm, keepaspectratio]{phd_reco/silicon}
+    \\
+    (a) && (b)
+  \end{tabular}
+
+  \end{center}
+  \caption{Distribution du nombre d'impacts dans les pixels (a). Distribution du nombre d'impacts de haut seuil dans le silicium (b).}
 \end{figure}
 
 \begin{figure}[!p]
@@ -654,13 +650,13 @@ La voie de déclenchement EF\_e20\_medium++ présente un taux de déclenchement de 
   \end{tabular}
 
   \end{center}
-  \caption{???Nombre d'impacts dans le TRT (a). Nombre d'impacts de haut seuil dans le TRT (b).}
+  \caption{Distribution du nombre d'impacts dans le TRT (a). Distribution du nombre d'impacts de haut seuil dans le TRT (b).}
 \end{figure}
 
 \begin{figure}[!p]
   \begin{center}
     \includegraphics[height=7.0cm, keepaspectratio]{phd_reco/conversionbit}
   \end{center}
-  \caption{???.}
+  \caption{\label{distrib_e}Bit de conversion, définit à $ 1 $ si le candidat électron est considéré comme un électron de conversion, $ 0 $ sinon.}
 \end{figure}
 
