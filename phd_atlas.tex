@@ -65,12 +65,12 @@ La figure \ref{atlas_1} montre une représentation générale en image de synthèses
 
 \section{Le système de coordonnées}
 
-Afin de repérer les particules dans le détecteur Atlas, trois systèmes de coordonnées ont été définis. Le premier est un simple système cartésien muni d'une base orthonormale $ (\vec x,\vec y,\vec z) $. Le vecteur $ \vec z $ suit la direction des faisceaux et les vecteurs $ \vec x $ et $ \vec y $ sont définis comme sur la figure \ref{atlas_2} (b). Le deuxième est caractérisé par la base $ (\vec u_\theta,\vec u_\phi,\vec z) $ où $ \theta $ est l'angle polaire dans le plan $ (\vec x,\vec y) $ et $ \phi $ est l'angle azimutal autour du vecteur $ \vec z $. Enfin, le troisième système de coordonnées, qui est le système de coordonnées naturel du détecteur Atlas, est caractérisé par la base $ (\vec u_\eta,\vec u_\phi,\vec z) $ où est la pseudo-rapidité définie par la relation suivante :
+Afin de repérer les particules dans le détecteur Atlas, trois systèmes de coordonnées ont été définis. Le premier est un simple système cartésien muni d'une base orthonormale $ (\vec x,\vec y,\vec z) $. Le vecteur $ \vec z $ suit la direction des faisceaux et les vecteurs $ \vec x $ et $ \vec y $ définissent le plan transverse comme sur la figure \ref{atlas_2} (b). Le deuxième est caractérisé par la base $ (\vec u_\theta,\vec u_\phi,\vec z) $ où $ \theta $ est l'angle polaire dans le plan $ (\vec x,\vec y) $ et $ \phi $ est l'angle azimutal autour du vecteur $ \vec z $. Enfin, le troisième système de coordonnées, qui est le système de coordonnées naturel du détecteur Atlas, est caractérisé par la base $ (\vec u_\eta,\vec u_\phi,\vec z) $ où $ \eta $ est la pseudo-rapidité définie par la relation suivante :
 \begin{equation}
   \boxed{\eta=-\ln\tan\frac{\theta}{2}}
 \end{equation}
 
-Pour une particule ultra-relativiste, la pseudo-rapidité est équivalant à la rapidité $ y=\operatorname{arctanh}\frac{v}{c} $, les différences de pseudo-rapidité sont alors invariantes par boost de Lorentz. Les distances entre particules sont souvent exprimées à l'aide de la métrique $ dR^2=d\eta^2+d\phi^2 $.
+Pour une particule ultra-relativiste, la pseudo-rapidité est quasi équivalante à la rapidité $ y=\operatorname{arctanh}\frac{v}{c} $, les différences de pseudo-rapidité sont alors invariantes par boost de Lorentz. Les distances entre particules sont souvent exprimées à l'aide de la métrique $ dR^2=d\eta^2+d\phi^2 $.
 
 \begin{figure}[!ht]
   \begin{center}
@@ -81,11 +81,11 @@ Pour une particule ultra-relativiste, la pseudo-rapidité est équivalant à la rap
 
 \section{Le système d'aimants}
 
-Pour courber la trajectoire des particules chargées (afin de mesurer leur impulsion et leur charge électrique), un imposant système d'aimants supraconducteurs a été développé pour le détecteur Atlas. Il est constitué de quatre aimants distinctes :
+Pour courber la trajectoire des particules chargées (afin de mesurer leur impulsion et leur charge électrique), un imposant système d'aimants supraconducteurs a été développé pour le détecteur Atlas. Il est constitué de quatre pièces distinctes :
 
 \begin{itemize}
   \item Un aimant solénoïdal qui fournit un champ magnétique d'une valeur de $ 2 $ teslas suivant l'axe $ z $. Il mesure $ 5.3m $ de long pour $ 2.5m $ de diamètre et englobe complètement les trajectographes.
-  \item Un aimant toroïdal pour la partie tonneau du détecteur Atlas formé de 8 bobines supraconductrices. Elles mesurent $ 25m $ de long pour $ 5m $ de large et fournit un champ magnétique d'une valeur de $ 0.5 $ teslas.
+  \item Un aimant toroïdal pour la partie tonneau du détecteur Atlas formé de 8 bobines supraconductrices. Elles mesurent $ 25m $ de long pour $ 5m $ de large et fournissent un champ magnétique d'une valeur de $ 0.5 $ teslas.
   \item Deux aimants toroïdaux pour les parties bouchons du détecteur Atlas formés de 8 bobines supraconductrices. Elles mesurent $ 5m $ de long pour $ 5m $ de large et fournissent un champ magnétique d'une valeur de $ 1.0 $ teslas.\\
 \end{itemize}
 
@@ -107,7 +107,7 @@ Pour courber la trajectoire des particules chargées (afin de mesurer leur impuls
   \end{tabular}
 
   \end{center}
-  \caption{\label{aimants}Représentation schématique du système d'aimants détecteur Atlas (a) (en rouge) et (b). Intensité du champ magnétique, en teslas (c) et direction du champ magnétique (d).}
+  \caption{\label{aimants}Représentation schématique du système d'aimants du détecteur Atlas (a) (en rouge) et (b). Intensité du champ magnétique, en teslas (c) et direction du champ magnétique (d).}
 \end{figure}
 
 La figure \ref{aimants} montre une représentation générale en image de synthèses du système d'aimants détecteur Atlas. Alors que le champ solénoïdal courbe la trajectoire des particules suivant l'angle azimutale $ \phi $, les champs toroïdaux courbent la trajectoire des particules suivant l'angle $ \theta $ ou encore suivant la pseudo-rapidité $ \eta $.
@@ -116,7 +116,7 @@ La figure \ref{aimants} montre une représentation générale en image de synthèses
 
 \section{La trajectographie}
 
-Le trajectographe interne est le premier sous-détecteur traversé par des particules dans Atlas. Situé très près du point d'interaction, il subit des contraintes importantes du fait du fort rayonnement. Baigné dans le champ solénoïdale, il couvre un large domaine en pseudo-rapidité $ \eta<2.5 $. Son but est de reconstruire les traces des particules chargée ainsi que leur impulsion. Avec sa fine granularité et sa haute résolution, il est en mesure de permettre la reconstruction des vertex déplacés des particules à longue durée de vie tels que les hadrons-b. Par ailleurs, l'étiquetage des quarks b dépend grandement des performances du trajectographe interne. Autant que possible, la quantité de matière présente doit être limitée afin de ne pas gêner les calorimètres qui, eux, présentent une densité importante. Le trajectographe interne est constitué de trois sous-détecteurs, de l'intérieur vers l'extérieur : i) le détecteur de vertex à pixels ii) le trajectographe à micro pistes de silicium (SCT pour SemiConductor Tracker) qui fournit un petit nombre de points à grande précision. iii) le trajectographe à rayonnement de transition (TRT pour Transition Radiation Tracker) qui fournit un grand nombre de points à précision plus modeste. Une représentation générale en images de synthèse du trajectographe interne est montrée sur la figure \ref{ID1}. Le trajectographe interne a une configuration en tonneaux et en bouchons. Les dimensions dans le plan $ R-z $ ainsi qu'en fonction de la pseudo-rapidité $ \eta $ du quart supérieur droit du trajectographe interne sont montrée sur la figure \ref{ID2}. Une représentation en image de synthèse du passage d'une trace particule à travers les trois sous-détecteurs est montrée sur la figure \ref{ID3}.
+Le trajectographe interne est le premier sous-détecteur après le tube à vide du LHC. Situé très près du point d'interaction, il subit des contraintes importantes du fait du fort rayonnement. Baigné dans le champ solénoïdale, il couvre un large domaine en pseudo-rapidité $ \eta<2.5 $. Son but est de reconstruire les traces des particules chargée ainsi que leur impulsion. Avec sa fine granularité et sa haute résolution, il est en mesure de permettre la reconstruction des vertex déplacés des particules à longue durée de vie tels que les quarks b. Par ailleurs, l'étiquetage des quarks b dépend grandement des performances du trajectographe interne. Autant que possible, la quantité de matière présente doit être limitée afin de ne pas gêner les calorimètres qui, eux, présentent une densité importante. Le trajectographe interne est constitué de trois sous-détecteurs, de l'intérieur vers l'extérieur : i) le détecteur de vertex à pixels ii) le trajectographe à micro pistes de silicium (SCT pour SemiConductor Tracker) qui fournit un petit nombre de points à grande précision. iii) le trajectographe à rayonnement de transition (TRT pour Transition Radiation Tracker) qui fournit un grand nombre de points à précision plus modeste. Une représentation générale en images de synthèse du trajectographe interne est montrée sur la figure \ref{ID1}. Le trajectographe interne a une configuration en tonneaux et en bouchons. Les dimensions dans le plan $ R-z $ ainsi qu'en fonction de la pseudo-rapidité $ \eta $ du quart supérieur droit du trajectographe interne sont montrée sur la figure \ref{ID2}. La figure \ref{ID3} montre une représentation en image de synthèse de la trace d'une particule à travers les trois sous-détecteurs  pixels, SCT et TRT.
 
 \begin{figure}[!ht]
   \begin{center}
@@ -151,20 +151,20 @@ Le trajectographe interne est le premier sous-détecteur traversé par des particu
   \end{tabular}
 
   \end{center}
-  \caption{\label{ID3}Représentation en image de synthèse du passage d'une trace particule à travers les trois sous-détecteurs.}
+  \caption{\label{ID3}Représentation en image de synthèse d'une trace de particule à travers les trois sous-détecteurs pixels, SCT et TRT.}
 \end{figure}
 
 \newpage
 
 \subsection{Le détecteur de vertex à pixels}
 
-Très proche du point d'interaction, détecteur de vertex à pixels a pour principales tâches de reconstruire les traces des particules chargée ainsi que leur impulsion, identifier les saveurs lourdes et identifier les jets de quarks b. Il est doté d'une fine segmentation avec ses pixels d'une dimension de $ 50\times400\mu m^2 $ formés d'un semi-conducteur doublement dopé (p$^+$/n/n$^+$) formant une diode d'une épaisseur de $ 250\mu m $. Lors du passage d'une particule, des pairs électron-trou sont formées puis les électrons dérivent par effet du champ magnétique, un courant électrique est ainsi créé. Une caractéristique importante de ce détecteur est la connexion des pixels à l'électronique de lecture via des micro-bille, voir figure \ref{pixel_electonique}. Ce procédé assure une grande surface de lecture sans zone mortes.
+Très proche du point d'interaction, détecteur de vertex à pixels a pour principales tâches de reconstruire la trace et l'impulsion des particules chargées, identifier les saveurs lourdes et identifier les jets de quarks b. Il est doté d'une fine segmentation avec ses pixels d'une dimension de $ 50\times400\mu m^2 $ formés d'un semi-conducteur doublement dopé (p$^+$/n/n$^+$) formant une diode d'une épaisseur de $ 250\mu m $. Lors du passage d'une particule, des pairs électron-trou sont formées puis les électrons dérivent par effet du champ magnétique, un courant électrique est ainsi créé. Une caractéristique importante de ce détecteur est la connexion des pixels à l'électronique de lecture via des micro-bille, voir figure \ref{pixel_electonique}. Ce procédé assure une grande surface de lecture sans zone mortes.
 
 Le détecteur de vertex à pixels possède une configuration en tonneau et en bouchons, voir figures \ref{ID2} et \ref{ID3}. Le tonneau est formé de trois couches concentriques. La première est à $ 3cm $ du tube à vide, aussi appelée \emph{b-layer}, elle présente un intérêt crucial pour l'étiquetage des quarks b. La deuxième et la troisième couches sont respectivement situées à $ 9cm $ et $ 12cm $, voir figures \ref{ID2} et \ref{ID3}. Les bouchons sont quant à eux formés de trois couches parallèles respectivement situées à $ 50cm $, $ 58cm $ et $ 65cm $ du point d'interaction. Le détecteur de vertex à pixels totalise une superficie de $ 1.7m^2 $ avec 82 millions de canaux de lecture. Sa résolution est de $ \sim10\mu m $ dans le plan $ R-\phi $ et $ 115\mu m $ dans la direction $ z $.
 
 \newpage
 
-L'installation de ce sous-détecteur dans Atlas a été achévée en juin 2007. Actuellement, environ $ 97\% $ des modules sont en fonctionnement et le taux de pixels bruyants est inférieur à $ 10^{-?} $, voir figure \ref{pixel_eff}.
+L'installation de ce sous-détecteur dans Atlas a été achévée en juin 2007. Actuellement, environ $ 97.3\% $ des modules sont en fonctionnement et le taux de pixels bruyants est inférieur à $ 10^{-?} $, voir figure \ref{pixel_eff}.
 
 \begin{figure}[!ht]
   \begin{center}
@@ -204,15 +204,15 @@ Le SCT possède également une configuration en tonneau et en bouchons, voir figur
 
 \newpage
 
-L'installation de ce sous-détecteur dans Atlas a été achévée en juillet 2007. Actuellement, plus des $ 99\% $ des modules sont en fonctionnement et le taux de micro-pistes bruyantes est inférieur à $ 10^{-?} $.
+L'installation de ce sous-détecteur dans Atlas a été achévée en juillet 2007. Actuellement, plus des $ 99.2\% $ des modules sont en fonctionnement et le taux de micro-pistes bruyantes est inférieur à $ 10^{-?} $.
 
 \subsection{Le trajectographe à rayonnement de transition}
 
 Situé autour du SCT, le TRT est le troisième trajectographe \emph{très spécifique} du détecteur Atlas. Il permet d'obtenir un grand nombre de points d'impact, environ 36 par trace, sauf dans les régions $ 0.8<|\eta|<1.2 $, environ 22 par trace (régions intermédiaire entre le tonneau et les bouchons). Par conséquent, même avec une précision moindre que ses prédécesseurs, il permet une amélioration de la mesure de l'impulsion. Il est constitué de tubes de dérive (aussi appelés \emph{pailles}) contenant un mélange gazeux formé de $ 70\% $ de $ \textrm{Xe} $, $ 27\% $ de $ \textrm{CO}_2 $ et $ 3\% $ de $ \textrm{O}_2 $, voir figure \ref{TRT} (a). Lors du passage d'une particule, sous l'effet d'un champ électrique créé par une différence de potentiel de $ \sim1350V $ entre la paroi des pailles et une anode centrale, une cascade d'électrons de ionisation fait apparaitre un courant électrique en moins de $ 50ms $.
 
-Le TRT possède également une configuration en tonneau et en bouchons, voir figures \ref{ID2} et \ref{ID3}. Le tonneau est formé de 73 plans de pailles longues de $ 144cm $ orientées dans le sens du faisceau (environ 50000 pailles). Il couvre le domaine en pseudo-rapidité $ |\eta|<0.7 $. Les deux bouchons sont formés de 160 plans scindés en 18 couronnes de pailles longues de $ ???cm $ orientées dans le sens radial (environ 120000 pailles). Ils couvrent le domaine en pseudo-rapidité $ 0.7<|\eta|<2.0 $. La résolution du TRT est de $ 10\mu m $ dans le plan $ R-\phi $, cependant, de par sa conception, la mesure de la pseudo-rapidité $ \eta $ n'est pas possible.
+Le TRT possède également une configuration en tonneau et en bouchons, voir figures \ref{ID2} et \ref{ID3}. Le tonneau est formé de 73 plans de pailles longues de $ 144cm $ orientées dans le sens du faisceau (environ 50000 pailles). Il couvre le domaine en pseudo-rapidité $ |\eta|<0.7 $. Les deux bouchons sont formés de 160 plans scindés en 18 couronnes de pailles longues de $ ???cm $ orientées dans le sens radial (environ 120000 pailles). Ils couvrent le domaine en pseudo-rapidité $ 0.7<|\eta|<2.0 $. La résolution du TRT est de $ 10\mu m $ dans le plan $ R-\phi $, cependant, de par sa conception, la mesure de la coordonnée $ z $ n'est pas possible.
 
-Le TRT a encore une dernière spécificité, il est capable de faire de l'identification de particules grâce à des feuilles diélectriques de polypropylène-polyéthylène qui sont insérées entre les pailles afin de servir de radiateur. Les particules ultra-relativistes qui traversent le diélectrique émettent des photons de rayonnement de transition dans le domaine des rayons X qui viennent s'additionner au signal collecté par les pailles. Théoriquement, pour une gamme d'énergie donnée, il est possible de remonter à la masse de la particule incidente car la quantité de rayonnement de transition dépend directement du facteur de Lorentz $ \beta=\frac{E}{m} $. En pratique, des seuils l'amplitude sur les signaux collectés par les pailles ont été définis. Un \emph{seuil haut} indique une bonne probabilité d'être en présence d'un électron alors qu'un \emph{seuil bas} indique une bonne probabilité d'être en présence d'un pion chargé, voir figure \ref{TRT} (b).
+Le TRT a encore une dernière spécificité, il est permet l'identification de particules grâce à des feuilles diélectriques de polypropylène-polyéthylène qui sont insérées entre les pailles afin de servir de radiateur. Les particules ultra-relativistes qui traversent le diélectrique émettent des photons de rayonnement de transition dans le domaine des rayons X qui viennent s'additionner au signal collecté par les pailles. Théoriquement, pour une gamme d'énergie donnée, il est possible de remonter à la masse de la particule incidente car la quantité de rayonnement de transition dépend directement du facteur de Lorentz $ \beta=\frac{E}{m} $. En pratique, des seuils l'amplitude sur les signaux collectés par les pailles ont été définis. Un \emph{seuil haut} indique une bonne probabilité d'être en présence d'un électron alors qu'un \emph{seuil bas} indique une bonne probabilité d'être en présence d'un pion chargé, voir figure \ref{TRT} (b).
 
 \begin{figure}[!ht]
   \begin{center}
@@ -231,7 +231,7 @@ Le TRT a encore une dernière spécificité, il est capable de faire de l'identific
 
 \subsection{Matériel dans le trajectographe interne}
 
-L'efficacité de reconstruction des traces à faibles impulsion transverse est limitée par la présence de matière. De plus, une densité trop importante est préjudiciable à la reconstruction et à l'identification des électrons et des photons en initiant des gerbes électromagnétiques prématurées, par Bremsstrahlung $ e^\pm\to e^\pm\gamma $ et par production de paires $ \gamma\to e^+e^-$, avant les calorimètres. La figure \ref{materiel} montre la distribution de la quantité de matériel à la sortie de l'enveloppe du trajectographe interne exprimé en longueur de radiation $ X_0 $ en fonction de la pseudo-rapidité $ |\eta| $. Il apparait que les électrons peuvent perdre jusqu'à $ 50\% $ de leur énergie par Bremsstrahlung dans le trajectographe et que $ 40\% $ des photons se convertissent en paires d'électrons dans le trajectographe. Les algorithmes de reconstruction doivent tenir compte de ces phénomènes.
+L'efficacité de reconstruction des traces à faibles impulsion transverse est limitée par la présence de matière. De plus, une densité trop importante est préjudiciable à la reconstruction et à l'identification des électrons et des photons en initiant des gerbes électromagnétiques prématurées, par Bremsstrahlung $ e^\pm\to e^\pm\gamma $ et par production de paires $ \gamma\to e^+e^-$, avant les calorimètres. La figure \ref{materiel} montre la distribution de la quantité de matière à la sortie de l'enveloppe du trajectographe interne, exprimé en longueur de radiation $ X_0 $, en fonction de la pseudo-rapidité $ |\eta| $. Il apparait que les électrons peuvent perdre jusqu'à $ 50\% $ de leur énergie par Bremsstrahlung dans le trajectographe et que $ 40\% $ des photons se convertissent en paires d'électrons dans le trajectographe. Les algorithmes de reconstruction doivent tenir compte de ces phénomènes.
 
 \begin{figure}[!ht]
   \begin{center}
@@ -240,13 +240,90 @@ L'efficacité de reconstruction des traces à faibles impulsion transverse est lim
   \caption{\label{materiel}Distribution de la quantité de matériel à la sortie de l'enveloppe du trajectographe interne exprimé en longueur de radiation $ X_0 $ en fonction de la pseudo-rapidité $ |\eta| $.}
 \end{figure}
 
+\subsection{Alignement du trajectographe interne}
+
+Le alignement des sous-détecteurs du trajectographe interne est une condition nécessaire pour garantir une bonne mesure de l'impulsion transverse des particules. Dans le le cahier des charges du détecteur Atlas, l'alignement entre les pixels et le SCT doit être respectivement meilleur que $ 7\mu m $, $ 12\mu m $ et $ \sim10\mu m $ dans toutes les directions. L'alignement avec le TRT doit être meilleur que quelques dizaines de $ \mu m $. Trois campagnes d'alignement ont eu lieu en 2008, avec des rayons cosmiques et en 2009 et 2010, avec les premières données. Il est possible d'estimer la qualité de l'alignement à l'aide des distributions du résidus de l'extrapolation des traces en utilisant les données et une simulation Monte-Carlo d'événements de biais minimum avec un alignement parfait.
+
+Les figures \ref{align12}, \ref{align34} et \ref{align56} montrent respectivement les distributions, obtenues au printemps 2010 et à l'automne 2010, pour la coordonnée de précision $ x $ pour les pixels, pour le SCT et pour le TRT. Seules les trace ayant une impulsion transverse $ p_T>20\GeV $ sont conservées afin que seuls la résolution intrinsèque et le mésalignement contribuent au résidus. Le tableau \ref{align2} montre la largeur des distributions du résidus de l'extrapolation des traces pour la coordonnée de précision $ x $ ainsi que la différence quadratique $ \sigma_\textrm{diff}=\sqrt{\sigma^2_\textrm{printemps}-\sigma^2_\textrm{automne}} $ entre les valeurs du printemps 2010 et les valeurs de l'automne 2010. Ces résultats sont en accord raisonnable avec les valeurs attendues pour un alignement parfait, soit encore, $ 8\mu m $ pour les pixels, $ 24\mu m $ pour le SCT et $ 122\mu m $ pour le TRT.
+
+\begin{figure}[!p]
+  \begin{center}
+
+  \begin{tabular}{ccc}
+    \includegraphics[height=5.0cm, keepaspectratio]{phd_atlas/align1}
+    &&
+    \includegraphics[height=5.0cm, keepaspectratio]{phd_atlas/align2}
+    \\
+    (a) && (b)
+  \end{tabular}
+
+  \end{center}
+  \caption{\label{align12}Distribution du résidus de l'extrapolation des traces pour la coordonnée de précision $ x $ pour le tonneau des pixels (a) et pour les bouchons des pixels (b).}
+\end{figure}
+
+\begin{figure}[!p]
+  \begin{center}
+
+  \begin{tabular}{ccc}
+    \includegraphics[height=5.0cm, keepaspectratio]{phd_atlas/align3}
+    &&
+    \includegraphics[height=5.0cm, keepaspectratio]{phd_atlas/align4}
+    \\
+    (a) && (b)
+  \end{tabular}
+
+  \end{center}
+  \caption{\label{align34}Distribution du résidus de l'extrapolation des traces pour la coordonnée de précision $ x $ pour le tonneau du SCT (a) et pour les bouchons du SCT (b).}
+\end{figure}
+
+\begin{figure}[!p]
+  \begin{center}
+
+  \begin{tabular}{ccc}
+    \includegraphics[height=5.0cm, keepaspectratio]{phd_atlas/align5}
+    &&
+    \includegraphics[height=5.0cm, keepaspectratio]{phd_atlas/align6}
+    \\
+    (a) && (b)
+  \end{tabular}
+
+  \end{center}
+  \caption{\label{align56}Distribution du résidus de l'extrapolation des traces pour la coordonnée de précision $ x $ pour le tonneau du TRT (a) et pour les bouchons du TRT (b).}
+\end{figure}
+
+\begin{table}[!t]
+  \begin{center}
+
+    \begin{tabular}{|c|c|c|c|}
+      \hline
+      \hline
+        Détecteur & $ \sigma_\textrm{printemps} $ & $ \sigma_\textrm{automne} $ & $ \sigma_\textrm{diff} $ \\
+                  & $ \hspace{0.5cm}[\mu m]\hspace{0.5cm} $ & $ \hspace{0.5cm}[\mu m]\hspace{0.5cm} $ & $ \hspace{0.5cm}[\mu m]\hspace{0.5cm} $ \\
+      \hline
+        Pixel tonneau & 16 & 9 & 13 \\
+        Pixel bouchons & 17 & 15 & 8 \\
+      \hline
+        SCT tonneau & 28 & 25 & 13 \\
+        SCT bouchons & 37 & 30 & 22 \\
+      \hline
+        TRT tonneau & 124 & 118 & 38 \\
+        TRT bouchons & 148 & 132 & 67 \\
+      \hline
+    \end{tabular}
+
+  \end{center}
+  \caption{\label{align2}Largeur des distributions du résidus de l'extrapolation des traces pour la coordonnée de précision $ x $ ainsi que la différence quadratique $ \sigma_\textrm{diff}=\sqrt{\sigma^2_\textrm{printemps}-\sigma^2_\textrm{automne}} $ entre les valeurs du printemps 2010 et les valeurs de l'automne 2010.}
+\end{table}
+
 \section{La calorimétrie}
 
-Le détecteur Atlas est équipé d'un important système calorimétrique dont objectif est de mesurer précisément l'énergie des particules électromagnétiques (électrons, photons, etc\dots) et hadroniques (baryons, mésons et jets). Il doit permettre l'identification des particules ainsi que la mesure de l'énergie transverse manquante $ E_{T_\textrm{miss}} $ qui est centrale dans l'étude des processus électrofaibles avec bosons W et neutrinos ou dans l'étude des processus faisant intervenir la supersymétrie car la conservation de la R-parité interdit l'interaction entre une particule et une super-particule.
+Le détecteur Atlas est équipé d'un important système calorimétrique dont objectif est de mesurer précisément l'énergie des particules électromagnétiques (électrons, photons, etc\dots) et hadroniques (baryons, mésons et jets). Il doit permettre l'identification des particules, essentiellement les électrons et les photons, ainsi que la mesure de l'énergie transverse manquante $ \slashed E_T $ qui est centrale dans l'étude des processus électrofaibles avec bosons $ W\pm $ et neutrinos ou dans l'étude des processus faisant intervenir la supersymétrie car la R-parité, $ +1 $ pour les particules et $ -1 $ pour les superparticules, est un nombre quantique conservé.
 
-Le système calorimétrique est placé juste après le trajectographe interne. Il dispose d'une importante couverture angulaire, $ 0<\phi<2\pi $ pour l'angle azimutal et $ |\eta|<4.0 $ pour la pseudo-rapidité ainsi qu'une bonne résolution en énergie (cf. tableau \ref{performances}) dans le domaine d'énergie $ 20\GeV<E<100\GeV $. Il peut reconstruire la direction d'origine des photons.
+Le système calorimétrique est placé juste après le trajectographe interne. Il dispose d'une importante couverture angulaire, $ 0<\phi<2\pi $ pour l'angle azimutal et $ |\eta|<4.0 $ pour la pseudo-rapidité ainsi qu'une bonne résolution en énergie et une bonne résolution angulaire (cf. tableau \ref{performances}) dans le domaine d'énergie $ 20\GeV<E<100\GeV $. Il peut reconstruire la direction d'origine des photons que qui est particulièrement important pour la recherche du boson de Higgs dans le canal $ H\to\gamma\gamma $.
 
 Le principe élémentaire d'un calorimètre consiste à fournir un milieu très dense à l'intérieur duquel les particules, au delà de quelques centaines de $ \MeV $, subissent successivement le Bremsstrahlung $ e^\pm\to e^\pm\gamma $ et la production de paires d'électrons $ \gamma\to e^+e^-$. Il \og suffit \fg\ alors de mesurer la quantité d'énergie déposée afin de remontrer à l'énergie des particules incidentes. Le calorimètre électromagnétique (resp. hadronique) est un calorimètre à échantillonnage constitué de couches d'absorbeurs (acier et plomb (resp. fer)) et de couches actives (argon liquide et électrodes (resp. tuiles scintillantes)). Le système calorimétrique global est dit \emph{non compensant} car la réponse électromagnétique et la réponse hadronique sont différentes. Cette particularité est prise en compte au niveau de la reconstruction des particules.
+
+\newpage
 
 La figure \ref{calo1} montre une représentation générale en image de synthèses du système calorimétrique du détecteur Atlas où nous pouvons distinguer :
 \begin{itemize}
@@ -299,79 +376,14 @@ Le chapitre 5 sera dédié à la présentation des éléments fondamentaux de la calor
 
 Le calorimètre électromagnétique du détecteur Atlas a été étudié pout mesurer l'énergie des électrons et des photons. Il est particulièrement optimisé  pour la recherche du boson de Higgs dans les canaux $ H\to\gamma\gamma $ et $ H\to ZZ^{(*)}\to4l $ et la recherche de nouveaux bosons de jauge lourds génériquement appelés $ W' $ et $ Z' $.
 
-Sa particularité se situe au niveau de la forme de ses électrodes, elles sont pliées en accordéon afin d'assurer une herméticité parfaite. De plus, elles sont subdivisées en trois compartiments, le premier pour la détection des débuts de gerbes avec sa fine segmentation en $ \eta-\phi $, le second pour la détection des corps de gerbes et le troisième pour la détection de fins de gerbes et pour la détermination des fuites vers le calorimètre hadronique avec sa segmentation plus grossière. Les figures \ref{electrodes} montre un fragment du calorimètre électromagnétique à argon liquide.
+Sa particularité se situe au niveau de la forme de ses électrodes, elles sont pliées en accordéon afin d'assurer une herméticité parfaite. De plus, elles sont subdivisées en trois compartiments, le premier pour la détection des débuts de gerbes avec sa fine segmentation en $ \eta-\phi $, le second pour la détection des corps de gerbes et le troisième pour la détection de fins de gerbes et pour la détermination des fuites vers le calorimètre hadronique avec sa segmentation plus grossière. Les figures \ref{electrodes} montre un fragment du calorimètre électromagnétique à argon liquide avec les absorbeurs et les électrodes.
 
 \begin{figure}[!ht]
   \begin{center}
     \includegraphics[height=5.5cm, keepaspectratio]{phd_atlas/electrodes}
   \end{center}
-  \caption{\label{electrodes}Photographie d'un fragment du calorimètre électromagnétique à argon liquide du détecteur Atlas.}
+  \caption{\label{electrodes}Photographie d'un fragment du calorimètre électromagnétique à argon liquide avec les absorbeurs et les électrodes.}
 \end{figure}
-
-Le calorimètre électromagnétique du détecteur Atlas est composé d'une partie tonneau et de deux parties bouchons aux extrémités. Ces dernières sont constituées d'une grande roue de précision et d'une petite roue. De même que les calorimètres vers l'avant (voir le chapitre précédent) et les bouchons du calorimètre hadronique, il s'agit de calorimètres à échantillonnage où le milieu actif est constitué d'électrodes de cuivre immergées dans de l'argon liquide avec un milieu absorbant est formé de plaques métalliques de plomb. Il s'agit d'une technologie robuste, déjà utilisée par les expériences SLD ou D$ \varnothing $, qui est bien maitrisée et qui dispose d'une bonne tenue dans le temps. L'abordeur ainsi que les électrodes sont pliées en accordéon. Cette particularité inédite confère au calorimètre électromagnétique du détecteur Atlas une herméticité parfaite.
-
-La partie tonneau du calorimètre électromagnétique pocède une couverture angulaire $ |\eta|<1.475 $ pour la pseudo-rapidité et $ 0<|\phi|<2\pi $ pour l'angle azimutal. La partie bouchons du calorimètre électromagnétique pocède une couverture angulaire $ 1.37<|\eta|<2.5 $ (resp. $ 2.5<|\eta|<3.2 $) pour la pseudo-rapidité dans la grande roue (resp. pour la petite roue). La région $ 1.37<|\eta|<1.52 $, qui est appelée \emph{crack}, est une région dédiée aux services.
-
-\begin{figure}[!ht]
-  \begin{center}
-    \includegraphics[height=9.25cm, keepaspectratio]{phd_calo/electrodes}
-  \end{center}
-  \caption{Représentation schématique des électrodes du calorimètre électromagnétique du détecteur Atlas. Partie tonneau (en haut), partie bouchon grande roue (en bas à droite) et petite roue (en bas à gauche). Les trois compartiments sont clairement visibles.}
-\end{figure}
-
-La figure \ref{} rappelle la résolution en énergie ainsi que la résolution angulaire des calorimètres du détecteur Atlas. A titre de comparaison, nous donnons la résolution en énergie du calorimètre homogène à cristaux de tungstate de plomb du détecteur CMS : $ \frac{\sigma(E)}{E}=\frac{3\%}{\sqrt{E}}\oplus0.6\% $. Celle-ci est, par conception, légèrement meilleure que pour le détecteur Atlas, néanmoins, grâce à sa fine segmentation et son détecteur de pieds de gerbes, le calorimètres électromagnétique du détecteur Atlas dispose d'une très bonne résolution angulaire. Il est tout particulièrement adapté à la recherche du boson de Higgs dans les canaux $ H\to\gamma\gamma $ et $ H\to ZZ^{(*)}\to4l $ où encore à la recherche d'hypothétiques bosons lourds tels que les $ W' $ ou les $ Z' $ qui se désintègrent en leptons de haute énergie.
-
-\begin{table}[!ht]
-  \begin{center}
-
-    \begin{tabular}{|l|l|c|c|}
-      \hline
-      \hline
-        \small Sous-détecteur & \small Résolution en énergie & \small Résolution angulaire & \small Non linéarité\\
-      \hline
-        \small Calo. électromagnétique & $ \frac{\sigma_E}{E}=\frac{10\%}{\sqrt{E}}\oplus0.7\% $ & $ \frac{50mrad}{\sqrt{E}} $ & $ <0.5\% $\\
-      \hline
-        \small Calo. hadronique & $ \frac{\sigma_E}{E}=\frac{50\%}{\sqrt{E}}\oplus3\% $ (tonneau) & & $ <2.0\% $\\
-                                      & $ \frac{\sigma_E}{E}=\frac{100\%}{\sqrt{E}}\oplus10\% $ (bouchons) & & \\
-      \hline
-
-    \end{tabular}
-
-  \end{center}
-  \caption{Performances générales du détecteur Atlas où l'énergie $ E $ et l'impulsion transverse $ p_T $ sont exprimés en $ \GeV $. Ces résultats ont été validés lors des faisceaux tests.}
-\end{table}
-
-Le calorimètre électromagnétique du détecteur Atlas est partagé en trois compartiments S1, S2 et S3. Ils sont disposés de l'intérieur vers l'extérieur et possèdent une granularité en pseudo-rapidité et en angle azimutal décroissante.
-
-\paragraph{Le premier compartiment, S1}, est très finement segmenté. La taille typique des cellules est $\Delta\eta\times\Delta\phi=0.003\times0.018 $ d'où son surnom de \og \emph{strips} \fg\,en anglais, c'est-à-dire  \og bandes \fg. Il permet de mesurer précisément la position des objets électromagnétiques ce qui s'avère utile pour l'identification des photons ainsi que pour la réjection des $ \pi^0 $ qui se désintègrent en paires de photons angulairement très proches.
-
-\paragraph{Le second compartiment, S2}, est huit fois moins segmenté suivant $ \eta $ que le compartiment S1. La taille typique des cellules est $\Delta\eta\times\Delta\phi=0.025\times0.025 $. Il permet de mesurer les dépôt d'énergie du corps des gerbes électromagnétiques.
-
-\paragraph{Le troisième compartiment, S3}, est deux fois moins segmenté suivant $ \eta $ que le compartiment S2. La taille typique des cellules est $\Delta\eta\times\Delta\phi=0.05\times0.025 $. Il permet de mesurer les dépôt d'énergie des fin de gerbes électromagnétiques et permet également de caractériser la fuite vers le calorimètre hadronique.\\
-
-Précisons également la présence d'un pré-échantillonneur, le PS, dont le but est de corriger l'énergie perdue avant le calorimètre. Sa couverture angulaire est de $ |\eta|<1.8 $.
-
-\begin{figure}[!ht]
-  \begin{center}
-    \includegraphics[height=7.5cm, keepaspectratio]{phd_calo/calo1}
-  \end{center}
-  \caption{Représentation schématique des trois compartiments et de la segmentation en pseudo-rapidité et en angle azimutal du calorimètre électromagnétique du détecteur Atlas.}
-\end{figure}
-
-Les performances du calorimètre électromagnétique ont été mesurées à l'aide de faisceaux de test, à l'aide de données cosmiques et à l'aide des premières données. Écrivons des façon générique la résolution en énergie sous la forme :
-\begin{equation}
-  \frac{\sigma(E)}{E}=\frac{a}{\sqrt{E}}\oplus c
-\end{equation}
-
-où $ a $ est le terme d'échantillonnage et $ b $ est le terme constant qui domine à haute énergie.\\
-
-Les études réalisées sur faisceaux de test fournissent $ a\approx10\%\GeV^\frac{1}{2} $ et $ c\approx0.2\% $ pour le tonneau et $ a\approx11,4\%\GeV^\frac{1}{2} $ et $ c\approx0.35\% $ pour les bouchons. Ces résultats sont en accord avec les spécifications du détecteur Atlas.
-
-La mesure de la masse invariante de paires d'électrons issus de bosons $ Z $ avec les données 2010 fournissent $ c\approx1.2\pm0.1\textrm{(stat.)}\pm0.3\textrm{(syst.)}\% $ pour le tonneau, $ c\approx1.8\pm0.4\textrm{(stat.)}\pm0.2\textrm{(syst.)}\% $ pour la grande roue des bouchons et $ c\approx3.3\pm0.2\textrm{(stat.)}\pm1.0\textrm{(syst.)}\% $ pour la petite roue des bouchons. Comme l'inter-calibration des régions en $ \eta $ et en $ \phi $ n'était pas possible, à cause de la statistique, les nombres sont légèrement supérieurs à ceux attendus.
-
-La linéarité de la réponse a été mesurée sur un module avec des faisceaux de test. La non-linéarité est inférieure à $ 1\% $ sur la gamme d'énergie qui s'étend de $ 15\GeV $ à $ 180\GeV $. Elle fut également mesurée avec des faisceaux de test combinés en ajoutant de la matière afin de reproduire les conditions réelles. Elle est inférieure à $ 1\% $ sur la gamme d'énergie qui s'étend de $ 15\GeV $ à $ 180\GeV $. Finalement, la non-linéarité est inférieure à $ 0.5\% $ (resp. inférieure à $ 2\% $) sur la gamme d'énergie qui s'étend de $ 20\GeV $ à $ 180\GeV $ pour le tonneau (resp. sur la gamme d'énergie supérieure à $ 40\GeV $ pour les bouchons).
-
-\newpage
 
 \subsection{Le calorimètre hadronique}
 
@@ -493,7 +505,7 @@ Précisons également que 1800 sondes à effet Hall, placées sur les MDT et le cryo
 
 \section{Le système de déclenchement}
 
-Au fonctionnement nominal, au niveau du détecteur Atlas, le LHC produira des collisions toutes les $ 25ns $ ($ 50ns $ actuellement en 2011) soit une fréquence de croisement de $ 40MHz $ ($ 20MHz $ actuellement en 2011). La quantité de données brut nécessaire pour représenter un événement est de $ \sim1.6Mbye $ sachant que la bande passant est limitée à $ \sim320\textrm{ Mbyte}/s $, soit encore une fréquence de $ \sim200Hz $. Il est nécessaire d'effectuer une sélection des événements à concerner avec le meilleur taux de réjection possible ($ \sim200000 $). Pour information, avec une luminosité de $\sim10^{33}cm^{-2}s^{-1} $ en 2011, le taux de production du boson $ Z $ est de $ \sim??Hz $ et le taux de production d'un boson de Higgs d'une masse de $ ???\GeV $ est de $ \sim??mHz $.
+Au fonctionnement nominal, au niveau du détecteur Atlas, le LHC produira des collisions toutes les $ 25ns $ ($ 50ns $ actuellement en 2011) soit une fréquence de croisement de $ 40MHz $ ($ 20MHz $ actuellement en 2011). La quantité de données brut nécessaire pour représenter un événement est de $ \sim1.6MBye $ sachant que la bande passant est limitée à $ \sim320\textrm{ Mbyte}/s $, soit encore une fréquence de $ \sim200Hz $. Il est nécessaire d'effectuer une sélection des événements à concerner avec le meilleur taux de réjection possible ($ \sim200000 $). Pour information, avec une luminosité de $\sim10^{33}cm^{-2}s^{-1} $ en 2011, le taux de production du boson $ Z $ est de $ \sim??Hz $ et le taux de production d'un boson de Higgs d'une masse de $ ???\GeV $ est de $ \sim??mHz $.
 
 Dans ce but, le détecteur Atlas dispose d'un système de déclenchement sur trois niveaux dont le principe général est exposé sur la figure \ref{trigger}.
 
@@ -664,9 +676,9 @@ Les figures \ref{OTXs} (a) et \ref{OTXs} (b) montrent respectivement la distribu
   \begin{center}
 
   \begin{tabular}{cc}
-    \includegraphics[height=5.0cm, keepaspectratio]{phd_atlas/OTX1}
+    \includegraphics[height=4.6cm, keepaspectratio]{phd_atlas/OTX1}
     &
-    \includegraphics[height=5.0cm, keepaspectratio]{phd_atlas/OTX2}
+    \includegraphics[height=4.6cm, keepaspectratio]{phd_atlas/OTX2}
     \\
     (a) & (b)
   \end{tabular}
@@ -676,6 +688,22 @@ Les figures \ref{OTXs} (a) et \ref{OTXs} (b) montrent respectivement la distribu
 \end{figure}
 
 \section{Programme de physique}
+
+Un large champ d'investigation s'offre au détecteur Atlas. Ses principaux objectifs sont de retrouver et compléter les mesures des paramètres du modèle standard dans le secteur électrofaible, mesurer avec précision la masse du quark top, essayer de découvrir le boson de Higgs et rechercher les signatures de processus physiques au delà du modèle standard (supersymétrie, dimensions supplémentaires, bosons de jauge lourd, 4$ ^\textrm{ième} $ génération de particules, etc\dots).
+
+La figure \ref{ms_preidction2} montre les sections efficaces de production pour différentes particules en fonction de l'énergie dans le centre de masse d'un collisionneur proton-proton. En comparant le Tevatron, avec une énergie dans le centre de masse à $ \sqrt{s}=1.96\TeV $ avec le LHC, avec une énergie dans le centre de masse à $ \sqrt{s}=14\TeV $, le tau de production au LHC est respectivement $ \sim10 $ fois plus important pour les bosons $ W $ et $ Z $, $ \sim60 $ fois plus important pour le boson de Higgs, $ \sim100 $ fois plus important pour le quark top et enfin $ \sim700 $ fois plus important pour les bosons $ W' $ et $ Z' $. Le tableau \ref{ms_preidction1} montre la masse, la section efface de production à $ \sqrt{s}=7\TeV $, le nombre d'événements attendus en 2011 avec $ L=1fb^{-1} $, nombre d'événements au Tevatron avec $ L=10fb^{-1} $ et la luminosité intégrée nécessaire pour observation et/ou exclusion.\\
+
+Les bosons $ W $ et $ Z $ ont été largement étudiés au LEP et au Tevatron. Leur masse $ m_{W^\pm}=80.403(29)\GeV $ (resp. $ m_Z=91.1876(21)\GeV $) est connue avec une précision relative de $ 10^{5}\GeV $ (resp. $ 10^{4}\GeV $). Contrairement à la précision de la masse du $ Z $, la précision de la masse du $ W $ sera améliorée au LHC. Au LHC, les erreurs LEP et Tevatron sont respectivement de $ 33\MeV $ et $ 31\MeV $. Avec une luminosité intégrée de $ 10fb^{-1} $, l'erreur statistique sera inférieure à $ 2\MeV $ et l'erreur systématique devra être connue à mieux que $ 0.02\% $ contre $ 3\% $ au démarrage.\\
+
+Les LHC peut être considérer comme une usine à quarks top. Ils se désintègrent majoritairement via l'interaction faible dans le canal $ t\to Wb $ avant hadronisation. Le détecteur Atlas permet d'étudier la polarisation des bosons $ W $ issus des quarks top ce qui peut révéler la présence de nouvelle physique. A $ \sqrt{s}=14\TeV $, avec une luminosité intégrée de $ 10fb^{-1} $, plusieurs composantes d'hélicité peuvent être étudiées avec une précision de $ 1\% $ à $ 5\% $. A $ \sqrt{s}=7\TeV $, avec une luminosité intégrée de $ 35pb^{-1} $ (données 2010), les composantes d'hélicité ont été étudiées avec une précision de $ 7\% $ Ces résultats, dominée par les erreurs statistiques, sont meilleurs que ceux obtenus auprès du Tevatron avec une luminosité intégrée de $ 5fb^{-1} $. Rappelons également que la masse du boson $ W $ et la masse du quark top interviennent dans les corrections quadratiques à la masse du boson de Higgs.
+
+
+\begin{figure}[!p]
+  \begin{center}
+    \includegraphics[width=0.55\linewidth, keepaspectratio, keepaspectratio]{phd_atlas/xsection}
+  \end{center}
+  \caption{\label{ms_preidction2}Sections efficaces de production pour différentes particules en fonction de l'énergie dans le centre de masse d'un collisionneur proton-proton.}
+\end{figure}
 
 \begin{table}[!p]
   \begin{bigcenter}
@@ -706,16 +734,20 @@ Les figures \ref{OTXs} (a) et \ref{OTXs} (b) montrent respectivement la distribu
 
   \end{bigcenter}
 
-  \caption{Masse, section efficace de production à $ \sqrt{s}=7\TeV $, nombre d'événements attendus fin 2011 ($ L=1\textrm{ fb}^{-1} $), nombre d'événements au Tevatron ($ L=10\textrm{ fb}^{-1} $) et luminosité intégrée nécessaire pour observation et/ou exclusion.}
+  \caption{\label{ms_preidction1}Masse, section efficace de production à $ \sqrt{s}=7\TeV $, nombre d'événements attendus fin 2011 avec $ L=1\textrm{ fb}^{-1} $), nombre d'événements au Tevatron avec $ L=10\textrm{ fb}^{-1} $ et luminosité intégrée nécessaire pour observation et/ou exclusion.}
 \end{table}
 
-\begin{figure}[!p]
+La recherche du boson de Higgs est une thématique majeure pour le détecteur Atlas. Le dernier chapitre est dédié à la recherche du boson de Higgs dans le canal $ H\to ZZ^{*} $.\\
+
+La recherche de la présence de nouveaux phénomènes physiques est une autre thématique majeure pour le détecteur Atlas. La supersymétrie est activement recherchée ou encore l'existence de bosons de jauge lourds sont activement recherchés. La figure \ref{MSSM} montre les limites d'exclusion à $ 95\% $ de niveau de confiance attendues (en bleu) et observée (en rouge) dans le plan $ (m_0,m_\frac{1}{2}) $ pour la recherche de particules supersymétriques avec des jets, de l'énergie transverse manquante, zero lepton ou un lepton pour $ \sqrt{s}=7\TeV $ et $ 165pb^{-1} $ pour le modèle mSUGRA avec les paramètres $ A_0=0 $, $ \tan\beta=10 $ et $ \mu>0 $ où $ m_0 $ est la masses des superparticules de spin entier et $ m_\frac{1}{2} $ la masses des superparticules de spin demi-entier, $ A_0=0 $ la valeur des constantes de couplage trilinéaires à l'échelle d'énergie d'unification $ \lambda\approx2\times10^{16}\GeV $, $ \tan\beta $ les rapport des \emph{vev}. La région du plan $ (m_0,m_\frac{1}{2}) $ exclue par l'expérience Atlas de déjà plus importante que les régions du plan $ (m_0,m_\frac{1}{2}) $ exclues par les expérience LEP et Tevatron.\\\\
+
+\begin{figure}[!h]
   \begin{center}
-    \includegraphics[width=0.55\linewidth, keepaspectratio, keepaspectratio]{phd_atlas/xsection}
+    \includegraphics[height=5.5cm, keepaspectratio]{phd_atlas/MSSM}
   \end{center}
-  \caption{Sections efficaces de production pour différentes particules en fonction de l'énergie dans le centre de masse pour un collisionneur proton-proton.}
+  \caption{\label{MSSM}Limites d'exclusion à $ 95\% $ de niveau de confiance attendues (en bleu) et observée (en rouge) dans le plan $ (m_0,m_\frac{1}{2}) $ pour la recherche de particules supersymétriques avec des jets, de l'énergie transverse manquante, zero lepton ou un lepton pour $ \sqrt{s}=7\TeV $ et $ 165pb^{-1} $ pour le modèle mSUGRA avec les paramètres $ A_0=0 $, $ \tan\beta=3 $ et $ \mu>0 $.}
 \end{figure}
 
 %\section{La chaîne d'analyse}
 
-!!! dire quelques mots rapides !!!
+%!!! dire quelques mots rapides !!!
