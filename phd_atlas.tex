@@ -231,13 +231,13 @@ Le TRT a encore une dernière spécificité, il est permet l'identification de part
 
 \subsection{Matériel dans le trajectographe interne}
 
-L'efficacité de reconstruction des traces à faibles impulsion transverse est limitée par la présence de matière. De plus, une densité trop importante est préjudiciable à la reconstruction et à l'identification des électrons et des photons en initiant des gerbes électromagnétiques prématurées, par Bremsstrahlung $ e^\pm\to e^\pm\gamma $ et par production de paires $ \gamma\to e^+e^-$, avant les calorimètres. La figure \ref{materiel} montre la distribution de la quantité de matière à la sortie de l'enveloppe du trajectographe interne, exprimé en longueur de radiation $ X_0 $, en fonction de la pseudo-rapidité $ |\eta| $. Il apparait que les électrons peuvent perdre jusqu'à $ 50\% $ de leur énergie par Bremsstrahlung dans le trajectographe et que $ 40\% $ des photons se convertissent en paires d'électrons dans le trajectographe. Les algorithmes de reconstruction doivent tenir compte de ces phénomènes.
+L'efficacité de reconstruction des traces à faibles impulsion transverse est limitée par la présence de matière. De plus, une densité trop importante est préjudiciable à la reconstruction et à l'identification des électrons et des photons en initiant des gerbes électromagnétiques prématurées, par Bremsstrahlung $ e^\pm\to e^\pm\gamma $ et par production de paires $ \gamma\to e^+e^-$, avant les calorimètres. La figure \ref{materiel-1} montre la distribution de la quantité de matière à la sortie de l'enveloppe du trajectographe interne, exprimé en longueur de radiation $ X_0 $, en fonction de la pseudo-rapidité $ |\eta| $. Il apparait que les électrons peuvent perdre jusqu'à $ 50\% $ de leur énergie par Bremsstrahlung dans le trajectographe et que $ 40\% $ des photons se convertissent en paires d'électrons dans le trajectographe. Les algorithmes de reconstruction doivent tenir compte de ces phénomènes.
 
 \begin{figure}[!ht]
   \begin{center}
     \includegraphics[height=5.5cm, keepaspectratio]{phd_atlas/materiel-1}
   \end{center}
-  \caption{\label{materiel}Distribution de la quantité de matériel à la sortie de l'enveloppe du trajectographe interne exprimé en longueur de radiation $ X_0 $ en fonction de la pseudo-rapidité $ |\eta| $.}
+  \caption{\label{materiel-1}Distribution de la quantité de matériel à la sortie de l'enveloppe du trajectographe interne exprimé en longueur de radiation $ X_0 $ en fonction de la pseudo-rapidité $ |\eta| $.}
 \end{figure}
 
 \subsection{Alignement du trajectographe interne}
@@ -317,13 +317,13 @@ Les figures \ref{align12}, \ref{align34} et \ref{align56} montrent respectivemen
 
 \section{La calorimétrie}
 
-Le détecteur Atlas est équipé d'un important système calorimétrique dont objectif est de mesurer, avec précision, l'énergie des particules électromagnétiques (électrons, photons, etc\dots) et hadroniques (baryons, mésons et jets). Il doit permettre l'identification des particules, essentiellement les électrons et les photons, ainsi que la mesure de l'énergie transverse manquante $ \slashed E_T $ qui est centrale dans l'étude des processus électrofaibles avec bosons $ W\pm $ et neutrinos ou dans l'étude des processus faisant intervenir la supersymétrie car la R-parité, $ +1 $ pour les particules et $ -1 $ pour les superparticules, est un nombre quantique conservé.
+Le détecteur Atlas est équipé d'un important système calorimétrique dont objectif est de mesurer, avec précision, l'énergie des particules électromagnétiques (électrons, photons, etc\dots) et hadroniques (baryons, mésons et jets, etc\dots). Il doit permettre l'identification des particules ainsi que la mesure de l'énergie transverse manquante $ \slashed E_T $ qui est centrale dans l'étude des processus électrofaibles avec bosons $ W\pm $ et neutrinos ou dans l'étude des processus faisant intervenir la supersymétrie car la R-parité, $ +1 $ pour les particules et $ -1 $ pour les superparticules, est un nombre quantique conservé.
 
-Le système calorimétrique est placé juste après le trajectographe interne. Il dispose d'une importante couverture angulaire, $ 0<\phi<2\pi $ pour l'angle azimutal et $ |\eta|<4.0 $ pour la pseudo-rapidité ainsi qu'une bonne résolution en énergie et une bonne résolution angulaire (cf. tableau \ref{performances}) dans le domaine d'énergie $ 20\GeV<E<100\GeV $. Il peut reconstruire la direction d'origine des photons que qui est particulièrement important pour la recherche du boson de Higgs dans le canal $ H\to\gamma\gamma $.
+Le système calorimétrique est placé juste après le trajectographe interne. Il dispose d'une importante couverture angulaire, $ 0<\phi<2\pi $ pour l'angle azimutal et $ |\eta|<4.0 $ pour la pseudo-rapidité ainsi qu'une bonne résolution en énergie et une bonne résolution angulaire (cf. tableau \ref{performances}) dans le domaine d'énergie $ 20<E[\GeV]<100 $. Il peut reconstruire la direction d'origine des photons ce qui est particulièrement important pour la recherche du boson de Higgs dans le canal $ H\to\gamma\gamma $.
 
-Le principe élémentaire d'un calorimètre consiste à fournir un milieu très dense à l'intérieur duquel les particules, au delà de quelques centaines de $ \MeV $, subissent successivement le Bremsstrahlung $ e^\pm\to e^\pm\gamma $ et la production de paires d'électrons $ \gamma\to e^+e^-$. Il \og suffit \fg\ alors de mesurer la quantité d'énergie déposée afin de remontrer à l'énergie des particules incidentes. Le calorimètre électromagnétique (resp. hadronique) est un calorimètre à échantillonnage constitué de couches d'absorbeurs (acier et plomb (resp. fer)) et de couches actives (argon liquide et électrodes (resp. tuiles scintillantes)). Le système calorimétrique global est dit \emph{non compensant} car la réponse électromagnétique et la réponse hadronique sont différentes. Cette particularité est prise en compte au niveau de la reconstruction des particules.
+Le principe élémentaire d'un calorimètre consiste à fournir un milieu très dense à l'intérieur duquel les particules, au delà de quelques centaines de $ \MeV $, subissent successivement le Bremsstrahlung $ e^\pm\to e^\pm\gamma $ et la production de paires d'électrons $ \gamma\to e^+e^-$. Il \og suffit \fg\ alors de mesurer la quantité d'énergie déposée afin de remontrer à l'énergie des particules incidentes. Le calorimètre électromagnétique (resp. hadronique) est un calorimètre à échantillonnage constitué de couches d'absorbeurs (acier et plomb (resp. fer)) et de couches actives (argon liquide et électrodes (resp. tuiles scintillantes)). Le système calorimétrique global est dit \emph{non compensant} car la réponse électromagnétique et la réponse hadronique sont différentes. Cette particularité est prise en compte au niveau de la reconstruction des particules.\\
 
-\newpage
+\vspace{-0.25cm}
 
 La figure \ref{calo1} montre une représentation générale en image de synthèses du système calorimétrique du détecteur Atlas où nous pouvons distinguer :
 \begin{itemize}
@@ -344,6 +344,8 @@ La figure \ref{calo1} montre une représentation générale en image de synthèses d
   \end{itemize}
 \end{itemize}
 
+\newpage
+
 \begin{figure}[!ht]
   \begin{center}
     \includegraphics[height=10.25cm, keepaspectratio]{phd_atlas/calo}
@@ -353,47 +355,46 @@ La figure \ref{calo1} montre une représentation générale en image de synthèses d
 
 La figure \ref{calo2} (a) montre une représentation générale en image de synthèses du système calorimétrique bouchon du détecteur Atlas. Le tonneaux et les bouchons des calorimètres à argon liquide sont contenus dans des cryostats distincts maintenus à la température de $ 88.5K $.
 
-Les dimensions en épaisseur des différents calorimètres ont été sélectionnées de sorte que les gerbes électromagnétiques et hadroniques soient entièrement contenues. La figure \ref{calo2} (b) montre la distribution de la quantité de matière, en unité de longueur d'interaction\footnote{La longueur de radiation $ X_0 $ représente la longueur de matière nécessaire pour une perte d'énergie relative d'environ $ 63\% $ de l'énergie de l'électron.}, en fonction de la pseudo-rapidité $ \eta $ pour les différents sous-systèmes calorimétriques.
+Le rayon et la densité des différents calorimètres ont été sélectionnées de sorte que les gerbes électromagnétiques et hadroniques soient entièrement contenues. La figure \ref{materiel-2} montre la distribution de la quantité de matière, en unité de longueur d'interaction\footnote{La longueur de radiation $ X_0 $ représente la longueur de matière nécessaire pour une perte d'énergie relative d'environ $ 63\% $ de l'énergie de l'électron.}, en fonction de la pseudo-rapidité $ \eta $ pour les différents sous-systèmes calorimétriques.
 
-\begin{figure}[!ht]
+\begin{figure}[!p]
   \begin{center}
-
-  \begin{tabular}{cc}
-    \includegraphics[height=5.5cm, keepaspectratio]{phd_atlas/bouchon}
-    &
-    \includegraphics[height=5.5cm, keepaspectratio]{phd_atlas/materiel-2}
-    \\
-    (a) & (b)
-  \end{tabular}
-
+    \includegraphics[height=8.0cm, keepaspectratio]{phd_atlas/bouchon}
   \end{center}
-  \caption{\label{calo2}Représentation générale en image de synthèses du système calorimétrique bouchon du détecteur Atlas (a). Distribution de la quantité de matière en fonction de la pseudo-rapidité $ \eta $ pour les principaux sous-systèmes calorimétriques (b).}
+  \caption{\label{calo2}Représentation générale en image de synthèses du système calorimétrique bouchon du détecteur Atlas.}
+\end{figure}
+
+\begin{figure}[!p]
+  \begin{center}
+    \includegraphics[height=5.5cm, keepaspectratio]{phd_atlas/materiel-2}
+  \end{center}
+  \caption{\label{materiel-2}Distribution de la quantité de matière en fonction de la pseudo-rapidité $ \eta $ pour les principaux sous-systèmes calorimétriques.}
 \end{figure}
 
 \subsection{Le calorimètre électromagnétique}
 
-Le chapitre 5 sera dédié à la présentation des éléments fondamentaux de la calorimétrie ainsi qu'à la présentation détaillée du calorimètre électromagnétique à argon liquide en insistant sur sa géométrie, sur ses performances et sur son système de calibration électronique.
+Le chapitre 5 sera dédié à la présentation des éléments fondamentaux de la calorimétrie ainsi qu'à la mise en \oe uvre du calorimètre électromagnétique à argon liquide en insistant sur sa géométrie, sur ses performances et sur son système de calibration électronique.
 
-Le calorimètre électromagnétique du détecteur Atlas a été étudié pout mesurer l'énergie des électrons et des photons. Il est particulièrement optimisé  pour la recherche du boson de Higgs dans les canaux $ H\to\gamma\gamma $ et $ H\to ZZ^{(*)}\to4l $ et la recherche de nouveaux bosons de jauge lourds génériquement appelés $ W' $ et $ Z' $.
+Le calorimètre électromagnétique du détecteur Atlas a été étudié pour mesurer l'énergie des électrons et des photons. Il est particulièrement optimisé  pour la recherche du boson de Higgs dans les canaux $ H\to\gamma\gamma $ et $ H\to ZZ^{(*)}\to4l $ et la recherche de nouveaux bosons de jauge lourds génériquement appelés $ W' $ et $ Z' $.
 
-Sa particularité se situe au niveau de la forme de ses électrodes, elles sont pliées en accordéon afin d'assurer une herméticité parfaite. De plus, elles sont subdivisées en trois compartiments, le premier pour la détection des débuts de gerbes avec sa fine segmentation en $ \eta-\phi $, le second pour la détection des corps de gerbes et le troisième pour la détection de fins de gerbes et pour la détermination des fuites vers le calorimètre hadronique avec sa segmentation plus grossière. Les figures \ref{electrodes} montre un fragment du calorimètre électromagnétique à argon liquide avec les absorbeurs et les électrodes.
+Sa particularité se situe au niveau de la forme de ses électrodes, elles sont pliées en accordéon afin d'assurer une herméticité parfaite. De plus, elles sont subdivisées en trois compartiments, le premier pour la détection des débuts de gerbes avec sa fine segmentation en $ \eta-\phi $, le second pour la détection des corps de gerbes et le troisième pour la détection des fins de gerbes et pour la détermination des fuites vers le calorimètre hadronique avec sa segmentation plus grossière. Les figures \ref{electrodes} montre un fragment du calorimètre électromagnétique à argon liquide avec les absorbeurs et les électrodes.
 
-\begin{figure}[!ht]
+\begin{figure}[!p]
   \begin{center}
-    \includegraphics[height=5.5cm, keepaspectratio]{phd_atlas/electrodes}
+    \hspace{0.5cm}\includegraphics[height=4.5cm, keepaspectratio]{phd_atlas/electrodes}
   \end{center}
   \caption{\label{electrodes}Photographie d'un fragment du calorimètre électromagnétique à argon liquide avec les absorbeurs et les électrodes.}
 \end{figure}
 
 \subsection{Le calorimètre hadronique}
 
-Avec une épaisseur de dix longueurs d'interaction, voir figure \ref{calo2} (b), le calorimètre hadronique est conçu pour absorber l'immense majorité des hadrons et limité ainsi le bruit dans le spectromètre à muons. Deux principales techniques ont été mises en \oe uvre pour la réalisation du calorimètre hadronique.
+Avec une épaisseur de dix longueurs d'interaction, voir figure \ref{materiel-2}, le calorimètre hadronique est conçu pour absorber l'immense majorité des hadrons et limité ainsi le bruit dans le spectromètre à muons. Deux principales techniques ont été mises en \oe uvre pour la réalisation du calorimètre hadronique.
 
 \paragraph{Dans le région $ \eta<1.7 $,} le tonneau du calorimètre hadronique est constitué d'une alternance de plaques d'acier de $ 14mm $ et de tuiles scintillantes en polystyrène dopé de 3mm. Celles-ci émettent, par désexcitation moléculaire, un rayonnement ultraviolet qui est collecté par des fibres optiques, décalé vers le rouge puis envoyé vers des photomultiplicateurs situés à l'arrière du sous-détecteur. Ce calorimètre est segmenté longitudinalement en trois compartiments et les fibres optiques sont groupés de façon quasi projective suivant $ \eta $, voir figures \ref{caloh} (a) et \ref{caloh} (b). La granularité des cellules de lecture est de $ \Delta\eta\times\Delta\phi=0.1\times0.1 $ pour les deux premiers compartiments et de $ \Delta\eta\times\Delta\phi=0.2\times0.1 $ pour le troisième compartiment ce qui représente au total 4672 canaux de lecture.
 
 \paragraph{Dans le région $ 1.5<|\eta|<3.2 $,} les deux bouchons utilisent une technique similaire à celle du calorimètre électronique. En effet, les radiations sont trop importantes pour permettre l'utilisation de tuiles scintillantes. Le milieu absorbant est constitué de plaques de cuivre en alternance avec le milieu actif constitué d'argon liquide et d'électrodes. Ces calorimètres sont situés dans les mêmes cryostats que les calorimètres électromagnétiques bouchon. La granularité des cellules de lecture est de $ \Delta\eta\times\Delta\phi=0.1\times0.1 $ pour $ 1.5<|\eta|<2.5 $ et de $ \Delta\eta\times\Delta\phi=0.2\times0.2 $ pour $ 2.5<|\eta|<3.2 $ ce qui représente au total 5632 canaux de lecture.\\
 
-La résolution en énergie a été validée sous faisceaux tests, elle est de $ \sigma/E=50\%/\sqrt{E[\GeV]}$ $\oplus$ $3\% $, voir tableau \ref{performances}. Une non linéarité de $ ???\% $ est également observée. Actuellement, une précision de l'ordre de $ 1\% $ est atteinte sur la reconstruction de l'énergie des jets.
+La résolution en énergie a été validée sous faisceaux de test : $ \sigma/E=50\%/\sqrt{E[\GeV]}$ $\oplus$ $3\% $, voir tableau \ref{performances}. Une non linéarité de $ ???\% $ est également observée. Actuellement, une précision de l'ordre de $ 1\% $ est atteinte sur la reconstruction de l'énergie des jets.
 
 Au démarrage du LHC, pour le calorimètre à tuiles, 244 modules sur les 246 présents étaient fonctionnels pour la physique. Pour le calorimètre à argon liquide, $ 15\% $ des cellules étaient affectées pas une alimentation à basse tension défectueuse. C'est problèmes on été résolus lors du premier arrêt technique du LHC.\\\\
 
