@@ -1,4 +1,4 @@
-\chapter{Mise en \oe uvre du calorimètre électromagnétique à argon liquide}
+\chapter{Mise en \oe uvre du calorimètre électromagnétique à argon liquide du détecteur Atlas}
 
 Dans ce chapitre, nous rappellerons les notions élémentaires de calorimétrie avant de décrire les calorimètres à argon liquide, tonneau et bouchons, du détecteur Atlas. Nous discutons ensuite de la calibration électronique de ces sous-détecteurs dans laquelle j'ai été impliqué.
 
@@ -10,34 +10,34 @@ Le principe élémentaire d'un calorimètre consiste à fournir un milieu très dense
 
 \subsection{Interaction électrons/photons et matière}
 
-La façon dont interagissent les particules chargées et la matière dépend de l'échelle d'énergie. La figure \ref{interpb} montre la fraction d'énergie perdue par longueur de radiation en fonction de l'énergie. L'ionisation, la diffusion Compton et l'effet photoélectrique dominent à basse énergie alors que l'émission de de photons de freinage (Bremsstrahlung) domine à partir d'une énergie de quelques $ \MeV $. Auprès du LHC, les électrons ont une gamme d'énergie transverse qui s'étend, en moyenne, de quelques $ \GeV $ jusqu'au $ \TeV $. Les deux phénomènes dominants sont donc l'émission de photons de freinage et la production de pairs électron/positron.\\
+La façon dont interagissent les particules chargées et la matière dépend de l'échelle d'énergie. La figure \ref{interpb} montre la distribution de la fraction d'énergie perdue par longueur de radiation en fonction de l'énergie. L'ionisation, la diffusion Compton et l'effet photoélectrique dominent à basse énergie alors que l'émission de photons de freinage (Bremsstrahlung) domine à partir d'une énergie de quelques $ \MeV $. Auprès du LHC, les électrons ont une gamme d'énergie transverse qui s'étend, en moyenne, de quelques $ \GeV $ jusqu'au $ \TeV $. Les deux phénomènes dominants sont donc l'émission de photons de freinage et la production de paires électron/positron.\\
 
 \begin{figure}[!h]
   \begin{center}
-    \includegraphics[height=5.25cm, keepaspectratio]{phd_calo/dEdx}
+    \includegraphics[height=5.0cm, keepaspectratio]{phd_calo/dEdx}
   \end{center}
-  \caption{\label{interpb}???}
+  \caption{\label{interpb}Distribution de la fraction d'énergie perdue par longueur de radiation en fonction de l'énergie.}
 \end{figure}
 
-Dans la pratique, lorsqu'un électron (resp. un photon) de haute énergie pénètre un milieu dense, il émet des photons de freinages (resp. il produit une pair d'électron) puis ces photons (resp. ces électrons) vont produire une pair d'électrons (resp. vont émettre des photons de freinage). Il se forme alors une gerbe/cascade de particules caractérisées par deux principales grandeurs, la longueur de radiation $ X_0 $ pour les électrons et le libre parcours moyen $ X_\gamma $ pour les photons.
+Dans la pratique, lorsqu'un électron (resp. un photon) de haute énergie pénètre un milieu dense, il émet des photons de freinages (resp. il produit une paire d'électron) puis ces photons (resp. ces électrons) vont produire une paire d'électrons (resp. vont émettre des photons de freinage). Il se forme alors une gerbe/cascade de particules caractérisées par deux principales grandeurs, la longueur de radiation $ X_0 $ pour les électrons et le libre parcours moyen $ X_\gamma $ pour les photons.
 
 \newpage
 
 \paragraph{Longueur de radiation}
 
-Pour les électrons, on définit la longueur de radiation par l'épaisseur de matière nécessaire pour une perte d'énergie d'un facteur $ \frac{1}{e} $ soit encore $ \sim63\% $. Elle s'exprime de façon empirique en fonction du nombre de masse $ A $ et du nombre de protons $ Z $ :
+Pour les électrons, on définit la longueur de radiation par l'épaisseur de matière nécessaire pour une perte d'énergie d'un facteur $ \frac{1}{e} $ soit encore $ \sim63\% $. Elle s'exprime en fonction du nombre de masse $ A $ et du nombre de protons $ Z $ :
 \begin{equation}
-  X_0\equiv\frac{716.4\left[g\,cm^{-2}\right]\,A}{Z(Z+1)\ln\left(\frac{287}{\sqrt{Z}}\right)}.
+  X_0=\frac{1}{4\alpha_{EM}N_Ar^2_e}\frac{A}{Z^2\ln\left(\frac{183}{\sqrt[3]{Z}}\right)}.
 \end{equation}
 
-La perte d'énergie par rayonnement de freinage s'écrit :
+\noindent où $ \alpha_{EM} $ est la constante de structure fine, $ N_A $ le nombre d'Avogadro et $ r_e $ est le rayon de Compton. La perte d'énergie par rayonnement de freinage s'écrit :
 \begin{equation}
   \left.-\frac{dE}{dx}\right|_\textrm{Brem.}=\frac{E}{X_0}
 \end{equation}
 
-\paragraph{Libre parcours moyen} Pour les photons, on définit le libre parcours moyen par l'épaisseur de matière nécessaire pour la conversion en pair pair électron/positron. De même que pour la longueur de radiation, s'exprime de façon empirique en fonction du nombre de masse $ A $ et du nombre de protons $ Z $ :
+\paragraph{Libre parcours moyen} Pour les photons, on définit le libre parcours moyen par l'épaisseur de matière nécessaire pour la conversion en paire électron/positron. De même que pour la longueur de radiation, le libre parcours moyen s'exprime\footnote{Le facteur $ \frac{9}{7} $ provient de la section efficace de création de pairs d'électrons : $ \sigma_{paire}=\frac{7}{9}\frac{A}{N_AX_0} $.} en fonction du nombre de masse $ A $ et du nombre de protons $ Z $ :
 \begin{equation}
-  X_\gamma\equiv\frac{9}{7}X_0
+  X_\gamma=\frac{9}{7}X_0
 \end{equation}
 
 Plus le milieu est dense, ou encore plus le nombre de masse est élevé, plus la longueur de radiation et le libre parcours moyen sont petits. Un bon calorimètre électromagnétique se doit de posséder une épaisseur de quelques longueur de radiations afin de contenir les gerbes dans leur entièreté. Le choix est effectué en confrontant la compacité du calorimètre avec avec le poids du matériau. Le tableau \ref{matcalo} montre la longueur de radiation et le libre parcours moyen de quelques matériaux.
@@ -45,29 +45,29 @@ Plus le milieu est dense, ou encore plus le nombre de masse est élevé, plus la l
 \begin{table}[!ht]
   \begin{center}
 
-    \begin{tabular}{|c|c|c|}
+    \begin{tabular}{|c|c|c|c|}
       \hline
       \hline
-        Matériau & $ X_0 $ \small{$ \left[g\,cm^{-2}\right] $} & $ X_\gamma $ \small{$ \left[g\,cm^{-2}\right] $} \\
+        Matériau & $ X_0 $ \small{$ \left[g\,cm^{-2}\right] $} & $ X_\gamma $ \small{$ \left[g\,cm^{-2}\right] $} & $ R_M $ \small{$ \left[cm\right] $} \\
       \hline
-        $ H_2O $ & $ 36.08 $ & $ 46.39 $ \\
-	$ Al $ & $ 24.01 $ & $ 30.87 $ \\
-	$ Fe $ & $ 13.84 $ & $ 17.79 $ \\
-	$ Cu $ & $ 12.86 $ & $ 16.53 $ \\
-        $ W $ & $ 6.76 $ & $ 8.69 $ \\
-        $ Pb $ & $ 6.37 $ & $ 8.19 $ \\
-        $ U $ & $ 5.86 $ & $ 7.53 $ \\
-        $ NaI $ & $ 0.49 $ & $ 0.63 $ \\
+        $ H_2O $ & $ 36.1 $ & $ 46.4 $ & \\
+	$ Al $ & $ 24.0 $ & $ 30.9 $ & \\
+	$ Fe $ & $ 13.8 $ & $ 17.8 $ & \\
+	$ Cu $ & $ 12.9 $ & $ 16.5 $ & \\
+        $ W $ & $ 6.8 $ & $ 8.7 $ & \\
+        $ Pb $ & $ 6.4 $ & $ 8.2 $ & \\
+        $ U $ & $ 5.9 $ & $ 7.5 $ & \\
+        $ NaI $ & $ 2.6 $ & $ 0.6 $ & \\
       \hline
     \end{tabular}
 
   \end{center}
-  \caption{\label{matcalo} Longueur de radiation et le libre parcours moyen de quelques matériaux.}
+  \caption{\label{matcalo} Longueur de radiation, le libre parcours moyen et rayon de Molière de quelques matériaux.}
 \end{table}
 
 \paragraph{Énergie critique} On définit l'énergie critique comme l'énergie au delà de laquelle le rayonnement de freinage est dominant c'est-à-dire telle que :
 \begin{equation}
-  \left.-\frac{dE}{dx}\right|_\textrm{Brem.}=\left.-\frac{dE}{dx}\right|_\textrm{Ion.}
+  \left.-\frac{dE}{dx}(E=E_c)\right|_\textrm{Brem.}=\left\{\left.-\frac{dE}{dx}\propto\frac{1}{\beta^2}\right\}(E=E_c)\right|_\textrm{Ion.}
 \end{equation}
 
 De même que pour la longueur de radiation et le libre parcours moyen, l'énergie critique s'exprime de façon empirique en fonction du nombre de protons $ Z $ :
@@ -75,6 +75,57 @@ De même que pour la longueur de radiation et le libre parcours moyen, l'énergie 
   E_c\approx\frac{610}{Z+1.24}\MeV & \textrm{pour les solides et les liquides}\\
   E_c\approx\frac{710}{Z+0.92}\MeV & \textrm{pour les gaz}
 \end{eqnarray}
+
+\subsection{Gerbes électromagnétiques}
+
+\paragraph{Profil transverse} Introduisons la variable $ t\equiv\frac{x}{X_0} $ afin de décrire le développement longitudinal des gerbes électromagnétiques. Dans un modèle simpliste, au rang $ t $, chaque particule de la gerbe possède une énergie $ E(t)=E_0\,2^{-t} $ où $ E_0 $ est l'énergie de la particule incidente, voir figure \ref{em_shower}. Il est alors possible d'écrire :
+\begin{eqnarray}
+  \frac{dE}{dt}=-E_0\ln2\,e^{-t}\hspace{0.04cm} & \textrm{modèle simpliste}\\
+  \frac{dE}{dt}=E_0\frac{b^at^{a-1}}{\Gamma(a)}e^{-t} & \begin{minipage}{8cm} \begin{center} modèle de Longo et Sestili\\où $ a $ et $ b $ sont des paramètres du milieu \end{center} \end{minipage}
+\end{eqnarray}
+
+\begin{figure}[!ht]
+  \begin{center}
+    \includegraphics[height=5.25cm, keepaspectratio]{phd_calo/em_shower}
+  \end{center}
+  \caption{\label{em_shower}Modèle simpliste de gerbe électromagnétique.}
+\end{figure}
+
+La gerbe électromagnétique commence à décroitre dés que l'énergie des particule est inférieure à l'énergie critique si bien qu'il est simple de calculer le maximum de la gerbe :
+\begin{eqnarray}
+  t_{max}=\log_2\left(\frac{E_0}{E_c}\right) & \textrm{modèle simpliste}\\
+  t_{max}=\ln\left(\frac{E_0}{E_c}\right)-\left\{\begin{array}{cc}1&\textrm{gerbe d'électron}\\1/2&\textrm{gerbe de photon}\end{array}\right.
+ & \textrm{modèle de Longo et Sestili}
+\end{eqnarray}
+
+Il est alors possible de définir la longueur $ t_{95\%} $ telle que au moins $ 95\% $ de l'énergie de la gerbe électromagnétique soit contenue dans la longeur $ t_{95\%} $ :
+\begin{equation}
+  t_{95\%}\approx t_{max}+0.08Z+9.6[X_0]
+\end{equation}
+
+\paragraph{Profil longitudinal} On montre que l'angle moyen de déflexion des particules de la gerbe, pour le Bremsstrahlung et la production de paires électron/prositron, peut s'écrire :
+\begin{equation}
+  \left<\theta\right>=\underbrace{\sqrt{\frac{4\pi}{\alpha_{EM}}}(m_ec^2)}_{E_s\approx21.2[\MeV]}\left.\frac{1}{E_c}\sqrt{t}\right|_{\beta=c=1}
+\end{equation}
+
+\begin{figure}[!ht]
+  \begin{center}
+    \includegraphics[height=4.25cm, keepaspectratio]{phd_calo/moliere}
+  \end{center}
+  \caption{\label{em_moliere}Angle de déflexion moyen des particules de la gerbe électromagnétique.}
+\end{figure}
+
+Comme illustré sur la figure \ref{em_moliere}, il est alors possible de définir le rayon de Molière $ R_M $ tel que au moins $ 90\% $ de l'énergie de la gerbe électromagnétique soit contenue dans la sphère de rayon $ 1\times R_M $ centrée sur l'axe de la gerbe et au moins $ 95\% $ de l'énergie de la gerbe électromagnétique soit contenue dans la sphère de rayon $ 2\times R_M $ centrée sur l'axe de la gerbe :
+\begin{equation}
+  R_M=\left<\theta\right>(x=X_0)\,X_0=\frac{E_s}{E_c}X_0
+\end{equation}
+
+Pour un milieu composite où $ w_i $ représente la proportion des différents matériaux, le rayon de Molière s'écrit :
+\begin{equation}
+  R_M=\frac{1}{E_s}\sum_i\frac{w_iE_{c,i}}{X_{0,i}}
+\end{equation}
+
+A la conception d'un calorimètre électromagnétique, le rapport $ \frac{l}{R_M} $, où $ l $ est la taille des cellules, permet de caractériser les performances, plus il sera petit, meilleur sera le calorimètre.
 
 \subsection{Deux type de calorimètres}
 
@@ -107,10 +158,9 @@ La figure \ref{} rappelle la résolution en énergie ainsi que la résolution angul
       \hline
         \small Calo. électromagnétique & $ \frac{\sigma_E}{E}=\frac{10\%}{\sqrt{E}}\oplus0.7\% $ & $ \frac{50mrad}{\sqrt{E}} $ & $ <0.5\% $\\
       \hline
-        \small Calo. hadronique & $ \frac{\sigma_E}{E}=\frac{50\%}{\sqrt{E}}\oplus3\% $ (tonneau) & & $ <2.0\% $\\
-                                      & $ \frac{\sigma_E}{E}=\frac{100\%}{\sqrt{E}}\oplus10\% $ (bouchons) & & \\
+        \small Calo. hadronique & $ \frac{\sigma_E}{E}=\frac{50\%}{\sqrt{E}}\oplus3\% $ (tonneau) & - & $ <2.0\% $\\
+                                & $ \frac{\sigma_E}{E}=\frac{100\%}{\sqrt{E}}\oplus10\% $ (bouchons) & - & $ <2.0\% $ \\
       \hline
-
     \end{tabular}
 
   \end{center}
