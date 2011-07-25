@@ -12,23 +12,31 @@ Le trajectographe interne du détecteur Atlas a été décrit dans le chapitre 3. No
 
 La première étape consiste en l'identification des impacts (ou coups) via les informations recueillies auprès des sous-détecteurs pixels, SCT et TRT.
 
-La seconde étape consiste à former des germes de traces en reliant les points d'impact des trois couches des pixels et la première du SCT (couches les plus internes). Ensuite, le filtre de Kalman, évoqué au cours du précédent chapitre, permet d'étendre les germes de traces, couche après couche, jusqu'au TRT en ajoutant uniquement les points d'impact compatibles avec les prédictions. Un ajustement est réalisé afin de former les candidats traces. Cet algorithme est dit \og intérieur-extérieur \fg.
+La seconde étape consiste à former des germes de traces en reliant les points d'impact des trois couches des pixels et la première du SCT (couches les plus internes). Ensuite, le filtre de Kalman, voir figure \ref{d0z0} (a), évoqué au cours du précédent chapitre, permet d'étendre les germes de traces, couche après couche, jusqu'au TRT en ajoutant uniquement les points d'impact compatibles avec les prédictions. Un ajustement est réalisé afin de former les candidats traces. Cet algorithme est dit \og intérieur-extérieur \fg.
 
 La troisième étape consiste à refaire la reconstruction des traces en utilisant la méthode des transformées de Hough. Dans sa version simple, la transformée de Hough permet de détecter des lignes mais elle peut être généralisée afin de reconnaître n'importe quelle forme géométrique. Dans le cas des traces de particules, chaque hélice est représentée par un vecteur paramétrique à deux dimensions qui contient la direction de la trace (angle $ \theta $) et son rayon de courbure  (longueur $ \rho_c $). En transformant toutes les hélices qui passent par un point d'impact, c'est-à-dire en calculant les couples $ \binom{\theta}{\rho_c} $, on forme une courbe unique dans l'espace de Hough. Si deux courbes se coupent, le couple $ \binom{\theta}{\rho_c} $ correspond à un fragment d'hélice qui relit les deux points. Cet algorithme permet de reconstruire les traces qui ne pointent pas vers le centre du détecteur (conversions, particules à longues durées de vie, etc\dots). Un ajustement est réalisé afin de former les candidats traces. Cet algorithme est dit \og extérieur-intérieur \fg.
 
 \newpage
 
-Une fois les candidats traces formés, seuls sont conservés les paramètres cinématiques ($ \eta $, $ \phi $, $ p_T $ au point d'approche minimal de l'axe du faisceau (= perigée) qui est caractérisé par le paramètre d'impact $ d_0 $ et la distance $ z_0 $ voir figure \ref{d0z0}) et les nombres de points d'impacts dans les différents sous-détecteurs.\\
+Une fois les candidats traces formés, seuls sont conservés les paramètres cinématiques ($ \eta $, $ \phi $, $ p_T $ au point d'approche minimal de l'axe du faisceau (= perigée) qui est caractérisé par le paramètre d'impact $ d_0 $ et la distance $ z_0 $, voir figure \ref{d0z0} (b)) et les nombres de points d'impacts dans les différents sous-détecteurs.\\
 
 Remarque 1 : Les ajustements des traces tiennent potentiellement compte du Bremsstrahlung et de la diffusion multiple.\\
 
 Remarque 2 : Comme nous l'avons évoqué au chapitre précédent, il convient de distinguer les traces qui ont des points d'impact dans les détecteurs silicium (pixel et SCT), qui sont de haute précision, des traces qui n'ont des points d'impact que dans le TRT, où la reconstruction de la pseudo-rapidité $ \eta $ est mal déterminée car le TRT ne permet pas une mesure de la coordonnée $ z $.
 
 \begin{figure}[!ht]
-  \begin{center}
-    \includegraphics[height=7.5cm, keepaspectratio]{phd_reco/d0z0}
-  \end{center}
-  \caption{\label{d0z0}Définition du paramètre d'impact $ d_0 $ et la distance $ z_0 $ au point d'approche minimal de l'axe du faisceaux (= perigée).}
+  \begin{bigcenter}
+
+  \begin{tabular}{cc}
+    \includegraphics[height=7cm, keepaspectratio]{phd_reco/kalman}
+    &
+    \includegraphics[height=7cm, keepaspectratio]{phd_reco/d0z0}
+    \\
+    (a) & (b)
+  \end{tabular}
+
+  \end{bigcenter}
+  \caption{\label{d0z0}FSchéma montrant le fonctionnement du filtre Kalman pour la reconstruction des traces (a). Définition du paramètre d'impact $ d_0 $ et la distance $ z_0 $ au point d'approche minimal de l'axe du faisceaux (= perigée) (b).}
 \end{figure}
 
 \section{Reconstruction des amas calorimétriques}
