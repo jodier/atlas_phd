@@ -148,7 +148,7 @@ La partie tonneau du calorimètre électromagnétique pocède une couverture angulai
   \begin{center}
     \includegraphics[height=9.25cm, keepaspectratio]{phd_calo/electrodes}
   \end{center}
-  \caption{Représentation schématique des électrodes du calorimètre électromagnétique du détecteur Atlas. Partie tonneau (en haut), partie bouchon grande roue (en bas à droite) et petite roue (en bas à gauche). Les trois compartiments sont clairement visibles.}
+  \caption{\label{electrodes}Représentation schématique des électrodes du calorimètre électromagnétique du détecteur Atlas. Partie tonneau A et B (en haut), partie bouchon grande roue (en bas à droite) et petite roue (en bas à gauche). Les trois compartiments sont clairement visibles.}
 \end{figure}
 
 La tableau \ref{caloperf} rappelle la résolution en énergie ainsi que la résolution angulaire des calorimètres du détecteur Atlas. A titre de comparaison, nous donnons la résolution en énergie du calorimètre homogène à cristaux de tungstate de plomb du détecteur CMS : $ \frac{\sigma(E)}{E}=\frac{3\%}{\sqrt{E}}\oplus0.6\% $. Celle-ci est, par conception, légèrement meilleure que pour le détecteur Atlas, néanmoins, grâce à sa fine segmentation et son détecteur de pieds de gerbes, le calorimètres électromagnétique du détecteur Atlas dispose d'une très bonne résolution angulaire. Il est tout particulièrement adapté à la recherche du boson de Higgs dans les canaux $ H\to\gamma\gamma $ et $ H\to ZZ^{(*)}\to4l $ où encore à la recherche d'hypothétiques bosons lourds tels que les $ W' $ ou les $ Z' $ qui se désintègrent en leptons de haute énergie.
@@ -189,24 +189,28 @@ La figure \ref{calodetails} montre une représentation schématique des trois comp
   \caption{\label{calodetails}Représentation schématique des trois compartiments et de la segmentation en pseudo-rapidité et en angle azimutal du calorimètre électromagnétique du détecteur Atlas.}
 \end{figure}
 
-Les performances du calorimètre électromagnétique ont été mesurées à l'aide de faisceaux de test, à l'aide de données cosmiques et à l'aide des premières données. Écrivons des façon générique la résolution en énergie sous la forme :
+Le colorimètre électromagnétique est également doté d'un pré-échantillonneur, le PS. La taille typique des cellules est $ \Delta\eta\times\Delta\phi=0.025\times0.1 $. Son but est de mesurer la perte d'énergie dans les matériaux situés en amont du calorimètre et d'effectuer des corrections géométriques dues à la distribution inhomogène de matière. Sa couverture angulaire est de $ |\eta|<1.8 $.\\
+
+La partie tonneau du calorimètre électromagnétique est constituée de deux types d'électrode, voir figure \ref{electrodes} (haut). L'électrode A a une couverture angulaire $ |\eta|<0.8 $ sur une épaisseur qui s'étend entre $ 22X_0 $ et $ 30X_0 $ et l'électrode B a une couverture angulaire $ 0.8<|\eta|<1.3 $ sur une épaisseur qui s'étend entre $ 24X_0 $ et $ 30X_0 $. La quantité de matière traversée par les particules augmente avec la pseudo-rapidité. C'est pourquoi la taille des différents compartiments change avec la pseudo-rapidité afin que les fractions d'énergie déposées dans les différents compartiments restent constantes. De-même, l'épaisseur d'absorbeur est plus grand pour l'électrode A que pour l'électrode B, chaque demi-tonneau comprend 1025 absorbeurs.
+
+La partie bouchons du calorimètre électromagnétique est constituée de deux roues, voir figure \ref{electrodes} (bas). L'électrode de la grande roue a une couverture angulaire $ 1.477<|\eta|<2.5 $ sur une épaisseur qui s'étend entre $ 24X_0 $ et $ 38X_0 $ et l'électrode de la petite roue a une couverture angulaire $ 2.5<|\eta|<3.2 $ sur une épaisseur qui s'étend entre $ 26X_0 $ et $ 36X_0 $. La grande roue comprend 768 absorbeurs et la petite roue comprend 256 absorbeurs.\\
+
+Le tableau \ref{granilarite} montre le détail de la granularité, en fonction de la pseudo-rapidité, du calorimètre électromagnétique tonneau et des calorimètres électromagnétiques bouchons.
+
+\subsection{Performances}
+
+Les performances du calorimètre électromagnétique ont été mesurées à l'aide de faisceaux de test, à l'aide de données cosmiques et à l'aide des premières données. De façon générique, la résolution en énergie s'écrit sous la forme :
 \begin{equation}
-  \frac{\sigma(E)}{E}=\frac{a}{\sqrt{E}}\oplus c
+  \boxed{\frac{\sigma(E)}{E}=\frac{a}{\sqrt{E}}\oplus\frac{b}{E}\oplus c}
 \end{equation}
 
-où $ a $ est le terme d'échantillonnage et $ b $ est le terme constant qui domine à haute énergie.\\
+où $ a $ est le terme d'échantillonnage (ou terme stochastique) déjà mentionné, $ b $ est un facteur de bruit électronique et d'empilement et $ c $ est le terme constant qui domine à haute énergie. Ce dernier résulte de plusieurs effets comme les non-uniformité de la géométrie, les fluctuations de température dans l'argon liquide, etc\dots Des contraintes fortes ont été posée afin de maximiser le potentiel de découverte du boson de Higgs via les canaux $ H\to\gamma\gamma $ et $ Z\to ZZ^{(*)}\to4l $ : $ a\sim10\%[\sqrt{\GeV}] $, $ b\sim400\MeV $ à la luminosité nominale et $ c<1\% $.\\
 
 Les études réalisées sur faisceaux de test fournissent $ a\approx10\%\sqrt{\GeV} $ et $ c\approx0.2\% $ pour le tonneau et $ a\approx11,4\%\sqrt{\GeV} $ et $ c\approx0.35\% $ pour les bouchons. Ces résultats sont en accord avec les spécifications du détecteur Atlas.
 
 La mesure de la masse invariante de paires d'électrons issus de bosons $ Z $ avec les données 2010 fournissent $ c\approx1.2\pm0.1\textrm{(stat.)}\pm0.3\textrm{(syst.)}\% $ pour le tonneau, $ c\approx1.8\pm0.4\textrm{(stat.)}\pm0.2\textrm{(syst.)}\% $ pour la grande roue des bouchons et $ c\approx3.3\pm0.2\textrm{(stat.)}\pm1.0\textrm{(syst.)}\% $ pour la petite roue des bouchons. Comme l'inter-calibration des régions en $ \eta $ et en $ \phi $ n'était pas possible, à cause de la statistique, les nombres sont légèrement supérieurs à ceux attendus.
 
 La linéarité de la réponse a été mesurée sur un module avec des faisceaux de test. La non-linéarité est inférieure à $ 1\% $ sur la gamme d'énergie qui s'étend de $ 15\GeV $ à $ 180\GeV $. Elle fut également mesurée avec des faisceaux de test combinés en ajoutant de la matière afin de reproduire les conditions réelles. Elle est inférieure à $ 1\% $ sur la gamme d'énergie qui s'étend de $ 15\GeV $ à $ 180\GeV $. Finalement, la non-linéarité est inférieure à $ 0.5\% $ (resp. inférieure à $ 2\% $) sur la gamme d'énergie qui s'étend de $ 20\GeV $ à $ 180\GeV $ pour le tonneau (resp. sur la gamme d'énergie supérieure à $ 40\GeV $ pour les bouchons).
-
-\section{Le pré-échantillonneur}
-
-Le colorimètre électromagnétique est doté d'un pré-échantillonneur, le PS. La taille typique des cellules est $ \Delta\eta\times\Delta\phi=0.025\times0.1 $. Son but est de mesurer la perte d'énergie dans les matériaux situés en amont du calorimètre et d'effectuer des corrections géométriques dues à la distribution inhomogène de matière.  Sa couverture angulaire est de $ |\eta|<1.8 $.
-
-\section{La granularité}
 
 \begin{table}[!ht]
   \begin{center}
@@ -239,7 +243,7 @@ Le colorimètre électromagnétique est doté d'un pré-échantillonneur, le PS. La ta
     \end{tabular}
 
   \end{center}
-  \caption{Granularité et couverture du calorimètre électromagnétique du détecteur Atlas.}
+  \caption{\label{granilarite}Granularité et couverture du calorimètre électromagnétique du détecteur Atlas.}
 \end{table}
 
 \section{Électronique}
@@ -270,9 +274,9 @@ Le colorimètre électromagnétique est doté d'un pré-échantillonneur, le PS. La ta
   \begin{bigcenter}
 
   \begin{tabular}{ccc}
-    \includegraphics[width=0.45\linewidth, keepaspectratio]{phd_calo/pulse1}
+    \includegraphics[width=0.5\linewidth, keepaspectratio]{phd_calo/pulse1}
     &&
-    \includegraphics[width=0.45\linewidth, keepaspectratio]{phd_calo/pulse2}
+    \includegraphics[width=0.5\linewidth, keepaspectratio]{phd_calo/pulse2}
     \\
     (a) && (b)
   \end{tabular}
