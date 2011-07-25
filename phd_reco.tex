@@ -36,7 +36,7 @@ Remarque 2 : Comme nous l'avons évoqué au chapitre précédent, il convient de dis
   \end{tabular}
 
   \end{bigcenter}
-  \caption{\label{d0z0}FSchéma montrant le fonctionnement du filtre Kalman pour la reconstruction des traces (a). Définition du paramètre d'impact $ d_0 $ et la distance $ z_0 $ au point d'approche minimal de l'axe du faisceaux (= perigée) (b).}
+  \caption{\label{d0z0}Fonctionnement du filtre Kalman pour la reconstruction des traces (a). Définition du paramètre d'impact $ d_0 $ et la distance $ z_0 $ au point d'approche minimal de l'axe du faisceaux (= perigée) (b).}
 \end{figure}
 
 \section{Reconstruction des amas calorimétriques}
@@ -46,8 +46,6 @@ Le principe de fonctionnement du calorimètre électromagnétique et la reconstruct
 \subsection{L'algorithme \emph{softe}}
 
 Cet algorithme se base sur les traces de qualité avec au moins deux impacts dans les pixels et au moins 1 impact dans la première couche, au moins 9 impacts dans le silicium (pixel et SCT) et enfin au moins 20 impacts dans le TRT. Afin de limiter le bruit de fond (provenant des $ \pi^\pm $ par exemple), au moins un impact TRT de haut seuil est demandé. Cette limitation réduit l'acceptante de \emph{softe} à $ |\eta|<2 $. De plus, une coupure sur l'impulsion transverse $ p_T>2\GeV $ est demandée.
-
-\newpage
 
 Les traces ainsi sélectionnées sont extrapolées jusqu'au calorimètre électromagnétique où un amas formé de $ 5\times5 $ cellules, c'est-à-dire $ \Delta\eta\times\Delta\phi=(5\times0.025)\times(5\times0.025) $, est formé. Si l'amas passe les coupures $ f_1=\frac{E_1}{E}>3\% $, $ f_3=\frac{E_3}{E}<5\% $ et $ E/p_{T\,trk}>0.7 $, où $ f_1 $ et $ f_2 $ sont respectivement la fraction d'énergie dans le premier compartiment et la fraction d'énergie dans le troisième compartiment, $ E $ l'énergie totale déposée dans l'amas et $ p_{T\,trk} $ l'impulsion transverse de la trace, alors, le candidat électron est conservé.
 

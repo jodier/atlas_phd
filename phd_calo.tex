@@ -151,7 +151,7 @@ La partie tonneau du calorimètre électromagnétique pocède une couverture angulai
   \caption{Représentation schématique des électrodes du calorimètre électromagnétique du détecteur Atlas. Partie tonneau (en haut), partie bouchon grande roue (en bas à droite) et petite roue (en bas à gauche). Les trois compartiments sont clairement visibles.}
 \end{figure}
 
-La figure \ref{} rappelle la résolution en énergie ainsi que la résolution angulaire des calorimètres du détecteur Atlas. A titre de comparaison, nous donnons la résolution en énergie du calorimètre homogène à cristaux de tungstate de plomb du détecteur CMS : $ \frac{\sigma(E)}{E}=\frac{3\%}{\sqrt{E}}\oplus0.6\% $. Celle-ci est, par conception, légèrement meilleure que pour le détecteur Atlas, néanmoins, grâce à sa fine segmentation et son détecteur de pieds de gerbes, le calorimètres électromagnétique du détecteur Atlas dispose d'une très bonne résolution angulaire. Il est tout particulièrement adapté à la recherche du boson de Higgs dans les canaux $ H\to\gamma\gamma $ et $ H\to ZZ^{(*)}\to4l $ où encore à la recherche d'hypothétiques bosons lourds tels que les $ W' $ ou les $ Z' $ qui se désintègrent en leptons de haute énergie.
+La tableau \ref{caloperf} rappelle la résolution en énergie ainsi que la résolution angulaire des calorimètres du détecteur Atlas. A titre de comparaison, nous donnons la résolution en énergie du calorimètre homogène à cristaux de tungstate de plomb du détecteur CMS : $ \frac{\sigma(E)}{E}=\frac{3\%}{\sqrt{E}}\oplus0.6\% $. Celle-ci est, par conception, légèrement meilleure que pour le détecteur Atlas, néanmoins, grâce à sa fine segmentation et son détecteur de pieds de gerbes, le calorimètres électromagnétique du détecteur Atlas dispose d'une très bonne résolution angulaire. Il est tout particulièrement adapté à la recherche du boson de Higgs dans les canaux $ H\to\gamma\gamma $ et $ H\to ZZ^{(*)}\to4l $ où encore à la recherche d'hypothétiques bosons lourds tels que les $ W' $ ou les $ Z' $ qui se désintègrent en leptons de haute énergie.
 
 \begin{table}[!ht]
   \begin{center}
@@ -169,7 +169,7 @@ La figure \ref{} rappelle la résolution en énergie ainsi que la résolution angul
     \end{tabular}
 
   \end{center}
-  \caption{Performances générales du détecteur Atlas où l'énergie $ E $ et l'impulsion transverse $ p_T $ sont exprimés en $ \GeV $. Ces résultats ont été validés lors des faisceaux tests.}
+  \caption{\label{caloperf}Performances générales du détecteur Atlas où l'énergie $ E $ et l'impulsion transverse $ p_T $ sont exprimés en $ \GeV $. Ces résultats ont été validés lors des faisceaux tests.}
 \end{table}
 
 Le calorimètre électromagnétique du détecteur Atlas est partagé en trois compartiments S1, S2 et S3. Ils sont disposés de l'intérieur vers l'extérieur et possèdent une granularité en pseudo-rapidité et en angle azimutal décroissante.
@@ -180,13 +180,13 @@ Le calorimètre électromagnétique du détecteur Atlas est partagé en trois compart
 
 \paragraph{Le troisième compartiment, S3}, est deux fois moins segmenté suivant $ \eta $ que le compartiment S2. La taille typique des cellules est $\Delta\eta\times\Delta\phi=0.05\times0.025 $. Il permet de mesurer les dépôt d'énergie des fin de gerbes électromagnétiques et permet également de caractériser la fuite vers le calorimètre hadronique.\\
 
-Précisons également la présence d'un pré-échantillonneur, le PS, dont le but est de corriger l'énergie perdue avant le calorimètre. Sa couverture angulaire est de $ |\eta|<1.8 $.
+La figure \ref{calodetails} montre une représentation schématique des trois compartiments et de la segmentation en pseudo-rapidité et en angle azimutal du calorimètre électromagnétique du détecteur Atlas.
 
 \begin{figure}[!ht]
   \begin{center}
-    \includegraphics[height=7.5cm, keepaspectratio]{phd_calo/calo1}
+    \includegraphics[height=7.1cm, keepaspectratio]{phd_calo/calo1}
   \end{center}
-  \caption{Représentation schématique des trois compartiments et de la segmentation en pseudo-rapidité et en angle azimutal du calorimètre électromagnétique du détecteur Atlas.}
+  \caption{\label{calodetails}Représentation schématique des trois compartiments et de la segmentation en pseudo-rapidité et en angle azimutal du calorimètre électromagnétique du détecteur Atlas.}
 \end{figure}
 
 Les performances du calorimètre électromagnétique ont été mesurées à l'aide de faisceaux de test, à l'aide de données cosmiques et à l'aide des premières données. Écrivons des façon générique la résolution en énergie sous la forme :
@@ -202,16 +202,154 @@ La mesure de la masse invariante de paires d'électrons issus de bosons $ Z $ ave
 
 La linéarité de la réponse a été mesurée sur un module avec des faisceaux de test. La non-linéarité est inférieure à $ 1\% $ sur la gamme d'énergie qui s'étend de $ 15\GeV $ à $ 180\GeV $. Elle fut également mesurée avec des faisceaux de test combinés en ajoutant de la matière afin de reproduire les conditions réelles. Elle est inférieure à $ 1\% $ sur la gamme d'énergie qui s'étend de $ 15\GeV $ à $ 180\GeV $. Finalement, la non-linéarité est inférieure à $ 0.5\% $ (resp. inférieure à $ 2\% $) sur la gamme d'énergie qui s'étend de $ 20\GeV $ à $ 180\GeV $ pour le tonneau (resp. sur la gamme d'énergie supérieure à $ 40\GeV $ pour les bouchons).
 
+\section{Le pré-échantillonneur}
+
+Le colorimètre électromagnétique est doté d'un pré-échantillonneur, le PS. La taille typique des cellules est $ \Delta\eta\times\Delta\phi=0.025\times0.1 $. Son but est de mesurer la perte d'énergie dans les matériaux situés en amont du calorimètre et d'effectuer des corrections géométriques dues à la distribution inhomogène de matière.  Sa couverture angulaire est de $ |\eta|<1.8 $.
+
 \section{La granularité}
 
+\begin{table}[!ht]
+  \begin{center}
+
+    \begin{tabular}{|c|cc|cc|}
+      \hline
+      \hline
+        \small       & \multicolumn{2}{c|}{ Tonneaux }                       & \multicolumn{2}{c|}{ Bouchons }                        \\
+      \hline
+      \hline
+        Compartiment & Granularité                   & Couverture            & Granularité                   & Couverture             \\
+                     & $\Delta\eta\times\Delta\phi $ &                       & $\Delta\eta\times\Delta\phi $ &                        \\
+      \hline
+        PS           & $ 0.025\times0.1 $            & $ |\eta|<1.52 $       & $ 0.025\times0.1 $            & $ 1.5<|\eta|<1.8 $     \\
+      \hline
+        S1           & $ 0.025/8\times0.1 $          & $ |\eta|<1.40 $       & $ 0.050\times0.1 $            & $ 1.375<|\eta|<1.425 $ \\
+                     & $ 0.025\times0.025 $          & $ 1.40<|\eta|<1.475 $ & $ 0.025\times0.1 $            & $ 1.425<|\eta|<1.5 $   \\
+                     &                               &                       & $ 0.025\times0.1 $            & $ 1.5<|\eta|<1.8 $     \\
+                     &                               &                       & $ 0.025\times0.1 $            & $ 1.8<|\eta|<2.0 $     \\
+                     &                               &                       & $ 0.025\times0.1 $            & $ 2.0<|\eta|<2.4 $     \\
+                     &                               &                       & $ 0.025\times0.1 $            & $ 2.4<|\eta|<2.5 $     \\
+                     &                               &                       & $ 0.1\times0.1 $              & $ 2.5<|\eta|<3.2 $     \\
+      \hline
+        S2           & $ 0.025\times0.025 $          & $ |\eta|<1.40 $       & $ 0.050\times0.025 $          & $ 1.375<|\eta|<1.425 $ \\
+                     & $ 0.075\times0.025 $          & $ 1.40<|\eta|<1.475 $ & $ 0.025\times0.025 $          & $ 1.425<|\eta|<2.5 $   \\
+                     &                               &                       & $ 0.050\times0.025 $          & $ 2.5<|\eta|<3.2 $     \\
+      \hline
+        S3           & $ 0.050\times0.025 $          & $ |\eta|<1.35 $       & $ 0.050\times0.025 $          & $ 1.5<|\eta|<2.5 $     \\
+      \hline
+    \end{tabular}
+
+  \end{center}
+  \caption{Granularité et couverture du calorimètre électromagnétique du détecteur Atlas.}
+\end{table}
 
 \section{Électronique}
 
-
 \begin{figure}[!p]
   \begin{center}
-    \includegraphics[width=0.9\linewidth, keepaspectratio]{phd_calo/electronique}
+    \includegraphics[width=0.9\linewidth, keepaspectratio]{phd_calo/LArReadout}
   \end{center}
   \caption{Schéma de l'électronique de lecture des cellules du calorimètre électromagnétique. Du bas vers le haut, électronique froide située dans le cryostat, électronique chaude situé dans le détecteur FEB (Front End Board) et électronique chaude située hors du détecteur.}
 \end{figure}
+
+\begin{figure}[!p]
+  \begin{bigcenter}
+
+  \begin{tabular}{cc}
+    \includegraphics[width=0.5\linewidth, keepaspectratio]{phd_calo/cellule1}
+    &
+    \includegraphics[width=0.5\linewidth, keepaspectratio]{phd_calo/cellule2}
+    \\
+    (a) & (b)
+  \end{tabular}
+
+  \end{bigcenter}
+  \caption{.}
+\end{figure}
+
+\begin{figure}[!p]
+  \begin{bigcenter}
+
+  \begin{tabular}{ccc}
+    \includegraphics[width=0.45\linewidth, keepaspectratio]{phd_calo/pulse1}
+    &&
+    \includegraphics[width=0.45\linewidth, keepaspectratio]{phd_calo/pulse2}
+    \\
+    (a) && (b)
+  \end{tabular}
+
+  \end{bigcenter}
+  \caption{.}
+\end{figure}
+
+\begin{figure}[!ht]
+  \begin{center}
+    \includegraphics[width=0.75\linewidth, keepaspectratio]{phd_calo/signalshape}
+  \end{center}
+  \caption{.}
+\end{figure}
+
+\begin{figure}[!ht]
+  \begin{center}
+    \includegraphics[width=0.9\linewidth, keepaspectratio]{phd_calo/feb}
+  \end{center}
+  \caption{.}
+\end{figure}
+
+\begin{figure}[!ht]
+  \begin{center}
+    \includegraphics[width=0.5\linewidth, keepaspectratio]{phd_calo/noise_lar}
+  \end{center}
+  \caption{.}
+\end{figure}
+
+\begin{figure}[!p]
+  \begin{center}
+
+  \begin{tabular}{ccc}
+    \includegraphics[height=5.25cm, keepaspectratio]{phd_calo/Ped-HG-EM}
+    &&
+    \includegraphics[height=5.25cm, keepaspectratio]{phd_calo/Ped-MG-FCal}
+    \\
+    (a) && (b)
+  \end{tabular}
+
+  \end{center}
+  \caption{\label{stabilite1}Distribution de la stabilité des piédestaux pour le calorimètre électromagnétique, gain haut (a). Distribution de la stabilité des piédestaux pour le calorimètre vers l'avant, gain moyen (b).}
+\end{figure}
+
+\begin{figure}[!p]
+  \begin{center}
+
+  \begin{tabular}{ccc}
+    \includegraphics[height=5.25cm, keepaspectratio]{phd_calo/Ped-MG-HEC}
+    &&
+    \includegraphics[height=5.25cm, keepaspectratio]{phd_calo/Ramp-HG-EM}
+    \\
+    (a) && (b)
+  \end{tabular}
+
+  \end{center}
+  \caption{\label{stabilite2}Distribution de la stabilité des piédestaux pour les calorimètres hadroniques bouchons, gain moyen (a). Distribution de la stabilité des rampes pour le calorimètre électromagnétique, gain haut (b).}
+\end{figure}
+
+\begin{figure}[!p]
+  \begin{center}
+
+  \begin{tabular}{ccc}
+    \includegraphics[height=5.25cm, keepaspectratio]{phd_calo/Ramp-MG-FCal}
+    &&
+    \includegraphics[height=5.25cm, keepaspectratio]{phd_calo/Ramp-MG-HEC}
+    \\
+    (a) && (b)
+  \end{tabular}
+
+  \end{center}
+  \caption{\label{stabilite2}Distribution de la stabilité des rampes pour le calorimètre vers l'avant, gain moyen (a). Distribution de la stabilité des rampes pour les calorimètres hadroniques bouchons, gain moyen, gain haut (b).}
+\end{figure}
+
+
+
+
+
+
 
