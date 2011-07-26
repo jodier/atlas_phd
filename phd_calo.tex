@@ -209,7 +209,7 @@ Le tableau \ref{granilarite} montre le détail de la granularité, en fonction de 
 
 Les performances du calorimètre électromagnétique ont été mesurées à l'aide de faisceaux de test, à l'aide de données cosmiques et à l'aide des premières données. De façon générique, la résolution en énergie s'écrit sous la forme :
 \begin{equation}
-  \boxed{\frac{\sigma(E)}{E}=\frac{a}{\sqrt{E}}\oplus\frac{b}{E}\oplus c}
+  \label{formule_resolution}\boxed{\frac{\sigma(E)}{E}=\frac{a}{\sqrt{E}}\oplus\frac{b}{E}\oplus c}
 \end{equation}
 
 où $ a $ est le terme d'échantillonnage (ou terme stochastique) déjà mentionné, $ b $ est un facteur de bruit électronique et d'empilement et $ c $ est le terme constant qui domine à haute énergie. Ce dernier résulte de plusieurs effets comme les non-uniformité de la géométrie, les fluctuations de température dans l'argon liquide, etc\dots Des contraintes fortes ont été posée afin de maximiser le potentiel de découverte du boson de Higgs via les canaux $ H\to\gamma\gamma $ et $ Z\to ZZ^{(*)}\to4l $ : $ a\sim10\%[\sqrt{\GeV}] $, $ b\sim400\MeV $ à la luminosité nominale et $ c<1\% $.\\
@@ -267,50 +267,68 @@ La figure \ref{electronique} montre le schéma simplifié de l'électronique de lec
 
 \subsection{L'électronique froide}
 
-La figure \ref{cellule} (a) montre le schéma des électrodes du calorimètre électromagnétique. Elles sont placées entre les couches des absorbeurs et sont constituées de trois électrodes en cuivre séparées par des couches de polyimide et de kapton en nid l'abeille. L'électrode centrale est chargée de collecter le signal par effet capacitif alors que les deux électrodes périphériques sont reliées à une haute tension d'environ $ 2000V $. Les particules incidentes ionisent l'argon liquide et le champ électrique fait migrer les électrons et les ions afin de créer un courant électrique sur l'électrode centrale.
+La figure \ref{cellule1} montre le schéma des électrodes du calorimètre électromagnétique. Elles sont placées entre les couches des absorbeurs et sont constituées de trois électrodes en cuivre séparées par des couches de polyimide et de kapton en nid l'abeille. L'électrode centrale est chargée de collecter le signal par effet capacitif alors que les deux électrodes périphériques sont reliées à une haute tension d'environ $ 2000V $. Les particules incidentes ionisent l'argon liquide et le champ électrique fait migrer les électrons et les ions afin de créer un courant électrique sur l'électrode centrale.
 
-Le signal obtenu est triangulaire, le temps de montée est de l'ordre du nanoseconde (contribution des électrons) alors que le temps de descente est de l'ordre de $ 400ns $ pour le tonneau, entre $ 200ns $ et $ 500ns $ pour les bouchons et entre $ 60ns $ et $ 115ns $ pour le calorimètre vers l'avant (contribution des ions). L'amplitude du signal et proportionnelle à l'énergie, elle est entre $ 2\mu A\,\GeV^{-1} $ et $ 3\mu A\,\GeV^{-1} $ pour le calorimètre électromagnétique et entre $ 1\mu A\,\GeV^{-1} $ et $ 3\mu A\,\GeV^{-1} $  pour le calorimètre vers l'avant.
+Le signal obtenu est triangulaire, le temps de montée est de l'ordre du nanoseconde (contribution des électrons) alors que le temps de descente est de l'ordre de $ 400ns $ pour le tonneau, entre $ 200ns $ et $ 500ns $ pour les bouchons et entre $ 60ns $ et $ 115ns $ pour les calorimètres vers l'avant (contribution des ions). L'amplitude du signal et proportionnelle à l'énergie, elle est entre $ 2\mu A\,\GeV^{-1} $ et $ 3\mu A\,\GeV^{-1} $ pour le calorimètre électromagnétique et entre $ 1\mu A\,\GeV^{-1} $ et $ 3\mu A\,\GeV^{-1} $ pour les calorimètres vers l'avant.
 
 Une cellule est généralement composée de plusieurs électrodes, des cartes sommatrices, n'utilisant que des composants discrets, sont également présentes à l'intérieur du cryostat. Le signal ainsi sommé est envoyé à l'extérieur, pas l'intermédiaire de traversées (feed through), vers l'électronique \emph{front-end}.
 
 \begin{figure}[!ht]
-  \begin{bigcenter}
-
-  \begin{tabular}{cc}
+  \begin{center}
     \includegraphics[width=0.5\linewidth, keepaspectratio]{phd_calo/cellule1}
-    &
-    \includegraphics[width=0.5\linewidth, keepaspectratio]{phd_calo/cellule2}
-    \\
-    (a) & (b)
-  \end{tabular}
-
-  \end{bigcenter}
-  \caption{\label{cellule}Schéma d'une électrode du calorimètre électromagnétique (a) et schéma électronique d'une électrode du calorimètre électromagnétique (b).}
+  \end{center}
+  \caption{\label{cellule1}Schéma d'une électrode du calorimètre électromagnétique.}
 \end{figure}
 
 \subsection{L'électronique \emph{front-end}}
+
+Les signaux ce chaque cellules sont envoyés hors du cryostats dans les FEC (Front End Crate). Ceux-ci contient trois type de cartes électroniques :
+
+\vspace{-0.25cm}
+
+\paragraph{Les FEB (Front End Board)} Ces carte recueillent les signaux de 128 canaux. Elles effectuent la mise en forme des signaux et leur digitalisation en deux principales étapes : i) Les signaux sont pre-amplifiées avec un LNA (Low Noise Amplifier) et sont divisés en trois gains de rapports respectifs $ 1/9.9/93 $ afin de disposer d'une large dynamique. Comme la durée de vie d'un signal est supérieur à la fréquence de croisement des faisceaux du LHC, afin de limiter les effets de l'empilement, une mise en forme est effectuée par des filtres analogiques de type $ CR-(RC)^2 $. Le signal obtenu est d'air nul et sa largeur en temps est approximativement deux fois plus petite que la largeur en temps du signal triangulaire. ii) Les signaux mise en forme sont envoyés dans des tampons capacitifs, en attendant la décision du système de déclenchement L1CaloEM ($ <25\mu s $), avant d'être digitalisés à l'aide de convertisseurs analogique/numérique $ 12 $ bits\footnote{Le signal $ s $ est représenté par un nombre entier $ 12 $ bits c'est-à-dire $ 0<s[ADC]<\underbrace{2^{12}-1}_{4095} $.}. Afin d'économiser des ressources matérielles, le signal est échantillonné, une conversion toute les $ 25ns $ et seuls $ 5 $ échantillons, autour du maximum du signal, sur $ 32 $ sont conservés et envoyés à l'électronique \emph{back-end}.
+
+La figure \ref{feb} montre le schéma simplifier d'une FEB et la figure \ref{pulses} montre le signal avant mise en forme, après mise en forme et après digitalisation pour des muons cosmiques dans le tonneau (a) et dans un bouchon (b).
 
 \begin{figure}[!ht]
   \begin{center}
     \includegraphics[width=0.75\linewidth, keepaspectratio]{phd_calo/feb}
   \end{center}
-  \caption{Schéma simplifier d'une FEB (Front End Board).}
+  \caption{\label{feb}Schéma simplifier d'une FEB (Front End Board).}
 \end{figure}
 
 \begin{figure}[!ht]
   \begin{bigcenter}
 
   \begin{tabular}{ccc}
-    \includegraphics[width=0.5\linewidth, keepaspectratio]{phd_calo/pulse1}
+    \includegraphics[width=0.48\linewidth, keepaspectratio]{phd_calo/pulse1}
     &&
-    \includegraphics[width=0.5\linewidth, keepaspectratio]{phd_calo/pulse2}
+    \includegraphics[width=0.48\linewidth, keepaspectratio]{phd_calo/pulse2}
     \\
     (a) && (b)
   \end{tabular}
 
   \end{bigcenter}
-  \caption{\label{pulses}.}
+  \caption{\label{pulses}Signal avant mise en forme, après mise en forme et après digitalisation pour des muons cosmiques dans le tonneau (a) et dans un bouchon (b).}
 \end{figure}
+
+\paragraph{Les Tower Builders} Ces carte recueillent, à partir des FEB, les signaux pré-amplifiés sans mise en forme de chaque cellule. Pour les calorimètres électromagnétiques tonneau et bouchons, elles construisent des tours de déclenchement en sommant les signaux de huit cellules contigües alors que pour les calorimètres vers l'avant ainsi que pour les calorimètres hadroniques bouchons, aucune somme n'est effectué, on parle plutôt de \emph{Tower Trigger}. Les signaux obtenus sont directement envoyés à l'électronique \emph{back-end}.
+
+\paragraph{Les calibration board} La chaîne électronique d'acquisition contribue significativement à la dégradation du terme constant qui intervient dans le formule de la résolution en énergie, formule \ref{formule_resolution}. Afin de réduire cette contribution, un système de calibration de la réponse de chacune des cellules a été mis en place. Des cartes de calibration permettent l'injection, au travers de résistances $ R_\textrm{inj} $, de signaux très proches des signaux triangulaires de ionisation. Celui-si est le la forme $ V_\textrm{cali}(t)=V_0\,e^{-\frac{t}{\tau}} $, où $ \tau $ est la le temps de décroissance du signal. Il est généré à l'aide de convertisseurs numérique/analogique. Les signal passe alors chaîne électronique d'acquisition et permet d'établir des constantes d'étalonnage.
+
+Le figure \ref{cellule2} montre le schéma simplifié de l'électronique de calibration située autour d'une cellule du calorimètre électromagnétique.
+
+\begin{figure}[!ht]
+  \begin{bigcenter}
+    \includegraphics[width=0.9\linewidth, keepaspectratio]{phd_calo/cellule2}
+  \end{bigcenter}
+  \caption{\label{cellule2}Schéma simplifié de l'électronique de calibration située autour d'une cellule du calorimètre électromagnétique, électronique froide (bleu) et électronique froide (violet).}
+\end{figure}
+
+Au total, l'électronique \emph{front-end} contient $ 58 $ FEC, $ 1524 $ FEB pour traiter environ $ 196000 $ cellules en $ \sim??\mu s $.
+
+
+\newpage
 
 \subsection{L'électronique \emph{back-end}}
 
@@ -333,7 +351,7 @@ Une cellule est généralement composée de plusieurs électrodes, des cartes sommat
   \end{tabular}
 
   \end{bigcenter}
-  \caption{\label{stabilite1}Distribution de la stabilité des piédestaux pour le calorimètre électromagnétique, gain haut (a). Distribution de la stabilité des piédestaux pour le calorimètre vers l'avant, gain moyen (b).}
+  \caption{\label{stabilite1}Distribution de la stabilité des piédestaux pour le calorimètre électromagnétique, gain haut (a). Distribution de la stabilité des piédestaux pour les calorimètres vers l'avant, gain moyen (b).}
 \end{figure}
 
 \begin{figure}[!p]
@@ -363,6 +381,6 @@ Une cellule est généralement composée de plusieurs électrodes, des cartes sommat
   \end{tabular}
 
   \end{bigcenter}
-  \caption{\label{stabilite2}Distribution de la stabilité des rampes pour le calorimètre vers l'avant, gain moyen (a). Distribution de la stabilité des rampes pour les calorimètres hadroniques bouchons, gain moyen, gain haut (b).}
+  \caption{\label{stabilite2}Distribution de la stabilité des rampes pour les calorimètres vers l'avant, gain moyen (a). Distribution de la stabilité des rampes pour les calorimètres hadroniques bouchons, gain moyen, gain haut (b).}
 \end{figure}
 
