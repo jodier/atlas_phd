@@ -282,11 +282,11 @@ Une cellule est généralement composée de plusieurs électrodes, des cartes sommat
 
 \subsection{L'électronique \emph{front-end}}
 
-Les signaux ce chaque cellules sont envoyés hors du cryostats dans les FEC (Front End Crate). Ceux-ci contient trois type de cartes électroniques :
+Les signaux ce chaque cellules sont envoyés hors du cryostats dans les FEC (Front End Crate). Ceux-ci contiennent trois type de cartes électroniques :
 
 \vspace{-0.25cm}
 
-\paragraph{Les FEB (Front End Board)} Ces carte recueillent les signaux de 128 canaux. Elles effectuent la mise en forme des signaux et leur digitalisation en deux principales étapes : i) Les signaux sont pre-amplifiées avec un LNA (Low Noise Amplifier) et sont divisés en trois gains de rapports respectifs $ 1/9.9/93 $ afin de disposer d'une large dynamique. Comme la durée de vie d'un signal est supérieur à la fréquence de croisement des faisceaux du LHC, afin de limiter les effets de l'empilement, une mise en forme est effectuée par des filtres analogiques de type $ CR-(RC)^2 $. Le signal obtenu est d'air nul et sa largeur en temps est approximativement deux fois plus petite que la largeur en temps du signal triangulaire. ii) Les signaux mise en forme sont envoyés dans des tampons capacitifs, en attendant la décision du système de déclenchement L1CaloEM ($ <25\mu s $), avant d'être digitalisés à l'aide de convertisseurs analogique/numérique $ 12 $ bits\footnote{Le signal $ s $ est représenté par un nombre entier $ 12 $ bits c'est-à-dire $ 0<s[ADC]<\underbrace{2^{12}-1}_{4095} $.}. Afin d'économiser des ressources matérielles, le signal est échantillonné, une conversion toute les $ 25ns $ et seuls $ 5 $ échantillons, autour du maximum du signal, sur $ 32 $ sont conservés et envoyés à l'électronique \emph{back-end}.
+\paragraph{Les FEB (Front End Board)} Ces carte recueillent les signaux de 128 canaux. Elles effectuent la mise en forme des signaux et leur digitalisation en deux principales étapes : i) Les signaux sont pre-amplifiées avec un LNA (Low Noise Amplifier) et sont divisés en trois gains de rapports respectifs $ 1/9.9/93 $ afin de disposer d'une large dynamique. Comme la durée de vie d'un signal est supérieur à la fréquence de croisement des faisceaux du LHC, afin de limiter les effets de l'empilement, une mise en forme est effectuée par des filtres analogiques de type $ CR-(RC)^2 $. Le signal obtenu est d'air nul et sa largeur en temps est approximativement deux fois plus petite que la largeur en temps du signal triangulaire. ii) Les signaux mise en forme sont envoyés dans des tampons capacitifs, en attendant la décision du système de déclenchement L1CaloEM ($ <25\mu s $), avant d'être digitalisés à l'aide de convertisseurs analogique/numérique $ 12 $ bits\footnote{Le signal $ s $ est représenté par un nombre entier $ 12 $ bits c'est-à-dire $ 0\le s[ADC]\le\underbrace{2^{12}-1}_{4095} $.}. Afin d'économiser des ressources matérielles, le signal est échantillonné, une conversion toute les $ 25ns $ et seuls $ 5 $ échantillons, autour du maximum du signal, sur $ 32 $ sont conservés et envoyés à l'électronique \emph{back-end} à l'aide des transmetteurs optiques déjà cités au chapitre précédent, les OTX (Optical Transmiter).
 
 La figure \ref{feb} montre le schéma simplifier d'une FEB et la figure \ref{pulses} montre le signal avant mise en forme, après mise en forme et après digitalisation pour des muons cosmiques dans le tonneau (a) et dans un bouchon (b).
 
@@ -312,9 +312,9 @@ La figure \ref{feb} montre le schéma simplifier d'une FEB et la figure \ref{puls
   \caption{\label{pulses}Signal avant mise en forme, après mise en forme et après digitalisation pour des muons cosmiques dans le tonneau (a) et dans un bouchon (b).}
 \end{figure}
 
-\paragraph{Les Tower Builders} Ces carte recueillent, à partir des FEB, les signaux pré-amplifiés sans mise en forme de chaque cellule. Pour les calorimètres électromagnétiques tonneau et bouchons, elles construisent des tours de déclenchement en sommant les signaux de huit cellules contigües alors que pour les calorimètres vers l'avant ainsi que pour les calorimètres hadroniques bouchons, aucune somme n'est effectué, on parle plutôt de \emph{Tower Trigger}. Les signaux obtenus sont directement envoyés à l'électronique \emph{back-end}.
+\paragraph{Les \emph{Tower Builders}} Ces carte recueillent, à partir des FEB, les signaux pré-amplifiés sans mise en forme de chaque cellule. Pour les calorimètres électromagnétiques tonneau et bouchons, elles construisent des tours de déclenchement en sommant les signaux de huit cellules contigües alors que pour les calorimètres vers l'avant ainsi que pour les calorimètres hadroniques bouchons, aucune somme n'est effectué, on parle plutôt de \emph{Tower Trigger}. Les signaux obtenus sont directement envoyés à l'électronique \emph{back-end}.
 
-\paragraph{Les calibration board} La chaîne électronique d'acquisition contribue significativement à la dégradation du terme constant qui intervient dans le formule de la résolution en énergie, formule \ref{formule_resolution}. Afin de réduire cette contribution, un système de calibration de la réponse de chacune des cellules a été mis en place. Des cartes de calibration permettent l'injection, au travers de résistances $ R_\textrm{inj} $, de signaux très proches des signaux triangulaires de ionisation. Celui-si est le la forme $ V_\textrm{cali}(t)=V_0\,e^{-\frac{t}{\tau}} $, où $ \tau $ est la le temps de décroissance du signal. Il est généré à l'aide de convertisseurs numérique/analogique. Les signal passe alors chaîne électronique d'acquisition et permet d'établir des constantes d'étalonnage.
+\paragraph{Les \emph{Calibration Board}} La chaîne électronique d'acquisition contribue significativement à la dégradation du terme constant qui intervient dans le formule de la résolution en énergie, formule \ref{formule_resolution}. Afin de réduire cette contribution, un système de calibration de la réponse de chacune des cellules a été mis en place. Des cartes de calibration permettent l'injection, au travers de résistances $ R_\textrm{inj} $, de signaux très proches des signaux triangulaires de ionisation. Celui-si est le la forme $ V_\textrm{cali}(t)=V_0\,e^{-\frac{t}{\tau}} $, où $ \tau $ est le temps de décroissance du signal. Il est généré à l'aide de convertisseurs numérique/analogique. Les signal passe alors chaîne électronique d'acquisition et permet d'établir des constantes d'étalonnage.
 
 Le figure \ref{cellule2} montre le schéma simplifié de l'électronique de calibration située autour d'une cellule du calorimètre électromagnétique.
 
@@ -325,12 +325,52 @@ Le figure \ref{cellule2} montre le schéma simplifié de l'électronique de calibra
   \caption{\label{cellule2}Schéma simplifié de l'électronique de calibration située autour d'une cellule du calorimètre électromagnétique, électronique froide (bleu) et électronique froide (violet).}
 \end{figure}
 
-Au total, l'électronique \emph{front-end} contient $ 58 $ FEC, $ 1524 $ FEB pour traiter environ $ 196000 $ cellules en $ \sim??\mu s $.
+Au total, l'électronique \emph{front-end} contient $ 58 $ FEC, $ 1524 $ FEB pour traiter environ $ 196000 $ cellules en environ $ ??\mu s $.
+
+\begin{figure}[!p]
+  \begin{bigcenter}
+    \includegraphics[width=0.775\linewidth, keepaspectratio]{phd_calo/eleccalo}
+  \end{bigcenter}
+  \caption{Représentation en image de synthèse des FEC (Front End Crate).}
+\end{figure}
+
+\begin{figure}[!p]
+  \begin{bigcenter}
+    \includegraphics[width=0.775\linewidth, keepaspectratio]{phd_calo/FEC}
+  \end{bigcenter}
+  \caption{Photographie d'une extrémité du cryostat du calorimètre électromagnétique tonneau, les FEC (Front End Crate) sont clairement visibles sur la circonférence du cryostat.}
+\end{figure}
+
+\subsection{L'électronique \emph{back-end}}
+
+Située à l'extérieur du détecteur Atlas dans une caverne annexe, l'électronique \emph{back-end} contient essentiellement deux sous-systèmes. Le premier, qui reçoit les signaux issus des FEB dans des boîtiers, les ROC (Readout Crate), effectue la reconstruction de l'énergie déposée dans chaque cellule. Le second, qui reçoit les signaux issus des \emph{Tower Builders}, réalise l'implémentation du système de déclenchement L1CaloEM à une fréquence pouvant atteindre $ 75kHz $. Dans ce qui suit, nous allons décrire le fonctionnement du premier sous-système.
+
+\paragraph{Les ROD \emph{Read Out Driver}}
+
+
+
+
+\begin{figure}[!ht]
+  \begin{bigcenter}
+
+  \begin{tabular}{ccc}
+    \begin{minipage}{0.475\linewidth}
+      \includegraphics[width=\linewidth, keepaspectratio]{phd_calo/FEB}
+    \end{minipage}
+    &&
+    \begin{minipage}{0.475\linewidth}
+      \includegraphics[width=\linewidth, keepaspectratio]{phd_calo/ROD}
+    \end{minipage}
+    \\
+    (a) && (b)
+  \end{tabular}
+
+  \end{bigcenter}
+  \caption{\label{}Photographie d'une FEB (Front End Board) (a) et photographie d'un ROD (Read Out Driver) (b).}
+\end{figure}
 
 
 \newpage
-
-\subsection{L'électronique \emph{back-end}}
 
 \begin{figure}[!ht]
   \begin{center}
