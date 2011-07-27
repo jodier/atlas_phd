@@ -362,9 +362,9 @@ Au total, l'électronique \emph{front-end} contient $ 58 $ FEC, $ 1524 $ FEB pour
 
 \subsection{L'électronique \emph{back-end}}
 
-Située à l'extérieur du détecteur Atlas dans une caverne annexe, l'électronique \emph{back-end} contient essentiellement deux sous-systèmes. Le premier, qui reçoit les signaux issus des FEB dans des boîtiers, les ROC (Readout Crate), effectue la reconstruction de l'énergie déposée dans chaque cellule. Le second, qui reçoit les signaux issus des \emph{Tower Builders}, réalise l'implémentation du système de déclenchement L1CaloEM à une fréquence pouvant atteindre $ 75kHz $. Dans ce qui suit, nous allons décrire le fonctionnement du premier sous-système.
+Située à l'extérieur du détecteur Atlas dans une caverne annexe, l'électronique \emph{back-end} contient essentiellement deux sous-systèmes. Le premier, qui reçoit les signaux issus des FEB dans des boîtiers, les ROC (Readout Crate), effectue la reconstruction de l'énergie déposée dans chacune des cellules. Le second, qui reçoit les signaux issus des \emph{Tower Builders}, réalise l'implémentation du système de déclenchement L1CaloEM à une fréquence pouvant atteindre $ 75kHz $. Dans ce qui suit, nous allons décrire le fonctionnement du premier sous-système.
 
-\paragraph{Les ROD \emph{Read Out Driver}} Ces cartes, voir figure \ref{FEBetROD} (b), recueillent les signaux de 16 FEB. Leur objectif est de déterminer l'énergie des cellules à partir du signal échantillonné. La méthode du filtrage optimal est utilisée, elle permet de retrouver l'amplitude maximale du signal $ A $ ainsi que le temps de décroissance du signal $ \tau $ :
+\paragraph{Les ROD \emph{Read Out Driver}} Ces cartes, voir figure \ref{FEBetROD} (b), recueillent les signaux de 16 FEB. Construites à base de DSP (Digital Signal Processor), leur objectif est de déterminer l'énergie des cellules à partir du signal échantillonné. La méthode du filtrage optimal est utilisée, elle permet de retrouver l'amplitude maximale du signal $ A $ ainsi que le temps de décroissance du signal $ \tau $ :
 \begin{equation}
   \phantom{\tau}A=\sum_i^{N_{sample}}a_i(s_i-p)
 \end{equation}
@@ -393,9 +393,17 @@ où :
   \item $ A $ est l'amplitude maximale du signal en $ ADC $.
 \end{itemize}
 
-Le c\oe fficient $ F_{\mu A\to\MeV} $ est établit à partir de la simulation, le c\oe fficient $ F_{DAC\to\mu A} $ fait intervenir la valeur de la résistance d'injection $ R_{inj} $, le c\oe fficient $ M_{cali}/M_{phys} $ à été établit à l'aide de faisceaux de test, pour les calorimètres vers l'avant, les contraintes de performances sont plus souples et $ M_{cali}/M_{phys}=1 $, les c\oe fficients $ R_j $ sont obtenus pour chaque cellule à partir de la pente du gain en utilisant les signaux de calibration (voir la section suivante), les piedestaux sont obtenus pour chaque cellule en lisant les FEB sans signal (voir la section suivante) et enfin les OFC sont extraits pour chaque cellule à partir de la forme des signaux de calibration et à partir de la corrélation entre les différents échantillons du signal de calibration en utilisant un multiplicateur de Lagrange (voir la section suivante).
+Le c\oe fficient $ F_{\mu A\to\MeV} $ est établit à partir de la simulation, le c\oe fficient $ F_{DAC\to\mu A} $ fait intervenir la valeur de la résistance d'injection $ R_{inj} $, le c\oe fficient $ M_{cali}/M_{phys} $ à été établit à l'aide de faisceaux de test, pour les calorimètres vers l'avant, les contraintes de performances sont plus souples et $ M_{cali}/M_{phys}=1 $, les c\oe fficients $ R_j $ sont obtenus pour chaque cellule à partir de la pente du gain en utilisant les signaux de calibration (voir la section suivante), les piedestaux sont obtenus pour chaque cellule en lisant les FEB sans signal (voir la section suivante) et enfin les OFC sont extraits pour chaque cellule à partir de la forme des signaux de calibration et à partir de la corrélation entre les différents échantillons du signal de calibration en utilisant un multiplicateur de Lagrange (voir la section suivante).\\
+
+Remarque : La reconstruction de l'énergie déposée dans chacune des cellules peut être indifféremment effectuée par les ROD ou par le logiciel \emph{LAr offline}.
 
 \section{Calibration électronique}
+
+Dans cette section, je vais décrire la procédure de calibration électronique des calorimètres à argon liquide, c'est-à-dire, l'extractions des constantes nécessaires à la reconstruction de l'énergie déposée dans chacune des cellules. De septembre 2009 jusqu'à février 2010, j'avais la charge de la validation des campagnes de calibration pour les bouchons du calorimètre électromagnétique et à partir du printemps 2010, j'ai développer une partie des outils utilisés actuellement pour la validation des campagnes de calibration.
+
+\subsection{Campagnes de calibration}
+
+Des campagnes de calibration ont lieu plusieurs fois par semaines. Leur objectif et de déterminer et contrôler les constantes nécessaires à la reconstruction de l'énergie déposée dans chacune des cellules. Pour ce faire, l'électronique de calibration, présentée dans la section précédente, est utilisée. Une campagne de calibration est composée d'un lot de prises de données, ou \emph{run}, spécifiques, soit typiquement : i) des \emph{runs} de piédestaux. ii) des \emph{runs} de délais. iii) des \emph{runs} de rampes. Il existe deux type de campagnes, les campagnes \emph{daily} et les campagnes \emph{weekly}. Dans les premières, seuls des runs de piédestaux de de rampes sont effectués en ne concevant que 7 valeurs après échantillonnage des signaux. Dans les secondes, les trois type des \emph{runs} sont effectués en concevant 32 valeurs après échantillonnage des signaux. Décrivons le contenu de chacun des \emph{runs} :
 
 \newpage
 
