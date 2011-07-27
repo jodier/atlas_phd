@@ -282,11 +282,11 @@ Une cellule est généralement composée de plusieurs électrodes, des cartes sommat
 
 \subsection{L'électronique \emph{front-end}}
 
-Les signaux ce chaque cellules sont envoyés hors du cryostats dans les FEC (Front End Crate). Ceux-ci contiennent trois type de cartes électroniques :
+Les signaux ce chaque cellule sont envoyés hors du cryostats dans les FEC (Front End Crate). Ceux-ci contiennent trois type de cartes électroniques :
 
 \vspace{-0.25cm}
 
-\paragraph{Les FEB (Front End Board)} Ces carte recueillent les signaux de 128 canaux. Elles effectuent la mise en forme des signaux et leur digitalisation en deux principales étapes : i) Les signaux sont pre-amplifiées avec un LNA (Low Noise Amplifier) et sont divisés en trois gains de rapports respectifs $ 1/9.9/93 $ afin de disposer d'une large dynamique. Comme la durée de vie d'un signal est supérieur à la fréquence de croisement des faisceaux du LHC, afin de limiter les effets de l'empilement, une mise en forme est effectuée par des filtres analogiques de type $ CR-(RC)^2 $. Le signal obtenu est d'air nul et sa largeur en temps est approximativement deux fois plus petite que la largeur en temps du signal triangulaire. ii) Les signaux mise en forme sont envoyés dans des tampons capacitifs, en attendant la décision du système de déclenchement L1CaloEM ($ <25\mu s $), avant d'être digitalisés à l'aide de convertisseurs analogique/numérique $ 12 $ bits\footnote{Le signal $ s $ est représenté par un nombre entier $ 12 $ bits c'est-à-dire $ 0\le s[ADC]\le\underbrace{2^{12}-1}_{4095} $.}. Afin d'économiser des ressources matérielles, le signal est échantillonné, une conversion toute les $ 25ns $ et seuls $ 5 $ échantillons, autour du maximum du signal, sur $ 32 $ sont conservés et envoyés à l'électronique \emph{back-end} à l'aide des transmetteurs optiques déjà cités au chapitre précédent, les OTX (Optical Transmiter).
+\paragraph{Les FEB (Front End Board)} Ces cartes, voir figure \ref{FEBetROD} (a), recueillent les signaux de 128 canaux. Elles effectuent plusieurs opérations : i) Les signaux sont pre-amplifiées avec un LNA (Low Noise Amplifier) et sont divisés en trois gains de rapports respectifs $ 1/9.9/93 $ afin de disposer d'une large dynamique. ii) Comme la durée de vie d'un signal est supérieur à la fréquence de croisement des faisceaux du LHC, afin de limiter les effets de l'empilement, une mise en forme est effectuée par des filtres passifs analogiques de type $ CR-(RC)^2 $. Le signal obtenu est d'air nul, sa largeur en temps est approximativement deux fois plus petite que la largeur en temps du signal triangulaire mais l'amplitude maximale reste constante. iii) En attendant la décision du système de déclenchement L1CaloEM ($ <25\mu s $), les signaux mis en forme sont envoyés dans des tampons capacitifs avant d'être digitalisés à l'aide de convertisseurs analogique/numérique $ 12 $ bits\footnote{Le signal $ s $ est représenté par un nombre entier $ 12 $ bits c'est-à-dire $ 0\le s[ADC]\le\underbrace{2^{12}-1}_{4095} $.}. Afin d'économiser des ressources matérielles, le signal est échantillonné avec une conversion toute les $ 25ns $. Seuls $ 5 $ échantillons (resp. jusqu'à $ 32 $ échantillons), autour du maximum du signal, sont conservés pour la physique (resp. pour la calibration) et envoyés à l'électronique \emph{back-end} à l'aide des transmetteurs optiques déjà cités au chapitre précédent, les OTX (Optical Transmiter).
 
 La figure \ref{feb} montre le schéma simplifier d'une FEB et la figure \ref{pulses} montre le signal avant mise en forme, après mise en forme et après digitalisation pour des muons cosmiques dans le tonneau (a) et dans un bouchon (b).
 
@@ -329,26 +329,17 @@ Au total, l'électronique \emph{front-end} contient $ 58 $ FEC, $ 1524 $ FEB pour
 
 \begin{figure}[!p]
   \begin{bigcenter}
-    \includegraphics[width=0.775\linewidth, keepaspectratio]{phd_calo/eleccalo}
+    \includegraphics[width=0.775\linewidth, keepaspectratio]{phd_calo/FEC}
   \end{bigcenter}
-  \caption{Représentation en image de synthèse des FEC (Front End Crate).}
+  \caption{Photographie d'une extrémité du cryostat du calorimètre électromagnétique tonneau, les FEC (Front End Crate) sont clairement visibles sur la circonférence du cryostat :-).}
 \end{figure}
 
 \begin{figure}[!p]
   \begin{bigcenter}
-    \includegraphics[width=0.775\linewidth, keepaspectratio]{phd_calo/FEC}
+    \includegraphics[width=0.775\linewidth, keepaspectratio]{phd_calo/eleccalo}
   \end{bigcenter}
-  \caption{Photographie d'une extrémité du cryostat du calorimètre électromagnétique tonneau, les FEC (Front End Crate) sont clairement visibles sur la circonférence du cryostat.}
+  \caption{Représentation en image de synthèse d'un FEC (Front End Crate).}
 \end{figure}
-
-\subsection{L'électronique \emph{back-end}}
-
-Située à l'extérieur du détecteur Atlas dans une caverne annexe, l'électronique \emph{back-end} contient essentiellement deux sous-systèmes. Le premier, qui reçoit les signaux issus des FEB dans des boîtiers, les ROC (Readout Crate), effectue la reconstruction de l'énergie déposée dans chaque cellule. Le second, qui reçoit les signaux issus des \emph{Tower Builders}, réalise l'implémentation du système de déclenchement L1CaloEM à une fréquence pouvant atteindre $ 75kHz $. Dans ce qui suit, nous allons décrire le fonctionnement du premier sous-système.
-
-\paragraph{Les ROD \emph{Read Out Driver}}
-
-
-
 
 \begin{figure}[!ht]
   \begin{bigcenter}
@@ -366,9 +357,45 @@ Située à l'extérieur du détecteur Atlas dans une caverne annexe, l'électronique 
   \end{tabular}
 
   \end{bigcenter}
-  \caption{\label{}Photographie d'une FEB (Front End Board) (a) et photographie d'un ROD (Read Out Driver) (b).}
+  \caption{\label{FEBetROD}Photographie d'une FEB (Front End Board) (a) et photographie d'un ROD (Read Out Driver) (b).}
 \end{figure}
 
+\subsection{L'électronique \emph{back-end}}
+
+Située à l'extérieur du détecteur Atlas dans une caverne annexe, l'électronique \emph{back-end} contient essentiellement deux sous-systèmes. Le premier, qui reçoit les signaux issus des FEB dans des boîtiers, les ROC (Readout Crate), effectue la reconstruction de l'énergie déposée dans chaque cellule. Le second, qui reçoit les signaux issus des \emph{Tower Builders}, réalise l'implémentation du système de déclenchement L1CaloEM à une fréquence pouvant atteindre $ 75kHz $. Dans ce qui suit, nous allons décrire le fonctionnement du premier sous-système.
+
+\paragraph{Les ROD \emph{Read Out Driver}} Ces cartes, voir figure \ref{FEBetROD} (b), recueillent les signaux de 16 FEB. Leur objectif est de déterminer l'énergie des cellules à partir du signal échantillonné. La méthode du filtrage optimal est utilisée, elle permet de retrouver l'amplitude maximale du signal $ A $ ainsi que le temps de décroissance du signal $ \tau $ :
+\begin{equation}
+  \phantom{\tau}A=\sum_i^{N_{sample}}a_i(s_i-p)
+\end{equation}
+\begin{equation}
+  \tau A=\sum_i^{N_{sample}}b_i(s_i-p)
+\end{equation}
+
+où $ N_{sample} $ est le nombre d'échantillons du signal, $ s_i $ est la valeur exprimée en $ ADC $ du i$ ^\textrm{ième} $ échantillon, $ p $ est la valeur du piedestal exprimée en $ ADC $ de la cellule et $ a_i $ et $ b_i $ sont les c\oe fficients de filtrage optimal (OFC). Comme l'erreur sur $ \tau $ est inversement proportionnelle à $ A $, le temps est calculé seulement pour les canaux au dessus d'un seuil d'énergie donnée. De plus, un $\chi^2 $ simplifie, ignorant la corrélation entre les échantillons, est calculé pour comparer la forme des signaux mesurées avec la forme de signaux idéals :
+\begin{equation}
+  \chi^2=\sum_i^{N_{sample}}(s_i-p-A(g_i-\tau g'_i))^2
+\end{equation}
+
+où $ g_i $ et $ g'_i $ sont respectivement le signal idéal normalisé et la dérivée du signal idéal normalisé. Les valeurs de $ p $, $ a_i $ et $ b_i $ sont déterminés pour chaque cellule grace à l'électronique de calibration.
+
+Une fois l'amplitude maximale du signal reconstruite, il est possible de reconstruire l'énergie dans la cellule $ E_\textrm{cellule} $ :
+\begin{equation}
+  \boxed{E_\textrm{cellule}=F_{\mu A\to\MeV}F_{DAC\to\mu A}\frac{M_{cali}}{M_{phys}}\sum_j^{M_{rampe}}R_j\left[\underbrace{\sum_i^{N_{sample}}a_i(s_i-p)}_{A}\right]}
+\end{equation}
+
+où :
+\begin{itemize}
+  \item $ F_{\mu A\to\MeV} $ est la constante qui effectue la conversion $ \mu A $ vers $ \MeV $.
+  \item $ F_{DAC\to\mu A} $ est la constante qui effectue la conversion $ DAC $ vers $ \mu A $.
+  \item $ M_{cali}/M_{phys} $ est un facteur de correction qui tient compte des différences entre le signal physique et le signal de calibration.
+  \item $ R_j $ est la constante qui effectue la conversion $ ADC $ vers $ DAC $ pour les différents gains.
+  \item $ A $ est l'amplitude maximale du signal en $ ADC $.
+\end{itemize}
+
+Le c\oe fficient $ F_{\mu A\to\MeV} $ est établit à partir de la simulation, le c\oe fficient $ F_{DAC\to\mu A} $ fait intervenir la valeur de la résistance d'injection $ R_{inj} $, le c\oe fficient $ M_{cali}/M_{phys} $ à été établit à l'aide de faisceaux de test, pour les calorimètres vers l'avant, les contraintes de performances sont plus souples et $ M_{cali}/M_{phys}=1 $, les c\oe fficients $ R_j $ sont obtenus pour chaque cellule à partir de la pente du gain en utilisant les signaux de calibration (voir la section suivante), les piedestaux sont obtenus pour chaque cellule en lisant les FEB sans signal (voir la section suivante) et enfin les OFC sont extraits pour chaque cellule à partir de la forme des signaux de calibration et à partir de la corrélation entre les différents échantillons du signal de calibration en utilisant un multiplicateur de Lagrange (voir la section suivante).
+
+\section{Calibration électronique}
 
 \newpage
 
