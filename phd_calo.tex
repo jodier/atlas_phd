@@ -390,7 +390,7 @@ où :
   \item $ F_{DAC\to\mu A} $ est la constante qui effectue la conversion $ DAC $ vers $ \mu A $.
   \item $ M_{cali}/M_{phys} $ est un facteur de correction qui tient compte des différences entre le signal physique et le signal de calibration.
   \item $ R_j $ est la constante qui effectue la conversion $ ADC $ vers $ DAC $ pour les différents gains.
-  \item $ A $ est l'amplitude maximale du signal en $ ADC $.
+  \item $ A $ est l'amplitude maximale du signal en $ ADC $.\\
 \end{itemize}
 
 Le c\oe fficient $ F_{\mu A\to\MeV} $ est établit à partir de la simulation, le c\oe fficient $ F_{DAC\to\mu A} $ fait intervenir la valeur de la résistance d'injection $ R_{inj} $, le c\oe fficient $ M_{cali}/M_{phys} $ à été établit à l'aide de faisceaux de test, pour les calorimètres vers l'avant, les contraintes de performances sont plus souples et $ M_{cali}/M_{phys}=1 $, les c\oe fficients $ R_j $ sont obtenus pour chaque cellule à partir de la pente du gain en utilisant les signaux de calibration (voir la section suivante), les piedestaux sont obtenus pour chaque cellule en lisant les FEB sans signal (voir la section suivante) et enfin les OFC sont extraits pour chaque cellule à partir de la forme des signaux de calibration et à partir de la corrélation entre les différents échantillons du signal de calibration en utilisant un multiplicateur de Lagrange (voir la section suivante).\\
