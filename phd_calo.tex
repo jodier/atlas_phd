@@ -286,7 +286,7 @@ Les signaux ce chaque cellule sont envoyés hors du cryostats dans les FEC (Front
 
 \vspace{-0.25cm}
 
-\paragraph{Les FEB (Front End Board)} Ces cartes, voir figure \ref{FEBetROD} (a), recueillent les signaux de 128 canaux. Elles effectuent plusieurs opérations : i) Les signaux sont pre-amplifiées avec un LNA (Low Noise Amplifier) et sont divisés en trois gains de rapports respectifs $ 1/9.9/93 $ afin de disposer d'une large dynamique. ii) Comme la durée de vie d'un signal est supérieur à la fréquence de croisement des faisceaux du LHC, afin de limiter les effets de l'empilement, une mise en forme est effectuée par des filtres passifs analogiques de type $ CR-(RC)^2 $. Le signal obtenu est d'air nul, sa largeur en temps est approximativement deux fois plus petite que la largeur en temps du signal triangulaire mais l'amplitude maximale reste constante. iii) En attendant la décision du système de déclenchement L1CaloEM ($ <25\mu s $), les signaux mis en forme sont envoyés dans des tampons capacitifs avant d'être digitalisés à l'aide de convertisseurs analogique/numérique $ 12 $ bits\footnote{Le signal $ s $ est représenté par un nombre entier $ 12 $ bits c'est-à-dire $ 0\le s[ADC]\le\underbrace{2^{12}-1}_{4095} $.}. Afin d'économiser des ressources matérielles, le signal est échantillonné avec une conversion toute les $ 25ns $. Seuls $ 5 $ échantillons (resp. jusqu'à $ 32 $ échantillons), autour du maximum du signal, sont conservés pour la physique (resp. pour la calibration) et envoyés à l'électronique \emph{back-end} à l'aide des transmetteurs optiques déjà cités au chapitre précédent, les OTX (Optical Transmiter).
+\paragraph{Les FEB (Front End Board)} Ces cartes, voir figure \ref{FEBetROD} (a), recueillent les signaux de 128 canaux. Elles effectuent plusieurs opérations : i) Les signaux sont pre-amplifiées avec un LNA (Low Noise Amplifier) et sont divisés en trois gains de rapports respectifs $ 1/9.9/93 $ afin de disposer d'une large dynamique. ii) Comme la durée de vie d'un signal est supérieur à la fréquence de croisement des faisceaux du LHC, afin de limiter les effets de l'empilement, une mise en forme est effectuée par des filtres passifs analogiques de type $ CR-(RC)^2 $. Le signal obtenu est d'air nul, sa largeur en temps est approximativement deux fois plus petite que la largeur en temps du signal triangulaire mais l'amplitude maximale reste constante. iii) En attendant la décision du système de déclenchement L1CaloEM ($ <25\mu s $), les signaux mis en forme sont envoyés dans des tampons capacitifs avant d'être digitalisés à l'aide de convertisseurs analogique/numérique $ 12 $ bits\footnote{Le signal $ s $ est représenté par un nombre entier $ 12 $ bits c'est-à-dire $ 0\le s[ADC]\le\underbrace{2^{12}-1}_{4095} $ où $ ADC $ signifie \vspace{-0.5cm} en anglais \emph{Analog-to-Digital Converter}.}. Afin d'économiser des ressources matérielles, le signal est échantillonné avec une conversion toute les $ 25ns $. Seuls $ 5 $ échantillons (resp. jusqu'à $ 32 $ échantillons), autour du maximum du signal, sont conservés pour la physique (resp. pour la calibration) et envoyés à l'électronique \emph{back-end} à l'aide des transmetteurs optiques déjà cités au chapitre précédent, les OTX (Optical Transmiter).
 
 La figure \ref{feb} montre le schéma simplifier d'une FEB et la figure \ref{pulses} montre le signal avant mise en forme, après mise en forme et après digitalisation pour des muons cosmiques dans le tonneau (a) et dans un bouchon (b).
 
@@ -377,7 +377,7 @@ où $ N_{sample} $ est le nombre d'échantillons du signal, $ s_i $ est la valeur 
   \chi^2=\sum_i^{N_{sample}}(s_i-p-A(g_i-\tau g'_i))^2
 \end{equation}
 
-où $ g_i $ et $ g'_i $ sont respectivement le signal idéal normalisé et la dérivée du signal idéal normalisé. Les valeurs de $ p $, $ a_i $ et $ b_i $ sont déterminés pour chaque cellule grace à l'électronique de calibration.
+où $ g_i $ et $ g'_i $ sont respectivement le signal idéal normalisé et la dérivée du signal idéal normalisé. Les valeurs de $ p $, $ a_i $ et $ b_i $ sont déterminés pour chaque cellule grace à l'électronique de calibration (voir la section suivante).
 
 Une fois l'amplitude maximale du signal reconstruite, il est possible de reconstruire l'énergie dans la cellule $ E_\textrm{cellule} $ :
 \begin{equation}
@@ -399,19 +399,94 @@ Remarque : La reconstruction de l'énergie déposée dans chacune des cellules peut
 
 \section{Calibration électronique}
 
-Dans cette section, je vais décrire la procédure de calibration électronique des calorimètres à argon liquide, c'est-à-dire, l'extractions des constantes nécessaires à la reconstruction de l'énergie déposée dans chacune des cellules. De septembre 2009 jusqu'à février 2010, j'avais la charge de la validation des campagnes de calibration pour les bouchons du calorimètre électromagnétique et à partir du printemps 2010, j'ai développer une partie des outils utilisés actuellement pour la validation des campagnes de calibration.
+Dans cette section, je vais décrire la procédure de calibration électronique des calorimètres à argon liquide, c'est-à-dire, l'extractions des constantes nécessaires à la reconstruction de l'énergie déposée dans chacune des cellules. De septembre 2009 jusqu'à février 2010, j'ai eu la charge de la validation des campagnes de calibration pour les bouchons du calorimètre électromagnétique et à partir du printemps 2010, j'ai développer une partie des outils utilisés actuellement pour la validation des campagnes de calibration.
 
 \subsection{Campagnes de calibration}
 
-Des campagnes de calibration ont lieu plusieurs fois par semaines. Leur objectif et de déterminer et contrôler les constantes nécessaires à la reconstruction de l'énergie déposée dans chacune des cellules. Pour ce faire, l'électronique de calibration, présentée dans la section précédente, est utilisée. Une campagne de calibration est composée d'un lot de prises de données, ou \emph{run}, spécifiques, soit typiquement : i) des \emph{runs} de piédestaux. ii) des \emph{runs} de délais. iii) des \emph{runs} de rampes. Il existe deux type de campagnes, les campagnes \emph{daily} et les campagnes \emph{weekly}. Dans les premières, seuls des runs de piédestaux de de rampes sont effectués en ne concevant que 7 valeurs après échantillonnage des signaux. Dans les secondes, les trois type des \emph{runs} sont effectués en concevant 32 valeurs après échantillonnage des signaux. Décrivons le contenu de chacun des \emph{runs} :
+Des campagnes de calibration ont lieu plusieurs fois par semaines. Leur objectif et de déterminer et contrôler les constantes nécessaires à la reconstruction de l'énergie déposée dans chacune des cellules. Pour ce faire, l'électronique de calibration, présentée dans la section précédente, est utilisée. Une campagne de calibration est composée d'un lot de prises de données, ou \emph{run}, spécifiques, soit typiquement : i) des \emph{runs} de piédestaux. ii) des \emph{runs} de délais. iii) des \emph{runs} de rampes. Il existe deux type de campagnes, les campagnes \emph{daily} et les campagnes \emph{weekly}. Dans les premières, seuls des runs de piédestaux de de rampes sont effectués en ne concevant que 7 valeurs après échantillonnage des signaux tous les $ 25ns $. Dans les secondes, les trois type des \emph{runs} sont effectués en concevant 32 valeurs après échantillonnage des signaux tous les $ 25ns $.
 
 \newpage
 
-\begin{figure}[!ht]
-  \begin{center}
-    \includegraphics[width=0.5\linewidth, keepaspectratio]{phd_calo/noise_lar}
-  \end{center}
-  \caption{.}
+Décrivons le contenu de chacun des \emph{runs} :
+
+\paragraph{Les \emph{runs} de piédestaux} Au total, 3000 événements sont enregistrés. Les FEB sont lues sans qu'il y ait de signal injecté par l'électronique de calibration. Il est alors possible de calculer le piédestal moyen, le RMS (bruit) et l'auto-corrélation en temps entre deux échantillons mesurés consécutivement. Cette dernière quantité intervient dans la détermination des OFC.
+
+\paragraph{Les \emph{runs} de délais} Au total, 200 événements sont enregistrés. Les FEB sont lues après injection des signaux de calibration. Un délai est introduit entre l'injection et l'acquisition. Vingt-quatre valeurs sont générées toutes les $ 25ns $, c'est-à-dire, vingt-quatre fois plus que pour un signal échantillonné standard. Il est alors possible de calculer\footnote{Une correction sur le couplage capacitif est appliquée. En effet, celui-ci peut entrainer jusqu'à $ 8\% $ de perte sur le courant injecté dans les cellules dans le premier compartiment.} le signal moyen et le RMS. La courbe de réponse de la cellule, ou \emph{pulse}, est reconstruite ultérieurement. Cette dernière quantité intervient dans la détermination des OFC.
+
+\paragraph{Les \emph{runs} de ramps} Au total, 200 événements sont enregistrés. Le'objective est de mesurer la réponse de chaque cellule en fonction du courant injecté pour les trois gains. L'amplitude maximale moyenne est reconstruite$ ^\textrm{\scriptsize{3}} $ ultérieurement. Il est alors possible de calculer la relation linéaire entre les $ ADC $ les $ DAC $.\\
+
+Remarque : La méthode générale utilisée pour calculer les OFC est illustrée dans l'annexe ??.
+
+\subsection{Procédure de validation}
+
+Il existe une base de donnée qui contient les valeurs courantes des constantes de calibration pour chacune des cellules. La procédure de validation s'effectue en 4 étapes : i) Une campagne de calibration, \emph{daily} ou \emph{weakly}, est démarrée à partir de la salle de contrôle du détecteur Atlas. ii) La reconstruction des runs de calibration est effectuée automatiquement. iii) Un campagne de référence est sélectionnée. Il s'agit généralement de la campagne \emph{weakly} présente dans la base de donnée sauf si les conditions (champs magnétiques, température, etc\dots) ont changées. iv) Pour chaque cellule et pour chaque FEB (128 cellules), les constantes de calibration de la campagne courante sont comparées avec les constantes de calibration de la campagne de référence. Si les différences, absolues ou relatives selon les cas, dépassent un certain seuil, voir tableau \ref{seuils}, alors, la cellule est identifiée comme déviante. Le responsable de la validation de la campagne de calibration doit essayer de comprendre pourquoi et doit vérifier si la déviation est durable dans le temps. Pour les cellules réellement problématiques, l'électronique de lecture (\emph{deadReadout}) et/ou de calibration (\emph{deadCalib}) est le plus souvent en cause.
+
+La procédure de validation permet ainsi de suivre la stabilité des constantes des calibration, de déterminer si une mise à jour de la base de données des constantes des calibration est nécessaire et également de vérifier si il existe de nouvelles cellules défectueuses.\\
+
+La stabilité des constantes de calibration a été étudiée. Les figures \ref{stabilite1} et \ref{stabilite2} montrent la stabilités des piédestaux, du bruit, des délais et des rampes la période 2009-2010 pour le calorimètre électromagnétiques tonneau. Les piédestaux (resp. le bruit) sont stables, la déviation est inférieure à $ 0.1ADC $ (resp $ 0.02ADC $). Pour les délais et les rampes, nous observons des décalages, $ +0.1 $ pour les délais et $ -0.1 $ pour les rampes. Il sont du à la désactivation fréquente des aimants toroïdale et solénoïdal, en effet, les champs induisent des courants dans les inductances des cartes électronique dont il faut tenir compte.
+
+\begin{table}[!p]
+  \begin{bigcenter}
+  \small{
+
+    \begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|c|c|}
+      \hline
+      \hline
+        & Gains & Ped & Noise & Ped & Noise & Auto & Auto & Delay & Delay & Ramp & Ramp \\
+        & & & & FEB & FEB & & FEB & & FEB & & FEB \\
+        & & $ [ADC] $ & $ [ADC] $ & $ [ADC] $ & $ [ADC] $ & $ abs $ & $ abs $ & \hbox{$\,^0\!/_{00}$} & \hbox{$\,^0\!/_{00}$} & $ rel $ & $ rel $ \\
+      \hline
+        EMB & H & 1.5 & 0.8 & 0.2 & 0.05 & 0.05 & 0.04 & 10.0 & 5.0  & 0.015  & 0.004 \\
+            & L & 0.9 & 0.2 & all & all  & all  & all  & 4.0  & all  & 0.004  & all   \\
+            & M & 0.9 & 0.2 &     &      &      &      & 4.0  &      & 0.004  &       \\
+      \hline
+        EMEC & H & 1.5 & 0.8 & 1.5 & 1.0  & 0.05 & 0.02 & 6.0  & 2.0  & 0.006  & 0.001 \\
+             & L & 0.9 & 0.2 & all & all  & all  & all  & 1.5  & 0.6  & 0.004  & all   \\
+             & M & 0.9 & 0.2 &     &      &      &      & 1.5  & 0.6  & 0.004  &       \\
+      \hline 
+        FCAL & H & 1.5 & 0.8 & 1.5 & 1.0  & 0.05 & 0.02 & 5.0  & 3.0  & 0.004  & 0.001 \\
+             & L & 0.9 & 0.2 & all & all  & all  & all  & 1.0  & all  & 0.0015 & all   \\
+             & M & 0.9 & 0.2 &     &      &      &      & 1.0  &      & 0.0015 &       \\
+      \hline
+        HEC & H & 5.0 & 4.0 & 5.0 & 4.0  & 0.05 & 0.02 & 15.0 & 10.0 & 0.02  & 0.001  \\
+            & L & 1.3 & 0.6 & all & all  & all  & all  & 10.0 & all  & 0.015 & all    \\
+            & M & 1.0 & 0.2 &     &      &      &      & 10.0 &      & 0.015 &        \\
+      \hline
+    \end{tabular}
+
+  }
+  \end{bigcenter}
+  \caption{\label{seuils}Seuils pour identifier les cellules déviantes pour les trois gains et pour les quatre sous-détecteurs : EMB (calorimètre électromagnétique tonneau), EMEC (calorimètres électromagnétiques bouchons), FCAL (calorimètres vers l'avant) et HEC (calorimètres hadroniques bouchons).}
+\end{table}
+
+\begin{figure}[!p]
+  \begin{bigcenter}
+
+  \begin{tabular}{ccc}
+    \includegraphics[height=4.0cm, keepaspectratio]{phd_calo/Ped-EM}
+    &&
+    \includegraphics[height=4.0cm, keepaspectratio]{phd_calo/Noise-EM}
+    \\
+    (a) && (b)
+  \end{tabular}
+
+  \end{bigcenter}
+  \caption{\label{stabilite1}Stabilité des piédestaux pour le calorimètre électromagnétique tonneau, sur la période 2009-2010 (a). Stabilité du bruit pour le calorimètre électromagnétique tonneau, sur la période 2009-2010 (b).}
+\end{figure}
+
+\begin{figure}[!p]
+  \begin{bigcenter}
+
+  \begin{tabular}{ccc}
+    \includegraphics[height=4.0cm, keepaspectratio]{phd_calo/Delay-EM}
+    &&
+    \includegraphics[height=4.0cm, keepaspectratio]{phd_calo/Ramp-EM}
+    \\
+    (a) && (b)
+  \end{tabular}
+
+  \end{bigcenter}
+  \caption{\label{stabilite2}Stabilité des délais pour le calorimètre électromagnétique tonneau, sur la période 2009-2010 (a). Stabilité des rampes pour le calorimètre électromagnétique tonneau, sur la période 2009-2010 (b).}
 \end{figure}
 
 \begin{figure}[!p]
@@ -426,7 +501,7 @@ Des campagnes de calibration ont lieu plusieurs fois par semaines. Leur objectif
   \end{tabular}
 
   \end{bigcenter}
-  \caption{\label{stabilite1}Distribution de la stabilité des piédestaux pour le calorimètre électromagnétique, gain haut (a). Distribution de la stabilité des piédestaux pour les calorimètres vers l'avant, gain moyen (b).}
+  \caption{\label{stabilite3}Stabilité des piédestaux pour le calorimètre électromagnétique, gain haut, sur la période 2011 (a). Stabilité des piédestaux pour les calorimètres vers l'avant, gain moyen, sur la période 2011 (b).}
 \end{figure}
 
 \begin{figure}[!p]
@@ -435,27 +510,111 @@ Des campagnes de calibration ont lieu plusieurs fois par semaines. Leur objectif
   \begin{tabular}{ccc}
     \includegraphics[height=5.25cm, keepaspectratio]{phd_calo/Ped-MG-HEC}
     &&
-    \includegraphics[height=5.25cm, keepaspectratio]{phd_calo/Ramp-HG-EM}
+    \includegraphics[height=5.25cm, keepaspectratio]{phd_calo/Noise-HG-EM}
     \\
     (a) && (b)
   \end{tabular}
 
   \end{bigcenter}
-  \caption{\label{stabilite2}Distribution de la stabilité des piédestaux pour les calorimètres hadroniques bouchons, gain moyen (a). Distribution de la stabilité des rampes pour le calorimètre électromagnétique, gain haut (b).}
+  \caption{\label{stabilite4}Stabilité des piédestaux pour les calorimètres hadroniques bouchons, gain moyen, sur la période 2011 (a). Stabilité du bruit pour le calorimètre électromagnétique, gain haut, sur la période 2011 (b).}
 \end{figure}
 
 \begin{figure}[!p]
   \begin{bigcenter}
 
   \begin{tabular}{ccc}
-    \includegraphics[height=5.25cm, keepaspectratio]{phd_calo/Ramp-MG-FCal}
+    \includegraphics[height=5.25cm, keepaspectratio]{phd_calo/Noise-MG-FCal}
     &&
-    \includegraphics[height=5.25cm, keepaspectratio]{phd_calo/Ramp-MG-HEC}
+    \includegraphics[height=5.25cm, keepaspectratio]{phd_calo/Noise-MG-HEC}
     \\
     (a) && (b)
   \end{tabular}
 
   \end{bigcenter}
-  \caption{\label{stabilite2}Distribution de la stabilité des rampes pour les calorimètres vers l'avant, gain moyen (a). Distribution de la stabilité des rampes pour les calorimètres hadroniques bouchons, gain moyen, gain haut (b).}
+  \caption{\label{stabilite5}Stabilité du bruit pour les calorimètres vers l'avant, gain moyen, sur la période 2011 (a). Stabilité du bruit pour les calorimètres hadroniques bouchons, gain moyen, gain haut, sur la période 2011 (b).}
 \end{figure}
 
+\begin{figure}[!ht]
+  \begin{bigcenter}
+
+  \begin{tabular}{ccc}
+    \includegraphics[height=5.25cm, keepaspectratio]{phd_calo/Ramp-HG-EM}
+    &&
+    \includegraphics[height=5.25cm, keepaspectratio]{phd_calo/Ramp-MG-FCal}
+    \\
+    (a) && (b)
+  \end{tabular}
+
+  \end{bigcenter}
+  \caption{\label{stabilite6}Stabilité des rampes pour le calorimètre électromagnétique, gain haut, sur la période 2011 (a). Stabilité des rampes pour les calorimètres vers l'avant, gain moyen, sur la période 2011 (b).}
+\end{figure}
+
+\begin{figure}[!ht]
+  \begin{bigcenter}
+
+  \begin{tabular}{ccc}
+    \includegraphics[height=5.25cm, keepaspectratio]{phd_calo/Ramp-MG-HEC}
+    &&
+    \includegraphics[height=5.375cm, keepaspectratio]{phd_calo/noise_lar}
+    \\
+    (a) && (b)
+  \end{tabular}
+
+  \end{bigcenter}
+  \caption{\label{stabilite7}Stabilité des rampes pour les calorimètres hadroniques bouchons, gain moyen, sur la période 2011 (a). Bruit électronique mesuré par sous-détecteur en fonction de la pseudo-rapidité $ \eta $, pour les calorimètres à argon liquide (b).}
+\end{figure}
+
+Les figures \ref{stabilite3} et \ref{stabilite7} montrent la stabilités des piédestaux, du bruit et des rampes la période 20011 pour le calorimètre électromagnétiques tonneau, les calorimètres vers l'avant et pour les calorimètres hadroniques bouchons. Les commentaires restent de même nature que précédemment. La figure \ref{stabilite7} (b) montre le bruit électronique mesuré par sous-détecteur en fonction de la pseudo-rapidité $ \eta $, pour les calorimètres à argon liquide. Le bruit électronique est de l'ordre de $ 10\MeV $ à $ 50\MeV $ pour les cellules du calorimètre électromagnétique alors qu'il est de l'ordre de $ 100\MeV $ à $ 600\MeV $ pour les cellules des calorimètres vers l'avant et les calorimètres hadroniques bouchons.
+
+\subsection{Outils}
+
+J'ai été tout particulièrement impliqué dans le développement des outils permettant la validation des campagnes de calibration. Cette section présente, succinctement l'architecture du système de validation automatique. Les composants logiciels suivants interviennent :
+
+\paragraph{L'Automatic Processing (AP)} Il s'agit de l'outils chargé de la reconstruction des runs de calibration électronique à partir des données brutes. Basé sur l'environnement Athena, l'AP est lancé automatiquement et l'avancement de la reconstruction est montré en temps réel sur une page internet dédiée.
+
+\paragraph{L'Automatic Validation Tool (AVT)} Il s'agit de l'outils chargé de la validation de la campagne de validation. Écrit en python, l'AVT est lancé automatiquement, juste après l'AP. Il choisit également la campagne de référence, effectue la validation en détectant les cellules déviantes, puis, en registre les résultat dans une base de donnée grâce à l'ECalDBLib.
+
+\paragraph{L'Electronic Calibration DataBase Library (ECalDBLib)} Il s'agit de la bibliothèque chargée de maintenir et consulter la base de donnée de calibration électronique (ECalDB). Écrite en python, l'ECalDBLib est utilisée par tous les outils haut niveau et propose une API bas (SQL) et haut (python) niveau. La base de donnée est implémentée en SQLite (Oracle à terme), voir figure \ref{sql}, elle contient quatre tables : les campagnes (type, date, runs de calibrations, état global des champs magnétiques, qualité\footnote{Il s'agit d'un drapeau VERT, JAUNE ou ORANGE qui indique la présence de décalage dans les constantes de calibration, la présence de nombreuse cellules et/ou FEB déviante ou simple la présence de problèmes au niveau des la prises de données. Le choix est effectué par la personne responsable de la campagne de calibration puis il est discuté en réunion.} globale de la validation, etc\dots), les runs de calibration (type, date, sous-détecteurs, état des champs magnétiques, qualité$ ^\textrm{\scriptsize{4}} $ de la validation, etc\dots), les cellules déviantes (adresse\footnote{Les cellules sont identifiées par un numéro de \emph{feed-through} $ FT $, par un numéro de \emph{slot} $ SL\in[1,15] $ (il n'y a toujours qu'un \emph{slot} pour une FEB) et enfin par un numéro de canal $ CH\in[0,127] $. Chaque cellule possède aussi une ligne de calibration $ CL\in[0,127] $.} de la cellule, valeur des déviations, etc\dots) et toutes les FEB déviantes ou non (adresse$ ^\textrm{\scriptsize{5}} $ de la FEB, valeur des déviations, etc\dots). Conjointement à la bases de données SQL, une base de fichiers \emph{root} connant toutes des informations issues de la validation ainsi que des histogrammes de contrôle est automatique maintenue. Les fichiers \emph{root} peuvent être effacés et si besoin reconstruits afin d'économiser de l'espace disque.
+
+\paragraph{L'Electronic Calibration Console (ECalConsole)} Il s'agit d'une application sous la forme d'une console qui permet de d'effectuer toutes les opérations de maintenance et de contrôle sur l'ECalDB.
+
+\paragraph{L'Electronic Calibration Web Display (ECalConsole)} Il s'agit d'une application sous la forme d'un ensemple de pages web qui permet d'afficher toutes les informations contenue dans l'ECalDB. Les figures \ref{web1} à \ref{web3} montrent quelques captures d'écran. Il est possible de consulter les informations sur les campagnes, sur les cellules déviantes, consulter l'historique des cellules déviantes, afficher des histogrammes de contrôle et enfin afficher des histogrammes de stabilité sur plusieurs campagnes.\\
+
+Avec Julien Morel, j'ai développé les premières versions de l'AVT, l'ECalDBLib, l'ECalConsole. L'optimisation de ses outils est toujours en cours. La figure \ref{ecal} montre le diagramme du système de calibration électronique complet.
+
+\begin{figure}[!p]
+  \begin{bigcenter}
+    \includegraphics[width=0.6\linewidth, keepaspectratio]{phd_calo/sql}
+  \end{bigcenter}
+  \caption{\label{sql}Schéma SQL de la base de donnée de calibration électronique (ECalDB).}
+\end{figure}
+
+\begin{figure}[!p]
+  \begin{bigcenter}
+    \includegraphics[width=0.6\linewidth, keepaspectratio]{phd_calo/sql}
+  \end{bigcenter}
+  \caption{\label{ecal}Diagramme du système de calibration électronique complet.}
+\end{figure}
+
+\newpage
+
+\begin{figure}[!p]
+  \begin{bigcenter}
+    \includegraphics[width=0.7\linewidth, keepaspectratio]{phd_calo/web1}
+  \end{bigcenter}
+  \caption{\label{web1}Electronic Calibration Web Display : visualisation d'une campagne de calibration.}
+\end{figure}
+
+\begin{figure}[!p]
+  \begin{bigcenter}
+    \includegraphics[width=0.7\linewidth, keepaspectratio]{phd_calo/web2}
+  \end{bigcenter}
+  \caption{\label{web2}Electronic Calibration Web Display : visualisation de l'historique d'une cellule.}
+\end{figure}
+
+\begin{figure}[!p]
+  \begin{bigcenter}
+    \includegraphics[width=0.7\linewidth, keepaspectratio]{phd_calo/web3}
+  \end{bigcenter}
+  \caption{\label{web3}Electronic Calibration Web Display : visualisation de la stabilité d'une cellule.}
+\end{figure}
