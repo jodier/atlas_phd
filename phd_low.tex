@@ -1,6 +1,6 @@
 \chapter{Première physique à basse énergie}
 
-Dans ce chapitre, je présente des études à basse énergie que j'ai mener afin de tester les performance du calorimètre électromagnétique avec les premières données à $ \sqrt{s}=0.9\TeV $ et à $ \sqrt{s}=7\TeV $. On été étudiés la reconstruction des photons de basse énergie, la reconstruction des photons convertis en pairs positons-électrons, la reconstruction des mésons légers ($ \pi^0 $ et $ \eta^0 $) et enfin la cartographie de la matière dans le trajectographe interne du détecteur Atlas à l'aide de photons convertis.
+Dans ce chapitre, je présente des études à basse énergie que j'ai mener afin de tester les performance du calorimètre électromagnétique avec les premières données à $ \sqrt{s}=0.9\TeV $ et à $ \sqrt{s}=7\TeV $. On été étudiés la reconstruction des photons de basse énergie, la reconstruction des photons convertis en pairs positons-électrons, la reconstruction des mésons légers ($ \pi^0 $ et $ \eta $) et enfin la cartographie de la matière dans le trajectographe interne du détecteur Atlas à l'aide de photons convertis.
 
 \section{Reconstruction des photons et des conversions}
 
@@ -211,7 +211,7 @@ Pour la sélection des vertex de conversion, il est demander de ne conserver que 
 
 Pour la sélection des photons, les coupures restent identiques. Comme la statistique est plus importante, la sélection des conversions est un peu plus stricte. Seules les traces avec $ p_T>500\MeV $ sont conservées et la coupure $ PID>10\% $ est abandonnée au profit de la coupure $ n_{HT}/n_{TRT}>0.12 $, voir figure \ref{TRT}. La coupure de qualité $ \chi^2_\textrm{vtx}<5 $ est appliquée, ce choix est justifié par la figure \ref{conversionSelection7TeV} (c).
 
-Pour la simulation Monte-Carlo, il faut préciser que les événements ont été pondérées en fonction de la position $ z $ du vertex primaire (poids $ w_1 $) ainsi qu'en fonction de l'impulsion transverse (poids $ w_2 $). En effet, la simulation Monte-Carlo n'a pas été optimisée pour des photons de basse énergie provenant, par exemple, de $ \pi^0 $ ou de $ \eta^0 $. Le poids $ w_1w_2 $, associé à chaque vertex de conversion, permet un meilleur accord entre les données et la simulation Monte-Carlo. Les figures \ref{poids} (a) et \ref{poids} (b) montrent respectivement la distribution du poids $ w_1 $ en fonction de la position $ z $ du vertex primaire et la distribution du poids $ w_2 $ en fonction de l'impulsion transverse. La figure \ref{poids} (c) montre la distribution d'impulsion transverse des vertex de conversion après application des critères de sélection et avant application du poids $ w_1w_2 $. L'accord entre les données et la simulation Monte-Carlo n'est pas très bon. La figure \ref{conversionSelection7TeV} (d) montre la distribution d'impulsion transverse des vertex de conversion après application des critères de sélection et après application du poids $ w_1w_2 $. Sans être parfait, l'accord entre les données et la simulation Monte-Carlo est convenable.
+Pour la simulation Monte-Carlo, il faut préciser que les événements ont été pondérées en fonction de la position $ z $ du vertex primaire (poids $ w_1 $) ainsi qu'en fonction de l'impulsion transverse (poids $ w_2 $). En effet, la simulation Monte-Carlo n'a pas été optimisée pour des photons de basse énergie provenant, par exemple, de $ \pi^0 $ ou de $ \eta $. Le poids $ w_1w_2 $, associé à chaque vertex de conversion, permet un meilleur accord entre les données et la simulation Monte-Carlo. Les figures \ref{poids} (a) et \ref{poids} (b) montrent respectivement la distribution du poids $ w_1 $ en fonction de la position $ z $ du vertex primaire et la distribution du poids $ w_2 $ en fonction de l'impulsion transverse. La figure \ref{poids} (c) montre la distribution d'impulsion transverse des vertex de conversion après application des critères de sélection et avant application du poids $ w_1w_2 $. L'accord entre les données et la simulation Monte-Carlo n'est pas très bon. La figure \ref{conversionSelection7TeV} (d) montre la distribution d'impulsion transverse des vertex de conversion après application des critères de sélection et après application du poids $ w_1w_2 $. Sans être parfait, l'accord entre les données et la simulation Monte-Carlo est convenable.
 
 \begin{figure}[!ht]
   \begin{bigcenter}
@@ -274,11 +274,11 @@ Pour la simulation Monte-Carlo, il faut préciser que les événements ont été pond
   \caption{\label{conversionSelection7TeV}Distributions intervenant dans la reconstruction des conversions à $ \sqrt{s}=7\TeV $.}
 \end{figure}
 
-\section{Reconstruction des $ \pi^0 $ et des $ \eta^0 $}
+\section{Reconstruction des $ \pi^0 $ et des $ \eta $}
 
-Dans cette section, je montre l'analyse de la reconstruction des $ \pi^0 $ et des $ \eta^0 $ que j'ai réalisé avec les premières données 2009 à $ \sqrt{s}=0.9\TeV $ et avec les données 2010 de la période D à $ \sqrt{s}=7\TeV $. Je me suis attaché à reconstruire les $ \pi^0 $ sans photons converti $ \pi^0\to\gamma\gamma $, les $ \pi^0 $ avec un photon converti $ \pi^0\to\gamma e^+e^- $, les $ \pi^0 $ avec deux photons convertis $ \pi^0\to e^+e^-e^+e^- $. Comme le $ \eta^0 $ est le méson le plus léger après le $ \pi^0 $, une étude similaire a été menée. Nous verrons cependant que le bruit fond est plus important dans la région du $ \eta^0 $.
+Dans cette section, je montre l'analyse de la reconstruction des $ \pi^0 $ et des $ \eta $ que j'ai réalisé avec les premières données 2009 à $ \sqrt{s}=0.9\TeV $ et avec les données 2010 de la période D à $ \sqrt{s}=7\TeV $. Je me suis attaché à reconstruire les $ \pi^0 $ sans photons converti $ \pi^0\to\gamma\gamma $, les $ \pi^0 $ avec un photon converti $ \pi^0\to\gamma e^+e^- $, les $ \pi^0 $ avec deux photons convertis $ \pi^0\to e^+e^-e^+e^- $. Comme le $ \eta $ est le méson le plus léger après le $ \pi^0 $, une étude similaire a été menée. Nous verrons cependant que le bruit fond est plus important dans la région du $ \eta $.
 
-\subsection{Caractéristiques des $ \pi^0 $ et des $ \eta^0 $}\label{PDG}
+\subsection{Caractéristiques des $ \pi^0 $ et des $ \eta $}\label{PDG}
 
 Les derniers chiffres à jour, pour la physique des particules, sont disponible auprès du \emph{Particle Data Group} (PDG). Le $ \pi^0 $ est un méson constitué des quarks $ u $, $ \bar u $, $ d $ et $ \bar d $ soit encore, d'après le modèle des quarks, $ \left|\pi^0\right>=\frac{\left|u\bar u\right>+\left|d\bar d\right>}{\sqrt{2}} $. Sa masse est $ m_{\pi^0\,PDG}=134,9766\pm0.0006\MeV $. Le $ \pi^0 $ possède deux principaux modes de désintégration :
 \begin{center}
@@ -294,23 +294,23 @@ Les derniers chiffres à jour, pour la physique des particules, sont disponible a
   \end{tabular}
 \end{center}
 
-Le $ \eta^0 $ est un méson étrange constitué des quards $ u $, $ \bar u $, $ d $, $ \bar d $, $ s $ et $ \bar s $ soit encore, d'après le modèle des quarks, $ \left|\eta^0\right>=\frac{\left|u\bar u\right>+\left|d\bar d\right>+2\left|s\bar s\right>}{\sqrt{6}} $. Sa masse est $ m_{\eta^0\,PDG}=547,853\pm0.024\MeV $. Le $ \eta^0 $ possède deux principaux modes de désintégration :
+Le $ \eta $ est un méson étrange constitué des quards $ u $, $ \bar u $, $ d $, $ \bar d $, $ s $ et $ \bar s $ soit encore, d'après le modèle des quarks, $ \left|\eta\right>=\frac{\left|u\bar u\right>+\left|d\bar d\right>+2\left|s\bar s\right>}{\sqrt{6}} $. Sa masse est $ m_{\eta\,PDG}=547,853\pm0.024\MeV $. Le $ \eta $ possède deux principaux modes de désintégration :
 \begin{center}
   \begin{tabular}{|c|c|}
     \hline
     \hline
     Canal & Rapport de branchement\\
     \hline
-    $ \eta^0\to\gamma\gamma $ & $ \Gamma_i/\Gamma=\left(39,31\pm0.20\right)\% $\\
+    $ \eta\to\gamma\gamma $ & $ \Gamma_i/\Gamma=\left(39,31\pm0.20\right)\% $\\
     \hline
-    $ \eta^0\to\pi^0\pi^0\pi^0 $ & $ \Gamma_i/\Gamma=\left(32,57\pm0.23\right)\% $\\
+    $ \eta\to\pi^0\pi^0\pi^0 $ & $ \Gamma_i/\Gamma=\left(32,57\pm0.23\right)\% $\\
     \hline
   \end{tabular}
 \end{center}
 
-\subsection{Désintégration des $ \pi^0 $ et des $ \eta^0 $}
+\subsection{Désintégration des $ \pi^0 $ et des $ \eta $}
 
-Soient $ E_1 $ et $ E_2 $ les énergies, dans le référentiel du laboratoire, de deux photons $ \gamma_1 $ et $ \gamma_2 $ issus d'un $ \pi^0 $ ou d'un $ \eta^0 $ et $ \alpha $ l'angle d'ouverture entre $ \gamma_1 $ et $ \gamma_2 $. Si on suppose que le photon $ \gamma_1 $ se propage dans la direction $ z $, alors, les 4-vecteurs énergie-impulsion s'écrivent $ p^\mu_{\gamma_1}=\left(E_1;0,0,E_1\right) $ et $ p^\mu_{\gamma_2}=\left(E_2;E_1\sin\alpha,0,E_1\cos\alpha\right) $ d'où :
+Soient $ E_1 $ et $ E_2 $ les énergies, dans le référentiel du laboratoire, de deux photons $ \gamma_1 $ et $ \gamma_2 $ issus d'un $ \pi^0 $ ou d'un $ \eta $ et $ \alpha $ l'angle d'ouverture entre $ \gamma_1 $ et $ \gamma_2 $. Si on suppose que le photon $ \gamma_1 $ se propage dans la direction $ z $, alors, les 4-vecteurs énergie-impulsion s'écrivent $ p^\mu_{\gamma_1}=\left(E_1;0,0,E_1\right) $ et $ p^\mu_{\gamma_2}=\left(E_2;E_1\sin\alpha,0,E_1\cos\alpha\right) $ d'où :
 
 \begin{equation}
   p^\mu_{\gamma\gamma}=p^\mu_{\gamma_1}+p^\mu_{\gamma_2}=\left(E_1+E_2;E_1\sin\alpha,0,E_1\underbrace{(1+\cos\alpha)}_{2\sin^2\frac{\alpha}{2}}\right)
@@ -322,7 +322,7 @@ et
            &=&\sqrt{4E_1E_2\sin^2\frac{\alpha}{2}}
 \end{eqnarray}
 
-Remarque : Dans le cas général, les deux photons se propagent dans le plan $ x-y $, alors $ p^\mu_{\gamma_1}=\left(E_1;E_1\sin\theta_1,0,E_1\cos\theta_1\right) $ et $ p^\mu_{\gamma_2}=\left(E_2;-E_2\sin\theta_2,0,E_1\cos\theta_2\right) $ où $ \theta_1 $ et $ \theta_2 $ sont respectivement les angles entre les photons $ \gamma_1 $ et $ \gamma_2 $ et la direction de propagation du $ \pi^0 $ ou du $ \eta^0 $, $ \alpha\equiv\theta_1+\theta_2 $. Ces définitions mènent également à l'équation \ref{masse_pizero}.
+Remarque : Dans le cas général, les deux photons se propagent dans le plan $ x-y $, alors $ p^\mu_{\gamma_1}=\left(E_1;E_1\sin\theta_1,0,E_1\cos\theta_1\right) $ et $ p^\mu_{\gamma_2}=\left(E_2;-E_2\sin\theta_2,0,E_1\cos\theta_2\right) $ où $ \theta_1 $ et $ \theta_2 $ sont respectivement les angles entre les photons $ \gamma_1 $ et $ \gamma_2 $ et la direction de propagation du $ \pi^0 $ ou du $ \eta $, $ \alpha\equiv\theta_1+\theta_2 $. Ces définitions mènent également à l'équation \ref{masse_pizero}.
 
 Exprimons l'angle $ \alpha $ en fonction de la masse :
 \begin{equation}
@@ -334,7 +334,7 @@ Cette quantité est minimale pour $ E_1=E_2=E_{\gamma\gamma}/2 $ d'où :
   \boxed{\alpha_\textrm{min}=2\arcsin\frac{m_{\gamma\gamma}}{E_{\gamma\gamma}}}
 \end{equation}
 
-La figure \ref{desintegration} (a) montre la désintégration d'un $ \pi^0 $ ou d'un $ \eta^0 $ dans le référentiel du laboratoire. La figure \ref{} (b) montre l'angle d'ouverture des deux photons en fonction de l'énergie $ E_{\gamma\gamma} $ de la paire $ \gamma\gamma $. Plus l'énergie est grande, plus l'angle d'ouverture est petit. L'étude sera limitée à une énergie de quelques $ \GeV $ car le calorimètre électromagnétique ne permet pas de distinguer deux photons avec un écart en pseudo-rapidité inférieur à $ \Delta\eta=0.1 $. 
+La figure \ref{desintegration} (a) montre la désintégration d'un $ \pi^0 $ ou d'un $ \eta $ dans le référentiel du laboratoire. La figure \ref{} (b) montre l'angle d'ouverture des deux photons en fonction de l'énergie $ E_{\gamma\gamma} $ de la paire $ \gamma\gamma $. Plus l'énergie est grande, plus l'angle d'ouverture est petit. L'étude sera limitée à une énergie de quelques $ \GeV $ car le calorimètre électromagnétique ne permet pas de distinguer deux photons avec un écart en pseudo-rapidité inférieur à $ \Delta\eta=0.1 $. 
 
 \begin{figure}[!ht]
   \begin{bigcenter}
@@ -348,10 +348,10 @@ La figure \ref{desintegration} (a) montre la désintégration d'un $ \pi^0 $ ou d'
   \end{tabular}
 
   \end{bigcenter}
-  \caption{\label{desintegration}Désintégration d'un $ \pi^0 $ ou d'un $ \eta^0 $ dans le référentiel du laboratoire (a). Angle d'ouverture des deux photons en fonction de l'énergie $ E_{\gamma\gamma} $ de la paire $ \gamma\gamma $ (b).}
+  \caption{\label{desintegration}Désintégration d'un $ \pi^0 $ ou d'un $ \eta $ dans le référentiel du laboratoire (a). Angle d'ouverture des deux photons en fonction de l'énergie $ E_{\gamma\gamma} $ de la paire $ \gamma\gamma $ (b).}
 \end{figure}
 
-Étudions rapidement la distribution $ \frac{dN}{d\alpha} $ dans le référentiel du laboratoire. Supposons toujours que le $ \pi^0 $ ou le $ \eta^0 $ se propage suivant la direction $ z $, alors, nous définissons l'angle $ \theta^* $ comme l'angle du photon $ \gamma_1 $ par rapport à la direction $ z $ dans le référentiel au repos. La désintégration est isotrope, nous pouvons écrire :
+Étudions rapidement la distribution $ \frac{dN}{d\alpha} $ dans le référentiel du laboratoire. Supposons toujours que le $ \pi^0 $ ou le $ \eta $ se propage suivant la direction $ z $, alors, nous définissons l'angle $ \theta^* $ comme l'angle du photon $ \gamma_1 $ par rapport à la direction $ z $ dans le référentiel au repos. La désintégration est isotrope, nous pouvons écrire :
 \begin{equation}
   \frac{dN}{d\cos\theta^*}=\frac{1}{2}\hspace{0.75cm}\Rightarrow\hspace{0.75cm}\frac{dN}{d\alpha}=\frac{dN}{d\cos\theta^*}\frac{d\cos\theta^*}{d\alpha}=\frac{1}{2}\frac{d\cos\theta^*}{d\alpha}
 \end{equation}
@@ -746,11 +746,11 @@ La masse invariante des $ \pi^0 $ dans les canaux $ \pi^0\to\gamma e^+e^- $ et $
   \caption{\label{DNA}Distribution de masse invariante des candidats $ \pi^0 $ après sélection pour les données et pour la simulation Monte-Carlo. Canal $ \pi^0\to\gamma e^+e^- $ (a), canal $ \pi^0\to e^+e^-e^+e^- $ (b).}
 \end{figure}
 
-\subsection{Application aux $ \eta^0 $}
+\subsection{Application aux $ \eta $}
 
-Il est possible de refaire la même étude pour les $ \eta^0 $. Il faut simplement tenir compte du fait que le pic de masse est attendu dans une zone où le bruit de fond est plus important et que le nombre de $ \eta^0 $ attendus est environ dix fois plus faible que celui des $ \pi^0 $. La sélection reste inchangée pour les photons convertis et les photons non convertis, cependant, des coupures cinématiques importantes sont appliquées afin de réduire au maximum le bruit de bond combinatoire : $ E_{T\,\gamma}>800\MeV $ et $ P_{T\,\gamma\gamma}>2500\MeV $.
+Il est possible de refaire la même étude pour les $ \eta $. Il faut simplement tenir compte du fait que le pic de masse est attendu dans une zone où le bruit de fond est plus important et que le nombre de $ \eta $ attendus est environ dix fois plus faible que celui des $ \pi^0 $. La sélection reste inchangée pour les photons convertis et les photons non convertis, cependant, des coupures cinématiques importantes sont appliquées afin de réduire au maximum le bruit de bond combinatoire : $ E_{T\,\gamma}>800\MeV $ et $ P_{T\,\gamma\gamma}>2500\MeV $.
 
-Les figures \ref{eta_7TeV} (a), \ref{eta_7TeV} (b) et \ref{eta_7TeV} (c) montrent respectivement la distribution de masse invariante des candidats $ \eta^0\to\gamma\gamma $, $ \pi^0\to\gamma e^+e^- $ et $ \pi^0\to e^+e^-e^+e^- $ après sélection pour les données et pour la simulation Monte-Carlo. Le nombre d'entrées de la simulation Monte-Carlo est normalisé au nombre d'entrées des données.
+Les figures \ref{eta_7TeV} (a), \ref{eta_7TeV} (b) et \ref{eta_7TeV} (c) montrent respectivement la distribution de masse invariante des candidats $ \eta\to\gamma\gamma $, $ \pi^0\to\gamma e^+e^- $ et $ \pi^0\to e^+e^-e^+e^- $ après sélection pour les données et pour la simulation Monte-Carlo. Le nombre d'entrées de la simulation Monte-Carlo est normalisé au nombre d'entrées des données.
 
 \begin{figure}[!ht]
   \begin{center}
@@ -770,10 +770,16 @@ Les figures \ref{eta_7TeV} (a), \ref{eta_7TeV} (b) et \ref{eta_7TeV} (c) montren
   \end{tabular}
 
   \end{center}
-  \caption{\label{eta_7TeV}Distribution de masse invariante des candidats $ \eta^0 $ après sélection pour les données et pour la simulation Monte-Carlo. Canal $ \eta^0\to\gamma\gamma $ (a), canal $ \eta^0\to\gamma e^+e^- $ (b), canal $ \eta^0\to e^+e^-e^+e^- $ (c).}
+  \caption{\label{eta_7TeV}Distribution de masse invariante des candidats $ \eta $ après sélection pour les données et pour la simulation Monte-Carlo. Canal $ \eta\to\gamma\gamma $ (a), canal $ \eta\to\gamma e^+e^- $ (b), canal $ \eta\to e^+e^-e^+e^- $ (c).}
 \end{figure}
 
-\subsection{Conclusion pour les $ \pi^0 $ et les $ \eta^0 $}
+\subsection{Conclusion pour les $ \pi^0 $ et les $ \eta $}
+
+Les études sur la reconstruction des $ \pi^0 $ et des $ \eta $, montrées dans ce chapitre, ont permit d'utiliser conjointement le calorimètre électromagnétique et le trajectographe interne afin de réaliser une des premières études de physique avec des données de type \og collisions\fg.
+
+Il a été possible de tester les performances du calorimètre électromagnétique à une échelle d'énergie de l'ordre de $ 500\MeV $. Il a été possible de retrouver la masse des $ \pi^0 $ et des $ \eta $ avec une erreur de l'ordre de $ 1.5\% $ par rapport aux masses nominales grâce à la mise en place d'un algorithme de calibration de l'énergie dans les amas électromagnétiques. L'accord entre les données et la simulation Monte-Carlo est de l'ordre de $ 1\% $ et la largeur des distributions de masse invariantes est compatible avec la résolution attendue à ces énergies. Il a été possible de réaliser une étude sur l'uniformité de la réponse du calorimètre électromagnétiques, on montre que l'uniformité en $ \eta $ est meilleure que $ 2\% $ (resp. $ 1\% $) dans le tonneau (resp. dans les bouchons) et que l'uniformité en $ \phi $ est toujours meilleure que $ 1\% $.
+
+Il a été possible de reconstruire des $ \pi^0 $ et des $ \eta $ avec photons convertis grâce à la mise en place d'un algorithme dédié. Ici aussi, les résultats sont en accord avec les attentes. Il a été possible d'effectué une correction sur les pertes d'énergie par Bremsstrahlung afin d'améliorer significativement la valeur de la masse reconstruite.
 
 \newpage
 
@@ -1152,7 +1158,7 @@ Il est prévu de réaliser une étude détaillée des incertitudes systématiques : i)
 
 \subsubsection{La région PP0}
 
-La région PP0, grossièrement située dans la région en pseudo-rapidité $ 2\lesssim|\eta|\lesssim2.5 $, est très difficile à décrire. La figure \ref{PP0} montre une photographie de la région PP0, le nombre de câbles présents est très important. La figure \ref{PP0-10-16} montre la distribution des vertex de conversion reconstruits en fonction du rayon $ R $ pour les données et pour la simulation Monte-Carlo en deux lieux représentatifs des évolutions de la région PP0 pour les géométries ATLAS-GEO-10-00-00 et ATLAS-GEO-16-00-00. La figure \ref{PP0-16} montre le schéma du découpage de la région PP0 dans la géométrie ATLAS-GEO-16-00-00. Même si  l'accord entre les données et la simulation n'est pas parfait, la géométrie ATLAS-GEO-16-00-00 apporte des améliorations importantes. Actuellement des études sont menées sur la géométrie de transition ATLAS-GEO-17-00-00 et sur la nouvelle géométrie ATLAS-GEO-18-00-00.
+La région PP0, grossièrement située dans la région en pseudo-rapidité $ 2\lesssim|\eta|\lesssim2.5 $, est très difficile à décrire. La figure \ref{PP0} montre une photographie de la région PP0, le nombre de câbles présents est très important. La figure \ref{PP0-10-16} montre la distribution des vertex de conversion reconstruits en fonction du rayon $ R $ pour les données et pour la simulation Monte-Carlo en deux lieux représentatifs des évolutions de la région PP0 entre les géométries ATLAS-GEO-10-00-00 et ATLAS-GEO-16-00-00. La figure \ref{PP0-16} montre le schéma du découpage de la région PP0 dans la géométrie ATLAS-GEO-16-00-00. Même si l'accord entre les données et la simulation n'est pas parfait, la géométrie ATLAS-GEO-16-00-00 apporte des améliorations importantes. Actuellement des études sont menées sur la géométrie de transition ATLAS-GEO-17-00-00 et sur la nouvelle géométrie ATLAS-GEO-18-00-00.
 
 \begin{figure}[!ht]
   \begin{bigcenter}
