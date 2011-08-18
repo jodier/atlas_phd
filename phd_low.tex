@@ -101,7 +101,7 @@ Cette calibration est limitée par la supposée non dépendance en énergie ainsi qu
 
 \newpage
 
-\subsection{Conversions à basse énergie}
+\subsection{Conversions à basse énergie}\label{algoconversion}
 
 A cause de la matière présente à l'intérieur du trajectographe interne du détecteur Atlas, une fraction des photons sont convertis en pairs positrons-électrons. Plus la quantité de matière est importante, plus la fraction des photons convertis est importante, on s'attend à observer $ \frac{N_{\gamma\,\textrm{conv.}}}{N_{\gamma\,\textrm{non conv.}}} $ de l'ordre de $ ??\% $. Une algorithme de reconstruction des conversions a basse énergie à été mis en \oe uvre. Sa description détaillée est disponible auprès des notes\cite{}\cite{}, néanmoins, je rappelle ici les grandes étapes de son implémentation :
 \begin{enumerate}
@@ -129,6 +129,13 @@ La figure \ref{TRT} du chapitre dédié au détecteur Atlas montrait que la fractio
 
   \end{center}
   \caption{\label{PID}Critère $ D-R_1-R_2\to0 $ pour deux traces d'électrons de issues d'un photon converti (a). Distribution de la probabilité pour une trace d'être une trace d'électron (b).}
+\end{figure}
+
+\begin{figure}[!p]
+  \begin{center}
+    \includegraphics[height=13cm, angle=-90, keepaspectratio]{phd_low/ConversionEventDisplay}
+  \end{center}
+  \caption{Visualisation d'un vertex de conversion dans la première couche du SCT, les deux traces sont clairement visibles.}
 \end{figure}
 
 \newpage
@@ -1042,7 +1049,7 @@ La géométrie ATLAS-GEO-16-00-00 décrit relativement bien le trajectographe inter
 
 Il est possible d'estimer de la quantité de matière $ \frac{X}{X_0} $ en utilisant la méthode présentée dans la sous-section \ref{principe}. Néanmoins, il faut prendre certaines précautions. Lors du calcul de la longueur de radiation, la normalisation est effectuée au niveau du tube à vide. La figure \ref{zvp} montre la distribution de la position $ z_{vp} $ des vertex primaires. La déviation en $ z $ peut atteindre $ 200mm $ (les déviations dans le plan transverse sont négligeables pour celle étude). Les photons qui ne sont pas originaires du centre du détecteur peuvent biaiser la normalisation, c'est pourquoi, l'étude à été réalisée en comparant deux valeurs $ |z_\textrm{vp}|<3mm $ et $ |z_\textrm{vp}|<5mm $. Actuellement, le choix définitif de la valeur de la coupure n'est pas arrêté.
 
-Les tableaux \ref{mapping_table1_7TeV} et \ref{mapping_table2_7TeV} montrent respectivement les quantités de matière $ \frac{X}{X_0}_{data} $ et $ \frac{X}{X_0}_{MC} $ dans les données et dans la simulation Monte-Carlo avec $ |z_\textrm{vp}|<3mm $ et pour $ |z_\textrm{vp}|<5mm $ pour différents volumes du trajectographe interne. Nous constatons que la contribution du tube à vide aux erreurs statistiques est légèrement plus petite petites pour la coupure $ |z_\textrm{vp}|<5mm $, cependant, l'accord entre les données et la simulation Monte-Carlo est moins bonne de $ \sim8\% $ pour le \emph{B-layer}, $ \sim7\% $ pour la première couche de pixels, $ \sim8\% $ pour la seconde couche de pixels, $ \sim6\% $ pour le PSCT, $ \sim95\% $ pour la première couche du SCT et $ \sim90\% $ pour la première couche du SCT. Pour $ |z_\textrm{vp}|<3mm $, l'accord entre les données et la simulation Monte-Carlo est toujours meilleur que $ 5\% $ dans les pixels et $ 9\% $ dans le SCT. Des amélioration de la géométrie et de la méthode sont encore possibles.
+Les tableaux \ref{mapping_table1_7TeV} et \ref{mapping_table2_7TeV} montrent respectivement les quantités de matière $ \frac{X}{X_0}_{data} $ et $ \frac{X}{X_0}_{MC} $ dans les données et dans la simulation Monte-Carlo avec $ |z_\textrm{vp}|<3mm $ et pour $ |z_\textrm{vp}|<5mm $ pour différents volumes du trajectographe interne. Nous constatons que la contribution du tube à vide aux erreurs statistiques est légèrement plus petite petites pour la coupure $ |z_\textrm{vp}|<5mm $, cependant, l'accord entre les données et la simulation Monte-Carlo est moins bonne de $ \sim8\% $ pour le \emph{B-layer}, $ \sim7\% $ pour la première couche de pixels, $ \sim8\% $ pour la seconde couche de pixels, $ \sim6\% $ pour le PSCT, $ \sim7\% $ pour la première couche du SCT et $ \sim10\% $ pour la première couche du SCT. Pour $ |z_\textrm{vp}|<3mm $, l'accord entre les données et la simulation Monte-Carlo est toujours meilleur que $ 5\% $ dans les pixels et $ 9\% $ dans le SCT. Des amélioration de la géométrie et de la méthode sont encore possibles.
 
 Il est prévu de réaliser une étude détaillée des incertitudes systématiques : i) incertitudes liées au choix de la normalisation. ii) incertitudes liées à l'utilisation de géométries distordues. iii) incertitudes liées au choix de la coupure $ |z_\textrm{vp}| $. iv) incertitudes liées au choix des coupures de sélection. v) incertitudes liées aux photons provenant d'interactions hadroniques tardives (grands $ z_0 $). vi) incertitudes liées aux poids $ w_1 $ et $ w_2 $. vii) incertitudes liées à la connaissance du tube à vide.
 
@@ -1133,8 +1140,8 @@ Il est prévu de réaliser une étude détaillée des incertitudes systématiques : i)
         \footnotesize Pixel couche 1 & \footnotesize $0.0365\pm0.0001\pm0.0002$ & \footnotesize $0.0319\pm0.0009\pm0.0006$ & \footnotesize $0.88\pm0.04$ \\
         \footnotesize Pixel couche 2 & \footnotesize $0.0337\pm0.0001\pm0.0002$ & \footnotesize $0.0298\pm0.0008\pm0.0005$ & \footnotesize $0.88\pm0.04$ \\
         \footnotesize PSCT           & \footnotesize $0.0144\pm0.0001\pm0.0001$ & \footnotesize $0.0148\pm0.0006\pm0.0005$ & \footnotesize $1.03\pm0.05$ \\
-        \footnotesize SCT couche 1   & \footnotesize $0.0303\pm0.0001\pm0.0002$ & \footnotesize $0.0287\pm0.0013\pm0.0009$ & \footnotesize $1.95\pm0.05$ \\
-        \footnotesize SCT couche 2   & \footnotesize $0.0302\pm0.0001\pm0.0002$ & \footnotesize $0.0293\pm0.0035\pm0.0025$ & \footnotesize $1.97\pm0.09$ \\
+        \footnotesize SCT couche 1   & \footnotesize $0.0303\pm0.0001\pm0.0002$ & \footnotesize $0.0287\pm0.0013\pm0.0009$ & \footnotesize $0.95\pm0.05$ \\
+        \footnotesize SCT couche 2   & \footnotesize $0.0302\pm0.0001\pm0.0002$ & \footnotesize $0.0293\pm0.0035\pm0.0025$ & \footnotesize $0.97\pm0.09$ \\
       \hline
     \end{tabular}
 
@@ -1186,3 +1193,7 @@ La région PP0, grossièrement située dans la région en pseudo-rapidité $ 2\lesssi
 \end{figure}
 
 \subsubsection{Conclusion}
+
+Les analyses réalisées à $ \sqrt{s}=0.9\TeV $ et à $ \sqrt{s}=7\TeV $, utilisant des photons de conversion, démontrent les excellentes performances de de l'algorithme de reconstruction des vertex des conversion décrit dans la section \ref{algoconversion}. Il a été possible de cartographier le détecteur interne du \emph{B-layer} jusqu'à la seconde couche du SCT. Des études qualitatives et quantitatives ont permit d'améliorer la description des géométries du détecteur Atlas, en particulier la région PP0. La quantité de matière $ \frac{X}{X_0} $ est connue avec une précision de l'ordre de $ 4\times10^{-4} $ ($ >2\%X_0 $ dans les pixels) et l'accord entre les données et la simulation Monte-Carlo est meilleure que $ 9\% $. Une évaluation détaillé des erreurs systématique est en cours de réalisation et de nouvelles géométries sont en cours d'étude.
+
+La connaissance de la matière en amont du calorimètre électromagnétique est importante pour l'identification des électrons et des électrons. Cette problématique sera traitée dans le chapitre suivant.

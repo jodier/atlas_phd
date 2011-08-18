@@ -1,2 +1,249 @@
-\chapter{Préparation à la recherche du boson de Higgs}
+\chapter{Recherche du boson de Higgs dans le canal $ H\to ZZ^{(*)}\to4l $ avec les données 2011}
+
+\newpage
+
+\section{Reconstruction du boson de Higgs}
+
+Dans cette section je vais décrire la reconstruction du boson de Higgs ainsi que chacune des coupures de sélection. Je traiterai ici des coupures de sélection standards utilisées par le groupe $ H\to ZZ^{(*)}\to4l $ jusqu'en août 2011. Quelques possibles optimisations seront montrées ultérieurement.
+
+\subsection{Sélection des événements}
+
+Une première sélection est effectuée au niveau des événements. La première étape consiste à ne conserver, pour les données, que les événements où tous les sous-détecteurs impliqués dans la reconstruction des électrons pour $ H\to4e $ (resp. dans la reconstruction des muons pour $ H\to4\mu $ (resp. dans la reconstruction des électrons et des muons pour $ H\to2e2\mu $)) sont dans un fonctionnement normal. Cette sélection est effectuée à partir d'une liste de \emph{lumiblock} valides \emph{run} par \emph{run}, on parle de \emph{Good Run List} (GRL). Un drapeau additionnel, nommé \emph{larError}, est disponible pour les données. Il indique une erreur grave au niveau du système calorimétrique électromagnétiques et doit toujours être à zero si tout va bien. Ensuite, il est demandé qu'il y ait au moins un vertex primaire avec trois traces reconstruites. Finalement, le système de déclenchement est consulté. Nous demandons : i) au moins un électron de $ 20\GeV $ de qualité intermédiaire (\emph{medium}) au niveau de l'\emph{event filter} (EF\_e20\_medium) pour le canal $ H\to4e $. ii) Au moins un muon de $ 18\GeV $ reconstruit par l'algorithme \emph{MuGirl}\footnote{Effectue la recherche de segments et de traces dans le spectromètre à muons en partant du détecteur interne comme grain.} \textbf{ou (inclusif)} un muon de $ 40 \GeV $ reconstruit par l'algorithme \emph{??} seulement au niveau de l'\emph{event filter} (EF\_mu18\_MG $ \vee $ EF\_mu40\_MSonly) pour le canal $ H\to4\mu $. iii) EF\_e20\_medium \textbf{et} EF\_mu18\_MG \textbf{ou (inclusif)} EF\_e20\_medium \textbf{et} EF\_mu40\_MSonly (EF\_e20\_medium $ \wedge $ (EF\_mu18\_MG $ \vee $ EF\_mu40\_MSonly) ) pour le canal $ H\to2e2\mu $. Ces voies de déclenchement sont celle de plus pas $ p_T $ disponibles sans \emph{prescale}. Le tableau \ref{HSG2tbl1} récapitule les coupures de sélection des événements pour l'étude $ H\to4l $.
+
+\begin{table}[!h]
+  \begin{bigcenter}
+
+    \begin{tabular}{|c|c|}
+      \hline
+      \hline
+        Coupure & Description\\
+      \hline
+        GRL$^*$ & $ H\to4e $, $ H\to4\mu $ et $ H\to2e2\mu $\\
+      \hline
+        \emph{larError}$^*$ & $ larError=0 $, pas de problème dans l'argon liquide\\
+      \hline
+	Vertex primaire & au moins un vertex primaire avec trois traces associées\\
+      \hline
+                      & EF\_e20\_medium pour $ H\to4e $\\
+        Déclenchement & EF\_mu18\_MG $ \vee $ EF\_mu40\_MSonly pour $ H\to4\mu $\\
+                      & EF\_e20\_medium $ \wedge $ (EF\_mu18\_MG $ \vee $ EF\_mu40\_MSonly) pour $ H\to2e2\mu $\\
+      \hline
+    \end{tabular}
+
+  \end{bigcenter}
+  \caption{\label{HSG2tbl1}Sélection des événements pour l'étude $ H\to4l $. La présence d'une étoile indique que la sélection n'est effectuée que sur les données.}
+\end{table}
+
+\vspace{-0.25cm}
+
+\subsection{Sélection des objets physiques}
+
+\subsubsection{Sélection des éléctrons}
+
+La première étape consiste à ne sélectionner que les électrons reconstruits par les algorithmes \emph{egamma} ou \emph{softe} (voir chapitre 6). A la seconde étape, ne sont conservés que les électrons de qualité médium. A la troisième étape, il est demandé que les électrons aient une énergie transverse supérieure à $ 15\GeV $ ou alors une énergie transverse supérieure à $ 7\GeV $ en excluant la zone de \emph{crack} ($ 1.37<|\eta_{amas}|<1.52 $). Ces domaines en pseudo-rapidité ont été étudiée et sont bien compris par les groupes de performance. De plus, les électrons doivent être dans la zone de précision du calorimètre électromagnétique, c'est-à-dire, $ |\eta_{amas}|<2.47 $.
+
+Une carte, mise à jour si nécessaire, est utilisée pour masquer les régions problématiques du calorimètre électromagnétique (plus particulièrement à cause des OTX défectueux, voir chapitre 3). Enfin, il est demandé que le paramètre d'impact $ z_0 $ calculé par rapport au vertex primaire soit inférieur à $ 10mm $ afin de ??.
+
+\subsubsection{Sélection des muons}
+
+Il existe deux algorithmes concurrents aux performances à peu près identiques pour la reconstruction des muons auprès du détecteur Atlas. Il s'agit de \emph{staco} et \emph{muid}. Les résultats qui seront présentés ont été obtenus avec les deux algorithme afin de comparer leur performance. La première étape consiste à ne sélectionner que les muons combinés. A la seconde étape, ne sont conservés que les muons ayant un paramètre d'impact $ d_0 $ calculé par rapport au vertex primaire inférieur à $ 1mm $ afin de s'affranchir des muons cosmiques qui ne sont pas très projectifs (voir chapitre 7). A la troisième étape, pour la même raison que pour les électrons, il est demandé que les muons aient une impulsion transverse supérieure à $ 7\GeV $. De plus, les il doivent être dans la zone de précision du spectromètre à muons, c'est-à-dire, $ |\eta|<2.5 $. Une sélection complexe, proposée par le groupe travaillant sur les performances combinées du spectromètre à muons et basée sur le nombre de coups dans le détecteur interne (nombre de coups attendu dans le B-layer, nombre de coups dans les pixels, dans le SCT, dans le TRT, nombre de senseurs défectueux dans les pixels et dans le SCT, nombre de trous dans les pixels et dans le SCT, etc\dots) est appliquée, voir figure \ref{idmuon}. Enfin, il est demandé que le paramètre d'impact $ z_0 $ calculé par rapport au vertex primaire soit inférieur à $ 10mm $ afin de ??.
+
+\begin{figure}[!h]
+\begin{center}
+\begin{tabular}{c}
+\begin{lstlisting}
+!expectBLayerHit || nBLHits > 0 
+nPixHits + nPixelDeadSensors > 1 
+nSCTHits + nSCTDeadSensors > 5 
+nPixHoles + nSCTHoles < 3 
+
+n = nTRTHits + nTRTOutliers 
+if (|eta| < 1.9): pass if n > 5 && nTRTOutliers < n*0.9 
+else if eta > 5: pass if nTRTOutliers < n*0.9 
+else: pass
+\end{lstlisting}
+\end{tabular}
+\end{center}
+  \caption{\label{idmuon}Sélection des muons basée sur le nombre de coups dans le détecteur interne.}
+\end{figure}
+
+\vspace{-0.35cm}
+
+\subsubsection{Tableau récapitulatif}
+
+\begin{table}[!h]
+  \begin{bigcenter}
+
+    \begin{tabular}{|c|c|}
+      \hline
+      \hline
+        Coupure (\textbf{électrons}) & Description\\
+      \hline
+        Algorithme & \emph{egamma} ou \emph{softe}\\
+      \hline
+        Identification & électrons intermédiaires (medium)\\
+      \hline
+        Cinématiques & $ E_{t}>15\GeV $ ou $ E_{t}>7\GeV $ et $ 1.37<|\eta_{amas}|<1.52 $, $ |\eta_{amas}|<2.47 $\\
+      \hline
+        Qualité & masquage des régions problématiques du calorimètre électromagnétique\\
+      \hline
+        Paramètre d'impact & $ z_0<10mm $\\
+      \hline
+      \hline
+        Coupure (\textbf{muons}) & Description\\
+      \hline
+        Algorithme & \emph{staco} ou \emph{muid} avec traces combinées\\
+      \hline
+        Muons cosmiques & $ d_0<1mm $\\
+      \hline
+        Cinématiques & $ p_T>7\GeV $, $ |\eta|<2.5 $\\
+      \hline
+        Coups dans le détecteur interne & voir figure \ref{idmuon}\\
+      \hline
+        Paramètre d'impact & $ z_0<10mm $\\
+      \hline
+    \end{tabular}
+
+  \end{bigcenter}
+  \caption{\label{HSG2tbl2}Sélection des objets physiques pour l'étude $ H\to4l $.}
+\end{table}
+
+\subsubsection{Recouvrement des leptons}
+
+\paragraph{électrons-électron} On considère que deux électrons se recouvrent si ils partagent les mêmes paramètres de trace, soit encore, $ d_0 $, $ z_0 $, $ \theta $, $ \phi $ et $ \frac{q}{p} $. Dans cette situation, n'est conservé que l'électron de plus grande énergie transverse.
+
+\paragraph{électrons-muon} On considère qu'un électron et qu'un muon se recouvrent si ils partagent les mêmes paramètres de trace, soit encore, $ d_0 $, $ z_0 $, $ \theta $, $ \phi $ et $ \frac{q}{p} $. Dans cette situation, les deux objets sont éliminés.
+
+\subsection{Reconstruction et sélection des candidats Higgs}
+
+\subsubsection{Reconstruction}
+
+La reconstruction consiste essentiellement à former des quadruplets de leptons composées de : i) deux paires d'électrons (deux $ e^+ $ et deux $ e^- $). ii) deux paires de muons (deux $ \mu^+ $ et deux $ \mu^- $). iii) une paire $ e^+e^- $ et une paire $ \mu^+\mu^- $. Chaque paire permet la formation d'un candidat $ Z $. La combinaison des deux candidats $ Z $ constitue le candidat Higgs. Nous avions mentionné qu'il existe deux situations suivant la masse du boson de Higgs. Si celle-ci est supérieure à deux fois la masse $ m_Z $ nominale, les deux bosons $ Z $ sont sur couche de masse, sinon, un $ Z $ est sur couche de masse, et l'autre $ Z $ est hors couche de masse. Il convient dés à présent de nommer \og $ Z $ pimaire\fg\,le $ Z $ dont la masse reconstruite $ \equiv m_{12} $ est la plus proche de la valeur nominale et \og $ Z $ secondaire\fg\,le $ Z $ dont la masse reconstruite $ \equiv m_{34} $ est la plus éloignée de la valeur nominale. Nous distinguerons par la suite les canaux $ 2e2\mu $ et $ 2\mu2e $ où la première paire indique la paire primaire.
+
+\subsubsection{Sélection}
+
+\paragraph{???}Pour les canaux $ 2e2\mu $ et $ 2\mu2e $, il est demandé que la masse invariante de chaque paire soit supérieure à $ 15\GeV $ afin de ???.
+
+\paragraph{???}Afin d'être compatible avec les exigences du critère de déclenchement EF\_e20\_medium et EF\_mu18\_MG, il est demandé qu'au moins deux leptons aient une énergie transverse supérieure à $ 20\GeV $. En toute rigueur, EF\_e20\_medium atteint sont plateau d'efficacité vers $ 24-25\GeV $, il faudrait donc couper plus haut en énergie au détriment de la statistique. Les optimisations liées au système de déclenchement seront discuter ultérieurement.
+
+\paragraph{???}Il est demandé que la masse du $ Z $ primaire soit dans une fenêtre de $ 15\GeV $ autour de la masse nominale.
+
+\paragraph{???}Il est demandé que la masse du $ Z $ secondaire soit supérieure à un seuil $ m_{seuil} $ qui varie en fonction de la masse $ m_{12} $ et qui est toujours inférieure à $ 115\GeV $ ($ \sim $ valeur limite entre $ Z $ sur couche de masse et $ Z $ hors couche de masse). Un ensemble de valeurs est donné dans le tableau \ref{m34cut}. Les valeurs intermédiaires sont obtenues par simple interpolation linéaire.
+
+\begin{table}[!h]
+  \begin{bigcenter}
+
+    \begin{tabular}{|c|c|c|c|c|c|c|c|c|}
+      \hline
+      \hline
+        $ m_{4l} $ $ [\GeV] $ & $<120$ & $130$ & $150$ & $160$ & $165$ & $180$ & $190$ & $>200$\\
+        $ m_{seuil} $ $ [\GeV] $ & $15$ & $20$ & $30$ & $30$ & $35$ & $40$ & $50$ & $60$\\
+      \hline
+    \end{tabular}
+
+  \end{bigcenter}
+  \caption{\label{m34cut}.}
+\end{table}
+
+
+
+
+
+
+
+
+
+
+
+
+
+\newpage
+
+\section{Isolation des leptons}
+
+Il convient d'étudier la mise en \oe uvre de critères d'isolation pour les électrons et les muons afin de diminuer les contributions des bruits de fond réductibles hadroniques. Les coupures d'isolation sont appliquées en complément de la sélection décrite ci-dessus.
+
+Il convient de distinguer deux type de d'isolation, l'isolation des amas du calorimètre électromagnétiques et l'isolation des traces du détecteur interne. Nous allons proposer une étude d'efficacité sur les signaux et de réjection sur les bruits de fond $ t\bar{t} $ et $ Zb\bar{b} $ à partir des simulations Monte-Carlo afin d'effectuer un choix sur la définition de l'isolation puis nous montrerons une estimation des efficacités basée sur les données exclusivement en utilisant une méthode \emph{Tag and Probe} (T\emph{\&}P).
+
+\section{Analyse sur la simulation Monte-Carlo}
+
+Un lot d'électrons et de muons de faible qualité a été sélectionner à partir des simulations Monte-Calo $ Z\to ee $, $ Z\to\mu\mu $, $ t\bar{t} $, $ Z(\to ee)b\bar{b} $ et $ Z(\to\mu\mu)b\bar{b} $. Il est simplement demandé que l'impulsion transverse soit supérieur à $ 7\GeV $ et que ces leptons soient reconstruits dans les zones de précision du calorimètre électromagnétique ou du trajectographe interne.
+
+\subsection{Isolation des amas}
+
+\subsubsection{Définition de Etcone}
+
+La technique standard utilisée pour caractériser l'isolation d'un électron consiste à sommer l'énergie des cellules des calorimètres électromagnétiques et hadroniques situées à l'intérieur d'un cône d'ouverture $ \Delta R $, centré autour du candidat, puis, soustraire l'énergie de l'amas :
+\begin{equation}
+  Etcone(\Delta R)\equiv\left\{\sum_{cellule/\delta R<\Delta R}E_{T\,cellule}\right\}-E_{T\,amas}
+\end{equation}
+
+où $ \delta R=\sqrt{\left(\eta_{amas}-\eta_{cellule}\right)^2+\left(\phi_{amas}-\phi_{cellule}\right)^2} $. Cette définition de l'isolation est directement mise en\oe uvre par le logiciel Athena, plusieurs tailles de cônes sont disponibles : $ 0.20 $, $ 0.25 $, $ 0.30 $, $ 0.35 $, etc\dots
+
+\begin{figure}[!b]
+  \begin{bigcenter}
+
+  \begin{tabular}{cc}
+    \includegraphics[height=5.25cm, keepaspectratio]{phd_higgs/el_etcone}
+    &
+    \includegraphics[height=5.25cm, keepaspectratio]{phd_higgs/el_etcone_eff}
+    \\
+    (a) & (b)
+  \end{tabular}
+
+  \end{bigcenter}
+  \caption{\label{iso1}Distribution de la variable Etcone pour trois ouvertures différentes pour $ Z\to ee $ et $ t\bar{t} $ (a) et distribution de l'efficacité de sélection en fonction de la variable Etcone pour trois ouvertures différentes pour $ Z\to ee $ et $ t\bar{t} $ (b).}
+\end{figure}
+
+\vspace{-0.1cm}
+
+\subsubsection{Distributions et efficacité}
+
+La figure \ref{iso1} (a) montre la distribution de la variable Etcone pour trois ouvertures différentes pour $ Z\to ee $ et $ t\bar{t} $. Le signal $ t\bar{t} $ se détache clairement du signal $ Z\to ee $. Plus le cône est de petite taille, plus la distribution pour $ Z\to ee $ est piquée. La figure \ref{iso1} (b) montre la distribution de l'efficacité de sélection en fonction de la variable Etcone pour trois ouvertures différentes pour $ Z\to ee $ et $ t\bar{t} $. Plus la taille du cône est petit, plus l'efficacité pour $ Z\to ee $ est grande au détriment de la réjection pour $ t\bar{t} $ ($ \sim5\% $ par $ \Delta R=0.10 $).
+
+\vspace{-0.1cm}
+
+\subsubsection{Définition de caloIso}
+
+Nous avions précisé au chapitre 6 qu'une partie de l'énergie déposée s'échappe en dehors des amas $ 3\times7 $ utilisés pour la reconstruction des électrons. Ceci influe directement sur la valeur des variables $ Etcone $. De plus, pour les électrons, les pertes radiatives sont proportionnelles à l'énergie initiale. L'énergie déposée autour des candidats électrons augmente avec l'énergie transverse. Il est alors possible de définir une nouvelle variable moins sensible à ces effets :\vspace{-0.2cm}
+\begin{equation}
+  caloIso(\Delta R)\equiv\frac{Etcone(\Delta R)}{E_T}=\frac{\left\{\sum_{cellule/\delta R<\Delta R}E_{T\,cellule}\right\}-E_{T\,amas}}{E_T}
+\end{equation}
+
+\subsubsection{Distributions et efficacité}
+
+La figure \ref{iso2} (a) montre la distribution de la variable caloIso pour trois ouvertures différentes pour $ Z\to ee $ et $ t\bar{t} $ et la figure \ref{iso2} (b) montre la distribution de l'efficacité de sélection en fonction de la variable caloIso pour trois ouvertures différentes pour $ Z\to ee $ et $ t\bar{t} $. Les observation sont les même que pour les variables Etcone, néanmoins, les variables caloIso sont plus efficace de environs $ 10\% $. Le choix de l'utilisation de caloIso plutôt que Etcone est naturel.
+
+\begin{figure}[!h]
+  \begin{bigcenter}
+
+  \begin{tabular}{cc}
+    \includegraphics[height=5.25cm, keepaspectratio]{phd_higgs/el_clIso}
+    &
+    \includegraphics[height=5.25cm, keepaspectratio]{phd_higgs/el_clIso_eff}
+    \\
+    (a) & (b)
+  \end{tabular}
+
+  \end{bigcenter}
+  \caption{\label{iso2}Distribution de la variable Etcone pour trois ouvertures différentes pour $ Z\to ee $ et $ t\bar{t} $ (a) et distribution de l'efficacité de sélection en fonction de la variable Etcone pour trois ouvertures différentes pour $ Z\to ee $ et $ t\bar{t} $ (b).}
+\end{figure}
+
+\vspace{-0.75cm}
+
+\subsubsection{Sensibilité à l'empilement}
+
+L'empilement a un effet sur les variables d'isolation. Deux type d'empilements sont à considérer : i) l'empilements \emph{in time}, où les effets à prendre en compte proviennent du nombre de vertex primaires. ii) l'empilements \emph{out of time}, où les effets à prendre en compte proviennent du fait que l'intervalle de temps entre la collision entre deux paquets de protons est plus petit que la durée de vie des signaux mis en forme au sortir de l'électronique \emph{front-end} du calorimètre électromagnétique (voir figure \ref{pulses}). Il en résulte la présence de cellule présentant une énergie négative qui peut contribuer aux cônes.
+
+\paragraph{Correction pour les électrons}
+
+\paragraph{Correction pout les muons}
+
+\subsection{Choix final}
+
+\subsubsection{Définition}
+
+\subsubsection{Cas des éléctrons}
+
+\subsubsection{Cas des muons}
 
