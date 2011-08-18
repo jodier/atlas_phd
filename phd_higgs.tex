@@ -122,13 +122,15 @@ La reconstruction consiste essentiellement à former des quadruplets de leptons c
 
 \subsubsection{Sélection}
 
-\paragraph{???}Pour les canaux $ 2e2\mu $ et $ 2\mu2e $, il est demandé que la masse invariante de chaque paire soit supérieure à $ 15\GeV $ afin de ???.
+La sélection de candidats Higgs se fait en six étapes.
 
-\paragraph{???}Afin d'être compatible avec les exigences du critère de déclenchement EF\_e20\_medium et EF\_mu18\_MG, il est demandé qu'au moins deux leptons aient une énergie transverse supérieure à $ 20\GeV $. En toute rigueur, EF\_e20\_medium atteint sont plateau d'efficacité vers $ 24-25\GeV $, il faudrait donc couper plus haut en énergie au détriment de la statistique. Les optimisations liées au système de déclenchement seront discuter ultérieurement.
+\paragraph{sélection 1}Pour les canaux $ 2e2\mu $ et $ 2\mu2e $, il est demandé que la masse invariante de chaque paire soit supérieure à $ 15\GeV $ afin de ???.
 
-\paragraph{???}Il est demandé que la masse du $ Z $ primaire soit dans une fenêtre de $ 15\GeV $ autour de la masse nominale.
+\paragraph{sélection 2}Afin d'être compatible avec les exigences du critère de déclenchement EF\_e20\_medium et EF\_mu18\_MG, il est demandé qu'au moins deux leptons aient une énergie transverse supérieure à $ 20\GeV $. En toute rigueur, EF\_e20\_medium atteint sont plateau d'efficacité vers $ 24-25\GeV $, il faudrait donc couper plus haut en énergie au détriment de la statistique. Les optimisations liées au système de déclenchement seront discuter ultérieurement.
 
-\paragraph{???}Il est demandé que la masse du $ Z $ secondaire soit supérieure à un seuil $ m_{seuil} $ qui varie en fonction de la masse $ m_{12} $ et qui est toujours inférieure à $ 115\GeV $ ($ \sim $ valeur limite entre $ Z $ sur couche de masse et $ Z $ hors couche de masse). Un ensemble de valeurs est donné dans le tableau \ref{m34cut}. Les valeurs intermédiaires sont obtenues par simple interpolation linéaire.
+\paragraph{sélection 3}Il est demandé que la masse du $ Z $ primaire soit dans une fenêtre de $ 15\GeV $ autour de la masse nominale.
+
+\paragraph{sélection 4}Il est demandé que la masse du $ Z $ secondaire soit supérieure à un seuil $ m_{seuil} $ qui varie en fonction de la masse $ m_{12} $ et qui est toujours inférieure à $ 115\GeV $. Un ensemble de valeurs est donné dans le tableau \ref{m34cut}. Les valeurs intermédiaires sont obtenues par simple interpolation linéaire.
 
 \begin{table}[!h]
   \begin{bigcenter}
@@ -142,108 +144,285 @@ La reconstruction consiste essentiellement à former des quadruplets de leptons c
     \end{tabular}
 
   \end{bigcenter}
-  \caption{\label{m34cut}.}
+  \caption{\label{m34cut}Valeurs de seuil $ m_{seuil} $ pour la masse du $ Z $ secondaire $ m_{34} $ en fonction de la masse du candidat Higgs $ m_{12} $. Les valeurs intermédiaires sont obtenues par interpolation linéaire.}
 \end{table}
 
+\paragraph{sélection 5}Les quatre leptons du quadruplet doivent être bien séparés $ min(\Delta R_{ij})>0.1 $ (une tour de déclenchement dans le second compartiment du calorimètre électromagnétique) où $ \Delta R_{ij}=\sqrt{(\eta_i-\eta_j)^2+(\phi_i-\phi_j)^2} $.
 
+\paragraph{sélection 6}Pour évité tout biais, il n'est conservé qu'un seul candidat Higgs par événement parmi les combinaisons possibles. Nous conservons le quadruplet qui a la masse du boson $ Z $ primaire $ m_{12} $ la plus proche de la valeur sur couche de masse et qui a la masse du boson $ Z $ secondaire $ m_{34} $ la plus grande.
 
+Tous les candidats qui dépassent la sélection n°6 sont répertoriés. Cependant à ce niveau, rien n'est fait pour diminuer les bruits de fond réductibles $ t\bar{t} $, $ Zb\bar{b} $ ou $ Z $ inclusif. Une sélection supplémentaire basée sur des coupure d'isolation sera décrite dans la section suivante.\\
 
-
-
-
-
-
-
-
-
-
-\newpage
-
-\section{Isolation des leptons}
-
-Il convient d'étudier la mise en \oe uvre de critères d'isolation pour les électrons et les muons afin de diminuer les contributions des bruits de fond réductibles hadroniques. Les coupures d'isolation sont appliquées en complément de la sélection décrite ci-dessus.
-
-Il convient de distinguer deux type de d'isolation, l'isolation des amas du calorimètre électromagnétiques et l'isolation des traces du détecteur interne. Nous allons proposer une étude d'efficacité sur les signaux et de réjection sur les bruits de fond $ t\bar{t} $ et $ Zb\bar{b} $ à partir des simulations Monte-Carlo afin d'effectuer un choix sur la définition de l'isolation puis nous montrerons une estimation des efficacités basée sur les données exclusivement en utilisant une méthode \emph{Tag and Probe} (T\emph{\&}P).
-
-\section{Analyse sur la simulation Monte-Carlo}
-
-Un lot d'électrons et de muons de faible qualité a été sélectionner à partir des simulations Monte-Calo $ Z\to ee $, $ Z\to\mu\mu $, $ t\bar{t} $, $ Z(\to ee)b\bar{b} $ et $ Z(\to\mu\mu)b\bar{b} $. Il est simplement demandé que l'impulsion transverse soit supérieur à $ 7\GeV $ et que ces leptons soient reconstruits dans les zones de précision du calorimètre électromagnétique ou du trajectographe interne.
-
-\subsection{Isolation des amas}
-
-\subsubsection{Définition de Etcone}
-
-La technique standard utilisée pour caractériser l'isolation d'un électron consiste à sommer l'énergie des cellules des calorimètres électromagnétiques et hadroniques situées à l'intérieur d'un cône d'ouverture $ \Delta R $, centré autour du candidat, puis, soustraire l'énergie de l'amas :
+\noindent Remarque : comme la résolution sur les variables $ \eta $ et $ \phi $ est meilleure pour les traces que pour les amas, les définitions suivantes sont utilisées dans toute l'analyse :
 \begin{equation}
-  Etcone(\Delta R)\equiv\left\{\sum_{cellule/\delta R<\Delta R}E_{T\,cellule}\right\}-E_{T\,amas}
+  \begin{array}{ccc}
+      \begin{array}{c} \eta\equiv\eta_\textrm{trace} \\ \phi\equiv\phi_\textrm{trace} \end{array} & & E_T\equiv E_\textrm{amas}/\cosh\eta_\textrm{trace}
+  \end{array}
 \end{equation}
 
-où $ \delta R=\sqrt{\left(\eta_{amas}-\eta_{cellule}\right)^2+\left(\phi_{amas}-\phi_{cellule}\right)^2} $. Cette définition de l'isolation est directement mise en\oe uvre par le logiciel Athena, plusieurs tailles de cônes sont disponibles : $ 0.20 $, $ 0.25 $, $ 0.30 $, $ 0.35 $, etc\dots
+\subsection{Résultats avec la simulation Monte-Carlo}
 
-\begin{figure}[!b]
+Nous allons montrer les chiffres et les distribution obtenues à partir des principaux bruits de fond et à partir de quatre échantillons de signaux $ m_H=130\GeV $, $ m_H=150\GeV $ et $ m_H=220\GeV $. Mais commençons par regarder les objets physiques (électron et muons).
+
+\subsubsection{Efficacité des coupures pour les leptons}
+
+Une simulation Monte-Carlo $ H\to ZZ^{(*)}\to4l $ avec $ m_H=150\GeV $ a été utilisée par les membre du groupe dans le cadre d'un \emph{challenge} afin de faire converger les code d'analyse. Je précise au passe que je code utilisé pour produire les résultats montrés dans ce chapitre a été l'un des premiers à converger. Les table \ref{} (a) à \ref{} (b) montrent le nombre d'objets physiques survivant à chacune des coupures de sélection dans les sept situations suivantes : électrons (déclenchement électronique seul), muons \emph{staco} et \emph{muid} (déclenchement muonique seul), électrons (déclenchement électronique et muonique avec recouvrement \emph{staco} et \emph{muid}), muons \emph{staco} et \emph{muid} (déclenchement électronique et muonique).
+
+\begin{table}[!h]
   \begin{bigcenter}
 
-  \begin{tabular}{cc}
-    \includegraphics[height=5.25cm, keepaspectratio]{phd_higgs/el_etcone}
-    &
-    \includegraphics[height=5.25cm, keepaspectratio]{phd_higgs/el_etcone_eff}
-    \\
-    (a) & (b)
-  \end{tabular}
+    \begin{tabular}{|c|c|c|c|c|c|c|c|c|}
+      \hline
+      \hline
+        Déclenchement & \multicolumn{2}{c|}{$ e $} & \multicolumn{2}{c|}{$ e $ et $ \mu $} & \multicolumn{2}{c|}{$ e $ ou $ \mu $}\\
+      \hline
+        Coupure & \# objets & efficacité & \# objets & efficacité & \# objets & efficacité\\
+      \hline
+         - & 163481 & - & 163481 & - & 163481 & -\\
+        vertex & 163481 &  & 163481 &  & 163481 & \\
+        déclenchement & 122325 &  & 159170 &  & 159170 & \\
+        algorithme & 77510 &  & 93893 &  & 93893 & \\
+        identification & 45100 &  & 47684 &  & 47684 & \\
+        $ |\eta|<2.47 $ & 45100 &  & 47683 &  & 47683 & \\
+        $ E_T>7\GeV $ & 43272 &  & 45305 &  & 45305 & \\
+        qualité & 42236 &  & 44228 &  & 44228 & \\
+        $ z_0<10mm $ & 42202 &  & 44186 &  & 44186 & \\
+        recouvrement $ e-e $ & 42201 &  & 44185 &  & 44185 & \\
+        recouvrement $ e-\mu $ & 42176 (staco) &  & 44146 (staco) &  & 44144 (muid) & \\
+      \hline
+    \end{tabular}
 
   \end{bigcenter}
-  \caption{\label{iso1}Distribution de la variable Etcone pour trois ouvertures différentes pour $ Z\to ee $ et $ t\bar{t} $ (a) et distribution de l'efficacité de sélection en fonction de la variable Etcone pour trois ouvertures différentes pour $ Z\to ee $ et $ t\bar{t} $ (b).}
-\end{figure}
+  \caption{Nombre de candidats électrons après chaque coupure de sélection, $ m_H=150\GeV $.}
+\end{table}
 
-\vspace{-0.1cm}
-
-\subsubsection{Distributions et efficacité}
-
-La figure \ref{iso1} (a) montre la distribution de la variable Etcone pour trois ouvertures différentes pour $ Z\to ee $ et $ t\bar{t} $. Le signal $ t\bar{t} $ se détache clairement du signal $ Z\to ee $. Plus le cône est de petite taille, plus la distribution pour $ Z\to ee $ est piquée. La figure \ref{iso1} (b) montre la distribution de l'efficacité de sélection en fonction de la variable Etcone pour trois ouvertures différentes pour $ Z\to ee $ et $ t\bar{t} $. Plus la taille du cône est petit, plus l'efficacité pour $ Z\to ee $ est grande au détriment de la réjection pour $ t\bar{t} $ ($ \sim5\% $ par $ \Delta R=0.10 $).
-
-\vspace{-0.1cm}
-
-\subsubsection{Définition de caloIso}
-
-Nous avions précisé au chapitre 6 qu'une partie de l'énergie déposée s'échappe en dehors des amas $ 3\times7 $ utilisés pour la reconstruction des électrons. Ceci influe directement sur la valeur des variables $ Etcone $. De plus, pour les électrons, les pertes radiatives sont proportionnelles à l'énergie initiale. L'énergie déposée autour des candidats électrons augmente avec l'énergie transverse. Il est alors possible de définir une nouvelle variable moins sensible à ces effets :\vspace{-0.2cm}
-\begin{equation}
-  caloIso(\Delta R)\equiv\frac{Etcone(\Delta R)}{E_T}=\frac{\left\{\sum_{cellule/\delta R<\Delta R}E_{T\,cellule}\right\}-E_{T\,amas}}{E_T}
-\end{equation}
-
-\subsubsection{Distributions et efficacité}
-
-La figure \ref{iso2} (a) montre la distribution de la variable caloIso pour trois ouvertures différentes pour $ Z\to ee $ et $ t\bar{t} $ et la figure \ref{iso2} (b) montre la distribution de l'efficacité de sélection en fonction de la variable caloIso pour trois ouvertures différentes pour $ Z\to ee $ et $ t\bar{t} $. Les observation sont les même que pour les variables Etcone, néanmoins, les variables caloIso sont plus efficace de environs $ 10\% $. Le choix de l'utilisation de caloIso plutôt que Etcone est naturel.
-
-\begin{figure}[!h]
+\begin{table}[!h]
   \begin{bigcenter}
 
-  \begin{tabular}{cc}
-    \includegraphics[height=5.25cm, keepaspectratio]{phd_higgs/el_clIso}
-    &
-    \includegraphics[height=5.25cm, keepaspectratio]{phd_higgs/el_clIso_eff}
-    \\
-    (a) & (b)
-  \end{tabular}
+    \begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|}
+      \hline
+      \hline
+        Déclenchement & \multicolumn{2}{c|}{$ \mu $ (staco)} & \multicolumn{2}{c|}{$ \mu $ (muid)} & \multicolumn{2}{c|}{$ e $ ou $ \mu $ (staco)} & \multicolumn{2}{c|}{$ e $ ou $ \mu $ (muid)}\\
+      \hline
+        Coupure & \# objets & efficacité & \# objets & efficacité & \# objets & efficacité & \# objets & efficacité\\
+      \hline
+         - & 59101 & - & 61455 & - & 59101 & - & 61455 & -\\
+        vertex & 59101 &  & 61455 &  & 57695 &  & 61455 & \\
+        déclenchement & 54660 &  & 54660 &  & 56813 & & 59955 & \\
+        algorithme & 52344 &  & 52403 &  & 56813 & & 56835 & \\
+        $ p_T>7\GeV $ & 50281 &  & 50207 &  & 53941 & & 53838 & \\
+        $ |\eta|<2.5 $ & 49257 &  & 50207 &  & 52685 & & 52649 & \\
+        coups & 48621 &  & 48576 &  & 48621 & & 51917 & \\
+        $ d_0<1mm $ & 48619 &  & 48574 &  & 51988 & & 51915 & \\
+        $ z_0<10mm $ & 48610 &  & 48565 &  & 51976 & & 51903 & \\
+      \hline
+    \end{tabular}
 
   \end{bigcenter}
-  \caption{\label{iso2}Distribution de la variable Etcone pour trois ouvertures différentes pour $ Z\to ee $ et $ t\bar{t} $ (a) et distribution de l'efficacité de sélection en fonction de la variable Etcone pour trois ouvertures différentes pour $ Z\to ee $ et $ t\bar{t} $ (b).}
-\end{figure}
+  \caption{Nombre de candidats muons après chaque coupure de sélection, $ m_H=150\GeV $.}
+\end{table}
 
-\vspace{-0.75cm}
+\noindent Remarque 1 : Pour des déclenchement simple, l'efficacité de sélection totale des électrons est d'environ $ 26\% $ et l'efficacité de sélection totale des muons est d'environ $ 82\% $. Pour des déclenchement double, l'efficacité de sélection totale des électrons est d'environ $ 27\% $ et l'efficacité de sélection totale des muons est d'environ $ 88\% $.\\
 
-\subsubsection{Sensibilité à l'empilement}
+\noindent Remarque 2 : L'efficacité de muons \emph{staco} est sensiblement meilleure que l'efficacité des muons \emph{muid}, soit environ $ 0.1\% $.
 
-L'empilement a un effet sur les variables d'isolation. Deux type d'empilements sont à considérer : i) l'empilements \emph{in time}, où les effets à prendre en compte proviennent du nombre de vertex primaires. ii) l'empilements \emph{out of time}, où les effets à prendre en compte proviennent du fait que l'intervalle de temps entre la collision entre deux paquets de protons est plus petit que la durée de vie des signaux mis en forme au sortir de l'électronique \emph{front-end} du calorimètre électromagnétique (voir figure \ref{pulses}). Il en résulte la présence de cellule présentant une énergie négative qui peut contribuer aux cônes.
+\subsubsection{Efficacité des coupures pour les candidats Higgs}
 
-\paragraph{Correction pour les électrons}
+Le tableau \ref{} montre les efficacité totale de reconstruction, par canal, jusqu'à la coupure n°6 (un seul candidat Higgs).
 
-\paragraph{Correction pout les muons}
+Les tableaux \ref{} (a) à \ref{} (b) montre les efficacités de chacune des coupures de sélection obtenues à partir de quatre échantillons de signaux $ m_H=130\GeV $, $ m_H=150\GeV $ et $ m_H=220\GeV $. La table \ref{} montre les efficacités de chacune des coupures de sélection obtenues à partir de 
 
-\subsection{Choix final}
 
-\subsubsection{Définition}
 
-\subsubsection{Cas des éléctrons}
+\begin{table}[!b]
+  \begin{bigcenter}
 
-\subsubsection{Cas des muons}
+    \begin{small}
+
+    \begin{tabular}{|c|c|c|c|c|c|}
+      \hline
+      \hline
+        Efficacité & $ 4e $ & $ 4\mu $ (staco) & $ 4\mu $ (muid) & $ 2e2\mu|2mu2e $ (staco) & $ 2e2\mu|2mu2e $ (muid)\\
+      \hline
+        $ m_H=130\GeV $ & $ 1.61\%\pm0.04\% $ & $ 3.25\%\pm0.06\% $ & $ 3.22\%\pm0.06\% $ & $ 2.51|1.87\%\pm0.06|0.05\% $ & $ 2.49|1.87\%\pm0.06|0.05\% $\\
+      \hline
+    \end{tabular}
+
+    \end{small}
+
+  \end{bigcenter}
+  \caption{Efficacité de chaque coupure de sélection, $ m_H=130\GeV $.}
+\end{table}
+
+\begin{table}[!p]
+  \begin{bigcenter}
+
+    \begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|}
+      \hline
+      \hline
+        Canal   & $ 4e $ & $ 4\mu $ (staco) & $ 4\mu $ (muid)\\
+      \hline
+        Coupure & efficacité & efficacité & efficacité\\
+      \hline
+      4 leptons		& $ 2.55\%\pm0.06\% $ & $ 5.31\%\pm0.08\% $ & $ 5.24\%\pm0.08\% $\\
+      paires		& $ 100.00\%\pm0.05\% $ & $ 100.00\%\pm0.02\% $ & $ 100.00\%\pm0.02\% $\\
+      Cinématique	& $ 95.78\%\pm0.45\% $ & $ 94.49\%\pm0.35\% $ & $ 94.70\%\pm0.35\% $\\
+      $ m_{12} $	& $ 83.95\%\pm0.83\% $ & $ 83.13\%\pm0.59\% $ & $ 83.22\%\pm0.59\% $\\
+      $ m_{34} $	& $ 78.50\%\pm1.02\% $ & $ 79.08\%\pm0.70\% $ & $ 79.03\%\pm0.71\% $\\
+      $ min[\Delta R] $	& $ 100.00\%\pm0.08\% $ & $ 98.41\%\pm0.25\% $ & $ 98.70\%\pm0.22\% $\\
+      1 quadruplet	& $ 100.00\%\pm0.08\% $ & $ 100.00\%\pm0.04\% $ & $ 100.00\%\pm0.04\% $\\
+      \hline
+    \end{tabular}
+
+    \vspace{0.5cm}
+
+    \begin{tabular}{|c|c|c|}
+      \hline
+      \hline
+        Canal   & $ 2e2\mu|2\mu2e $ (staco) & $ 2e2\mu|2\mu2e $ (muid)\\
+      \hline
+        Coupure & efficacité & efficacité\\
+      \hline
+      4 leptons		& $ 7.29\%\pm0.09\% $ & $ 7.26\%\pm0.09\% $\\
+      paires		& $ 100.00\%\pm0.02\% $ & $ 100.00\%\pm0.02\% $\\
+      Cinématique	& $ 82.92\%\pm0.49\% $ & $ 82.87\%\pm0.49\% $\\
+      $ m_{12} $	& $ 80.54\%\pm0.57\% $ & $ 80.66\%\pm0.57\% $\\
+      $ m_{34} $	& $ 90.52\%\pm0.47\% $ & $ 90.57\%\pm0.47\% $\\
+      $ min[\Delta R] $	& $ 99.21\%\pm0.15\% $ & $ 99.20\%\pm0.15\% $\\
+      1 quadruplet	& $ 100.00|100.00\%\pm0.05|0.07\% $ & $ 100.00|100.00\%\pm0.05|0.07\% $\\
+      \hline
+    \end{tabular}
+
+  \end{bigcenter}
+  \caption{Efficacité de chaque coupure de sélection, $ m_H=130\GeV $.}
+\end{table}
+
+\begin{table}[!p]
+  \begin{bigcenter}
+
+    \begin{tabular}{|c|c|c|c|}
+      \hline
+      \hline
+        Canal   & $ 4e $ & $ 4\mu $ (staco) & $ 4\mu $ (muid)\\
+      \hline
+        Coupure & efficacité & efficacité & efficacité\\
+      \hline
+      4 leptons		& $ 3.16\% \pm 0.06\% $ & $ 6.48\% \pm 0.09\% $ & $ 6.41\% \pm 0.09\% $\\
+      paires		& $ 100.00\% \pm 0.04\% $ & $ 100.00\% \pm 0.02\% $ & $ 100.00\% \pm 0.02\% $\\
+      Cinématique	& $ 98.42\% \pm 0.25\% $ & $ 97.76\% \pm 0.21\% $ & $ 97.87\% \pm 0.20\% $\\
+      $ m_{12} $	& $ 92.11\% \pm 0.54\% $ & $ 92.52\% \pm 0.37\% $ & $ 92.73\% \pm 0.37\% $\\
+      $ m_{34} $	& $ 85.98\% \pm 0.73\% $ & $ 85.03\% \pm 0.52\% $ & $ 85.08\% \pm 0.52\% $\\
+      $ min[\Delta R] $	& $ 99.95\% \pm 0.07\% $ & $ 98.97\% \pm 0.16\% $ & $ 99.01\% \pm 0.16\% $\\
+      1 quadruplet	& $ 100.00\% \pm 0.05\% $ & $ 100.00\% \pm 0.03\% $ & $ 100.00\% \pm 0.03\% $\\
+      \hline
+    \end{tabular}
+
+    \vspace{0.5cm}
+
+    \begin{tabular}{|c|c|c|}
+      \hline
+      \hline
+        Canal   & $ 2e2\mu|2\mu2e $ (staco) & $ 2e2\mu|2\mu2e $ (muid)\\
+      \hline
+        Coupure & efficacité & efficacité\\
+      \hline
+      4 leptons		& $ 9.17\% \pm 0.10\% $ & $ 9.11\% \pm 0.10\% $\\
+      paires		& $ 100.00\% \pm 0.01\% $ & $ 100.00\% \pm 0.01\% $\\
+      Cinématique	& $ 93.35\% \pm 0.29\% $ & $ 93.37\% \pm 0.29\% $\\
+      $ m_{12} $	& $ 89.91\% \pm 0.36\% $ & $ 90.05\% \pm 0.36\% $\\
+      $ m_{34} $	& $ 86.41\% \pm 0.44\% $ & $ 86.48\% \pm 0.44\% $\\
+      $ min[\Delta R] $	& $ 99.55\% \pm 0.09\% $ & $ 99.51\% \pm 0.10\% $\\
+      1 quadruplet	& $ 100.00|100.00\% \pm 0.04|0.04\% $ & $ 100.00|100.00\% \pm 0.04|0.04\% $\\
+      \hline
+    \end{tabular}
+
+  \end{bigcenter}
+  \caption{Efficacité de chaque coupure de sélection, $ m_H=150\GeV $.}
+\end{table}
+
+\begin{table}[!p]
+  \begin{bigcenter}
+
+    \begin{tabular}{|c|c|c|c|c|c|c|c|}
+      \hline
+      \hline
+        Canal   & $ 4e $ & $ 4\mu $ (staco) & $ 4\mu $ (muid)\\
+      \hline
+        Coupure & efficacité & efficacité & efficacité\\
+      \hline
+      4 leptons		& $ 4.18\%\pm0.07\% $ & $ 7.40\%\pm0.09\% $ & $ 7.31\%\pm0.09\% $\\
+      paires		& $ 100.00\%\pm0.03\% $ & $ 100.00\%\pm0.02\% $ & $ 100.00\%\pm0.02\% $\\
+      Cinématique	& $ 99.79\%\pm0.08\% $ & $ 99.81\%\pm0.06\% $ & $ 99.79\%\pm0.06\% $\\
+      $ m_{12} $	& $ 99.55\%\pm0.12\% $ & $ 99.58\%\pm0.09\% $ & $ 99.52\%\pm0.09\% $\\
+      $ m_{34} $	& $ 97.65\%\pm0.26\% $ & $ 97.94\%\pm0.19\% $ & $ 97.90\%\pm0.19\% $\\
+      $ min[\Delta R] $	& $ 100.00\%\pm0.03\% $ & $ 99.60\%\pm0.08\% $ & $ 99.60\%\pm0.09\% $\\
+      1 quadruplet	& $ 100.00\%\pm0.03\% $ & $ 100.00\%\pm0.02\% $ & $ 100.00\%\pm0.02\% $\\
+      \hline
+    \end{tabular}
+
+    \vspace{0.5cm}
+
+    \begin{tabular}{|c|c|c|}
+      \hline
+      \hline
+        Canal   & $ 2e2\mu|2\mu2e $ (staco) & $ 2e2\mu|2\mu2e $ (muid)\\
+      \hline
+        Coupure & efficacité & efficacité\\
+      \hline
+      4 leptons		& $ 11.32\%\pm0.11\% $ & $ 11.26\%\pm0.11\% $\\
+      paires		& $ 100.00\%\pm0.01\% $ & $ 100.00\%\pm0.01\% $\\
+      Cinématique	& $ 99.58\%\pm0.07\% $ & $ 99.52\%\pm0.07\% $\\
+      $ m_{12} $	& $ 99.15\%\pm0.10\% $ & $ 99.19\%\pm0.10\% $\\
+      $ m_{34} $	& $ 97.39\%\pm0.17\% $ & $ 97.34\%\pm0.17\% $\\
+      $ min[\Delta R] $	& $ 99.75\%\pm0.06\% $ & $ 99.76\%\pm0.05\% $\\
+      1 quadruplet	& $ 100.00|100.00\%\pm0.03|0.02\% $ & $ 100.00|100.00\%\pm0.03|0.02\% $\\
+      \hline
+    \end{tabular}
+
+  \end{bigcenter}
+  \caption{Efficacité de chaque coupure de sélection, $ m_H=220\GeV $.}
+\end{table}
+
+\begin{table}[!p]
+  \begin{bigcenter}
+
+    \begin{tabular}{|c|c|c|c|c|c|c|c|}
+      \hline
+      \hline
+        Canal   & $ 4e $ & $ 4\mu $ (staco) & $ 4\mu $ (muid)\\
+      \hline
+        Coupure & efficacité & efficacité & efficacité\\
+      \hline
+      4 leptons		& $  $ & $  $ & $  $\\
+      paires		& $  $ & $  $ & $  $\\
+      Cinématique	& $  $ & $  $ & $  $\\
+      $ m_{12} $	& $  $ & $  $ & $  $\\
+      $ m_{34} $	& $  $ & $  $ & $  $\\
+      $ min[\Delta R] $	& $  $ & $  $ & $  $\\
+      1 quadruplet	& $  $ & $  $ & $  $\\
+      \hline
+    \end{tabular}
+
+    \vspace{0.5cm}
+
+    \begin{tabular}{|c|c|c|}
+      \hline
+      \hline
+        Canal   & $ 2e2\mu|2\mu2e $ (staco) & $ 2e2\mu|2\mu2e $ (muid)\\
+      \hline
+        Coupure & efficacité & efficacité\\
+      \hline
+      4 leptons		& $  $ & $  $\\
+      paires		& $  $ & $  $\\
+      Cinématique	& $  $ & $  $\\
+      $ m_{12} $	& $  $ & $  $\\
+      $ m_{34} $	& $  $ & $  $\\
+      $ min[\Delta R] $	& $  $ & $  $\\
+      1 quadruplet	& $  $ & $  $\\
+      \hline
+    \end{tabular}
+
+  \end{bigcenter}
+  \caption{Efficacité de chaque coupure de sélection, .}
+\end{table}
 
