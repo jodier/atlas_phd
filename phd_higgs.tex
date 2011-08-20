@@ -62,7 +62,7 @@ nPixHoles + nSCTHoles < 3
 
 n = nTRTHits + nTRTOutliers 
 if (|eta| < 1.9): pass if n > 5 && nTRTOutliers < n*0.9 
-else if eta > 5: pass if nTRTOutliers < n*0.9 
+else if n > 5: pass if nTRTOutliers < n*0.9 
 else: pass
 \end{lstlisting}
 \end{tabular}
@@ -523,7 +523,7 @@ La figure \ref{iso1} (a) montre la distribution de la variable Etcone pour trois
 
 Nous avions précisé au chapitre 6 qu'une partie de l'énergie déposée s'échappe en dehors des amas $ 3\times7 $ utilisés pour la reconstruction des électrons. Ceci influe directement sur la valeur des variables $ Etcone $. De plus, pour les électrons, les pertes radiatives sont proportionnelles à l'énergie initiale, l'énergie déposée autour des candidats électrons augmente avec l'énergie transverse. Il est alors possible de définir une nouvelle variable moins sensible à ces effets :
 \begin{equation}
-  caloIso(\Delta R)\equiv\frac{Etcone(\Delta R)}{E_T}=\frac{\left\{\sum_{cellule/\delta R<\Delta R}E_{T\,cellule}\right\}-E_{T\,amas}}{E_T}
+  caloIso(\Delta R)\equiv\frac{Etcone(\Delta R)}{E_{T\,objet}}=\frac{\left\{\sum_{cellule/\delta R<\Delta R}E_{T\,cellule}\right\}-E_{T\,amas}}{E_{T\,objet}}
 \end{equation}
 
 \subsubsection{Distributions et efficacité}
@@ -571,8 +571,139 @@ Une nouvelle définition $ \textrm{etcone}_{corr}(X) $ des variables d'isolation 
   \textrm{$ \forall $ $ e_1 $ et $ e_2 $, si $ \Delta R_{e_1e_2}<X $}\left\{\begin{array}{ll} \textrm{etcone}_{corr}(X;e_1)\equiv\textrm{etcone}(X;e_1)-p_{T,e2} \\ \textrm{etcone}_{corr}(X;e_2)\equiv\textrm{etcone}(X;e_2)-p_{T,e1} \end{array}\right.
 \end{equation}
 
-Les amméliorations introduites par cette correction ont été étudiées dans \cite{}. La figure \ref{iso3} (b) montre la réjection du signal $ Zb\bar{b} $ en fonction de l'efficacité du signal $ H\to4e $ pour une masse $ m_H=130\GeV $ avec et sans correction de recouvrement pour trois ouvertures différentes. La correction est interessante pour les cônes de grande taille, les effets est plus réduit pour etcone20.
+Les amméliorations introduites par cette correction ont été étudiées dans \cite{}. La figure \ref{iso3} (b) montre la réjection du signal $ Zb\bar{b} $ en fonction de l'efficacité du signal $ H\to4e $ pour une masse $ m_H=130\GeV $ avec et sans correction de recouvrement pour trois ouvertures différentes. La correction est intéressante pour les cônes de grande taille, les effets est plus réduit pour etcone20.
 
+\subsubsection{Sensibilité à l'empilement}
+
+L'empilement a un effet sur les variables d'isolation. Deux type d'empilements sont à considérer : i) l'empilements \emph{in time}, où les effets à prendre en compte proviennent du nombre de vertex primaires. ii) l'empilements \emph{out of time}, où les effets à prendre en compte proviennent du fait que l'intervalle de temps entre la collision entre deux paquets de protons est plus petit que la durée de vie des signaux mis en forme au sortir de l'électronique \emph{front-end} du calorimètre électromagnétique (voir figure \ref{pulses}). Il en résulte la présence de cellule présentant une énergie négative qui peut contribuer aux cônes.
+
+Plus un cône possède une grande ouverture, plus il est sensible au effets de l'empilement. Sachant qu'il y a environ 4 vertex primaires par événement dans les données 2011, il est nécessaire d'effectuer une étude avant de choisir une ouverture de cône. Nous allons montrer qu'il est même possible d'effectuer une correction afin soustraire en partie les effets de l'empilement.
+
+\paragraph{Étude (très) qualitative} Afin de comparer la sensibilité à l'empilement des variables etcone20 et etcone30, les probabilités cumulées ont été tracées en fonction du nombre de vertex primaires pour six jeux de simulations Monte-Carlo $ Zee $ présentant chacune une configuration différente de l'empilement : pas d'empilement, nombre moyen de vertex primaires $ \left<mu\right>=6\textrm{ ou }10 $ (qui n'était pas forcément représentatif des données), intervalle de temps entre la collision entre deux paquets de protons $ bs=50ns\textrm{ ou }75ns $. Les résultats sont montrés sur les figures \ref{pileup1} et \ref{pileup2}.
+
+\begin{figure}[!p]
+  \begin{bigcenter}
+
+  \begin{tabular}{ccc}
+    \includegraphics[height=3.75cm, keepaspectratio]{phd_higgs/cumul_proba_etcone30-1}
+    &
+    \includegraphics[height=3.75cm, keepaspectratio]{phd_higgs/cumul_proba_etcone30-2}
+    &
+    \includegraphics[height=3.75cm, keepaspectratio]{phd_higgs/cumul_proba_etcone30-3}
+    \\
+    (a) & (b) & (c)
+    \\
+    \includegraphics[height=3.75cm, keepaspectratio]{phd_higgs/cumul_proba_etcone30-4}
+    &
+    \includegraphics[height=3.75cm, keepaspectratio]{phd_higgs/cumul_proba_etcone30-5}
+    &
+    \begin{minipage}[c]{3.75cm}
+      \begin{tiny}
+      \begin{enumerate}[(a)]
+        \item $ \left<mu\right>=15 $, $ bs=50ns $
+        \item $ \left<mu\right>=10 $, $ bs=50ns $
+        \item $ \left<mu\right>=15 $, $ bs=75ns $
+        \item $ \left<mu\right>=10 $, $ bs=75ns $
+        \item pas d'empilement
+      \end{enumerate}
+      Pour $ 1 $ à $ 15 $ vertex primaires.
+      \end{tiny}
+    \end{minipage}
+    \\
+    (d) & (e) &
+  \end{tabular}
+
+  \end{bigcenter}
+  \caption{\label{pileup1}Distributions des probabilités cumulées de la variable etcone30 en fonction du nombre de vertex primaires pour six jeux de simulations Monte-Carlo $ Zee $ présentant chacune une configuration différente de l'empilement.}
+\end{figure}
+
+\begin{figure}[!p]
+  \begin{bigcenter}
+
+  \begin{tabular}{ccc}
+    \includegraphics[height=3.75cm, keepaspectratio]{phd_higgs/cumul_proba_etcone20-1}
+    &
+    \includegraphics[height=3.75cm, keepaspectratio]{phd_higgs/cumul_proba_etcone20-2}
+    &
+    \includegraphics[height=3.75cm, keepaspectratio]{phd_higgs/cumul_proba_etcone20-3}
+    \\
+    (a) & (b) & (c)
+    \\
+    \includegraphics[height=3.75cm, keepaspectratio]{phd_higgs/cumul_proba_etcone20-4}
+    &
+    \includegraphics[height=3.75cm, keepaspectratio]{phd_higgs/cumul_proba_etcone20-5}
+    &
+    \begin{minipage}[c]{3.75cm}
+      \begin{tiny}
+      \begin{enumerate}[(a)]
+        \item $ \left<mu\right>=15 $, $ bs=50ns $
+        \item $ \left<mu\right>=10 $, $ bs=50ns $
+        \item $ \left<mu\right>=15 $, $ bs=75ns $
+        \item $ \left<mu\right>=10 $, $ bs=75ns $
+        \item pas d'empilement
+      \end{enumerate}
+      Pour $ 1 $ à $ 15 $ vertex primaires.
+      \end{tiny}
+    \end{minipage}
+    \\
+    (d) & (e) &
+  \end{tabular}
+
+  \end{bigcenter}
+  \caption{\label{pileup2}Distributions des probabilités cumulées de la variable etcone20 en fonction du nombre de vertex primaires pour six jeux de simulations Monte-Carlo $ Zee $ présentant chacune une configuration différente de l'empilement.}
+\end{figure}
+
+\newpage
+
+La première constatation générale est que la sensibilité à l'intervalle de temps entre la collision entre deux paquets de protons n'est pas très grande. Pour etcone30, la sensibilité au nombre moyen de vertex primaire par événement est beaucoup plus importante que pour etcone20. La largeur de l'enveloppe de la région hors plateau est d'environs $ 1.5\GeV $ pour $ \left<mu\right>=15 $ pour etcone30 (resp. $ 0.5\GeV $ pour $ \left<mu\right>=15 $ pour etcone20) et d'environs $ 1.0\GeV $ pour $ \left<mu\right>=10 $ pour etcone20 (resp. $ 0.5\GeV $ pour $ \left<mu\right>=10 $ pour etcone20).
+
+\paragraph{Correction de l'empilement \emph{in time}} Une correction simple peut être mise en place afin de compenser les effets de l'empilement \emph{in time}. La valeur moyenne des variables etcone dépend linéairement du nombre de vertex primaires. La valeur corrigée des cônes d'isolation s'écrit :
+\begin{equation}
+  etcone_{pileup}(\Delta R,\eta)=etcone(\Delta R)-\alpha_\eta(\Delta R)N_{pv}
+\end{equation}
+
+où $ \alpha_\eta(\Delta R) $ la pente de la fonction affine $ \left<etcone(\Delta R)\right>(N_{pv}) $ par classe de pseudo-rapidité $ \eta $ et $ N_{pv} $ est le nombre de vertex primaire. Le groupe électrons/photons du détecteur Atlas fournit un outil standard permettant de calculer la correction en fonction de l'ouverture du cône. A titre d'information, le tableau \ref{intimecoef} montre les valeurs de $ \alpha_\eta $ pour etcone20 et etcone30.
+
+\begin{table}[!h]
+  \begin{bigcenter}
+
+    \begin{small}
+
+    \begin{tabular}{|c|c|c|c|c|}
+      \hline
+      \hline
+        etcone & \multicolumn{4}{c|}{$ \alpha_\eta $ $ [\GeV.N_{pv}^{-1}] $}\\
+      \hline
+        Ouverture & $ |\eta|<0.6 $ & $ 0.6<|\eta|<0.1.37 $ & $ 1.52|\eta|<1.81 $ & $ 1.81<|\eta|<2.37 $\\
+      \hline
+        $ \Delta R=0.3 $ & $ 0.09\pm0.02 $ & $ 0.014\GeV\pm0.01 $ & $ 0.04\pm0.04$ & $ 0.06\pm0.02 $\\
+        $ \Delta R=0.2 $ & $ 0.04\pm0.01 $ & $ 0.06\GeV\pm0.01 $ & $ 0.02\pm0.02$ & $ 0.03\pm0.01 $\\
+      \hline
+    \end{tabular}
+
+    \end{small}
+
+  \end{bigcenter}
+  \caption{\label{intimecoef}Pente de la fonction affine $ \left<etcone(\Delta R)\right>(N_{pv}) $ par classe de pseudo-rapidité $ \eta $ pour deux ouvertures $ \Delta R=0.3 $ et $ \Delta R=0.2 $.}
+\end{table}
+
+\subsection{Choix du cône d'isolation}
+
+Pour choisir l'ouverture du cône d'isolations et la coupure, plusieurs paramètre sont à prendre en compte. Le premier est l'efficacité sur le signal et la réjection sur le bruit de fond (voir figure \ref{iso3} (b)), le seconde est la résistance aux effets de l'empilement (voir tableau \ref{intimecoef}).
+
+blablabla\\blablabla\\blablabla\\
+
+L'efficacité basée sur les données en utilisant une méthode \emph{Tag \& Probe} sera décrite dans le section suivante.
+
+\subsection{Isolation des traces}
+
+Le calorimètre électromagnétique n'est pas le seul sous-détecteur permettant d'appliquer des coupures d'isolation. Les jets sont également responsables d'un grand nombre de traces c'est pourquoi il est possible d'établir un critère d'isolation à partir des informations issues du trajectographe interne :
+\begin{equation}
+  trackIso(\Delta R)\equiv\frac{ptcone(\Delta R)}{p_{T\,objet}}=\frac{\left\{\sum_{trace/\binom{
+\delta R<\Delta R}{p_{T\,trace}>1\GeV}}p_{T\,trace}\right\}-p_{T\,objet}}{p_{T\,objet}}
+\end{equation}
+
+où $ \delta R=\sqrt{\left(\eta_{trace}-\eta_{trace\,objet}\right)^2+\left(\phi_{trace}-\phi_{trace\,objet}\right)^2} $. Cette définition de l'isolation est directement mise en\oe uvre par le logiciel Athena, plusieurs tailles de cônes sont disponibles : $ 0.20 $, $ 0.25 $, $ 0.30 $, $ 0.35 $, etc\dots
 
 \newpage
 
@@ -611,3 +742,4 @@ Pour les bruits de fond irréductibles, les deux électrons de plus basse impulsio
   \end{center}
   \caption{\label{signi2}Distribution de la significance du paramètre d'impact pour des électrons de signal et pour des électrons issus du processus $ Z(\to\mu\mu)b\bar{b} $ (a). Réjection des muons issus de $ Zb\bar{b} $ en fonction de l'efficacité des électrons issus du signal (b).}
 \end{figure}
+
