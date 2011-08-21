@@ -491,18 +491,18 @@ Un lot d'électrons et de muons de faible qualité a été sélectionner à partir des
 
 \subsection{Isolation des amas}
 
-\subsubsection{Définition de Etcone}
+\subsubsection{Définition de etcone}
 
 La technique standard utilisée pour caractériser l'isolation d'un électron consiste à sommer l'énergie des cellules des calorimètres électromagnétiques et hadroniques situées à l'intérieur d'un cône d'ouverture $ \Delta R $, centré autour du candidat, puis, soustraire l'énergie de l'amas :
 \begin{equation}
-  Etcone(\Delta R)\equiv\left\{\sum_{cellule/\delta R<\Delta R}E_{T\,cellule}\right\}-E_{T\,amas}
+  etcone(\Delta R)\equiv\left\{\sum_{cellule/\delta R<\Delta R}E_{T\,cellule}\right\}-E_{T\,amas}
 \end{equation}
 
 où $ \delta R=\sqrt{\left(\eta_{amas}-\eta_{cellule}\right)^2+\left(\phi_{amas}-\phi_{cellule}\right)^2} $. Cette définition de l'isolation est directement mise en\oe uvre par le logiciel Athena, plusieurs tailles de cônes sont disponibles : $ 0.20 $, $ 0.25 $, $ 0.30 $, $ 0.35 $, etc\dots
 
 \subsubsection{Distributions et efficacité}
 
-La figure \ref{iso1} (a) montre la distribution de la variable Etcone pour trois ouvertures différentes pour $ Zee $ et $ Zb\bar{b} $. Le signal $ Zb\bar{b} $ se détache du signal $ Zee $. Plus le cône est de petite taille, plus la distribution pour $ Zee $ est piquée. La figure \ref{iso1} (b) montre la distribution de l'efficacité de sélection en fonction de la variable Etcone pour trois ouvertures différentes pour $ Zee $ et $ Zb\bar{b} $. Plus la taille du cône est petit, plus l'efficacité pour $ Zee $ est grande au détriment de la réjection pour $ Zb\bar{b} $.
+La figure \ref{iso1} (a) montre la distribution de la variable etcone pour trois ouvertures différentes pour $ Zee $ et $ Zb\bar{b} $. Le signal $ Zb\bar{b} $ se détache du signal $ Zee $. Plus le cône est de petite taille, plus la distribution pour $ Zee $ est piquée. La figure \ref{iso1} (b) montre la distribution de l'efficacité de sélection en fonction de la variable etcone pour trois ouvertures différentes pour $ Zee $ et $ Zb\bar{b} $. Plus la taille du cône est petit, plus l'efficacité pour $ Zee $ est grande au détriment de la réjection pour $ Zb\bar{b} $.
 
 \begin{figure}[!h]
   \begin{bigcenter}
@@ -516,19 +516,19 @@ La figure \ref{iso1} (a) montre la distribution de la variable Etcone pour trois
   \end{tabular}
 
   \end{bigcenter}
-  \caption{\label{iso1}Distribution de la variable Etcone pour trois ouvertures différentes pour $ Z\to ee $ et $ Zb\bar{b} $ (a) et distribution de l'efficacité de sélection en fonction de la variable Etcone pour trois ouvertures différentes pour $ Z\to ee $ et $ Zb\bar{b} $ (b).}
+  \caption{\label{iso1}Distribution de la variable etcone pour trois ouvertures différentes pour $ Z\to ee $ et $ Zb\bar{b} $ (a) et distribution de l'efficacité de sélection en fonction de la variable etcone pour trois ouvertures différentes pour $ Z\to ee $ et $ Zb\bar{b} $ (b).}
 \end{figure}
 
 \subsubsection{Définition de caloIso}
 
-Nous avions précisé au chapitre 6 qu'une partie de l'énergie déposée s'échappe en dehors des amas $ 3\times7 $ utilisés pour la reconstruction des électrons. Ceci influe directement sur la valeur des variables $ Etcone $. De plus, pour les électrons, les pertes radiatives sont proportionnelles à l'énergie initiale, l'énergie déposée autour des candidats électrons augmente avec l'énergie transverse. Il est alors possible de définir une nouvelle variable moins sensible à ces effets :
+Nous avions précisé au chapitre 6 qu'une partie de l'énergie déposée s'échappe en dehors des amas $ 3\times7 $ utilisés pour la reconstruction des électrons. Ceci influe directement sur la valeur des variables $ etcone $. De plus, pour les électrons, les pertes radiatives sont proportionnelles à l'énergie initiale, l'énergie déposée autour des candidats électrons augmente avec l'énergie transverse. Il est alors possible de définir une nouvelle variable moins sensible à ces effets :
 \begin{equation}
-  caloIso(\Delta R)\equiv\frac{Etcone(\Delta R)}{E_{T\,objet}}=\frac{\left\{\sum_{cellule/\delta R<\Delta R}E_{T\,cellule}\right\}-E_{T\,amas}}{E_{T\,objet}}
+  caloIso(\Delta R)\equiv\frac{etcone(\Delta R)}{E_{T\,objet}}=\frac{\left\{\sum_{cellule/\delta R<\Delta R}E_{T\,cellule}\right\}-E_{T\,amas}}{E_{T\,objet}}
 \end{equation}
 
 \subsubsection{Distributions et efficacité}
 
-La figure \ref{iso2} (a) montre la distribution de la variable caloIso pour trois ouvertures différentes pour $ Zee $ et $ Zb\bar{b} $ et la figure \ref{iso2} (b) montre la distribution de l'efficacité de sélection en fonction de la variable caloIso pour trois ouvertures différentes pour $ Zee $ et $ Zb\bar{b} $. Les observation sont les même que pour les variables Etcone, néanmoins, les variables caloIso sont plus efficace de environs $ 10\% $. Le choix de l'utilisation de caloIso plutôt que Etcone est naturel.
+La figure \ref{iso2} (a) montre la distribution de la variable caloIso pour trois ouvertures différentes pour $ Zee $ et $ Zb\bar{b} $ et la figure \ref{iso2} (b) montre la distribution de l'efficacité de sélection en fonction de la variable caloIso pour trois ouvertures différentes pour $ Zee $ et $ Zb\bar{b} $. Les observation sont les même que pour les variables etcone, néanmoins, les variables caloIso sont plus efficace de environs $ 10\% $. Le choix de l'utilisation de caloIso plutôt que etcone est naturel.
 
 \begin{figure}[!h]
   \begin{bigcenter}
@@ -542,7 +542,7 @@ La figure \ref{iso2} (a) montre la distribution de la variable caloIso pour troi
   \end{tabular}
 
   \end{bigcenter}
-  \caption{\label{iso2}Distribution de la variable Etcone pour trois ouvertures différentes pour $ Z\to ee $ et $ Zb\bar{b} $ (a) et distribution de l'efficacité de sélection en fonction de la variable Etcone pour trois ouvertures différentes pour $ Z\to ee $ et $ Zb\bar{b} $ (b).}
+  \caption{\label{iso2}Distribution de la variable etcone pour trois ouvertures différentes pour $ Z\to ee $ et $ Zb\bar{b} $ (a) et distribution de l'efficacité de sélection en fonction de la variable etcone pour trois ouvertures différentes pour $ Z\to ee $ et $ Zb\bar{b} $ (b).}
 \end{figure}
 
 \vspace{-0.4cm}
@@ -579,7 +579,7 @@ L'empilement a un effet sur les variables d'isolation. Deux type d'empilements s
 
 Plus un cône possède une grande ouverture, plus il est sensible au effets de l'empilement. Sachant qu'il y a environ 4 vertex primaires par événement dans les données 2011, il est nécessaire d'effectuer une étude avant de choisir une ouverture de cône. Nous allons montrer qu'il est même possible d'effectuer une correction afin soustraire en partie les effets de l'empilement.
 
-\paragraph{Étude (très) qualitative} Afin de comparer la sensibilité à l'empilement des variables etcone20 et etcone30, les probabilités cumulées ont été tracées en fonction du nombre de vertex primaires pour six jeux de simulations Monte-Carlo $ Zee $ présentant chacune une configuration différente de l'empilement : pas d'empilement, nombre moyen de vertex primaires $ \left<mu\right>=6\textrm{ ou }10 $ (qui n'était pas forcément représentatif des données), intervalle de temps entre la collision entre deux paquets de protons $ bs=50ns\textrm{ ou }75ns $. Les résultats sont montrés sur les figures \ref{pileup1} et \ref{pileup2}.
+\paragraph{Étude (très) qualitative} Afin de comparer la sensibilité à l'empilement des variables etcone20 et etcone30, les probabilités cumulées ont été tracées en fonction du nombre de vertex primaires pour cinq jeux de simulations Monte-Carlo $ Zee $ présentant chacun une configuration différente de l'empilement : pas d'empilement, nombre moyen de vertex primaires $ \left<mu\right>=6\textrm{ ou }10 $ (qui n'était pas forcément représentatif des données), intervalle de temps entre la collision entre deux paquets de protons $ bs=50ns\textrm{ ou }75ns $. Les résultats sont montrés sur les figures \ref{pileup1} et \ref{pileup2}.
 
 \begin{figure}[!p]
   \begin{bigcenter}
@@ -614,7 +614,7 @@ Plus un cône possède une grande ouverture, plus il est sensible au effets de l'e
   \end{tabular}
 
   \end{bigcenter}
-  \caption{\label{pileup1}Distributions des probabilités cumulées de la variable etcone30 en fonction du nombre de vertex primaires pour six jeux de simulations Monte-Carlo $ Zee $ présentant chacune une configuration différente de l'empilement.}
+  \caption{\label{pileup1}Distributions des probabilités cumulées de la variable etcone30 en fonction du nombre de vertex primaires pour cinq jeux de simulations Monte-Carlo $ Zee $ présentant chacun une configuration différente de l'empilement.}
 \end{figure}
 
 \begin{figure}[!p]
@@ -650,7 +650,7 @@ Plus un cône possède une grande ouverture, plus il est sensible au effets de l'e
   \end{tabular}
 
   \end{bigcenter}
-  \caption{\label{pileup2}Distributions des probabilités cumulées de la variable etcone20 en fonction du nombre de vertex primaires pour six jeux de simulations Monte-Carlo $ Zee $ présentant chacune une configuration différente de l'empilement.}
+  \caption{\label{pileup2}Distributions des probabilités cumulées de la variable etcone20 en fonction du nombre de vertex primaires pour cinq jeux de simulations Monte-Carlo $ Zee $ présentant chacun une configuration différente de l'empilement.}
 \end{figure}
 
 \newpage
@@ -662,7 +662,7 @@ La première constatation générale est que la sensibilité à l'intervalle de temps
   etcone_{pileup}(\Delta R,\eta)=etcone(\Delta R)-\alpha_\eta(\Delta R)N_{pv}
 \end{equation}
 
-où $ \alpha_\eta(\Delta R) $ la pente de la fonction affine $ \left<etcone(\Delta R)\right>(N_{pv}) $ par classe de pseudo-rapidité $ \eta $ et $ N_{pv} $ est le nombre de vertex primaire. Le groupe électrons/photons du détecteur Atlas fournit un outil standard permettant de calculer la correction en fonction de l'ouverture du cône. A titre d'information, le tableau \ref{intimecoef} montre les valeurs de $ \alpha_\eta $ pour etcone20 et etcone30.
+où $ \alpha_\eta(\Delta R) $ la pente de la fonction affine $ \left<etcone(\Delta R)\right>(N_{pv}) $ par classe de pseudo-rapidité $ \eta $ et $ N_{pv} $ est le nombre de vertex primaire. Le groupe électrons/photons du détecteur Atlas fournit un outil standard permettant de calculer la correction en fonction de l'ouverture du cône (empilement \emph{in time} et \emph{out of time}). A titre d'information, le tableau \ref{intimecoef} montre les valeurs de $ \alpha_\eta $ pour etcone20 et etcone30.
 
 \begin{table}[!h]
   \begin{bigcenter}
@@ -693,7 +693,7 @@ Pour choisir l'ouverture du cône d'isolations et la coupure, plusieurs paramètre
 
 blablabla\\blablabla\\blablabla\\
 
-L'efficacité basée sur les données en utilisant une méthode \emph{Tag \& Probe} sera décrite dans le section suivante.
+La détermination de l'efficacité basée sur les données en utilisant une méthode \emph{Tag \& Probe} sera décrite dans le section suivante.
 
 \subsection{Isolation des traces}
 
@@ -717,8 +717,32 @@ où $ \delta R=\sqrt{\left(\eta_{trace}-\eta_{trace\,objet}\right)^2+\left(\phi_{
   \end{tabular}
 
   \end{bigcenter}
-  \caption{\label{iso2}Distribution de la variable Etcone pour trois ouvertures différentes pour $ Z\to ee $ et $ Zb\bar{b} $ (a) et distribution de l'efficacité de sélection en fonction de la variable Etcone pour trois ouvertures différentes pour $ Z\to ee $ et $ Zb\bar{b} $ (b).}
+  \caption{\label{iso2}Distribution de la variable etcone pour trois ouvertures différentes pour $ Z\to ee $ et $ Zb\bar{b} $ (a) et distribution de l'efficacité de sélection en fonction de la variable etcone pour trois ouvertures différentes pour $ Z\to ee $ et $ Zb\bar{b} $ (b).}
 \end{figure}
+
+De même que pour l'isolation calorimétrique, il est possible d'effectuer une correction pour tenir compte du recouvrement des électrons :
+\begin{equation}
+  \textrm{$ \forall $ $ e_1 $ et $ e_2 $, si $ \Delta R_{e_1e_2}<X $}\left\{\begin{array}{ll} \textrm{ptcone}_{corr}(X;e_1)\equiv\textrm{ptcone}(X;e_1)-p_{T,e2} \\ \textrm{ptcone}_{corr}(X;e_2)\equiv\textrm{ptcone}(X;e_2)-p_{T,e1} \end{array}\right.
+\end{equation}
+
+L'isolation calorimétrique est relativement insensible aux effets de l'empilement. La figure \ref{pileup3} montre la distributions des probabilités cumulées respectivement des variables ptcone30 (a) et ptcone20 (b) en fonction du nombre de vertex primaires pour cinq jeux de simulations Monte-Carlo $ Zee $ présentant chacun une configuration différente de l'empilement.
+
+\begin{figure}[!h]
+  \begin{bigcenter}
+
+  \begin{tabular}{cc}
+    \includegraphics[height=5.25cm, keepaspectratio]{phd_higgs/cumul_proba_ptcone30}
+    &
+    \includegraphics[height=5.25cm, keepaspectratio]{phd_higgs/cumul_proba_ptcone20}
+    \\
+    (a) & (b)
+  \end{tabular}
+
+  \end{bigcenter}
+  \caption{\label{pileup3}Distributions des probabilités cumulées respectivement des variables ptcone30 (a) et ptcone20 (b) en fonction du nombre de vertex primaires pour cinq jeux de simulations Monte-Carlo $ Zee $ présentant chacun une configuration différente de l'empilement.}
+\end{figure}
+
+
 
 \newpage
 
@@ -757,4 +781,149 @@ Pour les bruits de fond irréductibles, les deux électrons de plus basse impulsio
   \end{center}
   \caption{\label{signi2}Distribution de la significance du paramètre d'impact pour des électrons de signal et pour des électrons issus du processus $ Z(\to\mu\mu)b\bar{b} $ (a). Réjection des muons issus de $ Zb\bar{b} $ en fonction de l'efficacité des électrons issus du signal (b).}
 \end{figure}
+
+\section{Optimisations}
+
+Dans cette section, nous allons étudier trois types d'optimisations permettant d'augmenter la statistique disponible. Nous discuterons du choix des voies de déclenchement, puis nous traiterons de l'utilisation d'électrons lâches (\emph{loose}) et lâches++ (\emph{loose++}), enfin, nous donnerons quelques pistes sur l'emploi du de l'algorithme Gaussian-Sum Filter (GSF) qui permet de tenir compte des pertes par rayonnement Bremsstrahlung dans le but d'améliorer l'association entre les traces et les amas électromagnétiques.
+
+\subsection{Voies de déclenchement}
+
+Le système de déclenchement permet de sélectionner les événements, au niveau \og en ligne\fg, présentant un intérêt potentiel pour une analyse physique donnée. De nombreux voies de déclenchement sont implémentée mais pour la recherche du boson de Higgs dans le canal $ H\to4l $, ceux sont celles qui sont basées sur le calorimètre électromagnétique et le trajectographe à muons qui sont utilisées. Pour chaque prise de données, un menu de déclenchement est définit, ils contient les spécifications de chaque voies de déclenchement (activation, \emph{prescale} pour les trois niveaux de déclenchements L1, L2 et EF, etc\dots). Lorsque la luminosité augmente, le menu de déclenchement peut être mis à jour afin de réajuster la distribution de la bande passante. C'est pourquoi nous parlerons du menu $ \mathscr{L}=10^{33}cm^{-2}s^{-1} $ ainsi que du menu $ \mathscr{L}=3\times10^{33}cm^{-2}s^{-1} $. Le premier était en vigueur jusqu'au 4 juin 2011, le second correspond au menu courant.
+
+Le tableau \ref{rates_muenus} montre les principales voies de déclenchement électroniques disponibles, sans \emph{prescale}, ainsi que leur fréquence. Précision que pour le menu $ \mathscr{L}=3\times10^{33}cm^{-2}s^{-1} $, les voies EF\_2e12\_medium et EF\_e10\_medium\_mu6 seront bientôt désactivées.
+
+\begin{table}[!h]
+  \begin{bigcenter}
+
+    \begin{small}
+
+    \begin{tabular}{|c|c|c|c|c|}
+      \hline
+      \hline
+        Voies EF & e20\_medium & e22\_medium & e22\_medium++ & 2e12\_medium\\
+        Fréquences \tiny{($ \mathscr{L}=10^{33}cm^{-2}s^{-1} $)} & $ 53 $ Hz & - & - & $ 1.2 $ Hz\\
+        Fréquences \tiny{($ \mathscr{L}=3\times10^{33}cm^{-2}s^{-1} $)} & \emph{prescaled} & $ ?? $ Hz & $ 53.2 $ Hz & $ ?? $ Hz \\
+      \hline
+        Voies EF & 2e15\_medium & e10\_medium\_mu6 & e10\_medium\_mu10 & -\\
+        Fréquences \tiny{($ \mathscr{L}=10^{33}cm^{-2}s^{-1} $)} & - & $ 4.3 $ Hz & $ 1.4 $ Hz & -\\
+        Fréquences \tiny{($ \mathscr{L}=3\times10^{33}cm^{-2}s^{-1} $)} & $ 2.55 $ Hz & $ 10 $ Hz & $ 3.67 $ Hz & -\\
+      \hline
+    \end{tabular}
+
+    \end{small}
+
+  \end{bigcenter}
+  \caption{\label{rates_muenus}Principales voies de déclenchement électroniques disponibles, sans \emph{prescale}, ainsi que leur fréquence.}
+\end{table}
+
+Nous allons présenter quelques pistes d'optimisations du choix de la voie de déclenchement électronique en se basant sur la simulation Monte-Carlo. La figure \ref{trig_eff1} (a) montre l'efficacité de reconstruction et de sélection totale pour le canal $ H\to4e $ pour les principales voies de déclenchement. La figure \ref{trig_eff1} (b) montre la perte d'efficacité de reconstruction et de sélection totale pour le canal $ H\to4e $ relative à EF\_e20\_medium pour les principales voies de déclenchement. Les voies EF\_e22\_medium++ et EF\_2e15\_medium ont été simulées car absentes des simulations Monte-Carlo.
+
+Nous remarquons que les six premières classes des histogrammes présentent des efficacités à peut près similaires à l'exception de EF\_e22\_medium++ qui entraine une perte d'efficacité d'environ $ 9\% $. L'observation la plus importante est que les voies EF\_2e12\_medium et EF\_2e15\_medium peuvent être utilisées à la place de EF\_e20\_medium sans perte significatif de d'efficacité. Comme les plateaux d'efficacité de ces deux voies sont respectivement atteints à $ \sim15\GeV $ et $ \sim18\GeV $, il est alors envisageable de diminuer les coupure en énergie transverse de $ 20\GeV $ (voir section \ref{}) à $ 15\GeV $ ou $ 18\GeV $ voir moins (discuté ultérieurement). Nous remarquons à titre indicatif que la voies photoniques EF\_2g15\_loose donne une efficacité proche de EF\_e22\_medium, elle pourrait servir de grain à la simulation d'une voie électronique avec critères lâches (discuté ultérieurement).
+
+\begin{figure}[!h]
+  \begin{center}
+
+  \begin{tabular}{cc}
+    \includegraphics[height=4.5cm, width=7.5cm]{phd_higgs/4e_1}
+    &
+    \includegraphics[height=4.5cm, width=7.5cm]{phd_higgs/4e_2}
+    \\
+    (a) & (b)
+  \end{tabular}
+
+  \end{center}
+  \caption{\label{trig_eff1}Efficacité de reconstruction et de sélection totale pour le canal $ H\to4e $ pour les principales voies de déclenchement (a). Perte d'efficacité de reconstruction et de sélection totale pour le canal $ H\to4e $ relative à EF\_e20\_medium pour les principales voies de déclenchement (b).}
+\end{figure}
+
+Le figure \ref{trig_eff2} (a) montre l'efficacité de reconstruction et de sélection totale pour le canal $ H\to4\mu $ pour les principales voies de déclenchement. La figure \ref{trig_eff2} (b) montre la perte relative d'efficacité de reconstruction et de sélection totale pour le canal $ H\to4\mu $ relative à EF\_mu18\_MG pour les principales voies de déclenchement. Blablabla\\Blablabla\\Blablabla
+
+\begin{figure}[!h]
+  \begin{center}
+
+  \begin{tabular}{cc}
+    \includegraphics[height=4.5cm, width=7.5cm]{phd_higgs/4mu_1}
+    &
+    \includegraphics[height=4.5cm, width=7.5cm]{phd_higgs/4mu_2}
+    \\
+    (a) & (b)
+  \end{tabular}
+
+  \end{center}
+  \caption{\label{trig_eff2}Efficacité de reconstruction et de sélection totale pour le canal $ H\to4\mu $ pour les principales voies de déclenchement (a). Perte d'efficacité de reconstruction et de sélection totale pour le canal $ H\to4\mu $ relative à EF\_mu18\_MG pour les principales voies de déclenchement(b).}
+\end{figure}
+
+\subsubsection{Disjonctions}
+
+Une façon de maximiser la statistique avec les voies de déclenchement disponibles consiste à effectuer des disjonctions (ou logique). Cette façon de procéder présente des avantages et des inconvénients. Il est possible de diminuer le seul du plateau d'efficacité du déclenchement, néanmoins, le calcul des facteurs d'échelle entre les données et la simulation Monte-Carlo est plus délicat. De plus, pour les données, le calcul de la luminosité, qui dépend de la voie de déclenchement, n'est actuellement pas directement possible avec les outils standards. Nous allons néanmoins étudier quelques combinaisons pour les canaux $ H\to4e $ et $ H\to2e2\mu $.
+
+\paragraph{Canal $ H\to4e $}Trois combinaisons ont été considérées. Pour le menu $ \mathscr{L}=10^{33}cm^{-2}s^{-1} $, nous pouvons former la disjonction \emph{trigger1} (voir figure \ref{trig_eff3}). Pour le menu $ \mathscr{L}=3\times10^{33}cm^{-2}s^{-1} $, nous pouvons former les disjonctions \emph{trigger2} et \emph{trigger3} (voir figure \ref{trig_eff3}). Les efficacités de reconstruction et de sélection sont montrées sur la figure \ref{trig_eff3}. Les efficacités de \emph{trigger1} et \emph{trigger2} sont ramenées à l'efficacité de EF\_e20\_medium mais ce n'est pas le cas pour \emph{trigger3} car l'électrons reconstruit \emph{off line} qui a déclenché EF\_e22\_medium doit toujours être de qualité \emph{medium++} et non \emph{medium}.
+
+\begin{figure}[!h]
+  \begin{center}
+
+  \begin{tabular}{cc}
+    \includegraphics[height=4.5cm, width=7.5cm]{phd_higgs/4e_1_OPT}
+    &
+    \includegraphics[height=4.5cm, width=7.5cm]{phd_higgs/4e_2_OPT}
+    \\
+    (a) & (b)
+  \end{tabular}
+
+  \begin{minipage}{\linewidth}
+    \begin{scriptsize}
+      trigger1=(EF\_e20\_medium||EF\_2e12\_medium)\\
+      trigger2=(EF\_e22\_medium||EF\_2e15\_medium)\\
+      trigger3=(EF\_e22\_medium++||EF\_2e15\_medium)\\
+    \end{scriptsize}
+  \end{minipage}
+
+  \end{center}
+  \caption{\label{trig_eff3}Efficacité de reconstruction et de sélection totale pour le canal $ H\to4e $ pour les principales disjonctions voies de déclenchement (a). Perte d'efficacité de reconstruction et de sélection totale pour le canal $ H\to4e $ relative à EF\_e20\_medium pour les principales disjonctions (b).}
+\end{figure}
+
+\paragraph{Canal $ H\to2e2\mu $}Trois combinaisons ont été considérées. Pour le menu $ \mathscr{L}=10^{33}cm^{-2}s^{-1} $, nous pouvons former la disjonction \emph{trigger4} (voir figure \ref{trig_eff4}). Pour le menu $ \mathscr{L}=3\times10^{33}cm^{-2}s^{-1} $, nous pouvons former les disjonctions \emph{trigger5} ainsi que \emph{trigger6} (voir figure \ref{trig_eff4}). Les efficacités de reconstruction et de sélection sont montrées sur la figure \ref{trig_eff4}. Les efficacités de \emph{trigger4} et \emph{trigger5} sont respectivement améliorées de $ \sim0.6\% $ et de $ \sim0.18\% $ par rapport à EF\_e20\_medium || EF\_mu18\_MG.
+
+\begin{figure}[!h]
+  \begin{center}
+
+  \begin{tabular}{cc}
+    \includegraphics[height=4.5cm, width=7.5cm]{phd_higgs/2e2mu_1_OPT}
+    &
+    \includegraphics[height=4.5cm, width=7.5cm]{phd_higgs/2e2mu_2_OPT}
+    \\
+    (a) & (b)
+    \\
+  \end{tabular}
+
+  \begin{minipage}{\linewidth}
+    \begin{scriptsize}
+      trigger4=(EF\_e20\_medium||EF\_2e12\_medium||EF\_e10\_medium\_mu6||EF\_mu18\_MG||EF\_2mu10\_loose)\\
+      trigger5=(EF\_e22\_medium||EF\_2e15\_medium||EF\_e10\_medium\_mu10||EF\_mu18\_MG||EF\_2mu10\_loose)\\
+      trigger6=(EF\_e22\_medium++||EF\_2e15\_medium||EF\_e10\_medium\_mu10||EF\_mu18\_MG||EF\_2mu10\_loose)\\
+    \end{scriptsize}
+  \end{minipage}
+
+  \end{center}
+  \caption{\label{trig_eff4}Efficacité de reconstruction et de sélection totale pour le canal $ H\to2e2\mu $ pour les principales voies de déclenchement (a). Perte d'efficacité de reconstruction et de sélection totale pour le canal $ H\to2e2\mu $ relative à EF\_e20\_medium || EF\_mu18\_MG pour les principales (b).}
+\end{figure}
+
+\subsection{Électrons lâches et lâches++}
+
+Dans cette sous-section, nous allons étudier la possibilité d'utiliser des électrons que qualité lâche (\emph{loose}). Il faut savoir que pour les électrons \emph{loose}, il n'y a pas de critère d'association entre les traces et les amas c'est pourquoi nous allons utiliser conjointement la qualité lâches++ (\emph{loose++}) qui introduit une association traces-amas moins forte que la qualité intermédiaire (\emph{medium}) (voir chapitre ?). Au total, deux groupes de trois situations ont été analysées :
+\begin{itemize}
+  \item Le déclenchement par la voie EF\_e20\_medium. L'électron reconstruit \emph{off line} qui a déclenché EF\_e20\_medium est de qualité medium, les autres sont de qualité \emph{loose++}.
+  \item Le déclenchement par la voie EF\_2e15\_medium. L'électron reconstruit \emph{off line} qui a déclenché EF\_e20\_medium est de qualité medium, les autres sont de qualité \emph{loose++}.
+  \item Le déclenchement par la voie EF\_2e15\_medium. L'électron reconstruit \emph{off line} qui a déclenché EF\_e20\_medium est de qualité medium, les autres sont de qualité \emph{loose++}. Les électrons qui ont 
+\end{itemize}
+
+\newpage
+
+et :
+\begin{itemize}
+  \item Le déclenchement par la voie EF\_e20\_medium. L'électron reconstruit \emph{off line} qui a déclenché EF\_e20\_medium est de qualité medium, les autres sur couche de masse sont de qualité \emph{loose} et les autres hors couche de masse sont de qualité \emph{loose++}.
+  \item Le déclenchement par la voie EF\_2e15\_medium. L'électron reconstruit \emph{off line} qui a déclenché EF\_e20\_medium est de qualité medium, les autres sur couche de masse sont de qualité \emph{loose} et les autres hors couche de masse sont de qualité \emph{loose++}.
+  \item Le déclenchement par la voie EF\_2e15\_medium. L'électron reconstruit \emph{off line} qui a déclenché EF\_e20\_medium est de qualité medium, les autres sur couche de masse sont de qualité \emph{loose} et les autres hors couche de masse sont de qualité \emph{loose++}. Les électrons qui ont 
+\end{itemize}
+
+La signifiance statistique du signal a été calculer afin de contrôler le bruit de fond dans chacune des six situations. Les résultats sont compilés dans le tableau \ref{}.
 
