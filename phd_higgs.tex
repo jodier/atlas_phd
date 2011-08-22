@@ -3,6 +3,7 @@
 J'ai finalement retiré la partie isolation car j'ai un problème avec les tous plots de cônes. Le problème est résolu mais je n'ai pas eu le temps de retracer les plots et je dois modifier deux où trois choses dans le texte. Tu peux commencer par lire les 13 premières pages, je ferai une mise à jour demain sur toute la partie reconstruction et isolation. Quelques efficacités manquent mais c'est juste quelques opérations à faire sur la calculatrice. J'ai également les résultats de mon analyse d'optimisation. Il seront rédigé samedi je pense.
 
 
+
 \newpage
 
 \section{Reconstruction du boson de Higgs}
@@ -485,13 +486,13 @@ Il convient d'étudier la mise en \oe uvre de critères d'isolation pour les élect
 
 Il convient de distinguer deux type de d'isolation, l'isolation des amas du calorimètre électromagnétiques et l'isolation des traces du détecteur interne. Nous allons proposer une étude d'efficacité sur les signaux et de réjection sur le bruit de fond $ Zb\bar{b} $ à partir des simulations Monte-Carlo afin d'effectuer un choix sur la définition de l'isolation, puis, nous montrerons une estimation de l'efficacités basée sur les données des coupures en utilisant une méthode \emph{Tag and Probe} (T\emph{\&}P).
 
-\section{Analyse sur la simulation Monte-Carlo}
+\subsection{Analyse sur la simulation Monte-Carlo}
 
 Un lot d'électrons et de muons de faible qualité a été sélectionner à partir des simulations Monte-Calo $ Z\to ee $, $ Z\to\mu\mu $, $ Z(\to ee)b\bar{b} $ et $ Z(\to\mu\mu)b\bar{b} $. Il est simplement demandé que l'impulsion transverse soit supérieur à $ 7\GeV $ et que ces leptons soient reconstruits dans les zones de précision du calorimètre électromagnétique ou du trajectographe interne.
 
-\subsection{Isolation des amas}
+\subsubsection{Isolation des amas}
 
-\subsubsection{Définition de etcone}
+\paragraph{Définition de etcone}
 
 La technique standard utilisée pour caractériser l'isolation d'un électron consiste à sommer l'énergie des cellules des calorimètres électromagnétiques et hadroniques situées à l'intérieur d'un cône d'ouverture $ \Delta R $, centré autour du candidat, puis, soustraire l'énergie de l'amas :
 \begin{equation}
@@ -500,7 +501,7 @@ La technique standard utilisée pour caractériser l'isolation d'un électron consi
 
 où $ \delta R=\sqrt{\left(\eta_{amas}-\eta_{cellule}\right)^2+\left(\phi_{amas}-\phi_{cellule}\right)^2} $. Cette définition de l'isolation est directement mise en\oe uvre par le logiciel Athena, plusieurs tailles de cônes sont disponibles : $ 0.20 $, $ 0.25 $, $ 0.30 $, $ 0.35 $, etc\dots
 
-\subsubsection{Distributions et efficacité}
+\paragraph{Distributions et efficacité}
 
 La figure \ref{iso1} (a) montre la distribution de la variable etcone pour trois ouvertures différentes pour $ Zee $ et $ Zb\bar{b} $. Le signal $ Zb\bar{b} $ se détache du signal $ Zee $. Plus le cône est de petite taille, plus la distribution pour $ Zee $ est piquée. La figure \ref{iso1} (b) montre la distribution de l'efficacité de sélection en fonction de la variable etcone pour trois ouvertures différentes pour $ Zee $ et $ Zb\bar{b} $. Plus la taille du cône est petit, plus l'efficacité pour $ Zee $ est grande au détriment de la réjection pour $ Zb\bar{b} $.
 
@@ -519,14 +520,14 @@ La figure \ref{iso1} (a) montre la distribution de la variable etcone pour trois
   \caption{\label{iso1}Distribution de la variable etcone pour trois ouvertures différentes pour $ Z\to ee $ et $ Zb\bar{b} $ (a) et distribution de l'efficacité de sélection en fonction de la variable etcone pour trois ouvertures différentes pour $ Z\to ee $ et $ Zb\bar{b} $ (b).}
 \end{figure}
 
-\subsubsection{Définition de caloIso}
+\paragraph{Définition de caloIso}
 
 Nous avions précisé au chapitre 6 qu'une partie de l'énergie déposée s'échappe en dehors des amas $ 3\times7 $ utilisés pour la reconstruction des électrons. Ceci influe directement sur la valeur des variables $ etcone $. De plus, pour les électrons, les pertes radiatives sont proportionnelles à l'énergie initiale, l'énergie déposée autour des candidats électrons augmente avec l'énergie transverse. Il est alors possible de définir une nouvelle variable moins sensible à ces effets :
 \begin{equation}
   caloIso(\Delta R)\equiv\frac{etcone(\Delta R)}{E_{T\,objet}}=\frac{\left\{\sum_{cellule/\delta R<\Delta R}E_{T\,cellule}\right\}-E_{T\,amas}}{E_{T\,objet}}
 \end{equation}
 
-\subsubsection{Distributions et efficacité}
+\paragraph{Distributions et efficacité}
 
 La figure \ref{iso2} (a) montre la distribution de la variable caloIso pour trois ouvertures différentes pour $ Zee $ et $ Zb\bar{b} $ et la figure \ref{iso2} (b) montre la distribution de l'efficacité de sélection en fonction de la variable caloIso pour trois ouvertures différentes pour $ Zee $ et $ Zb\bar{b} $. Les observation sont les même que pour les variables etcone, néanmoins, les variables caloIso sont plus efficace de environs $ 10\% $. Le choix de l'utilisation de caloIso plutôt que etcone est naturel.
 
@@ -547,9 +548,9 @@ La figure \ref{iso2} (a) montre la distribution de la variable caloIso pour troi
 
 \vspace{-0.4cm}
 
-\subsubsection{Optimisation}
+\paragraph{Optimisation}
 
-Lorsque de multiples électrons sont présents dans l'état final, une dégradation des performances des variables d'isolation caloimétrique peut être observée. En effet, pour deux leptons suffisemant proches, ils peut y avoir recouvrement de leurs cônes. La figure \ref{iso3} (a) montre la distribution de la variable etcone d'un premier électron divisée par l'impulsion transverse d'un second électron en fonction de la distance dans le plan transverse $ \Delta R_{ee} $ entre les deux électrons pour deux ouvertures différentes. Pour de petites distance, inférieures à la taille du cône, le rapport est proche de $ 1 $ ce qui atteste de l'importance des électrons de voisinage.
+Lorsque de multiples électrons sont présents dans l'état final, une dégradation des performances des variables d'isolation calorimétrique peut être observée. En effet, pour deux leptons suffisamment proches, ils peut y avoir recouvrement de leurs cônes. La figure \ref{iso3} (a) montre la distribution de la variable etcone d'un premier électron divisée par l'impulsion transverse d'un second électron en fonction de la distance dans le plan transverse $ \Delta R_{ee} $ entre les deux électrons pour deux ouvertures différentes. Pour de petites distance, inférieures à la taille du cône, le rapport est proche de $ 1 $ ce qui atteste de l'importance des électrons de voisinage.
 
 \begin{figure}[!h]
   \begin{bigcenter}
@@ -573,13 +574,13 @@ Une nouvelle définition $ \textrm{etcone}_{corr}(X) $ des variables d'isolation 
 
 Les amméliorations introduites par cette correction ont été étudiées dans \cite{}. La figure \ref{iso3} (b) montre la réjection du signal $ Zb\bar{b} $ en fonction de l'efficacité du signal $ H\to4e $ pour une masse $ m_H=130\GeV $ avec et sans correction de recouvrement pour trois ouvertures différentes. La correction est intéressante pour les cônes de grande taille, les effets est plus réduit pour etcone20.
 
-\subsubsection{Sensibilité à l'empilement}
+\paragraph{Sensibilité à l'empilement}
 
 L'empilement a un effet sur les variables d'isolation. Deux type d'empilements sont à considérer : i) l'empilements \emph{in time}, où les effets à prendre en compte proviennent du nombre de vertex primaires. ii) l'empilements \emph{out of time}, où les effets à prendre en compte proviennent du fait que l'intervalle de temps entre la collision entre deux paquets de protons est plus petit que la durée de vie des signaux mis en forme au sortir de l'électronique \emph{front-end} du calorimètre électromagnétique (voir figure \ref{pulses}). Il en résulte la présence de cellule présentant une énergie négative qui peut contribuer aux cônes.
 
 Plus un cône possède une grande ouverture, plus il est sensible au effets de l'empilement. Sachant qu'il y a environ 4 vertex primaires par événement dans les données 2011, il est nécessaire d'effectuer une étude avant de choisir une ouverture de cône. Nous allons montrer qu'il est même possible d'effectuer une correction afin soustraire en partie les effets de l'empilement.
 
-\paragraph{Étude (très) qualitative} Afin de comparer la sensibilité à l'empilement des variables etcone20 et etcone30, les probabilités cumulées ont été tracées en fonction du nombre de vertex primaires pour cinq jeux de simulations Monte-Carlo $ Zee $ présentant chacun une configuration différente de l'empilement : pas d'empilement, nombre moyen de vertex primaires $ \left<mu\right>=6\textrm{ ou }10 $ (qui n'était pas forcément représentatif des données), intervalle de temps entre la collision entre deux paquets de protons $ bs=50ns\textrm{ ou }75ns $. Les résultats sont montrés sur les figures \ref{pileup1} et \ref{pileup2}.
+\subparagraph{Étude (très) qualitative} Afin de comparer la sensibilité à l'empilement des variables etcone20 et etcone30, les probabilités cumulées ont été tracées en fonction du nombre de vertex primaires pour cinq jeux de simulations Monte-Carlo $ Zee $ présentant chacun une configuration différente de l'empilement : pas d'empilement, nombre moyen de vertex primaires $ \left<mu\right>=6\textrm{ ou }10 $ (qui n'était pas forcément représentatif des données), intervalle de temps entre la collision entre deux paquets de protons $ bs=50ns\textrm{ ou }75ns $. Les résultats sont montrés sur les figures \ref{pileup1} et \ref{pileup2}.
 
 \begin{figure}[!p]
   \begin{bigcenter}
@@ -657,7 +658,7 @@ Plus un cône possède une grande ouverture, plus il est sensible au effets de l'e
 
 La première constatation générale est que la sensibilité à l'intervalle de temps entre la collision entre deux paquets de protons n'est pas très grande. Pour etcone30, la sensibilité au nombre moyen de vertex primaire par événement est beaucoup plus importante que pour etcone20. La largeur de l'enveloppe de la région hors plateau est d'environs $ 1.5\GeV $ pour $ \left<mu\right>=15 $ pour etcone30 (resp. $ 0.5\GeV $ pour $ \left<mu\right>=15 $ pour etcone20) et d'environs $ 1.0\GeV $ pour $ \left<mu\right>=10 $ pour etcone20 (resp. $ 0.5\GeV $ pour $ \left<mu\right>=10 $ pour etcone20).
 
-\paragraph{Correction de l'empilement \emph{in time}} Une correction simple peut être mise en place afin de compenser les effets de l'empilement \emph{in time}. La valeur moyenne des variables etcone dépend linéairement du nombre de vertex primaires. La valeur corrigée des cônes d'isolation s'écrit :
+\subparagraph{Correction de l'empilement \emph{in time}} Une correction simple peut être mise en place afin de compenser les effets de l'empilement \emph{in time}. La valeur moyenne des variables etcone dépend linéairement du nombre de vertex primaires. La valeur corrigée des cônes d'isolation s'écrit :
 \begin{equation}
   etcone_{pileup}(\Delta R,\eta)=etcone(\Delta R)-\alpha_\eta(\Delta R)N_{pv}
 \end{equation}
@@ -687,7 +688,7 @@ où $ \alpha_\eta(\Delta R) $ la pente de la fonction affine $ \left<etcone(\Delt
   \caption{\label{intimecoef}Pente de la fonction affine $ \left<etcone(\Delta R)\right>(N_{pv}) $ par classe de pseudo-rapidité $ \eta $ pour deux ouvertures $ \Delta R=0.3 $ et $ \Delta R=0.2 $.}
 \end{table}
 
-\subsection{Choix du cône d'isolation}
+\subsubsection{Choix du cône d'isolation}
 
 Pour choisir l'ouverture du cône d'isolations et la coupure, plusieurs paramètre sont à prendre en compte. Le premier est l'efficacité sur le signal et la réjection sur le bruit de fond (voir figure \ref{iso3} (b)), le seconde est la résistance aux effets de l'empilement (voir tableau \ref{intimecoef}).
 
@@ -781,6 +782,293 @@ Pour les bruits de fond irréductibles, les deux électrons de plus basse impulsio
   \end{center}
   \caption{\label{signi2}Distribution de la significance du paramètre d'impact pour des électrons de signal et pour des électrons issus du processus $ Z(\to\mu\mu)b\bar{b} $ (a). Réjection des muons issus de $ Zb\bar{b} $ en fonction de l'efficacité des électrons issus du signal (b).}
 \end{figure}
+
+\subsection{Analyse sur les données}
+
+Pour les électrons, une estimation de l'efficacité des coupures d'isolation et de la coupure de significance du paramètre d'impact a été réalisée à partir des données en utilisant une méthode \emph{Tag \& Probe}. Nous allons décrire la méthode puis montrer les résultats obtenus.
+
+\subsection{Méthode}
+
+La méthode \emph{Tag \& Probe} permet d'estimer l'efficacité d'une coupure de sélection directement à partir des données. L'idée consiste à sélectionner une série d'élection de qualité stricte ($ p_T>20\GeV $, \emph{tight}) et isolés (ptcone20<0.15), ces électrons sont nommés électrons \emph{tag}. Puis des bosons $ Z $ sont reconstruits à partir des électrons \emph{tag} dans une fenêtre de masse centrée sur la masse nominale des bosons $ Z $ ($ |m_Z-m_{ee}|<10\GeV $). Le second électron de chaque pair est appelé électron \emph{probe}. L'efficacité d'une coupure $ C $ est :
+\begin{equation}
+  \varepsilon=\frac{A\equiv\textrm{nombre d'électrons \emph{probe} qui passent la coupure $ C $}}{B\equiv\textrm{nombre d'électrons \emph{probe}}}
+\end{equation}
+
+Cette formule suppose que nous disposons d'un lot d'électrons parfaitement purs. Lorsque ça n'est pas le cas, il faut soustraire la fraction de bruit de fond aux c\oe fficients $ A $ et $ B $. La méthode mise en \oe uvre effectue un ajustement de la distribution de masse invariante des bosons $ Z $ avant et après application de la coupure de sélection $ C $. Le signal est décrit par le produit de convolution d'une distribution Crystal Ball
+ et d'une distribution Breit et Wigner. Le bruit de fond est décrit par une distribution exponentielle :
+\begin{equation}
+  \mathcal{P}_\textrm{signal}(m)=\mathcal{CB}(m;\left<m\right>_{CB},\sigma_{CB},a_{CB},n_{CB})\otimes\mathcal{BW}(m;\left<m\right>_{CB}=m_{Z,PDG},\sigma_{CB}=2.5)
+\end{equation}
+\begin{equation}
+  \mathcal{P}_\textrm{bkgd}(m)=\exp(m;\tau)
+\end{equation}
+
+La fraction de signal $ n_s $ et la fraction de bruit de fond $ n_b $ sont obtenus par maximum de vraisemblance étendue :
+\begin{equation}
+  \mathcal{L}_\textrm{extended}=e^{-(n_s+n_b)}\left(n_s\mathcal{P}_\textrm{signal}+n_b\mathcal{P}_\textrm{bkgd}\right)
+\end{equation}
+
+\subsection{Échantillons de données}
+
+Pour les données, une luminosité intégrée de $ 1.1fb^{-1} $ a été utilisée, avec cette statistique, nous verrons que les erreurs statistiques sont quasi négligeables devant les erreurs systématiques. Pour la simulation Monte-Carlo, deux échantillons ont été utilisés : un échantillons $ Z\to ee $ avec $ 4999076 $ événements et un échantillon di-jets (JF17) avec $ 9997057 $ événements.
+
+\subsection{Résultats dans la région $ 20\GeV $ à $ 50\GeV $}
+
+La région de précision $ p_T>20\GeV $ (voir chapitre ?) a été étudiée. Les figures \ref{masseZ} montrent respectivement la distribution de masse invariante des candidats $ Z $ avec au moins un électron \emph{tag} pour les données (a) et pour la simulation Monte-Carlo (b). Pour cette dernière, nous remarquons que le bruit de fond est peu important (zone hachurée en bleu).
+
+Les figures \label{TandPeff1} montrent respectivement les efficacités \emph{Tag \& Probe} des coupures d'isolation et de significance du paramètre d'impact en fonction de l'impulsion transverse $ p_T $ pour les données (a) et pour la simulation Monte-Carlo (b). La figure \label{TandPeff2} montre le rapport entre les données et la simulation Monte-Carlo des efficacités \emph{Tag \& Probe} des coupures d'isolation et de significance du paramètre d'impact en fonction de l'impulsion transverse $ p_T $. L'efficacité des coupures d'isolation est supérieure à $ 99\% $, et l'efficacité de la coupure sur la significance du paramètre d'impact est supérieure à $ 93\% $.
+
+\begin{figure}[!p]
+  \begin{center}
+
+  \begin{tabular}{cc}
+    \includegraphics[height=5.25cm, keepaspectratio]{phd_higgs/mass_data}
+    &
+    \includegraphics[height=5.25cm, keepaspectratio]{phd_higgs/mass_mc}
+    \\
+    (a) & (b)
+  \end{tabular}
+
+  \end{center}
+  \caption{\label{masseZ}Distribution de masse invariante des candidats $ Z $ avec au moins un électron \emph{tag} pour les données (a) et pour la simulation Monte-Carlo (b).}
+\end{figure}
+
+\begin{figure}[!p]
+  \begin{center}
+
+  \begin{tabular}{cc}
+    \includegraphics[height=5.25cm, keepaspectratio]{phd_higgs/eff_pt_data}
+    &
+    \includegraphics[height=5.25cm, keepaspectratio]{phd_higgs/eff_pt_mc}
+    \\
+    (a) & (b)
+  \end{tabular}
+
+  \end{center}
+  \caption{\label{TandPeff1}Efficacités \emph{Tag \& Probe} des coupures d'isolation et de significance du paramètre d'impact pour les données (a) et pour la simulation Monte-Carlo (b).}
+\end{figure}
+
+\begin{figure}[!p]
+  \begin{center}
+    \includegraphics[height=5.25cm, keepaspectratio]{phd_higgs/eff_pt_ratio}
+  \end{center}
+  \caption{\label{TandPeff2}Rapport entre les données et la simulation Monte-Carlo des efficacités \emph{Tag \& Probe} des coupures d'isolation et de significance du paramètre d'impact.}
+\end{figure}
+
+\newpage
+
+Les figures \label{TandPeff3} montrent respectivement les efficacités \emph{Tag \& Probe} des coupures d'isolation et de significance du paramètre d'impact en fonction de l'impulsion transverse $ p_T $ pour les données (a) et pour la simulation Monte-Carlo (b). La figure \label{TandPeff4} montre le rapport entre les données et la simulation Monte-Carlo des efficacités \emph{Tag \& Probe} des coupures d'isolation et de significance du paramètre d'impact en fonction de l'impulsion transverse $ p_T $. Les courbes d'efficacité des coupures d'isolation sont plates dans intervalle inférieur à $ 0.75\% $. Nous avions déjà évoqué le fait que la résolution du paramètre d'impact soit dépendant de la pseudo-rapidité $ \eta $. En effet, nous observons de grande variations entre la région du tonneau où l'efficacité est de l'ordre de $ 96\% $ et la région des bouchons où l'efficacité va de $ 90\% $ à $ 96\% $. Nous observons également un désaccord entre les données et la simulation Monte-Carlo dans la région $ 1.52<|\eta|<2.01 $. L'origine n'est pas comprise.
+
+\begin{figure}[!h]
+  \begin{center}
+
+  \begin{tabular}{cc}
+    \includegraphics[height=5.25cm, keepaspectratio]{phd_higgs/eff_eta_data}
+    &
+    \includegraphics[height=5.25cm, keepaspectratio]{phd_higgs/eff_eta_mc}
+    \\
+    (a) & (b)
+  \end{tabular}
+
+  \end{center}
+  \caption{\label{TandPeff3}Efficacités \emph{Tag \& Probe} des coupures d'isolation et de significance du paramètre d'impact pour les données (a) et pour la simulation Monte-Carlo (b).}
+\end{figure}
+
+\begin{figure}[!h]
+  \begin{center}
+    \includegraphics[height=5.25cm, keepaspectratio]{phd_higgs/eff_eta_ratio}
+  \end{center}
+  \caption{\label{TandPeff4}Rapport entre les données et la simulation Monte-Carlo des efficacités \emph{Tag \& Probe} des coupures d'isolation et de significance du paramètre d'impact.}
+\end{figure}
+
+\begin{figure}[!h]
+  \begin{center}
+
+  \begin{tabular}{cc}
+    \includegraphics[height=5.25cm, keepaspectratio]{phd_higgs/eff_vxp_data}
+    &
+    \includegraphics[height=5.25cm, keepaspectratio]{phd_higgs/eff_vxp_mc}
+    \\
+    (a) & (b)
+  \end{tabular}
+
+  \end{center}
+  \caption{.}
+\end{figure}
+
+\begin{figure}[!h]
+  \begin{center}
+    \includegraphics[height=5.25cm, keepaspectratio]{phd_higgs/eff_vxp_ratio}
+  \end{center}
+  \caption{.}
+\end{figure}
+
+\subsection{Résultats dans la région $ 7\GeV $ à $ 15\GeV $}
+
+La région située entre $ 7\GeV $ et $ 15\GeV $ est plus difficile à étudier car le bruit de fond devient important (Drell-Yan $ q\bar{q}\to\gamma^*\to$, etc\dots) et la statistique est moins importante, voir figure \label{berk2} (b). Les groupes de performance ont montré (ce que j'ai pu confirmer) que la méthode de soustraction du bruit de fond en utilisant des ajustements ne donnent pas de bons résultats. Néanmoins, afin d'évaluer grossièrement des efficacités à basse impulsion transverse, la coupure sur la fenêtre de masse a été réduite à $ 5\GeV $ dans le but d'améliorer la pureté des électrons. L'utilisation de modèles (\emph{template} en anglais) extraits à partir des simulations Monte-Carlo est envisagée. L'estimation des erreurs systématiques est réalisée comme précédemment.
+
+Les figures \label{berk1} montrent respectivement les efficacités \emph{Tag \& Probe} des coupures d'isolation et de significance du paramètre d'impact en fonction de l'impulsion transverse $ p_T $ pour les données (a) et pour la simulation Monte-Carlo (b). La figure \label{berk2} (a) montre le rapport entre les données et la simulation Monte-Carlo des efficacités \emph{Tag \& Probe} des coupures d'isolation et de significance du paramètre d'impact en fonction de l'impulsion transverse $ p_T $.
+
+\begin{figure}[!h]
+  \begin{center}
+
+  \begin{tabular}{cc}
+    \includegraphics[height=5.25cm, keepaspectratio]{phd_higgs/eff_pt_data_corr}
+    &
+    \includegraphics[height=5.25cm, keepaspectratio]{phd_higgs/eff_pt_mc_corr}
+    \\
+    (a) & (b)
+  \end{tabular}
+
+  \end{center}
+  \caption{\label{berk1}Efficacités \emph{Tag \& Probe} des coupures d'isolation et de significance du paramètre d'impact pour les données (a) et pour la simulation Monte-Carlo (b). Les zones hachurées représentent les erreur systématiques, les traits verticaux représentent les erreurs statistiques.}
+\end{figure}
+
+\vspace{-0.05cm}
+
+\begin{figure}[!h]
+  \begin{center}
+
+  \begin{tabular}{cc}
+    \includegraphics[height=5.25cm, keepaspectratio]{phd_higgs/eff_pt_ratio_corr}
+    &
+    \includegraphics[height=5.25cm, keepaspectratio]{phd_higgs/mass_data_7-15_before}
+    \\
+    (a) & (b)
+  \end{tabular}
+
+  \end{center}
+  \caption{\label{berk2}Rapport entre les données et la simulation Monte-Carlo des efficacités \emph{Tag \& Probe} des coupures d'isolation et de significance du paramètre d'impact. Les zones hachurées représentent les erreur systématiques, les traits verticaux représentent les erreurs statistiques (a) Distribution de masse invariante des candidats $ Z $ avec au moins un électron \emph{tag} pour $ 7\GeV<p_T<10\GeV $ (b).}
+\end{figure}
+
+\newpage
+
+\section{Résultats à $\int\mathscr{L}=1.4-1.6fb^{-1} $}
+
+\begin{figure}[!h]
+  \begin{center}
+
+  \begin{tabular}{cc}
+    \includegraphics[height=5.25cm, keepaspectratio]{phd_higgs/moi/etae}
+    &
+    \includegraphics[height=5.25cm, keepaspectratio]{phd_higgs/moi/phie}
+    \\
+    (a) & (b)
+  \end{tabular}
+
+  \end{center}
+  \caption{.}
+\end{figure}
+
+\begin{figure}[!h]
+  \begin{center}
+
+  \begin{tabular}{cc}
+    \includegraphics[height=5.25cm, keepaspectratio]{phd_higgs/moi/pte}
+    &
+    \includegraphics[height=5.25cm, keepaspectratio]{phd_higgs/moi/mZvsZ_STD}
+    \\
+    (a) & (b)
+  \end{tabular}
+
+  \end{center}
+  \caption{.}
+\end{figure}
+
+\begin{figure}[!h]
+  \begin{center}
+
+  \begin{tabular}{cc}
+    \includegraphics[height=5.25cm, keepaspectratio]{phd_higgs/moi/mZ12_STD}
+    &
+    \includegraphics[height=5.25cm, keepaspectratio]{phd_higgs/moi/mZ34_STD}
+    \\
+    (a) & (b)
+  \end{tabular}
+
+  \end{center}
+  \caption{.}
+\end{figure}
+
+\begin{figure}[!p]
+  \begin{center}
+    \includegraphics[height=7.25cm, keepaspectratio]{phd_higgs/moi/mH_STD}
+  \end{center}
+  \caption{Distribution de masse invariante pour les candidats $ H\to ZZ^{(*)}\to4l $ dans les données 2011 pour les données et pour la simulation Monte-Carlo.}
+\end{figure}
+
+\begin{figure}[!p]
+  \begin{center}
+    \includegraphics[width=\linewidth, keepaspectratio]{phd_higgs/event_display}
+  \end{center}
+  \caption{Visualisation d'un candidat $ H\to ZZ^{(*)}\to4\mu$ dans les données 2011.}
+\end{figure}
+
+\section{Résultats à $\int\mathscr{L}=1.96-2.28fb^{-1} $}
+
+\begin{figure}[!h]
+  \begin{center}
+
+  \begin{tabular}{cc}
+    \includegraphics[height=7.25cm, keepaspectratio]{phd_higgs/HSG2/masse_H-1}
+    &
+    \includegraphics[height=7.25cm, keepaspectratio]{phd_higgs/HSG2/masse_H-2}
+    \\
+    (a) & (b)
+  \end{tabular}
+
+  \end{center}
+  \caption{Distribution de masse invariante pour les candidats $ H\to ZZ^{(*)}\to4l $ dans les données 2011 pour les données et pour la simulation Monte-Carlo. $ m_{ZZ^{(*)}}\in[150,350] $ (a) et $ m_{ZZ^{(*)}}\in[100,600] $ (b).}
+\end{figure}
+
+\begin{figure}[!h]
+  \begin{center}
+
+  \begin{tabular}{cc}
+    \includegraphics[height=7.25cm, keepaspectratio]{phd_higgs/HSG2/limites-1}
+    &
+    \includegraphics[height=7.25cm, keepaspectratio]{phd_higgs/HSG2/limites-2}
+    \\
+    (a) & (b)
+  \end{tabular}
+
+  \end{center}
+  \caption{Limites d'exclusion à $ 95\% $ de niveau de confiance du boson de Higgs attendues et observées sur la section efficace du boson de Higgs du modèle standard par rapport à la section efficace totale du modèle standard en fonction de la masse du boson de Higgs.}
+\end{figure}
+
+\begin{table}[!t]
+  \begin{bigcenter}
+
+    \begin{tabular}{|c|c|c|c|c|c|c|}
+      \hline
+      \hline
+        Canal           & \multicolumn{2}{c|}{$ \mu\mu\mu\mu $} & \multicolumn{2}{c|}{$ ee\mu\mu $} & \multicolumn{2}{c|}{$ eeee $}\\
+      \hline
+                        & \scriptsize{$ m_{4l}<180\GeV $} & \scriptsize{$ m_{4l}>180\GeV $} & \scriptsize{$ m_{4l}<180\GeV $} & \scriptsize{$ m_{4l}>180\GeV $} & \scriptsize{$ m_{4l}<180\GeV $} & \scriptsize{$ m_{4l}>180\GeV $}\\
+      \hline
+        $ ZZ^{(*)} $    & $ 1.56\pm0.23 $ & $  8.4\pm1.3  $ & $ 1.50\pm0.22 $ & $  10.7\pm1.6 $ & $ 0.61\pm0.14 $ & $  4.1\pm0.6  $\\
+        $ Z $, $ Zb\bar{b} $, $ t\bar{t} $ & $ 0.06\pm0.01 $ & $ 0.01\pm0.01 $ & $ 0.29\pm0.11 $ & $ 0.15\pm0.06 $ & $ 0.23\pm0.09 $ & $ 0.12\pm0.05 $\\
+        Total           & $ 1.62\pm0.23 $ & $  8.4\pm1.3  $ & $ 1.79\pm0.25 $ & $  10.9\pm1.6 $ & $ 0.84\pm0.17 $ & $  4.2\pm0.6  $\\
+      \hline
+        Données         &      $ 1 $      &      $ 11 $     & $      1      $ & $      8      $ & $      1      $ & $      5      $\\
+      \hline
+        $ m_H=130\GeV $ & $ 0.40\pm0.06 $ &                 & $ 0.40\pm0.06 $ &                 & $ 0.14\pm0.02 $ &                \\
+        $ m_H=150\GeV $ & $ 0.95\pm0.15 $ &                 & $ 0.95\pm0.15 $ &                 & $ 0.34\pm0.05 $ &                \\
+        $ m_H=200\GeV $ &                 & $ 2.19\pm0.32 $ &                 & $ 2.57\pm0.37 $ &                 & $ 0.99\pm0.14 $\\
+        $ m_H=240\GeV $ &                 & $ 1.69\pm0.24 $ &                 & $ 2.20\pm0.31 $ &                 & $ 0.87\pm0.12 $\\
+        $ m_H=300\GeV $ &                 & $ 1.14\pm0.16 $ &                 & $ 1.59\pm0.23 $ &                 & $ 0.65\pm0.09 $\\
+        $ m_H=400\GeV $ &                 & $ 0.83\pm0.12 $ &                 & $ 1.20\pm0.18 $ &                 & $ 0.52\pm0.08 $\\
+        $ m_H=600\GeV $ &                 & $ 0.15\pm0.02 $ &                 & $ 0.22\pm0.04 $ &                 & $ 0.10\pm0.02 $\\
+      \hline
+    \end{tabular}
+
+  \end{bigcenter}
+  \caption{Nombre de candidats attendus avec leur erreurs systématiques pour les bruit de fond et les sept masse du boson de Higgs et nombre de candidats observés.}
+\end{table}
+
+\newpage
+blabla
+\newpage
 
 \section{Optimisations}
 
