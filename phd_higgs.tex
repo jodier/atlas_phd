@@ -719,9 +719,9 @@ La technique standard utilisée pour caractériser l'isolation d'un électron consi
   etcone(\Delta R)\equiv\left\{\sum_{cellule/\delta R<\Delta R}E_{T\,cellule}\right\}-E_{T\,amas}
 \end{equation}
 
-où $ \delta R=\sqrt{\left(\eta_{amas}-\eta_{cellule}\right)^2+\left(\phi_{amas}-\phi_{cellule}\right)^2} $. Cette définition de l'isolation est directement mise en\oe uvre par le logiciel Athena, plusieurs tailles de cônes sont disponibles : $ 0.20 $, $ 0.25 $, $ 0.30 $, $ 0.35 $, etc\dots
+où $ \delta R=\sqrt{\left(\eta_{amas}-\eta_{cellule}\right)^2+\left(\phi_{amas}-\phi_{cellule}\right)^2} $. Cette définition de l'isolation est directement mise en\oe uvre par le logiciel Athena, plusieurs tailles de cônes sont disponibles de $ 0.20 $ à $ 0.40 $ avec un pas de $ 0.05 $.
 
-\paragraph{Distributions et efficacité}
+\paragraph{Distributions et efficacités}
 
 La figure \ref{iso1} (a) montre la distribution de la variable etcone pour trois ouvertures différentes pour $ Zee $ et $ Zb\bar{b} $. Le signal $ Zb\bar{b} $ se détache du signal $ Zee $. Plus le cône est de petite taille, plus la distribution pour $ Zee $ est piquée. La figure \ref{iso1} (b) montre la distribution de l'efficacité de sélection en fonction de la variable etcone pour trois ouvertures différentes pour $ Zee $ et $ Zb\bar{b} $. Plus la taille du cône est petit, plus l'efficacité pour $ Zee $ est grande au détriment de la réjection pour $ Zb\bar{b} $.
 
@@ -742,14 +742,14 @@ La figure \ref{iso1} (a) montre la distribution de la variable etcone pour trois
 
 \paragraph{Définition de caloIso}
 
-Nous avions précisé au chapitre 6 qu'une partie de l'énergie déposée s'échappe en dehors des amas $ 3\times7 $ utilisés pour la reconstruction des électrons. Ceci influe directement sur la valeur des variables $ etcone $. De plus, pour les électrons, les pertes radiatives sont proportionnelles à l'énergie initiale, l'énergie déposée autour des candidats électrons augmente avec l'énergie transverse. Il est alors possible de définir une nouvelle variable moins sensible à ces effets :
+Nous avons précisé au chapitre \ref{} qu'une partie de l'énergie déposée s'échappe en dehors des amas $ 3\times7 $ utilisés pour la reconstruction des électrons. Ceci influe directement sur la valeur des variables $ etcone $. De plus, pour les électrons, les pertes radiatives sont proportionnelles à l'énergie initiale, l'énergie déposée autour des candidats électrons augmente avec l'énergie transverse. Il est alors possible de définir une nouvelle variable moins sensible à ces effets :
 \begin{equation}
   caloIso(\Delta R)\equiv\frac{etcone(\Delta R)}{E_{T\,objet}}=\frac{\left\{\sum_{cellule/\delta R<\Delta R}E_{T\,cellule}\right\}-E_{T\,amas}}{E_{T\,objet}}
 \end{equation}
 
-\paragraph{Distributions et efficacité}
+\paragraph{Distributions et efficacités}
 
-La figure \ref{iso2} (a) montre la distribution de la variable caloIso pour trois ouvertures différentes pour $ Zee $ et $ Zb\bar{b} $ et la figure \ref{iso2} (b) montre la distribution de l'efficacité de sélection en fonction de la variable caloIso pour trois ouvertures différentes pour $ Zee $ et $ Zb\bar{b} $. Les observation sont les même que pour les variables etcone, néanmoins, les variables caloIso sont plus efficace de environs $ 10\% $. Le choix de l'utilisation de caloIso plutôt que etcone est naturel.
+La figure \ref{iso2} (a) montre la distribution de la variable caloIso pour trois ouvertures différentes pour $ Zee $ et $ Zb\bar{b} $ et la figure \ref{iso2} (b) montre la distribution de l'efficacité de sélection en fonction de la variable caloIso pour trois ouvertures différentes pour $ Zee $ et $ Zb\bar{b} $. Les observations sont les mêmes que pour les variables etcone, néanmoins, les variables caloIso sont plus efficaces d'environ $ 10\% $. Le choix de l'utilisation de caloIso plutôt que etcone est naturel.
 
 \begin{figure}[!h]
   \begin{bigcenter}
@@ -763,14 +763,14 @@ La figure \ref{iso2} (a) montre la distribution de la variable caloIso pour troi
   \end{tabular}
 
   \end{bigcenter}
-  \caption{\label{iso4}Distribution de la variable etcone pour trois ouvertures différentes pour $ Z\to ee $ et $ Zb\bar{b} $ (a) et distribution de l'efficacité de sélection en fonction de la variable etcone pour trois ouvertures différentes pour $ Z\to ee $ et $ Zb\bar{b} $ (b).}
+  \caption{\label{iso2}Distribution de la variable etcone pour trois ouvertures différentes pour $ Z\to ee $ et $ Zb\bar{b} $ (a) et distribution de l'efficacité de sélection en fonction de la variable etcone pour trois ouvertures différentes pour $ Z\to ee $ et $ Zb\bar{b} $ (b).}
 \end{figure}
 
 \vspace{-0.4cm}
 
 \paragraph{Optimisation}
 
-Lorsque de multiples électrons sont présents dans l'état final, une dégradation des performances des variables d'isolation calorimétrique peut être observée. En effet, pour deux leptons suffisamment proches, ils peut y avoir recouvrement de leurs cônes. La figure \ref{iso3} (a) montre la distribution de la variable etcone d'un premier électron divisée par l'impulsion transverse d'un second électron en fonction de la distance dans le plan transverse $ \Delta R_{ee} $ entre les deux électrons pour deux ouvertures différentes. Pour de petites distance, inférieures à la taille du cône, le rapport est proche de $ 1 $ ce qui atteste de l'importance des électrons de voisinage.
+Lorsque de multiples électrons sont présents dans l'état final, une dégradation des performances des variables d'isolation calorimétrique peut être observée. En effet, pour deux leptons suffisamment proches, ils peut y avoir recouvrement de leurs cônes. La figure \ref{iso3} (a) montre la distribution de la variable etcone d'un premier électron divisée par l'impulsion transverse d'un second électron en fonction de la distance dans le plan transverse $ \Delta R_{ee} $ entre les deux électrons pour deux ouvertures différentes. Pour de petites distances, inférieures à la taille du cône, le rapport est proche de $ 1 $ ce qui atteste de l'importance des électrons de voisinage.
 
 \begin{figure}[!h]
   \begin{bigcenter}
@@ -784,23 +784,23 @@ Lorsque de multiples électrons sont présents dans l'état final, une dégradation 
   \end{tabular}
 
   \end{bigcenter}
-  \caption{\label{iso3}Distribution de la variable etcone d'un premier électron divisée par l'impulsion transverse d'un second électron en fonction de la distance dans le plan transverse $ \Delta R_{ee} $ entre les deux électrons pour deux ouvertures différentes (a). Réjection du signal $ Zb\bar{b} $ en fonction de l'efficacité du signal $ H\to4e $ pour une masse $ m_H=130\GeV $ avec sans la correction de recouvrement pour trois ouvertures différentes (b).}
+  \caption{\label{iso3}Distribution de la variable etcone d'un premier électron divisée par l'impulsion transverse d'un second électron en fonction de la distance dans le plan transverse $ \Delta R_{ee} $ entre les deux électrons pour deux ouvertures différentes (a). Réjection du signal $ Zb\bar{b} $ en fonction de l'efficacité du signal $ H\to4e $ pour une masse $ m_H=130\GeV $ avec et sans la correction de recouvrement pour trois ouvertures différentes (b).}
 \end{figure}
 
-Une nouvelle définition $ \textrm{etcone}_{corr}(X) $ des variables d'isolation est prososée, si $ X $ est l'ouverture du cône et $ e_1 $ et $ e_2 $ deux électrons :
+Une nouvelle définition $ \textrm{etcone}_{corr}(X) $ des variables d'isolation est proposée, si $ X $ est l'ouverture du cône et $ e_1 $ et $ e_2 $ deux électrons :
 \begin{equation}
   \textrm{$ \forall $ $ e_1 $ et $ e_2 $, si $ \Delta R_{e_1e_2}<X $}\left\{\begin{array}{ll} \textrm{etcone}_{corr}(X;e_1)\equiv\textrm{etcone}(X;e_1)-p_{T,e2} \\ \textrm{etcone}_{corr}(X;e_2)\equiv\textrm{etcone}(X;e_2)-p_{T,e1} \end{array}\right.
 \end{equation}
 
-Les amméliorations introduites par cette correction ont été étudiées dans \cite{}. La figure \ref{iso3} (b) montre la réjection du signal $ Zb\bar{b} $ en fonction de l'efficacité du signal $ H\to4e $ pour une masse $ m_H=130\GeV $ avec et sans correction de recouvrement pour trois ouvertures différentes. La correction est intéressante pour les cônes de grande taille, les effets est plus réduit pour etcone20.
+Les améliorations introduites par cette correction ont été étudiées dans \cite{}. La figure \ref{iso3} (b) montre la réjection du signal $ Zb\bar{b} $ en fonction de l'efficacité du signal $ H\to4e $ pour une masse $ m_H=130\GeV $ avec et sans correction de recouvrement pour trois ouvertures différentes. La correction est intéressante pour les cônes de grande taille mais les effets sont plus réduits pour la variable etcone20.
 
 \paragraph{Sensibilité à l'empilement}
 
-L'empilement a un effet sur les variables d'isolation. Deux type d'empilements sont à considérer : i) l'empilements \emph{in time}, où les effets à prendre en compte proviennent du nombre de vertex primaires. ii) l'empilements \emph{out of time}, où les effets à prendre en compte proviennent du fait que l'intervalle de temps entre la collision entre deux paquets de protons est plus petit que la durée de vie des signaux mis en forme au sortir de l'électronique \emph{front-end} du calorimètre électromagnétique (voir figure \ref{pulses}). Il en résulte la présence de cellule présentant une énergie négative qui peut contribuer aux cônes.
+L'empilement a un effet sur les variables d'isolation. Deux de contribution à l'empilements sont à considérer : i) l'empilements \emph{in time}, où les effets à proviennent du nombre de vertex primaires. ii) l'empilements \emph{out of time}, où les effets proviennent du fait que l'intervalle de temps entre la collision entre deux paquets de protons est plus petit que la durée de vie des signaux mis en forme au sortir de l'électronique \emph{front-end} du calorimètre électromagnétique (voir figure \ref{pulses}). Il en résulte la présence de cellules présentant une énergie négative qui peut contribuer aux cônes.
 
-Plus un cône possède une grande ouverture, plus il est sensible au effets de l'empilement. Sachant qu'il y a environ 4 vertex primaires par événement dans les données 2011, il est nécessaire d'effectuer une étude avant de choisir une ouverture de cône. Nous allons montrer qu'il est même possible d'effectuer une correction afin soustraire en partie les effets de l'empilement.
+Plus un cône possède une grande ouverture, plus il est sensible aux effets de l'empilement. Sachant qu'il y a environ 4 vertex primaires par événement dans les données 2011, il est nécessaire d'effectuer une étude avant de choisir une ouverture de cône. Nous allons montrer qu'il est même possible d'effectuer une correction afin de soustraire en partie les effets de l'empilement.
 
-\subparagraph{Étude (très) qualitative} Afin de comparer la sensibilité à l'empilement des variables etcone20 et etcone30, les probabilités cumulées ont été tracées en fonction du nombre de vertex primaires pour cinq jeux de simulations Monte-Carlo $ Zee $ présentant chacun une configuration différente de l'empilement : pas d'empilement, nombre moyen de vertex primaires $ \left<mu\right>=6\textrm{ ou }10 $ (qui n'était pas forcément représentatif des données), intervalle de temps entre la collision entre deux paquets de protons $ bs=50ns\textrm{ ou }75ns $. Les résultats sont montrés sur les figures \ref{pileup1} et \ref{pileup2}.
+\subparagraph{Étude (très) qualitative} Afin de comparer la sensibilité à l'empilement des variables etcone20 et etcone30, les probabilités cumulées ont été tracées en fonction du nombre de vertex primaires pour cinq jeux de simulations Monte-Carlo $ Zee $ présentant chacun une configuration différente de l'empilement : pas d'empilement, nombre moyen de vertex primaires $ \left<mu\right>=6\textrm{ ou }10 $ (qui n'était pas forcément représentatif des données où $ \left<mu\right>\approx5 $), intervalle de temps entre la collision entre deux paquets de protons $ bs=50ns\textrm{ ou }75ns $. Les résultats sont montrés sur les figures \ref{pileup1} et \ref{pileup2}.
 
 \begin{figure}[!p]
   \begin{bigcenter}
@@ -876,14 +876,14 @@ Plus un cône possède une grande ouverture, plus il est sensible au effets de l'e
 
 \newpage
 
-La première constatation générale est que la sensibilité à l'intervalle de temps entre la collision entre deux paquets de protons n'est pas très grande. Pour etcone30, la sensibilité au nombre moyen de vertex primaire par événement est beaucoup plus importante que pour etcone20. La largeur de l'enveloppe de la région hors plateau est d'environs $ 1.5\GeV $ pour $ \left<mu\right>=15 $ pour etcone30 (resp. $ 0.5\GeV $ pour $ \left<mu\right>=15 $ pour etcone20) et d'environs $ 1.0\GeV $ pour $ \left<mu\right>=10 $ pour etcone20 (resp. $ 0.5\GeV $ pour $ \left<mu\right>=10 $ pour etcone20).
+La première constatation générale est que la sensibilité à l'empilement \emph{out of time} n'est pas très grande. Pour etcone30, la sensibilité au nombre moyen de vertex primaire par événement est beaucoup plus importante que pour etcone20. La largeur de l'enveloppe de la région hors plateau est d'environ $ 1.5\GeV $ pour $ \left<mu\right>=15 $ pour etcone30 (resp. $ 0.5\GeV $ pour $ \left<mu\right>=15 $ pour etcone20) et d'environ $ 1.0\GeV $ pour $ \left<mu\right>=10 $ pour etcone20 (resp. $ 0.5\GeV $ pour $ \left<mu\right>=10 $ pour etcone20).
 
 \subparagraph{Correction de l'empilement \emph{in time}} Une correction simple peut être mise en place afin de compenser les effets de l'empilement \emph{in time}. La valeur moyenne des variables etcone dépend linéairement du nombre de vertex primaires. La valeur corrigée des cônes d'isolation s'écrit :
 \begin{equation}
   etcone_{pileup}(\Delta R,\eta)=etcone(\Delta R)-\alpha_\eta(\Delta R)N_{pv}
 \end{equation}
 
-où $ \alpha_\eta(\Delta R) $ la pente de la fonction affine $ \left<etcone(\Delta R)\right>(N_{pv}) $ par classe de pseudo-rapidité $ \eta $ et $ N_{pv} $ est le nombre de vertex primaire. Le groupe électrons/photons du détecteur Atlas fournit un outil standard permettant de calculer la correction en fonction de l'ouverture du cône (empilement \emph{in time} et \emph{out of time}). A titre d'information, le tableau \ref{intimecoef} montre les valeurs de $ \alpha_\eta $ pour etcone20 et etcone30.
+où $ \alpha_\eta(\Delta R) $ est la pente de la fonction affine $ \left<etcone(\Delta R)\right>(N_{pv}) $ par classe de pseudo-rapidité $ \eta $ et $ N_{pv} $ est le nombre de vertex primaire. Le groupe électrons/photons du détecteur Atlas fournit un outil standard permettant de calculer la correction en fonction de l'ouverture du cône (empilement \emph{in time} et \emph{out of time}). A titre d'information, le tableau \ref{intimecoef} montre les valeurs de $ \alpha_\eta $ pour etcone20 et etcone30.
 
 \begin{table}[!h]
   \begin{bigcenter}
@@ -910,11 +910,9 @@ où $ \alpha_\eta(\Delta R) $ la pente de la fonction affine $ \left<etcone(\Delt
 
 \subsubsection{Choix du cône d'isolation}
 
-Pour choisir l'ouverture du cône d'isolations et la coupure, plusieurs paramètre sont à prendre en compte. Le premier est l'efficacité sur le signal et la réjection sur le bruit de fond (voir figure \ref{iso3} (b)), le seconde est la résistance aux effets de l'empilement (voir tableau \ref{intimecoef}).
+Toutes les corrections (recouvrement et empilement) sont appliquées. Pour choisir l'ouverture du cône d'isolations et la valeur de la coupure, plusieurs paramètres sont à prendre en compte. Le premier est l'efficacité sur le signal et la réjection sur le bruit de fond (voir figure \ref{iso3} (b)). Le seconde est la résistance aux effets de l'empilement (voir tableau \ref{intimecoef}).
 
-Nous avons choisi d'utiliser des cônes d'ouverture $ \Delta R=0.2 $ qui présentent l'avantage d'être résistants aux effets de l'empilement. Toutes les corrections (recouvrement et empilement) sont appliquées. Comme l'étude est réalisée dans une optique de découverte, l'efficacité est privilégiée, pour $ 98\% $, la coupure $ etcone(0.2)<30\% $ est appliquée.\\
-
-La détermination de l'efficacité basée sur les données en utilisant une méthode \emph{Tag \& Probe} sera décrite dans le section suivante.
+Comme l'étude est réalisée dans une optique de découverte, l'efficacité est privilégiée, pour $ 98\% $, la coupure $ etcone(0.2)<30\% $ est appliquée. Nous avons choisi d'utiliser des cônes d'ouverture $ \Delta R=0.2 $ qui présentent la meilleure résistance aux effets de l'empilement.\\
 
 \subsection{Isolation des traces}
 
@@ -924,7 +922,7 @@ Le calorimètre électromagnétique n'est pas le seul sous-détecteur permettant d'a
 \delta R<\Delta R}{p_{T\,trace}>1\GeV}}p_{T\,trace}\right\}-p_{T\,objet}}{p_{T\,objet}}
 \end{equation}
 
-où $ \delta R=\sqrt{\left(\eta_{trace}-\eta_{trace\,objet}\right)^2+\left(\phi_{trace}-\phi_{trace\,objet}\right)^2} $. Cette définition de l'isolation est directement mise en\oe uvre par le logiciel Athena, plusieurs tailles de cônes sont disponibles : $ 0.20 $, $ 0.25 $, $ 0.30 $, $ 0.35 $, etc\dots
+où $ \delta R=\sqrt{\left(\eta_{trace}-\eta_{trace\,objet}\right)^2+\left(\phi_{trace}-\phi_{trace\,objet}\right)^2} $. Cette définition de l'isolation est directement mise en\oe uvre par le logiciel Athena, plusieurs tailles de cônes sont disponibles de $ 0.20 $ à $ 0.40 $ avec un pas de $ 0.05 $.
 
 \begin{figure}[!h]
   \begin{bigcenter}
@@ -938,7 +936,7 @@ où $ \delta R=\sqrt{\left(\eta_{trace}-\eta_{trace\,objet}\right)^2+\left(\phi_{
   \end{tabular}
 
   \end{bigcenter}
-  \caption{\label{iso3}Distribution de la variable etcone pour trois ouvertures différentes pour $ Z\to ee $ et $ Zb\bar{b} $ (a) et distribution de l'efficacité de sélection en fonction de la variable etcone pour trois ouvertures différentes pour $ Z\to ee $ et $ Zb\bar{b} $ (b).}
+  \caption{\label{iso99}Distribution de la variable etcone pour trois ouvertures différentes pour $ Z\to ee $ et $ Zb\bar{b} $ (a) et distribution de l'efficacité de sélection en fonction de la variable etcone pour trois ouvertures différentes pour $ Z\to ee $ et $ Zb\bar{b} $ (b).}
 \end{figure}
 
 De même que pour l'isolation calorimétrique, il est possible d'effectuer une correction pour tenir compte du recouvrement des électrons :
@@ -946,7 +944,7 @@ De même que pour l'isolation calorimétrique, il est possible d'effectuer une cor
   \textrm{$ \forall $ $ e_1 $ et $ e_2 $, si $ \Delta R_{e_1e_2}<X $}\left\{\begin{array}{ll} \textrm{ptcone}_{corr}(X;e_1)\equiv\textrm{ptcone}(X;e_1)-p_{T,e2} \\ \textrm{ptcone}_{corr}(X;e_2)\equiv\textrm{ptcone}(X;e_2)-p_{T,e1} \end{array}\right.
 \end{equation}
 
-L'isolation calorimétrique est relativement insensible aux effets de l'empilement. La figure \ref{pileup3} montre la distributions des probabilités cumulées respectivement des variables ptcone30 (a) et ptcone20 (b) en fonction du nombre de vertex primaires pour cinq jeux de simulations Monte-Carlo $ Zee $ présentant chacun une configuration différente de l'empilement.
+La figure \ref{pileup3} montre la distributions des probabilités cumulées respectivement des variables ptcone30 (a) et ptcone20 (b) en fonction du nombre de vertex primaires pour cinq jeux de simulations Monte-Carlo $ Zee $ présentant chacun une configuration différente de l'empilement. L'isolation calorimétrique reste relativement insensible.
 
 \begin{figure}[!h]
   \begin{bigcenter}
