@@ -2,7 +2,6 @@
 
 \noindent\\\\\\\\\\\\\\\\\\
 
-
 \section{Échantillons de données et de simulation}
 
 \subsection{Échantillons de données}
@@ -246,7 +245,7 @@ Au cours de l'année 2011, les paramètres du LHC ont évolué au fil du temps à cau
 
 \vspace{-0.5cm}
 
-\subsection{Électrons}
+\subsection{Électrons}\label{electon_corrections}
 
 Plusieurs corrections sont proposées par les groupes de performance électron/photon:
 \begin{itemize}
@@ -258,7 +257,7 @@ Plusieurs corrections sont proposées par les groupes de performance électron/pho
 
 \normalsize
 
-\subsection{Muons}
+\subsection{Muons}\label{muon_corrections}
 
 Plusieurs corrections sont proposées par les groupes de performance muon. Elles sont de même nature que les trois premières corrections appliquées aux électrons.\\\\voir: \scriptsize{https://twiki.cern.ch/twiki/bin/view/AtlasProtected/MCPAnalysisGuidelinesEPS2011}
 
@@ -268,11 +267,11 @@ Plusieurs corrections sont proposées par les groupes de performance muon. Elles 
 
 \section{Reconstruction du boson de Higgs}
 
-Dans cette section je vais décrire la reconstruction du boson de Higgs ainsi que chacune des coupures de sélection. Je traiterai ici des coupures de sélection standards utilisées par le groupe $ H\to ZZ^{(*)}\to4l $ jusqu'en août 2011. Quelques possibles optimisations seront montrées ultérieurement.
+Cette section décrit la reconstruction du boson de Higgs ainsi que les coupures de sélection. Je ne traiterai ici que des choix utilisées par le groupe $ H\to ZZ^{(*)}\to4l $ jusqu'à début septembre 2011. Quelques possibles optimisations seront montrées ultérieurement.
 
 \subsection{Sélection des événements}
 
-Une première sélection est effectuée au niveau des événements. La première étape consiste à ne conserver, pour les données, que les événements où tous les sous-détecteurs impliqués dans la reconstruction des électrons pour $ H\to4e $ (resp. dans la reconstruction des muons pour $ H\to4\mu $ (resp. dans la reconstruction des électrons et des muons pour $ H\to2e2\mu $)) sont dans un fonctionnement normal. Cette sélection est effectuée à partir d'une liste de \emph{lumiblock} valides \emph{run} par \emph{run}, on parle de \emph{Good Run List} (GRL). Un drapeau additionnel, nommé \emph{larError}, est disponible pour les données. Il indique une erreur grave au niveau du système calorimétrique électromagnétiques et doit toujours être à zero si tout va bien. Ensuite, il est demandé qu'il y ait au moins un vertex primaire avec trois traces reconstruites. Finalement, le système de déclenchement est consulté. Nous demandons : i) au moins un électron de $ 20\GeV $ de qualité intermédiaire (\emph{medium}) au niveau de l'\emph{event filter} (EF\_e20\_medium) pour le canal $ H\to4e $. ii) Au moins un muon de $ 18\GeV $ reconstruit par l'algorithme \emph{MuGirl}\footnote{Effectue la recherche de segments et de traces dans le spectromètre à muons en partant du détecteur interne comme grain.} seulement au niveau de l'\emph{event filter} (EF\_mu18\_MG) pour le canal $ H\to4\mu $. iii) EF\_e20\_medium \textbf{et} EF\_mu18\_MG (EF\_e20\_medium $ \wedge $ EF\_mu18\_MG) pour le canal $ H\to2e2\mu $. Ces voies de déclenchement sont celle de plus pas $ p_T $ disponibles sans \emph{prescale}. Le tableau \ref{HSG2tbl1} récapitule les coupures de sélection des événements pour l'étude $ H\to4l $.
+Nous sommençons par effectuer une sélection des événements. La première étape consiste à ne conserver, pour les données, que les événements référencés dans les GRL $ H\to ZZ^{(*)}\to4e $, $ H\to ZZ^{(*)}\to4\mu $ et  $ H\to ZZ^{(*)}\to2e2\mu $. Un drapeau additionnel, nommé \emph{larError}, est disponible pour les données. Il indique une erreur grave au niveau du système calorimétrique électromagnétiques et doit toujours être à zero si tout va bien. Ensuite, il est demandé qu'il y ait au moins un vertex primaire avec trois traces reconstruites. Finalement, le système de déclenchement est consulté. Nous demandons : i) au moins un électron de $ 20\GeV $ de qualité intermédiaire (\emph{medium}) au niveau de l'\emph{event filter} (EF\_e20\_medium) pour le canal $ H\to4e $. ii) Au moins un muon de $ 18\GeV $ reconstruit par l'algorithme \emph{MuGirl}\footnote{Effectue la recherche de segments et de traces dans le spectromètre à muons en partant du détecteur interne comme grain.} au niveau de l'\emph{event filter} (EF\_mu18\_MG) pour le canal $ H\to4\mu $. iii) EF\_e20\_medium \textbf{et} EF\_mu18\_MG (EF\_e20\_medium $ \wedge $ EF\_mu18\_MG) pour le canal $ H\to2e2\mu $. Ces voies de déclenchement sont celles de plus bas $ p_T $ disponibles sans \emph{prescale}. Le tableau \ref{HSG2tbl1} récapitule les coupures de sélection des événements pour l'étude $ H\to4l $.
 
 \begin{table}[!h]
   \begin{bigcenter}
@@ -304,13 +303,13 @@ Une première sélection est effectuée au niveau des événements. La première étape
 
 \subsubsection{Sélection des éléctrons}
 
-La première étape consiste à ne sélectionner que les électrons reconstruits par les algorithmes \emph{egamma} ou \emph{softe} (voir chapitre 6). A la seconde étape, ne sont conservés que les électrons de qualité médium. A la troisième étape, il est demandé que les électrons aient une énergie transverse supérieure à $ 15\GeV $ ou alors une énergie transverse supérieure à $ 7\GeV $ en excluant la zone de \emph{crack} ($ 1.37<|\eta_{amas}|<1.52 $). Ces domaines en pseudo-rapidité ont été étudiée et sont bien compris par les groupes de performance. De plus, les électrons doivent être dans la zone de précision du calorimètre électromagnétique, c'est-à-dire, $ |\eta_{amas}|<2.47 $.
+La première étape consiste à ne sélectionner que les électrons reconstruits par les algorithmes \emph{egamma} ou \emph{softe} décrit au chapitre \ref{}. A la seconde étape, ne sont conservés que les électrons de qualité médium. A la troisième étape, il est demandé que les électrons aient une énergie transverse supérieure à $ 15\GeV $ ou alors une énergie transverse supérieure à $ 7\GeV $ en excluant la zone de \emph{crack} ($ 1.37<|\eta_{amas}|<1.52 $). Ces domaines en pseudo-rapidité ont été largement étudiés par les groupes de performance. De plus, les électrons doivent être dans la zone de précision du calorimètre électromagnétique, c'est-à-dire, $ |\eta_{amas}|<2.47 $.
 
-Une carte, mise à jour si nécessaire, est utilisée pour masquer les régions problématiques du calorimètre électromagnétique (plus particulièrement à cause des OTX défectueux, voir chapitre 3). Enfin, il est demandé que le paramètre d'impact $ z_0 $ calculé par rapport au vertex primaire soit inférieur à $ 10mm $ afin de ??.
+La carte des régions défaillantes du calorimètre électromagnétique décrite dans la section \ref{electon_corrections} est appliquée. Enfin, il est demandé que le paramètre d'impact $ z_0 $ calculé par rapport au vertex primaire soit inférieur à $ 10mm $ afin de ??.
 
 \subsubsection{Sélection des muons}
 
-Il existe deux algorithmes concurrents aux performances à peu près identiques pour la reconstruction des muons auprès du détecteur Atlas. Il s'agit de \emph{staco} et \emph{muid}. Les résultats qui seront présentés ont été obtenus avec les deux algorithme afin de comparer leur performance. La première étape consiste à ne sélectionner que les muons combinés. A la seconde étape, ne sont conservés que les muons ayant un paramètre d'impact $ d_0 $ calculé par rapport au vertex primaire inférieur à $ 1mm $ afin de s'affranchir des muons cosmiques qui ne sont pas très projectifs (voir chapitre 7). A la troisième étape, pour la même raison que pour les électrons, il est demandé que les muons aient une impulsion transverse supérieure à $ 7\GeV $. De plus, les il doivent être dans la zone de précision du spectromètre à muons, c'est-à-dire, $ |\eta|<2.5 $. Une sélection complexe, proposée par le groupe travaillant sur les performances combinées du spectromètre à muons et basée sur le nombre de coups dans le détecteur interne (nombre de coups attendu dans le B-layer, nombre de coups dans les pixels, dans le SCT, dans le TRT, nombre de senseurs défectueux dans les pixels et dans le SCT, nombre de trous dans les pixels et dans le SCT, etc\dots) est appliquée, voir figure \ref{idmuon}. Enfin, il est demandé que le paramètre d'impact $ z_0 $ calculé par rapport au vertex primaire soit inférieur à $ 10mm $ afin de ??.
+Il existe deux algorithmes concurrents aux performances à peu près identiques pour la reconstruction des muons auprès du détecteur Atlas. Il s'agit de \emph{staco} et \emph{muid}. Les résultats qui seront présentés ont été obtenus avec les deux algorithmes afin de comparer leur performance. La première étape consiste à ne sélectionner que les muons combinés. A la seconde étape, ne sont conservés que les muons ayant un paramètre d'impact $ d_0 $ calculé par rapport au vertex primaire inférieur à $ 1mm $ afin de s'affranchir des muons cosmiques qui ne sont pas très projectifs (cf. chapitre \ref{}). A la troisième étape, pour la même raison que pour les électrons, il est demandé que les muons aient une impulsion transverse supérieure à $ 7\GeV $. De plus, les il doivent être dans la zone de précision du spectromètre à muons, c'est-à-dire, $ |\eta|<2.5 $. Une sélection complexe, proposée par le groupe travaillant sur les performances combinées du spectromètre à muons et basée sur le nombre de coups dans le détecteur interne (nombre de coups attendu dans le B-layer, nombre de coups dans les pixels, dans le SCT, dans le TRT, nombre de senseurs défectueux dans les pixels et dans le SCT, nombre de trous dans les pixels et dans le SCT, etc\dots) est appliquée, voir figure \ref{idmuon}. Enfin, il est demandé que le paramètre d'impact $ z_0 $ calculé par rapport au vertex primaire soit inférieur à $ 10mm $ afin de ??.
 
 \begin{figure}[!h]
 \begin{center}
@@ -331,9 +330,9 @@ else: pass
   \caption{\label{idmuon}Sélection des muons basée sur le nombre de coups dans le détecteur interne.}
 \end{figure}
 
-\vspace{-0.35cm}
-
 \subsubsection{Tableau récapitulatif}
+
+Le tableau \ref{HSG2tbl2} récapitule la sélection des objets physiques (électrons et muons) effectuée pour l'étude $ H\to4l $.
 
 \begin{table}[!h]
   \begin{bigcenter}
@@ -369,14 +368,14 @@ else: pass
     \end{tabular}
 
   \end{bigcenter}
-  \caption{\label{HSG2tbl2}Sélection des objets physiques pour l'étude $ H\to4l $.}
+  \caption{\label{HSG2tbl2}Sélection des objets physiques (électrons et muons) effectuée pour l'étude $ H\to4l $.}
 \end{table}
 
 \subsubsection{Recouvrement des leptons}
 
-\paragraph{électrons-électron} On considère que deux électrons se recouvrent si ils partagent les mêmes paramètres de trace, soit encore, $ d_0 $, $ z_0 $, $ \theta $, $ \phi $ et $ \frac{q}{p} $. Dans cette situation, n'est conservé que l'électron de plus grande énergie transverse.
+\paragraph{électron-électron} On considère que deux électrons se recouvrent s'ils partagent les mêmes paramètres de trace, soit encore, $ d_0 $, $ z_0 $, $ \theta $, $ \phi $ et $ \frac{q}{p} $. Dans cette situation, n'est conservé que l'électron de plus grande énergie transverse.
 
-\paragraph{électrons-muon} On considère qu'un électron et qu'un muon se recouvrent si ils partagent les mêmes paramètres de trace, soit encore, $ d_0 $, $ z_0 $, $ \theta $, $ \phi $ et $ \frac{q}{p} $. Dans cette situation, les deux objets sont éliminés.
+\paragraph{électron-muon} On considère qu'un électron et qu'un muon se recouvrent s'ils partagent les mêmes paramètres de trace, soit encore, $ d_0 $, $ z_0 $, $ \theta $, $ \phi $ et $ \frac{q}{p} $. Dans cette situation, les deux objets sont éliminés.
 
 \subsection{Reconstruction et sélection des candidats Higgs}
 
@@ -386,15 +385,13 @@ La reconstruction consiste essentiellement à former des quadruplets de leptons c
 
 \subsubsection{Sélection}
 
-La sélection de candidats Higgs se fait en six étapes.
+La sélection de candidats Higgs se fait en cinq étapes.
 
-\paragraph{sélection 1}Pour les canaux $ 2e2\mu $ et $ 2\mu2e $, il est demandé que la masse invariante de chaque paire soit supérieure à $ 15\GeV $ afin de ???.
+\paragraph{sélection 1}Afin d'être compatible avec les exigences du critère de déclenchement EF\_e20\_ medium et EF\_mu18\_MG, il est demandé qu'au moins deux leptons aient une énergie transverse supérieure à $ 20\GeV $. En toute rigueur, EF\_e20\_medium atteint son plateau d'efficacité vers $ 24-25\GeV $, il faudrait donc couper plus haut en énergie au détriment de la statistique. Des optimisations liées au système de déclenchement seront discutée ultérieurement.
 
-\paragraph{sélection 2}Afin d'être compatible avec les exigences du critère de déclenchement EF\_e20\_medium et EF\_mu18\_MG, il est demandé qu'au moins deux leptons aient une énergie transverse supérieure à $ 20\GeV $. En toute rigueur, EF\_e20\_medium atteint sont plateau d'efficacité vers $ 24-25\GeV $, il faudrait donc couper plus haut en énergie au détriment de la statistique. Des optimisations liées au système de déclenchement seront discuter ultérieurement.
+\paragraph{sélection 2}Il est demandé que la masse du $ Z $ primaire soit dans une fenêtre de $ 15\GeV $ autour de la masse nominale.
 
-\paragraph{sélection 3}Il est demandé que la masse du $ Z $ primaire soit dans une fenêtre de $ 15\GeV $ autour de la masse nominale.
-
-\paragraph{sélection 4}Il est demandé que la masse du $ Z $ secondaire soit supérieure à un seuil $ m_{seuil} $ qui varie en fonction de la masse $ m_{12} $ et qui est toujours inférieure à $ 115\GeV $. Un ensemble de valeurs est donné dans le tableau \ref{m34cut}. Les valeurs intermédiaires sont obtenues par simple interpolation linéaire.
+\paragraph{sélection 3}Il est demandé que la masse du $ Z $ secondaire soit supérieure à un seuil $ m_{seuil} $ qui varie en fonction de la masse $ m_H $ et qui est toujours inférieure à $ 115\GeV $, voir tableau \ref{m34cut}. Les valeurs intermédiaires sont obtenues par simple interpolation linéaire. Ces $ m_{seuil} $ ont été déterminés à partir des distributions de masse invariante $ m_{34} $ pour différence masse du boson de Higgs à partir de la simlation Monte-Carlo.
 
 \begin{table}[!h]
   \begin{bigcenter}
@@ -411,11 +408,11 @@ La sélection de candidats Higgs se fait en six étapes.
   \caption{\label{m34cut}Valeurs de seuil $ m_{seuil} $ pour la masse du $ Z $ secondaire $ m_{34} $ en fonction de la masse du candidat Higgs $ m_{12} $. Les valeurs intermédiaires sont obtenues par interpolation linéaire.}
 \end{table}
 
-\paragraph{sélection 5}Les quatre leptons du quadruplet doivent être bien séparés $ min(\Delta R_{ij})>0.1 $ (une tour de déclenchement dans le second compartiment du calorimètre électromagnétique) où $ \Delta R_{ij}=\sqrt{(\eta_i-\eta_j)^2+(\phi_i-\phi_j)^2} $.
+\paragraph{sélection 4}Les quatre leptons du quadruplet doivent être bien séparés $ min(\Delta R_{ij})>0.1 $ (une tour de déclenchement dans le second compartiment du calorimètre électromagnétique) où $ \Delta R_{ij}=\sqrt{(\eta_i-\eta_j)^2+(\phi_i-\phi_j)^2} $.
 
-\paragraph{sélection 6}Pour évité tout biais, il n'est conservé qu'un seul candidat Higgs par événement parmi les combinaisons possibles. Nous conservons le quadruplet qui a la masse du boson $ Z $ primaire $ m_{12} $ la plus proche de la valeur sur couche de masse et qui a la masse du boson $ Z $ secondaire $ m_{34} $ la plus grande.
+\paragraph{sélection 5}Pour évité tout biais, parmi les combinaisons possibles, il n'est conservé que le quadruplet qui a la masse du boson $ Z $ primaire $ m_{12} $ la plus proche de la valeur nominale $ m_{Z\,PDG} $ et qui a la masse du boson $ Z $ secondaire $ m_{34} $ la plus grande.
 
-Tous les candidats qui dépassent la sélection n°6 sont répertoriés. Cependant à ce niveau, rien n'est fait pour diminuer les bruits de fond réductibles $ t\bar{t} $, $ Zb\bar{b} $ ou $ Z $ inclusif. Une sélection supplémentaire basée sur des coupure d'isolation sera décrite dans la section suivante.\\
+Tous les candidats qui passent les sélections 1-5 sont concervés. Cependant à ce niveau, rien n'est fait pour diminuer les bruits de fond réductibles $ t\bar{t} $, $ Zb\bar{b} $ ou $ Z $ inclusif. Une sélection supplémentaire basée sur des coupure d'isolation sera décrite dans la section suivante.\\
 
 \noindent Remarque : comme la résolution sur les variables $ \eta $ et $ \phi $ est meilleure pour les traces que pour les amas, les définitions suivantes sont utilisées dans toute l'analyse :
 \begin{equation}
@@ -426,11 +423,13 @@ Tous les candidats qui dépassent la sélection n°6 sont répertoriés. Cependant à 
 
 \subsection{Résultats avec la simulation Monte-Carlo}
 
-Nous allons montrer les chiffres et les distribution obtenues à partir des principaux bruits de fond et à partir de quatre échantillons de signaux $ m_H=130\GeV $, $ m_H=150\GeV $ et $ m_H=220\GeV $. Mais commençons par regarder les objets physiques (électron et muons).
+Nous allons montrer l'efficacité des coupures de sélection pour trois échantillons de simulation Monte-Carlo $ m_H=130\GeV $, $ m_H=150\GeV $ et $ m_H=220\GeV $ et pour le bruit de fond total.
 
 \subsubsection{Efficacité des coupures pour les leptons}
 
 Une simulation Monte-Carlo $ H\to ZZ^{(*)}\to4l $ avec $ m_H=150\GeV $ a été utilisée par les membre du groupe dans le cadre d'un \emph{challenge} afin de faire converger les code d'analyse. Je précise au passe que je code utilisé pour produire les résultats montrés dans ce chapitre a été l'un des premiers à converger. Les table \ref{hsg2_eff_lepton1} (a) à \ref{hsg2_eff_lepton2} (b) montrent le nombre d'objets physiques survivant à chacune des coupures de sélection dans les sept situations suivantes : électrons (déclenchement électronique seul), muons \emph{staco} et \emph{muid} (déclenchement muonique seul), électrons (déclenchement électronique et muonique avec recouvrement \emph{staco} et \emph{muid}), muons \emph{staco} et \emph{muid} (déclenchement électronique et muonique).
+
+\vspace{0.5cm}
 
 \begin{table}[!h]
   \begin{bigcenter}
@@ -486,15 +485,17 @@ Une simulation Monte-Carlo $ H\to ZZ^{(*)}\to4l $ avec $ m_H=150\GeV $ a été uti
   \caption{\label{hsg2_eff_lepton2}Nombre de candidats muons après chaque coupure de sélection, $ m_H=150\GeV $.}
 \end{table}
 
-\noindent Remarque 1 : Pour des déclenchement simple, l'efficacité de sélection totale des électrons est d'environ $ 26\% $ et l'efficacité de sélection totale des muons est d'environ $ 82\% $. Pour des déclenchement double, l'efficacité de sélection totale des électrons est d'environ $ 27\% $ et l'efficacité de sélection totale des muons est d'environ $ 88\% $.\\
+\newpage
 
-\vspace{-0.2cm}
+\noindent Remarque 1 : Pour des déclenchement simple, l'efficacité de sélection totale des électrons est d'environ $ 26\% $ et l'efficacité de sélection totale des muons est d'environ $ 82\% $. Pour des déclenchement double, l'efficacité de sélection totale des électrons est d'environ $ 27\% $ et l'efficacité de sélection totale des muons est d'environ $ 88\% $.\\
 
 \noindent Remarque 2 : L'efficacité de muons \emph{staco} est sensiblement meilleure que l'efficacité des muons \emph{muid}, soit environ $ 0.1\% $.
 
 \subsubsection{Efficacité des coupures pour les candidats Higgs}
 
 Le tableau \ref{hsg2_eff1} montre les efficacités totales de reconstruction, par canal, jusqu'à la coupure n°6 (un seul candidat Higgs), obtenues à partir de trois échantillons de signaux $ m_H=130\GeV $, $ m_H=150\GeV $ et $ m_H=220\GeV $ et les bruits de fond ($ t\bar{t} $, $ Zb\bar{b} $ et $ Z $ inclusif). Plus la masse du boson de Higgs est grande, plus l'efficacité de reconstruction est bonne car les performances sont meilleures pour la reconstruction des bosons $ Z $ secondaires de grande masse. Les tableaux \ref{hsg2_eff2} à \ref{hsg2_eff5} montrent les efficacités de chacune des coupures de sélection. Nous constatons que la coupure la plus restrictive correspond à la création d'un d'un quadruplet de leptons passants les coupures de sélection.
+
+\vspace{0.5cm}
 
 \begin{table}[!h]
   \begin{bigcenter}
