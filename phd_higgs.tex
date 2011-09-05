@@ -421,46 +421,49 @@ Tous les candidats qui passent les sélections 1-5 sont concervés. Cependant à ce
   \end{array}
 \end{equation}
 
-\subsection{Résultats avec la simulation Monte-Carlo}
+\subsection{Efficacités avec la simulation Monte-Carlo}
 
 Nous allons montrer l'efficacité des coupures de sélection pour trois échantillons de simulation Monte-Carlo $ m_H=130\GeV $, $ m_H=150\GeV $ et $ m_H=220\GeV $ et pour le bruit de fond total.
 
 \subsubsection{Efficacité des coupures pour les leptons}
 
-Une simulation Monte-Carlo $ H\to ZZ^{(*)}\to4l $ avec $ m_H=150\GeV $ a été utilisée par les membre du groupe dans le cadre d'un \emph{challenge} afin de faire converger les code d'analyse. Je précise au passe que je code utilisé pour produire les résultats montrés dans ce chapitre a été l'un des premiers à converger. Les table \ref{hsg2_eff_lepton1} (a) à \ref{hsg2_eff_lepton2} (b) montrent le nombre d'objets physiques survivant à chacune des coupures de sélection dans les sept situations suivantes : électrons (déclenchement électronique seul), muons \emph{staco} et \emph{muid} (déclenchement muonique seul), électrons (déclenchement électronique et muonique avec recouvrement \emph{staco} et \emph{muid}), muons \emph{staco} et \emph{muid} (déclenchement électronique et muonique).
+Une simulation Monte-Carlo $ H\to ZZ^{(*)}\to4l $ avec $ m_H=150\GeV $ a été utilisée par les membre du groupe dans le cadre d'un \emph{challenge} afin de faire converger les codes d'analyse. Précisons que le code utilisé pour produire les résultats montrés dans ce chapitre a été l'un des premiers à converger. Les table \ref{hsg2_eff_lepton1} (a) à \ref{hsg2_eff_lepton2} (b) montrent le nombre d'objets physiques survivant à chacune des coupures de sélection dans les sept situations suivantes : électrons (déclenchement électronique seul), muons \emph{staco} et \emph{muid} (déclenchement muonique seul), électrons (déclenchement électronique et muonique avec recouvrement \emph{staco} et \emph{muid}), muons \emph{staco} et \emph{muid} (déclenchement électronique et muonique).
 
 \vspace{0.5cm}
 
 \begin{table}[!h]
   \begin{bigcenter}
+  \begin{small}
 
     \begin{tabular}{|c|c|c|c|c|c|c|c|c|}
       \hline
       \hline
-        Déclenchement & \multicolumn{2}{c|}{$ e $} & \multicolumn{2}{c|}{$ e $ et $ \mu $} & \multicolumn{2}{c|}{$ e $ ou $ \mu $}\\
+        Déclenchement & \multicolumn{2}{c|}{$ e $ (staco)} & \multicolumn{2}{c|}{$ e $ et $ \mu $ (staco)} & \multicolumn{2}{c|}{$ e $ ou $ \mu $ (muid)}\\
       \hline
         Coupure & \# objets & efficacité & \# objets & efficacité & \# objets & efficacité\\
       \hline
          - & 163481 & - & 163481 & - & 163481 & -\\
-        vertex & 163481 &  & 163481 &  & 163481 & \\
-        déclenchement & 122325 &  & 159170 &  & 159170 & \\
-        algorithme & 77510 & $ 63.36\%\pm0.14\% $ & 93893 &  & 93893 & \\
-        identification & 45100 & $ 58.19\%\pm0.18\% $ & 47684 &  & 47684 & \\
-        $ |\eta|<2.47 $ & 45100 & $ 100.00\%\pm0.00\% $ & 47683 &  & 47683 & \\
-        $ E_T>7\GeV $ & 43272 & $ 95.95\%\pm0.09\% $ & 45305 &  & 45305 & \\
-        qualité & 42236 & $ 97.61\%\pm0.07\% $ & 44228 &  & 44228 & \\
-        $ z_0<10mm $ & 42202 & $ 99.92\%\pm0.01\% $ & 44186 &  & 44186 & \\
-        recouvrement $ e-e $ & 42201 & $ 100.00\%\pm0.00\% $ & 44185 &  & 44185 & \\
-        recouvrement $ e-\mu $ & 42176 (staco) & $ 99.94\%\pm0.01\% $ & 44146 (staco) &  & 44144 (muid) & \\
+        vertex & 163481 & $ 100.00\%\pm0.001\% $ & 163481 & $ 100.00\%\pm0.001\% $ & 163481 & $ 100.00\%\pm0.001\% $\\
+        déclenchement & 122325 & $ 74.83\%\pm0.11\% $ & 159170 & $ 97.36\%\pm0.04\% $ & 159170 & $ 97.36\%\pm0.04\% $\\
+        algorithme & 77510 & $ 63.36\%\pm0.14\% $ & 93893 & $ 58.99\%\pm0.12\% $ & 93893 & $ 58.99\%\pm0.12\% $\\
+        identification & 45100 & $ 58.19\%\pm0.18\% $ & 47684 & $ 50.79\%\pm0.16\% $ & 47684 & $ 50.79\%\pm0.16\% $\\
+        $ |\eta|<2.47 $ & 45100 & $ 100.00\%\pm0.003\% $ & 47683 & $ 100.00\%\pm0.002\% $ & 47683 & $ 100.00\%\pm0.003\% $\\
+        $ E_T>7\GeV $ & 43272 & $ 95.95\%\pm0.09\% $ & 45305 & $ 95.01\%\pm0.10\% $ & 45305 & $ 95.01\%\pm0.10\% $\\
+        qualité & 42236 & $ 97.61\%\pm0.07\% $ & 44228 & $ 97.62\%\pm0.07\% $ & 44228 & $ 97.62\%\pm0.07\% $\\
+        $ z_0<10mm $ & 42202 & $ 99.92\%\pm0.01\% $ & 44186 & $ 99.91\%\pm0.01\% $ & 44186 & $ 99.91\%\pm0.01\% $\\
+        recouvrement $ e-e $ & 42201 & $ 100.00\%\pm0.003\% $ & 44185 & $ 100.00\%\pm0.003\% $ & 44185 & $ 100.00\%\pm0.003\% $\\
+        recouvrement $ e-\mu $ & 42176 & $ 99.94\%\pm0.01\% $ & 44146 & $ 99.91\%\pm0.01\% $ & 44144 & $ 99.91\%\pm0.01\% $\\
       \hline
     \end{tabular}
 
+  \end{small}
   \end{bigcenter}
   \caption{\label{hsg2_eff_lepton1}Nombre de candidats électrons après chaque coupure de sélection, $ m_H=150\GeV $.}
 \end{table}
 
 \begin{table}[!h]
   \begin{bigcenter}
+  \begin{scriptsize}
 
     \begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|}
       \hline
@@ -470,26 +473,27 @@ Une simulation Monte-Carlo $ H\to ZZ^{(*)}\to4l $ avec $ m_H=150\GeV $ a été uti
         Coupure & \# objets & efficacité & \# objets & efficacité & \# objets & efficacité & \# objets & efficacité\\
       \hline
          - & 59101 & - & 61455 & - & 59101 & - & 61455 & -\\
-        vertex & 59101 &  & 61455 &  & 57695 &  & 61455 & \\
-        déclenchement & 54660 &  & 54660 &  & 56813 & & 59955 & \\
-        algorithme & 52344 &  & 52403 &  & 56813 & & 56835 & \\
-        $ p_T>7\GeV $ & 50281 &  & 50207 &  & 53941 & & 53838 & \\
-        $ |\eta|<2.5 $ & 49257 &  & 50207 &  & 52685 & & 52649 & \\
-        coups & 48621 &  & 48576 &  & 48621 & & 51917 & \\
-        $ d_0<1mm $ & 48619 &  & 48574 &  & 51988 & & 51915 & \\
-        $ z_0<10mm $ & 48610 &  & 48565 &  & 51976 & & 51903 & \\
+        vertex & 59101 & $ 100.00\%\pm0.00\% $ & 61455 & $ 100.00\%\pm0.00\% $ & 57695 & $ 97.62\%\pm0.06\% $ & 61455 & $ 100.00\%\pm0.00\% $\\
+        déclenchement & 54660 & $ 92.49\%\pm0.11\% $ & 54660 & $ 88.94\%\pm0.13\% $ & 56813 & $ 98.47\%\pm0.05\% $ & 59955 & $ 97.56\%\pm0.06\% $\\
+        algorithme & 52344 & $ 95.76\%\pm0.09\% $ & 52403 & $ 95.87\%\pm0.09\% $ & 56813 & $ 100.00\%\pm0.00\% $ & 56835 & $ 94.80\%\pm0.09\% $\\
+        $ p_T>7\GeV $ & 50281 & $ 96.06\%\pm0.09\% $ & 50207 & $ 95.81\%\pm0.09\% $ & 53941 & $ 94.94\%\pm0.09\% $ & 53838 & $ 94.73\%\pm0.09\% $\\
+        $ |\eta|<2.5 $ & 49257 & $ 97.96\%\pm0.06\% $ & 50207 & $ 100.00\%\pm0.00\% $ & 52685 & $ 97.67\%\pm0.06\% $ & 52649 & $ 97.79\%\pm0.06\% $\\
+        coups & 48621 & $ 98.71\%\pm0.05\% $ & 48576 & $ 96.75\%\pm0.08\% $ & 51990 & $ 98.68\%\pm0.05\% $ & 51917 & $ 98.61\%\pm0.05\% $\\
+        $ d_0<1mm $ & 48619 & $ 99.99\%\pm0.001\% $ & 48574 & $ 99.99\%\pm0.001\% $ & 51988 & $ 99.99\%\pm0.001\% $ & 51915 & $ 99.99\%\pm0.001\% $\\
+        $ z_0<10mm $ & 48610 & $ 99.98\%\pm0.01\% $ & 48565 & $ 99.98\%\pm0.01\% $ & 51976 & $ 99.98\%\pm0.01\% $ & 51903 & $ 99.98\%\pm0.01\% $\\
       \hline
     \end{tabular}
 
+  \end{scriptsize}
   \end{bigcenter}
   \caption{\label{hsg2_eff_lepton2}Nombre de candidats muons après chaque coupure de sélection, $ m_H=150\GeV $.}
 \end{table}
 
 \newpage
 
-\noindent Remarque 1 : Pour des déclenchement simple, l'efficacité de sélection totale des électrons est d'environ $ 26\% $ et l'efficacité de sélection totale des muons est d'environ $ 82\% $. Pour des déclenchement double, l'efficacité de sélection totale des électrons est d'environ $ 27\% $ et l'efficacité de sélection totale des muons est d'environ $ 88\% $.\\
+\noindent Remarque 1 : Pour des déclenchements simples, l'efficacité de sélection totale des électrons est d'environ $ 26\% $ et l'efficacité de sélection totale des muons est d'environ $ 82\% $. Pour des déclenchements doubles, l'efficacité de sélection totale des électrons est d'environ $ 27\% $ et l'efficacité de sélection totale des muons est d'environ $ 88\% $.\\
 
-\noindent Remarque 2 : L'efficacité de muons \emph{staco} est sensiblement meilleure que l'efficacité des muons \emph{muid}, soit environ $ 0.1\% $.
+\noindent Remarque 2 : L'efficacité de muons \emph{staco} est à peu près $ 0.1\% $ meilleure que l'efficacité des muons \emph{muid}.
 
 \subsubsection{Efficacité des coupures pour les candidats Higgs}
 
@@ -696,15 +700,15 @@ Nous allons maintenant étudier un nouveau lot de coupures permettant de réduire 
 
 \newpage
 
-\section{Isolation des électrons}
+\section{Isolation des électrons et des muons}
 
-Il convient d'étudier la mise en \oe uvre de critères d'isolation pour les électrons et les muons afin de diminuer les contributions des bruits de fond réductibles hadroniques. Les coupures d'isolation sont appliquées en complément de la sélection décrite ci-dessus.
+Nous allons étudier la mise en \oe uvre de critères d'isolation permettants de diminuer les contributions des bruits de fond réductibles hadroniques. Les coupures d'isolation sont appliquées en complément de la sélection décrite ci-dessus.
 
-Il convient de distinguer deux type de d'isolation, l'isolation des amas du calorimètre électromagnétiques et l'isolation des traces du détecteur interne. Nous allons proposer une étude d'efficacité sur les signaux et de réjection sur le bruit de fond $ Zb\bar{b} $ à partir des simulations Monte-Carlo afin d'effectuer un choix sur la définition de l'isolation, puis, nous montrerons une estimation de l'efficacités basée sur les données des coupures en utilisant une méthode \emph{Tag and Probe} (T\emph{\&}P).
+Il convient de distinguer deux types de d'isolation, l'isolation des amas du calorimètre électromagnétiques et l'isolation des traces du détecteur interne. A partir des simulations Monte-Carlo, nous allons proposer une étude d'efficacité sur les signaux et de réjection sur le bruit de fond $ Zb\bar{b} $ afin d'effectuer un choix des coupures d'isolation. Nous montrerons ensuite une estimation de l'efficacités des coupures basée sur les données en utilisant une méthode \emph{Tag and Probe} (T\emph{\&}P).
 
 \subsection{Analyse sur la simulation Monte-Carlo}
 
-Un lot d'électrons de faible qualité a été sélectionner à partir des simulations Monte-Calo $ Z\to ee $ et $ Z(\to ee)b\bar{b} $. Il est simplement demandé que l'impulsion transverse soit supérieur à $ 7\GeV $ et que ces leptons soient reconstruits dans les zones de précision du calorimètre électromagnétique.
+Un lot d'électrons a été sélectionner à partir des simulations Monte-Calo $ Z\to ee $ et $ Z(\to ee)b\bar{b} $. Il est simplement demandé que l'impulsion transverse soit supérieur à $ 7\GeV $ et que les candidats leptons soient reconstruits dans les zones de précision du calorimètre électromagnétique.
 
 \subsubsection{Isolation des amas}
 
