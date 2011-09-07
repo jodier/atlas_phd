@@ -408,7 +408,7 @@ La sélection de candidats Higgs se fait en cinq étapes.
   \caption{\label{m34cut}Valeurs de seuil $ m_{seuil} $ pour la masse du $ Z $ secondaire $ m_{34} $ en fonction de la masse du candidat Higgs $ m_{12} $. Les valeurs intermédiaires sont obtenues par interpolation linéaire.}
 \end{table}
 
-\paragraph{sélection 4}Les quatre leptons du quadruplet doivent être bien séparés $ min(\Delta R_{ij})>0.1 $ (une tour de déclenchement dans le second compartiment du calorimètre électromagnétique) où $ \Delta R_{ij}=\sqrt{(\eta_i-\eta_j)^2+(\phi_i-\phi_j)^2} $.
+\paragraph{sélection 4}Pour éviter la reconstruction de bosons $ Z $ de masse nulle lorsque l'ouverture entre les leptons est trop petite. Les quatre leptons du quadruplet doivent être bien séparés $ min(\Delta R_{ij})>0.1 $ (quatre cellules dans le second compartiment du calorimètre électromagnétique) où $ \Delta R_{ij}=\sqrt{(\eta_i-\eta_j)^2+(\phi_i-\phi_j)^2} $.
 
 \paragraph{sélection 5}Pour évité tout biais, parmi les combinaisons possibles, il n'est conservé que le quadruplet qui a la masse du boson $ Z $ primaire $ m_{12} $ la plus proche de la valeur nominale $ m_{Z\,PDG} $ et qui a la masse du boson $ Z $ secondaire $ m_{34} $ la plus grande.
 
@@ -1085,33 +1085,35 @@ Les figures \ref{TandPeff1} montrent respectivement les efficacités des coupures
       \hline
         ptcone20/classe [\GeV] & $ 15-20 $ & $ 20-25 $ & $ 25-30 $ & $ 30-35 $ & $ 35-40 $ & $ 40-45 $ & $ 45-50 $\\
       \hline
-        Données & 0.11 & 0.073 & 0.063 & 0.017 & 0.0034 & 0.0040\\
-        Simulation & 0.099 & 0.094 & 0.063 & 0.011 & 0.0043 & 0.0031\\
-        Rapport & \\
+        Données & & & & & & & \\
+        Simulation & & & & & & & \\
+        Rapport & & & & & & & \\
       \hline
     \end{tabular}
+
+    \vspace{0.5cm}
 
     \begin{tabular}{|c|c|c|c|c|c|c|c|}
       \hline
       \hline
         etcone20/classe [\GeV] & $ 15-20 $ & $ 20-25 $ & $ 25-30 $ & $ 30-35 $ & $ 35-40 $ & $ 40-45 $ & $ 45-50 $\\
       \hline
-        Données & 0.14 & 0.069 & 0.056 & 0.030 & 0.017 & 0.012\\
-        Simulation & 0.11 & 0.041 & 0.073 & 0.049 & 0.025 & 0.0072\\
-        Rapport & \\
+        Données & & & & & & & \\
+        Simulation & & & & & & & \\
+        Rapport & & & & & & & \\
       \hline
     \end{tabular}
 
-    \vspace{0.25cm}
+    \vspace{0.5cm}
 
     \begin{tabular}{|c|c|c|c|c|c|c|c|}
       \hline
       \hline
         $ d0/\sigma_{d0} $/classe [\GeV] & $ 15-20 $ & $ 20-25 $ & $ 25-30 $ & $ 30-35 $ & $ 35-40 $ & $ 40-45 $ & $ 45-50 $\\
       \hline
-        Données & 0.48 & 0.23 & 0.28 & 0.14 & 0.059 & 0.021\\
-        Simulation & 0.35 & 0.30 & 0.13 & 0.13 & 0.025 & 0.044\\
-        Rapport & \\
+        Données & & & & & & & \\
+        Simulation & & & & & & & \\
+        Rapport & & & & & & & \\
       \hline
     \end{tabular}
 
@@ -1121,7 +1123,7 @@ Les figures \ref{TandPeff1} montrent respectivement les efficacités des coupures
   \caption{\label{TandPeff7}Efficacités des coupures d'isolation et de significance du paramètre d'impact obtenues pour les données et pour la simulation Monte-Carlo pour chaque classe d'impulsion transverse.}
 \end{table}
 
-Les figures \label{TandPeff3} montrent respectivement les efficacités \emph{Tag \& Probe} des coupures d'isolation et de significance du paramètre d'impact en fonction de l'impulsion transverse $ p_T $ pour les données (a) et pour la simulation Monte-Carlo (b). La figure \label{TandPeff4} montre le rapport entre les données et la simulation Monte-Carlo des efficacités \emph{Tag \& Probe} des coupures d'isolation et de significance du paramètre d'impact en fonction de l'impulsion transverse $ p_T $. Les courbes d'efficacité des coupures d'isolation sont plates dans intervalle inférieur à $ 0.75\% $. Nous avions déjà évoqué le fait que la résolution du paramètre d'impact soit dépendant de la pseudo-rapidité $ \eta $. En effet, nous observons de grande variations entre la région du tonneau où l'efficacité est de l'ordre de $ 96\% $ et la région des bouchons où l'efficacité va de $ 90\% $ à $ 96\% $. Nous observons également un désaccord entre les données et la simulation Monte-Carlo dans la région $ 1.52<|\eta|<2.01 $. L'origine n'est pas comprise.
+Les figures \label{TandPeff3} montrent respectivement les efficacités des coupures d'isolation et de significance du paramètre d'impact en fonction de la pseudo-rapidité $ \eta $ pour les données (a) et pour la simulation Monte-Carlo (b). La figure \label{TandPeff4} montre le rapport entre les données et la simulation Monte-Carlo des efficacités des coupures d'isolation et de significance du paramètre d'impact en fonction de la pseudo-rapidité $ \eta $. Les courbes d'efficacité des coupures d'isolation sont uniformes avec une variation inférieure à $ 0.75\% $. Nous avions déjà évoqué le fait que la résolution du paramètre d'impact varie avec la pseudo-rapidité $ \eta $. En effet, nous observons de grande variations entre la région du tonneau où l'efficacité est de l'ordre de $ 96\% $ et la région des bouchons où l'efficacité va de $ 90\% $ à $ 96\% $. Nous observons également un désaccord entre les données et la simulation Monte-Carlo dans la région $ 1.52<|\eta|<2.01 $. L'origine n'est pas encore comprise.
 
 \begin{figure}[!h]
   \begin{center}
@@ -1145,15 +1147,17 @@ Les figures \label{TandPeff3} montrent respectivement les efficacités \emph{Tag 
   \caption{\label{TandPeff4}Rapport entre les données et la simulation Monte-Carlo des efficacités \emph{Tag \& Probe} des coupures d'isolation et de significance du paramètre d'impact.}
 \end{figure}
 
-Nous avons déjà précisé que les effets de l'empilement \emph{in time} n'est pas négligeables dans les données 2011. Les figures \label{TandPeff5} montrent respectivement les efficacités \emph{Tag \& Probe} des coupures d'isolation et de significance du paramètre d'impact en fonction de du nombre de vertex primaires pour les données (a) et pour la simulation Monte-Carlo (b). La figure \label{TandPeff6} montre le rapport entre les données et la simulation Monte-Carlo des efficacités \emph{Tag \& Probe} des coupures d'isolation et de significance du paramètre d'impact en fonction du nombre de vertex primaires. Les courbes d'efficacité pour les coupures d'isolation sont plates. L'accord entre les données est toujours meilleur que $ 0.5\% $.
+\newpage
+
+Nous avons déjà précisé que les effets de l'empilement \emph{in time} ne sont pas négligeables dans les données 2011. Les figures \label{TandPeff5} montrent respectivement les efficacités des coupures d'isolation et de significance du paramètre d'impact en fonction du nombre de vertex primaires pour les données (a) et pour la simulation Monte-Carlo (b). La figure \label{TandPeff6} montre le rapport entre les données et la simulation Monte-Carlo des efficacités des coupures d'isolation et de significance du paramètre d'impact en fonction du nombre de vertex primaires. Les courbes d'efficacité pour les coupures d'isolation sont plates. L'accord entre les données et la simulation Monte-Carlo est toujours meilleur que $ 0.5\% $.
 
 \begin{figure}[!h]
   \begin{center}
 
   \begin{tabular}{cc}
-    \includegraphics[height=5.25cm, keepaspectratio]{phd_higgs/eff_vxp_data}
+    \includegraphics[height=3.75cm, keepaspectratio]{phd_higgs/eff_vxp_data}
     &
-    \includegraphics[height=5.25cm, keepaspectratio]{phd_higgs/eff_vxp_mc}
+    \includegraphics[height=3.75cm, keepaspectratio]{phd_higgs/eff_vxp_mc}
     \\
     (a) & (b)
   \end{tabular}
@@ -1164,52 +1168,16 @@ Nous avons déjà précisé que les effets de l'empilement \emph{in time} n'est pas 
 
 \begin{figure}[!h]
   \begin{center}
-    \includegraphics[height=5.25cm, keepaspectratio]{phd_higgs/eff_vxp_ratio}
+    \includegraphics[height=3.75cm, keepaspectratio]{phd_higgs/eff_vxp_ratio}
   \end{center}
   \caption{\label{TandPeff6}Rapport entre les données et la simulation Monte-Carlo des efficacités \emph{Tag \& Probe} des coupures d'isolation et de significance du paramètre d'impact.}
 \end{figure}
 
-\subsection{Résultats dans la région $ 7\GeV $ à $ 15\GeV $}
-
-La région située entre $ 7\GeV $ et $ 15\GeV $ est plus difficile à étudier car le bruit de fond devient important (Drell-Yan $ q\bar{q}\to\gamma^*\to$, etc\dots) et la statistique est moins importante, voir figure \label{berk2} (b). Les groupes de performance ont montré (ce que j'ai pu confirmer) que la méthode de soustraction du bruit de fond en utilisant des ajustements ne donnent pas de bons résultats. Néanmoins, afin d'évaluer grossièrement des efficacités à basse impulsion transverse, la coupure sur la fenêtre de masse a été réduite à $ 5\GeV $ dans le but d'améliorer la pureté des électrons. L'utilisation de modèles (\emph{template} en anglais) extraits à partir des simulations Monte-Carlo est envisagée. L'estimation des erreurs systématiques est réalisée comme précédemment.
-
-Les figures \label{berk1} montrent respectivement les efficacités \emph{Tag \& Probe} des coupures d'isolation et de significance du paramètre d'impact en fonction de l'impulsion transverse $ p_T $ pour les données (a) et pour la simulation Monte-Carlo (b). La figure \label{berk2} (a) montre le rapport entre les données et la simulation Monte-Carlo des efficacités \emph{Tag \& Probe} des coupures d'isolation et de significance du paramètre d'impact en fonction de l'impulsion transverse $ p_T $.
-
-\begin{figure}[!h]
-  \begin{center}
-
-  \begin{tabular}{cc}
-    \includegraphics[height=5.25cm, keepaspectratio]{phd_higgs/eff_pt_data_corr}
-    &
-    \includegraphics[height=5.25cm, keepaspectratio]{phd_higgs/eff_pt_mc_corr}
-    \\
-    (a) & (b)
-  \end{tabular}
-
-  \end{center}
-  \caption{\label{berk1}Efficacités \emph{Tag \& Probe} des coupures d'isolation et de significance du paramètre d'impact pour les données (a) et pour la simulation Monte-Carlo (b). Les zones hachurées représentent les erreur systématiques, les traits verticaux représentent les erreurs statistiques.}
-\end{figure}
-
-\vspace{-0.5cm}
-
-\begin{figure}[!h]
-  \begin{center}
-
-  \begin{tabular}{cc}
-    \includegraphics[height=5.25cm, keepaspectratio]{phd_higgs/eff_pt_ratio_corr}
-    &
-    \includegraphics[height=5.25cm, keepaspectratio]{phd_higgs/mass_data_7-15_before}
-    \\
-    (a) & (b)
-  \end{tabular}
-
-  \end{center}
-  \caption{\label{berk2}Rapport entre les données et la simulation Monte-Carlo des efficacités \emph{Tag \& Probe} des coupures d'isolation et de significance du paramètre d'impact. Les zones hachurées représentent les erreur systématiques, les traits verticaux représentent les erreurs statistiques (a) Distribution de masse invariante des candidats $ Z $ avec au moins un électron \emph{tag} pour $ 7\GeV<p_T<10\GeV $ (b).}
-\end{figure}
+\newpage
 
 \section{Isolation des muons}
 
-Une étude similaire à celle présentée dans la section précédente à été réalisée pour les muons \cite{}. Le tableau \ref{muonIso} montre les coupures de sélection employées pour l'analyse.
+Une étude similaire à celle présentée dans la section précédente a été réalisée pour les muons \cite{}. Le tableau \ref{muonIso} montre les coupures de sélection employées pour l'analyse.
 
 \begin{table}[!h]
   \begin{bigcenter}
@@ -1228,12 +1196,12 @@ Une étude similaire à celle présentée dans la section précédente à été réalisée 
   \caption{\label{muonIso}Coupures d'isolation et pour les muons.}
 \end{table}
 
-Pour les correction de l'empilement \emph{in time}, des valeurs intégrées sur une seule classe de pseudo-rapidité ont été établit, si $ n_{pv} $ est le nombre de vertex primaires :
+Pour les corrections de l'empilement \emph{in time}, des valeurs intégrées sur une seule classe de pseudo-rapidité ont été établies, si $ n_{pv} $ est le nombre de vertex primaires :
 \begin{equation}
 	\textrm{etcone}20_{corr}=\textrm{etcone20}-n_{pv}\times(33.5[\MeV])
 \end{equation}
 
-Les figures \ref{} (a), (b), (c) et (d) montrent respectivement les efficacités \emph{Tag \& Probe} des coupures d'isolation ptcone20 et etcone20, de la coupure de significance du paramètre d'impact et de toutes les coupures ensembles pour les données et pour la simulation Monte-Carlo.
+Les figures \ref{efff_muons1} (a), (b), (c) et (d) montrent respectivement les efficacités des coupures d'isolation ptcone20 et etcone20, de la coupure de significance du paramètre d'impact et de toutes les coupures simultanément pour les données et pour la simulation Monte-Carlo.
 
 \begin{figure}[!h]
   \begin{center}
@@ -1256,11 +1224,13 @@ Les figures \ref{} (a), (b), (c) et (d) montrent respectivement les efficacités 
   \caption{\label{efff_muons1}Efficacités \emph{Tag \& Probe} des coupures d'isolation ptcone20 (a) et etcone20 (b), de la coupure de significance du paramètre d'impact (c) et de toutes les coupures ensembles (d) pour les données et pour la simulation Monte-Carlo. Les zones hachurées représentent les erreur systématiques, les traits verticaux représentent les erreurs statistiques.}
 \end{figure}
 
+\newpage
+
 \subsubsection{Distributions de masse invariante}
 
-La figure \ref{mZ_MC1} (resp. \ref{mZ_MC2}) montre les distributions de masse invariante $ m_{12} $ (a) et $ m_{34} $ (b) pour des candidats Higgs de masse $ m_H=150\GeV $ (resp. $ m_H=220\GeV $) après application de toutes les coupures de sélection de réjection du bruit de fond réductible. Dans le premier cas, il y a un boson $ Z $ sur couche de masse et un boson $ Z $ hors couche de massse. Dans le second cas, les deux bosons $ Z $ sont sur couche de masse.
+La figure \ref{mZ_MC1} (resp. \ref{mZ_MC2}) montre les distributions de masse invariante $ m_{12} $ (a) et $ m_{34} $ (b) pour des candidats Higgs de masse $ m_H=150\GeV $ (resp. $ m_H=220\GeV $) après application de toutes les coupures de sélection de réjection du bruit de fond réductible. Dans le premier cas, il y a un boson $ Z $ sur couche de masse et un boson $ Z $ hors couche de masse. Dans le second cas, les deux bosons $ Z $ sont sur couche de masse.
 
-La figure \ref{mH_MC} montre les distributions de masse invariante $ m_H $ pour quatre échantillons de signaux $ m_H=130\GeV $, $ m_H=150\GeV $, $ m_H=220\GeV $ et  $ m_H=480\GeV $ et pour les bruits de fond. Comme attendu, c'est le bruit de fond irréductible $ ZZ $ qui dommine largement. Les significances statistiques $ S/\sqrt{B} $ sont respectivement : $ 1.1 $, $ 1.6 $ et $ 1.8 $.
+La figure \ref{mH_MC} montre les distributions de masse invariante $ m_H $ pour quatre échantillons de signaux $ m_H=130\GeV $, $ m_H=150\GeV $, $ m_H=220\GeV $ et  $ m_H=480\GeV $ et pour les bruits de fond. Comme attendu, c'est le bruit de fond irréductible $ ZZ $ qui domine largement. Les significances statistiques $ S/\sqrt{B} $ sont respectivement : $ 1.1 $, $ 1.6 $ et $ 1.8 $.
 
 \begin{figure}[!h]
   \begin{center}
@@ -1274,11 +1244,9 @@ La figure \ref{mH_MC} montre les distributions de masse invariante $ m_H $ pour 
   \end{tabular}
 
   \end{center}
-  \caption{\label{mZ_MC1}Distributions de masse invariante $ m_{12} $ (a) et $ m_{34} $ (b) pour des candidats Higgs de masse $ m_H=150\GeV $.}
+  \caption{\label{mZ_MC1}Distributions de masse invariante $ m_{12} $ (a) et $ m_{34} $ (b) pour des candidats Higgs de masse $ m_H=150\GeV $. Normalisation pour une luminosité de $ 1.4fb^{-1} $.}
 \end{figure}
 
-\vspace{-0.15cm}
-
 \begin{figure}[!h]
   \begin{center}
 
@@ -1291,19 +1259,30 @@ La figure \ref{mH_MC} montre les distributions de masse invariante $ m_H $ pour 
   \end{tabular}
 
   \end{center}
-  \caption{\label{mZ_MC2}Distributions de masse invariante $ m_{12} $ (a) et $ m_{34} $ (b) pour des candidats Higgs de masse $ m_H=220\GeV $.}
+  \caption{\label{mZ_MC2}Distributions de masse invariante $ m_{12} $ (a) et $ m_{34} $ (b) pour des candidats Higgs de masse $ m_H=220\GeV $. Normalisation pour une luminosité de $ 1.4fb^{-1} $.}
+\end{figure}
+
+Nous allons maintenant étudier les résultats obtenus avec les données données 2011 avec une luminosité intégrée $ \int\mathscr{L}=1.4-1.6fb^{-1} $ (résultats que j'ai obtenu) puis avec une luminosité $ \int\mathscr{L}=1.96-2.28fb^{-1} $ (résultats du groupe).\\
+
+Remarque aux rapporteurs : Les deux prochaines sections seront actualisées (et fusionnées si besoin) à la fin du mois avec toute la statistique disponible.
+
+\begin{figure}[!p]
+  \begin{center}
+    \includegraphics[height=6.25cm, keepaspectratio]{phd_higgs/mH_MC}
+  \end{center}
+  \caption{\label{mH_MC}Distribution de masse invariante $ m_H $ pour quatre échantillons de signaux $ m_H=130\GeV $, $ m_H=150\GeV $, $ m_H=220\GeV $ et  $ m_H=480\GeV $ et pour les bruits de fond (échelle linéaire). Normalisation pour une luminosité de $ 1.4fb^{-1} $.}
 \end{figure}
 
 \begin{figure}[!p]
   \begin{center}
-    \includegraphics[height=5.25cm, keepaspectratio]{phd_higgs/mH_MC}
+    \includegraphics[height=6.25cm, keepaspectratio]{phd_higgs/mH_MC}
   \end{center}
-  \caption{\label{mH_MC}Distribution de masse invariante $ m_H $ pour quatre échantillons de signaux $ m_H=130\GeV $, $ m_H=150\GeV $, $ m_H=220\GeV $ et  $ m_H=480\GeV $ et pour les bruits de fond.}
+  \caption{\label{mH_MC}Distribution de masse invariante $ m_H $ pour quatre échantillons de signaux $ m_H=130\GeV $, $ m_H=150\GeV $, $ m_H=220\GeV $ et  $ m_H=480\GeV $ et pour les bruits de fond (échelle logarithmique). Normalisation pour une luminosité de $ 1.4fb^{-1} $.}
 \end{figure}
 
 \clearpage
 
-\section{Résultats à $\int\mathscr{L}=1.4-1.6fb^{-1} $}
+\section{Résultats à $ \int\mathscr{L}=1.4-1.6fb^{-1} $}
 
 La figure \ref{moi1} montre les distributions de pseudo-rapidité (a) et d'angle azimutal (b) des leptons issus des candidats Higgs. La figure \ref{moi2} (a) montre la distribution d'impulsion transverse des leptons issus des candidats Higgs. Les données et la simulation Monte-Carlo sont en accord.
 
@@ -1337,7 +1316,7 @@ La figure \ref{moi1} montre les distributions de pseudo-rapidité (a) et d'angle 
   \caption{\label{moi2}Distribution d'impulsion transverse des leptons issus des candidats Higgs (a). Carte des masses invariates $ m_{12} $ des paires de primaires en fonction des masses invariantes $ m_{23} $ des paires de secondaires.}
 \end{figure}
 
-La figure \ref{moi2} (b) montre la carte des masses invariates $ m_{12} $ des paires de primaires en fonction des masses invariantes $ m_{23} $ des paires de secondaires. La figure \ref{moi3} montre la distribution des masse invariante des paires de primaires ($ m_{12} $) (a) et des paires secondaires ($ m_{34} $) (b). Les données et la simulation Monte-Carlo sont en accord. Finalement, la figure \ref{moi4} montre la distribution de masse invariante pour les candidats $ H\to ZZ^{(*)}\to4l $ dans les données 2011 pour les données et pour la simulation Monte-Carlo. Il n'existe aucun excès significatif de candidats $ ZZ^{(*)}4l $.
+La figure \ref{moi2} (b) montre la carte des masses invariantes $ m_{12} $ des paires de primaires en fonction des masses invariantes $ m_{23} $ des paires de secondaires. La figure \ref{moi3} montre la distribution de masse invariante des paires de primaires ($ m_{12} $) (a) et des paires secondaires ($ m_{34} $) (b). Les données et la simulation Monte-Carlo sont en accord. Finalement, la figure \ref{moi4} montre la distribution de masse invariante pour les candidats $ H\to ZZ^{(*)}\to4l $ dans les données 2011 pour les données et pour la simulation Monte-Carlo. Il n'existe aucun excès significatif de candidats $ ZZ^{(*)}4l $.
 
 \begin{figure}[!h]
   \begin{center}
@@ -1351,7 +1330,7 @@ La figure \ref{moi2} (b) montre la carte des masses invariates $ m_{12} $ des pa
   \end{tabular}
 
   \end{center}
-  \caption{\label{moi3}Distribution des masse invariante des paires de primaires ($ m_{12} $) (a) et des paires secondaires ($ m_{34} $) (b).}
+  \caption{\label{moi3}Distribution de masse invariante des paires de primaires ($ m_{12} $) (a) et des paires secondaires ($ m_{34} $) (b).}
 \end{figure}
 
 \begin{figure}[!h]
@@ -1377,9 +1356,9 @@ La figure \ref{moi2} (b) montre la carte des masses invariates $ m_{12} $ des pa
 
 Les figures \ref{higgs_event1} et \ref{higgs_event2} montrent respectivement une visualisation d'un candidat $ H\to4\mu $ et d'un candidat $ H\to4e $.
 
-\section{Résultats à $\int\mathscr{L}=1.96-2.28fb^{-1} $}
+\section{Résultats à $ \int\mathscr{L}=1.96-2.28fb^{-1} $}
 
-Dans cette section, nous montrons les résultats obtenus le 19 août 2011 par le groupe $ H\to4l $ du Cern. Le tableau \ref{attendu} montre le nombre de candidats attendus et observés pour les canaux $ H\to4\mu $, $ H\to2e2\mu $ et $ H\to4e $ pour les données et la simulation. Les candidats sont séparés en une région de faible masses, $ m_{4l}<180\GeV $ et une région de haute masses $ m_{4l}>180\GeV $. Les erreurs systématiques \cite{} sont également indiquées (voir section \ref{}). Il n'existe aucun excès significatif de candidats $ ZZ^{(*)}4l $.
+Dans cette section, nous montrons les résultats obtenus le 19 août 2011 par le groupe $ H\to4l $ du Cern. Le tableau \ref{attendu} montre le nombre de candidats attendus et observés pour les canaux $ H\to4\mu $, $ H\to2e2\mu $ et $ H\to4e $ pour les données et la simulation. Les candidats sont séparés en une région de faible masses, $ m_{4l}<180\GeV $ et une région de haute masses $ m_{4l}>180\GeV $. Les erreurs systématiques \cite{} sont également indiquées. Il n'existe aucun excès significatif de candidats $ ZZ^{(*)}\to 4l $.
 
 \begin{table}[!h]
   \begin{bigcenter}
@@ -1408,14 +1387,16 @@ Dans cette section, nous montrons les résultats obtenus le 19 août 2011 par le g
     \end{tabular}
 
   \end{bigcenter}
-  \caption{\label{attendu}Nombre de candidats attendus et observés avec leur erreur systématique pour les bruit de fond, sept masse du boson de Higgs et nombre de candidats observés pour une luminosité intégrée de $ 2fb^{-1} $. Les candidats sont séparés en une région de faible masses, $ m_{4l}<180\GeV $ et une région de haute masses $ m_{4l}>180\GeV $.}
+  \caption{\label{attendu}Nombre de candidats attendus et observés avec leur erreur systématique\cite{} pour les bruit de fond, sept masse du boson de Higgs et nombre de candidats observés pour une luminosité intégrée de $ 2fb^{-1} $. Les candidats sont séparés en une région de faible masses, $ m_{4l}<180\GeV $ et une région de haute masses $ m_{4l}>180\GeV $.}
 \end{table}
 
 La figure \ref{higgs_massdistrib} montre la distribution de masse invariante pour les candidats $ H\to ZZ^{(*)}\to4l $ dans les données 2011 pour les données et pour la simulation Monte-Carlo. $ m_{ZZ^{(*)}}\in[150,350] $ (a) et $ m_{ZZ^{(*)}}\in[100,600] $ (b). Les conclusions sont les mêmes que dans la section précédente.
 
-Avec une luminosité de supérieure à $ 2fm^{-1} $, il est possible d'exclure des régions de masse. La figure \ref{higgs_limites}\cite{} montre les limites d'exclusion à $ 95\% $ de niveau de confiance du boson de Higgs attendues et observées sur la section efficace du boson de Higgs du modèle standard par rapport à la section efficace totale du modèle standard en fonction de la masse du boson de Higgs. Nous pouvons constater que la sensibilité est suffisante pour la région autour d'une masse de $ 220\GeV $.\\
+\newpage
 
-Ces résultats ont été obtenus à partir des coupures de sélection présentées précédemment. Il constitues les résultats officiels au moins d'août 2011. Dans la section qui va suivre, nous allons présenter quelques pistes d'optimisation dans le but d'augmenter la statistique.
+Avec une luminosité supérieure à $ 2fm^{-1} $, il est possible d'exclure des régions de masse. La figure \ref{higgs_limites}\cite{} montre les limites d'exclusion à $ 95\% $ de niveau de confiance du boson de Higgs attendues et observées sur la section efficace du boson de Higgs du modèle standard par rapport à la section efficace totale du modèle standard en fonction de la masse du boson de Higgs. Nous pouvons constater que la sensibilité est suffisante pour la région autour d'une masse de $ 220\GeV $.\\
+
+Ces résultats ont été obtenus à partir des coupures de sélection présentées précédemment. Ils constituent les résultats officiels au moins d'août 2011. Dans la section qui va suivre, nous allons présenter quelques pistes d'optimisation dans le but d'augmenter la statistique.
 
 \begin{figure}[!p]
   \begin{center}
@@ -1451,11 +1432,11 @@ Ces résultats ont été obtenus à partir des coupures de sélection présentées préc
 
 \section{Optimisations}
 
-Dans cette section, nous allons étudier trois types d'optimisations permettant d'augmenter la statistique disponible. Nous discuterons du choix des voies de déclenchement, puis nous traiterons de l'utilisation d'électrons lâches (\emph{loose}) et lâches++ (\emph{loose++}), enfin, nous donnerons quelques pistes sur l'emploi du de l'algorithme Gaussian-Sum Filter (GSF) qui permet de tenir compte des pertes par rayonnement Bremsstrahlung dans le but d'améliorer l'association entre les traces et les amas électromagnétiques.
+Dans cette section, nous allons étudier trois types d'optimisations permettant d'augmenter la statistique disponible. Nous discuterons du choix des voies de déclenchement, puis nous traiterons de l'utilisation d'électrons lâches (\emph{loose}) et lâches++ (\emph{loose++}), enfin, nous donnerons quelques pistes sur l'emploi de l'algorithme Gaussian-Sum Filter (GSF) qui permet de tenir compte des pertes par rayonnement Bremsstrahlung dans le but d'améliorer l'association entre les traces et les amas électromagnétiques.
 
 \subsection{Voies de déclenchement}
 
-Le système de déclenchement permet de sélectionner les événements, au niveau \og en ligne\fg, présentant un intérêt potentiel pour une analyse physique donnée. De nombreux voies de déclenchement sont implémentée mais pour la recherche du boson de Higgs dans le canal $ H\to4l $, ceux sont celles qui sont basées sur le calorimètre électromagnétique et le trajectographe à muons qui sont utilisées. Pour chaque prise de données, un menu de déclenchement est définit, ils contient les spécifications de chaque voies de déclenchement (activation, \emph{prescale} pour les trois niveaux de déclenchements L1, L2 et EF, etc\dots). Lorsque la luminosité augmente, le menu de déclenchement peut être mis à jour afin de réajuster la distribution de la bande passante. C'est pourquoi nous parlerons du menu $ \mathscr{L}=10^{33}cm^{-2}s^{-1} $ ainsi que du menu $ \mathscr{L}=3\times10^{33}cm^{-2}s^{-1} $. Le premier était en vigueur jusqu'au 4 juin 2011, le second correspond au menu courant.
+Le système de déclenchement permet de sélectionner les événements, au niveau \og en ligne\fg, présentant un intérêt potentiel pour une analyse physique donnée. Dans cette section, nous souhaitons déterminer la meilleure voie de déclenchement pour l'étude $ H\to4l $. Pour les études faisant intervenir des leptons dans l'état final, ce sont les voies basées sur le calorimètre électromagnétique et le trajectographe à muons qui sont utilisées. Pour chaque prise de données, un menu de déclenchement est pré-définit, il contient les spécifications de chaque voies de déclenchement (activation, \emph{prescale} (chapitre \ref{}) pour les trois niveaux de déclenchements L1, L2 et EF, etc\dots). Lorsque la luminosité augmente, le menu de déclenchement peut être mis à jour afin de réajuster la distribution de la bande passante. C'est pourquoi nous parlerons du menu $ \mathscr{L}=10^{33}cm^{-2}s^{-1} $ ainsi que du menu $ \mathscr{L}=3\times10^{33}cm^{-2}s^{-1} $. Le premier était en vigueur jusqu'au 4 juin 2011, le second correspond au menu courant.
 
 Le tableau \ref{rates_muenus} montre les principales voies de déclenchement électroniques disponibles, sans \emph{prescale}, ainsi que leur fréquence. Précision que pour le menu $ \mathscr{L}=3\times10^{33}cm^{-2}s^{-1} $, les voies EF\_2e12\_medium et EF\_e10\_medium\_mu6 seront bientôt désactivées.
 
@@ -1483,9 +1464,9 @@ Le tableau \ref{rates_muenus} montre les principales voies de déclenchement élec
   \caption{\label{rates_muenus}Principales voies de déclenchement électroniques disponibles, sans \emph{prescale}, ainsi que leur fréquence.}
 \end{table}
 
-Nous allons présenter quelques pistes d'optimisations du choix de la voie de déclenchement électronique en se basant sur la simulation Monte-Carlo. La figure \ref{trig_eff1} (a) montre l'efficacité de reconstruction et de sélection totale pour le canal $ H\to4e $ pour les principales voies de déclenchement. La figure \ref{trig_eff1} (b) montre la perte d'efficacité de reconstruction et de sélection totale pour le canal $ H\to4e $ relative à EF\_e20\_medium pour les principales voies de déclenchement. Les voies EF\_e22\_medium++ et EF\_2e15\_medium ont été simulées car absentes des simulations Monte-Carlo.
+Nous allons présenter quelques pistes d'optimisations du choix de la voie de déclenchement électronique en se basant sur la simulation Monte-Carlo. La figure \ref{trig_eff1} (a) montre l'efficacité de reconstruction et de sélection totale pour le canal $ H\to4e $ pour les principales voies de déclenchement. La figure \ref{trig_eff1} (b) montre la perte d'efficacité de reconstruction et de sélection totale pour le canal $ H\to4e $ relative à EF\_e20\_medium pour les principales voies de déclenchement. Les voies EF\_e22\_medium++ et EF\_2e15\_medium ne sont pas implémentées dans les simulations Monte-Carlo c'est pourquoi elles ont été simulées.
 
-Nous remarquons que les six premières classes des histogrammes présentent des efficacités à peut près similaires à l'exception de EF\_e22\_medium++ qui entraine une perte d'efficacité d'environ $ 9\% $. L'observation la plus importante est que les voies EF\_2e12\_medium et EF\_2e15\_medium peuvent être utilisées à la place de EF\_e20\_medium sans perte significatif de d'efficacité. Comme les plateaux d'efficacité de ces deux voies sont respectivement atteints à $ \sim15\GeV $ et $ \sim18\GeV $, il est alors envisageable de diminuer les coupure en énergie transverse de $ 20\GeV $ (voir section \ref{}) à $ 15\GeV $ ou $ 18\GeV $ voir moins (discuté ultérieurement). Nous remarquons à titre indicatif que la voies photoniques EF\_2g15\_loose donne une efficacité proche de EF\_e22\_medium, elle pourrait servir de grain à la simulation d'une voie électronique avec critères lâches (discuté ultérieurement).
+Nous remarquons que les six premières classes des histogrammes présentent des efficacités à peu près similaires à l'exception de EF\_e22\_medium++ qui entraine une perte d'efficacité d'environ $ 9\% $. L'observation la plus importante est que les voies EF\_2e12\_medium et EF\_2e15\_medium peuvent être utilisées à la place de EF\_e20\_medium sans perte significatif de d'efficacité. Comme les plateaux d'efficacité de ces deux voies sont respectivement atteints à $ \sim15\GeV $ et $ \sim18\GeV $, il est alors envisageable de diminuer les coupure en énergie transverse de $ 20\GeV $ (voir section \ref{}) à $ 15\GeV $ ou $ 18\GeV $ voir moins (discuté ultérieurement). Nous remarquons à titre indicatif que la voie photonique EF\_2g15\_loose donne une efficacité proche de EF\_e22\_medium, elle pourrait servir de grain à la simulation d'une voie électronique avec critères lâches (discuté ultérieurement).
 
 \begin{figure}[!h]
   \begin{center}
@@ -1521,7 +1502,7 @@ Le figure \ref{trig_eff2} (a) montre l'efficacité de reconstruction et de sélect
 
 \subsubsection{Disjonctions}
 
-Une façon de maximiser la statistique avec les voies de déclenchement disponibles consiste à effectuer des disjonctions (ou logique). Cette façon de procéder présente des avantages et des inconvénients. Il est possible de diminuer le seul du plateau d'efficacité du déclenchement, néanmoins, le calcul des facteurs d'échelle entre les données et la simulation Monte-Carlo est plus délicat. De plus, pour les données, le calcul de la luminosité, qui dépend de la voie de déclenchement, n'est actuellement pas directement possible avec les outils standards. Nous allons néanmoins étudier quelques combinaisons pour les canaux $ H\to4e $ et $ H\to2e2\mu $.
+Une façon de maximiser la statistique avec les voies de déclenchement disponibles consiste à effectuer des disjonctions (ou logique). Cette façon de procéder présente des avantages et des inconvénients. Il est possible de diminuer le seul du plateau d'efficacité du déclenchement, néanmoins, le calcul des facteurs d'échelle entre les données et la simulation Monte-Carlo est plus délicat. De plus, pour les données, le calcul de la luminosité, qui dépend de la voie de déclenchement, n'est pas possible avec les outils standards. Nous allons néanmoins étudier quelques combinaisons pour les canaux $ H\to4e $ et $ H\to2e2\mu $.
 
 \paragraph{Canal $ H\to4e $}Trois combinaisons ont été considérées. Pour le menu $ \mathscr{L}=10^{33}cm^{-2}s^{-1} $, nous pouvons former la disjonction \emph{trigger1} (voir figure \ref{trig_eff3}). Pour le menu $ \mathscr{L}=3\times10^{33}cm^{-2}s^{-1} $, nous pouvons former les disjonctions \emph{trigger2} et \emph{trigger3} (voir figure \ref{trig_eff3}). Les efficacités de reconstruction et de sélection sont montrées sur la figure \ref{trig_eff3}. Les efficacités de \emph{trigger1} et \emph{trigger2} sont ramenées à l'efficacité de EF\_e20\_medium mais ce n'est pas le cas pour \emph{trigger3} car l'électrons reconstruit \emph{off line} qui a déclenché EF\_e22\_medium doit toujours être de qualité \emph{medium++} et non \emph{medium}.
 
@@ -1579,8 +1560,8 @@ Une façon de maximiser la statistique avec les voies de déclenchement disponible
 Dans cette sous-section, nous allons étudier la possibilité d'utiliser des électrons que qualité lâche (\emph{loose}). Il faut savoir que pour les électrons \emph{loose}, il n'y a pas de critère d'association entre les traces et les amas c'est pourquoi nous allons utiliser conjointement la qualité lâches++ (\emph{loose++}) qui introduit une association traces-amas moins forte que la qualité intermédiaire (\emph{medium}) (voir chapitre ?). Au total, deux groupes de trois situations ont été analysées :
 \begin{itemize}
   \item Le déclenchement par la voie EF\_e20\_medium. L'électron reconstruit \emph{off line} qui a déclenché EF\_e20\_medium est de qualité medium, les autres sont de qualité \emph{loose++}.
-  \item Le déclenchement par la voie EF\_2e15\_medium. L'électron reconstruit \emph{off line} qui a déclenché EF\_e20\_medium est de qualité medium, les autres sont de qualité \emph{loose++}.
-  \item Le déclenchement par la voie EF\_2e15\_medium. L'électron reconstruit \emph{off line} qui a déclenché EF\_e20\_medium est de qualité medium, les autres sont de qualité \emph{loose++}. Les électrons qui ont déclenché ont une impulsion transverse $ p_T>15\GeV $.
+  \item Le déclenchement par la voie EF\_2e15\_medium. L'électron reconstruit \emph{off line} qui a déclenché EF\_e15\_medium est de qualité medium, les autres sont de qualité \emph{loose++}.
+  \item Le déclenchement par la voie EF\_2e15\_medium. L'électron reconstruit \emph{off line} qui a déclenché EF\_e15\_medium est de qualité medium, les autres sont de qualité \emph{loose++}. Les électrons qui ont déclenché doivent avoir une impulsion transverse $ p_T>15\GeV $.
 \end{itemize}
 
 \newpage
@@ -1588,9 +1569,134 @@ Dans cette sous-section, nous allons étudier la possibilité d'utiliser des élect
 et :
 \begin{itemize}
   \item Le déclenchement par la voie EF\_e20\_medium. L'électron reconstruit \emph{off line} qui a déclenché EF\_e20\_medium est de qualité medium, les autres sur couche de masse sont de qualité \emph{loose} et les autres hors couche de masse sont de qualité \emph{loose++}.
-  \item Le déclenchement par la voie EF\_2e15\_medium. L'électron reconstruit \emph{off line} qui a déclenché EF\_e20\_medium est de qualité medium, les autres sur couche de masse sont de qualité \emph{loose} et les autres hors couche de masse sont de qualité \emph{loose++}.
-  \item Le déclenchement par la voie EF\_2e15\_medium. L'électron reconstruit \emph{off line} qui a déclenché EF\_e20\_medium est de qualité medium, les autres sur couche de masse sont de qualité \emph{loose} et les autres hors couche de masse sont de qualité \emph{loose++}. Les électrons qui ont déclenché ont une impulsion transverse $ p_T>15\GeV $.\\
+  \item Le déclenchement par la voie EF\_2e15\_medium. L'électron reconstruit \emph{off line} qui a déclenché EF\_e15\_medium est de qualité medium, les autres sur couche de masse sont de qualité \emph{loose} et les autres hors couche de masse sont de qualité \emph{loose++}.
+  \item Le déclenchement par la voie EF\_2e15\_medium. L'électron reconstruit \emph{off line} qui a déclenché EF\_e15\_medium est de qualité medium, les autres sur couche de masse sont de qualité \emph{loose} et les autres hors couche de masse sont de qualité \emph{loose++}. Les électrons qui ont déclenché doivent avoir une impulsion transverse $ p_T>15\GeV $.\\
 \end{itemize}
 
-La signifiance statistique du signal a été calculer afin de contrôler le bruit de fond dans chacune des six situations. Les résultats sont compilés dans le tableau \ref{}.
+La signifiance statistique du signal a été calculée afin de contrôler le bruit de fond dans chacune des six situations. Les résultats sont compilés dans les tableaux \ref{} et \ref{}.
+
+\begin{table}[!h]
+  \begin{bigcenter}
+
+    \begin{tabular}{|c|c|c|c|c|c|c|c|c|}
+      \hline
+      \hline
+        Déclenchement & coupure en $ p_T $ & candidats signal & candidat fond & $ S/\sqrt{B} $\\
+      \hline
+        EF\_e20\_medium & $ 20\GeV $ & $ $ & $ $ & $ $\\
+        EF\_2e15\_medium & $ 20\GeV $ & $ $ & $ $ & $ $\\
+        EF\_2e15\_medium & $ 15\GeV $ & $ $ & $ $ & $ $\\
+      \hline
+    \end{tabular}
+
+  \end{bigcenter}
+  \caption{Blablabal.}
+\end{table}
+
+\begin{table}[!h]
+  \begin{bigcenter}
+
+    \begin{tabular}{|c|c|c|c|c|c|c|c|c|}
+      \hline
+      \hline
+        Déclenchement & coupure en $ p_T $ & candidats signal & candidat fond & $ S/\sqrt{B} $\\
+      \hline
+        EF\_e20\_medium & $ 20\GeV $ & $ $ & $ $ & $ $\\
+        EF\_2e15\_medium & $ 20\GeV $ & $ $ & $ $ & $ $\\
+        EF\_2e15\_medium & $ 15\GeV $ & $ $ & $ $ & $ $\\
+      \hline
+    \end{tabular}
+
+  \end{bigcenter}
+  \caption{Blablabal.}
+\end{table}
+
+\newpage
+
+\section{Résultats combinés Atlas}
+
+\subsection{Résultats par canal}
+
+Plusieurs canaux de désintégration du boson de Higgs ont été étudiés après du détecteur Atlas. La figure \ref{allHiggs1} montre\cite{}\cite{}\cite{}\cite{} la distribution de masse invariante des candidats Higgs pour les canaux : $ H\to\gamma\gamma $ (a), $ H\to ZZ^{(*)}\to l^+l^-l^+l^- $ (b), $ WH\to l\nu b\bar{b} $ (c), $ ZH\to l^+l^- b\bar{b} $ (d), $ H\to\tau\tau\to l\tau_{had}3\nu $ (e) et $ H\to\tau\tau\to l^+l^- $ (f). La figure \ref{allHiggs2} montre\cite{}\cite{}\cite{}\cite{} la distribution de masse invariante transverse des candidats Higgs pour les canaux : $ H\to WW^{(*)}\to l^+\nu l^-\bar{\nu} $ avec zero jet (a) ou un jet (b), la distribution de masse invariante des candidats Higgs pour les canaux : $ H\to ZZ^{(*)}\to l^+l^-q\bar{q} $ (c), $ H\to ZZ^{(*)}\to l^+l^-b\bar{b} $ (d) et enfin la distribution de masse invariante transverse des candidats Higgs pour le canal : $ H\to ZZ^{(*)}\to l^+l^-\nu\bar{\nu} $ (e). Les luminosités respectives utilisées pour chaque analyse sont indiquées sur les distributions.
+
+Le tableau \ref{allHiggs3} récapitule le nombre de candidats attendus et observés pour les bruits de fond, pour les signaux et pour le nombre de candidats observés dans les canaux utilisés dans l'étude de combinaison.
+
+\subsection{Excès à $ \sim20\GeV $ ?}
+
+Pour les canaux $ H\to\gamma\gamma $, $ H\to b\bar{b} $, $ H\to WW $ et dans une moindre mesure $ H\to ZZ^{(*)}\to4l $, \underline{un excès de candidats est observé à faible masse} ($ \sim20\GeV $). Sa signifiance statistique est d'approximativement deux déviations standards au dessus du bruit de fond attendu pour le modèle standard. Une telle fluctuation statistique sur tout le domaine de masse de recherche du boson de Higgs est hautement probable. Il convient de surveiller attentivement cette région de masse. Avec la statistique attendue en fin d'année, soit $ \sim °fb^{-1} $, il n'est pas impossible de conclure à découverte.
+
+\subsection{Limites d'exclusion}
+
+La figure \ref{allHiggs4} montre\cite{} la limites d'exclusion à $ 95\% $ de niveau de confiance du boson de Higgs attendues et observées sur la section efficace du boson de Higgs du modèle standard par rapport à la section efficace totale du modèle standard en fonction de la masse du boson de Higgs. Les régions de masse de $ 146\GeV $ à $ 232\GeV $, de $ 256\GeV $ à $ 282\GeV $ et de $ 296\GeV $ à $ 466\GeV $ sont exclues à $ 95\% $ de niveau de confiance via les canaux $ H\to WW^{(*)}\to l^+\nu l^-\bar{\nu} $, $ H\to ZZ^{(*)}\to l^+l^-l^+l^- $ et $ H\to ZZ^{(*)}\to l^+l^-\nu\bar{\nu} $.
+
+\begin{figure}[!p]
+  \begin{bigcenter}
+
+  \begin{tabular}{cc}
+    \includegraphics[width=0.5\linewidth, keepaspectratio]{phd_higgs/higgsCmb1}
+    &
+    \includegraphics[width=0.5\linewidth, keepaspectratio]{phd_higgs/higgsCmb2}
+    \\
+    (a) & (b)
+    \\
+    \includegraphics[width=0.5\linewidth, keepaspectratio]{phd_higgs/higgsCmb3}
+    &
+    \includegraphics[width=0.5\linewidth, keepaspectratio]{phd_higgs/higgsCmb4}
+    \\
+    (c) & (d)
+    \\
+    \includegraphics[width=0.5\linewidth, keepaspectratio]{phd_higgs/higgsCmb5}
+    &
+    \includegraphics[width=0.5\linewidth, keepaspectratio]{phd_higgs/higgsCmb6}
+    \\
+    (e) & (f)
+  \end{tabular}
+
+  \end{bigcenter}
+  \caption{\label{allHiggs1}Distribution de masse invariante des candidats Higgs pour les canaux : $ H\to\gamma\gamma $ (a), $ H\to ZZ^{(*)}\to l^+l^-l^+l^- $ (b), $ WH\to l\nu b\bar{b} $ (c), $ ZH\to l^+l^- b\bar{b} $ (d), $ H\to\tau\tau\to l\tau_{had}3\nu $ (e) et $ H\to\tau\tau\to l^+l^- $ (f).}
+\end{figure}
+
+\begin{figure}[!p]
+  \begin{bigcenter}
+
+  \begin{tabular}{cc}
+    \includegraphics[width=0.5\linewidth, keepaspectratio]{phd_higgs/higgsCmb7}
+    &
+    \includegraphics[width=0.5\linewidth, keepaspectratio]{phd_higgs/higgsCmb8}
+    \\
+    (a) & (b)
+    \\
+    \includegraphics[width=0.5\linewidth, keepaspectratio]{phd_higgs/higgsCmb9}
+    &
+    \includegraphics[width=0.5\linewidth, keepaspectratio]{phd_higgs/higgsCmb10}
+    \\
+    (c) & (d)
+    \\
+    \multicolumn{2}{c}{\includegraphics[width=0.5\linewidth, keepaspectratio]{phd_higgs/higgsCmb11}}
+    \\
+    \multicolumn{2}{c}{(e)}
+  \end{tabular}
+
+  \end{bigcenter}
+  \caption{\label{allHiggs2}Distribution de masse invariante transverse des candidats Higgs pour les canaux : $ H\to WW^{(*)}\to l^+\nu l^-\bar{\nu} $ avec zero jet (a) ou un jet (b). Distribution de masse invariante des candidats Higgs pour les canaux : $ H\to ZZ^{(*)}\to l^+l^-q\bar{q} $ (c), $ H\to ZZ^{(*)}\to l^+l^-b\bar{b} $ (d). Distribution de masse invariante transverse des candidats Higgs pour le canal : $ H\to ZZ^{(*)}\to l^+l^-\nu\bar{\nu} $ (e).}
+\end{figure}
+
+\begin{figure}[!p]
+  \begin{center}
+    \includegraphics[width=0.92\linewidth]{phd_higgs/higgsatlascmb}
+  \end{center}
+  \caption{\label{allHiggs3}Nombre de candidats attendus et observés pour les bruits de fond, pour les signaux et pour le nombre de candidats observés dans les canaux utilisés dans l'étude de combinaison}
+\end{figure}
+
+\begin{figure}[!p]
+  \begin{center}
+    \includegraphics[width=0.75\linewidth]{phd_higgs/limite}
+  \end{center}
+  \caption{\label{allHiggs4}Limites d'exclusion à $ 95\% $ de niveau de confiance du boson de Higgs attendues et observées sur la section efficace du boson de Higgs du modèle standard par rapport à la section efficace totale du modèle standard en fonction de la masse du boson de Higgs.}
+\end{figure}
+
+\newpage
+
+\section{Conclusion}
+
 
