@@ -1,8 +1,8 @@
 \chapter{Recherche du boson de Higgs dans le canal $ H\to ZZ^{(*)}\to4l $}
 
-Ce chapitre est dédié à la recherche du boson de Higgs dans le canal $ H\to ZZ^{(*)}\to4l $. Les résultats ont été obtenus avec les données 2011 pour une luminosité intégrée de $ \sim2.1fb^{-1} $.
+Ce chapitre est dédié à la recherche du boson de Higgs dans le canal $ H\to ZZ^{(*)}\to4l $. Il s'agit du canal présentant la signature la plus claire sur collisionneur hadronique. Les résultats ont été obtenus avec les données 2011 pour une luminosité intégrée de $ \sim2.1fb^{-1} $.
 
-Je m'implique dans la recherche du boson Higgs depuis la seconde moitié du mois de décembre 2010. Je me suis dabors concentré sur les aspects performances des coupures de réjection des bruits de fond réductibles. A martir du mois de mars 2011, j'ai travaillé à la validation et à l'optimisation des codes d'analyse au travers de ma participation active aux challenges propopsés par le groupe. Paralèlement j'ai travaillé sur le choix des critères de déclenchement ainsi que sur l'optimisation des coupures de sélection pour les canaux électroniques $ H\to ZZ^{(*)}\to4e $ et $ H\to ZZ^{(*)}\to2e2\mu $.
+Je me suis impliqué dans la recherche du boson Higgs depuis la seconde moitié du mois de décembre 2010. Je me suis d'abord concentré sur les aspects performances des coupures de réjection des bruits de fond réductibles. A partir du mois de mars 2011, j'ai travaillé sur la validation et sur l'optimisation des codes d'analyse au travers de ma participation active aux \emph{challenges} proposés par le groupe. Parallèlement j'ai travaillé sur le choix des critères de déclenchement ainsi que sur l'optimisation des coupures de sélection pour les canaux électroniques $ H\to ZZ^{(*)}\to4e $ et $ H\to ZZ^{(*)}\to2e2\mu $.
 
 \section{Échantillons de données et de simulation}
 
@@ -85,7 +85,7 @@ Remarque : une comparaison a été réalisée\cite{} sur les efficacités de reconstr
 
 \subsection{Échantillons de bruit de fond}
 
-Différents générateurs ont été utilisés. Pour le bruit de fond irréductible $ ZZ^{(*)}\to4l $, le générateur \small{PYTHIA} est utilisé pour le diagramme $ q\bar{q}\to ZZ^{(*)} $, voir figure \ref{ZZprod1} et le programme dédié \small{GG2ZZ}\cite{} est utilisé pour les diagrammes boîte $ qq\to ZZ^{(*)} $. La contribution NLO pour le canal $ q\bar{q}\to ZZ^{(*)} $ est obtenu en multipliant la section efficace LO par le K-facteur ($=\sigma^{MCFM}_{NLO}/\sigma^{PYTHIA}_{LO} $) estimé avec le programme \small{MCFM}, voir figure \ref{zzkfactor}. La contribution NNLO des diagrammes boîte est prise en compte en multipliant la section efficace NLO par $ 5.7\% $. Cette correction est également estimée à partir du programme \small{GG2ZZ}.
+Différents générateurs ont été utilisés. Pour le bruit de fond irréductible $ ZZ^{(*)}\to4l $, le générateur \small{PYTHIA} est utilisé pour le diagramme $ q\bar{q}\to ZZ^{(*)} $, voir figure \ref{ZZprod1} et le programme dédié \small{GG2ZZ}\cite{} est utilisé pour les diagrammes boîte $ qq\to ZZ^{(*)} $. La contribution NLO pour le canal $ q\bar{q}\to ZZ^{(*)} $ est obtenu en multipliant la section efficace LO par le K-facteur\cite{} ($=\sigma^{MCFM}_{NLO}/\sigma^{PYTHIA}_{LO} $) estimé avec le programme \small{MCFM}, voir figure \ref{zzkfactor}. La contribution NNLO des diagrammes boîte est prise en compte en multipliant la section efficace NLO par $ 5.7\% $. Cette correction est également estimée à partir du programme \small{GG2ZZ}.
 
 \begin{figure}[!ht]
   \begin{center}
@@ -271,7 +271,7 @@ Plusieurs corrections sont proposées par les groupes de performance muon. Elles 
 
 Cette section décrit la reconstruction du boson de Higgs ainsi que les coupures de sélection. Je ne traiterai ici que des choix utilisées par le groupe $ H\to ZZ^{(*)}\to4l $ jusqu'à début septembre 2011. Quelques possibles optimisations seront montrées ultérieurement.
 
-\subsection{Sélection des événements}
+\subsection{Sélection des événements}\label{higgs_event_selection}
 
 Nous sommençons par effectuer une sélection des événements. La première étape consiste à ne conserver, pour les données, que les événements référencés dans les GRL $ H\to ZZ^{(*)}\to4e $, $ H\to ZZ^{(*)}\to4\mu $ et  $ H\to ZZ^{(*)}\to2e2\mu $. Un drapeau additionnel, nommé \emph{larError}, est disponible pour les données. Il indique une erreur grave au niveau du système calorimétrique électromagnétiques et doit toujours être à zero si tout va bien. Ensuite, il est demandé qu'il y ait au moins un vertex primaire avec trois traces reconstruites. Finalement, le système de déclenchement est consulté. Nous demandons : i) au moins un électron de $ 20\GeV $ de qualité intermédiaire (\emph{medium}) au niveau de l'\emph{event filter} (EF\_e20\_medium) pour le canal $ H\to4e $. ii) Au moins un muon de $ 18\GeV $ reconstruit par l'algorithme \emph{MuGirl}\footnote{Effectue la recherche de segments et de traces dans le spectromètre à muons en partant du détecteur interne comme grain.} au niveau de l'\emph{event filter} (EF\_mu18\_MG) pour le canal $ H\to4\mu $. iii) EF\_e20\_medium \textbf{et} EF\_mu18\_MG (EF\_e20\_medium $ \wedge $ EF\_mu18\_MG) pour le canal $ H\to2e2\mu $. Ces voies de déclenchement sont celles de plus bas $ p_T $ disponibles sans \emph{prescale}. Le tableau \ref{HSG2tbl1} récapitule les coupures de sélection des événements pour l'étude $ H\to4l $.
 
@@ -1367,7 +1367,7 @@ Les figures \ref{higgs_event1} et \ref{higgs_event2} montrent respectivement une
 
 \section{Résultats à $ \int\mathscr{L}=1.96-2.28fb^{-1} $}
 
-Dans cette section, nous montrons les résultats obtenus le 19 août 2011 par le groupe $ H\to4l $ du Cern. Le tableau \ref{attendu} montre le nombre de candidats attendus et observés pour les canaux $ H\to4\mu $, $ H\to2e2\mu $ et $ H\to4e $ pour les données et la simulation. Les candidats sont séparés en une région de faible masses, $ m_{4l}<180\GeV $ et une région de haute masses $ m_{4l}>180\GeV $. Les erreurs systématiques \cite{} sont également indiquées. Il n'existe aucun excès significatif de candidats $ ZZ^{(*)}\to 4l $.
+Dans cette section, nous montrons les résultats obtenus le 19 août 2011 par le groupe $ H\to4l $ du Cern. Le tableau \ref{attendu}\cite{} montre le nombre de candidats attendus et observés pour les canaux $ H\to4\mu $, $ H\to2e2\mu $ et $ H\to4e $ pour les données et la simulation. Les candidats sont séparés en une région de faible masses, $ m_{4l}<180\GeV $ et une région de haute masses $ m_{4l}>180\GeV $. Les erreurs systématiques\cite{} sont également indiquées. Il n'existe aucun excès significatif de candidats $ ZZ^{(*)}\to 4l $.
 
 \begin{table}[!h]
   \begin{bigcenter}
@@ -1399,7 +1399,7 @@ Dans cette section, nous montrons les résultats obtenus le 19 août 2011 par le g
   \caption{\label{attendu}Nombre de candidats attendus et observés avec leur erreur systématique\cite{} pour les bruit de fond, sept masse du boson de Higgs et nombre de candidats observés pour une luminosité intégrée de $ 2fb^{-1} $. Les candidats sont séparés en une région de faible masses, $ m_{4l}<180\GeV $ et une région de haute masses $ m_{4l}>180\GeV $.}
 \end{table}
 
-La figure \ref{higgs_massdistrib} montre la distribution de masse invariante pour les candidats $ H\to ZZ^{(*)}\to4l $ dans les données 2011 pour les données et pour la simulation Monte-Carlo. $ m_{ZZ^{(*)}}\in[150,350] $ (a) et $ m_{ZZ^{(*)}}\in[100,600] $ (b). Les conclusions sont les mêmes que dans la section précédente.
+La figure \ref{higgs_massdistrib}\cite{} montre la distribution de masse invariante pour les candidats $ H\to ZZ^{(*)}\to4l $ dans les données 2011 pour les données et pour la simulation Monte-Carlo. $ m_{ZZ^{(*)}}\in[150,350] $ (a) et $ m_{ZZ^{(*)}}\in[100,600] $ (b). Les conclusions sont les mêmes que dans la section précédente.
 
 \newpage
 
@@ -1475,7 +1475,7 @@ Le tableau \ref{rates_muenus} montre les principales voies de déclenchement élec
 
 Nous allons présenter quelques pistes d'optimisations du choix de la voie de déclenchement électronique en se basant sur la simulation Monte-Carlo. La figure \ref{trig_eff1} (a) montre l'efficacité de reconstruction et de sélection totale pour le canal $ H\to4e $ pour les principales voies de déclenchement. La figure \ref{trig_eff1} (b) montre la perte d'efficacité de reconstruction et de sélection totale pour le canal $ H\to4e $ relative à EF\_e20\_medium pour les principales voies de déclenchement. Les voies EF\_e22\_medium++ et EF\_2e15\_medium ne sont pas implémentées dans les simulations Monte-Carlo c'est pourquoi elles ont été simulées.
 
-Nous remarquons que les six premières classes des histogrammes présentent des efficacités à peu près similaires à l'exception de EF\_e22\_medium++ qui entraine une perte d'efficacité d'environ $ 9\% $. L'observation la plus importante est que les voies EF\_2e12\_medium et EF\_2e15\_medium peuvent être utilisées à la place de EF\_e20\_medium sans perte significatif de d'efficacité. Comme les plateaux d'efficacité de ces deux voies sont respectivement atteints à $ \sim15\GeV $ et $ \sim18\GeV $, il est alors envisageable de diminuer les coupure en énergie transverse de $ 20\GeV $ (voir section \ref{}) à $ 15\GeV $ ou $ 18\GeV $ voir moins (discuté ultérieurement). Nous remarquons à titre indicatif que la voie photonique EF\_2g15\_loose donne une efficacité proche de EF\_e22\_medium, elle pourrait servir de grain à la simulation d'une voie électronique avec critères lâches (discuté ultérieurement).
+Nous remarquons que les six premières classes des histogrammes présentent des efficacités à peu près similaires à l'exception de EF\_e22\_medium++ qui entraine une perte d'efficacité d'environ $ 9\% $. L'observation la plus importante est que les voies EF\_2e12\_medium et EF\_2e15\_medium peuvent être utilisées à la place de EF\_e20\_medium sans perte significatif de d'efficacité. Comme les plateaux d'efficacité de ces deux voies sont respectivement atteints à $ \sim15\GeV $ et $ \sim18\GeV $, il est alors envisageable de diminuer les coupure en énergie transverse de $ 20\GeV $ (voir section \ref{higgs_event_selection}) à $ 15\GeV $ ou $ 18\GeV $ (voir section \ref{higgs_electron_optimization}). Nous remarquons à titre indicatif que la voie photonique EF\_2g15\_loose donne une efficacité proche de EF\_e22\_medium, elle pourrait servir de grain à la simulation d'une voie électronique avec critères lâches (\emph{loose}+trace+Z reconstruit par exemple).
 
 \begin{figure}[!h]
   \begin{center}
@@ -1564,7 +1564,7 @@ Une façon de maximiser la statistique avec les voies de déclenchement disponible
   \caption{\label{trig_eff4}Efficacité de reconstruction et de sélection totale pour le canal $ H\to2e2\mu $ pour les principales voies de déclenchement (a). Perte d'efficacité de reconstruction et de sélection totale pour le canal $ H\to2e2\mu $ relative à EF\_e20\_medium || EF\_mu18\_MG pour les principales (b).}
 \end{figure}
 
-\subsection{Électrons lâches et lâches++}
+\subsection{Électrons lâches et lâches++}\label{higgs_electron_optimization}
 
 Dans cette sous-section, nous allons étudier la possibilité d'utiliser des électrons que qualité lâche (\emph{loose}). Il faut savoir que pour les électrons \emph{loose}, il n'y a pas de critère d'association entre les traces et les amas c'est pourquoi nous allons utiliser conjointement la qualité lâches++ (\emph{loose++}) qui introduit une association traces-amas moins forte que la qualité intermédiaire (\emph{medium}) (voir chapitre ?). Au total, deux groupes de trois situations ont été analysées :
 \begin{itemize}
@@ -1587,29 +1587,29 @@ La significance statistique du signal a été calculée afin de contrôler le bruit 
 \begin{table}[!p]
   \begin{bigcenter}
 
-    \begin{tabular}{|c|c|c|c|}
+    \begin{tabular}{|c|c|c|c|c|}
       \hline
       \hline
-        Déclenchement & coupure en $ p_T $ & candidats signal & $ S/\sqrt{B} $\\
-                      & \small{électrons qui déclenchent} & & \\
+        Déclenchement & coupure en $ p_T $ & candidats (signal) & candidats (signal) & $ S/\sqrt{B} $\\
+                      & \small{électrons qui déclenchent} & & relative gain & \\
       \hline
-        \multicolumn{4}{|c|}{\emph{medium} (on shell) - \emph{medium} (off shell) $ m_H=130\GeV $}\\
+        \multicolumn{5}{|c|}{\emph{medium} (on shell) - \emph{medium} (off shell) $ m_H=130\GeV $}\\
       \hline
-        EF\_e20\_medium & $ 20\GeV $ & $ $ & $ $\\
-        EF\_2e15\_medium & $ 20\GeV $ & $ $ & $ $\\
-        EF\_2e15\_medium & $ 15\GeV $ & $ $ & $ $\\
+        EF\_e20\_medium & $ 20\GeV $ & $ 2.6534 $ & $ 0\% $ & $ 1.326\pm0.005 $\\
+        EF\_2e15\_medium & $ 20\GeV $ & $ 2.6397 $ & $ -5.15\times10^{-1}\% $ & $ 1.325\pm0.005 $\\
+        EF\_2e15\_medium & $ 15\GeV $ & $ 2.7587 $ & $ +3.97\times10^{0}\% $ & $ 1.330\pm0.005 $\\
       \hline
-        \multicolumn{4}{|c|}{\emph{loose++} (on shell) - \emph{loose++} (off shell) $ m_H=130\GeV $}\\
+        \multicolumn{5}{|c|}{\emph{loose++} (on shell) - \emph{loose++} (off shell) $ m_H=130\GeV $}\\
       \hline
-        EF\_e20\_medium & $ 20\GeV $ & $ $ & $ $\\
-        EF\_2e15\_medium & $ 20\GeV $ & $ $ & $ $\\
-        EF\_2e15\_medium & $ 15\GeV $ & $ $ & $ $\\
+        EF\_e20\_medium & $ 20\GeV $ & $ 2.6541 $ & $ +2.65\times10^{-2}\% $ & $ 1.320\pm0.005 $\\
+        EF\_2e15\_medium & $ 20\GeV $ & $ 2.6404 $ & $ -4.88\times10^{-1}\% $ & $ 1.319\pm0.005 $\\
+        EF\_2e15\_medium & $ 15\GeV $ & $ 2.7594 $ & $ +4.00\times10^{0}\% $ & $ 1.324\pm0.005 $\\
       \hline
-        \multicolumn{4}{|c|}{\emph{loose\phantom{++}} (on shell) - \emph{loose++} (off shell) $ m_H=130\GeV $}\\
+        \multicolumn{5}{|c|}{\emph{loose\phantom{++}} (on shell) - \emph{loose++} (off shell) $ m_H=130\GeV $}\\
       \hline
-        EF\_e20\_medium & $ 20\GeV $ & $ $ & $ $\\
-        EF\_2e15\_medium & $ 20\GeV $ & $ $ & $ $\\
-        EF\_2e15\_medium & $ 15\GeV $ & $ $ & $ $\\
+        EF\_e20\_medium & $ 20\GeV $ & $ 2.6587 $ & $ +2.00\times10^{-1}\% $ & $ 1.311\pm0.005 $\\
+        EF\_2e15\_medium & $ 20\GeV $ & $ 2.6380 $ & $ +5.80\times10^{-1}\% $ & $ 1.310\pm0.005 $\\
+        EF\_2e15\_medium & $ 15\GeV $ & $ 2.7556 $ & $ +3.85\times10^{0}\% $ & $ 1.315\pm0.005 $\\
       \hline
     \end{tabular}
 
@@ -1620,29 +1620,29 @@ La significance statistique du signal a été calculée afin de contrôler le bruit 
 \begin{table}[!p]
   \begin{bigcenter}
 
-    \begin{tabular}{|c|c|c|c|}
+    \begin{tabular}{|c|c|c|c|c|}
       \hline
       \hline
-        Déclenchement & coupure en $ p_T $ & candidats signal & $ S/\sqrt{B} $\\
-                      & \small{électrons qui déclenchent} & & \\
+        Déclenchement & coupure en $ p_T $ & candidats (signal) & candidats (signal) & $ S/\sqrt{B} $\\
+                      & \small{électrons qui déclenchent} & & relative gain & \\
       \hline
-        \multicolumn{4}{|c|}{\emph{medium} (on shell) - \emph{medium} (off shell) $ m_H=150\GeV $}\\
+        \multicolumn{5}{|c|}{\emph{medium} (on shell) - \emph{medium} (off shell) $ m_H=150\GeV $}\\
       \hline
-        EF\_e20\_medium & $ 20\GeV $ & $ $ & $ $\\
-        EF\_2e15\_medium & $ 20\GeV $ & $ $ & $ $\\
-        EF\_2e15\_medium & $ 15\GeV $ & $ $ & $ $\\
+        EF\_e20\_medium & $ 20\GeV $ & $ 6.2659 $ & $ 0\% $ & $ 3.149\pm0.005 $\\
+        EF\_2e15\_medium & $ 20\GeV $ & $ 6.2325 $ & $ -5.32\times10^{-1}\% $ & $ 3.142\pm0.005 $\\
+        EF\_2e15\_medium & $ 15\GeV $ & $ 6.3209 $ & $ +8.79\times10^{-1}\% $ & $ 3.174\pm0.005 $\\
       \hline
-        \multicolumn{4}{|c|}{\emph{loose++} (on shell) - \emph{loose++} (off shell) $ m_H=150\GeV $}\\
+        \multicolumn{5}{|c|}{\emph{loose++} (on shell) - \emph{loose++} (off shell) $ m_H=150\GeV $}\\
       \hline
-        EF\_e20\_medium & $ 20\GeV $ & $ $ & $ $\\
-        EF\_2e15\_medium & $ 20\GeV $ & $ $ & $ $\\
-        EF\_2e15\_medium & $ 15\GeV $ & $ $ & $ $\\
+        EF\_e20\_medium & $ 20\GeV $ & $ 6.2674 $ & $ +2.41\times10^{-2}\% $ & $ 3.142\pm0.005 $\\
+        EF\_2e15\_medium & $ 20\GeV $ & $ 6.2340 $ & $ -5.08\times10^{-1}\% $ & $ 3.135\pm0.005 $\\
+        EF\_2e15\_medium & $ 15\GeV $ & $ 6.3224 $ & $ +9.03\times10^{-1}\% $ & $ 3.167\pm0.005 $\\
       \hline
-        \multicolumn{4}{|c|}{\emph{loose\phantom{++}} (on shell) - \emph{loose++} (off shell) $ m_H=150\GeV $}\\
+        \multicolumn{5}{|c|}{\emph{loose\phantom{++}} (on shell) - \emph{loose++} (off shell) $ m_H=150\GeV $}\\
       \hline
-        EF\_e20\_medium & $ 20\GeV $ & $ $ & $ $\\
-        EF\_2e15\_medium & $ 20\GeV $ & $ $ & $ $\\
-        EF\_2e15\_medium & $ 15\GeV $ & $ $ & $ $\\
+        EF\_e20\_medium & $ 20\GeV $ & $ 6.2658 $ & $ +1.27\times10^{-3}\% $ & $ 3.109\pm0.005 $\\
+        EF\_2e15\_medium & $ 20\GeV $ & $ 6.2171 $ & $ -7.78\times10^{-1}\% $ & $ 3.123\pm0.005 $\\
+        EF\_2e15\_medium & $ 15\GeV $ & $ 6.3063 $ & $ +6.46\times10^{-1}\% $ & $ 3.155\pm0.005 $\\
       \hline
     \end{tabular}
 
@@ -1656,13 +1656,13 @@ La significance statistique du signal a été calculée afin de contrôler le bruit 
 
 \paragraph{Résultats par canal}
 
-Plusieurs canaux de désintégration du boson de Higgs ont été étudiés après du détecteur Atlas. La figure \ref{allHiggs1} montre\cite{}\cite{}\cite{}\cite{} la distribution de masse invariante des candidats Higgs pour les canaux : $ H\to\gamma\gamma $ (a), $ H\to ZZ^{(*)}\to l^+l^-l^+l^- $ (b), $ WH\to l\nu b\bar{b} $ (c), $ ZH\to l^+l^- b\bar{b} $ (d), $ H\to\tau\tau\to l\tau_{had}3\nu $ (e) et $ H\to\tau\tau\to l^+l^- $ (f). La figure \ref{allHiggs2} montre\cite{}\cite{}\cite{}\cite{} la distribution de masse invariante transverse des candidats Higgs pour les canaux : $ H\to WW^{(*)}\to l^+\nu l^-\bar{\nu} $ avec zero jet (a) ou un jet (b), la distribution de masse invariante des candidats Higgs pour les canaux : $ H\to ZZ^{(*)}\to l^+l^-q\bar{q} $ (c), $ H\to ZZ^{(*)}\to l^+l^-b\bar{b} $ (d) et enfin la distribution de masse invariante transverse des candidats Higgs pour le canal : $ H\to ZZ^{(*)}\to l^+l^-\nu\bar{\nu} $ (e). Les luminosités respectives utilisées pour chaque analyse sont indiquées sur les distributions.
+Plusieurs canaux de désintégration du boson de Higgs ont été étudiés après du détecteur Atlas. La figure \ref{allHiggs1}\cite{} montre la distribution de masse invariante des candidats Higgs pour les canaux : $ H\to\gamma\gamma $ (a), $ H\to ZZ^{(*)}\to l^+l^-l^+l^- $ (b), $ WH\to l\nu b\bar{b} $ (c), $ ZH\to l^+l^- b\bar{b} $ (d), $ H\to\tau\tau\to l\tau_{had}3\nu $ (e) et $ H\to\tau\tau\to l^+l^- $ (f). La figure \ref{allHiggs2}\cite{} montre la distribution de masse invariante transverse des candidats Higgs pour les canaux : $ H\to WW^{(*)}\to l^+\nu l^-\bar{\nu} $ avec zero jet (a) ou un jet (b), la distribution de masse invariante des candidats Higgs pour les canaux : $ H\to ZZ^{(*)}\to l^+l^-q\bar{q} $ (c), $ H\to ZZ^{(*)}\to l^+l^-b\bar{b} $ (d) et enfin la distribution de masse invariante transverse des candidats Higgs pour le canal : $ H\to ZZ^{(*)}\to l^+l^-\nu\bar{\nu} $ (e). Les luminosités respectives utilisées pour chaque analyse sont indiquées sur les distributions.
 
 Le tableau \ref{allHiggs3} récapitule le nombre de candidats attendus et observés pour les bruits de fond, pour les signaux et pour le nombre de candidats observés dans les canaux utilisés dans l'étude de combinaison.
 
 \paragraph{Excès à $ \sim20\GeV $ ?}
 
-Pour les canaux $ H\to\gamma\gamma $, $ H\to b\bar{b} $, $ H\to WW $ et dans une moindre mesure $ H\to ZZ^{(*)}\to4l $, \underline{un excès de candidats est observé à faible masse} ($ \sim20\GeV $). Sa significance statistique est d'approximativement deux déviations standards au dessus du bruit de fond attendu pour le modèle standard. Une telle fluctuation statistique sur tout le domaine de masse de recherche du boson de Higgs est hautement probable. Il convient de surveiller attentivement cette région de masse. Avec la statistique attendue en fin d'année, soit $ \sim5fb^{-1} $, il n'est pas impossible de conclure à découverte (figure \ref{}).
+Pour les canaux $ H\to\gamma\gamma $, $ H\to b\bar{b} $, $ H\to WW $ et dans une moindre mesure $ H\to ZZ^{(*)}\to4l $, \underline{un excès de candidats est observé à faible masse} à $ \sim20\GeV $. Sa significance statistique est d'approximativement deux déviations standards au dessus du bruit de fond attendu pour le modèle standard. Une telle fluctuation statistique sur tout le domaine de masse de recherche du boson de Higgs est hautement probable. Il convient de surveiller attentivement cette région de masse. Avec la statistique attendue en fin d'année, soit $ \sim5fb^{-1} $, il n'est pas impossible de conclure à découverte (figure \ref{higgs_potentiel}).
 
 \paragraph{Limites d'exclusion}
 
@@ -1735,5 +1735,20 @@ La figure \ref{allHiggs4} montre\cite{} la limites d'exclusion à $ 95\% $ de niv
 \end{figure}
 
 \section{Conclusion}
+
+Dans ce chapitre, nous nous sommes intéressé à la recherche du boson de Higgs dans le canal $ H\to ZZ^{(*)}\to4l $ avec les données 2011 (jusqu'à fin août 2011) soit une statistique supérieure à $ 2fb^{-1} $. Un large éventail des problématiques a été évoquer : le choix du système de déclenchement, la sélection de leptons (électrons et muons), la reconstruction des candidats Higgs, la définition et les performances des coupures de sélection dédiées à la réduction du bruit de fond combinatoire et enfin l'optimisation de l'analyse du point de vue des électrons.
+
+Il a été possible d'obtenir $ 27 $ candidats Higgs (six pour le canal $ 4e $, neuf pour le canal $ 2e2\mu $ et douze pour le canal $ 4\mu $). Aucun excès significatif n'est observé. Il est cependant possible d'exclure la région de masse autour de $ 120\GeV $.
+
+Nous avons finalement montré les résultats combinés obtenus auprès du détecteur Atlas pour les principaux canaux $ H\to\gamma\gamma $, $ H\to ZZ^{(*)}\to l^+l^-l^+l^- $, $ WH\to l\nu b\bar{b} $, $ ZH\to l^+l^- b\bar{b} $, $ H\to\tau\tau\to l\tau_{had}3\nu $ et $ H\to\tau\tau\to l^+l^- $. Un excès de candidats est observé à faible masse ($ \sim120\GeV $) avec une significance statistique d'approximativement deux déviations standards au dessus du bruit de fond attendu pour le modèle standard. Une telle fluctuation statistique sur tout le domaine de masse de recherche du boson de Higgs est hautement probable. Les régions de masse de $ 146\GeV $ à $ 232\GeV $, de $ 256\GeV $ à $ 282\GeV $ et de $ 296\GeV $ à $ 466\GeV $ sont exclues à $ 95\% $ de niveau de confiance.
+
+Pour finir, la figure \ref{higgs_potentiel}\cite{} montre le potentiel de découverte du boson de Higgs pour une luminosité intégrée jusqu'à $ 10\textrm{ fb}^{-1} $, il sera possible d'avoir une évidence à $ 3\sigma $ si la masse du boson de Higgs est telle que $ 125\GeV<M_\textrm{Higgs}<500\GeV $ pour une luminosité intégrée de $ 3\textrm{ fb}^{-1} $ et il sera possible d'avoir une découverte à $ 5\sigma $ si la masse du boson de Higgs est telle que $ 125\GeV<M_\textrm{Higgs}<450\GeV $ pour une luminosité intégrée de $ 10\textrm{ fb}^{-1} $. La découverte est envisageable avant la fin de l'année 2011.
+
+\begin{figure}[!h]
+  \begin{center}
+    \includegraphics[height=7.5cm, keepaspectratio]{phd_higgs/potentiel}
+  \end{center}
+  \caption{\label{higgs_potentiel}Potentiel de découverte du boson de Higgs pour une luminosité intégrée jusqu'à $ 10\textrm{ fb}^{-1} $, pour $ 100<m_H[\GeV]<500 $.}
+\end{figure}
 
 
