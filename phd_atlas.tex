@@ -1,14 +1,272 @@
 \chapter{Le détecteur Atlas}
 
-\section{Présentation générale}
+Dans ce chapitre, nous allons décrire l'expérience l'expérience Atlas sur laquelle seront basés tous les résultats montrés dans cette thèse.
+
+\section{L'Organisation Européenne pour la Recherche Nucléaire}
+
+L'Organisation Européenne pour la Recherche Nucléaire (Cern\footnote{Acronyme provisoire institué en 1952 pour Conseil Européenne pour la Recherche Nucléaire}) est le plus important centre de recherche en physique des particules au monde. Il est situé à cheval sur la frontière franco-suisse à quelques kilomètres de Genève sur les communes de Meyrin (ch), Ferney-Voltaire (fr) et Saint-Genis-Pouilly (fr).
+
+A la fin de la seconde guerre mondiale, la recherche européenne en physique était moribonde alors qu'elle fut à son apogée quelques années auparavant. C'est sous l'impulsion de Louis de Broglie que l'idée d'une organisation européenne dédiée à la recherche en physique nucléaire fut envisagée au cours de la conférence européenne de la culture tenue à Lausanne en 1949. Le Conseil Européen pour la Recherche Nucléaire fut proposée en 1952 avec le soutient de l'Organisation des Nations unies pour l'éducation, la science et la culture (UNESCO). Le 29 septembre 1954, la convention Cern fut ratifiée par 12 états européens fondateurs\footnote{Puis ils seront rejoints par l'Autriche (1959), l'Espagne (1961), le Portugal (1985), la Finlande (1991), la Pologne (1991), la Hongrie (1992), la République tchèque (1993), la Slovaquie (1993) et la Bulgarie (1999).}, l'Allemagne, la Belgique, le Danemark, la France, la Grèce, l'Italie, la Norvège, le Royaume-Uni, la Suède, la Suisse, les Pays-Bas et la République fédérative socialiste de Yougoslavie. Le Cern fut créé et porte officiellement le nom d'\emph{Organisation Européenne pour la Recherche Nucléaire} ou parfois laboratoire européen pour la physique des particules.
+
+A l'heure actuelle, la physique des particules est la principale activité de recherche menée au Cern. Il dispose du plus important complexe d'accélérateurs de particules au monde. Le tableau \ref{cern_events} montre les principaux évènements de l'histoire du Cern.
+
+\begin{table}[!ht]
+  \begin{center}
+
+    \begin{tabular}{|l|l|l|l|}
+      \hline
+      \hline
+        \small Date & Événement & \small Date & Événement\\
+      \hline
+        \small 1957 & \small Le premier accélérateur est mis en service	& \small 1986 & \small Les collisions d'ions lourds débutent\\
+        \small 1959 & \small Le PS est mis en service			& \small 1989 & \small Le géant LEP est mis en service\\
+        \small 1968 & \small Georges Charpak révolutionne la détection	& \small 1990 & \small Tim Berners-Lee invente le Web\\
+        \small 1971 & \small Le premier collisionneur proton-proton	& \small 1993 & \small Asymétrie matière-antimatière (kaons)\\
+        \small 1973 & \small Les courants neutres sont révélés		& \small 1995 & \small Première observation d'antihydrogène\\
+        \small 1976 & \small Le SPS est mis en service			& \small 2002 & \small Capture d'atomes d'antihydrogène\\
+        \small 1983 & \small Les particules W et Z sont découvertes	& \small 2008 & \small Le LHC est mis en service\\
+      \hline
+    \end{tabular}
+
+  \end{center}
+  \caption{\label{cern_events}Tableau récapitulatif des principaux évènements de l'histoire du Cern.}
+\end{table}
+
+\section{Le Grand Collisionneur de Hadrons}
+
+\subsection{Présentation}
+
+Le Large Hadron Collider (LHC), officiellement approuvé en décembre 1994, et inauguré le 21 octobre 2008, est le plus puissant collisionneur proton-proton et ions lourds au monde. Il a été construit dans le tunnel circulaire ($ 26.659km $ de circonférence) de son prédécesseur, le Large Electron Positron collider (LEP). Son objectif est de produire des milliards de collisions de protons par seconde à ultra haute énergie. Pour cela, deux faisceaux, qui se propagent à sens contraires, sont accélérés jusqu'à une énergie nominale de $ 7\TeV $ avant d'entrer en collision avec une énergie $ \sqrt{s}=14\TeV $ dans le centre de masse. Un paramètre important pour un collisionneur est sa luminosité instantanée $ \mathscr{L} $ qui représente le nombre de collisions par unité de surface et par unité de temps. On définit également la luminosité intégrée sur le temps $ L $ :
+\begin{equation}
+  \mathscr{L}=\frac{N^2_pn_bf}{4\pi\sigma_x\sigma_y}F\hspace{0.33cm}\mathrm{,}\hspace{0.33cm}L=\int dt\,\mathscr{L}\hspace{0.33cm}\mathrm{et}\hspace{0.33cm}N=\sigma L
+\end{equation}
+
+\noindent où $ N_p $ est le nombre de protons par paquets, $ n_b $ le nombre de paquets par faisceau, $ \sigma_{x,y} $ les composantes de la dispersion transversale du faisceau, $ f $ la fréquence de révolution des paquets et $ F $ une correction qui dépend de l'angle de croisement des faisceaux. $ N $ est le nombre d'événements produits pour un processus physique de section efficace $ \sigma $. La luminosité instantanée nominale attendue au LHC est de $ \sim10^{34}cm^{-2}s^{-1} $.
+
+Le confinement des protons est réalisé par un champ magnétique de $ 8.7 $ teslas généré par 1792 dipôles supraconducteurs au niobium-titane. La focalisation du faisceau est assurée par 392 quadrupôles supraconducteurs. Les deux tubes sont placés dans un même cryostat refroidi par un bain d'hélium superfluide à $ 1.9K $. Les figures \ref{dipole} (a) et \ref{dipole} (b) montrent le détail des dipôles du LHC. Le tableau \ref{lhc_a} montre les principales caractéristiques du LHC. Enfin, la figure \ref{lhc_b} montre une représentation synthétique du LHC avec ses quatre expériences Atlas, CMS, LHCb et Alice.
+
+Les premiers faisceaux non accélérés à $ \sqrt{s}=900\GeV $ ont été enregistrés durant l'automne 2009, la luminosité intégrée délivrée par le LHC sur cette période est de $ \sim22\textrm{ $\mu$b}^{-1} $. Par la suite, les premiers faisceaux accélérés à $ \sqrt{s}=7\GeV $ ont été enregistrés entre printemps 2010 et automne 2010, la luminosité intégrée délivrée par le LHC sur cette période est de $ \sim48.1\textrm{ pb}^{-1} $.
+
+\begin{figure}[!ht]
+  \begin{bigcenter}
+
+    \begin{tabular}{cc}
+      \includegraphics[height=6.520cm, keepaspectratio]{phd_lhc/dipole2}
+      &
+      \includegraphics[height=7.225cm, keepaspectratio]{phd_lhc/dipole1}
+      \\
+      (a) & (b)
+    \end{tabular}
+
+  \end{bigcenter}
+  \caption{\label{dipole}Détail des dipôles du LHC. Vue en perspective (a) et vue en coupe (b).}
+\end{figure}
+
+\newpage
+
+Remarque : Les collisionneurs à protons sont préférables aux collisionneurs électroniques car au delà de $ 100\GeV $, les électrons perdent une grande partie de leur énergie par rayonnement synchrotron (les annaux d'accélération deviennent gigantesques). De plus, comme les protons sont des particules composites, une large gamme de $ \sqrt{s} $ est couverte. Les collisions entre électrons sont néanmoins plus \og propres\fg\,que les collisions entre protons.
+
+\begin{table}[!ht]
+  \begin{bigcenter}
+
+\small
+
+    \begin{tabular}{|l||c|c|}
+      \hline
+      \hline
+        Paramètres & Val. 2011 & Val. nominales\\
+      \hline
+        Circonférence de l'anneau & \multicolumn{2}{c|}{$ 26.659km $}\\
+      \hline
+        Énergie nominale (centre de masse) & $ \sqrt{s}=7\TeV $ & $ \sqrt{s}=14\TeV $\\
+      \hline
+        Luminosité nominale de l'accélérateur & $ \mathscr{L}\sim10^{33}cm^{-2}s^{-1} $ & $ \mathscr{L}\sim10^{34}cm^{-2}s^{-1} $\\
+      \hline
+        Fréquence de croisement des faisceaux & $ \sim20 $ MHz ($ 50ns $) & $ \sim40 $ MHz ($ 25ns $)\\
+      \hline
+        Nombre de protons par paquets & $ \sim1.7\times10^{11} $ & $ \sim1.2\times10^{11} $\\
+      \hline
+        Nombre de paquets & ??? & $ 2808 $\\
+      \hline
+        Dispersion de la position du point de croisement & $ \left\{ \begin{array}{l} \sigma_{x,y}\sim???\mu m \\ \sigma_{\,\,z\,\,}\sim???cm \end{array} \right. $ & $ \left\{ \begin{array}{l} \sigma_{x,y}\sim15\mu m \\ \sigma_{\,\,z\,\,}\sim5.6cm \end{array} \right. $\\
+      \hline
+        Angle entre les faisceaux aux points de croisement & ??? & $ \sim285\mu rad $\\
+      \hline
+        Durée de vie du faisceau & ??? & $ \sim22 $ heures\\
+      \hline
+        Durée de vie de la luminosité & ??? & $ \sim10 $ heures\\
+      \hline
+        Temps de recharge des faisceaux & \multicolumn{2}{c|}{$ \sim2 $ heures}\\
+      \hline
+        Champ magnétique des dipôles & \multicolumn{2}{c|}{$ \sim8.7 $ teslas (NbTi)}\\
+      \hline
+        Température des dipôles & \multicolumn{2}{c|}{$ \sim1.9K $ (hélium)}\\
+      \hline
+    \end{tabular}
+
+\normalsize
+
+  \end{bigcenter}
+  \caption{\label{lhc_a}Tableau récapitulatif des caractéristiques nominales du LHC.}
+\end{table}
+
+\begin{figure}[!ht]
+  \begin{center}
+    \includegraphics[height=11.25cm, keepaspectratio]{phd_lhc/lhc}
+  \end{center}
+  \caption{\label{lhc_b}Représentation synthétique du LHC avec ses quatre principales expériences Atlas, CMS, LHCb et Alice.}
+\end{figure}
+
+\newpage
+
+\section{Luminosités intégrées}
+
+La figure \ref{lumi2010} montre la luminosité intégrée totale délivrée par le LHC et enregistrée par l'expérience Atlas, en échelle linéaire (a) et logarithmique (b) sur la période de prise de donnée jusqu'au 5 novembre de l'année 2010.
+
+La figure \ref{lumi2011} montre la luminosité intégrée totale délivrée par le LHC et enregistrée par l'expérience Atlas, en échelle linéaire (a) et logarithmique (b) sur la période de prise de donnée jusqu'au 30 juin de l'année 2011.
+
+\begin{figure}[!ht]
+  \begin{center}
+
+    \begin{tabular}{cc}
+      \includegraphics[height=5.75cm, keepaspectratio]{phd_lhc/ilum2010}
+      &
+      \includegraphics[height=5.75cm, keepaspectratio]{phd_lhc/ilumLog2010}
+      \\
+      (a) & (b)
+    \end{tabular}
+
+  \end{center}
+  \caption{\label{lumi2010}Luminosité intégrée totale délivrée par le LHC et enregistrée par l'expérience Atlas, en échelle linéaire (a) et logarithmique (b) jusqu'au 5 novembre de l'année 2010.
+}
+\end{figure}
+
+\begin{figure}[!ht]
+  \begin{center}
+
+    \begin{tabular}{cc}
+      \includegraphics[height=5.75cm, keepaspectratio]{phd_lhc/ilum2011}
+      &
+      \includegraphics[height=5.75cm, keepaspectratio]{phd_lhc/ilumLog2011}
+      \\
+      (a) & (b)
+    \end{tabular}
+
+  \end{center}
+  \caption{\label{lumi2011}Luminosité intégrée totale délivrée par le LHC et enregistrée par l'expérience Atlas, en échelle linéaire (a) et logarithmique (b) jusqu'au 30 juin de l'année 2011.}
+\end{figure}
+
+Remarque : La luminosité intégrée symbolique de $ 1\textrm{ fb}^{-1} $ a été atteinte le 17 juin 2011 à 15h50, heure locale.\\
+
+Remarque : Le rapport entre la luminosité intégrée enregistrée par le détecteur Atlas et la luminosité intégrée délivrée par le LHC est proche de $ 9?\% $.
+
+\newpage
+
+\subsection{Injection}
+
+En mode collisions proton-proton, des noyaux d'hydrogène ionisés sont crées à l'aide d'un appareil appelé duoplasmotron. Les protons ainsi obtenus sont accélérés jusqu'à une énergie de $ \sim100\keV $ et sont envoyés dans un Quadrupôle Radio-Fréquence (QRF) où ils sont rassemblés et focalisés en un faisceau de particules. Celui-ci est accéléré jusqu'à une énergie de $ \sim750\keV$. Le faisceau est alors injecté dans un accélérateur linéaire, le Linac2, pour acquérir une énergie de $ \sim50\MeV $. Vient ensuite l'anneau du Proton Synchrotron Booster (PSB) où le faisceau est amené jusqu'à une énergie de $ \sim1.4\GeV $. Finalement le Proton Synchrotron (PS) puis le Super Proton Synchrotron (SPS) vont respectivement porter le faisceau jusqu'à une énergie de $ \sim25\GeV $ puis $ \sim450\GeV $ avant injection dans le LHC.
+
+En mode collisions d'ions lourds, un accélérateur linéaire, le Linac3, accélère des atomes issus d'une source très pure de plomb. Seuls les atomes ionisés 29 fois sont conservés, ils sont accélérés à une énergie de $ \sim4.2\MeV $ par nucléon avant d'être envoyés sur feuille de carbone afin de retirer $ 25 $ électrons. Ils sont alors rassemblés, focalisés et envoyés dans le Low Energy Ion Ring (LEIR) afin d'acquérir une énergie de $ \sim72\MeV $ par nucléon. Finalement le PS puis le SPS vont respectivement porter le faisceau jusqu'à une énergie de $ \sim5,9\GeV $ par nucléon puis $ \sim177\GeV $ par nucléon avant injection dans le LHC.
+
+Le temps de remplissage du LHC est de sept minutes environ alors que le temps d'arrêt est à peu près de deux heures car il faut réduire le champ magnétique avant injection. La figure $ \ref{cac} $ montre une représentation synthétique du complexe d'accélérateurs au Cern.
+
+\begin{figure}[!ht]
+  \begin{center}
+    \includegraphics[height=12.5cm, keepaspectratio]{phd_lhc/cac}
+  \end{center}
+  \caption{\label{cac}Représentation synthétique du complexe d'accélérateurs au Cern. Le LHC est représenté en bleu foncé avec ses quatre principales expériences Atlas, CMS, Alice et LHCb.}
+\end{figure}
+
+\section{Les expériences auprès du LHC}
+
+Les faisceaux du LHC sont focalisés de telle façon qu'ils se croisent en quatre points géographiques IP1, IP5, IP2 et IP8 où sont respectivement disposées les quatre principales expériences Atlas, CMS, Alice et LHCb, voir figure \ref{lhc_b}. Plus modestement, notons aussi la présence des expériences Totem, près de IP5, et LHCf, près de IP1. Une présentation en images réelles et en images de synthèse de ces détecteurs est montrée dans la figure \ref{experiences_a}. Les dimensions, le poids et la topologie de ces détecteurs sont montrés dans le tableau \ref{experiences_b}.
+
+\paragraph{Atlas (A Toroidal LHC ApparatuS)} est le plus grand détecteur jamais construit sur Terre. Il s'agit d'une expérience généraliste qui a été développée dans le but de collecter un maximum d'information sur les collisions proton-proton. Ses principaux champs d'investigation sont la recherche du boson de Higgs, la recherche de processus physiques au-delà du modèle standard, les mesures de précision sur le quark top et l'étude des collisions d'ions lourds. Le chapitre 3 est dédié à une description détaillée du détecteur Atlas.
+
+\paragraph{CMS (Compact Muon Solenoid)} est la seconde expérience généraliste du LHC. De même que pour le détecteur Atlas, ses principaux champs d'investigation sont la recherche du boson de Higgs, la recherche de processus physiques au-delà du modèle standard, les mesures de précision sur le quark top et l'étude des collisions d'ions lourds.
+
+\paragraph{Alice (A Large Ion Collider Experiment)} est un détecteur dédié à l'étude de la matière dans des conditions extrêmes de densité et de température, proches de celles qui eurent lieu quelques instants après le Big-Bang (plasmas quarks-gluons).
+
+\paragraph{LHCb (LHC-beauty)} est un détecteur dédié à l'étude de la violation CP des mésons $ B $ et à la recherche de désintégrations rares pouvant faire apparaitre de la nouvelle physique dans le secteur de la beauté. La principale particularité de LHCb est son asymétrie suivant la direction du faisceau.
+
+\paragraph{Totem (TOTal Elastic and diffractive cross section Measurement)} est un petit détecteur qui vise à mesurer de la section efficace totale des processus élastiques et diffractifs.
+
+\paragraph{LHCf (Large Hadron Collider forward)} est un petit détecteur conçu pour étudier les particules générées dans la région \og avant\fg\,des collisions.\\\\
+
+\newpage
+
+\noindent\small\\
+
+\begin{figure}[!ht]
+  \begin{center}
+
+  \begin{tabular}{cc}
+
+    \includegraphics[height=4.0cm, keepaspectratio]{phd_lhc/atlas}
+    &
+    \includegraphics[height=4.0cm, keepaspectratio]{phd_lhc/cms}
+    \\
+    (a) & (b)
+    \\
+    \includegraphics[height=4.0cm, keepaspectratio]{phd_lhc/alice}
+    &
+    \includegraphics[height=4.0cm, keepaspectratio]{phd_lhc/lhcb}
+    \\
+    (c) & (d)
+    \\
+    \includegraphics[height=4.0cm, keepaspectratio]{phd_lhc/totem}
+    &
+    \includegraphics[height=4.0cm, keepaspectratio]{phd_lhc/lhcf}
+    \\
+    (e) & (f)
+
+  \end{tabular}
+
+  \end{center}
+  \caption{\label{experiences_a}Détecteur Atlas (a), détecteur CMS (b), détecteur Alice (c), détecteur LHCb (d), détecteur Totem (e) et détecteur LHCf (f).}
+\end{figure}
+
+\noindent\small\\
+
+\begin{table}[!ht]
+  \begin{center}
+
+    \begin{tabular}{|l|c|c|c|c|}
+      \hline
+      \hline
+        Paramètre & Atlas & CMS & Alice & LHCb\\
+      \hline
+        Dimensions ($ m^3 $) & $ 46\times25\times25 $ & $ 21\times15\times15 $ & $ 26\times16\times16 $ & $ 21\times13\times10 $\\
+        Poids (tonnes) & $ 7000 $ & $ 12500 $ & $ 10000 $ & $ 5600 $\\
+        Topologie & t, b & t, b & t, s (petits angles) & d, s (petits angles)\\
+        Situation & Meyrin (Ch) & Cessy (Fr) & St Genis-Pouilly (Fr) & Ferney-Voltaire (Fr)\\
+      \hline
+    \end{tabular}
+
+  \end{center}
+  \caption{\label{experiences_b}Tableau récapitulatif des principales caractéristiques des détecteurs Atlas, CMS, Alice et LHCb. La topologie s'interprète via les abréviations suivante :}
+\end{table}
+\begin{itemize}
+  \item t: configuration en tonneau
+  \item b: configuration en bouchon
+  \item s: spectromètres à muons
+  \item d: détecteurs plannaires
+\end{itemize}
+
+\normalsize
+
+\section{Présentation générale du détecteur Atlas}
 
 Le détecteur Atlas est un détecteur géant et généraliste dédié à la physique des particules. Fruit de plus de quinze années de travail par les membres de la collaboration Atlas\footnote{En 2011, la collaboration Atlas compte plus de 2500 chercheurs répartis dans 167 instituts pour 35 pays.}, il a été officiellement inauguré le 21 octobre 2008. Avec un volume $ \{L=46m\}\times\{l=25m\}\times\{h=25m\} $ et une masse de 7000 tonnes, c'est le plus gros détecteur jamais construit sur Terre. Le détecteur Atlas est situé au Cern, sur la commune de Meyrin, dans une caverne artificielle de volume $ \{L=55m\}\times\{l=35m\}\times\{h=40m\} $ à $ 100m $ sous terre. La communication avec la surface s'effectue par l'intermédiaire de deux puits de diamètres respectifs $ ???m $ et $ ???m $. Ce détecteur est une des quatre principales expériences basées au LHC avec CMS, Alice et LHCb. Il a été conçu pour collecter un maximum d'information sur les collisions proton-proton et ions lourds en reconstruisant avec précision la topologie des évènements. Ses principaux champs d'investigation sont la recherche du boson de Higgs, la recherche de processus physiques au-delà du modèle standard, les mesures de précision sur le quark top et l'étude des collisions d'ions lourds. Le détecteur Atlas est doté d'une structure en \emph{poupée russe} superposant plusieurs couches cylindriques de détecteurs.\\
 
 \noindent\ \ \ De l'intérieur vers l'extérieur, il nous rencontrons :
 \begin{itemize}
   \item un \textbf{trajectographe interne} qui permet de reconstruire les traces des particules chargées issues du vertex d'interaction. Grâce à un fort champ solénoïdal, la connaissance des traces, qui s'enroulent en hélices, permet de reconstruire l'impulsion des particules.
-  \item un \textbf{système de calorimétrique} qui permet de reconstruire l'énergie des particules électromagnétiques (électrons, photons, etc\dots) et hadroniques (bayons, mésons et jets) grâce à son milieu très dense.
+  \item un \textbf{système calorimétrique} qui permet de reconstruire l'énergie des particules électromagnétiques (électrons, photons, etc\dots) et hadroniques (bayons, mésons et jets) grâce à son milieu très dense.
   \item un \textbf{spectromètre à muons} qui est un trajectographe externe permettant de reconstruire traces des muons. Grâce à un fort champ toroïdal, la connaissance des traces, qui sont courbées, permet de reconstruire l'impulsion des muons.
+\end{itemize}
+\noindent\ \ \ Nous rencontrons aussi :
+\begin{itemize}
   \item un \textbf{système de déclenchement} (trigger system) qui permet une sélection les évènements susceptibles de présenter un intérêt au niveau des études de physique.\\
 \end{itemize}
 
@@ -63,7 +321,7 @@ La figure \ref{atlas_1} montre une représentation générale en image de synthèses
 
 \newpage
 
-\section{Le système de coordonnées}
+\subsection{Le système de coordonnées}
 
 Afin de repérer les particules dans le détecteur Atlas, trois systèmes de coordonnées ont été définis. Le premier est un simple système cartésien muni d'une base orthonormale $ (\vec x,\vec y,\vec z) $. Le vecteur $ \vec z $ suit la direction des faisceaux et les vecteurs $ \vec x $ et $ \vec y $ définissent le plan transverse comme sur la figure \ref{atlas_2} (b). Le deuxième est caractérisé par la base $ (\vec u_\theta,\vec u_\phi,\vec z) $ où $ \theta $ est l'angle polaire dans le plan $ (\vec x,\vec y) $ et $ \phi $ est l'angle azimutal autour du vecteur $ \vec z $. Enfin, le troisième système de coordonnées, qui est le système de coordonnées naturel du détecteur Atlas, est caractérisé par la base $ (\vec u_\eta,\vec u_\phi,\vec z) $ où $ \eta $ est la pseudo-rapidité définie par la relation suivante :
 \begin{equation}
@@ -164,7 +422,7 @@ Le détecteur de vertex à pixels possède une configuration en tonneau et en bouch
 
 \newpage
 
-L'installation de ce sous-détecteur dans Atlas a été achévée en juin 2007. Actuellement, environ $ 97.3\% $ des modules sont en fonctionnement et le taux de pixels bruyants est inférieur à $ 10^{-?} $, voir figure \ref{pixel_eff}.
+L'installation de ce sous-détecteur dans Atlas a été achevée en juin 2007. Actuellement, environ $ 97.3\% $ des modules sont en fonctionnement et le taux de pixels bruyants est inférieur à $ 10^{-?} $, voir figure \ref{pixel_eff} (a).
 
 \begin{figure}[!ht]
   \begin{center}
@@ -196,15 +454,17 @@ L'installation de ce sous-détecteur dans Atlas a été achévée en juin 2007. Actue
   \caption{\label{pixel_eff}Fraction de modules activés sur une période de 35 acquisitions de donnée à partir du 23 septembre 2010 (a). Efficacité des points d'impact dans les pixels sur une période de 35 acquisitions de donnée à partir du 23 septembre 2010 (b).}
 \end{figure}
 
+\vspace{-0.1cm}
+
 \subsection{Le trajectographe à micro pistes de silicium}
 
 Situé autour du détecteur à pixels, le SCT est le second trajectographe de précision du détecteur Atlas. Il est doté d'une fine segmentation avec sa technologie basée sur des micro-pistes de silicium d'une dimension de $ 80\mu m\times123.3mm $.
 
-Le SCT possède également une configuration en tonneau et en bouchons, voir figures \ref{ID2} et \ref{ID3}. Le tonneau est formé de quatre couches cylindriques composées de deux plans de détection faisant un angle de $ 40mrad $. Elles sont respectivement situées à $ 30cm $, $ 37cm $, $ 45cm $ et $ 52cm $ du tube à vide. Les bouchons sont quant à eux formés de neuf disques à chaque extrémité du tonneau dans les régions $ 83cm<|z|<280cm $ de part et d'autre du point d'interaction. Le détecteur de vertex à pixels totalise une superficie de $ 61m^2 $ avec 6 millions de canaux de lecture. Sa résolution est de $ \sim22\mu m $ dans le plan $ R-\phi $ et $ 280\mu m $ dans la direction $ z $.
+De même que pour détecteur de vertex à pixels, le SCT possède une configuration en tonneau et en bouchons, voir figures \ref{ID2} et \ref{ID3}. Le tonneau est formé de quatre couches cylindriques composées de deux plans de détection faisant un angle de $ 40mrad $. Elles sont respectivement situées à $ 30cm $, $ 37cm $, $ 45cm $ et $ 52cm $ du tube à vide. Les bouchons sont quant à eux formés de neuf disques à chaque extrémité du tonneau dans les régions $ 83cm<|z|<280cm $ de part et d'autre du point d'interaction. Le détecteur de vertex à pixels totalise une superficie de $ 61m^2 $ avec 6 millions de canaux de lecture. Sa résolution est de $ \sim22\mu m $ dans le plan $ R-\phi $ et $ 280\mu m $ dans la direction $ z $.
 
 \newpage
 
-L'installation de ce sous-détecteur dans Atlas a été achévée en juillet 2007. Actuellement, plus des $ 99.2\% $ des modules sont en fonctionnement et le taux de micro-pistes bruyantes est inférieur à $ 10^{-?} $.
+L'installation de ce sous-détecteur dans Atlas a été achevée en juillet 2007. Actuellement, plus des $ 99.2\% $ des modules sont en fonctionnement et le taux de micro-pistes bruyantes est inférieur à $ 10^{-?} $.
 
 \subsection{Le trajectographe à rayonnement de transition}
 
@@ -334,7 +594,7 @@ La figure \ref{calo1} montre une représentation générale en image de synthèses d
     \item Deux bouchons à argon liquide (LAr EM Endcap)
     \item Deux calorimètres vers l'avant (LAr forward calorimeter)
   \end{itemize}
-  \item Le hadronique électromagnétique constitué de :
+  \item Le calorimètre hadronique constitué de :
   \begin{itemize}
     \item Un tonneau à tuiles (Tile Barrel)
     \item ??? gap(s) à tuiles (Tile Gap)
@@ -377,7 +637,7 @@ Le chapitre 5 sera dédié à la présentation des éléments fondamentaux de la calor
 
 Le calorimètre électromagnétique du détecteur Atlas a été étudié pour mesurer l'énergie des électrons et des photons. Il est particulièrement optimisé  pour la recherche du boson de Higgs dans les canaux $ H\to\gamma\gamma $ et $ H\to ZZ^{(*)}\to4l $ et la recherche de nouveaux bosons de jauge lourds génériquement appelés $ W' $ et $ Z' $.
 
-Sa particularité se situe au niveau de la forme de ses électrodes, elles sont pliées en accordéon afin d'assurer une herméticité parfaite. De plus, elles sont subdivisées en trois compartiments, le premier pour la détection des débuts de gerbes avec sa fine segmentation en $ \eta-\phi $, le second pour la détection des corps de gerbes et le troisième pour la détection des fins de gerbes et pour la détermination des fuites vers le calorimètre hadronique avec sa segmentation plus grossière. Les figures \ref{electrodes} montre un fragment du calorimètre électromagnétique à argon liquide avec les absorbeurs et les électrodes.
+Sa particularité se situe au niveau de la forme de ses électrodes, elles sont pliées en accordéon afin d'assurer une herméticité parfaite en $ \phi $. De plus, elles sont subdivisées en trois compartiments, le premier pour la détection des débuts de gerbes avec sa fine segmentation en $ \eta-\phi $, le second pour la détection des corps de gerbes et le troisième pour la détection des fins de gerbes et pour la détermination des fuites vers le calorimètre hadronique avec sa segmentation plus grossière. Les figures \ref{electrodes} montre un fragment du calorimètre électromagnétique à argon liquide avec les absorbeurs et les électrodes.
 
 \begin{figure}[!p]
   \begin{center}
@@ -392,11 +652,11 @@ Avec une épaisseur de dix longueurs d'interaction, voir figure \ref{materiel-2},
 
 \paragraph{Dans le région $ |\eta|<1.7 $,} le tonneau du calorimètre hadronique est constitué d'une alternance de plaques d'acier de $ 14mm $ et de tuiles scintillantes en polystyrène dopé de 3mm. Celles-ci émettent, par désexcitation moléculaire, un rayonnement ultraviolet qui est collecté par des fibres optiques, décalé vers le rouge puis envoyé vers des photomultiplicateurs situés à l'arrière du sous-détecteur. Ce calorimètre est segmenté longitudinalement en trois compartiments et les fibres optiques sont groupés de façon quasi projective suivant $ \eta $, voir figures \ref{caloh} (a) et \ref{caloh} (b). La granularité des cellules de lecture est de $ \Delta\eta\times\Delta\phi=0.1\times0.1 $ pour les deux premiers compartiments et de $ \Delta\eta\times\Delta\phi=0.2\times0.1 $ pour le troisième compartiment ce qui représente au total 4672 canaux de lecture.
 
-\paragraph{Dans le région $ 1.5<|\eta|<3.2 $,} les deux bouchons utilisent une technique similaire à celle du calorimètre électronique. En effet, les radiations sont trop importantes pour permettre l'utilisation de tuiles scintillantes. Le milieu absorbant est constitué de plaques de cuivre en alternance avec le milieu actif constitué d'argon liquide et d'électrodes. Ces calorimètres sont situés dans les mêmes cryostats que les calorimètres électromagnétiques bouchon. La granularité des cellules de lecture est de $ \Delta\eta\times\Delta\phi=0.1\times0.1 $ pour $ 1.5<|\eta|<2.5 $ et de $ \Delta\eta\times\Delta\phi=0.2\times0.2 $ pour $ 2.5<|\eta|<3.2 $ ce qui représente au total 5632 canaux de lecture.\\
+\paragraph{Dans le région $ 1.5<|\eta|<3.2 $,} les deux bouchons utilisent une technique similaire à celle du calorimètre électromagnétique. En effet, les radiations sont trop importantes pour permettre l'utilisation de tuiles scintillantes. Le milieu absorbant est constitué de plaques de cuivre en alternance avec le milieu actif constitué d'argon liquide et d'électrodes. Ces calorimètres sont situés dans les mêmes cryostats que les calorimètres électromagnétiques bouchon. La granularité des cellules de lecture est de $ \Delta\eta\times\Delta\phi=0.1\times0.1 $ pour $ 1.5<|\eta|<2.5 $ et de $ \Delta\eta\times\Delta\phi=0.2\times0.2 $ pour $ 2.5<|\eta|<3.2 $ ce qui représente au total 5632 canaux de lecture.\\
 
 La résolution en énergie a été validée sous faisceaux de test : $ \sigma/E=50\%/\sqrt{E[\textrm{\footnotesize GeV}]}$ $\oplus$ $3\% $, voir tableau \ref{performances}. Une non linéarité de $ ???\% $ est également observée. Actuellement, une précision de l'ordre de $ 1\% $ est atteinte sur la reconstruction de l'énergie des jets.
 
-Au démarrage du LHC, pour le calorimètre à tuiles, 244 modules sur les 246 présents étaient fonctionnels pour la physique. Pour le calorimètre à argon liquide, $ 15\% $ des cellules étaient affectées pas une alimentation à basse tension défectueuse. C'est problèmes on été résolus lors du premier arrêt technique du LHC.\\\\
+Au démarrage du LHC, pour le calorimètre à tuiles, 244 modules sur les 246 présents étaient fonctionnels pour la physique. Pour le calorimètre à argon liquide, $ 15\% $ des cellules étaient affectées pas une alimentation à basse tension défectueuse. Ces problèmes ont été résolus lors du premier arrêt technique du LHC.\\\\
 
 \begin{figure}[!ht]
   \begin{center}
@@ -421,7 +681,7 @@ Le calorimètre vers l'avant (ou Forward Calorimeter ou FCal) est le dernier syst
 
 La résolution en énergie a été validée sous faisceaux de test : $ \sigma/E=(28.5\pm1)\%/\sqrt{E[\textrm{\footnotesize GeV}]}\oplus(3\pm0.1)\% $ pour les électrons et $ \sigma/E=(94.2\pm1.6)\%/\sqrt{E[\textrm{\footnotesize GeV}]}\oplus(7.5\pm0.4)\% $ pour les pions chargés. La précision de l'énergie transverse manquante est de $ 0.5\sqrt{\sum E_{T_i}} $ où $ E_{T_i} $ est l'énergie transverse des chacune des particules de l'événement considéré.
 
-Au démarrage du LHC, par raison de sécurité, la haute tension a été configurer en dessous de $ 25\% $ de sa valeur nominale ($ 25\%\times???V $).\\\\\\
+Au démarrage du LHC, par raison de sécurité, la haute tension a été configurée en dessous de $ 25\% $ de sa valeur nominale ($ 25\%\times???V $).\\\\\\
 
 \begin{figure}[!ht]
   \begin{center}
@@ -444,13 +704,13 @@ Au démarrage du LHC, par raison de sécurité, la haute tension a été configurer e
 
 \section{Le spectromètre à muons}
 
-Comme les muons sont des particules au minimum d'ionisation, ils sont les seuls à pourvoir traverser le trajectographe et le système calorimétrique du détecteur Atlas (exception faite des neutrinos et des particules supersymétriques). Avec sa couverture en pseudo-rapidité $ |\eta|<2.7 $, le spectromètre à muons permet de mesurer l'impulsion des muons avec précision. Quelque soit la position dans la couverture du spectromètre, le champ magnétique est perpendiculaire à la trajectoire des nuons dont la déflexion est assurée par l'aimant toroïdale tonneau pour $ |\eta|<1.4 $, par une combinaison de l'aimant toroïdale tonneau et des aimants toroïdaux bouchons pour $ 1.4<|\eta|<1.6 $ et par les aimants toroïdaux bouchons pour $ 1.6<|\eta|<2.7 $.
+Comme les muons sont des particules au minimum d'ionisation, ils sont les seuls à pourvoir traverser le trajectographe et le système calorimétrique du détecteur Atlas (exception faite des neutrinos et des particules supersymétriques). Avec sa couverture en pseudo-rapidité $ |\eta|<2.7 $, le spectromètre à muons permet de mesurer l'impulsion des muons avec précision. Quelque soit la position dans la couverture du spectromètre, le champ magnétique est perpendiculaire à la trajectoire des nuons dont la déflexion est assurée par l'aimant toroïdal tonneau pour $ |\eta|<1.4 $, par une combinaison de l'aimant toroïdal tonneau et des aimants toroïdaux bouchons pour $ 1.4<|\eta|<1.6 $ et par les aimants toroïdaux bouchons pour $ 1.6<|\eta|<2.7 $.
 
 Deux techniques sont mises en \oe uvre dans le spectromètre à muons : i) les chambres de précision, constituées de chambres à tubes (MDT pour Monitored Drift Tubes) et de chambres à fils proportionnelles (CSC pour Cathode Strip Chamber). ii) les chambres de déclenchement à réponse rapide ($ <10ns $), constituées de chambres à plaques résistives (RPC pour Resistive Plate Chamber) et de chambres à gap très minces (TGC pour Thin Gap Chamber). Le spectromètre à muons se compose de trois couches concentriques pour la partie tonneau et deux fois deux roues pour les parties bouchon. La figure \ref{spectro} montre une représentation synthétique du spectromètre à muons du détecteur Atlas sous différentes vues.
 
 \subsection{Les chambres de précision}
 
-Au niveau du tonneau, trois couches concentriques de MDT sont respectivement placées à $ R=5m $, $ R=7.5m $ et $ R=10m $. Au niveau des bouchons, deux fois deux roues concentriques, orthogonales au faisceau, sont respectivement placées à $ z=1.4m $, $ z=10.8m $ et $ z=21.5m $. Le détail est représenté sur la figure \ref{spectro} (c). Précisons que la région $ 2<|\eta|<2.7 $ de la couche la plus interne n'est pas équipé de MDT mais de de CSC avec une réponse plus rapide et une sensibilité moindre aux neutrons.\\
+Au niveau du tonneau, trois couches concentriques de MDT sont respectivement placées à $ R=5m $, $ R=7.5m $ et $ R=10m $. Au niveau des bouchons, deux fois deux roues concentriques, orthogonales au faisceau, sont respectivement placées à $ z=1.4m $, $ z=10.8m $ et $ z=21.5m $. Le détail est représenté sur la figure \ref{spectro} (c). Précisons que la région $ 2<|\eta|<2.7 $ de la couche la plus interne n'est pas équipé de MDT mais de CSC avec une réponse plus rapide et une sensibilité moindre aux neutrons.\\
 
 Les MDT sont au nombre de 1000 pour une surface d'environ $ 5500m^2 $. Ils sont constituées de 3 à 8 tubes de dérive d'un diamètre de $ 3cm $ fonctionnant sous une différence de potentiel de $ 3080V $ avec un fil central en tungstène-rhénium. Les tubes sont remplis d'un mélange gazeux formé de $ 93\% $ de $ \mathrm{Ar} $ et $ 7\% $ de $ \mathrm{CO}_2 $. La résolution intrinsèque des MDT est de $ 80\mu m $, et la résolution sur la mesure de $ \eta $ est de $ 35\mu m $.\\
 
@@ -516,13 +776,13 @@ Dans ce but, le détecteur Atlas dispose d'un système de déclenchement sur trois 
 
 \paragraph{Déclenchement de niveau 1 (L1)} Il s'agit d'un déclenchement matériel rapide qui est basé sur l'utilisation de FPGA (Field-programmable Gate Array). Il doit effectuer sa prise de décision en $ \sim25\mu s $. Il s'appuie sur le système calorimétrique ainsi que sur le spectromètre à muons. Pour le calorimètre, il recherche des dépôts d'énergie caractéristiques de particules telles que les électrons, les photons, les taus ou encore les jets. Les informations électromagnétiques sont collectées par des tours de déclenchement formées de quatre cellules en pseudo-rapidité et de quatre cellules en angle azimutal soit encore $ \Delta\eta\times\Delta\phi=0.1\times0.1 $.
 
-Des muons de hautes énergie, de l'énergie manquante ou encore une grande énergie transverse totale servent aussi au déclenchement.
+Des muons de hautes énergie ou encore une grande énergie transverse totale servent aussi au déclenchement.
 
 Après avoir effectué des coupures de sélection, le système de déclenchement de niveau 1 définit de régions d'intérêt (RoI) qui serviront de point de départ au système de déclenchement de niveau 2. Au final, le taux d'événements sélectionnés est inférieur à $ 75kHz $.
 
 \paragraph{Déclenchement de niveau 2 (L2)} Il s'agit d'un déclenchement logiciel rapide qui reconstruit les événements autour des régions d'intérêt définies par le système de déclenchement de niveau 1. Il doit effectué sa prise de décision en $ \sim40ms $ et ne traite que $ \sim2\% $ du total de chaque événement. Au final, le taux d'événements sélectionnés est de $ \sim1kHz $.
 
-\paragraph{Le filtre d'événements (EF)} Il s'agit d'un déclenchement logiciel qui reconstruit reconstruit entièrement l'événement hors-ligne, avec des algorithmes presque identiques à ceux utilisés pour l'analyse. Au final, le taux d'événements sélectionnés est de $ \sim100kHz $. Il propose des voies de déclenchements optimisés pour chaque type d'analyse. Prenons le cas des électrons. Nous verrons au chapitre 6 qu'il existe trois critères de sélection des électrons avec un taux de réjection croissant : lâche (= loose), intermédiaire (= medium) et strict (= tight). Les voies de déclenchements suivantes sont disponible (liste non exhaustive) : EF\_e20\_medium soit au moins un électron medium d'énergie transverse supérieur à $ 20\GeV $ reconstruit dans l'événement (taux EF: $ 53Hz $, taux L1: $ 8.3kHz $ à $ 10^{33}cm^{-2}s^{-1} $), EF\_2e15\_medium soit au moins deux électrons medium d'énergie transverse supérieur à $ 15\GeV $ reconstruit dans l'événement (taux EF: $ 1.2Hz $, taux L1: $ 5.6kHz $ à $ 10^{33}cm^{-2}s^{-1} $), etc\dots.
+\paragraph{Le filtre d'événements (EF)} Il s'agit d'un déclenchement logiciel qui reconstruit reconstruit entièrement l'événement hors-ligne, avec des algorithmes presque identiques à ceux utilisés pour l'analyse. Au final, le taux d'événements sélectionnés est de $ \sim100Hz $. Il propose des voies de déclenchements optimisés pour chaque type d'analyse. Prenons le cas des électrons. Nous verrons au chapitre 6 qu'il existe trois critères de sélection des électrons avec un taux de réjection croissant : lâche (= loose), intermédiaire (= medium) et strict (= tight). Les voies de déclenchements suivantes sont disponible (liste non exhaustive) : EF\_e20\_medium soit au moins un électron medium d'énergie transverse supérieur à $ 20\GeV $ reconstruit dans l'événement (taux EF: $ 53Hz $, taux L1: $ 8.3kHz $ à $ 10^{33}cm^{-2}s^{-1} $), EF\_2e15\_medium soit au moins deux électrons medium d'énergie transverse supérieur à $ 15\GeV $ reconstruit dans l'événement (taux EF: $ 1.2Hz $, taux L1: $ 5.6kHz $ à $ 10^{33}cm^{-2}s^{-1} $), etc\dots.
 
 \begin{figure}[!ht]
   \begin{center}
@@ -694,13 +954,13 @@ Les figures \ref{OTXs} (a) et \ref{OTXs} (b) montrent respectivement la distribu
 
 \section{Programme de physique}
 
-Un large champ d'investigation s'offre au détecteur Atlas. Ses principaux objectifs sont : retrouver et compléter les mesures des paramètres du modèle standard dans le secteur électrofaible, mesurer avec précision la masse du quark top, essayer de découvrir le boson de Higgs et rechercher la signature de processus physiques au delà du modèle standard (supersymétrie, dimensions supplémentaires, bosons de jauge lourd, 4$ ^\textrm{ième} $ génération de particules, etc\dots).
+Un large champ d'investigation s'offre au détecteur Atlas. Ses principaux objectifs sont : retrouver et compléter les mesures des paramètres du modèle standard dans le secteur électrofaible, mesurer avec précision la masse du quark top, rechercher le boson de Higgs et rechercher la signature de processus physiques au delà du modèle standard (supersymétrie, dimensions supplémentaires, bosons de jauge lourd, 4$ ^\textrm{ième} $ génération de particules, etc\dots).
 
 La figure \ref{ms_preidction2} montre les sections efficaces de production pour différentes particules en fonction de l'énergie dans le centre de masse d'un collisionneur proton-proton. En comparant le Tevatron, avec une énergie dans le centre de masse à $ \sqrt{s}=1.96\TeV $ avec le LHC, avec une énergie dans le centre de masse à $ \sqrt{s}=14\TeV $, le taux de production au LHC est respectivement $ \sim10 $ fois plus important pour les bosons $ W $ et $ Z $, $ \sim60 $ fois plus important pour le boson de Higgs, $ \sim100 $ fois plus important pour le quark top et enfin $ \sim700 $ fois plus important pour les bosons $ W' $ et $ Z' $. Le tableau \ref{ms_preidction1} montre la masse, la section efface de production à $ \sqrt{s}=7\TeV $, le nombre d'événements attendus au LHC en 2011 avec $ L=1fb^{-1} $, nombre d'événements au Tevatron avec $ L=10fb^{-1} $ et la luminosité intégrée nécessaire pour observation et/ou exclusion.\\
 
-Les bosons $ W $ et $ Z $ ont été largement étudiés au LEP et au Tevatron. Leur masse $ m_{W^\pm}=80.403(29)\GeV $ (resp. $ m_Z=91.1876(21)\GeV $) est connue avec une précision relative de $ 10^{5}\GeV $ (resp. $ 10^{4}\GeV $). Contrairement à la précision de la masse du $ Z $, la précision de la masse du $ W $ sera améliorée au LHC. Les erreurs LEP et Tevatron sont respectivement de $ 33\MeV $ et $ 31\MeV $. Avec une luminosité intégrée de $ 10fb^{-1} $, l'erreur statistique sera inférieure à $ 2\MeV $ et l'erreur systématique devra être connue à mieux que $ 0.02\% $ contre $ 3\% $ au démarrage.\\
+Les bosons $ W $ et $ Z $ ont été largement étudiés au LEP et au Tevatron. Leur masse $ m_{W^\pm}=80.403(29)\GeV $ (resp. $ m_Z=91.1876(21)\GeV $) est connue avec une précision relative de $ 10^{4}\GeV $ (resp. $ 10^{5}\GeV $). Contrairement à la précision de la masse du $ Z $, la précision de la masse du $ W $ sera améliorée au LHC. Les erreurs LEP et Tevatron sont respectivement de $ 33\MeV $ et $ 31\MeV $. Avec une luminosité intégrée de $ 10fb^{-1} $, l'erreur statistique sera inférieure à $ 2\MeV $ et l'erreur systématique devra être connue à mieux que $ 0.02\% $ contre $ 3\% $ lors du démarrage de l'expérience.\\
 
-Les LHC peut être considérer comme une usine à quarks top. Ils se désintègrent majoritairement via l'interaction faible dans le canal $ t\to Wb $ avant hadronisation. Le détecteur Atlas permet d'étudier la polarisation des bosons $ W $ issus des quarks top ce qui peut révéler la présence de nouvelle physique. A $ \sqrt{s}=14\TeV $, avec une luminosité intégrée de $ 10fb^{-1} $, plusieurs composantes d'hélicité peuvent être étudiées avec une précision de $ 1\% $ à $ 5\% $. A $ \sqrt{s}=7\TeV $, avec une luminosité intégrée de $ 35pb^{-1} $ (données 2010), les composantes d'hélicité ont été étudiées avec une précision de $ 7\% $. Ces résultats, dominés par les erreurs statistiques, sont meilleurs que ceux obtenus auprès du Tevatron avec une luminosité intégrée de $ 5fb^{-1} $. Rappelons également que la masse du boson $ W $ et la masse du quark top interviennent dans les corrections quadratiques à la masse du boson de Higgs.
+Le LHC peut être considérer comme une usine à quarks top. Ils se désintègrent majoritairement via l'interaction faible dans le canal $ t\to Wb $ avant hadronisation. Le détecteur Atlas permet d'étudier la polarisation des bosons $ W $ issus des quarks top ce qui peut révéler la présence de nouvelle physique. A $ \sqrt{s}=14\TeV $, avec une luminosité intégrée de $ 10fb^{-1} $, plusieurs composantes d'hélicité peuvent être étudiées avec une précision de $ 1\% $ à $ 5\% $. A $ \sqrt{s}=7\TeV $, avec une luminosité intégrée de $ 35pb^{-1} $ (données 2010), les composantes d'hélicité ont été étudiées avec une précision de $ 7\% $. Ces résultats, dominés par les erreurs statistiques, sont meilleurs que ceux obtenus auprès du Tevatron avec une luminosité intégrée de $ 5fb^{-1} $. Rappelons également que la masse du boson $ W $ et la masse du quark top interviennent dans les corrections quadratiques à la masse du boson de Higgs.
 
 
 \begin{figure}[!p]
@@ -755,6 +1015,201 @@ Enfin, la recherche d'une éventuelle quatrième génération de particules, la rech
   \caption{\label{MSSM}Limites d'exclusion à $ 95\% $ de niveau de confiance attendues (en bleu) et observée (en rouge) dans le plan $ (m_0,m_\frac{1}{2}) $ pour la recherche de particules supersymétriques avec des jets, de l'énergie transverse manquante, zero lepton ou un lepton pour $ \sqrt{s}=7\TeV $ et $ 165pb^{-1} $ pour le modèle mSUGRA avec les paramètres $ A_0=0 $, $ \tan\beta=3 $ et $ \mu>0 $.}
 \end{figure}
 
-%\section{La chaîne d'analyse}
+\section{Recheche du boson de Higgs}
 
-%!!! dire quelques mots rapides !!!
+Comme le dernier chapitre de cette thèse sera dédié à la recherche du boson de Higgs auprès du détecteur Atlas, nous allons succinctement décrire la production du boson de Higgs sur collisionneur proton-proton.
+
+\subsection{Canaux de production}
+
+La production du boson de Higgs s'effectue via les canaux suivants :
+\begin{itemize}
+ \item Production par fusion de gluons, $ gg\to H $, figure \ref{production_higgs} (a).
+ \item Production par fusion de bosons vecteurs, $ VV\to H $, figure \ref{production_higgs} (b).
+ \item Production par Higgs-strahlung, $ qq\to V^*\to VH $, $ V=W,Z $, figure \ref{production_higgs} (c).
+ \item Production par fusion de quarks top, $qq,gg\to bbH $ ou $ gg\to ttH $, figure \ref{production_higgs} (d).
+\end{itemize}
+
+\indent\\\indent La figure \ref{section_efficace_production_higgs} montre les sections efficaces des canaux de production du boson de Higgs, au LHC, pour une énergie dans le centre de masse $ \sqrt{s}=7\TeV $. C'est la fusion de gluons qui domine très largement sur presque deux ordres de grandeur.
+
+\begin{figure}[!ht]
+  \begin{center}
+
+  \begin{tabular}{ccc}
+
+    \begin{fmffile}{prod_graph1}
+      \fmfframe(0,0)(0,0){
+       \begin{fmfgraph*}(100,90)
+        \fmfbottom{P1,P2}
+        \fmftop{P1',H',P2'}
+        \fmf{fermion,tension=2,label=$P_1$}{P1,g1}
+        \fmf{fermion,tension=2,label=$P_2$}{P2,g2}
+        \fmfblob{.16w}{g1,g2}
+        \fmf{gluon}{g1,v1}
+        \fmf{gluon}{v2,g2}
+        \fmf{fermion,tension=.6,label.side=right,label=$t$}{H,v1,v2,H}
+        \fmfdot{H,v1,v2}
+        \fmf{dashes,lab=$H$}{H,H'}
+        \fmf{fermion}{g1,P1'}
+        \fmf{fermion}{g2,P2'}
+        \fmffreeze
+        \renewcommand{\P}[3]{\fmfi{plain}{vpath(__#1,__#2) shifted (thick*(#3))}}
+        \P{P1}{g1}{2,0}
+        \P{P1}{g1}{-2,1}
+        \P{P2}{g2}{2,1}
+        \P{P2}{g2}{-2,0}
+        \P{g1}{P1'}{-2,-1}
+        \P{g1}{P1'}{2,0}
+        \P{g2}{P2'}{-2,0}
+        \P{g2}{P2'}{2,-1}
+       \end{fmfgraph*}
+      }
+    \end{fmffile}
+
+    & \ &
+
+    \begin{fmffile}{prod_graph2}
+      \fmfframe(1,7)(1,7){
+       \begin{fmfgraph*}(110,50)
+        \fmfleft{i1,i2}
+        \fmfright{o1,o2,o3}
+        \fmf{fermion}{i1,v1,o1}
+        \fmf{dashes}{v3,o2}
+        \fmf{fermion}{i2,v2,o3}
+        \fmf{photon,label=$\phantom{tttt}V$}{v1,v3}
+        \fmf{photon,label=$\phantom{tttt}V$}{v2,v3}
+        \fmflabel{$q$}{i1}
+        \fmflabel{$q$}{i2}
+        \fmflabel{$q$}{o1}
+        \fmflabel{$H$}{o2}
+        \fmflabel{$q$}{o3}
+       \end{fmfgraph*}
+      }
+    \end{fmffile}
+
+    \\
+
+    (a) & \ & (b)
+
+    \\\\
+
+    \begin{fmffile}{prod_graph3}
+      \fmfframe(1,7)(1,7){
+       \begin{fmfgraph*}(110,50)
+         \fmfleft{i1,i2}
+         \fmfright{o1,o2}
+         \fmf{fermion}{i1,v1,i2}
+         \fmf{photon,label=$V^*$}{v1,v2}
+         \fmf{photon}{v2,o1}
+         \fmf{dashes}{v2,o2}
+        \fmflabel{$q$}{i1}
+        \fmflabel{$q$}{i2}
+        \fmflabel{$V$}{o1}
+        \fmflabel{$H$}{o2}
+       \end{fmfgraph*}
+      }
+    \end{fmffile}
+
+    & \ &
+
+    \begin{fmffile}{prod_graph4}
+      \fmfframe(1,7)(1,7){
+       \begin{fmfgraph*}(110,50)
+        \fmfleft{i1,i2}
+        \fmfright{o1,o2,o3}
+        \fmf{gluon}{i1,v1}
+        \fmf{gluon}{i2,v2}
+        \fmf{fermion}{o1,v1}
+        \fmf{fermion,label=$\phantom{tttt}t$,label.side=right}{v1,v3}
+        \fmf{dashes}{v3,o2}
+        \fmf{fermion,label=$\phantom{tttt}t$,label.side=right}{v3,v2}
+        \fmf{fermion}{v2,o3}
+        \fmflabel{$g$}{i1}
+        \fmflabel{$g$}{i2}
+        \fmflabel{$q$}{o1}
+        \fmflabel{$H$}{o2}
+        \fmflabel{$q$}{o3}
+       \end{fmfgraph*}
+      }
+    \end{fmffile}
+
+    \\\\
+
+    (c) & \ & (d)
+
+    \end{tabular}
+
+  \end{center}
+  \caption{\label{production_higgs}(a) Production par fusion de gluons rayonnés par les partons $ P_1 $ et $ P_2 $. (b) Production par fusion de bosons vecteurs. (c) Production par Higgs-strahlung. (d) Production par fusion de quarks top.}
+\end{figure}
+
+\begin{figure}[!ht]
+  \begin{center}
+    \includegraphics[height=5.75cm, keepaspectratio]{phd_lhc/xsection_production_higgs}
+  \end{center}
+  \caption{\label{section_efficace_production_higgs}Section efficace des canaux de production du boson de Higgs, au LHC, pour une énergie dans le centre de masse $ \sqrt{s}=7\TeV $.}
+\end{figure}
+
+\newpage
+
+\subsection{Signatures du boson de Higgs}
+
+La figure \ref{rapport_branchement_higgs} montre les rapports d'embranchement des différents modes de désintégration du boson de Higgs dans la restriction du modèle standard. Il apparait deux régions de masse qu'il convient d'étudier séparément :
+\begin{itemize}
+ \item $ 80\GeV<M_\textrm{Higgs}<130\GeV $ : les désintégrations en paires de quarks $ b $, en paires de $ \tau $ et en paires de quarks $ c $ dominent, néanmoins, à cause de l'environnement hadronique important, seule la désintégration en paires de photons, $ H\to\gamma\gamma $, est exploitable. Il s'agit du canal privilégié pour l'étude du boson de Higgs léger.
+ \item $ 130\GeV<M_\textrm{Higgs}<800\GeV $ : les désintégrations en paires de bosons vecteurs dominent. Le canal $ H\to WW $ a un rapport de branchement plus grand que le canal $ H\to ZZ $, néanmoins, il est techniquement plus aisé de reconstruire une paire de bosons $ Z $ qui se désintègre en quatre leptons isolés (électrons ou muons). Il s'agit du \emph{golden channel} pour l'étude du boson de Higgs.
+\end{itemize}
+
+\begin{figure}[!ht]
+  \begin{center}
+    \includegraphics[height=5.8cm, width=7.8cm]{phd_lhc/bratio_higgs}
+  \end{center}
+  \caption{\label{rapport_branchement_higgs}Rapports d'embranchement des différents modes de désintégration du boson de Higgs dans la restriction du modèle standard.}
+\end{figure}
+
+\subsection{$ H\to\gamma\gamma $}
+
+Ce canal est privilégié dans la région des faibles masses : $ 80\GeV<M_\textrm{Higgs}<130\GeV $. Le couplage $ H\gamma\gamma $ n'est pas autorisée au premier ordre des perturbations est s'effectue préférentiellement par l'intermédiaire d'une boucle de quarks top. L'état final contient deux photons de grande impulsion transverse de l'ordre de $ 50\GeV $. La reconstruction de la masse invariante de la paire $ \gamma\gamma $ permet de remonter à la masse invariante du boson de Higgs. Malgré la faible section efficace du canal, cette signature reste relativement isolée et identifiable, cependant, une bonne identification des photons ainsi qu'une bonne résolution angulaire et en énergie sont indispensables.
+
+Il existe un certain nombre de processus ayant une signature semblable à la désintégration du boson de Higgs en deux photons. Ils contribuent au bruit de fond et peuvent être classés en quatre catégories : i) les processus ayant deux photons dans l'état final ($ tt\gamma\gamma $, diagrammes BOX et BORN, etc\dots). ii) les processus ayant un photon et un jet dans l'état final. i) les processus ayant $ W+2\gamma+4j $ dans l'état final. iv) les processus DRELL-YAN ayant une paire d'électrons dans l'état final.
+
+Les jets ont tendance à créer des pions tels que des $ \pi^0 $ ou encore des $ \eta^0 $ qui se désintègrent en paires de photons. Ces contributions au fond sont souvent réductibles par application de coupures d'isolation et de réjection des pions adéquats. Le chapitre 5 est dédié à la reconstruction et à l'identification des $ \pi^0 $ et des $ \eta^0 $.
+
+\subsection{$ H\to ZZ^{(*)}\to4l $}
+
+Ce canal est privilégié dans la région des grandes masses : $ 130\GeV<M_\textrm{Higgs}<800\GeV $. Le dernier chapitre de ce document est entièrement dédié à la recherche du boson de Higgs dans ce canal. Observons la largeur partielle de désintégration du processus $ \Gamma(H\to VV) $ où $ V $ est un boson vecteur $ W^\pm $ ou $ Z $ :
+\begin{displaymath}
+  \Gamma(H\to VV)=\frac{G_\mu M^3_\textrm{Higg}}{16\sqrt{\pi}}\delta_v\sqrt{1-4x}\left(1-4x+12x^2\right)\hspace{0.38cm}\mathrm{avec}\hspace{0.38cm}x\equiv\frac{M_V}{M_\textrm{Higgs}}\mathrm{,}\hspace{0.17cm}\delta_W=2\hspace{0.17cm}\mathrm{et}\hspace{0.17cm}\delta_Z=1
+\end{displaymath}
+
+Pour $ M_\textrm{Higgs} $ suffisamment grande, la largeur $ \Gamma(H\to WW) $ est deux fois plus grande que la largeur $ \Gamma(H\to ZZ) $. Si nous supposons qu'aucun autre canal n'est accessible d'un point de vue de la cinématique, alors les rapports de branchement sont respectivement $ 2/3 $ pour $ H\to WW $ et $ 1/3 $ pour $ H\to ZZ $. Cependant, de par sa signature très claire avec quatre leptons isolés dans l'état final ($ eeee $, $\mu\mu\mu\mu $ ou $ ee\mu\mu $), le canal de désintégration $ H\to ZZ\to4l $ est le canal le plus \og propre\fg\,pour la recherche du boson de Higgs.
+
+La reconstruction de la masse invariante de la paire $ ZZ $ permet de remonter à la masse invariante du boson de Higgs. Deux situations sont à prendre en compte : i) $ M_\textrm{Higgs}>2M_Z $ : les deux bosons $ Z $ sont sur couche de masse. ii) $ M_\textrm{Higgs}<2M_Z $ : le premier boson $ Z $ est sur couche de masse, le second boson $ Z $ est virtuel.
+
+Le fond irréductible provient de la situation $ ZZ\to4l $, cette contribution est d'autant plus faible que la masse du boson de Higgs est grande. Les deux principales contributions du fond réductible proviennent des canaux $ t\bar t $ et $ Zb\bar b $ (plus généralement $ Z+\textrm{jets} $). Pour le premier cas, $ t\to Wb $, deux leptons proviennent de la désintégration des bosons W et deux leptons proviennent de la désintégration semi-leptonique des quarks b. Pour le second cas, une partie des leptons provient du boson $ Z $ et l'autre des quarks b.\\
+
+Remarque : le canal $ H\to\tau\tau $ est défavorisé par le fond QCD. Même si sa signature est plus difficilement exploitable, il présente néanmoins un intérêt notamment en supersymétrie.
+
+\subsection{$ H\to WW^{(*)}\to2l2\nu $}
+
+Ce canal est intéressant dans la région des grandes masses : $ 130\GeV<M_\textrm{Higgs}<800\GeV $. Une première difficulté dans l'exploitation de ce processus vient de la présence de neutrinos dans l'état final, c'est-à-dire d'énergie transverse manquante. Il convient également de noter que la contribution du bruit de fond est plus importante que pour le canal $ H\to ZZ $. Les canaux suivants contribuent : $ qq\to WW\to2l2\nu $, $ qq\to\gamma^* $, $ Z\to2\mu $, $ gg\to tt\to2l2\nu $, etc\dots\, Les aspects liés à l'identification, à l'isolation, à la reconstruction des jets ainsi qu'à la reconstruction de l'énergie manquante doivent être considérés avec beaucoup de soins.
+
+\subsection{Potentiel de découverte}
+
+Nous nous intéressons au potentiel de découverte du boson de Higgs par l'expérience Atlas (cf. chapitres 3 et 4) pour une énergie dans le centre de masse $ \sqrt{s}=7\TeV $ et pour les canaux : $ H\to\gamma\gamma $, $ H\to ZZ^{(*)} $, $ H\to WW^{(*)} $, $ H\to\tau^+\tau^- $, $ H\to b\bar b $, $ H\to l^+l^-\nu\bar\nu $ et $ H\to l^+l^-b\bar b $.
+
+La figure \ref{potentiel_decouverte_higgs_a} (a) montre le potentiel de découverte du boson de Higgs pour une luminosité intégrée de $ 1\textrm{ fb}^{-1} $ (juin 2010). Il est possible d'exclure des régions dans la gamme de masse $ 130\GeV<M_{Higgs}<460\GeV $ à $ 95\% $ de niveau de confiance. La figure \ref{potentiel_decouverte_higgs_a} (b) montre le potentiel de découverte du boson de Higgs pour une luminosité intégrée jusqu'à $ 10\textrm{ fb}^{-1} $. Pour une luminosité intégrée de $ 3\textrm{ fb}^{-1} $, il sera possible d'avoir une indication à $ 3\sigma $ si la masse du boson de Higgs est telle que $ 125\GeV<M_\textrm{Higgs}<500\GeV $. Pour une luminosité intégrée de $ 10\textrm{ fb}^{-1} $, il sera possible d'avoir une découverte à $ 5\sigma $ si la masse du boson de Higgs est telle que $ 125\GeV<M_\textrm{Higgs}<450\GeV $.
+
+\begin{figure}[!p]
+  \begin{center}
+    \includegraphics[height=7.5cm, keepaspectratio]{phd_lhc/potentiel_a}
+  \end{center}
+  \caption{\label{potentiel_decouverte_higgs_a}Potentiel de découverte du boson de Higgs pour une luminosité intégrée de $ 1\textrm{ fb}^{-1} $, pour $ 100<M_{miggs}[\GeV]<500 $.}
+\end{figure}
+
+\begin{figure}[!p]
+  \begin{center}
+    \includegraphics[height=7.5cm, keepaspectratio]{phd_lhc/potentiel_b}
+  \end{center}
+  \caption{\label{potentiel_decouverte_higgs_a}Potentiel de découverte du boson de Higgs pour une luminosité intégrée jusqu'à $ 10\textrm{ fb}^{-1} $, pour $ 100<m_{Higgs}[\GeV]<500 $.}
+\end{figure}
+

@@ -61,7 +61,7 @@ Troisièmement, de même que pour la reconstruction des photons de basse énergie, 
 
 Finalement des coupures sur les fractions d'énergie dans le près-échantillonneur et dans les trois compartiments sont appliquées afin de tester, de façon lâche, la présence d'une gerbe électromagnétique : $ f_{ps}=\frac{E_{ps}}{E_{cl}}<0.9 $, $ f_1=\frac{E_1}{E_{cl}}<0.8 $, $ f_2=\frac{E2}{E_{cl}}<0.98 $ et $ f_3=\frac{E3}{E_{cl}}<0.8 $, où $ f_{ps} $, $ f_1 $, $ f_2 $ et $ f_3 $ sont respectivement les fractions d'énergie déposées dans le pré-échantillonneur, dans le premier compartiment, dans le deuxième compartiment et dans le troisième compartiment.
 
-\subsection{Comparaison \emph{softe} et \emph{egamma}}
+\subsection{Comparaison des deux algorithmes}
 
 Des études menées sur de la simulation Monte-carlo ont montré que pour des électrons d'énergie transverse inférieure à $ 5\GeV $, l'efficacité de reconstruction de \emph{softe} est supérieure de $ 10\% $ à l'efficacité de reconstruction de \emph{egamma}. Au-delà d'une énergie transverse de $ 5\GeV $, la différence devient négligeable.
 
@@ -69,7 +69,7 @@ Comme la couverture en pseudo-rapidité est meilleure pour \emph{egamma}, $ |\eta
 
 \section{Séparation électrons/photons}
 
-Trivialement, la distinction entre un électron et un photon est simple. Un électron est associé à une trace du trajectographe interne alors qu'un photon n'est pas associé à une trace du trajectographe interne. Cependant, certains cas sont plus ambigus. Une trace peut être associée à l'amas calorimétrique d'un photon de façon fortuite et les photons peuvent être convertis en paires d'électrons. Nous allons décrire la procedure qui permet la séparation entre électrons et photons.
+Trivialement, la distinction entre un électron et un photon est simple. Un électron est associé à une trace du trajectographe interne alors qu'un photon n'est pas associé à une trace du trajectographe interne. Cependant, certains cas sont plus ambigus. Une trace peut être associée à l'amas calorimétrique d'un photon de façon fortuite et les photons peuvent être convertis en paires d'électrons. Nous allons décrire la procédure qui permet la séparation entre électrons et photons.
 
 \pagebreak
 \newpage
@@ -90,7 +90,7 @@ Pour les traces n'ayant que des impacts dans le TRT, seule la comparaison entre 
 
 Les candidats conversions sont reconstruits à partir de la collection des traces du trajectographe interne. L'algorithme a déjà été détaillé au chapitre précédent. Les principales coupures appliquées concernent la quantité $ D-R_1-R_2 $, la plus courte distance d'approche et la quantité de l'ajustement au niveau des vertex de conversion.
 
-\subsection{Procedure de décision}
+\subsection{Procédure de décision}
 
 \paragraph{Électrons} Dans le conteneur \emph{électrons}, sont placés les candidats électrons formés d'un amas calorimétrique associé à une trace. Il a été décidé de maximiser l'efficacité de reconstruction des électrons, lorsqu'un cas est ambigu, le conteneur \emph{électrons} est prioritaire.
 
@@ -172,11 +172,9 @@ La résolution angulaire des photons non convertis est directement celle du calor
 
 Les efficacités sont très bonnes, pour des électrons de plus de $ 20\GeV $, elle est supérieure à $ \sim97\% $ et pour les photons, elle est supérieure à $ \sim99.8\% $.
 
-\section{Critères d'identification des électrons}
+\section{Identification des électrons}
 
 Une fois la reconstruction des candidats électrons effectuée, il faut réaliser une sélection, en effet, la fraction des vrais électrons est de l'ordre du dix millième pour les collisions à $ \sqrt{s}=7\TeV $. Ces critères sont basés sur : i) la forme des gerbes électromagnétiques et la fuite d'énergie dans le calorimètre hadronique ii) la qualité des traces et l'identification des particules avec le TRT (réjection des pions chargés). iii) la qualité de l'association traces-amas.
-
-\section{Variables d'identification}
 
 \subsection{Formes des gerbes électromagnétiques}
 
@@ -224,7 +222,7 @@ Ajoutons encore l'énergie en dehors du c\oe ur de la gerbe :
   F_{side}=\frac{\sum^{+3}_{i=-3}E_i-\sum^{+1}_{i=-1}E_i}{\sum^{+1}_{i=-1}E_i}
 \end{equation}
 
-\subsection{Fuite hadronique}
+\subsection{Fuites hadroniques}
 
 Comme expliqué dans le chapitre 3, le calorimètre électromagnétique possède une longueur total de $ 24X_0 $ (24 longueurs de radiation) pour les gerbes électromagnétiques mais seulement une longueur de $ 2X_0 $ (2 longueurs de radiation) pour les gerbes hadroniques. La fuite en énergie dans le calorimètre hadronique des gerbes électromagnétiques doit être inférieure à $ 1\% $. On définit alors les variables :
 \begin{equation}
@@ -241,7 +239,9 @@ Les électrons produits de façon prompte, près du vertex primaire, doivent laisse
 
 Des coupures sur les distances entre la trace et l'amas associé peuvent être employées et une coupure sur le rapport entre l'énergie de l'amas et l'impulsion de la trace $ 0.7<E_{cl}/p_{trk}\lesssim4 $ peut également être utilisée.
 
-\section{Jeu de coupures standards isEM}
+\section{Critères d'identification des électrons}
+
+\subsection{Jeu de coupures standards isEM}
 
 Afin de mener des études de physique dans un cadre cohérent, il a été définit trois jeux standards de coupures de sélection nommées \emph{loose} (\emph{lâche}), \emph{medium} (\emph{intermédiaire}) et \emph{tight} (\emph{stricte}) et tels que \emph{tight} implique \emph{medium} implique \emph{loose}. Elles sont basées sur des coupures, appliquées sur les variables présentées précédemment, optimisées en régions d'énergie transverse $ E_T $ et de pseudo-rapidité $ \eta $. Le tableau \ref{isem} présente en détails le contenu de \emph{loose}, \emph{medium} et \emph{tight} pour les données 2011 à $ \sqrt{s}=7\TeV $. A chacun des trois jeux de coupures de sélection correspond une efficacité de sélection $ \varepsilon $ et un facteur de réjection des jets $ R_{jet} $. Les figures \ref{isEM1} (a) et (b) montrent respectivement les efficacité de sélection des électrons \emph{loose}, \emph{medium} et \emph{tight} en fonction de l'énergie transverse $ E_T $ et en fonction de la pseudo-rapidité $ \eta $. Elles sont respectivement de $ 94.32\% $, $ 90.00\% $ et $ 71.59\% $ pour les électrons \emph{loose}, \emph{medium} et \emph{tight} avec une énergie de $ 20\GeV $ issus de boson $ Z $. Le tableau \ref{isEM2} montre les efficacités intégrées ainsi que les facteur de réjections de jets pour les trois jeux de coupures de sélection.\\
 
@@ -284,7 +284,7 @@ Remarque : Certaines études requièrent un critère d'isolation supplémentaire. Il
   \end{center}
 \end{table}
 
-\section{Jeu de coupures standards isEM++}
+\subsection{Jeu de coupures standards isEM++}
 
 Le pic de luminosité instantanée atteint avant l'arrêt technique du printemps 2011 fut de $ 8.8\times10^{32}cm^{-2}s^{-1} $. Jusqu'à la luminosité instantanées de $ 10^{33}cm^{-2}s^{-1} $, la voie de déclenchement utilisée pour les études contenant au moins un électron est EF\_e20\_medium, c'est-à-dire un électron de qualité \emph{medium} (\emph{intermédiaire}) avec une énergie transverse $ E_T>20\GeV $. Avec un taux de déclenchement de $ \sim53Hz $, cette voie de déclenchement consomme trop de bande passante. Plutôt qu'augmenter la valeur de la coupure en énergie transverse, il a été choisit de d'augmenter le taux de réjection en introduisant le nouveau jeu de coupures standards, les coupures isEM++.
 
