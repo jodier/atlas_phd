@@ -158,7 +158,7 @@ La figure \ref{lumi2011} montre la luminosité intégrée totale délivrée par le LH
 
 Remarque : La luminosité intégrée symbolique de $ 1\textrm{ fb}^{-1} $ a été atteinte le 17 juin 2011 à 15h50, heure locale.\\
 
-Remarque : Le rapport entre la luminosité intégrée enregistrée par le détecteur Atlas et la luminosité intégrée délivrée par le LHC est proche de $ 9?\% $.
+Remarque : Le rapport entre la luminosité intégrée enregistrée par le détecteur Atlas et la luminosité intégrée délivrée par le LHC est proche de $ 91.7\% $ (septembre 2011).
 
 \newpage
 
@@ -736,7 +736,7 @@ Les TGC sont utilisées au niveau des bouchons. La composante radiale de la posit
 
 \subsection{Performances du spectromètre}
 
-La reconstruction de l'impulsion transverse des muons s'appuie sur l'utilisation conjointe de toutes les informations de différentes chambres ayant enregistrée un point d'impact, on parle de reconstruction combinée. La figure \ref{spectro_reso} montre la distribution de la résolution du spectromètre à muons en fonction de l'impulsion transverse pour $ |\eta|<2.0 $. Pour des muons ayants une impulsion transverse entre $ 10\GeV $ et $ 100\GeV $ et $ |\eta|<1.05 $, la résolution en impulsion transverse est meilleure que $ 5\% $.
+La reconstruction de l'impulsion transverse des muons s'appuie sur l'utilisation conjointe de toutes les informations de différentes chambres ayant enregistrée un point d'impact, on parle de reconstruction combinée. La figure \ref{spectro_reso} montre la distribution de la résolution du spectromètre à muons en fonction de l'impulsion transverse pour $ |\eta|<2.0 $ avec des données de collisions en bleu, des données simulées en rouge et des données de muons cosmiques en rose. Pour des muons ayants une impulsion transverse entre $ 10\GeV $ et $ 100\GeV $ et $ |\eta|<1.05 $, la résolution en impulsion transverse est meilleure que $ 5\% $.
 
 Précisons également que 1800 sondes à effet Hall, placées sur les MDT et le cryostat des aimants toroïdaux bouchons, permettent une connaissance de l'intensité du champ magnétique meilleure que $ 0.2\% $ et qu'un système optique permet un alignement des chambres à muons à quelques centaines de $ \mu m $.
 
@@ -744,17 +744,17 @@ Précisons également que 1800 sondes à effet Hall, placées sur les MDT et le cryo
   \begin{bigcenter}
 
   \begin{tabular}{ccc}
-    \includegraphics[height=4.75cm, keepaspectratio]{phd_atlas/spectro-reso1}
+    \includegraphics[height=4.75cm, width=5.25cm]{phd_atlas/spectro-reso1}
     &
-    \includegraphics[height=4.75cm, keepaspectratio]{phd_atlas/spectro-reso2}
+    \includegraphics[height=4.75cm, width=5.25cm]{phd_atlas/spectro-reso2}
     &
-    \includegraphics[height=4.75cm, keepaspectratio]{phd_atlas/spectro-reso3}
+    \includegraphics[height=4.75cm, width=5.25cm]{phd_atlas/spectro-reso3}
     \\
     (a) & (b) & (c)
   \end{tabular}
 
   \end{bigcenter}
-  \caption{\label{spectro_reso}Distribution de la résolution du spectromètre à muons en fonction de l'impulsion transverse pour la région $ |\eta|<1.05 $ (a), pour la région $ 1.05<|\eta|<1.7 $ (b) et pour la région $ 1.7<|\eta|<2.0 $ (c).}
+  \caption{\label{spectro_reso}Distribution de la résolution du spectromètre à muons en fonction de l'impulsion transverse pour la région $ |\eta|<1.05 $ (a), $ 1.05<|\eta|<1.7 $ (b) et $ 1.7<|\eta|<2.0 $ (c).}
 \end{figure}
 
 \vspace{-0.1cm}
@@ -773,7 +773,7 @@ Après avoir effectué des coupures de sélection, le système de déclenchement de n
 
 \paragraph{Déclenchement de niveau 2 (L2)} Il s'agit d'un déclenchement logiciel rapide qui reconstruit les événements autour des régions d'intérêt définies par le système de déclenchement de niveau 1. Il doit effectué sa prise de décision en $ \sim40ms $ et ne traite que $ \sim2\% $ du total de chaque événement. Au final, le taux d'événements sélectionnés est de $ \sim1kHz $.
 
-\paragraph{Le filtre d'événements (EF)} Il s'agit d'un déclenchement logiciel qui reconstruit reconstruit entièrement l'événement hors-ligne, avec des algorithmes presque identiques à ceux utilisés pour l'analyse. Au final, le taux d'événements sélectionnés est de $ \sim100Hz $. Il propose des voies de déclenchements optimisés pour chaque type d'analyse. Prenons le cas des électrons. Nous verrons au chapitre 6 qu'il existe trois critères de sélection des électrons avec un taux de réjection croissant : lâche (= loose), intermédiaire (= medium) et strict (= tight). Les voies de déclenchements suivantes sont disponible (liste non exhaustive) : EF\_e20\_medium soit au moins un électron medium d'énergie transverse supérieur à $ 20\GeV $ reconstruit dans l'événement (taux EF: $ 53Hz $, taux L1: $ 8.3kHz $ à $ 10^{33}cm^{-2}s^{-1} $), EF\_2e15\_medium soit au moins deux électrons medium d'énergie transverse supérieur à $ 15\GeV $ reconstruit dans l'événement (taux EF: $ 1.2Hz $, taux L1: $ 5.6kHz $ à $ 10^{33}cm^{-2}s^{-1} $), etc\dots.
+\paragraph{Le filtre d'événements (EF)} Il s'agit d'un déclenchement logiciel qui reconstruit reconstruit entièrement l'événement hors-ligne, avec des algorithmes presque identiques à ceux utilisés pour l'analyse. Au final, le taux d'événements sélectionnés est de $ \sim100Hz $. Il propose des voies de déclenchements optimisés pour chaque type d'analyse. Prenons le cas des électrons. Nous verrons au chapitre 6 qu'il existe trois critères de sélection des électrons avec un taux de réjection croissant : lâche (= loose), intermédiaire (= medium) et strict (= tight). Par exemple, les voies de déclenchements suivantes sont disponible (liste non exhaustive) : EF\_e20\_medium soit au moins un électron medium d'énergie transverse supérieur à $ 20\GeV $ reconstruit dans l'événement (taux EF: $ 53Hz $, taux L1: $ 8.3kHz $ à $ 10^{33}cm^{-2}s^{-1} $), EF\_2e15\_medium soit au moins deux électrons medium d'énergie transverse supérieur à $ 15\GeV $ reconstruit dans l'événement (taux EF: $ 1.2Hz $, taux L1: $ 5.6kHz $ à $ 10^{33}cm^{-2}s^{-1} $), etc\dots.
 
 \begin{figure}[!ht]
   \begin{bigcenter}
@@ -782,9 +782,11 @@ Après avoir effectué des coupures de sélection, le système de déclenchement de n
   \caption{\label{trigger}Représentation schématique du système de déclenchement du détecteur Atlas.}
 \end{figure}
 
-Remarque 1 : Afin d'économiser la bande passante, les voies des déclenchement peuvent être réévaluée à chaque niveau de déclenchement par un c\oe fficient $ p $ (= \emph{prescaled}) qui indique que seule la fraction $ \frac{1}{p} $ des événements qui déclenchent sont conservés.\\
+Remarque 1 : Afin d'économiser la bande passante, les voies des déclenchement peuvent être réévaluée à chaque niveau de déclenchement par un c\oe fficient $ p $ (= \emph{prescale}) qui indique que seule la fraction $ \frac{1}{p} $ des événements qui déclenchent sont conservés.\\
 
-Remarque 2 : La voie des déclenchement EF\_e20\_medium (taux EF: $ \sim53Hz $, taux L1: $ \sim8.3kHz $) est la voie des déclenchement utilisée en 2011, avec une luminosité instantanée de $ 10^{33}cm^{-2}s^{-1} $, pour les analyses basées sur les électrons. Les figures \ref{EFe20medium} (a) et \ref{EFe20medium} (b) montrent respectivement l'efficacité de cette voie des déclenchement en fonction de l'énergie transverse et en fonction de la pseudo-rapidité. L'efficacité et supérieure à $ 98\% $ pour peu que l'on se place sur le plateau au delà de $ \sim22.5\GeV $.
+Remarque 2 : La voie de déclenchement EF\_e20\_medium fut la voie de déclenchement sans \emph{prescale} de plus bas $ p_T $ jusqu'en août 2011 (pour une luminosité instantanée de $ \sim10^{33}cm^{-2}s^{-1} $). Les figures \ref{EFe20medium} (a) et \ref{EFe20medium} (b) montrent respectivement l'efficacité de cette voie des déclenchement en fonction de l'énergie transverse et en fonction de la pseudo-rapidité. L'efficacité de l'ordre de $ 98\% $ au niveau du plateau d'efficacité situé au delà de $ \sim22.5\GeV $.
+
+\newpage
 
 \begin{figure}[!h]
   \begin{bigcenter}
@@ -807,9 +809,9 @@ Les figures \ref{rates} (a) et \ref{rates} (b) montrent respectivement les taux 
   \begin{bigcenter}
 
   \begin{tabular}{cc}
-    \includegraphics[height=5.0cm, keepaspectratio]{phd_atlas/rates2010}
+    \includegraphics[height=5.5cm, width=8.5cm]{phd_atlas/trigrates2010}
     &
-    \includegraphics[height=5.0cm, keepaspectratio]{phd_atlas/rates2010}
+    \includegraphics[height=5.5cm, width=8.5cm]{phd_atlas/trigrates2011}
     \\
     (a) & (b)
   \end{tabular}
@@ -818,11 +820,11 @@ Les figures \ref{rates} (a) et \ref{rates} (b) montrent respectivement les taux 
   \caption{\label{rates}Taux de déclenchement totaux des niveaux L1, L2 et EF en fonction du temps pour le run 167707 (année 2011, pic de luminosité) (a) et pour le run ??? (année 2011) (b).}
 \end{figure}
 
-Une analyse dédiée au choix du système de déclenchement pour l'études $ H\to ZZ^{(*)}\to4l $ en fonction de la luminosité sera présentée au chapitre 8.
+Une analyse dédiée au choix du système de déclenchement pour l'études $ H\to ZZ^{(*)}\to4e $ en fonction de la luminosité sera présentée au dernier chapitre de cette thèse.
 
 \section{Statut du détecteur Atlas}
 
-les tableaux \ref{statut1}, \ref{statut2}, \ref{statut3} et \ref{statut4} montrent respectivement le résumé du nombre de canaux, de la fraction de canaux opérationnels et de la couverture en pseudo-rapidité du trajectographe interne, du système calorimétrique, du spectromètre à muons et du système de déclenchement du détecteur Atlas le 9 novembre 2010 et le 12 mai 2011. La fraction de canaux opérationnels est très bonne, elle est supérieure à $ 97\% $ dans tous les cas. Au niveau du calorimètre électromagnétique, les principales sources de problèmes sont les alimentations basse tension et les problèmes de transmetteurs optiques (OTX).
+Les tableaux \ref{statut1}, \ref{statut2}, \ref{statut3} et \ref{statut4} montrent respectivement le résumé du nombre de canaux, de la fraction de canaux opérationnels et de la couverture en pseudo-rapidité du trajectographe interne, du système calorimétrique, du spectromètre à muons et du système de déclenchement du détecteur Atlas le 9 novembre 2010 et le 12 mai 2011. La fraction de canaux opérationnels est très bonne, elle est supérieure à $ 97\% $ dans tous les cas. Au niveau du calorimètre électromagnétique, les principales sources de problèmes sont les alimentations basse tension et les problèmes de transmetteurs optiques (OTX).
 
 \newpage
 
@@ -1161,9 +1163,9 @@ La figure \ref{rapport_branchement_higgs} montre les rapports d'embranchement de
 
 Ce canal est privilégié dans la région des faibles masses : $ 80\GeV<M_\textrm{Higgs}<130\GeV $. Le couplage $ H\gamma\gamma $ n'est pas autorisée au premier ordre des perturbations est s'effectue préférentiellement par l'intermédiaire d'une boucle de quarks top. L'état final contient deux photons de grande impulsion transverse de l'ordre de $ 50\GeV $. La reconstruction de la masse invariante de la paire $ \gamma\gamma $ permet de remonter à la masse invariante du boson de Higgs. Malgré la faible section efficace du canal, cette signature reste relativement isolée et identifiable, cependant, une bonne identification des photons ainsi qu'une bonne résolution angulaire et en énergie sont indispensables.
 
-Il existe un certain nombre de processus ayant une signature semblable à la désintégration du boson de Higgs en deux photons. Ils contribuent au bruit de fond et peuvent être classés en quatre catégories : i) les processus ayant deux photons dans l'état final ($ tt\gamma\gamma $, diagrammes BOX et BORN, etc\dots). ii) les processus ayant un photon et un jet dans l'état final. i) les processus ayant $ W+2\gamma+4j $ dans l'état final. iv) les processus DRELL-YAN ayant une paire d'électrons dans l'état final.
+Il existe un certain nombre de processus ayant une signature semblable à la désintégration du boson de Higgs en deux photons. Ils contribuent au bruit de fond et peuvent être classés en quatre catégories : i) les processus ayant deux photons dans l'état final ($ tt\gamma\gamma $, diagrammes \emph{box} et Born, etc\dots). ii) les processus ayant un photon et un jet dans l'état final. i) les processus ayant $ W+2\gamma+4j $ dans l'état final. iv) les processus Drell-Yan ayant une paire d'électrons dans l'état final.
 
-Les jets ont tendance à créer des pions tels que des $ \pi^0 $ ou encore des $ \eta^0 $ qui se désintègrent en paires de photons. Ces contributions au fond sont souvent réductibles par application de coupures d'isolation et de réjection des pions adéquats. Le chapitre 5 est dédié à la reconstruction et à l'identification des $ \pi^0 $ et des $ \eta^0 $.
+Les jets ont tendance à créer des pions tels que des $ \pi^0 $ ou encore des $ \eta^0 $ qui se désintègrent en paires de photons. Ces contributions au fond sont souvent réductibles par application de coupures d'isolation et de réjection des pions adéquats.
 
 \subsection{$ H\to ZZ^{(*)}\to4l $}
 
