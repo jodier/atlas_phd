@@ -50,14 +50,16 @@ Plus le milieu est dense, ou encore plus le nombre de masse est élevé, plus la l
       \hline
         Matériau & $ X_0 $ \small{$ \left[g\,cm^{-2}\right] $} & $ X_\gamma $ \small{$ \left[g\,cm^{-2}\right] $} & $ R_M $ \small{$ \left[cm\right] $} \\
       \hline
-        $ H_2O $ & $ 36.1 $ & $ 46.4 $ & \\
-	$ Al $ & $ 24.0 $ & $ 30.9 $ & \\
-	$ Fe $ & $ 13.8 $ & $ 17.8 $ & \\
-	$ Cu $ & $ 12.9 $ & $ 16.5 $ & \\
-        $ W $ & $ 6.8 $ & $ 8.7 $ & \\
-        $ Pb $ & $ 6.4 $ & $ 8.2 $ & \\
-        $ U $ & $ 5.9 $ & $ 7.5 $ & \\
-        $ NaI $ & $ 2.6 $ & $ 0.6 $ & \\
+	$ Ar $ (liquide) & $ 19.6 $ & $ 25.2 $ & $ 9.0 $\\
+	$ Al $ & $ 24.0 $ & $ 30.9 $ & $ 4.4 $\\
+	$ Fe $ & $ 13.8 $ & $ 17.8 $ & $ 1.7 $\\
+	$ Cu $ & $ 12.9 $ & $ 16.5 $ & $ 1.5 $\\
+        $ W $ & $ 6.8 $ & $ 8.7 $ & $ 0.9 $\\
+        $ Pb $ & $ 6.37 $ & $ 8.2 $ & $ 1.6 $\\
+        $ U $ & $ 5.9 $ & $ 7.5 $ & $ 1.0 $\\
+      \hline
+        $ H_2O $ (liquide) & $ 36.1 $ & $ 46.4 $ & $ 9.7 $\\
+        $ NaI $ & $ 9.5 $ & $ 12.2 $ & $ 4.1 $\\
       \hline
     \end{tabular}
 
@@ -78,7 +80,7 @@ De même que pour la longueur de radiation et le libre parcours moyen, l'énergie 
 
 \subsection{Gerbes électromagnétiques}
 
-\paragraph{Profil transverse} Introduisons la variable $ t\equiv\frac{x}{X_0} $ afin de décrire le développement longitudinal des gerbes électromagnétiques. Dans un modèle simpliste, au rang $ t $, chaque particule de la gerbe possède une énergie $ E(t)=E_0\,2^{-t} $ où $ E_0 $ est l'énergie de la particule incidente, voir figure \ref{em_shower}. Il est alors possible d'écrire :
+\paragraph{Profil longitudinal} Introduisons la variable $ t\equiv\frac{x}{X_0} $ afin de décrire le développement longitudinal des gerbes électromagnétiques. Dans un modèle simpliste, au rang $ t $, chaque particule de la gerbe possède une énergie $ E(t)=E_0\,2^{-t} $ où $ E_0 $ est l'énergie de la particule incidente, voir figure \ref{em_shower}. Il est alors possible d'écrire :
 \begin{eqnarray}
   \frac{dE}{dt}=-E_0\ln2\,e^{-t}\hspace{0.04cm} & \textrm{modèle simpliste}\\
   \frac{dE}{dt}=E_0\frac{b^at^{a-1}}{\Gamma(a)}e^{-t} & \begin{minipage}{8cm} \begin{center} modèle de Longo et Sestili\\où $ a $ et $ b $ sont des paramètres du milieu \end{center} \end{minipage}
@@ -103,7 +105,7 @@ Il est alors possible de définir la longueur $ t_{95\%} $ telle que au moins $ 9
   t_{95\%}\approx t_{max}+0.08Z+9.6[X_0]
 \end{equation}
 
-\paragraph{Profil longitudinal} On montre que l'angle moyen de déflexion des particules de la gerbe, pour le Bremsstrahlung et la production de paires électron/prositron, peut s'écrire :
+\paragraph{Profil transverse} On montre que l'angle moyen de déflexion des particules de la gerbe, pour le Bremsstrahlung et la production de paires électron/prositron, peut s'écrire :
 \begin{equation}
   \left<\theta\right>=\underbrace{\sqrt{\frac{4\pi}{\alpha_{EM}}}(m_ec^2)}_{E_s\approx21.2[\MeV]}\left.\frac{1}{E_c}\sqrt{t}\right|_{\beta=c=1}
 \end{equation}
@@ -130,9 +132,9 @@ Il existe deux type de calorimètres, les colorimètres homogènes et les calorimèt
 
 Les premiers sont constitués d'un seul type de matériau qui fait office de milieu actif (= milieu de de détection) ainsi que de milieu absorbant. Toute l'énergie de la gerbe est mesurée. Ils sont généralement constitués de cristaux scintillants, c'est le cas du calorimètre du détecteur CMS.
 
-Les seconds sont constitués de deux types de matériaux, le premier forme le milieu actif (= milieu de de détection) et le second forme le milieu absorbant. Une partie seulement de l'énergie de la gerbe est mesurée, elle est caractérisée par le rapport d'échantillonnage $ f_\textrm{échantillonnage} $ qui est le rapport de l'énergie déposée dans le milieu actif par l'énergie déposée dans l'absorbeur, c'est le cas du détecteur Atlas.
+Les seconds sont constitués de deux types de matériaux, le premier forme le milieu actif (= milieu de de détection) et le second forme le milieu absorbant. Une partie seulement de l'énergie de la gerbe est mesurée, elle est caractérisée par le rapport d'échantillonnage $ f_\textrm{échantillonnage} $ qui est le rapport de l'énergie déposée dans le milieu actif par l'énergie déposée dans l'absorbeur, c'est le cas du détecteur Atlas.\\
 
-Citons quelques avantages des calorimètres à échantillonnage : i) En choisissant librement le matériau des absorbeurs, on peut construire des calorimètres très compacts. ii) Ils sont plus simples, plus passifs et moins chers que les calorimètres homogènes. iii) Ils ont une bonne résolution spatiale. iv) Ils ont une bonne tenue aux radiations.
+Citons quelques avantages des calorimètres à échantillonnage : i) En choisissant librement le matériau des absorbeurs, on peut construire des calorimètres très compacts. ii) Ils ont une bonne résolution spatiale. iii) Ils ont une bonne tenue aux radiations.
 
 Et citons quelques inconvénients à échantillonnage : i) Seule une partie de l'énergie déposées est effectivement détecté dans les couches actives; généralement de quelques pour cent. ii) Des fluctuations dans l'échantillonnage entraînent généralement une résolution en énergie plus réduite que pour les homogènes par le terme $ \left.\frac{\sigma}{E}\right|_\textrm{échantillonnage}=\frac{a}{\sqrt{E}} $.
 
@@ -140,7 +142,7 @@ Et citons quelques inconvénients à échantillonnage : i) Seule une partie de l'én
 
 \section{Le calorimètre électromagnétique à argon liquide}
 
-Le calorimètre électromagnétique du détecteur Atlas est composé d'une partie tonneau et de deux parties bouchons aux extrémités. Ces dernières sont constituées d'une grande roue de précision et d'une petite roue. De même que les calorimètres vers l'avant (voir le chapitre précédent) et les bouchons du calorimètre hadronique, il s'agit de calorimètres à échantillonnage où le milieu actif est constitué d'électrodes de cuivre immergées dans de l'argon liquide avec un milieu absorbant est formé de plaques métalliques de plomb. Il s'agit d'une technologie robuste, déjà utilisée par les expériences SLD ou D$ \varnothing $, qui est bien maitrisée et qui dispose d'une bonne tenue dans le temps. L'abordeur ainsi que les électrodes sont pliées en accordéon. Cette particularité inédite confère au calorimètre électromagnétique du détecteur Atlas une herméticité parfaite.
+Le calorimètre électromagnétique du détecteur Atlas est composé d'une partie tonneau et de deux parties bouchons aux extrémités. Ces dernières sont constituées d'une grande roue de précision et d'une petite roue. De même que les calorimètres vers l'avant (voir le chapitre précédent) et les bouchons du calorimètre hadronique, il s'agit de calorimètres à échantillonnage où le milieu actif est constitué d'électrodes de cuivre immergées dans de l'argon liquide avec un milieu absorbant est formé de plaques métalliques de plomb. Il s'agit d'une technologie robuste, déjà utilisée par les expériences SLD ou D$ \varnothing $, qui est bien maitrisée et qui dispose d'une bonne tenue dans le temps. L'abordeur ainsi que les électrodes sont pliées en accordéon. Cette particularité inédite confère au calorimètre électromagnétique du détecteur Atlas une herméticité parfaite en $ \phi $.
 
 La partie tonneau du calorimètre électromagnétique pocède une couverture angulaire $ |\eta|<1.475 $ pour la pseudo-rapidité et $ 0<|\phi|<2\pi $ pour l'angle azimutal. La partie bouchons du calorimètre électromagnétique pocède une couverture angulaire $ 1.37<|\eta|<2.5 $ (resp. $ 2.5<|\eta|<3.2 $) pour la pseudo-rapidité dans la grande roue (resp. pour la petite roue). La région $ 1.37<|\eta|<1.52 $, qui est appelée \emph{crack}, est une région dédiée aux services.
 
@@ -151,7 +153,7 @@ La partie tonneau du calorimètre électromagnétique pocède une couverture angulai
   \caption{\label{electrodes}Représentation schématique des électrodes du calorimètre électromagnétique du détecteur Atlas. Partie tonneau A et B (en haut), partie bouchon grande roue (en bas à droite) et petite roue (en bas à gauche). Les trois compartiments sont clairement visibles.}
 \end{figure}
 
-La tableau \ref{caloperf} rappelle la résolution en énergie ainsi que la résolution angulaire attendues des calorimètres du détecteur Atlas. A titre de comparaison, nous donnons la résolution en énergie du calorimètre homogène à cristaux de tungstate de plomb du détecteur CMS : $ \frac{\sigma(E)}{E}=\frac{3\%}{\sqrt{E}}\oplus0.6\% $. Celle-ci est, par conception, légèrement meilleure que celle du détecteur Atlas, néanmoins, grâce à sa fine segmentation et son détecteur de pieds de gerbes, le calorimètres électromagnétique du détecteur Atlas dispose d'une très bonne résolution angulaire. Il est tout particulièrement adapté à la recherche du boson de Higgs dans les canaux $ H\to\gamma\gamma $ et $ H\to ZZ^{(*)}\to4l $ où encore à la recherche d'hypothétiques bosons lourds tels que les $ W' $ ou les $ Z' $ qui se désintègrent en leptons de haute énergie.
+La tableau \ref{caloperf} rappelle la résolution en énergie ainsi que la résolution angulaire attendues des calorimètres du détecteur Atlas. A titre de comparaison, nous donnons la résolution en énergie du calorimètre homogène à cristaux de tungstate de plomb du détecteur CMS : $ \frac{\sigma(E)}{E}=\frac{3\%}{\sqrt{E}}\oplus0.5\% $. Celle-ci est, par conception, légèrement meilleure que celle du détecteur Atlas, néanmoins, grâce à sa fine segmentation et son détecteur de pieds de gerbes, le calorimètres électromagnétique du détecteur Atlas dispose d'une très bonne résolution angulaire. Il est tout particulièrement adapté à la recherche du boson de Higgs dans les canaux $ H\to\gamma\gamma $ et $ H\to ZZ^{(*)}\to4l $ où encore à la recherche d'hypothétiques bosons lourds tels que les $ W' $ ou les $ Z' $ qui se désintègrent en leptons de haute énergie.
 
 \begin{table}[!ht]
   \begin{center}
@@ -203,7 +205,7 @@ Le colorimètre électromagnétique est également doté d'un pré-échantillonneur, le
 
 La partie tonneau du calorimètre électromagnétique est constituée de deux types d'électrode, voir figure \ref{electrodes} (haut). L'électrode A a une couverture angulaire $ |\eta|<0.8 $ sur une épaisseur qui s'étend entre $ 22X_0 $ et $ 30X_0 $ et l'électrode B a une couverture angulaire $ 0.8<|\eta|<1.3 $ sur une épaisseur qui s'étend entre $ 24X_0 $ et $ 30X_0 $. La quantité de matière traversée par les particules augmente avec la pseudo-rapidité. C'est pourquoi la taille des différents compartiments change avec la pseudo-rapidité afin que les fractions d'énergie déposées dans les différents compartiments restent constantes. De-même, l'épaisseur d'absorbeur est plus grand pour l'électrode A que pour l'électrode B. La partie bouchons du calorimètre électromagnétique est constituée de deux roues, voir figure \ref{electrodes} (bas). L'électrode de la grande roue a une couverture angulaire $ 1.477<|\eta|<2.5 $ sur une épaisseur qui s'étend entre $ 24X_0 $ et $ 38X_0 $ et l'électrode de la petite roue a une couverture angulaire $ 2.5<|\eta|<3.2 $ sur une épaisseur qui s'étend entre $ 26X_0 $ et $ 36X_0 $. Ces dimentionnements on été déterminés afin de pouvoir contenir les électrons issus de $ W' $ ou de $ Z' $.
 
-Comme la densité de particules et à peu près constante sur $ \eta\lesssim3 $, une segmentation des cellules en pseudo-rapidité a été adoptée afin de garantir une bonne uniformité de l'électronique d'acquisition. La taille des cellules est contitionnée par le rayon de molière $ R_M\approx10cm $. Le tableau \ref{granilarite} montre le détail de la granularité, en fonction de la pseudo-rapidité, du calorimètre électromagnétique tonneau et des calorimètres électromagnétiques bouchons.
+Comme la densité de particules et à peu près constante sur $ \eta\lesssim3 $, une segmentation des cellules en pseudo-rapidité a été adoptée afin de garantir une bonne uniformité de l'électronique d'acquisition. La taille des cellules est contitionnée par le rayon de molière, voir tableau \ref{matcalo}. Le tableau \ref{granilarite} montre le détail de la granularité, en fonction de la pseudo-rapidité, du calorimètre électromagnétique tonneau et des calorimètres électromagnétiques bouchons.
 
 \subsection{Performances}
 
@@ -326,10 +328,10 @@ Le figure \ref{cellule2} montre le schéma simplifié de l'électronique de calibra
   \begin{bigcenter}
     \includegraphics[width=0.9\linewidth, keepaspectratio]{phd_calo/cellule2}
   \end{bigcenter}
-  \caption{\label{cellule2}Schéma simplifié de l'électronique de calibration située autour d'une cellule du calorimètre électromagnétique, électronique froide (bleu) et électronique froide (violet).}
+  \caption{\label{cellule2}Schéma simplifié de l'électronique de calibration située autour d'une cellule du calorimètre électromagnétique, électronique froide (violet et rouge) et électronique chaude.}
 \end{figure}
 
-Au total, l'électronique \emph{front-end} contient $ 58 $ FEC, $ 1524 $ FEB pour traiter environ $ 196000 $ cellules en environ $ ??\mu s $.
+Au total, l'électronique \emph{front-end} contient $ 58 $ FEC, $ 1524 $ FEB pour traiter environ $ 196000 $ cellules en moins de $ 10\mu s $.
 
 \begin{figure}[!p]
   \begin{bigcenter}
@@ -385,7 +387,7 @@ où $ g_i $ et $ g'_i $ sont respectivement le signal idéal normalisé et la dériv
 
 Une fois l'amplitude maximale du signal reconstruite, il est possible de reconstruire l'énergie dans la cellule $ E_\textrm{cellule} $ :
 \begin{equation}
-  \boxed{E_\textrm{cellule}=F_{\mu A\to\MeV}F_{DAC\to\mu A}\frac{M_{cali}}{M_{phys}}\sum_j^{M_{rampe}}R_j\left[\underbrace{\sum_i^{N_{sample}}a_i(s_i-p)}_{A}\right]}
+  \boxed{E_\textrm{cellule}=F_{\mu A\to\MeV}F_{DAC\to\mu A}\frac{M_{cali}}{M_{phys}}\sum_j^{M_{rampe}}R_j\left[\underbrace{\sum_i^{N_{sample}}a_i(s_i-p)}_{A}\right]}\label{energy_reco}
 \end{equation}
 
 où :
@@ -397,37 +399,107 @@ où :
   \item $ A $ est l'amplitude maximale du signal en $ ADC $.\\
 \end{itemize}
 
-Le c\oe fficient $ F_{\mu A\to\MeV} $ est établit à partir de la simulation, le c\oe fficient $ F_{DAC\to\mu A} $ fait intervenir la valeur de la résistance d'injection $ R_{inj} $, le c\oe fficient $ M_{cali}/M_{phys} $ à été établit à l'aide de faisceaux de test, pour les calorimètres vers l'avant, les contraintes de performances sont plus souples et $ M_{cali}/M_{phys}=1 $, les c\oe fficients $ R_j $ sont obtenus pour chaque cellule à partir de la pente du gain en utilisant les signaux de calibration (voir la section suivante), les piedestaux sont obtenus pour chaque cellule en lisant les FEB sans signal (voir la section suivante) et enfin les OFC sont extraits pour chaque cellule à partir de la forme des signaux de calibration et à partir de la corrélation entre les différents échantillons du signal de calibration en utilisant un multiplicateur de Lagrange (voir la section suivante).\\
+Le c\oe fficient $ F_{\mu A\to\MeV} $ est établi à partir de la simulation, le c\oe fficient $ F_{DAC\to\mu A} $ fait intervenir la valeur de la résistance d'injection $ R_{inj} $, le c\oe fficient $ M_{cali}/M_{phys} $ à été établi à l'aide de faisceaux de test, pour les calorimètres vers l'avant, les contraintes de performances sont plus souples et $ M_{cali}/M_{phys}=1 $, les c\oe fficients $ R_j $ sont obtenus pour chaque cellule à partir de la pente du gain en utilisant les signaux de calibration (voir la section suivante), les piedestaux sont obtenus pour chaque cellule en lisant les FEB sans signal (voir la section suivante) et enfin les OFC sont extraits pour chaque cellule à partir de la forme des signaux de calibration et à partir de la corrélation entre les différents échantillons du signal de calibration en utilisant un multiplicateur de Lagrange (voir la section suivante).\\
 
 Remarque : La reconstruction de l'énergie déposée dans chacune des cellules peut être indifféremment effectuée par les ROD ou par le logiciel \emph{LAr offline}.
 
 \section{Calibration électronique}
 
-Dans cette section, je vais décrire la procédure de calibration électronique des calorimètres à argon liquide, c'est-à-dire, l'extractions des constantes nécessaires à la reconstruction de l'énergie déposée dans chacune des cellules. De septembre 2009 jusqu'à février 2010, j'ai eu la charge de la validation des campagnes de calibration pour les bouchons du calorimètre électromagnétique et à partir du printemps 2010, j'ai développer une partie des outils utilisés actuellement pour la validation des campagnes de calibration.
+Dans cette section, je vais décrire la procédure de calibration électronique des calorimètres à argon liquide, c'est-à-dire, l'extractions des constantes nécessaires à la reconstruction de l'énergie déposée dans chacune des cellules. De septembre 2009 jusqu'à février 2010, j'ai eu la charge de la validation des campagnes de calibration pour les bouchons du calorimètre électromagnétique et à partir du printemps 2010, j'ai développé une partie des outils utilisés actuellement pour la validation des campagnes de calibration.
 
 \subsection{Campagnes de calibration}
 
-Des campagnes de calibration ont lieu plusieurs fois par semaines. Leur objectif et de déterminer et contrôler les constantes nécessaires à la reconstruction de l'énergie déposée dans chacune des cellules. Pour ce faire, l'électronique de calibration, présentée dans la section précédente, est utilisée. Une campagne de calibration est composée d'un lot de prises de données, ou \emph{run}, spécifiques, soit typiquement : i) des \emph{runs} de piédestaux. ii) des \emph{runs} de délais. iii) des \emph{runs} de rampes. Il existe deux type de campagnes, les campagnes \emph{daily} et les campagnes \emph{weekly}. Dans les premières, seuls des runs de piédestaux de de rampes sont effectués en ne concevant que 7 valeurs après échantillonnage des signaux tous les $ 25ns $. Dans les secondes, les trois type des \emph{runs} sont effectués en concevant 32 valeurs après échantillonnage des signaux tous les $ 25ns $.
+Des campagnes de calibration ont lieu plusieurs fois par semaine. Leur objectif et de déterminer et contrôler les constantes nécessaires à la reconstruction de l'énergie déposée dans chacune des cellules. Pour ce faire, l'électronique de calibration, présentée dans la section précédente, est utilisée. Une campagne de calibration est composée d'un lot de prises de données, ou \emph{run}, spécifiques, soit typiquement : i) des \emph{runs} de piédestaux. ii) des \emph{runs} de délais. iii) des \emph{runs} de rampes. Il existe deux type de campagnes, les campagnes \emph{daily} et les campagnes \emph{weekly}. Dans les premières, seuls des runs de piédestaux et de rampes sont effectués en ne concevant que 7 valeurs après échantillonnage des signaux tous les $ 25ns $. Dans les secondes, les trois type des \emph{runs} sont effectués en concevant 32 valeurs après échantillonnage des signaux tous les $ 25ns $.
 
 \newpage
 
 Décrivons le contenu de chacun des \emph{runs} :
 
-\paragraph{Les \emph{runs} de piédestaux} Au total, 3000 événements sont enregistrés. Les FEB sont lues sans qu'il y ait de signal injecté par l'électronique de calibration. Il est alors possible de calculer le piédestal moyen, le RMS (bruit) et l'auto-corrélation en temps entre deux échantillons mesurés consécutivement. Cette dernière quantité intervient dans la détermination des OFC.
+\paragraph{Les \emph{runs} de piédestaux} Au total, 3000 événements sont enregistrés. Les FEB sont lues sans qu'il n'ait de signal injecté par l'électronique de calibration. Il est alors possible de calculer le piédestal moyen ($ p $ dans l'équation \ref{energy_reco}), le RMS (bruit) et l'auto-corrélation en temps entre deux échantillons, voir figure \ref{calib_var}. Cette dernière quantité intervient dans la détermination des OFC ($ a_i $ dans l'équation \ref{energy_reco}).
 
-\paragraph{Les \emph{runs} de délais} Au total, 200 événements sont enregistrés. Les FEB sont lues après injection des signaux de calibration. Un délai est introduit entre l'injection et l'acquisition. Vingt-quatre valeurs sont générées toutes les $ 25ns $, c'est-à-dire, vingt-quatre fois plus que pour un signal échantillonné standard. Il est alors possible de calculer\footnote{Une correction sur le couplage capacitif est appliquée. En effet, celui-ci peut entrainer jusqu'à $ 8\% $ de perte sur le courant injecté dans les cellules dans le premier compartiment.} le signal moyen et le RMS. La courbe de réponse de la cellule, ou \emph{pulse}, est reconstruite ultérieurement. Cette dernière quantité intervient dans la détermination des OFC.
+\paragraph{Les \emph{runs} de délais} Au total, 200 événements sont enregistrés. Les FEB sont lues après injection des signaux de calibration. Un délai est introduit entre l'injection et l'acquisition. Vingt-quatre valeurs sont générées toutes les $ 25ns $, c'est-à-dire, vingt-quatre fois plus que pour un signal échantillonné standard. Il est alors possible de calculer\footnote{Une correction sur le couplage capacitif est appliquée. En effet, celui-ci peut entrainer jusqu'à $ 8\% $ de perte sur le courant injecté dans les cellules dans le premier compartiment.} le signal moyen et le RMS. La courbe de réponse de la cellule, ou \emph{pulse}, est reconstruite ultérieurement et le piedestal est soustrait, voir figure \ref{pulses}.
 
-\paragraph{Les \emph{runs} de ramps} Au total, 200 événements sont enregistrés. Le'objective est de mesurer la réponse de chaque cellule en fonction du courant injecté pour les trois gains. L'amplitude maximale moyenne est reconstruite$ ^\textrm{\scriptsize{3}} $ ultérieurement. Il est alors possible de calculer la relation linéaire entre les $ ADC $ les $ DAC $.\\
 
-Remarque : La méthode générale utilisée pour calculer les OFC est illustrée dans l'annexe ??.
+\paragraph{Les \emph{runs} de ramps} Au total, 200 événements sont enregistrés. Le'objective est de mesurer la réponse de chaque cellule en fonction du courant injecté pour les trois gains, voir figure \ref{calib_var}. L'amplitude maximale moyenne est reconstruite$ ^\textrm{\scriptsize{3}} $ ultérieurement. Il est alors possible de calculer la relation linéaire entre les $ ADC $ les $ DAC $ ($ R_j $ dans l'équation \ref{energy_reco}).
+
+\begin{figure}[!ht]
+  \begin{bigcenter}
+
+  \begin{tabular}{ccc}
+    \includegraphics[width=0.48\linewidth, keepaspectratio]{phd_calo/pedestals}
+    &&
+    \includegraphics[width=0.48\linewidth, keepaspectratio]{phd_calo/noises}
+    \\
+    (a) && (b)
+    \\
+    \includegraphics[width=0.48\linewidth, keepaspectratio]{phd_calo/autocorr}
+    &&
+    \includegraphics[width=0.48\linewidth, keepaspectratio]{phd_calo/ramp}
+    \\
+    (c) && (d)
+  \end{tabular}
+
+  \end{bigcenter}
+  \caption{\label{calib_var}Piédestal (a) et bruit (b) en fonction du canal (tonneau EM A, FT=1 et SL=10, gain M), auto-corrélation en fonction de l'échantillon pour un canal (c) et ADC en fonction DAC pour un canal (d) (tonneau EM A, FT=1, SL=10 et CH=127, gain M).}
+\end{figure}
+
+\newpage
+
+\subsection{Détermination des c\oe fficients de filtrage optimal}\label{OFC_formulae}
+
+Présentons rapidement la méthode des c\oe fficient de filtrage optimal. Le signal reconstruit dans l'argon liquide peut être paramétré de la façon suivante :
+\begin{eqnarray}
+  S(t)&    =    & A\,g(t-\tau)+n(t)\\
+      & \approx & A\left\{g(t)-\tau g'(t)\right\}+n(t)\label{lar_signal_approx}
+\end{eqnarray}
+
+où $ A $ est l'amplitude maximale du signal, $ \tau $ le temps de décroissance du signal et $ g_i $ et $ g'_i $ sont respectivement le signal idéal normalisé et la dérivée du signal idéal normalisé. Le terme $ n(t) $ est associé aux piédestaux. L'équation \ref{lar_signal_approx} discrétisée ($ t\to k\left\{\Delta t=0.25ns\right\} $) s'écrit :
+\begin{equation}
+  S_k=A(g_k-\tau g'_k)+n_k\label{lar_signal_approx_discr}
+\end{equation}
+
+Par définition, $ \left<n_k\right>=0 $ et $ n_in_j\equiv R_{ij} $ correspond la fonction d'auto-corrélation des piédestaux. On introduit les paramétrisations suivantes : 
+\begin{equation}
+  \left<\sum_{k=1}^{N}a_kS_k\right>\equiv A\hspace{1.0cm}\textrm{et}\hspace{1.0cm}\left<\sum_{k=1}^{N}b_kS_k\right>\equiv A\tau
+\end{equation}
+
+Afin d'être compatible avec la définition \ref{lar_signal_approx_discr}, il faut imposer les contraintes suivantes :
+\begin{equation}
+  \begin{array}{ccc}
+    \sum_{k=1}^{N}a_kg_k=+1 & \textrm{\hspace{0.5cm}et\hspace{0.5cm}} & \sum_{k=1}^{N}a_kg'_k=0\\
+    \\
+    \sum_{k=1}^{N}b_kg_k=0 & \textrm{\hspace{0.5cm}et\hspace{0.5cm}} & \sum_{k=1}^{N}b_kg'_k=-1
+  \end{array}
+\end{equation}
+
+Les c\oe fficient $ a_i $ et $ b_i $ sont obtenus à partir de la méthode des multiplicateur de Lagrange :
+\begin{eqnarray}
+  0 & = & \frac{\partial}{\partial a_k}\left\{\frac{1}{2}\sum_{ij}a_ia_jR_{ij}-\lambda\sum_ia_ig_i-\mu\sum_ia_ig'_i\right\}\nonumber\\
+    & = & \sum_ia_iR_{ik}-\left(\lambda\,g_k+\mu\,g'_k\right)\Rightarrow \boxed{\underbrace{a_i=\lambda\sum_kR^{-1}_{ik}g_k+\mu\sum_kR^{-1}_{ik}g'_k}_{\textrm{équation de pic}}}
+\end{eqnarray}
+et :
+\begin{eqnarray}
+  0 & = & \frac{\partial}{\partial b_k}\left\{\frac{1}{2}\sum_{ij}b_ib_jR_{ij}-\rho\sum_ib_ig_i-\sigma\sum_ib_ig'_i\right\}\nonumber\\
+    & = & \sum_ib_iR_{ik}-\left(\rho\,g_k+\sigma\,g'_k\right)\Rightarrow \boxed{\underbrace{b_i=\rho\sum_kR^{-1}_{ik}g_k+\sigma\sum_kR^{-1}_{ik}g'_k}_{\textrm{équation de temps}}}
+\end{eqnarray}
+où, $ \lambda\equiv+\frac{Q_2}{\Delta} $, $ \mu\equiv-\frac{Q_3}{\Delta} $, $ \rho\equiv+\frac{Q_3}{\Delta} $, $ \sigma\equiv-\frac{Q_1}{\Delta} $ avec :
+\begin{equation}
+  \begin{array}{ccc}
+    Q_1=\sum_{ij}g_ig_jR^{-1}_{ij} & \textrm{\hspace{0.5cm}et\hspace{0.5cm}} & Q_3=\sum_{ij}g_ig'_jR^{-1}_{ij}\\
+    \\
+    Q_2=\sum_{ij}g'_ig'_jR^{-1}_{ij} & \textrm{\hspace{0.5cm}et\hspace{0.5cm}} & \Delta=Q_1Q_2-Q^2_3
+  \end{array}
+\end{equation}
+
+Nous voyons comment interviennent les \emph{runs} d'auto-corrélation ainsi que les \emph{runs} de délais dans la détermination des c\oe fficients de filtrage optimal.
 
 \subsection{Procédure de validation}
 
-Il existe une base de donnée qui contient les valeurs courantes des constantes de calibration pour chacune des cellules. La procédure de validation s'effectue en 4 étapes : i) Une campagne de calibration, \emph{daily} ou \emph{weakly}, est démarrée à partir de la salle de contrôle du détecteur Atlas. ii) La reconstruction des runs de calibration est effectuée automatiquement. iii) Un campagne de référence est sélectionnée. Il s'agit généralement de la campagne \emph{weakly} présente dans la base de donnée sauf si les conditions (champs magnétiques, température, etc\dots) ont changées. iv) Pour chaque cellule et pour chaque FEB (128 cellules), les constantes de calibration de la campagne courante sont comparées avec les constantes de calibration de la campagne de référence. Si les différences, absolues ou relatives selon les cas, dépassent un certain seuil, voir tableau \ref{seuils}, alors, la cellule est identifiée comme déviante. Le responsable de la validation de la campagne de calibration doit essayer de comprendre pourquoi et doit vérifier si la déviation est durable dans le temps. Pour les cellules réellement problématiques, l'électronique de lecture (\emph{deadReadout}) et/ou de calibration (\emph{deadCalib}) est le plus souvent en cause.
+Il existe une base de donnée qui contient les valeurs courantes des constantes de calibration pour chacune des cellules. La procédure de validation s'effectue en 4 étapes : i) Une campagne de calibration, \emph{daily} ou \emph{weekly}, est démarrée à partir de la salle de contrôle du détecteur Atlas. ii) La reconstruction des runs de calibration est effectuée automatiquement. iii) Un campagne de référence est sélectionnée. Il s'agit généralement de la campagne \emph{weekly} présente dans la base de donnée sauf si les conditions (champs magnétiques, température, etc\dots) ont changées. iv) Pour chaque cellule et pour chaque FEB (128 cellules), les constantes de calibration de la campagne courante sont comparées avec les constantes de calibration de la campagne de référence. Si les différences, absolues ou relatives selon les cas, dépassent un certain seuil, voir tableau \ref{seuils}, alors, la cellule est identifiée comme déviante. Le responsable de la validation de la campagne de calibration doit essayer de comprendre pourquoi et doit vérifier si la déviation est durable dans le temps. Pour les cellules réellement problématiques, l'électronique de lecture (\emph{deadReadout}) et/ou de calibration (\emph{deadCalib}) est le plus souvent en cause.
 
 La procédure de validation permet ainsi de suivre la stabilité des constantes des calibration, de déterminer si une mise à jour de la base de données des constantes des calibration est nécessaire et également de vérifier si il existe de nouvelles cellules défectueuses.\\
 
-La stabilité des constantes de calibration a été étudiée. Les figures \ref{stabilite1} et \ref{stabilite2} montrent la stabilités des piédestaux, du bruit, des délais et des rampes la période 2009-2010 pour le calorimètre électromagnétiques tonneau. Les piédestaux (resp. le bruit) sont stables, la déviation est inférieure à $ 0.1ADC $ (resp $ 0.02ADC $). Pour les délais et les rampes, nous observons des décalages, $ +0.1 $ pour les délais et $ -0.1 $ pour les rampes. Il sont du à la désactivation fréquente des aimants toroïdale et solénoïdal, en effet, les champs induisent des courants dans les inductances des cartes électronique dont il faut tenir compte.
+La stabilité des constantes de calibration a été étudiée. Les figures \ref{stabilite1} à \ref{stabilite2} montrent la stabilités des piédestaux, du bruit, des délais et des rampes, période 2009-2010, pour le calorimètre électromagnétiques tonneau. Les piédestaux (resp. le bruit) sont stables, la déviation est inférieure à $ 0.1ADC $ (resp $ 0.02ADC $). Pour les délais et les rampes, nous observons des décalages, $ +0.1 $ pour les délais et $ -0.1 $ pour les rampes. Il sont du à la désactivation fréquente des aimants toroïdale et solénoïdal, en effet, les champs induisent des courants dans les inductances des cartes électronique dont il faut tenir compte.
 
 \begin{table}[!p]
   \begin{bigcenter}
@@ -538,7 +610,7 @@ La stabilité des constantes de calibration a été étudiée. Les figures \ref{stabi
   \caption{\label{stabilite5}Stabilité du bruit pour les calorimètres vers l'avant, gain moyen, sur la période 2011 (a). Stabilité du bruit pour les calorimètres hadroniques bouchons, gain moyen, gain haut, sur la période 2011 (b).}
 \end{figure}
 
-\begin{figure}[!ht]
+\begin{figure}[!p]
   \begin{bigcenter}
 
   \begin{tabular}{ccc}
@@ -553,7 +625,7 @@ La stabilité des constantes de calibration a été étudiée. Les figures \ref{stabi
   \caption{\label{stabilite6}Stabilité des rampes pour le calorimètre électromagnétique, gain haut, sur la période 2011 (a). Stabilité des rampes pour les calorimètres vers l'avant, gain moyen, sur la période 2011 (b).}
 \end{figure}
 
-\begin{figure}[!ht]
+\begin{figure}[!p]
   \begin{bigcenter}
 
   \begin{tabular}{ccc}
@@ -568,13 +640,24 @@ La stabilité des constantes de calibration a été étudiée. Les figures \ref{stabi
   \caption{\label{stabilite7}Stabilité des rampes pour les calorimètres hadroniques bouchons, gain moyen, sur la période 2011 (a). Bruit électronique mesuré par sous-détecteur en fonction de la pseudo-rapidité $ \eta $, pour les calorimètres à argon liquide (b).}
 \end{figure}
 
-Les figures \ref{stabilite3} et \ref{stabilite7} montrent la stabilités des piédestaux, du bruit et des rampes la période 2011 pour le calorimètre électromagnétiques tonneau, les calorimètres vers l'avant et pour les calorimètres hadroniques bouchons. La stabilité est meilleure que sur la période 2009-2010 car le détecteur Atlas est en fonctionnement nominale. Des déviations sont néanmoins observées pour les calorimètres hadroniques bouchons. Des investigations sont en cours mais il semble qu'il s'agisse d'un problème de température des FEB. La figure \ref{stabilite7} (b) montre le bruit électronique mesuré par sous-détecteur en fonction de la pseudo-rapidité $ \eta $, pour les calorimètres à argon liquide. Le bruit électronique est de l'ordre de $ 10\MeV $ à $ 50\MeV $ pour les cellules du calorimètre électromagnétique alors qu'il est de l'ordre de $ 100\MeV $ à $ 600\MeV $ pour les cellules des calorimètres vers l'avant et les calorimètres hadroniques bouchons.
+\begin{figure}[!p]
+  \begin{bigcenter}
+    \includegraphics[width=0.7\linewidth, keepaspectratio]{phd_calo/ecal}
+  \end{bigcenter}
+  \caption{\label{ecal}Diagramme du système de calibration électronique complet.}
+\end{figure}
+
+Les figures \ref{stabilite3} à \ref{stabilite7} montrent la stabilités des piédestaux, du bruit et des rampes, période 2011, pour le calorimètre électromagnétiques tonneau, les calorimètres vers l'avant et pour les calorimètres hadroniques bouchons. La stabilité est meilleure que sur la période 2009-2010 car le détecteur Atlas est en fonctionnement nominal. Des déviations sont néanmoins observées pour les calorimètres hadroniques bouchons, figure \ref{stabilite7} (a). Des investigations sont en cours mais il semble qu'il s'agisse d'un problème de température des FEB. La figure \ref{stabilite7} (b) montre le bruit électronique mesuré par sous-détecteur, en fonction de la pseudo-rapidité $ \eta $, pour les calorimètres à argon liquide. Le bruit électronique est de l'ordre de $ 10\MeV $ à $ 50\MeV $ pour les cellules du calorimètre électromagnétique alors qu'il est de l'ordre de $ 100\MeV $ à $ 600\MeV $ pour les cellules des calorimètres vers l'avant et les calorimètres hadroniques bouchons.
 
 \subsection{Outils}
 
 J'ai été tout particulièrement impliqué dans le développement des outils permettant la validation des campagnes de calibration. Cette section présente, succinctement l'architecture du système de validation automatique. Les composants logiciels suivants interviennent :
 
-\paragraph{L'Automatic Processing (AP)} Il s'agit de l'outils chargé de la reconstruction des runs de calibration électronique à partir des données brutes. Basé sur l'environnement Athena, l'AP est lancé automatiquement et l'avancement de la reconstruction est montré en temps réel sur une page internet dédiée.
+\paragraph{L'Automatic Processing (AP)} Il s'agit de l'outils chargé de la reconstruction des runs de calibration électronique à partir des données brutes. Son principal objectif est de calculer automatiquement les constantes de calibration des calorimètres à argon liquide. Il est autonome, possède un système de liste de diffusion par emails en cas d'erreurs ainsi que d'une application web dédiée. L'AP est implémenté sous forme de sept jeux de processus \emph{cron}\footnote{\emph{Cron} (du grec chronos) est un programme qui permet aux utilisateurs des systèmes Unix d'exécuter automatiquement des scripts, des commandes ou des logiciels à une date/heure spécifiée ou encore selon un cycle temporel prédéfini.} indépendants qui vérifient toutes les dix minutes si une nouvelle campagne de calibration est disponible.
+
+Ces jeux de processus sont de deux natures : i) Vérifier la présence de nouvelles campagnes (\emph{daily} ou \emph{weekly}) et créer des fichiers de configuration (deux premiers jeux). ii) Reconstruire les piédestaux, les rampes et les délais, calculer les paramètres des cartes de configuration, calculer les \emph{pulses} et enfin calculer les OFC (cinq seconds jeux). La figure \ref{apchain} montre la chaine de processus pour une campagne \emph{weekly} (a), (b) et (c) et la chaine de processus pour une campagne \emph{daily}.
+
+Précisons également que l'AP produit un drapeau VERT, JAUNE ou ROUGE suivant la présence de problèmes au niveau la qualité des données et effectue une pré-validation des campagnes de calibration électronique afin de détecter la présence d'erreurs au niveau des FEB ou un nombre anormalement élevé de canaux déviants. Tous les résultats sont enregistrés dans une base de fichiers \emph{root}. Le temps d'exécution est d'environ $ 35 $ minutes pour une campagne \emph{daily} et $ 8 $ heures pour une campagne \emph{weekly}.
 
 \paragraph{L'Automatic Validation Tool (AVT)} Il s'agit de l'outils chargé de la validation de la campagne de validation. Écrit en python, l'AVT est lancé automatiquement, juste après l'AP. Il choisit également la campagne de référence, effectue la validation en détectant les cellules déviantes, puis, en registre les résultat dans une base de donnée grâce à l'ECalDBLib.
 
@@ -590,16 +673,16 @@ Remarque : Les figures \ref{stabilite3} à \ref{stabilite7} ont été obtenues semi
 
 \begin{figure}[!p]
   \begin{bigcenter}
-    \includegraphics[width=446px, keepaspectratio]{phd_calo/sql}
+    \includegraphics[width=410px, keepaspectratio]{phd_calo/ap}
   \end{bigcenter}
-  \caption{\label{sql}Schéma SQL de la base de donnée de calibration électronique (ECalDB).}
+  \caption{\label{apchain}Chaine de processus pour une campagne \emph{weekly} (a), (b) et (c) et chaine de processus pour une campagne \emph{daily}.}
 \end{figure}
 
 \begin{figure}[!p]
   \begin{bigcenter}
-    \includegraphics[width=0.6\linewidth, keepaspectratio]{phd_calo/ecal}
+    \includegraphics[width=446px, keepaspectratio]{phd_calo/sql}
   \end{bigcenter}
-  \caption{\label{ecal}Diagramme du système de calibration électronique complet.}
+  \caption{\label{sql}Schéma SQL de la base de donnée de calibration électronique (ECalDB).}
 \end{figure}
 
 \newpage
