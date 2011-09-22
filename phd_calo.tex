@@ -1,4 +1,4 @@
-\chapter{Mise en \oe uvre du calorimètre électromagnétique à argon liquide du détecteur Atlas}
+\chapter[Mise en \oe uvre du calorimètre électromagnétique]{Mise en \oe uvre du calorimètre électromagnétique à argon liquide du détecteur Atlas}
 
 Dans ce chapitre, nous rappellerons les notions élémentaires de calorimétrie avant de décrire les calorimètres à argon liquide, tonneau et bouchons, du détecteur Atlas. Nous discutons ensuite de la calibration électronique de ces sous-détecteurs dans laquelle j'ai été impliqué.
 
@@ -445,7 +445,7 @@ Décrivons le contenu de chacun des \emph{runs} :
 
 \newpage
 
-\subsection{Détermination des c\oe fficients de filtrage optimal}\label{OFC_formulae}
+\subsection{C\oe fficients de filtrage optimal}\label{OFC_formulae}
 
 Présentons rapidement la méthode des c\oe fficient de filtrage optimal. Le signal reconstruit dans l'argon liquide peut être paramétré de la façon suivante :
 \begin{eqnarray}
@@ -774,7 +774,7 @@ Précisons également que l'AP produit un drapeau VERT, JAUNE ou ROUGE suivant la 
 
 \paragraph{L'Electronic Calibration Web Display (ECalWebDisplay)} Il s'agit d'une application sous la forme d'un ensemble de pages web qui permet d'afficher toutes les informations contenue dans l'ECalDB. Les figures \ref{web1} à \ref{web3} montrent quelques captures d'écran. Il est possible de consulter les informations sur les campagnes, sur les cellules déviantes, consulter l'historique des cellules déviantes, afficher des histogrammes de contrôle et enfin afficher des histogrammes de stabilité sur plusieurs campagnes.\\
 
-Avec Julien Morel, j'ai développé les versions actuelles de l'AVT, l'ECalDBLib, l'ECalConsole. L'optimisation de ces outils est toujours en cours et il est envisagé d'écrire une note technique. La figure \ref{ecal} montre le diagramme du système de calibration électronique complet.\\
+Avec Julien Morel, j'ai développé les versions actuelles de l'AVT, de l'ECalDBLib et de l'ECalConsole. L'optimisation de ces outils est toujours en cours. A court terme, il est envisagé d'écrire une note technique. La figure \ref{ecal} montre le diagramme global du système de calibration électronique.\\
 
 Remarque : Les figures \ref{stabilite3} à \ref{stabilite7} ont été obtenues semi-automatiquement grâce aux fonctionnalités de l'ECalDBLib.\\\\\\\\
 
@@ -833,14 +833,14 @@ sub_sub_partition := EMBA|EMBC|EMECA|EMECC|EMBPSA|EMBPSC|EMECPSA|EMECPSC|FCALA|F
 \end{lstlisting}
 \end{tabular}
 \end{center}
-  \caption{\label{ecaldblib_api}Fonctions haut niveau de manipulation de l'ECalDB accessibles depuis l'ECalDBLib ou de l'ECalDBConsole.}
+  \caption{\label{ecaldblib_api}Fonctions haut niveau de manipulation de l'ECalDB accessibles depuis l'ECal\-DBLib ou de l'ECalDBConsole.}
 \end{figure}
 
 \begin{figure}[!p]
   \begin{bigcenter}
     \includegraphics[width=1.1\linewidth, keepaspectratio]{phd_calo/web1}
   \end{bigcenter}
-  \caption{\label{web1}Electronic Calibration Web Display : visualisation d'une campagne de calibration.}
+  \caption{\label{web1}Electronic Calibration Web Display : visualisation d'une campagne de calibration. Nous apercevons la liste des canaux déviants avec la valeur des déviations pour chaque variable et pour les trois gains.}
 \end{figure}
 
 \begin{figure}[!p]
