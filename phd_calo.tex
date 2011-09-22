@@ -661,14 +661,14 @@ Précisons également que l'AP produit un drapeau VERT, JAUNE ou ROUGE suivant la 
 
 \begin{figure}[!ht]
   \begin{bigcenter}
-    \includegraphics[width=410px, keepaspectratio]{phd_calo/ap}
+    \includegraphics[width=0.9\linewidth, keepaspectratio]{phd_calo/ap}
   \end{bigcenter}
   \caption{\label{apchain}Chaine de processus pour une campagne \emph{weekly} (a), (b) et (c) et chaine de processus pour une campagne \emph{daily}.}
 \end{figure}
 
 \paragraph{L'Automatic Validation Tool (AVT)} Il s'agit de l'outils chargé de la validation de la campagne de validation. Écrit en python, l'AVT est lancé automatiquement, juste après l'AP. Il choisit également la campagne de référence, effectue la validation en détectant les FEB/cellules déviantes, puis, en registre les résultat dans une base de donnée grâce à l'ECalDBLib.
 
-\paragraph{L'Electronic Calibration DataBase Library (ECalDBLib)} Il s'agit de la bibliothèque chargée de maintenir et consulter la base de donnée de calibration électronique (ECalDB). Écrite en python, l'ECalDBLib est utilisée par tous les outils haut niveau et propose une API bas niveau (SQL) et haut niveau (python). La base de donnée est implémentée en SQLite (Oracle à terme), voir figure \ref{sql}, elle contient quatre tables : les campagnes (type, date, runs de calibrations, état global des champs magnétiques, qualité\footnote{Il s'agit d'un drapeau VERT, JAUNE ou ORANGE qui indique la présence de décalage dans les constantes de calibration, la présence de nombreuse cellules et/ou FEB déviante ou simple la présence de problèmes au niveau des la prises de données. Le choix est effectué par la personne responsable de la campagne de calibration puis il est discuté en réunion.} globale de la validation, etc\dots), les runs de calibration (type, date, sous-détecteurs, état des champs magnétiques, qualité$ ^\textrm{\scriptsize{4}} $ de la validation, etc\dots), les cellules déviantes (adresse\footnote{Les cellules sont identifiées par un numéro de \emph{feed-through} $ FT $, par un numéro de \emph{slot} $ SL\in[1,15] $ (il n'y a toujours qu'un \emph{slot} pour une FEB) et enfin par un numéro de canal $ CH\in[0,127] $. Chaque cellule possède aussi une ligne de calibration $ CL\in[0,127] $.} de la cellule, valeur des déviations, etc\dots) et toutes les FEB déviantes ou non (adresse$ ^\textrm{\scriptsize{5}} $ de la FEB, valeur des déviations, etc\dots). Conjointement à la bases de données SQL, une base de fichiers \emph{root} connant toutes des informations issues de la validation, voir les tableaux \ref{ntuple_global} et \ref{ntuple_local} ainsi que des histogrammes de contrôle, voir le tableau \ref{histo_controle}. Il y a un fichier \emph{root} par sous-détecteur par gain, et par type de variable (piédestal, bruit, auto-corrélation, rampe, délai) soit 32 fichiers \emph{root} pour une campagne de calibration \emph{weekly}. Ces fichiers peuvent être effacés et, si besoin reconstruits, afin d'économiser de l'espace disque.
+\paragraph{L'Electronic Calibration DataBase Library (ECalDBLib)} Il s'agit de la bibliothèque chargée de maintenir et consulter la base de donnée de calibration électronique (ECalDB). Écrite en python, l'ECalDBLib est utilisée par tous les outils haut niveau et propose une API bas niveau (SQL) et haut niveau (python). La base de donnée est implémentée en SQLite (Oracle à terme), voir figure \ref{sql}, elle contient quatre tables : les campagnes (type, date, runs de calibrations, état global des champs magnétiques, qualité\footnote{Il s'agit d'un drapeau VERT, JAUNE ou ORANGE qui indique la présence de décalage dans les constantes de calibration, la présence de nombreuse cellules et/ou FEB déviante ou simple la présence de problèmes au niveau des la prises de données. Le choix est effectué par la personne responsable de la campagne de calibration puis il est discuté en réunion.} globale de la validation, etc\dots), les runs de calibration (type, date, sous-détecteurs, état des champs magnétiques, qualité$ ^\textrm{\scriptsize{4}} $ de la validation, etc\dots), les cellules déviantes (adresse\footnote{Les cellules sont identifiées par un numéro de \emph{feed-through} $ FT $, par un numéro de \emph{slot} $ SL\in[1,15] $ (il n'y a toujours qu'un \emph{slot} pour une FEB) et enfin par un numéro de canal $ CH\in[0,127] $. Chaque cellule possède aussi une ligne de calibration $ CL\in[0,127] $.} de la cellule, valeur des déviations, etc\dots) et toutes les FEB déviantes ou non (adresse$ ^\textrm{\scriptsize{5}} $ de la FEB, valeur des déviations, etc\dots). Conjointement à la bases de données SQL, une base de fichiers \emph{root} connant toutes des informations issues de la validation, voir les tableaux \ref{ntuple_global} et \ref{ntuple_local} ainsi que des histogrammes de contrôle, voir le tableau \ref{histo_controle}. Il y a un fichier \emph{root} par sous-détecteur par gain, et par type de variable (piédestal, bruit, auto-corrélation, rampe, délai) soit 32 fichiers \emph{root} pour une campagne de calibration \emph{weekly}. Ces fichiers peuvent être effacés et, si besoin, reconstruits afin d'économiser de l'espace disque. La figure \ref{ecaldblib_api} énumère les fonctions haut niveau de l'ECalDBLib.
 
 \begin{figure}[!ht]
   \begin{bigcenter}
@@ -701,7 +701,7 @@ Précisons également que l'AP produit un drapeau VERT, JAUNE ou ROUGE suivant la 
   \caption{\label{ntuple_global}Format des fichiers \emph{validation} de la base de données ROOT-ECalDB. Il y a un fichier par sous-détecteur, par gain par variable et une entrée par cellule. Fichiers Ntuple\_$\{$SUB\_DETECTOR$\}$\_$\{$VARIABLE$\}$\_$\{$GAIN$\}$\_$\{$CAMPAIGN$\}$.root}
 \end{table}
 
-\begin{table}[!ht]
+\begin{table}[!p]
   \begin{bigcenter}
 
     \begin{tabular}{|c|l|}
@@ -750,7 +750,7 @@ Précisons également que l'AP produit un drapeau VERT, JAUNE ou ROUGE suivant la 
   \caption{\label{ntuple_local}Format des fichiers \emph{validation} de la base de données ROOT-ECalDB. Il y a un fichier par sous-détecteur, par gain par variable et une entrée par cellule. Fichiers Ntuple\_$\{$SUB\_DETECTOR$\}$\_$\{$VARIABLE$\}$\_$\{$GAIN$\}$\_$\{$CAMPAIGN$\}$.root}
 \end{table}
 
-\begin{table}[!ht]
+\begin{table}[!p]
   \begin{bigcenter}
 
     \begin{tabular}{|c|l|}
@@ -770,15 +770,71 @@ Précisons également que l'AP produit un drapeau VERT, JAUNE ou ROUGE suivant la 
   \caption{\label{histo_controle}Format des fichiers \emph{histogramme} de la base de données ROOT-ECalDB. Il y a un fichier par sous-détecteur, par gain par variable et une entrée par cellule. Fichiers Figure\_$\{$SUB\_DETECTOR$\}$\_$\{$VARIABLE$\}$\_$\{$GAIN$\}$\_$\{$CAMPAIGN$\}$.root}
 \end{table}
 
-bla\\bla\\bla\\bla\\bla\\bla\\bla
+\paragraph{L'Electronic Calibration Console (ECalConsole)} Il s'agit d'une application sous la forme d'une console qui permet de d'effectuer toutes les opérations de maintenance et de contrôle sur l'ECalDB. Elle permet d'interpréter des scripts écrits en python et permet directement l'utilisation des fonctions haut niveau de l'ECalDBLib.
 
-\paragraph{L'Electronic Calibration Console (ECalConsole)} Il s'agit d'une application sous la forme d'une console qui permet de d'effectuer toutes les opérations de maintenance et de contrôle sur l'ECalDB.
+\paragraph{L'Electronic Calibration Web Display (ECalWebDisplay)} Il s'agit d'une application sous la forme d'un ensemble de pages web qui permet d'afficher toutes les informations contenue dans l'ECalDB. Les figures \ref{web1} à \ref{web3} montrent quelques captures d'écran. Il est possible de consulter les informations sur les campagnes, sur les cellules déviantes, consulter l'historique des cellules déviantes, afficher des histogrammes de contrôle et enfin afficher des histogrammes de stabilité sur plusieurs campagnes.\\
 
-\paragraph{L'Electronic Calibration Web Display (ECalWebDisplay)} Il s'agit d'une application sous la forme d'un ensemple de pages web qui permet d'afficher toutes les informations contenue dans l'ECalDB. Les figures \ref{web1} à \ref{web3} montrent quelques captures d'écran. Il est possible de consulter les informations sur les campagnes, sur les cellules déviantes, consulter l'historique des cellules déviantes, afficher des histogrammes de contrôle et enfin afficher des histogrammes de stabilité sur plusieurs campagnes.\\
+Avec Julien Morel, j'ai développé les versions actuelles de l'AVT, l'ECalDBLib, l'ECalConsole. L'optimisation de ces outils est toujours en cours et il est envisagé d'écrire une note technique. La figure \ref{ecal} montre le diagramme du système de calibration électronique complet.\\
 
-Avec Julien Morel, j'ai développé les premières versions de l'AVT, l'ECalDBLib, l'ECalConsole. L'optimisation de ces outils est toujours en cours et il est envisagé d'écrire une note technique. Un tutoriel de prise en main est montré lors des formations de calibration électronique. La figure \ref{ecal} montre le diagramme du système de calibration électronique complet.\\
+Remarque : Les figures \ref{stabilite3} à \ref{stabilite7} ont été obtenues semi-automatiquement grâce aux fonctionnalités de l'ECalDBLib.\\\\\\\\
 
-Remarque : Les figures \ref{stabilite3} à \ref{stabilite7} ont été obtenues semi-automatiquement grâce aux fonctionnalités de l'ECalDBLib.
+\definecolor{bleupale}{cmyk}{0.2, 0.0, 0.0, 0.0}
+
+\begin{figure}[!h]
+\begin{center}
+\begin{tabular}{c}
+\begin{lstlisting}[language=Python,basicstyle=\tiny,backgroundcolor=\color{bleupale}]
+CampaignByDQFlag(<status GREEN|YELLOW|RED>)
+CampaignByDate(<date_start YYYY-MM-DD>, <date_stop YYYY-MM-DD>)
+CampaignByFlag(<status GREEN|YELLOW|RED>)
+CampaignById(<campaign>)
+CampaignByMagneticFieldStatus(<toroid_status ON|OFF>, <solenoid_status ON|OFF>)
+CampaignByRef(<campaign>)
+CampaignByType(<type DAILY|WEEKLY>)
+CampaignFormat(<item>|<list>)
+CampaignId()
+CampaignList()
+ChannelByCampaign(<campaign>, <sub_sub_partition>)
+ChannelByCampaignCH(<campaign>, <sub_sub_partition>, <feed through>, <slot>, <channel>)
+ChannelByCampaignFT(<campaign>, <sub_sub_partition>, <feed through>)
+ChannelByCampaignSL(<campaign>, <sub_sub_partition>, <feed through>, <slot>)
+ChannelFormat(<item>|<list>)
+CheckChannel(<sub_sub_partition>, <ft>, <sl>, <ch>[[, <toroid_status>, <solenoid_status>]])
+CheckFeb(<sub_sub_partition>, <ft>, <sl>[[, <toroid_status>, <solenoid_status>]])
+Commit()
+Execute(<SQL query>)
+FebByCampaign(<campaign>, <sub_sub_partition>)
+FebByCampaignFT(<campaign>, <sub_sub_partition>, <feed through>)
+FebByCampaignSL(<campaign>, <sub_sub_partition>, <feed through>, <slot>)
+FebFormat(<item>|<list>)
+MergeCampaignsById([<id1>,<id2>,...])
+ReferenceId(<toroid_status ON|OFF>, <solenoid_status ON|OFF>)
+RemoveCampaignEntryById(<campaign>)
+RootFigure(<campaign>, <partition EM|EMPS|HECFCAL>, <type PEDESTAL|RAMP|DELAY>)
+RootFiles(<run>, <type PEDESTAL|RAMP|DELAY>)
+RootNtuple(<campaign>, <partition EM|EMPS|HECFCAL>, <type PEDESTAL|RAMP|DELAY>)
+RunByCampaign(<campaign>)
+RunByDQFlag(<status GREEN|YELLOW|RED>)
+RunByDate(<date_start YYYY-MM-DD>, <date_stop YYYY-MM-DD>)
+RunByFlag(<status GREEN|YELLOW|RED>)
+RunByGain(<gain H|L|M>)
+RunById(<run>)
+RunByPartition(<partition EM|EMPS|HECFCAL>)
+RunByType(<type PEDESTAL|RAMP|DELAY>)
+RunFormat(<item>|<list>)
+UpdateCampaignDBStatus(<campaign>, <db_status CURRENT|YES|NO>)
+UpdateCampaignDQFlag(<campaign>, <flag GREEN|YELLOW|RED>)
+UpdateCampaignFlag(<campaign>, <flag GREEN|YELLOW|RED>)
+UpdateRunDQFlag(<campaign>, <flag GREEN|YELLOW|RED>)
+UpdateRunFlag(<campaign>, <flag GREEN|YELLOW|RED>)
+ValidationPlots(<campaign>, <partition EM|EMBPS|HECFCAL>, <type PEDESTAL|RAMP|DELAY>, <gain H|M|L>)
+
+sub_sub_partition := EMBA|EMBC|EMECA|EMECC|EMBPSA|EMBPSC|EMECPSA|EMECPSC|FCALA|FCALC|HECA|HECC
+\end{lstlisting}
+\end{tabular}
+\end{center}
+  \caption{\label{ecaldblib_api}Fonctions haut niveau de manipulation de l'ECalDB accessibles depuis l'ECalDBLib ou de l'ECalDBConsole.}
+\end{figure}
 
 \begin{figure}[!p]
   \begin{bigcenter}
