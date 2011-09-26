@@ -1,4 +1,4 @@
-\chapter{Le détecteur Atlas}
+\chapter{Le détecteur Atlas}\label{chapitre_atlas}
 
 Dans ce chapitre, nous allons décrire le LHC et l'expérience Atlas sur lesquels seront basés tous les résultats montrés dans cette thèse.
 
@@ -86,15 +86,13 @@ Remarque : Les collisionneurs à protons sont préférables aux collisionneurs élec
       \hline
         Nombre de protons par paquets & $ \sim1.7\times10^{11} $ & $ \sim1.2\times10^{11} $\\
       \hline
-        Nombre de paquets & ??? & $ 2808 $\\
+        Nombre de paquets & $ \sim900 $ & $ $ 2808 $ $\\
       \hline
-        Dispersion de la position du point de croisement & $ \left\{ \begin{array}{l} \sigma_{x,y}\sim???\mu m \\ \sigma_{\,\,z\,\,}\sim???cm \end{array} \right. $ & $ \left\{ \begin{array}{l} \sigma_{x,y}\sim15\mu m \\ \sigma_{\,\,z\,\,}\sim5.6cm \end{array} \right. $\\
+        Dispersion de la position du point de croisement & $ \left\{ \begin{array}{l} \sigma_{x,y}\sim21\mu m \\ \sigma_{\,\,z\,\,}\sim6cm \end{array} \right. $ & $ \left\{ \begin{array}{l} \sigma_{x,y}\sim15\mu m \\ \sigma_{\,\,z\,\,}\sim5.6cm \end{array} \right. $\\
       \hline
-        Angle entre les faisceaux aux points de croisement & ??? & $ \sim285\mu rad $\\
+        Angle entre les faisceaux aux points de croisement & $ \sim120\mu rad $ & $ \sim285\mu rad $\\
       \hline
-        Durée de vie du faisceau & ??? & $ \sim22 $ heures\\
-      \hline
-        Durée de vie de la luminosité & ??? & $ \sim10 $ heures\\
+        Durée de vie du faisceau & jusqu'à $ \sim26 $ heures & $ \sim22 $ heures\\
       \hline
         Temps de recharge des faisceaux & \multicolumn{2}{c|}{$ \sim2 $ heures}\\
       \hline
@@ -761,7 +759,7 @@ Précisons également que 1800 sondes à effet Hall, placées sur les MDT et le cryo
 
 \section{Le système de déclenchement}
 
-Au fonctionnement nominal, au niveau du détecteur Atlas, le LHC produira des collisions toutes les $ 25ns $ ($ 50ns $ actuellement en 2011) soit une fréquence de croisement de $ 40MHz $ ($ 20MHz $ actuellement en 2011). La quantité de données brut nécessaire pour représenter un événement est de $ \sim1.6MBye $ sachant que la bande passant est limitée à $ \sim320\textrm{ Mbyte}/s $, soit encore une fréquence de $ \sim200Hz $. Il est nécessaire d'effectuer une sélection des événements à conserver avec le meilleur taux de réjection possible ($ \sim200000 $). Pour information, avec une luminosité de $\sim10^{33}cm^{-2}s^{-1} $ en 2011, le taux de production du boson $ Z $ est de $ \sim??Hz $.
+Au fonctionnement nominal, au niveau du détecteur Atlas, le LHC produira des collisions toutes les $ 25ns $ ($ 50ns $ actuellement en 2011) soit une fréquence de croisement de $ 40MHz $ ($ 20MHz $ actuellement en 2011). La quantité de données brut nécessaire pour représenter un événement est de $ \sim1.6MBye $ sachant que la bande passant est limitée à $ \sim320\textrm{ Mbyte}/s $, soit encore une fréquence de $ \sim200Hz $. Il est nécessaire d'effectuer une sélection des événements à conserver avec le meilleur taux de réjection possible ($ \sim200000 $). Pour information, avec une luminosité de $\sim10^{33}cm^{-2}s^{-1} $ en 2011, le taux de production du boson $ Z $ est de $ \sim50Hz $.
 
 Dans ce but, le détecteur Atlas dispose d'un système de déclenchement sur trois niveaux dont le principe général est exposé sur la figure \ref{trigger}.
 
@@ -800,7 +798,7 @@ Remarque 2 : La voie de déclenchement EF\_e20\_medium fut la voie de déclencheme
   \end{tabular}
 
   \end{bigcenter}
-  \caption{\label{EFe20medium}Performances de la voie de déclenchement EF\_e20\_medium (étude réalisée sur des électrons provenant de bosons Z) en fonction de l'énergie transverse (a) et en fonction de la pseudo-rapidité (b).}
+  \caption{\label{EFe20medium}Performances de la voie de déclenchement EF\_e20\_medium (étude réalisée sur des électrons \emph{offline medium} provenant de bosons Z, voir chapitre \ref{chapitre_reco}) en fonction de l'énergie transverse (a) et en fonction de la pseudo-rapidité (b).}
 \end{figure}
 
 Les figures \ref{rates} (a) et \ref{rates} (b) montrent respectivement les taux de déclenchement totaux des niveaux L1, L2 et EF en fonction du temps pour le run 167707 (année 2010, pic de luminosité) et pour le run 189483 (année 2011, pic de luminosité le 19 septembre).
