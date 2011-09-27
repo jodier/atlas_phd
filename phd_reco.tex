@@ -2,7 +2,7 @@
 
 Dans ce chapitre, nous allons aborder la reconstruction et la sélection des électrons et les photons dans le détecteur Atlas.
 
-Lorsque les données sont enregistrées, les informations de plusieurs sous-détecteurs (trajectographe interne (pixels, SCT, TRT), calorimètres électromagnétique et hadronique) sont disponibles. Le travail de reconstruction consiste à rassembler ces informations afin de former des topologies propres à chaque particule, on parle à ce niveau de candidats électrons ou photons. Vient ensuite le travail d'identification qui consiste en l'application d'un certain nombre de coupures (= critères de sélection) qui doivent simultanément maximiser la pureté et l'efficacité.
+Lorsque les données sont enregistrées, les informations de plusieurs sous-détecteurs (trajectographe interne (pixels, SCT, TRT), calorimètres électromagnétique et hadronique) sont disponibles. Le travail de reconstruction consiste à rassembler ces informations afin de former des topologies propres à chaque particule, on parle à ce niveau de candidats électrons ou photons. Vient ensuite le travail d'identification qui consiste en l'application d'un certain nombre de coupures (= critères de sélection) qui doivent simultanément la pureté et l'efficacité.
 
 Nous allons aborder la reconstruction et la sélection des électrons, des photons non convertis ainsi que des photons convertis en se limitant à la zone de précision du calo électromagnétique soit $ |\eta|<2.47 $.
 
@@ -22,7 +22,7 @@ Une fois les candidats traces formés, seuls sont conservés les paramètres cinéma
 
 Remarque 1 : Les ajustements des traces tiennent potentiellement compte du Bremsstrahlung et de la diffusion multiple.\\
 
-Remarque 2 : Comme nous l'avons évoqué au chapitre précédent, il convient de distinguer les traces qui ont des points d'impact dans les détecteurs silicium (pixel et SCT), qui sont de haute précision, des traces qui n'ont des points d'impact que dans le TRT, où la reconstruction de la pseudo-rapidité $ \eta $ est mal déterminée car le TRT ne permet pas une mesure de la coordonnée $ z $.
+Remarque 2 : Comme nous l'avons évoqué au chapitre précédent, il convient de distinguer les traces qui ont des points d'impact dans les détecteurs silicium (pixel et SCT), qui sont de haute précision, des traces qui n'ont des points d'impact que dans le TRT, où la mesure de la coordonnée $ \eta $ (resp. $ \phi $) n'est pas possible pour le tonneau (resp. pour les bouchons).
 
 \begin{figure}[!ht]
   \begin{bigcenter}
@@ -55,7 +55,7 @@ Cet algorithme utilise uniquement des critères calorimétriques. Il est basé sur 
 
 Premièrement, les trois compartiments du calorimètre sont découpés en tours virtuelles à la granularité du second compartiment soit encore $ \Delta\eta\times\Delta\phi=0.025\times0.025 $.
 
-Deuxièmement, une fenêtre de $ 3\times 5 $ tour est déplacée sur l'ensemble des tours. Si l'énergie transverse, à l'intérieur de l'amas ainsi formé, est supérieure à $ 2.5\GeV $, où $ E_T=E\sin\theta=E/\cosh\eta $, alors la position de la fenêtre est ajustée afin de maximiser l'énergie mesurée, nous obtenons un candidat amas.
+Deuxièmement, une fenêtre de $ 3\times 5 $ tours est déplacée sur l'ensemble des tours. Si l'énergie transverse, à l'intérieur de l'amas ainsi formé, est supérieure à $ 2.5\GeV $, où $ E_T=E\sin\theta=E/\cosh\eta $, alors la position de la fenêtre est ajustée afin de maximiser l'énergie mesurée, nous obtenons un candidat amas.
 
 Troisièmement, de même que pour la reconstruction des photons de basse énergie, dans le chapitre précédent, les amas qui se recouvrent, à une distance inférieure à deux cellules dans le deuxième compartiment, soit encore $ |\eta_{cl1}-\eta_{cl2}|<0.05 $ et $ |\phi_{cl1}-\phi_{cl2}|<0.05 $, sont identifiés, on ne garde que l'amas local de plus grande énergie transverse.
 
@@ -65,7 +65,7 @@ Finalement des coupures sur les fractions d'énergie dans le près-échantillonneur
 
 Des études menées sur de la simulation Monte-carlo ont montré que pour des électrons d'énergie transverse inférieure à $ 5\GeV $, l'efficacité de reconstruction de \emph{softe} est supérieure de $ 10\% $ à l'efficacité de reconstruction de \emph{egamma}. Au-delà d'une énergie transverse de $ 5\GeV $, la différence devient négligeable.
 
-Comme la couverture en pseudo-rapidité est meilleure pour \emph{egamma}, $ |\eta|<2.47 $, que pour \emph{softe}, $ |\eta|<2 $, la suite de ce chapitre suppose la reconstruction des candidats électrons et photons à partir de l'algorithme \emph{egamma}.
+Comme la couverture en pseudo-rapidité est meilleure pour \emph{egamma}, $ |\eta|<2.47 $, que pour \emph{softe}, $ |\eta|<2 $, la suite de ce chapitre suppose la reconstruction des candidats électrons et photons à partir de l'algorithme \emph{egamma}. Pour la reconstruction du boson de Higgs, dans le dernier chapitre de cette thèse, les électrons \emph{softe} (favorable à bas $ p_T $) et \emph{egamma} (favorable à haut $ p_T $) seront utilisés.
 
 \section{Séparation électrons/photons}
 
@@ -96,7 +96,7 @@ Les candidats conversions sont reconstruits à partir de la collection des traces
 
 \paragraph{Photons} Dans le conteneur \emph{photons}, sont placés les candidats photons formés d'un amas calorimétrique non associé à une trace. Pour les analyses d'avantage orientées photons qu'électrons, un mécanisme permet de récupérer les cas ambigus de photons convertis ou de photons non convertis.\\
 
-Remarque : Dans tous les cas, il n'y a jamais de recouvrement entre le contenu du conteneur \emph{électrons} et le contenu du conteneur \emph{photons}.
+Remarque : Il peut avoir recouvrement entre le contenu du conteneur \emph{électrons} et le contenu du conteneur \emph{photons}, cependant, il est possible de savoir si il s'agit d'un photon récupéré sous forme d'électron.
 
 \paragraph{Récupération des photons non convertis} Les candidats électrons qui possèdent une mauvaise association trace-amas peuvent être récupérés en tant que photons. C'est le cas des électrons associés à une trace seulement TRT et de faible impulsion transverse $ p_{T\,trk}<2\GeV $ ou encore des électrons avec un rapport $ E_{cl}/p_{T\,trk}>10 $ et de faible impulsion transverse $ p_{T\,trk}<2\GeV $.
 
@@ -105,9 +105,9 @@ Remarque : Dans tous les cas, il n'y a jamais de recouvrement entre le contenu d
 La figure \ref{procedure} illustre la procédure de décision pour les candidats électrons, photons non convertis et photons convertis.
 
 \begin{figure}[!ht]
-  \begin{center}
+  \begin{bigcenter}
     \includegraphics[height=9cm, keepaspectratio]{phd_reco/procedure}
-  \end{center}
+  \end{bigcenter}
   \caption{\label{procedure}Procédure de décision pour la récupération des candidats photons convertis et photons non convertis.}
 \end{figure}
 
@@ -120,9 +120,9 @@ Les amas de $ 3\times5 $ cellules utilisés par l'algorithme \emph{egamma} ne son
 Les positions en pseudo-rapidité $ \eta $ et en angle azimutal $ \phi $ des amas sont obtenues à partir du barycentre du dépôt d'énergie. Comme la granularité du calorimètre électromagnétique est finie, un biais sur la position $ \eta $ est observée de l'ordre du pour mille. Une correction a été extraite à partir de la simulation Monte-Carlo. La figure \ref{correction} montre la distribution de la position relative d'un amas avant correction et après correction pour des électrons avec une énergie de $ 100\GeV $ dans le premier compartiment du calorimètre électromagnétique.
 
 \begin{figure}[!ht]
-  \begin{center}
-    \includegraphics[height=5.0cm, keepaspectratio]{phd_reco/correction}
-  \end{center}
+  \begin{bigcenter}
+    \includegraphics[height=5.5cm, keepaspectratio]{phd_reco/correction}
+  \end{bigcenter}
   \caption{\label{correction}Distribution de la position relative d'un amas avant correction et après correction pour des électrons avec une énergie de $ 100\GeV $.}
 \end{figure}
 
@@ -136,26 +136,9 @@ La détermination de la position s'appuie sur la fine segmentation des deux premi
   \phi_{cl}\equiv\frac{3\phi_{cl\,s1}E_{cl\,s1}+\phi_{cl\,s2}E_{cl\,s2}}{3E_{cl\,s1}+E_{cl\,s2}}
 \end{equation}
 
-Les figures \ref{resolutions} (a) et (b) montrent respectivement la distribution de la résolution sur la position $ \eta $ et sur la position $ \phi $ d'un amas de cellules pour des objets électromagnétiques avec une énergie de $ 100\GeV $.
-
-\begin{figure}[!ht]
-  \begin{center}
-
-  \begin{tabular}{ccc}
-    \includegraphics[height=5.0cm, keepaspectratio]{phd_reco/correction}
-    &&
-    \includegraphics[height=5.0cm, keepaspectratio]{phd_reco/correction}
-    \\
-    (a) && (b)
-  \end{tabular}
-
-  \end{center}
-  \caption{\label{resolutions}Résolution sur la position $ \eta $ (a) et sur la position $ \phi $ (b) d'un amas de cellules pour des objets électromagnétiques avec une énergie de $ 100\GeV $.}
-\end{figure}
-
 \subsection{Correction de l'énergie des amas}
 
-De même qu'au chapitre précédent, les amas doivent être corrigés en énergie. Une carte des poids, en fonction de la pseudo-rapidité, a été établie et validée sous faisceaux tests. Cette calibration s'appuie sur des simulations réalisées avec GEANT4. De plus amples précisions sont disponibles dans \ref{}.
+De même qu'au chapitre précédent, les amas doivent être corrigés en énergie. Une carte des poids, en fonction de la pseudo-rapidité, a été établie et validée sous faisceaux tests. Cette calibration s'appuie sur des simulations réalisées avec GEANT4. De plus amples précisions sont disponibles dans \cite{}.
 
 Comme les poids ne dépendent pas de la position $ \phi $, une seconde calibration a été établie afin de tenir compte de la variation en épaisseur d'absorbeur traversée pour un centre de gerbe donné. L'effet sur la résolution de cette correction est de l'ordre de $ 0.5\% $.
 
@@ -163,12 +146,12 @@ Enfin une dernière correction est appliquée afin de tenir compte de la taille fi
 
 \subsection{Performance de la reconstruction}
 
-Après correction, la résolution en énergie pour la reconstruction des objets électromagnétiques est donnée par :
+Après correction, la résolution en énergie attendue pour la reconstruction des objets électromagnétiques est donnée par :
 \begin{equation}
   \frac{\sigma(E)}{E}\approx\frac{0.3\GeV}{E}\oplus\frac{10\%}{\sqrt{E}}\oplus0.6\%
 \end{equation}
 
-La résolution angulaire des photons non convertis est directement celle du calorimètre électromagnétique, soit quelques milliradians. Pour les photons convertis et pour les électrons, les performances combinées du trajectographe interne et du calorimètre électromagnétique mènent à une résolution angulaire de l'ordre de $ \sim0.5 mrad $.
+La résolution angulaire des photons non convertis est directement celle du calorimètre électromagnétique, soit quelques milliradians. Pour les photons convertis et pour les électrons, les performances combinées du trajectographe interne et du calorimètre électromagnétique mènent à une résolution angulaire attendue : $ \frac{\sigma_\phi}{E}=\frac{50mrad}{\sqrt{E}} $.
 
 Les efficacités sont très bonnes, pour des électrons de plus de $ 20\GeV $, elle est supérieure à $ \sim97\% $ et pour les photons, elle est supérieure à $ \sim99.8\% $.
 
@@ -210,7 +193,7 @@ La différence relative en énergie entre les deux cellules les plus énergétiques 
   E_{ratio}=\frac{E^{s1}_\textrm{1$ ^\textrm{st} $ max}-E^{s1}_\textrm{2$ ^\textrm{nd} $ max}}{E^{s1}_\textrm{1$ ^\textrm{st} $ max}+E^{s1}_\textrm{2$ ^\textrm{nd} $ max}}
 \end{equation}
 
-Pour les longueurs de gerbes deux variables présentent un intérêt. $ w^{3}_{\eta1} $ et $ w^{tot}_{\eta1}\equiv w_{stot} $ ont pour définition :
+Pour les largeurs de gerbes deux variables présentent un intérêt. $ w^{3}_{\eta1} $ et $ w^{tot}_{\eta1}\equiv w_{stot} $ ont pour définition :
 \begin{equation}
   w_{\eta1}=\sqrt{\frac{\sum E_i(i-i_{max})^2}{\sum E_i}}
 \end{equation}
@@ -222,14 +205,15 @@ Ajoutons encore l'énergie en dehors du c\oe ur de la gerbe :
   F_{side}=\frac{\sum^{+3}_{i=-3}E_i-\sum^{+1}_{i=-1}E_i}{\sum^{+1}_{i=-1}E_i}
 \end{equation}
 
+\vspace{-0.6cm}
+
 \subsection{Fuites hadroniques}
 
-Comme expliqué dans le chapitre 3, le calorimètre électromagnétique possède une longueur total de $ 24X_0 $ (24 longueurs de radiation) pour les gerbes électromagnétiques mais seulement une longueur de $ 2X_0 $ (2 longueurs de radiation) pour les gerbes hadroniques. La fuite en énergie dans le calorimètre hadronique des gerbes électromagnétiques doit être inférieure à $ 1\% $. On définit alors les variables :
+Comme expliqué dans le chapitre \ref{chapitre_atlas}, le calorimètre électromagnétique possède une longueur total de $ 24X_0 $ (24 longueurs de radiation) pour les gerbes électromagnétiques mais seulement une longueur de $ 2X_0 $ (2 longueurs de radiation) pour les gerbes hadroniques. La fuite en énergie dans le calorimètre hadronique des gerbes électromagnétiques doit être inférieure à $ 1\% $. On définit alors les variables :
 \begin{equation}
   R_{had1}=\frac{E_{T\,had.1\,cl}}{E_{T\,EM\,cl}}\hspace{1cm}\textrm{et}\hspace{1cm}R_{had}=\frac{E_{T\,had.\,cl}}{E_{T\,EM\,cl}}
 \end{equation}
-
-\noindent comme nouvelle variable discriminante, où $ E_{T\,EM\,cl} $ est l'énergie transverse de l'amas dans le calorimètre électromagnétique, $ E_{T\,had.1\,cl} $ est l'énergie transverse de l'amas dans le premier compatiment du calorimètre hadronique et $ E_{T\,had.\,cl} $ est l'énergie transverse de l'amas dans le calorimètre hadronique.
+comme nouvelle variable discriminante, où $ E_{T\,EM\,cl} $ est l'énergie transverse de l'amas dans le calorimètre électromagnétique, $ E_{T\,had.1\,cl} $ est l'énergie transverse de l'amas dans le premier compatiment du calorimètre hadronique et $ E_{T\,had.\,cl} $ est l'énergie transverse de l'amas dans le calorimètre hadronique.
 
 \subsection{Identification à partir des traces}
 
@@ -237,33 +221,33 @@ Les électrons produits de façon prompte, près du vertex primaire, doivent laisse
 
 \subsection{Combinaison traces-amas}
 
-Des coupures sur les distances entre la trace et l'amas associé peuvent être employées et une coupure sur le rapport entre l'énergie de l'amas et l'impulsion de la trace $ 0.7<E_{cl}/p_{trk}\lesssim4 $ peut également être utilisée.
+Des coupures sur les distances entre la trace et l'amas associé ou sur le rapport entre l'énergie de l'amas et l'impulsion de la trace $ 0.7<E_{cl}/p_{trk}\lesssim4 $ peuvent être employées.
 
 \section{Critères d'identification des électrons}
 
 \subsection{Jeu de coupures standards isEM}
 
-Afin de mener des études de physique dans un cadre cohérent, il a été définit trois jeux standards de coupures de sélection nommées \emph{loose} (\emph{lâche}), \emph{medium} (\emph{intermédiaire}) et \emph{tight} (\emph{stricte}) et tels que \emph{tight} implique \emph{medium} implique \emph{loose}. Elles sont basées sur des coupures, appliquées sur les variables présentées précédemment, optimisées en régions d'énergie transverse $ E_T $ et de pseudo-rapidité $ \eta $. Le tableau \ref{isem} présente en détails le contenu de \emph{loose}, \emph{medium} et \emph{tight} pour les données 2011 à $ \sqrt{s}=7\TeV $. A chacun des trois jeux de coupures de sélection correspond une efficacité de sélection $ \varepsilon $ et un facteur de réjection des jets $ R_{jet} $. Les figures \ref{isEM1} (a) et (b) montrent respectivement les efficacité de sélection des électrons \emph{loose}, \emph{medium} et \emph{tight} en fonction de l'énergie transverse $ E_T $ et en fonction de la pseudo-rapidité $ \eta $. Elles sont respectivement de $ 94.32\% $, $ 90.00\% $ et $ 71.59\% $ pour les électrons \emph{loose}, \emph{medium} et \emph{tight} avec une énergie de $ 20\GeV $ issus de boson $ Z $. Le tableau \ref{isEM2} montre les efficacités intégrées ainsi que les facteur de réjections de jets pour les trois jeux de coupures de sélection.\\
+Afin de mener des études de physique dans un cadre cohérent, il a été définit trois jeux standards de coupures de sélection nommées \emph{loose} (\emph{lâche}), \emph{medium} (\emph{intermédiaire}) et \emph{tight} (\emph{stricte}) et tels que \emph{tight} implique \emph{medium} implique \emph{loose}. Elles sont basées sur des coupures, appliquées sur les variables présentées précédemment, optimisées en régions d'énergie transverse $ E_T $ et de pseudo-rapidité $ \eta $. Le tableau \ref{isem} présente en détails le contenu de \emph{loose}, \emph{medium} et \emph{tight} pour les données 2011 à $ \sqrt{s}=7\TeV $. A chacun des trois jeux de coupures de sélection correspond une efficacité de sélection $ \varepsilon $ et un facteur de réjection des jets $ R_{jet} $. Les figures \ref{isEM1} (a) et (b) montrent respectivement les efficacité de sélection des électrons \emph{loose}, \emph{medium} et \emph{tight} en fonction de l'énergie transverse $ E_T $ et en fonction de la pseudo-rapidité $ \eta $. Elles sont respectivement de $ 94.32\% $, $ 90.00\% $ et $ 71.59\% $ pour les électrons \emph{loose}, \emph{medium} et \emph{tight} avec une énergie de $ 20\GeV $ issus de boson $ Z $. Le tableau \ref{isEM2} montre les efficacités intégrées ainsi que les facteur de réjections de jets pour les trois jeux de coupures de sélection.
 
-Remarque : Certaines études requièrent un critère d'isolation supplémentaire. Il existe plusieurs définitions basées sur la trajectographie ou la calorimétrie qui consistent à effectuer une coupure sur la fraction d'impulsion transverse (resp. d'énergie transverse) contenue dans un cône d'angle d'ouverture $ \theta $ divisé par l'impulsion transverse totale : $ \textrm{idIso}(\theta)=\sum p_T^{\textrm{cone }\theta}/p_T $ et $ \textrm{clIso}(\theta)=\sum E_T^{\textrm{cone }\theta}/p_T $. Il exite une seconde définition de \emph{medium} et \emph{tight} avec l'ajout d'une isolation basée sur des cônes $ \theta=30° $ qui pocèdent un haut pouvoir discriminant et une bonne résistance aux effets de l'empilement. L'isolation sera plus largement détaillée dans le dernier chapitre dédié à la préparation à la recherche du boson de Higgs dans le canal $ Z\to 4l $.\\
+Remarque : Certaines études requièrent un critère d'isolation supplémentaire. Il existe plusieurs définitions basées sur la trajectographie ou la calorimétrie qui consistent à effectuer une coupure sur la fraction d'impulsion transverse (resp. d'énergie transverse) contenue dans un cône d'angle d'ouverture $ \Delta R $ divisé par l'impulsion transverse totale : $ \textrm{idIso}(\Delta R)=\sum p_T^{\textrm{cone }\Delta R}/p_T $ et $ \textrm{clIso}(\Delta R)=\sum E_T^{\textrm{cone }\Delta R}/p_T $. Il exite une seconde définition de \emph{medium} et \emph{tight} avec l'ajout d'une isolation basée sur des cônes $ \Delta R=0.3 $ qui pocèdent un haut pouvoir discriminant et une bonne résistance aux effets de l'empilement. L'isolation sera plus largement détaillée dans le dernier chapitre dédié à la préparation à la recherche du boson de Higgs dans le canal $ Z\to 4l $.\\
 
 \begin{figure}[!ht]
-  \begin{center}
+  \begin{bigcenter}
 
   \begin{tabular}{ccc}
-    \includegraphics[height=5.25cm, keepaspectratio]{phd_reco/eff_et}
+    \includegraphics[height=5.5cm, keepaspectratio]{phd_reco/eff_et}
     &&
-    \includegraphics[height=5.25cm, keepaspectratio]{phd_reco/eff_eta}
+    \includegraphics[height=5.5cm, keepaspectratio]{phd_reco/eff_eta}
     \\
     (a) && (b)
   \end{tabular}
 
-  \end{center}
-  \caption{\label{isEM1}Efficacité de sélection des électrons \emph{loose}, \emph{medium} et \emph{tight} en fonction de l'énergie transverse $ E_T $ (a) et en fonction de la pseudo-rapidité $ \eta $ (b).}
+  \end{bigcenter}
+  \caption{\label{isEM1}Efficacité de sélection des électrons \emph{loose}, \emph{medium} et \emph{tight} (étude \emph{Tag\&Probe} réalisée sur des électrons provenant de bosons Z) en fonction de l'énergie transverse $ E_T $ (a) et en fonction de la pseudo-rapidité $ \eta $ (b).}
 \end{figure}
 
 \begin{table}[!ht]
-  \begin{center}
+  \begin{bigcenter}
 
   \begin{tabular}{|l|c|c|c|c|c|c|}
     \hline
@@ -281,14 +265,14 @@ Remarque : Certaines études requièrent un critère d'isolation supplémentaire. Il
 
   \caption{\label{isEM2}Efficacité intégrée et taux de réjection des jets intégrée pour des électrons de $ 20\GeV $ issus de bosons $ Z $ ou de quarks $ b $ ou $ c $.}
 
-  \end{center}
+  \end{bigcenter}
 \end{table}
 
 \subsection{Jeu de coupures standards isEM++}
 
-Le pic de luminosité instantanée atteint avant l'arrêt technique du printemps 2011 fut de $ 8.8\times10^{32}cm^{-2}s^{-1} $. Jusqu'à la luminosité instantanées de $ 10^{33}cm^{-2}s^{-1} $, la voie de déclenchement utilisée pour les études contenant au moins un électron est EF\_e20\_medium, c'est-à-dire un électron de qualité \emph{medium} (\emph{intermédiaire}) avec une énergie transverse $ E_T>20\GeV $. Avec un taux de déclenchement de $ \sim53Hz $, cette voie de déclenchement consomme trop de bande passante. Plutôt qu'augmenter la valeur de la coupure en énergie transverse, il a été choisit de d'augmenter le taux de réjection en introduisant le nouveau jeu de coupures standards, les coupures isEM++.
+Le pic de luminosité instantanée atteint avant l'arrêt technique du printemps 2011 fut de $ 8.8\times10^{32}cm^{-2}s^{-1} $. Jusqu'à la luminosité instantanées de $ 10^{33}cm^{-2}s^{-1} $, la voie de déclenchement utilisée pour les études contenant au moins un électron est EF\_e20\_medium, c'est-à-dire un électron de qualité \emph{medium} (\emph{intermédiaire}) avec une énergie transverse $ E_T>20\GeV $. Avec un taux de déclenchement de $ \sim53Hz $, cette voie de déclenchement est désormais munie d'un \emph{prescale}. Plutôt qu'augmenter la valeur de la coupure en énergie transverse, il a été choisit d'augmenter le taux de réjection en introduisant le nouveau jeu de coupures standards, les coupures isEM++.
 
-On introduit \emph{medium++} (\emph{intermédiaire++}). Sa définition est la même que celle de \emph{medium} à laquelle on ajoute les contraintes additionnelles suivantes :
+On introduit \emph{medium++} (\emph{intermédiaire++}). Sa définition est similaire à celle de \emph{medium} à laquelle on ajoute les contraintes additionnelles suivantes :
 \begin{itemize}
   \item au moins un impact dans le b-layer pour $ |\eta|<2.0$.
   \item au moins deux impacts dans les pixels pour $ |\eta|>2.0 $.
@@ -304,31 +288,39 @@ La figure \ref{isEMpp1} montre l'efficacité de sélection des électrons \emph{med
 La voie de déclenchement EF\_e20\_medium++ présente un taux de déclenchement de $ \sim17.5Hz $ à la luminosité instantanées de $ 10^{33}cm^{-2}s^{-1} $. Les figures \ref{isEMpp2} (a) et (b) (resp. (c) et (d)) montrent l'efficacité (préliminaire) de la voie de déclenchement EF\_e20\_medium (resp. de la voie de déclenchement EF\_e20\_medium++) en fonction de l'énergie transverse $ E_T $ et en fonction de la pseudo-rapidité $ \eta $. A première vue,  l'efficacité de EF\_e20\_medium++ reste supérieure à $ 95\% $ sur le plateau des distributions.
 
 \begin{figure}[!p]
-  \begin{center}
-    \includegraphics[height=5.5cm, keepaspectratio]{phd_reco/isEM1}
-  \end{center}
-  \caption{\label{isEMpp1}Efficacité (préliminaire) de sélection des électrons \emph{medium}, \emph{medium++} et \emph{tight} en fonction de pseudo-rapidité $ \eta $.}
+  \begin{bigcenter}
+
+  \begin{tabular}{ccc}
+    \includegraphics[height=5.5cm, keepaspectratio]{phd_reco/std_menu}
+    &&
+    \includegraphics[height=5.5cm, keepaspectratio]{phd_reco/plusplus_menu}
+    \\
+    (a) && (b)
+  \end{tabular}
+
+  \end{bigcenter}
+  \caption{\label{isEMpp1}.}
 \end{figure}
 
 \begin{figure}[!p]
-  \begin{center}
+  \begin{bigcenter}
 
   \begin{tabular}{ccc}
-    \includegraphics[height=5.0cm, keepaspectratio]{phd_reco/isEM2}
+    \includegraphics[height=5.5cm, keepaspectratio]{phd_atlas/EF_e20_medium_1}
     &&
-    \includegraphics[height=5.0cm, keepaspectratio]{phd_reco/isEM3}
+    \includegraphics[height=5.5cm, keepaspectratio]{phd_atlas/EF_e20_medium_2}
     \\
     (a) && (b)
     \\
-    \includegraphics[height=3.95cm, keepaspectratio]{phd_reco/isEM4}
+    \includegraphics[height=4.4cm, keepaspectratio]{phd_reco/isEM4}
     &&
-    \includegraphics[height=3.85cm, keepaspectratio]{phd_reco/isEM5}
+    \includegraphics[height=4.4cm, keepaspectratio]{phd_reco/isEM5}
     \\
     (c) && (d)
   \end{tabular}
 
-  \end{center}
-  \caption{\label{isEMpp2}Efficacité de la voie de déclenchement EF\_e20\_medium (resp. de la voie de déclenchement EF\_e20\_medium++) en fonction de l'énergie transverse $ E_T $ (a) (resp. (c)) et en fonction de la pseudo-rapidité $ \eta $ (b) (resp. (d)).}
+  \end{bigcenter}
+  \caption{\label{isEMpp2}Performances de la voie de déclenchement EF\_e20\_medium (resp. de la voie de déclenchement EF\_e20\_medium++) (étude  \emph{Tag\&Probe} réalisée sur des électrons \emph{offline medium} provenant de bosons Z) en fonction de l'énergie transverse (a) (resp. (c)) et en fonction de la pseudo-rapidité (b) (resp. (d)).}
 \end{figure}
 
 \section{Distributions}
@@ -336,7 +328,7 @@ La voie de déclenchement EF\_e20\_medium++ présente un taux de déclenchement de 
 Les figures \ref{distrib_b} à \ref{distrib_e} montrent la distribution des variables utilisées par les coupures standards isEM et isEM++, avec la simulation Monte-Carlo, pour des électrons isolés, pour des électrons non isolés, pour le bruit de fond des électrons et pour des hadrons. !! commentaire !!
 
 \begin{table}[!p]
-  \begin{center}
+  \begin{bigcenter}
 
   Sélection \emph{loose}
 
@@ -559,13 +551,13 @@ Les figures \ref{distrib_b} à \ref{distrib_e} montrent la distribution des varia
     \hline
   \end{tabularx}
 
-  \end{center}
+  \end{bigcenter}
 
   \caption{\label{isem}Trois jeux de coupures standards pour la sélection des électrons dans Atlas. De la plus forte à la plus faible, \emph{tight} $ \Rightarrow $ \emph{medium} $ \Rightarrow $ \emph{loose}.}
 \end{table}
 
 \begin{figure}[!p]
-  \begin{center}
+  \begin{bigcenter}
 
   \begin{tabular}{ccc}
     \includegraphics[height=7.0cm, keepaspectratio]{phd_reco/rhad1}
@@ -575,12 +567,12 @@ Les figures \ref{distrib_b} à \ref{distrib_e} montrent la distribution des varia
     (a) && (b)
   \end{tabular}
 
-  \end{center}
+  \end{bigcenter}
   \caption{\label{distrib_b}Distribution de la fuite en énergie dans le premier compartiment du calorimètre hadronique (a). Distribution du second moment de la pseudo-rapidité des cellules d'un amas $ 3\times5 $ pondérée par leur énergie dans $ S2 $ (b).}
 \end{figure}
 
 \begin{figure}[!p]
-  \begin{center}
+  \begin{bigcenter}
 
   \begin{tabular}{ccc}
     \includegraphics[height=7.0cm, keepaspectratio]{phd_reco/reta}
@@ -590,12 +582,12 @@ Les figures \ref{distrib_b} à \ref{distrib_e} montrent la distribution des varia
     (a) && (b)
   \end{tabular}
 
-  \end{center}
+  \end{bigcenter}
   \caption{Distributions de la fraction d'énergie du le c\oe ur de la gerbe dans la directions $ \eta $ $ R_\eta=\frac{E^{s2}_{3\times7}}{E^{s2}_{7\times7}} $ (a). Distribution de la largeur totale de la gerbe électromagnétique dans S1 (b).}
 \end{figure}
 
 \begin{figure}[!p]
-  \begin{center}
+  \begin{bigcenter}
 
   \begin{tabular}{ccc}
     \includegraphics[height=7.0cm, keepaspectratio]{phd_reco/eratio}
@@ -605,19 +597,19 @@ Les figures \ref{distrib_b} à \ref{distrib_e} montrent la distribution des varia
     (a) && (b)
   \end{tabular}
 
-  \end{center}
+  \end{bigcenter}
   \caption{Distribution du rapport entre la différence et la somme des deux cellules de S1 les plus énergétiques (a). Distribution du rapport entre l'énergie $ E $ et l'impulsion $ p $ (b).}
 \end{figure}
 
 \begin{figure}[!p]
-  \begin{center}
+  \begin{bigcenter}
     \includegraphics[height=7.0cm, keepaspectratio]{phd_reco/d0}
-  \end{center}
+  \end{bigcenter}
   \caption{Distribution du paramètre d'impact.}
 \end{figure}
 
 \begin{figure}[!p]
-  \begin{center}
+  \begin{bigcenter}
 
   \begin{tabular}{ccc}
     \includegraphics[height=7.0cm, keepaspectratio]{phd_reco/deltaeta1}
@@ -627,12 +619,12 @@ Les figures \ref{distrib_b} à \ref{distrib_e} montrent la distribution des varia
     (a) && (b)
   \end{tabular}
 
-  \end{center}
+  \end{bigcenter}
   \caption{Distribution de la différence en pseudo-rapidité $ \eta $ entre les amas et les traces (a). Distribution de la différence en angle azimutal $ \phi $ entre les amas et les traces (b).}
 \end{figure}
 
 \begin{figure}[!p]
-  \begin{center}
+  \begin{bigcenter}
 
   \begin{tabular}{ccc}
     \includegraphics[height=7.0cm, keepaspectratio]{phd_reco/pixel}
@@ -642,12 +634,12 @@ Les figures \ref{distrib_b} à \ref{distrib_e} montrent la distribution des varia
     (a) && (b)
   \end{tabular}
 
-  \end{center}
+  \end{bigcenter}
   \caption{Distribution du nombre d'impacts dans les pixels (a). Distribution du nombre d'impacts de haut seuil dans le silicium (b).}
 \end{figure}
 
 \begin{figure}[!p]
-  \begin{center}
+  \begin{bigcenter}
 
   \begin{tabular}{ccc}
     \includegraphics[height=7.0cm, keepaspectratio]{phd_reco/trthits}
@@ -657,14 +649,14 @@ Les figures \ref{distrib_b} à \ref{distrib_e} montrent la distribution des varia
     (a) && (b)
   \end{tabular}
 
-  \end{center}
+  \end{bigcenter}
   \caption{Distribution du nombre d'impacts dans le TRT (a). Distribution du nombre d'impacts de haut seuil dans le TRT (b).}
 \end{figure}
 
 \begin{figure}[!p]
-  \begin{center}
+  \begin{bigcenter}
     \includegraphics[height=7.0cm, keepaspectratio]{phd_reco/conversionbit}
-  \end{center}
+  \end{bigcenter}
   \caption{\label{distrib_e}Bit de conversion, définit à $ 1 $ si le candidat électron est considéré comme un électron de conversion, $ 0 $ sinon.}
 \end{figure}
 

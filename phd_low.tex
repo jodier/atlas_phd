@@ -1,6 +1,6 @@
 \chapter{Première physique à basse énergie}
 
-Dans ce chapitre, je présente des études à basse énergie que j'ai mener afin de tester les performance du calorimètre électromagnétique avec les premières données à $ \sqrt{s}=0.9\TeV $ et à $ \sqrt{s}=7\TeV $. On été étudiés la reconstruction des photons de basse énergie, la reconstruction des photons convertis en pairs positons-électrons, la reconstruction des mésons légers ($ \pi^0 $ et $ \eta $) et enfin la cartographie de la matière dans le trajectographe interne du détecteur Atlas à l'aide de photons convertis.
+Dans ce chapitre, je présente des études à basse énergie que j'ai mener afin de tester les performance du calorimètre électromagnétique avec les premières données à $ \sqrt{s}=0.9\TeV $ et à $ \sqrt{s}=7\TeV $. On été étudiés la reconstruction des photons de basse énergie, la reconstruction des photons convertis en pairs positons-électrons, la reconstruction des pions neutres et enfin la cartographie de la matière dans le trajectographe interne du détecteur Atlas à l'aide de photons convertis.
 
 \section{Reconstruction des photons et des conversions}
 
@@ -224,13 +224,13 @@ Pour la simulation Monte-Carlo, il faut préciser que les événements ont été pond
   \begin{bigcenter}
 
   \begin{tabular}{ccc}
-    \includegraphics[height=3.75cm, keepaspectratio]{phd_low/weight_z}
+    \includegraphics[height=4.00cm, keepaspectratio]{phd_low/weight_z}
     &
     \hspace{-0.6cm}
-    \includegraphics[height=3.75cm, keepaspectratio]{phd_low/weight_pt}
+    \includegraphics[height=4.00cm, keepaspectratio]{phd_low/weight_pt}
     &
     \hspace{-0.6cm}
-    \includegraphics[height=3.76cm, keepaspectratio]{phd_low/conv7TeV_4bis}
+    \includegraphics[height=4.01cm, keepaspectratio]{phd_low/conv7TeV_4bis}
     \\
     (a) & (b) & (c)
   \end{tabular}
@@ -243,15 +243,15 @@ Pour la simulation Monte-Carlo, il faut préciser que les événements ont été pond
   \begin{bigcenter}
 
   \begin{tabular}{ccc}
-    \includegraphics[height=5.25cm, keepaspectratio]{phd_low/conv0,9TeV_1}
+    \includegraphics[height=5.5cm, keepaspectratio]{phd_low/conv0,9TeV_1}
     &&
-    \includegraphics[height=5.25cm, keepaspectratio]{phd_low/missing1}
+    \includegraphics[height=5.5cm, keepaspectratio]{phd_low/conv0,9TeV_2}
     \\
     (a) && (b)
     \\
-    \includegraphics[height=5.25cm, keepaspectratio]{phd_low/conv0,9TeV_3}
+    \includegraphics[height=5.5cm, keepaspectratio]{phd_low/conv0,9TeV_3}
     &&
-    \includegraphics[height=5.25cm, keepaspectratio]{phd_low/conv0,9TeV_4}
+    \includegraphics[height=5.5cm, keepaspectratio]{phd_low/conv0,9TeV_4}
     \\
     (c) && (d)
   \end{tabular}
@@ -264,15 +264,15 @@ Pour la simulation Monte-Carlo, il faut préciser que les événements ont été pond
   \begin{bigcenter}
 
   \begin{tabular}{ccc}
-    \includegraphics[height=5.25cm, keepaspectratio]{phd_low/conv7TeV_1}
+    \includegraphics[height=5.5cm, keepaspectratio]{phd_low/conv7TeV_1}
     &&
-    \includegraphics[height=5.25cm, keepaspectratio]{phd_low/conv7TeV_2}
+    \includegraphics[height=5.5cm, keepaspectratio]{phd_low/conv7TeV_2}
     \\
     (a) && (b)
     \\
-    \includegraphics[height=5.25cm, keepaspectratio]{phd_low/conv7TeV_3}
+    \includegraphics[height=5.5cm, keepaspectratio]{phd_low/conv7TeV_3}
     &&
-    \includegraphics[height=5.25cm, keepaspectratio]{phd_low/conv7TeV_4}
+    \includegraphics[height=5.5cm, keepaspectratio]{phd_low/conv7TeV_4}
     \\
     (c) && (d)
   \end{tabular}
@@ -281,13 +281,17 @@ Pour la simulation Monte-Carlo, il faut préciser que les événements ont été pond
   \caption{\label{conversionSelection7TeV}Distributions intervenant dans la reconstruction des conversions à $ \sqrt{s}=7\TeV $.}
 \end{figure}
 
-\section{Reconstruction des $ \pi^0 $ et des $ \eta $}
+\section{Reconstruction des $ \pi^0 $}
 
-Dans cette section, je montre l'analyse de la reconstruction des $ \pi^0 $ et des $ \eta $ que j'ai réalisé avec les premières données 2009 à $ \sqrt{s}=0.9\TeV $ et avec les données 2010 de la période D à $ \sqrt{s}=7\TeV $. Je me suis attaché à reconstruire les $ \pi^0 $ sans photons converti $ \pi^0\to\gamma\gamma $, les $ \pi^0 $ avec un photon converti $ \pi^0\to\gamma e^+e^- $, les $ \pi^0 $ avec deux photons convertis $ \pi^0\to e^+e^-e^+e^- $. Comme le $ \eta $ est le méson le plus léger après le $ \pi^0 $, une étude similaire a été menée. Nous verrons cependant que le bruit fond est plus important dans la région du $ \eta $.
+Dans cette section, je montre l'analyse de la reconstruction des $ \pi^0 $ et des $ \eta $ que j'ai réalisé avec les premières données 2009 à $ \sqrt{s}=0.9\TeV $ et avec les données 2010 de la période D à $ \sqrt{s}=7\TeV $. Je me suis attaché à reconstruire les $ \pi^0 $ sans photons converti $ \pi^0\to\gamma\gamma $, les $ \pi^0 $ avec un photon converti $ \pi^0\to\gamma e^+e^- $, les $ \pi^0 $ avec deux photons convertis $ \pi^0\to e^+e^-e^+e^- $.
 
-\subsection{Caractéristiques des $ \pi^0 $ et des $ \eta $}\label{PDG}
+\subsection{Caractéristiques des $ \pi^0 $}\label{PDG}
 
-Les derniers chiffres à jour, pour la physique des particules, sont disponible auprès du \emph{Particle Data Group} (PDG). Le $ \pi^0 $ est un méson constitué des quarks $ u $, $ \bar u $, $ d $ et $ \bar d $ soit encore, d'après le modèle des quarks, $ \left|\pi^0\right>=\frac{\left|u\bar u\right>+\left|d\bar d\right>}{\sqrt{2}} $. Sa masse est $ m_{\pi^0\,PDG}=134,9766\pm0.0006\MeV $. Le $ \pi^0 $ possède deux principaux modes de désintégration :
+Les derniers chiffres à jour, pour la physique des particules, sont disponible auprès du \emph{Particle Data Group} (PDG). Le $ \pi^0 $ est un méson constitué des quarks $ u $, $ \bar u $, $ d $ et $ \bar d $ soit encore, d'après le modèle des quarks, $ \left|\pi^0\right>=\frac{\left|u\bar u\right>+\left|d\bar d\right>}{\sqrt{2}} $. Sa masse est $ m_{\pi^0\,PDG}=134,9766\pm0.0006\MeV $.
+
+\newpage
+
+Le $ \pi^0 $ possède deux principaux modes de désintégration :
 \begin{bigcenter}
   \begin{tabular}{|c|c|}
     \hline
@@ -301,21 +305,11 @@ Les derniers chiffres à jour, pour la physique des particules, sont disponible a
   \end{tabular}
 \end{bigcenter}
 
-Le $ \eta $ est un méson étrange constitué des quards $ u $, $ \bar u $, $ d $, $ \bar d $, $ s $ et $ \bar s $ soit encore, d'après le modèle des quarks, $ \left|\eta\right>=\frac{\left|u\bar u\right>+\left|d\bar d\right>+2\left|s\bar s\right>}{\sqrt{6}} $. Sa masse est $ m_{\eta\,PDG}=547,853\pm0.024\MeV $. Le $ \eta $ possède deux principaux modes de désintégration :
-\begin{bigcenter}
-  \begin{tabular}{|c|c|}
-    \hline
-    \hline
-    Canal & Rapport de branchement\\
-    \hline
-    $ \eta\to\gamma\gamma $ & $ \Gamma_i/\Gamma=\left(39,31\pm0.20\right)\% $\\
-    \hline
-    $ \eta\to\pi^0\pi^0\pi^0 $ & $ \Gamma_i/\Gamma=\left(32,57\pm0.23\right)\% $\\
-    \hline
-  \end{tabular}
-\end{bigcenter}
+Le cannal $ \pi^0\to e^+e^-\gamma $ ne sera pas étudié.
 
-\subsection{Désintégration des $ \pi^0 $ et des $ \eta $}
+\newpage
+
+\subsection{Désintégration des $ \pi^0 $}
 
 Soient $ E_1 $ et $ E_2 $ les énergies, dans le référentiel du laboratoire, de deux photons $ \gamma_1 $ et $ \gamma_2 $ issus d'un $ \pi^0 $ ou d'un $ \eta $ et $ \alpha $ l'angle d'ouverture entre $ \gamma_1 $ et $ \gamma_2 $. Si on suppose que le photon $ \gamma_1 $ se propage dans la direction $ z $, alors, les 4-vecteurs énergie-impulsion s'écrivent $ p^\mu_{\gamma_1}=\left(E_1;0,0,E_1\right) $ et $ p^\mu_{\gamma_2}=\left(E_2;E_1\sin\alpha,0,E_1\cos\alpha\right) $ d'où :
 
@@ -329,7 +323,9 @@ et
                   &=&\sqrt{4E_1E_2\sin^2\frac{\alpha}{2}}
 \end{eqnarray}
 
-Remarque : Dans le cas général, les deux photons se propagent dans le plan $ x-y $, alors $ p^\mu_{\gamma_1}=\left(E_1;E_1\sin\theta_1,0,E_1\cos\theta_1\right) $ et $ p^\mu_{\gamma_2}=\left(E_2;-E_2\sin\theta_2,0,E_1\cos\theta_2\right) $ où $ \theta_1 $ et $ \theta_2 $ sont respectivement les angles entre les photons $ \gamma_1 $ et $ \gamma_2 $ et la direction de propagation du $ \pi^0 $ ou du $ \eta $, $ \alpha\equiv\theta_1+\theta_2 $. Ces définitions mènent également à l'équation \ref{masse_pizero}.
+Remarque : Dans le cas général, les deux photons se propagent dans le plan $ x-y $, alors $ p^\mu_{\gamma_1}=\left(E_1;E_1\sin\theta_1,0,E_1\cos\theta_1\right) $ et $ p^\mu_{\gamma_2}=\left(E_2;-E_2\sin\theta_2,0,E_1\cos\theta_2\right) $ où $ \theta_1 $ et $ \theta_2 $ sont respectivement les angles entre les photons $ \gamma_1 $ et $ \gamma_2 $ et la direction de propagation du $ \pi^0 $, $ \alpha\equiv\theta_1+\theta_2 $. Ces définitions mènent également à l'équation \ref{masse_pizero}.
+
+\newpage
 
 Exprimons l'angle $ \alpha $ en fonction de la masse :
 \begin{equation}
@@ -341,7 +337,7 @@ Cette quantité est minimale pour $ E_1=E_2=E_{\gamma\gamma}/2 $ d'où :
   \boxed{\alpha_\textrm{min}=2\arcsin\frac{m_{\gamma\gamma}}{E_{\gamma\gamma}}}
 \end{equation}
 
-La figure \ref{desintegration} (a) montre la désintégration d'un $ \pi^0 $ ou d'un $ \eta $ dans le référentiel du laboratoire. La figure \ref{} (b) montre l'angle d'ouverture des deux photons en fonction de l'énergie $ E_{\gamma\gamma} $ de la paire $ \gamma\gamma $. Plus l'énergie est grande, plus l'angle d'ouverture est petit. L'étude sera limitée à une énergie de quelques $ \GeV $ car le calorimètre électromagnétique ne permet pas de distinguer deux photons avec un écart en pseudo-rapidité inférieur à $ \Delta\eta=0.1 $. 
+La figure \ref{desintegration} (a) montre la désintégration d'un $ \pi^0 $ dans le référentiel du laboratoire. La figure \ref{} (b) montre l'angle d'ouverture des deux photons en fonction de l'énergie $ E_{\gamma\gamma} $ de la paire $ \gamma\gamma $. Plus l'énergie est grande, plus l'angle d'ouverture est petit. L'étude sera limitée à une énergie de quelques $ \GeV $ car le calorimètre électromagnétique ne permet pas de distinguer deux photons avec un écart en pseudo-rapidité inférieur à $ \Delta\eta=0.1 $. 
 
 \begin{figure}[!ht]
   \begin{bigcenter}
@@ -355,10 +351,10 @@ La figure \ref{desintegration} (a) montre la désintégration d'un $ \pi^0 $ ou d'
   \end{tabular}
 
   \end{bigcenter}
-  \caption{\label{desintegration}Désintégration d'un $ \pi^0 $ ou d'un $ \eta $ dans le référentiel du laboratoire (a). Angle d'ouverture des deux photons en fonction de l'énergie $ E_{\gamma\gamma} $ de la paire $ \gamma\gamma $ (b).}
+  \caption{\label{desintegration}Désintégration d'un $ \pi^0 $ dans le référentiel du laboratoire (a). Angle d'ouverture des deux photons en fonction de l'énergie $ E_{\gamma\gamma} $ de la paire $ \gamma\gamma $ (b).}
 \end{figure}
 
-Étudions rapidement la distribution $ \frac{dN}{d\alpha} $ dans le référentiel du laboratoire. Supposons toujours que le $ \pi^0 $ ou le $ \eta $ se propage suivant la direction $ z $, alors, nous définissons l'angle $ \theta^* $ comme l'angle du photon $ \gamma_1 $ par rapport à la direction $ z $ dans le référentiel au repos. La désintégration est isotrope, nous pouvons écrire :
+Étudions rapidement la distribution $ \frac{dN}{d\alpha} $ dans le référentiel du laboratoire. Supposons toujours que le $ \pi^0 $ se propage suivant la direction $ z $, alors, nous définissons l'angle $ \theta^* $ comme l'angle du photon $ \gamma_1 $ par rapport à la direction $ z $ dans le référentiel au repos. La désintégration est isotrope, nous pouvons écrire :
 \begin{equation}
   \frac{dN}{d\cos\theta^*}=\frac{1}{2}\hspace{0.75cm}\Rightarrow\hspace{0.75cm}\frac{dN}{d\alpha}=\frac{dN}{d\cos\theta^*}\frac{d\cos\theta^*}{d\alpha}=\frac{1}{2}\frac{d\cos\theta^*}{d\alpha}
 \end{equation}
@@ -369,15 +365,6 @@ Il est simple de montrer que $ cos\theta^*=\frac{1}{\beta}\sqrt{1-\frac{1}{\gamm
 \end{equation}
 
 La figure \ref{distangu} montre l'allure de la distribution $ \frac{dN}{d\alpha} $ pour une énergie $ E_{\gamma\gamma}=500\MeV $. Cette distribution est piquée en $ \alpha_\textrm{min} $ et s'annule en $ \alpha_\textrm{max}=\pi $.
-
-\newpage
-
-\begin{figure}[!ht]
-  \begin{bigcenter}
-    \includegraphics[height=5.0cm, keepaspectratio]{phd_low/dndalpha}
-  \end{bigcenter}
-  \caption{\label{distangu}Distribution $ \frac{dN}{d\alpha} $ pour une énergie $ E_{\gamma\gamma}=500\MeV $. Cette distribution est piquée en $ \alpha_\textrm{min} $ et s'annule en $ \alpha_\textrm{max}=\pi $.}
-\end{figure}
 
 \subsection{Reconstruction des $ \pi^0 $}
 
@@ -433,7 +420,9 @@ Au niveau des candidats $ \pi^0 $, une coupure sur l'impulsion transverse est ap
 
 \subsection{Variables cinématiques à $ \sqrt{s}=7\TeV $}
 
-Nous montrons ici les distributions des variables cinématiques des photons et des pairs de photons pour les canaux : $ \pi^0\to\gamma\gamma $, figure \ref{cinematique_pizero1}, $ \pi^0\to\gamma e^+e^- $ et $ \pi^0\to e^+e^-e^+e^- $, figures \ref{cinematique_pizero2} et figure \ref{cinematique_pizero3}. L'accord entre les données et la simulation Monte-Carlo est bon, néanmoins le spectre en impulsion transverse des photons non convertis est très légèrement plus dur dans simulation Monte-Carlo.\\
+Nous montrons ici les distributions des variables cinématiques des photons et des pairs de photons pour les canaux : $ \pi^0\to\gamma\gamma $, figure \ref{cinematique_pizero1}, $ \pi^0\to\gamma e^+e^- $ et $ \pi^0\to e^+e^-e^+e^- $, figures \ref{cinematique_pizero2} et figure \ref{cinematique_pizero3}. L'accord entre les données et la simulation Monte-Carlo est bon, néanmoins le spectre en impulsion transverse des photons non convertis est très légèrement plus dur dans simulation Monte-Carlo.
+
+\newpage
 
 Remarque : À $ \sqrt{s}=0.9\TeV $, les distributions des variables cinématiques sont disponibles auprès des notes de conférence \cite{} et \cite{}.
 
@@ -448,67 +437,46 @@ Remarque : Nous apercevons un léger excédent de bruit de fond juste en dessous d
 L'origine de l'excédent en bruit de fond vient simplement de photons convertis incorrectement associés aux photons vrais. Les distributions de masse invariantes des processus $ \pi^0\to\gamma e^+e^- $ et $ \pi^0\to e^+e^-e^+e^- $ feront clairement apparaitre cet effet. Ultérieurement, lorsque je serais emmener à étudier, dans le dernier chapitre de cette thèse, la désintégration des bosons $ Z $ en paires d'électrons, le problème sera résolu par la mise en place une correspondance faible (loose truth matching) en entre les particules et les particules vraies.
 
 \begin{figure}[!p]
+  \begin{bigcenter}
 
-  \begin{tabular}{ccc}
-    \includegraphics[height=3.5cm, keepaspectratio]{phd_low/missing2}
+  \begin{tabular}{cc}
+    \includegraphics[height=4.5cm, keepaspectratio]{phd_low/ph_eta}
     &
-    \includegraphics[height=3.5cm, keepaspectratio]{phd_low/missing2}
-    &
-    \includegraphics[height=3.5cm, keepaspectratio]{phd_low/missing2}
+    \includegraphics[height=4.5cm, keepaspectratio]{phd_low/ph_pt}
     \\
-    \includegraphics[height=3.5cm, keepaspectratio]{phd_low/missing2}
+    \includegraphics[height=4.5cm, keepaspectratio]{phd_low/ph_eta_log}
     &
-    \includegraphics[height=3.5cm, keepaspectratio]{phd_low/missing2}
-    &
-    \includegraphics[height=3.5cm, keepaspectratio]{phd_low/missing2}
+    \includegraphics[height=4.5cm, keepaspectratio]{phd_low/ph_pt_log}
     \\
-    (a) & (b) & (c)
+    (a) & (b)
   \end{tabular}
 
-  \caption{\label{cinematique_pizero1}Zéro conversion : distribution de la pseudo-rapidité des photons (a), distribution de l'impulsion transverse des photons (b), distribution de l'impulsion transverse des paires de photons (c). Échelles linéaires (haut) échelles logarithmique (bas).}
-\end{figure}
-
-\begin{figure}[!p]
-
-  \begin{tabular}{ccc}
-    \includegraphics[height=3.5cm, keepaspectratio]{phd_low/missing2}
-    &
-    \includegraphics[height=3.5cm, keepaspectratio]{phd_low/missing2}
-    &
-    \includegraphics[height=3.5cm, keepaspectratio]{phd_low/missing2}
-    \\
-    \includegraphics[height=3.5cm, keepaspectratio]{phd_low/missing2}
-    &
-    \includegraphics[height=3.5cm, keepaspectratio]{phd_low/missing2}
-    &
-    \includegraphics[height=3.5cm, keepaspectratio]{phd_low/missing2}
-    \\
-    (a) & (b) & (c)
-  \end{tabular}
-
-  \caption{\label{cinematique_pizero2}Une ou deux conversions : distribution de la pseudo-rapidité des électrons (a), distribution de l'impulsion transverse des électrons (b), distribution de l'impulsion transverse des conversions (c). Échelles linéaires (haut) échelles logarithmique (bas).}
-\end{figure}
-
-\begin{figure}[!p]
-
-  \begin{tabular}{ccc}
-    \includegraphics[height=5.25cm, keepaspectratio]{phd_low/missing2}
-    &&
-    \includegraphics[height=5.25cm, keepaspectratio]{phd_low/missing2}
-    \\
-    \includegraphics[height=5.25cm, keepaspectratio]{phd_low/missing2}
-    &&
-    \includegraphics[height=5.25cm, keepaspectratio]{phd_low/missing2}
-    \\
-    (a) && (b)
-  \end{tabular}
-
-  \caption{\label{cinematique_pizero3}Une ou deux conversions : distribution de l'impulsion transverse des paires de photons simplement converties $ \gamma\gamma(\to e^+e^-)$ (a), distribution de l'impulsion transverse des paires de photons simplement converties $ \gamma(\to e^+e^-)\gamma(\to e^+e^-) $ (b). Échelles linéaires (haut) échelles logarithmique (bas).}
+  \end{bigcenter}
+  \caption{\label{cinematique_pizero1}Distribution de la pseudo-rapidité des photons non convertis (a), distribution de l'impulsion transverse des photons non convertis (b). Échelles linéaires (haut) échelles logarithmique (bas).}
 \end{figure}
 
 \begin{figure}[!p]
   \begin{bigcenter}
-    \includegraphics[height=8.25cm, keepaspectratio]{phd_low/pizerobkgd}
+
+  \begin{tabular}{cc}
+    \includegraphics[height=4.5cm, keepaspectratio]{phd_low/phph_pt}
+    &
+    \includegraphics[height=4.5cm, keepaspectratio]{phd_low/phph_pt}
+    \\
+    \includegraphics[height=4.5cm, keepaspectratio]{phd_low/phph_pt_log}
+    &
+    \includegraphics[height=4.5cm, keepaspectratio]{phd_low/phph_pt_log}
+    \\
+    (a) & (b)
+  \end{tabular}
+
+  \end{bigcenter}
+  \caption{\label{cinematique_pizero2}Distribution de l'impulsion transverse des paires de photons non convertis (a). Distribution de l'impulsion transverse des paires de photons convertis (b). Échelles linéaires (haut) échelles logarithmique (bas).}
+\end{figure}
+
+\begin{figure}[!ht]
+  \begin{bigcenter}
+    \includegraphics[height=7.25cm, keepaspectratio]{phd_low/pizerobkgd}
   \end{bigcenter}
   \caption{\label{pizerobkgd}Différentes contributions au signal $ \pi^0 $ obtenues à partir de la simulation Monte-Carlo à $ \sqrt{s}=7\TeV $.}
 \end{figure}
@@ -523,9 +491,9 @@ La figure \ref{mass1_900GeV} (a) montre la distribution de masse invariante des 
   \begin{bigcenter}
 
   \begin{tabular}{ccc}
-    \includegraphics[height=5.025cm, keepaspectratio]{phd_low/gg1_900GeV}
+    \includegraphics[height=5.525cm, keepaspectratio]{phd_low/gg1_900GeV}
     &&
-    \includegraphics[height=5.20cm, keepaspectratio]{phd_low/gee_900GeV}
+    \includegraphics[height=5.70cm, keepaspectratio]{phd_low/gee_900GeV}
     \\
     (a) && (b)
   \end{tabular}
@@ -587,9 +555,9 @@ La figure \ref{mass2_900GeV} montre la distribution de masse invariante des cand
   \begin{bigcenter}
 
   \begin{tabular}{ccc}
-    \includegraphics[height=5.025cm, keepaspectratio]{phd_low/gg2_900GeV}
+    \includegraphics[height=5.5cm, keepaspectratio]{phd_low/gg2_900GeV}
     &&
-    \includegraphics[height=5.025cm, keepaspectratio]{phd_low/gg3_900GeV}
+    \includegraphics[height=5.5cm, keepaspectratio]{phd_low/gg3_900GeV}
     \\
     (a) && (b)
   \end{tabular}
@@ -629,21 +597,21 @@ Les figures \ref{mass1_7TeV} (a), \ref{mass1_7TeV} (b) et \ref{mass1_7TeV} (c) m
   \begin{bigcenter}
 
   \begin{tabular}{ccc}
-    \includegraphics[height=5.025cm, keepaspectratio]{phd_low/gg1_7TeV}
+    \includegraphics[height=5.5cm, keepaspectratio]{phd_low/gg1_7TeV}
     &&
-    \includegraphics[height=5.025cm, keepaspectratio]{phd_low/gg1_7TeV}
+    \includegraphics[height=5.5cm, keepaspectratio]{phd_low/gee_7TeV}
     \\
     (a) && (b)
   \end{tabular}
 
   \begin{tabular}{c}
-    \includegraphics[height=5.025cm, keepaspectratio]{phd_low/gg1_7TeV}
+    \includegraphics[height=5.5cm, keepaspectratio]{phd_low/eeee_7TeV}
     \\
-    (c)
+    (c)\vspace{-0.4cm}
   \end{tabular}
 
   \end{bigcenter}
-  \caption{\label{mass1_7TeV} Distribution de masse invariante des candidats $ \pi^0 $ après sélection pour les données et pour la simulation Monte-Carlo. Canal $ \pi^0\to\gamma\gamma $ (a), canal $ \pi^0\to\gamma e^+e^- $ (b), canal $ \pi^0\to e^+e^-e^+e^- $ (c).}
+  \caption{\label{mass1_7TeV} Distribution de masse invariante des candidats $ \pi^0 $ après sélection pour les données et pour la simulation Monte-Carlo. $ \pi^0\to\gamma\gamma $ (a), $ \pi^0\to\gamma e^+e^- $ (b) et $ \pi^0\to e^+e^-e^+e^- $ (c).}
 \end{figure}
 
 Pour les canaux $ \pi^0\to\gamma\gamma $ et $ \pi^0\to\gamma e^+e^- $, l'ajustement du pic de signal a été réalisé à partir de la somme d'une distribution Gaussienne et d'une distribution Crystal Ball (voir annexe ???) de moyenne commune. L'ajustement du bruit de fond a été réalisé à partir d'un polynôme de Chebychev d'ordre $ 4 $ pour $ \pi^0\to\gamma\gamma $ et d'ordre $ 3 $ pour $ \pi^0\to\gamma e^+e^- $ directement à partir des distributions extraites de la simulation Monte-Carlo. Pour le canal $ \pi^0\to e^+e^-e^+e^- $, l'ajustement du pic de signal a été réalisé à partir d'une distribution Gaussienne et l'ajustement du bruit de fond a été réalisé à partir d'une exponentielle décroissante.
@@ -674,9 +642,9 @@ La figure \ref{mass2_7TeV} montre la distribution de masse invariante des candid
   \begin{bigcenter}
 
   \begin{tabular}{ccc}
-    \includegraphics[height=5.025cm, keepaspectratio]{phd_low/gg2_7TeV}
+    \includegraphics[height=5.5cm, keepaspectratio]{phd_low/gg2_7TeV}
     &&
-    \includegraphics[height=5.025cm, keepaspectratio]{phd_low/gg3_7TeV}
+    \includegraphics[height=5.5cm, keepaspectratio]{phd_low/gg3_7TeV}
     \\
     (a) && (b)
   \end{tabular}
@@ -710,11 +678,11 @@ Conclusion : D'après les tableaux \ref{ajustement1_7TeV} et \ref{ajustement2_7Te
 
 \subsection{Uniformité à $ \sqrt{s}=7\TeV $}
 
-Une étude de l'uniformité de la masse reconstruite $ \left<m\right>_{\gamma\gamma} $ a été effectuée par Sandrine Laplace sur toute la couverture en speudo-rapidité $ \eta $ et en angle azimutal $ \phi $ du calorimètre électromagnétique. Plus précisément, pour chaque région, le rapport $ \frac{\left<m\right>_\textrm{data}}{\left<m\right>_\textrm{MC}} $ est calculé, sa stabilité permet une caractérisation de l'uniformité de la réponse du calorimètre électromagnétique à l'échelle d'énergie du $ \pi^0 $ soit à peu près $ 500\MeV $.
+Une étude de l'uniformité de la masse reconstruite $ \left<m\right>_{\gamma\gamma} $ a été effectuée\cite{} sur toute la couverture en speudo-rapidité $ \eta $ et en angle azimutal $ \phi $ du calorimètre électromagnétique. Plus précisément, pour chaque région, le rapport $ \frac{\left<m\right>_\textrm{data}}{\left<m\right>_\textrm{MC}} $ est calculé, sa stabilité permet une caractérisation de l'uniformité de la réponse du calorimètre électromagnétique à l'échelle d'énergie du $ \pi^0 $ soit à peu près $ 500\MeV $.
 
 Le nombre de régions a été définit en fonction de la quantité de statistique disponible (donnée et simulation Monte-Carlo). Il est de $ 12 $ régions pour $ -2.47<\eta<+2.27 $ et $ 16 $ régions pour $ -\pi<\phi<+\pi $. Il est exigé que les deux photons de désintégration du $ \pi^0 $ soient dans la même région. Une conséquence, mentionnée précédemment dans les sous-sections \ref{selection}, \ref{resultats_pi0_900GeV} et \ref{resultats_pi0_7TeV}, es que les coupures en $ \Delta\eta $ et $ \Delta\Phi $ réduisent le bruit de fond combinatoire. L'ajustement de la masse moyenne $ \left<m\right> $ et la détermination des erreurs systématiques ont été déterminés de même que précédemment.
 
-La figure \ref{uniformite} montre le rapport $ \frac{\left<m\right>_\textrm{data}}{\left<m\right>_\textrm{MC}} $ établit dans différentes régions de speudo-rapidité $ \eta $ et en angle azimutal $ \phi $. L'uniformité en $ \eta $ est meilleure que $ 2\% $ dans la partie tonneau du calo du calorimètre électromagnétique et meilleure que $ 1\% $ dans les parties bouchon. Remarquons aussi que les incertitudes systématiques sont plus élevées autour de $ |\eta|\approx1 $, cela vient du fait que les queues importantes dans les distributions sont plus difficiles à modéliser dans ces régions. L'uniformité en $ \phi $ est quant à elle toujours meilleure que $ 1\% $. Afin d'aller plus loin, la valeur efficace (RMS) des trois distributions d'uniformité en $ \phi $ ont été calculées : $ 0.65\pm0.11 $ pour l'EMECC, $ 0.47\pm0.08 $ pour l'EMB et $ 0.71\pm0.13 $ pour l'EMECA. Ces trois valeurs sont inférieures à $ 0.75\% $ ce qui est compatible avec les attentes au démarrage du détecteur Atlas pour ces énergies.
+La figure \ref{uniformite} montre le rapport $ \frac{\left<m\right>_\textrm{data}}{\left<m\right>_\textrm{MC}} $ établit dans différentes régions de speudo-rapidité $ \eta $ et en angle azimutal $ \phi $. L'uniformité en $ \eta $ est meilleure que $ 2\% $ dans la partie tonneau du calo du calorimètre électromagnétique et meilleure que $ 1\% $ dans les parties bouchon. Remarquons aussi que les erreurs systématiques sont plus élevées autour de $ |\eta|\approx1 $. Cela vient du fait que les queues importantes dans les distributions sont plus difficiles à modéliser dans ces régions. L'uniformité en $ \phi $ est toujours meilleure que $ 1\% $. Afin d'aller plus loin, la valeur efficace (RMS) des trois distributions d'uniformité en $ \phi $ ont été calculées : $ 0.65\pm0.11 $ pour l'EMECC, $ 0.47\pm0.08 $ pour l'EMB et $ 0.71\pm0.13 $ pour l'EMECA. Ces trois valeurs sont inférieures à $ 0.75\% $ ce qui est compatible avec les attentes au démarrage du détecteur Atlas pour ces énergies.
 
 \begin{figure}[!p]
   \begin{bigcenter}
@@ -734,7 +702,7 @@ La figure \ref{uniformite} montre le rapport $ \frac{\left<m\right>_\textrm{data
 
 \subsection{Bremsstrahlung}
 
-Le \emph{Dynamic Noise Adjustment} (DNA) est un algorithme d'ajustement des traces qui permet de tenir compte des pertes d'énergie par Bremsstrahlung. Il extrapole les segments de traces vers la couche suivante du détecteur silicium (pixels + SCT). Si il y a une présumée contribution de Bremsstrahlung dur, la perte d'énergie est estimée et un terme additionnel de bruit est inséré dans le filtre de Kalman\footnote{Le filtre de Kalman est un filtre à réponse impulsionnelle infinie qui estime les états d'un système dynamique à partir d'une série de mesures incomplètes ou bruitées.} utilisé dans la reconstruction des traces, voir chapitre 6.
+Le \emph{Dynamic Noise Adjustment} (DNA) est un algorithme d'ajustement des traces qui permet de tenir compte des pertes d'énergie par Bremsstrahlung. Il extrapole les segments de traces vers la couche suivante du détecteur silicium (pixels + SCT). Si il y a une présumée contribution de Bremsstrahlung dur, la perte d'énergie est estimée et un terme additionnel de bruit est inséré dans le filtre de Kalman\footnote{Le filtre de Kalman permet d'estimer les états d'un système dynamique à partir d'une série de mesures incomplètes ou bruitées.} utilisé dans la reconstruction des traces, voir chapitre 6.
 
 La masse invariante des $ \pi^0 $ dans les canaux $ \pi^0\to\gamma e^+e^- $ et $ \pi^0\to e^+e^-e^+e^- $ a été estimée en utilisant l'algorithme (DNA). Les figures \ref{DNA} (a) et \ref{DNA} (b) montrent respectivement la distribution de masse invariante des candidats $ \pi^0\to\gamma e^+e^- $ et $ \pi^0\to e^+e^-e^+e^- $ après sélection pour les données et pour la simulation Monte-Carlo. L'accord sur la largeur des distributions de masse invariante est moins bon que précédemment car le poids $ w_1w_2 $ associé à chaque conversion (voir sous-section \ref{selection_7TeV}), pour améliorer l'accord entre les données et la simulation Monte-Carlo, n'a pas pu être appliqué. Après ajustement, nous obtenons $ \left<m\right>=???\pm???\MeV $ et $ \sigma=???\pm???\MeV $ pour le canal $ \pi^0\to\gamma e^+e^- $ et $ \left<m\right>=???\pm???\MeV $ et $ \sigma=???\pm???\MeV $ pour le canal $ \pi^0\to e^+e^-e^+e^- $. La première masse moyenne est compatible avec les attentes et la seconde masse moyenne est significativement améliorée par rapport aux valeurs attendues. Les résolutions sont également diminuées par rapport à l'algorithme standard de reconstruction des traces.
 
@@ -742,9 +710,9 @@ La masse invariante des $ \pi^0 $ dans les canaux $ \pi^0\to\gamma e^+e^- $ et $
   \begin{bigcenter}
 
   \begin{tabular}{ccc}
-    \includegraphics[height=5.25cm, keepaspectratio]{phd_low/missing2}
+    \includegraphics[height=5.25cm, keepaspectratio]{phd_low/gee_7TeV_DNA}
     &&
-    \includegraphics[height=5.25cm, keepaspectratio]{phd_low/missing2}
+    \includegraphics[height=5.25cm, keepaspectratio]{phd_low/eeee_7TeV_DNA}
     \\
     (a) && (b)
   \end{tabular}
@@ -753,32 +721,7 @@ La masse invariante des $ \pi^0 $ dans les canaux $ \pi^0\to\gamma e^+e^- $ et $
   \caption{\label{DNA}Distribution de masse invariante des candidats $ \pi^0 $ après sélection pour les données et pour la simulation Monte-Carlo. Canal $ \pi^0\to\gamma e^+e^- $ (a), canal $ \pi^0\to e^+e^-e^+e^- $ (b).}
 \end{figure}
 
-\subsection{Application aux $ \eta $}
-
-Il est possible de refaire la même étude pour les $ \eta $. Il faut simplement tenir compte du fait que le pic de masse est attendu dans une zone où le bruit de fond est plus important et que le nombre de $ \eta $ attendus est environ dix fois plus faible que celui des $ \pi^0 $. La sélection reste inchangée pour les photons convertis et les photons non convertis, cependant, des coupures cinématiques importantes sont appliquées afin de réduire au maximum le bruit de bond combinatoire : $ E_{T\,\gamma}>800\MeV $ et $ P_{T\,\gamma\gamma}>2500\MeV $.
-
-Les figures \ref{eta_7TeV} (a), \ref{eta_7TeV} (b) et \ref{eta_7TeV} (c) montrent respectivement la distribution de masse invariante des candidats $ \eta\to\gamma\gamma $, $ \pi^0\to\gamma e^+e^- $ et $ \pi^0\to e^+e^-e^+e^- $ après sélection pour les données et pour la simulation Monte-Carlo. Le nombre d'entrées de la simulation Monte-Carlo est normalisé au nombre d'entrées des données.
-
-\begin{figure}[!ht]
-  \begin{bigcenter}
-
-  \begin{tabular}{ccc}
-    \includegraphics[height=5.25cm, keepaspectratio]{phd_low/missing2}
-    &&
-    \includegraphics[height=5.25cm, keepaspectratio]{phd_low/missing2}
-    \\
-    (a) && (b)
-  \end{tabular}
-
-  \begin{tabular}{c}
-    \includegraphics[height=5.25cm, keepaspectratio]{phd_low/missing2}
-    \\
-    (c)
-  \end{tabular}
-
-  \end{bigcenter}
-  \caption{\label{eta_7TeV}Distribution de masse invariante des candidats $ \eta $ après sélection pour les données et pour la simulation Monte-Carlo. Canal $ \eta\to\gamma\gamma $ (a), canal $ \eta\to\gamma e^+e^- $ (b), canal $ \eta\to e^+e^-e^+e^- $ (c).}
-\end{figure}
+\newpage
 
 \subsection{Conclusion pour les $ \pi^0 $ et les $ \eta $}
 
