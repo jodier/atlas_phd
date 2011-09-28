@@ -1,12 +1,12 @@
 \chapter{Première physique à basse énergie}
 
-Dans ce chapitre, je présente des études à basse énergie que j'ai mener afin de tester les performance du calorimètre électromagnétique avec les premières données à $ \sqrt{s}=0.9\TeV $ et à $ \sqrt{s}=7\TeV $. On été étudiés la reconstruction des photons de basse énergie, la reconstruction des photons convertis en pairs positons-électrons, la reconstruction des pions neutres et enfin la cartographie de la matière dans le trajectographe interne du détecteur Atlas à l'aide de photons convertis.
+Dans ce chapitre, je présente des études à basse énergie que j'ai mené afin de tester les performances du calorimètre électromagnétique avec les premières données à $ \sqrt{s}=0.9\TeV $ et à $ \sqrt{s}=7\TeV $. Ont été étudiés la reconstruction des photons de basse énergie, la reconstruction des photons convertis en paires positons-électrons, la reconstruction des pions neutres et enfin la cartographie de la matière dans le trajectographe interne du détecteur Atlas à l'aide de photons convertis.
 
 \section{Reconstruction des photons et des conversions}
 
 \subsection{Photons à basse énergie}
 
-Les photons sont reconstruits au niveau du calorimètre électromagnétique. La première étape consiste à reconstruire les dépôts d'énergie localisés sous forme d'amas de cellules. Pour des particules de basse énergie, l'algorithme standard à fenêtre coulissante, qui sera décrit ultérieurement, n'est pas utilisable car il nécessite un dépôt avec une énergie transverse supérieur à $ 3\GeV $. C'est pourquoi une méthode dédiée a été développée pour cette étude. Elle s'appuie sur l'utilisation d'un algorithme d'amas topologiques. Il parcourt tout le calorimètre électromagnétique à la recherche de cellules fournissant une énergie supérieur à quatre fois le niveau standard du bruit électronique (RMS) $ |E_\textrm{cellule}|>4\sigma_\textrm{bruit} $, ce sont les cellules \og graines \fg. Chaque amas est constitué de la \og graines \fg\ complétée par toutes les cellules contigües ayant une énergie telle que $ |E_\textrm{cellule}|>2\sigma_\textrm{bruit} $ ainsi que par une ceinture de cellules ayant une énergie telle que $ |E_\textrm{cellule}|>0\sigma_\textrm{bruit} $. Le problème inhérent à cette façon de procéder est la caractérisation non triviale du bruit électronique dans l'amas. C'est pourquoi, il préférable de considérer un amas de taille fixe centrer sur le barycentre en énergie de l'amas topologique. Le dimensionnement $ 3\times5 $, c'est-à-dire $ \Delta\eta\times\Delta\phi=0.075\times0.125 $, a été choisit afin de rester cohérent avec l'algorithme standard à fenêtre coulissante. Précisons qu'une coupure en énergie transverse $ E_T>300\MeV $ est appliquée afin d'assurer un bon fonctionnement de l'algorithme d'amas topologiques. La figue \ref{topocluster} illustre un amas topologique de cellules construit autour de la cellule \og graine \fg\ et l'amas de taille fixe associé.
+Les photons sont reconstruits au niveau du calorimètre électromagnétique. La première étape consiste à reconstruire les dépôts d'énergie localisés sous forme d'amas de cellules. Pour des particules de basse énergie, l'algorithme standard à fenêtre glissante, qui sera décrit ultérieurement, n'est pas utilisable car il nécessite un dépôt avec une énergie transverse supérieure à $ 2.5\GeV $. C'est pourquoi une méthode dédiée a été développée pour cette étude. Elle s'appuie sur l'utilisation d'un algorithme d'amas topologiques. Il parcourt tout le calorimètre électromagnétique à la recherche de cellules fournissant une énergie supérieure à quatre fois le niveau standard du bruit électronique (RMS) $ |E_\textrm{cellule}|>4\sigma_\textrm{bruit} $, ce sont les cellules \og graines \fg. Chaque amas est constitué de la cellule \og graine \fg\ complétée par toutes les cellules contigües ayant une énergie telle que $ |E_\textrm{cellule}|>2\sigma_\textrm{bruit} $ ainsi que par une ceinture de cellules ayant une énergie telle que $ |E_\textrm{cellule}|>0\sigma_\textrm{bruit} $. Le problème inhérent aux amas de taille variable est la caractérisation non triviale du bruit électronique. C'est pourquoi, il est préférable de considérer un amas de taille fixe centré sur le barycentre en énergie de l'amas topologique. Le dimensionnement $ 3\times5 $, c'est-à-dire $ \Delta\eta\times\Delta\phi=0.075\times0.125 $, a été choisi afin de rester cohérent avec l'algorithme standard à fenêtre glissante. Précisons qu'une coupure en énergie transverse $ E_T>300\MeV $ est nécessaire afin d'assurer un bon fonctionnement de l'algorithme d'amas topologiques. La figue \ref{topocluster} illustre un amas topologique de cellules construit autour de la cellule \og graine \fg\ et l'amas de taille fixe associé.
 
 \begin{figure}[!htp]
   \begin{bigcenter}
@@ -21,7 +21,7 @@ Il est nécessaire de vérifier la distance entre les amas reconstruits. En effet,
 \begin{equation}
   |\eta_{cl1}-\eta_{cl2}|>0.075\hspace{1cm}\textrm{et}\hspace{1cm}|\phi_{cl1}-\phi_{cl2}|>0.125
 \end{equation}
-où $ \eta_{cl1} $ et $ \eta_{cl2} $ (resp. $ \phi_{cl1} $ et $ \phi_{cl2} $) sont respectivement la speudo-rapidité (resp. l'angle azimutal) du premier et du second amas. La figure \ref{recouvrement} illustre le recouvrement de deux amas de cellules.
+où $ \eta_{cl1} $ et $ \eta_{cl2} $ (resp. $ \phi_{cl1} $ et $ \phi_{cl2} $) sont respectivement la pseudo-rapidité (resp. l'angle azimutal) du premier et du second amas. La figure \ref{recouvrement} illustre le recouvrement de deux amas de cellules.
 
 \begin{figure}[!htp]
   \begin{bigcenter}
@@ -40,7 +40,7 @@ où $ \eta_{cl1} $ et $ \eta_{cl2} $ (resp. $ \phi_{cl1} $ et $ \phi_{cl2} $) son
 
 \subsubsection{Véto sur les traces}
 
-Les photons sont des particules non chargées, ils ne laissent pas de trace dans le trajectographe interne du détecteur Atlas. Afin de rejeter les particules chargées telles que les électrons $ e^\pm $ ou les pions $ \pi^\pm $, il faut rejeter les amas associés à une trace. La première étape consiste à extrapoler la position des traces du trajectographe jusqu'au calorimètre. La seconde étape consiste à comparer la position de la trace extrapolée $ (\eta_{ext},\phi_{ext}) $ à celle des amas $ (\eta_{cl},\phi_{cl}) $. On considère qu'une trace est associée à un amas si les conditions suivantes sont vérifiées :
+Les photons sont des particules neutres qui ne forment pas de trace dans le trajectographe interne du détecteur Atlas. Afin de rejeter les particules chargées telles que les électrons $ e^\pm $ ou les pions $ \pi^\pm $, il faut ignorer les amas associés à une trace. La première étape consiste à extrapoler la position des traces du trajectographe jusqu'au calorimètre. La seconde étape consiste à comparer la position de la trace extrapolée $ (\eta_{ext},\phi_{ext}) $ à celle des amas $ (\eta_{cl},\phi_{cl}) $. On considère qu'une trace est associée à un amas si les conditions suivantes sont vérifiées :
 \begin{equation}\label{veto1}
   \hspace{1.7cm}\left|\eta_{ext}-\eta_{cl}\right|<0.05
 \end{equation}
@@ -48,9 +48,9 @@ Les photons sont des particules non chargées, ils ne laissent pas de trace dans 
   -0.1<q\left(\phi_{ext}-\phi_{cl}\right)<0.05
 \end{equation}
 
-où 0.05 correspond à deux cellules en $ \eta $ ou $ \phi $ dans le second compartiment, 0.1 correspond à quatre cellules en $ \phi $ dans le second compartiment et $ q\equiv\pm1 $ est la charge électrique de la particule. La dissymétrie en $ \phi $ de l'équation \ref{veto2} permet de tenir compte des effets du champ magnétique et plus particulièrement du rayonnement de freinage (Bremsstrahlung). Précisons que pour les traces reconstruites uniquement au sein du TRT, la mesure de la pseudo-rapidité n'étant pas disponible, seule la coupure en $ \phi $ est appliquée.
+\noindent où 0.05 correspond à deux cellules en $ \eta $ ou $ \phi $ dans le second compartiment, 0.1 correspond à quatre cellules en $ \phi $ dans le second compartiment et $ q\equiv\pm1 $ est la charge électrique de la particule. La dissymétrie en $ \phi $ de l'équation \ref{veto2} permet de tenir compte des effets du champ magnétique. Précisons que pour les traces reconstruites uniquement au sein du TRT, la mesure de la pseudo-rapidité n'étant pas disponible, seule la coupure en $ \phi $ est appliquée.
 
-Sauf en cas de mention contraire, le véto sur les traces n'a été appliqué \underline{que} sur les données à $ \sqrt{s}=7\TeV $, cependant, une définition plus \emph{économique} en statistique est proposée pour les données à $ \sqrt{s}=9\TeV $ :
+Sauf en cas de mention contraire, le véto sur les traces n'a été appliqué \underline{que} sur les données à $ \sqrt{s}=7\TeV $, une définition plus économique en statistique est proposée pour les données à $ \sqrt{s}=9\TeV $ :
 \begin{equation}\label{veto3}
   \hspace{1.7cm}\left|\eta_{ext}-\eta_{cl}\right|<0.02
 \end{equation}
@@ -58,9 +58,9 @@ Sauf en cas de mention contraire, le véto sur les traces n'a été appliqué \under
   -0.1<q\left(\phi_{ext}-\phi_{cl}\right)<0.05
 \end{equation}
 
-\subsubsection{Gerbe électromagnétiques}
+\subsubsection{Gerbes électromagnétiques}
 
-Une identification rigoureuse des électrons et des photons doit s'appuyer sur les variables de forme des gerbes électromagnétiques. La procédure standard sera étudiée en détail dans le prochain chapitre. Pour les études à basse énergie, seule une seule variable est utilisée. Il s'agit de la fraction d'énergie déposée dans le premier compartiment $ f1\equiv E_1/(E_1+E_2+E_3) $ où $ E_1 $, $ E_2 $ et $ E_3 $ sont respectivement les énergies déposées dans le premier, le second et le troisième compartiment. La figure \ref{f1} montre la distribution de la variable $ f_1 $ pour des photons provenant de $ \pi^0 $ et pour les photons ne provenant pas de $ \pi^0 $. Pour la reconstruction des photons, la coupure $ f_1>20\% $ est appliquée. Pour les données à $ \sqrt{s}=0.9\TeV $ uniquement, à cause de la statistique limitée, une autre coupure plus lâche $ f_1>10\% $ est également utilisée.
+Une identification rigoureuse des électrons et des photons doit s'appuyer sur les variables de forme des gerbes électromagnétiques. La procédure standard sera étudiée en détail dans le prochain chapitre. Pour les études à basse énergie, une seule variable est utilisée. Il s'agit de la fraction d'énergie déposée dans le premier compartiment $ f1\equiv E_1/(E_1+E_2+E_3) $ où $ E_1 $, $ E_2 $ et $ E_3 $ sont respectivement les énergies déposées dans le premier, le second et le troisième compartiment. La figure \ref{f1} montre la distribution de la variable $ f_1 $ pour des photons provenant de $ \pi^0 $ et pour les photons ne provenant pas de $ \pi^0 $. Pour la reconstruction des photons, la coupure $ f_1>20\% $ est appliquée. Pour les données à $ \sqrt{s}=0.9\TeV $ uniquement, à cause de la statistique limitée, une autre coupure plus lâche $ f_1>10\% $ est utilisée.
 
 \begin{figure}[!ht]
   \begin{bigcenter}
@@ -73,12 +73,12 @@ Une identification rigoureuse des électrons et des photons doit s'appuyer sur le
 
 \subsubsection{Calibration en énergie}
 
-Pour déterminer l'énergie d'une particule à partir d'un amas de taille fixe, il faut tenir compte de l'énergie déposée : i) en amont du calorimètre. ii) dans la matière située entre le pré-échantillonneur et l'accordéon. iii) en aval du calorimètre. iv) en dehors de l'amas (fuites latérales). Pour ce faite, la méthode de calibration par des poids longitudinaux a été mise en \oe uvre. Cette méthode est décrite en détail dans ???. L'énergie calibrée $ E_\textrm{calib} $ s'exprime comme :
+Pour déterminer l'énergie d'une particule à partir d'un amas de taille fixe, il faut tenir compte de l'énergie déposée : i) en amont du calorimètre. ii) dans la matière située entre le pré-échantillonneur et l'accordéon. iii) en aval du calorimètre. iv) en dehors de l'amas (fuites latérales). Pour ce faire, la méthode de calibration avec des poids longitudinaux a été mise en \oe uvre. Cette méthode est décrite en détail dans \cite{}. L'énergie calibrée $ E_\textrm{calib} $ s'exprime comme :
 \begin{equation}
   E_\textrm{calib}=s\times\left(b+w_0E_\textrm{PS}+E_1+E_2+w_3E_3\right)
 \end{equation}
 
-où $ E_\textrm{PS} $, $ E_1 $, $ E_2 $ et $ E_3 $ sont respectivement les énergies déposées dans le pré-échantillonneur, dans le premier compartiment, dans le second compartiment et dans le troisième compartiment. Les coefficients $ s $, $ b $, $ w_0 $ et $ w_3 $ sont appelés poids longitudinaux. Ils permettent de tenir compte des pertes en énergie évoquées au début de ce paragraphe. Comme la gamme en énergie est restreinte, inférieure à quelque $ \GeV $, il a été considéré que les coefficients des poids longitudinaux sont indépendants de l'énergie. Des photons issus de $ \pi^0 $ d'événements de biais minimums simulés ont été utilisés afin d'extraire les constantes grâce à une simple minimisation $\chi^2 $ entre l'énergie calibrée $ E_\textrm{calib} $ et l'énergie vraie $ E_\textrm{vraie} $, c'est-à-dire $ \frac{E_\textrm{calib}-E_\textrm{vraie}}{\sigma^2_E} $ où $ \sigma^2_E $ est la résolution en énergie du calorimètre. La figure \ref{lw} montre les coefficients des poids longitudinaux $ s $, $ b $, $ w_0 $ et $ w_3 $ en fonction de la valeur absolue de la pseudo-rapidité $ |\eta| $ pour les données à $ \sqrt{s}=7\TeV $. La granularité choisie correspond à la largeur des cellules du second compartiment, soit $ \Delta\eta=0.025$. Aucune dépendance suivant l'angle azimutale n'est attendue.
+\noindent où $ E_\textrm{PS} $, $ E_1 $, $ E_2 $ et $ E_3 $ sont respectivement les énergies déposées dans le pré-échantillonneur, dans le premier compartiment, dans le second compartiment et dans le troisième compartiment. Les coefficients $ s $, $ b $, $ w_0 $ et $ w_3 $ sont appelés poids longitudinaux. Ils permettent de tenir compte des pertes en énergie évoquées au début de cette section. Comme la gamme en énergie est restreinte, inférieure à quelque $ \GeV $, il est supposé que les coefficients des poids longitudinaux sont indépendants de l'énergie. Des photons issus de $ \pi^0 $ d'événements de biais minimum simulés ont été utilisés afin d'extraire les constantes grâce à une minimisation du $\chi^2 $ entre l'énergie calibrée $ E_\textrm{calib} $ et l'énergie vraie $ E_\textrm{vraie} $, c'est-à-dire $ \frac{E_\textrm{calib}-E_\textrm{vraie}}{\sigma^2_E} $ où $ \sigma^2_E $ est la résolution en énergie du calorimètre. La figure \ref{lw} montre les coefficients des poids longitudinaux $ s $, $ b $, $ w_0 $ et $ w_3 $ en fonction de la valeur absolue de la pseudo-rapidité $ |\eta| $ pour les données à $ \sqrt{s}=7\TeV $. La granularité choisie correspond à la largeur des cellules du second compartiment, soit $ \Delta\eta=0.025$. Aucune dépendance suivant l'angle azimutale n'est attendue.
 
 \begin{figure}[!ht]
   \begin{bigcenter}
@@ -97,7 +97,7 @@ où $ E_\textrm{PS} $, $ E_1 $, $ E_2 $ et $ E_3 $ sont respectivement les énergi
   \caption{\label{lw}Coefficients des poids longitudinaux $ s $, $ b $, $ w_0 $ et $ w_3 $ en fonction de la valeur absolue de la pseudo-rapidité $ |\eta| $ pour les données à $ \sqrt{s}=7\TeV $.}
 \end{figure}
 
-Cette calibration est limitée par la supposée non dépendance en énergie ainsi que par la présence de queues non gaussiennes dans les distributions. Des tentatives de calibration plus fines ont été tentées afin de tenir compte de ces limitations mais n'ont pas données de résultats satisfaisants à cause des fluctuations à basses énergies.
+Cette calibration est limitée par le fait que nous avons supposé des coefficients des poids longitudinaux sont indépendants de l'énergie ainsi que par la présence de queues non gaussiennes dans les distributions. Des tentatives de calibration plus fines ont été tentées mais n'ont pas donné de résultats satisfaisants à cause des fluctuations à basses énergies.
 
 \newpage
 
