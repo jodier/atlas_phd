@@ -103,18 +103,18 @@ Cette calibration est limitée par le fait que nous avons supposé des coefficient
 
 \subsection{Conversions à basse énergie}\label{algoconversion}
 
-A cause de la matière présente à l'intérieur du trajectographe interne du détecteur Atlas, une fraction des photons sont convertis en pairs positrons-électrons. Plus la quantité de matière est importante, plus la fraction des photons convertis est importante, on s'attend à observer $ \frac{N_{\gamma\,\textrm{conv.}}}{N_{\gamma\,\textrm{non conv.}}} $ de l'ordre de $ ??\% $. Une algorithme de reconstruction des conversions a basse énergie à été mis en \oe uvre. Sa description détaillée est disponible auprès des notes\cite{}\cite{}, néanmoins, je rappelle ici les grandes étapes de son implémentation :
+A cause de la matière présente à l'intérieur du trajectographe interne du détecteur Atlas, une fraction des photons sont convertis en paires positrons-électrons, voir section \ref{atlas_matiere}, chapitre \ref{chapitre_atlas}. Un algorithme de reconstruction des conversions à basse énergie a été mis en \oe uvre. Sa description est disponible auprès des notes\cite{}, néanmoins, nous rappelons son principe :
 \begin{enumerate}
-  \item Sélection des traces bien reconstruites au niveau du trajectographe interne, c'est-à-dire, avec une impulsion transverse supérieure à $ 300\MeV $ et au moins un impact dans les détecteurs silicium (pixels + SCT) afin de disposer d'une mesure de la pseudo-rapidité.
+  \item Sélection des traces bien reconstruites au niveau du trajectographe interne, c'est-à-dire, avec une impulsion transverse supérieure à $ (3|4)00\MeV $\footnote{Cette coupure définie à $ p_T>400\MeV $ pour $ \sqrt{s}=0.9\TeV $ était surestimée. Elle a été redéfinie à $ p_T>300\MeV $ pour $ \sqrt{s}=7\TeV $.} et au moins un impact dans les détecteurs silicium (pixels + SCT) afin de disposer d'une mesure de la pseudo-rapidité.
   \item Sélection des traces selon leur probabilité d'être des traces d'électrons, c'est-à-dire, classement en fonction de la charge électrique et mise à profit des capacités du TRT à distinguer les $ e^\pm $ des $ \pi^\pm $ (seulement pour les traces avec une extension dans le TRT).
   \item Création des candidats en appariant des traces de signes opposés, une trace pour le positron et une autre trace pour l'électron.
-  \item Sélection par critères géométriques. Comme les photons sont de masse nulle, les traces sont parallèles au niveau du vertex de conversion : i) les traces sont spatialement proches (caractérisé par la variable \og distance of closest approach \fg) et on un petit angle d'ouverture (caractérisé par la variable $ \Delta(\frac{1}{\tan\theta}) $ où $ \theta $ est l'angle entre les deux traces). ii) La somme des rayons des traces doit être compatible avec la distance des centres des deux hélices des traces (caractérisé par la variable $ D-R_1-R_2 $), voir figure \ref{PID} (a).
+  \item Sélection par critères géométriques. Comme les photons sont de masse nulle, les traces sont parallèles au niveau du vertex de conversion : i) les traces sont spatialement proches (caractérisé par la variable \og distance of closest approach \fg) et ont un petit angle d'ouverture (caractérisé par la variable $ \Delta(\frac{1}{\tan\theta}) $ où $ \theta $ est l'angle entre les deux traces). ii) La somme des rayons des traces doit être compatible avec la distance des centres des deux hélices des traces (caractérisé par la variable $ D-R_1-R_2 $), voir figure \ref{PID} (a).
   \item Les traces sélectionnées sont ajustées à un vertex commun avec la contrainte d'être parallèles au niveau du vertex. La qualité de l'ajustement est caractérisée par un $ \chi^2_\textrm{vtx} $.
 \end{enumerate}
 
 La figure \ref{TRT} du chapitre dédié au détecteur Atlas montrait que la fraction de coups haut seuil $ n_{HT}/n_{TRT} $, au niveau du TRT, est une variable qui permet de distinguer efficacement les $ e^\pm $ des $ \pi^\pm $. Cette variable a été utilisée pour les données à $ \sqrt{s}=7\TeV $. Il existe cependant une autre variable nommée $ PID $\cite{} qui s'interprète directement comme la probabilité pour une trace d'être une trace d'électron (où encore la probabilité pour une trace de ne pas être une trace de pion). Cette variable a été utilisée pour les données à $ \sqrt{s}=0.9\TeV $ de façon très lâche. La figure \ref{PID} (b) montre la distribution de la variable $ PID $ pour les données, la simulation Monte-Carlo, et pour la vérité. Au niveau de la reconstruction, des coupures très larges sont appliquées : $ D-R_1-R_2<5mm $, $ \Delta(\frac{1}{\tan\theta})<0.3 $ et $ \chi^2_\textrm{vtx}<50 $.\vspace{0.25cm}
 
-%Remarque : L'association entre traces et amas calorimétriques n'est pas explicitement demandée au niveau de la reconstruction des conversions de photons.
+\vspace{-0.25cm}
 
 \begin{figure}[!ht]
   \begin{bigcenter}
@@ -135,7 +135,7 @@ La figure \ref{TRT} du chapitre dédié au détecteur Atlas montrait que la fractio
   \begin{bigcenter}
     \includegraphics[height=13cm, angle=-90, keepaspectratio]{phd_low/ConversionEventDisplay}
   \end{bigcenter}
-  \caption{Visualisation d'un vertex de conversion dans la première couche du SCT, les deux traces sont clairement visibles.}
+  \caption{Visualisation d'un vertex de conversion dans la première couche du SCT, les deux traces sont clairement visibles. Dans le cadre rouge, il est possible d'observer l'émission d'un photon de Bremsstrahlung.}
 \end{figure}
 
 \newpage
@@ -144,7 +144,7 @@ La figure \ref{TRT} du chapitre dédié au détecteur Atlas montrait que la fractio
 
 \subsubsection{Données $ \sqrt{s}=0.9\TeV $ et $ \sqrt{s}=7\TeV $}
 
-Les résultats présentés dans ce chapitre ont été réalisées à partir des premières données à $ \sqrt{s}=0.9\TeV $ 2009, soit une luminosité intégrée $ L\approx9\mu b^{-1} $, ainsi qu'à partir des données à $ \sqrt{s}=7\TeV $ 2010 de la période D, soit une luminosité intégrée $ L\approx14nb^{-1} $ avec environ $ 20\% $ d'incertitude systématique. Une sélection a été appliquée afin de rejeter les évènements pour lesquels le trajectographe interne et le système calorimétrique ne sont pas dans un fonctionnement standard. Précisons que pour des raisons de sécurité, le détecteur à pixels n'est mis sous tension qu'en faisceaux stables.
+Les résultats présentés dans ce chapitre ont été réalisées à partir des premières données à $ \sqrt{s}=0.9\TeV $ 2009, soit une luminosité intégrée $ L\approx9\mu b^{-1} $, ainsi qu'à partir des données à $ \sqrt{s}=7\TeV $ 2010 des périodes A-C (étude des $ \pi^0 $) et D (cartographie de la matière), soit des luminosité intégrée respectives $ L\approx??\mu b^{-1}\pm20\% $, $ L\approx14nb^{-1}\pm20\% $, voir tableau \ref{dataset_low_energy}. Une sélection a été appliquée afin de rejeter les évènements pour lesquels le trajectographe interne et le système calorimétrique ne sont pas dans un fonctionnement standard. Précisons que pour des raisons de sécurité, le détecteur à pixels n'est sous tension qu'en faisceaux stables.
 
 Les événements ont été déclenchés par le Minimum-Bias-Trigger-Scintillators (MBTS) qui couvre le domaine en pseudo-rapidité $ 2.09<|\eta|<3.84 $. A $ \sqrt{s}=0.9\TeV $, les candidats collisions ont été sélectionnés avec un impératif supplémentaire. Une coïncidence en temps entre les côtés A et C est requise afin de réduire le bruit de fond du aux faisceaux (événements \emph{beam-gas}). Actuellement et conformément aux prévisions, le déclencheur MBTS n'est plus utilisable car trop endommagé par les radiations.\\
 
@@ -186,6 +186,7 @@ La simulation Monte-Carlo est composée de $ \sim10^7 $ (resp. $ \sim4\times10^7 
     \hline
       Runs & Périodes & Luminosité \\
     \hline
+       & A-C & $ \sim??\mu b^{-1} $ \\
       158045-159224 & D & $ \sim14nb^{-1} $ \\
     \hline
   \end{tabular}
@@ -203,7 +204,7 @@ La simulation Monte-Carlo est composée de $ \sim10^7 $ (resp. $ \sim4\times10^7 
   \end{tabular}
 
   \end{bigcenter}
-  \caption{Détail sur les échantillons utilisés pour les données à $ \sqrt{s}=0.9\TeV $ et à $ \sqrt{s}=7\TeV $ ainsi que pour les simulations Monte-Calo à $ \sqrt{s}=0.9\TeV $ et à $ \sqrt{s}=7\TeV $.}
+  \caption{\label{dataset_low_energy}Détail sur les échantillons utilisés pour les données à $ \sqrt{s}=0.9\TeV $ et à $ \sqrt{s}=7\TeV $ ainsi que pour les simulations Monte-Calo à $ \sqrt{s}=0.9\TeV $ et à $ \sqrt{s}=7\TeV $.}
 \end{table}
 
 \newpage
@@ -212,13 +213,13 @@ La simulation Monte-Carlo est composée de $ \sim10^7 $ (resp. $ \sim4\times10^7 
 
 Pour la sélection des photons, deux coupures supplémentaires sont appliquées. La première consiste à rejeter les amas situés dans la zone de transition entre le tonneau et les bouchons du calorimètre électromagnétique $ 1.37<|\eta|<1.52 $ ainsi que les amas situés en dehors de la zone d'acceptance du détecteur $ |\eta|>2.47 $. La seconde consiste à définir un seuil sur l'énergie calibrée $ E_T>400\MeV $ afin de s'éloigner du seuil sur l'énergie non calibrée $ E_T>300\MeV $ à partir d'où l'algorithme de reconstruction des amas topologiques commence à être efficace.
 
-Pour la sélection des vertex de conversion, il est demander de ne conserver que les pairs de traces ayant au moins $ 4 $ coups dans les détecteurs silicium (pixels + SCT) et au moins un coup dans le TRT car la coupure lâche $ PID>10\% $ est appliquée afin de rejeter l'essentiel des pions chargés. Pour les critères géométriques, il est demandé : $ \Delta(\frac{1}{\tan\theta})<0.3 $, \og distance of closest approach \fg\,$ <10mm $ et $ 0<D-R_1-R_2<5mm $, ces choix sont justifiés par les figures \ref{conversionSelection900GeV} (a) et \ref{conversionSelection900GeV} (b). Finalement, la coupure de qualité $ \chi^2_\textrm{vtx}<10 $ est appliquée, ce choix est justifié par la figure \ref{conversionSelection900GeV} (c). La figure \ref{conversionSelection900GeV} (d) montre la distribution d'impulsion transverse des vertex de conversion après application des critères de sélection.
+Pour la sélection des vertex de conversion, il est demander de ne conserver que les pairs de traces ayant au moins $ 4 $ coups dans les détecteurs silicium (pixels + SCT) et au moins un coup dans le TRT car la coupure lâche $ PID>10\% $ est appliquée afin de rejeter l'essentiel des pions chargés. Pour les critères géométriques, il est demandé : $ \Delta(\frac{1}{\tan\theta})<0.3 $ et $ 0<D-R_1-R_2<5mm $, ces choix sont illustrés par les figures \ref{conversionSelection900GeV} (a) et \ref{conversionSelection900GeV} (b). Finalement, la coupure de qualité de l'ajustement des traces au vertex $ \chi^2_\textrm{vtx}<10 $ est appliquée, ce choix est illustrés par la figure \ref{conversionSelection900GeV} (c). La figure \ref{conversionSelection900GeV} (d) montre la distribution d'impulsion transverse des vertex de conversion après application des critères de sélection.
 
 \subsection{Distributions et sélections à $ \sqrt{s}=7\TeV $}\label{selection_7TeV}
 
-Pour la sélection des photons, les coupures restent identiques. Comme la statistique est plus importante, la sélection des conversions est un peu plus stricte. Seules les traces avec $ p_T>500\MeV $ sont conservées et la coupure $ PID>10\% $ est abandonnée au profit de la coupure $ n_{HT}/n_{TRT}>0.12 $, voir figure \ref{TRT}. La coupure de qualité $ \chi^2_\textrm{vtx}<5 $ est appliquée, ce choix est justifié par la figure \ref{conversionSelection7TeV} (c).
+Pour la sélection des photons reste identiques. Comme la statistique est plus importante, la sélection des conversions est un peu plus stricte. Seules les traces avec $ p_T>500\MeV $ sont conservées et la coupure $ PID>10\% $ est abandonnée au profit de la coupure $ n_{HT}/n_{TRT}>0.12 $, voir figure \ref{TRT}. En effet, les groupes de performance ont montré que l'efficacité et la réjection d'une coupure sur la variable $ n_{HT}/n_{TRT} $. La coupure de qualité de l'ajustement des traces au vertex $ \chi^2_\textrm{vtx}<2.5 $ est appliquée, ce choix est illustrés par la figure \ref{conversionSelection7TeV} (c).
 
-Pour la simulation Monte-Carlo, il faut préciser que les événements ont été pondérées en fonction de la position $ z $ du vertex primaire (poids $ w_1 $) ainsi qu'en fonction de l'impulsion transverse (poids $ w_2 $). En effet, la simulation Monte-Carlo n'a pas été optimisée pour des photons de basse énergie provenant, par exemple, de $ \pi^0 $ ou de $ \eta $. Le poids $ w_1w_2 $, associé à chaque vertex de conversion, permet un meilleur accord entre les données et la simulation Monte-Carlo. Les figures \ref{poids} (a) et \ref{poids} (b) montrent respectivement la distribution du poids $ w_1 $ en fonction de la position $ z $ du vertex primaire et la distribution du poids $ w_2 $ en fonction de l'impulsion transverse. La figure \ref{poids} (c) montre la distribution d'impulsion transverse des vertex de conversion après application des critères de sélection et avant application du poids $ w_1w_2 $. L'accord entre les données et la simulation Monte-Carlo n'est pas très bon. La figure \ref{conversionSelection7TeV} (d) montre la distribution d'impulsion transverse des vertex de conversion après application des critères de sélection et après application du poids $ w_1w_2 $. Sans être parfait, l'accord entre les données et la simulation Monte-Carlo est convenable.
+Pour la simulation Monte-Carlo, il faut préciser que les événements ont été pondérées en fonction de la position $ z $ du vertex primaire (poids $ w_1 $) ainsi qu'en fonction de l'impulsion transverse (poids $ w_2 $). En effet, la simulation Monte-Carlo n'a pas été optimisée pour des photons de basse énergie provenant, par exemple, de $ \pi^0 $ ou de $ \eta $. Les figures \ref{poids} (a) et \ref{poids} (b) montrent respectivement la distribution du poids $ w_1 $ en fonction de la position $ z $ du vertex primaire et la distribution du poids $ w_2 $ en fonction de l'impulsion transverse. La figure \ref{poids} (c) montre la distribution d'impulsion transverse des vertex de conversion après application des critères de sélection et avant application du poids $ w_1w_2 $. L'accord entre les données et la simulation Monte-Carlo n'est pas très bon ($ \chi^2/ndf\approx72 $). La figure \ref{conversionSelection7TeV} (d) montre la distribution d'impulsion transverse des vertex de conversion après application des critères de sélection et après application du poids $ w_1w_2 $. Sans être parfait, l'accord entre les données et la simulation Monte-Carlo est plus convenable ($ \chi^2/ndf\approx4 $).
 
 \begin{figure}[!ht]
   \begin{bigcenter}
@@ -257,7 +258,7 @@ Pour la simulation Monte-Carlo, il faut préciser que les événements ont été pond
   \end{tabular}
 
   \end{bigcenter}
-  \caption{\label{conversionSelection900GeV}Distributions intervenant dans la reconstruction des conversions à $ \sqrt{s}=0.9\TeV $.}
+  \caption{\label{conversionSelection900GeV}Distributions intervenant dans la reconstruction des conversions à $ \sqrt{s}=0.9\TeV $ pour les données (points noirs), pour la simulation Monte-Carlo (histogrammes noirs) et pour les vrais conversions en utilisant la vérité (histogrammes bleus).}
 \end{figure}
 
 \begin{figure}[!ht]
@@ -289,25 +290,7 @@ Dans cette section, je montre l'analyse de la reconstruction des $ \pi^0 $ et de
 
 Les derniers chiffres à jour, pour la physique des particules, sont disponible auprès du \emph{Particle Data Group} (PDG). Le $ \pi^0 $ est un méson constitué des quarks $ u $, $ \bar u $, $ d $ et $ \bar d $ soit encore, d'après le modèle des quarks, $ \left|\pi^0\right>=\frac{\left|u\bar u\right>+\left|d\bar d\right>}{\sqrt{2}} $. Sa masse est $ m_{\pi^0\,PDG}=134,9766\pm0.0006\MeV $.
 
-\newpage
-
-Le $ \pi^0 $ possède deux principaux modes de désintégration :
-\begin{bigcenter}
-  \begin{tabular}{|c|c|}
-    \hline
-    \hline
-    Canal & Rapport de branchement\\
-    \hline
-    $ \pi^0\to\gamma\gamma $ & $ \Gamma_i/\Gamma=\left(98,823\pm0.034\right)\% $\\
-    \hline
-    $ \pi^0\to e^+e^-\gamma $ & $ \Gamma_i/\Gamma=\left(1,174\pm0.035\right)\% $\\
-    \hline
-  \end{tabular}
-\end{bigcenter}
-
-Le cannal $ \pi^0\to e^+e^-\gamma $ ne sera pas étudié.
-
-\newpage
+Le $ \pi^0 $ possède deux principaux modes de désintégration : $ \pi^0\to\gamma\gamma $ de rapport d'embranchement $ \Gamma_i/\Gamma=\left(98,823\pm0.034\right)\% $ et $ \pi^0\to e^+e^-\gamma $ de rapport d'embranchement $ \Gamma_i/\Gamma=\left(1,174\pm0.035\right)\% $. Ce dernier canal (= canal \emph{Dalitz}) ne sera pas étudié à cause des limitations de la statistique.
 
 \subsection{Désintégration des $ \pi^0 $}
 
@@ -385,9 +368,9 @@ Au final, les trois situations suivantes sont à prendre en compte selon le nombr
 
 \subsection{Sélection des $ \pi^0 $}\label{selection}
 
-La sélection des photons non convertis ainsi que la sélection des conversions ont été décrites dans la section précédente. A $ \sqrt{s}=0.9\TeV $, pour la situation $ \pi^0\to\gamma e^+e^- $ seulement, il est demandé que les deux candidats photons soient dans le même hémisphère du détecteur et le véto sur les traces \emph{économique} (équations \ref{veto3} et \ref{veto4}) est appliqué pour améliorer le rapport signal sur bruit. Cette exigence permet de concilier \og amélioration du rapport signal sur bruit\fg\ et \og statistique extrêmement faible\fg. Il est cependant déconseillé d'effectuer une conjonction de coupures du type $ (\Delta\phi)_{\gamma_1\gamma_2} $ et $ (\Delta\eta)_{\gamma_1\gamma_2} $ pour améliorer le rapport signal sur bruit car les processus physiques ne restent pas invariants.
+La sélection des photons non convertis ainsi que la sélection des conversions ont été décrites dans la section précédente. A $ \sqrt{s}=0.9\TeV $, pour la situation $ \pi^0\to\gamma e^+e^- $ seulement, il est demandé que les deux candidats photons soient dans le même hémisphère du détecteur et le véto sur les traces \emph{économique} (équations \ref{veto3} et \ref{veto4}) est appliqué. Ces deux exigences permettent un bruit de bond plus plat et plus uniforme géométriquement. Il est cependant déconseillé d'effectuer une conjonction de coupures du type $ (\Delta\phi)_{\gamma_1\gamma_2} $ et $ (\Delta\eta)_{\gamma_1\gamma_2} $ pour améliorer le rapport signal sur bruit car les processus physiques ne restent pas invariants.
 
-Au niveau des candidats $ \pi^0 $, une coupure sur l'impulsion transverse est appliquée afin de réduire le bruit de fond combinatoire (pairs de photons ne provenant pas d'un même $ \pi^0 $ qui passent toutes les coupures de sélection). Les choix retenus ont été définis \emph{à la main} avec l'idée de disposer à la fois d'un rapport signal sur bruit raisonnable et d'une statistique raisonnable. Le tableaux \ref{} montre la coupure sur l'impulsion transverse $ p_{T\,\gamma\gamma} $ en fonction pour les canaux $ \pi^0\to\gamma\gamma $, $ \pi^0\to\gamma e^+e^- $ et $ \pi^0\to e^+e^-e^+e^- $ et pour $ \sqrt{s}=0.9\TeV $ et $ \sqrt{s}=7\TeV $.
+Au niveau des candidats $ \pi^0 $, une coupure sur l'impulsion transverse est appliquée afin de réduire le bruit de fond combinatoire (pairs de photons ne provenant pas d'un même $ \pi^0 $ qui passent toutes les coupures de sélection). Les choix retenus ont été définis avec l'idée de disposer d'un rapport signal sur bruit raisonnable ($ \frac{s}{b}>2 $) et d'une bonne efficacité $ >85\% $. Le tableaux \ref{selection_pi0} montre la coupure sur l'impulsion transverse $ p_{T\,\gamma\gamma} $ pour les trois canaux $ \pi^0\to\gamma\gamma $, $ \pi^0\to\gamma e^+e^- $ et $ \pi^0\to e^+e^-e^+e^- $ et pour $ \sqrt{s}=0.9\TeV $ et $ \sqrt{s}=7\TeV $.
 
 \begin{table}[!ht]
   \begin{bigcenter}
@@ -398,7 +381,7 @@ Au niveau des candidats $ \pi^0 $, une coupure sur l'impulsion transverse est ap
     \hline
       $ \pi^0\to\gamma\gamma $ & $ \pi^0\to\gamma e^+e^- $ & $ \pi^0\to e^+e^-e^+e^- $ \\
     \hline
-      $ p_{T\,\gamma\gamma}>900\MeV $ & $ p_{T\,\gamma\gamma(\to e^+e^-)}>900\MeV $ & - \\
+      $ p_{T\,\gamma\gamma}>900\MeV $ & $ p_{T\,\gamma\gamma(\to e^+e^-)}>900\MeV $ & $ \varnothing $ \\
     \hline
   \end{tabular}
 
@@ -410,31 +393,17 @@ Au niveau des candidats $ \pi^0 $, une coupure sur l'impulsion transverse est ap
     \hline
       $ \pi^0\to\gamma\gamma $ & $ \pi^0\to\gamma e^+e^- $ & $ \pi^0\to e^+e^-e^+e^- $ \\
     \hline
-      $ p_{T\,\gamma\gamma}>900\MeV $ & $ p_{T\,\gamma\gamma(\to e^+e^-)}>1500\MeV $ & $ p_{T\,\gamma(\to e^+e^-)\gamma(\to e^+e^-)}>???\MeV $ \\
+      $ p_{T\,\gamma\gamma}>900\MeV $ & $ p_{T\,\gamma\gamma(\to e^+e^-)}>1500\MeV $ & $ p_{T\,\gamma(\to e^+e^-)\gamma(\to e^+e^-)}>1500\MeV $ \\
     \hline
   \end{tabular}
 
   \end{bigcenter}
-  \caption{Coupure sur l'impulsion transverse en fonction pour les canaux $ \pi^0\to\gamma\gamma $, $ \pi^0\to\gamma e^+e^- $ et $ \pi^0\to e^+e^-e^+e^- $ et pour $ \sqrt{s}=0.9\TeV $ et $ \sqrt{s}=7\TeV $}
+  \caption{\label{selection_pi0}Coupure sur l'impulsion transverse en fonction pour les canaux $ \pi^0\to\gamma\gamma $, $ \pi^0\to\gamma e^+e^- $ et $ \pi^0\to e^+e^-e^+e^- $ et pour $ \sqrt{s}=0.9\TeV $ et $ \sqrt{s}=7\TeV $}
 \end{table}
 
 \subsection{Variables cinématiques à $ \sqrt{s}=7\TeV $}
 
-Nous montrons ici les distributions des variables cinématiques des photons et des pairs de photons pour les canaux : $ \pi^0\to\gamma\gamma $, figure \ref{cinematique_pizero1}, $ \pi^0\to\gamma e^+e^- $ et $ \pi^0\to e^+e^-e^+e^- $, figures \ref{cinematique_pizero2} et figure \ref{cinematique_pizero3}. L'accord entre les données et la simulation Monte-Carlo est bon, néanmoins le spectre en impulsion transverse des photons non convertis est très légèrement plus dur dans simulation Monte-Carlo.
-
-\newpage
-
-Remarque : À $ \sqrt{s}=0.9\TeV $, les distributions des variables cinématiques sont disponibles auprès des notes de conférence \cite{} et \cite{}.
-
-\subsection{Composantes du bruit de fond}
-
-La masse invariante des candidats $ \pi^0 $ est reconstruite avec la formule \ref{masse_pizero}. Étudions les différentes contributions au signal à l'aide de la simulation Monte-Carlo. On s'attend à rencontrer : i) la composante de signal où aucun photon n'est converti. ii) la composante de signal où un photon est converti. iii) la composante de signal où deux photons sont convertis. iv) la composante de bruit de fond réductible composée de d'électrons $ e^\pm $ et de pions $ \pi^\pm $ qui passent les coupures de sélection. v) la composante de bruit de fond combinatoire qui provient de la combinaison de tous les photons (éventuellement des photons de Bremsstrahlung ou des $ \pi^0 $ proches des photons, etc\dots), cette composante de bruit de fond n'est pas physique.
-
-La figure \ref{pizerobkgd} montre les différentes contributions au signal $ \pi^0 $ obtenues à partir de la simulation Monte-Carlo à $ \sqrt{s}=7\TeV $. La composante combinatoire domine le bruit de fond, la composante réductible a été majoritairement réduite par les coupures de sélection. Si l'on compare les nombres de $ \pi^0 $ avec respectivement $ 0 $, $ 1 $ ou $ 2 $ photons convertis, nous avons les rapports $ 1\div0.25\div0.03 $.\\
-
-Remarque : Nous apercevons un léger excédent de bruit de fond juste en dessous du pic de signal. Pour en comprendre l'origine, il faut s'intéresser à l'association des particules reconstruites aux particules produites par le générateur Monte-Carlo qui, elles, sont connues. La correspondance entre les particules reconstruites et entre les particules générées est basée sur un critère de proximité qu'il est d'autant plus difficile à mettre en \oe uvre que les particules reconstruites sont proches ou converties en paires d'électrons pour le cas des photons.
-
-L'origine de l'excédent en bruit de fond vient simplement de photons convertis incorrectement associés aux photons vrais. Les distributions de masse invariantes des processus $ \pi^0\to\gamma e^+e^- $ et $ \pi^0\to e^+e^-e^+e^- $ feront clairement apparaitre cet effet. Ultérieurement, lorsque je serais emmener à étudier, dans le dernier chapitre de cette thèse, la désintégration des bosons $ Z $ en paires d'électrons, le problème sera résolu par la mise en place une correspondance faible (loose truth matching) en entre les particules et les particules vraies.
+Nous montrons ici les distributions des variables cinématiques des photons non convertis et des pairs de photons pour les canaux : $ \pi^0\to\gamma\gamma $ et $ \pi^0\to\gamma e^+e^- $, figures \ref{cinematique_pizero1} et \ref{cinematique_pizero2}. L'accord entre les données et la simulation Monte-Carlo est bon, néanmoins, à grand $ p_T $, le spectre en impulsion transverse des photons non convertis est très légèrement plus dur dans la simulation Monte-Carlo. Nous avions appliqué des poids pour les conversions mais nous n'avons pas jugé nécessaire d'en appliquer pour les photons non convertis.
 
 \begin{figure}[!p]
   \begin{bigcenter}
@@ -474,6 +443,20 @@ L'origine de l'excédent en bruit de fond vient simplement de photons convertis i
   \caption{\label{cinematique_pizero2}Distribution de l'impulsion transverse des paires de photons non convertis (a). Distribution de l'impulsion transverse des paires de photons convertis (b). Échelles linéaires (haut) échelles logarithmique (bas).}
 \end{figure}
 
+\newpage
+
+Remarque : À $ \sqrt{s}=0.9\TeV $, les distributions des variables cinématiques sont disponibles auprès des notes de conférence \cite{} et \cite{}.
+
+\subsection{Composantes du bruit de fond}
+
+La masse invariante des candidats $ \pi^0 $ est reconstruite avec la formule \ref{masse_pizero}. Étudions les différentes contributions au signal à l'aide de la simulation Monte-Carlo. On s'attend à rencontrer : i) la composante de signal où aucun photon n'est converti. ii) la composante de signal où un photon est converti. iii) la composante de signal où deux photons sont convertis. iv) la composante de bruit de fond réductible composée d'électrons $ e^\pm $ et de pions $ \pi^\pm $ qui passent les coupures de sélection. v) la composante de bruit de fond combinatoire qui provient de la combinaison de tous les photons (éventuellement des photons de Bremsstrahlung ou des $ \pi^0 $ proches des photons, etc\dots), cette composante de bruit de fond n'est pas physique.
+
+La figure \ref{pizerobkgd} montre les différentes contributions au signal $ \pi^0 $ obtenues à partir de la simulation Monte-Carlo à $ \sqrt{s}=7\TeV $. La composante combinatoire domine le bruit de fond, la composante réductible a été majoritairement réduite par les coupures de sélection. Si l'on compare les nombres de $ \pi^0 $ avec respectivement $ 0 $, $ 1 $ ou $ 2 $ photons convertis, nous avons les rapports $ 1\div0.25\div0.03 $.\\
+
+Remarque : Nous apercevons un léger excédent de bruit de fond juste en dessous du pic de signal. Pour en comprendre l'origine, il faut s'intéresser à l'association des particules reconstruites aux particules produites par le générateur Monte-Carlo qui, elles, sont connues. La correspondance entre les particules reconstruites et entre les particules générées est basée sur un critère de proximité qu'il est d'autant plus difficile à mettre en \oe uvre que les particules reconstruites sont proches ou converties en paires d'électrons pour le cas des photons.
+
+L'origine de l'excédent en bruit de fond vient simplement de photons convertis incorrectement associés aux photons vrais. Les distributions de masse invariantes des processus $ \pi^0\to\gamma e^+e^- $ et $ \pi^0\to e^+e^-e^+e^- $ feront clairement apparaitre cet effet. Ultérieurement, lorsque je serais emmener à étudier, dans le dernier chapitre de cette thèse, la désintégration des bosons $ Z $ en paires d'électrons, le problème sera résolu par la mise en place une correspondance faible (loose truth matching) en entre les particules et les particules vraies.
+
 \begin{figure}[!ht]
   \begin{bigcenter}
     \includegraphics[height=7.25cm, keepaspectratio]{phd_low/pizerobkgd}
@@ -502,7 +485,7 @@ La figure \ref{mass1_900GeV} (a) montre la distribution de masse invariante des 
   \caption{\label{mass1_900GeV}Distribution de masse invariante des candidats $ \pi^0 $ après sélection pour les données et pour la simulation Monte-Carlo. Canal $ \pi^0\to\gamma\gamma $ (a), canal $ \pi^0\to\gamma e^+e^- $ (b).}
 \end{figure}
 
-Pour le canal $ \pi^0\to\gamma\gamma $, l'ajustement du pic de signal a été réalisé à partir de la somme d'une distribution Gaussienne et d'une distribution Crystal Ball (voir annexe ???) de moyenne commune. La Crystal Ball permet de modéliser les queues qui apparaissent à grande masse à cause du bruit électronique amplifié par la coupure cinématique sur l'énergie transverse des candidats photons.
+Pour le canal $ \pi^0\to\gamma\gamma $, l'ajustement du pic de signal a été réalisé à partir de la somme d'une distribution Gaussienne et d'une distribution Crystal Ball (voir annexe $ 1 $) de moyenne commune. La Crystal Ball permet de modéliser les queues qui apparaissent à grande masse à cause du bruit électronique amplifié par la coupure cinématique sur l'énergie transverse des candidats photons.
 
 Pour le canal $ \pi^0\to\gamma e^+e^- $, une simple distribution Crystal Ball est utilisée. Cette fois, elle permet de modéliser les queues à basse masse dues au pertes d'énergie par Bremsstrahlung des électrons de conversion.
 \begin{equation}
@@ -549,7 +532,7 @@ Le tableau \ref{ajustement1_900GeV} montre la masse moyenne $ \left<m\right> $ e
   \caption{\label{ajustement1_900GeV} Masse moyenne $ \left<m\right> $ et largueur $ \sigma $ exprimées en $ \MeV $ des distributions de masse invariante obtenues après ajustement pour les canaux $ \pi^0\to\gamma\gamma $ et $ \pi^0\to\gamma e^+e^- $.}
 \end{table}
 
-La figure \ref{mass2_900GeV} montre la distribution de masse invariante des candidats $ \pi^0\to\gamma\gamma $ après sélection pour les données et pour la simulation Monte-Carlo lorsque les deux candidats photons sont situés dans la partie tonneau du calorimètre électromagnétique (a) ou dans le partie bouchon du calorimètre électromagnétique (b). Le pic de signal est plus étroit dans les bouchon du calorimètre électromagnétique car des électrons de grande pseudo-rapidité sont plus énergétiques que des électrons de petite pseudo-rapidité. Nous constatons aussi que la forme du bruit de fond est diffétente car imposer la présence de deux photons dans les bouchons électromagnétiques induit une coupure implicite $ \Delta\eta<1.12 $ sur la pseudo-rapidité et nous savons qu'une telle coupure a pour effet de réduire le bruit de fond combinatoire. Le tableau \ref{ajustement2_900GeV} montre la masse moyenne $ \left<m\right> $ et la largeur $ \sigma $ des distributions de masse invariante obtenues après ajustement pour le cas tonneau et le cas bouchons. L'accord données et simulation Monte-Carlo est bon et les résultats restent compatibles avec les valeurs attendues (voir sous-section \ref{PDG}).
+La figure \ref{mass2_900GeV} montre la distribution de masse invariante des candidats $ \pi^0\to\gamma\gamma $ après sélection pour les données et pour la simulation Monte-Carlo lorsque les deux candidats photons sont situés dans la partie tonneau du calorimètre électromagnétique (a) ou dans le partie bouchon du calorimètre électromagnétique (b). Le pic de signal est plus étroit dans les bouchon du calorimètre électromagnétique car des photons de grande pseudo-rapidité sont plus énergétiques que des photons de petite pseudo-rapidité. Nous constatons aussi que la forme du bruit de fond est différente car imposer la présence de deux photons dans les bouchons électromagnétiques induit une coupure implicite $ \Delta\eta<1.12 $ sur la pseudo-rapidité et nous savons qu'une telle coupure a pour effet de réduire le bruit de fond combinatoire. Le tableau \ref{ajustement2_900GeV} montre la masse moyenne $ \left<m\right> $ et la largeur $ \sigma $ des distributions de masse invariante obtenues après ajustement pour le cas tonneau et le cas bouchons. L'accord données et simulation Monte-Carlo est bon et les résultats restent compatibles avec les valeurs attendues (voir sous-section \ref{PDG}).
 
 \begin{figure}[!ht]
   \begin{bigcenter}
@@ -574,8 +557,8 @@ La figure \ref{mass2_900GeV} montre la distribution de masse invariante des cand
     \hline
       Canal & $ \left<m\right>_\textrm{data} $ & $ \left<m\right>_\textrm{MC} $ & $ \frac{|\left<m\right>_\textrm{data}-\left<m\right>_\textrm{MC}|}{\left<m\right>_\textrm{MC}} $ & $ \sigma_\textrm{data} $ & $ \sigma_\textrm{MC} $ & $ \frac{|\sigma_\textrm{data}-\sigma_\textrm{MC}|}{\sigma_\textrm{MC}} $ \\
     \hline
-      $ \pi^0\to\gamma\gamma $ \tiny{(tonneau)} & \footnotesize{$ 136.6\pm0.6 $} & \footnotesize{$ 136.7\pm0.1 $} & \footnotesize{$ 0.1\% $} & \footnotesize{$ - $} & \footnotesize{$ - $} & \footnotesize{$ - $} \\
-      $ \pi^0\to\gamma\gamma $ \tiny{(bouchons)} & \footnotesize{$ 131.8\pm0.4 $} & \footnotesize{$ 132.2\pm0.2 $} & \footnotesize{$ 0.3\% $} & \footnotesize{$ - $} & \footnotesize{$ - $} & \footnotesize{$ - $} \\
+      $ \pi^0\to\gamma\gamma $ \tiny{(tonneau)} & \footnotesize{$ 136.6\pm0.6 $} & \footnotesize{$ 136.7\pm0.1 $} & \footnotesize{$ 0.1\% $} & \footnotesize{$ \varnothing $} & \footnotesize{$ \varnothing $} & \footnotesize{$ \varnothing $} \\
+      $ \pi^0\to\gamma\gamma $ \tiny{(bouchons)} & \footnotesize{$ 131.8\pm0.4 $} & \footnotesize{$ 132.2\pm0.2 $} & \footnotesize{$ 0.3\% $} & \footnotesize{$ \varnothing $} & \footnotesize{$ \varnothing $} & \footnotesize{$ \varnothing $} \\
     \hline
   \end{tabular}
 
@@ -614,9 +597,9 @@ Les figures \ref{mass1_7TeV} (a), \ref{mass1_7TeV} (b) et \ref{mass1_7TeV} (c) m
   \caption{\label{mass1_7TeV} Distribution de masse invariante des candidats $ \pi^0 $ après sélection pour les données et pour la simulation Monte-Carlo. $ \pi^0\to\gamma\gamma $ (a), $ \pi^0\to\gamma e^+e^- $ (b) et $ \pi^0\to e^+e^-e^+e^- $ (c).}
 \end{figure}
 
-Pour les canaux $ \pi^0\to\gamma\gamma $ et $ \pi^0\to\gamma e^+e^- $, l'ajustement du pic de signal a été réalisé à partir de la somme d'une distribution Gaussienne et d'une distribution Crystal Ball (voir annexe ???) de moyenne commune. L'ajustement du bruit de fond a été réalisé à partir d'un polynôme de Chebychev d'ordre $ 4 $ pour $ \pi^0\to\gamma\gamma $ et d'ordre $ 3 $ pour $ \pi^0\to\gamma e^+e^- $ directement à partir des distributions extraites de la simulation Monte-Carlo. Pour le canal $ \pi^0\to e^+e^-e^+e^- $, l'ajustement du pic de signal a été réalisé à partir d'une distribution Gaussienne et l'ajustement du bruit de fond a été réalisé à partir d'une exponentielle décroissante.
+Pour les canaux $ \pi^0\to\gamma\gamma $ et $ \pi^0\to\gamma e^+e^- $, l'ajustement du pic de signal a été réalisé à partir de la somme d'une distribution Gaussienne et d'une distribution Crystal Ball (voir annexe $ 1 $) de moyenne commune. L'ajustement du bruit de fond a été réalisé à partir d'un polynôme de Chebychev d'ordre $ 4 $ pour $ \pi^0\to\gamma\gamma $ et d'ordre $ 3 $ pour $ \pi^0\to\gamma e^+e^- $ directement à partir des distributions extraites de la simulation Monte-Carlo. Pour le canal $ \pi^0\to e^+e^-e^+e^- $, l'ajustement du pic de signal a été réalisé à partir d'une distribution Gaussienne et l'ajustement du bruit de fond a été réalisé à partir d'une exponentielle décroissante.
 
-Une meilleure méthode d'extraction de la largeur $ \sigma $ de la résonance est utilisée. Pour les canaux $ \pi^0\to\gamma\gamma $ et $ \pi^0\to\gamma e^+e^- $, le bruit de fond issu de la simulation MC est soustrait à la distribution de masse invariante afin de ne conserver que le pic de signal. Le c\oe ur de celui-ci, $ 20\MeV $ autour de la masse moyenne $ \left<m\right> $, est ajusté avec une distribution Gaussienne. Pour le canal $ \pi^0\to e^+e^-e^+e^- $, la largeur du pic de signal est directement la largeur de la distribution Gaussienne utilisée pour effectuer l'ajustement. Le tableau \ref{ajustement1_900GeV} montre la masse moyenne $ \left<m\right> $ et la largeur $ \sigma $ des distributions de masse invariante obtenues après ajustement pour les canaux $ \pi^0\to\gamma\gamma $, $ \pi^0\to\gamma e^+e^- $ et $ \pi^0\to e^+e^-e^+e^- $. L'accord données et simulation Monte-Carlo est globalement bon et les résultats sont compatibles avec les valeurs attendues (voir sous-section \ref{PDG}) cependant, pour les deux derniers canaux, les pertes d'énergie par Bremsstrahlung des électrons de conversion doivent être prises en compte, deux approches seront illustrées dans la prochaine sous-section.
+Une meilleure méthode d'extraction de la largeur $ \sigma $ de la résonance, avec moins de paramètres libres, est utilisée. Pour les canaux $ \pi^0\to\gamma\gamma $ et $ \pi^0\to\gamma e^+e^- $, le bruit de fond issu de la simulation MC est soustrait à la distribution de masse invariante afin de ne conserver que le pic de signal. Le c\oe ur de celui-ci, $ 20\MeV $ autour de la masse moyenne $ \left<m\right> $, est ajusté avec une distribution Gaussienne. Pour le canal $ \pi^0\to e^+e^-e^+e^- $, la largeur du pic de signal est directement la largeur de la distribution Gaussienne utilisée pour effectuer l'ajustement. Le tableau \ref{ajustement1_7TeV} montre la masse moyenne $ \left<m\right> $ et la largeur $ \sigma $ des distributions de masse invariante obtenues après ajustement pour les canaux $ \pi^0\to\gamma\gamma $, $ \pi^0\to\gamma e^+e^- $ et $ \pi^0\to e^+e^-e^+e^- $. L'accord données et simulation Monte-Carlo est globalement bon et les résultats sont compatibles avec les valeurs attendues (voir sous-section \ref{PDG}) cependant, pour les deux derniers canaux, les pertes d'énergie par Bremsstrahlung des électrons de conversion doivent être prises en compte, deux approches seront illustrées dans la prochaine sous-section.
 
 \begin{table}[!ht]
   \begin{bigcenter}
@@ -674,7 +657,7 @@ Une estimation de l'erreur systématique sur la détermination de la masse moyenne
 
 \newpage
 
-Conclusion : D'après les tableaux \ref{ajustement1_7TeV} et \ref{ajustement2_7TeV}, le rapport données sur simulation Monte-Carlo pour la masse moyenne $ \left<m\right>$ est meilleur que $ 1\% $. Et les masses moyennes sont compatibles avec la masse $ m_\textrm{PDG}=134,9766\pm0.0006\MeV $ avec une erreur meilleure que $ 1.4\% $ pour $ \pi^0\to\gamma\gamma $. Ces résultats sont satisfaisants au vu de des approximations réalisées au niveau de la calibration en énergie des amas calorimétriques. Ici encore, les largeurs des distributions de masse invariante sont compatibles avec la résolution attendue du calorimètre électromagnétiques à ces énergies.\\
+Conclusion : D'après les tableaux \ref{ajustement1_7TeV} et \ref{ajustement2_7TeV}, le rapport données sur simulation Monte-Carlo pour la masse moyenne $ \left<m\right>$ est meilleur que $ 1\% $. Et les masses moyennes sont compatibles avec la masse $ m_\textrm{PDG}=134,9766\pm0.0006\MeV $ avec une erreur meilleure que $ 1.4\% $ pour $ \pi^0\to\gamma\gamma $. Ces résultats sont satisfaisants au vu des approximations réalisées au niveau de la calibration en énergie des amas calorimétriques. Ici encore, les largeurs des distributions de masse invariante sont compatibles avec la résolution attendue du calorimètre électromagnétiques à ces énergies.\\
 
 \subsection{Uniformité à $ \sqrt{s}=7\TeV $}
 
@@ -704,7 +687,7 @@ La figure \ref{uniformite} montre le rapport $ \frac{\left<m\right>_\textrm{data
 
 Le \emph{Dynamic Noise Adjustment} (DNA) est un algorithme d'ajustement des traces qui permet de tenir compte des pertes d'énergie par Bremsstrahlung. Il extrapole les segments de traces vers la couche suivante du détecteur silicium (pixels + SCT). Si il y a une présumée contribution de Bremsstrahlung dur, la perte d'énergie est estimée et un terme additionnel de bruit est inséré dans le filtre de Kalman\footnote{Le filtre de Kalman permet d'estimer les états d'un système dynamique à partir d'une série de mesures incomplètes ou bruitées.} utilisé dans la reconstruction des traces, voir chapitre 6.
 
-La masse invariante des $ \pi^0 $ dans les canaux $ \pi^0\to\gamma e^+e^- $ et $ \pi^0\to e^+e^-e^+e^- $ a été estimée en utilisant l'algorithme (DNA). Les figures \ref{DNA} (a) et \ref{DNA} (b) montrent respectivement la distribution de masse invariante des candidats $ \pi^0\to\gamma e^+e^- $ et $ \pi^0\to e^+e^-e^+e^- $ après sélection pour les données et pour la simulation Monte-Carlo. L'accord sur la largeur des distributions de masse invariante est moins bon que précédemment car le poids $ w_1w_2 $ associé à chaque conversion (voir sous-section \ref{selection_7TeV}), pour améliorer l'accord entre les données et la simulation Monte-Carlo, n'a pas pu être appliqué. Après ajustement, nous obtenons $ \left<m\right>=???\pm???\MeV $ et $ \sigma=???\pm???\MeV $ pour le canal $ \pi^0\to\gamma e^+e^- $ et $ \left<m\right>=???\pm???\MeV $ et $ \sigma=???\pm???\MeV $ pour le canal $ \pi^0\to e^+e^-e^+e^- $. La première masse moyenne est compatible avec les attentes et la seconde masse moyenne est significativement améliorée par rapport aux valeurs attendues. Les résolutions sont également diminuées par rapport à l'algorithme standard de reconstruction des traces.
+La masse invariante des $ \pi^0 $ dans les canaux $ \pi^0\to\gamma e^+e^- $ et $ \pi^0\to e^+e^-e^+e^- $ a été estimée en utilisant l'algorithme (DNA). Les figures \ref{DNA} (a) et \ref{DNA} (b) montrent respectivement la distribution de masse invariante des candidats $ \pi^0\to\gamma e^+e^- $ et $ \pi^0\to e^+e^-e^+e^- $ après sélection pour les données et pour la simulation Monte-Carlo. Un nouveau jeu de poids $ w_1 $ et $ w_2 $ a été déterminé afin d'améliorer l'accord entre les données et la simulation Monte-Carlo. Après ajustement, nous obtenons $ \left<m\right>=???\pm???\MeV $ et $ \sigma=???\pm???\MeV $ pour le canal $ \pi^0\to\gamma e^+e^- $ et $ \left<m\right>=???\pm???\MeV $ et $ \sigma=???\pm???\MeV $ pour le canal $ \pi^0\to e^+e^-e^+e^- $. La première masse moyenne est compatible avec les attentes et la seconde masse moyenne est significativement améliorée par rapport aux valeurs attendues. Les résolutions sont également diminuées par rapport à l'algorithme standard de reconstruction des traces.
 
 \begin{figure}[!ht]
   \begin{bigcenter}
@@ -723,19 +706,19 @@ La masse invariante des $ \pi^0 $ dans les canaux $ \pi^0\to\gamma e^+e^- $ et $
 
 \newpage
 
-\subsection{Conclusion pour les $ \pi^0 $ et les $ \eta $}
+\subsection{Conclusion pour les $ \pi^0 $}
 
-Les études sur la reconstruction des $ \pi^0 $ et des $ \eta $, montrées dans ce chapitre, ont permit d'utiliser conjointement le calorimètre électromagnétique et le trajectographe interne afin de réaliser une des premières études de physique avec des données de type \og collisions\fg.
+Les études sur la reconstruction des $ \pi^0 $, montrées dans ce chapitre, ont permit d'utiliser conjointement le calorimètre électromagnétique et le trajectographe interne afin de réaliser une des premières études de physique avec des données de type \og collisions\fg.
 
-Il a été possible de tester les performances du calorimètre électromagnétique à une échelle d'énergie de l'ordre de $ 500\MeV $. Il a été possible de retrouver la masse des $ \pi^0 $ et des $ \eta $ avec une erreur de l'ordre de $ 1.5\% $ par rapport aux masses nominales grâce à la mise en place d'un algorithme de calibration de l'énergie dans les amas électromagnétiques. L'accord entre les données et la simulation Monte-Carlo est de l'ordre de $ 1\% $ et la largeur des distributions de masse invariantes est compatible avec la résolution attendue à ces énergies. Il a été possible de réaliser une étude sur l'uniformité de la réponse du calorimètre électromagnétiques, on montre que l'uniformité en $ \eta $ est meilleure que $ 2\% $ (resp. $ 1\% $) dans le tonneau (resp. dans les bouchons) et que l'uniformité en $ \phi $ est toujours meilleure que $ 1\% $.
+Il a été possible de tester les performances du calorimètre électromagnétique à une échelle d'énergie de l'ordre de $ 500\MeV $. Il a été possible de retrouver la masse des $ \pi^0 $ avec une erreur de l'ordre de $ 1.5\% $ par rapport aux masses nominales grâce à la mise en place d'un algorithme de calibration de l'énergie dans les amas électromagnétiques. L'accord entre les données et la simulation Monte-Carlo est de l'ordre de $ 1\% $ et la largeur des distributions de masse invariantes est compatible avec la résolution attendue à ces énergies. Il a été possible de réaliser une étude sur l'uniformité de la réponse du calorimètre électromagnétiques, on montre que l'uniformité en $ \eta $ est meilleure que $ 2\% $ (resp. $ 1\% $) dans le tonneau (resp. dans les bouchons) et que l'uniformité en $ \phi $ est toujours meilleure que $ 1\% $.
 
-Il a été possible de reconstruire des $ \pi^0 $ et des $ \eta $ avec photons convertis grâce à la mise en place d'un algorithme dédié. Ici aussi, les résultats sont en accord avec les attentes. Il a été possible d'effectué une correction sur les pertes d'énergie par Bremsstrahlung afin d'améliorer significativement la valeur de la masse reconstruite.
+Il a été possible de reconstruire des $ \pi^0 $ avec photons convertis grâce à la mise en place d'un algorithme dédié. Ici aussi, les résultats sont en accord avec les attentes. Il a été possible d'effectuer une correction sur les pertes d'énergie par Bremsstrahlung afin d'améliorer significativement la valeur de la masse reconstruite.
 
 \newpage
 
 \section{Cartographie de la matière du trajectographe interne}
 
-Au chapitre 3, nous avons évoqué le fait que les électrons pouvait perdre jusqu'à $ 50\% $ de leur énergie par Bremsstrahlung dans le trajectographe et que $ 40\% $ des photons se convertissent en paires d'électrons dans le trajectographe. Les algorithmes de reconstruction des électrons est des photons, qui seront présentés au chapitre suivant, doivent tenir compte de ces phénomènes. Nous verrons en particulier que les variables de forme de gerbe électromagnétiques sont affectées. Dans cette section, je vais présenter une méthode de cartographie de la matière située à l'intérieur du trajectographe interne du détecteur Atlas en utilisant des photons convertis.
+Au chapitre 3, nous avons évoqué le fait que les électrons pouvait perdre jusqu'à $ 50\% $ de leur énergie par Bremsstrahlung dans le trajectographe et que $ 40\% $ des photons se convertissent en paires d'électrons dans le trajectographe. Les algorithmes de reconstruction des électrons est des photons, qui seront présentés au chapitre suivant, doivent tenir compte de ces phénomènes. Nous verrons en particulier que les variables de forme de gerbe électromagnétiques sont affectées. Dans cette section, je vais présenter une méthode de cartographie de la matière située à l'intérieur du trajectographe interne du détecteur Atlas en utilisant des photons convertis de faible impulsion transverse.
 
 \subsection{Principe général}\label{principe}
 
@@ -745,7 +728,7 @@ La longueur de radiation $ \frac{X}{X_0} $, d'une quantité de matière localisée,
 \end{equation}
 où $ F_\textrm{conv} $ peut s'écrire :
 \begin{equation}
-  F_\textrm{conv}=\frac{N_\textrm{reco}}{N_\textrm{tot}}\frac{F_\textrm{c}}{\varepsilon}\frac{1}{\exp\left(-\frac{7}{9}M_\textrm{up}\right)}
+  F_\textrm{conv}=\frac{N_\textrm{reco}}{N_\textrm{tot}}\frac{F_\textrm{c}}{\varepsilon}\frac{1}{\exp\left(-\frac{7}{9}M_\textrm{up}\right)}\hspace{0.5cm};\hspace{0.5cm}M_\textrm{up}(X)=\int^X_0dX'\frac{X'}{X_0}
 \end{equation}
 où $ N_\textrm{reco} $ est le nombre de photons convertis reconstruits dans la portion de matière en investigation, $ F_\textrm{c} $ est un facteur de correction, $ N_\textrm{tot} $ est le nombre total de photons produit au niveau du vertex primaire, $ \varepsilon $ est l'efficacité de la reconstruction des photons convertis et enfin $ M_{up} $ est la longueur de radiation intégrée en amont de la portion de matière en investigation, c'est-à-dire au niveau du tube à vide. Le facteur $ \frac{9}{7} $ provient de la section efficace de création de pairs d'électrons.
 
@@ -753,11 +736,9 @@ La détermination de $ \varepsilon $ est la partie la plus difficile de l'analyse
 
 Cette étude a été mise en \oe uvre avec les premières données à $ \sqrt{s}=0.9\TeV $ puis largement améliorée avec des données à $ \sqrt{s}=7\TeV $ de la période D.
 
-\vspace{0.375cm}
-
 \begin{figure}[!ht]
   \begin{bigcenter}
-    \includegraphics[height=4.375cm, keepaspectratio]{phd_low/procedure}
+    \includegraphics[height=4.125cm, keepaspectratio]{phd_low/procedure}
   \end{bigcenter}
   \caption{\label{iteration}Procédure de détermination de la matière dans le trajectographe interne.}
 \end{figure}
@@ -768,7 +749,7 @@ Cette étude a été mise en \oe uvre avec les premières données à $ \sqrt{s}=0.9\T
 
 \subsubsection{Sélection des conversions}
 
-La sélection de la sous-section \ref{selection_900GeV} reste valable. Dans cette analyse, il ne faut cependant conserver que les conversion de bonnes qualité contenant deux traces avec au moins un coup dans les détecteurs silicium (pixels + SCT). Le tableau \ref{proportion} montre les proportions de conversions Silicium-Silicium, Silicium-TRT et TRT-TRT pour les données et pour la simulation Monte-Carlo. La proportion de traces Silicium-Silicium est inférieure à $ 10\% $. La première coupure de sélection appliquée consiste à demander au moins quatre coups dans les détecteurs silicium pour chacunes des traces des vertex de conversion. La seconde coupure de sélection appliquée est une coupure sur la qualité $ \chi^2_{vtx} $ de la reconstruction des vertex de conversion. La distribution \ref{conversionSelection900GeV} (c) suggère $ \chi^2_{vtx}<5 $. Enfin, la troisième coupure de sélection appliquée permet d'utiliser les capacités d'identification des particules du TRT. La distribution \ref{} suggère $ PID>0.1 $ pour chacun des électrons de conversion.
+La sélection de la sous-section \ref{selection_900GeV} reste valable. Dans cette analyse, il ne faut cependant conserver que les conversion de bonnes qualité contenant deux traces avec au moins un coup dans les détecteurs silicium (pixels + SCT). Le tableau \ref{proportion} montre les proportions de conversions Silicium-Silicium, Silicium-TRT et TRT-TRT pour les données et pour la simulation Monte-Carlo. La proportion de traces Silicium-Silicium est inférieure à $ 10\% $. La première coupure de sélection appliquée consiste à demander au moins un coups dans les détecteurs silicium pour chacunes des traces des vertex de conversion. La seconde coupure de sélection appliquée est une coupure sur la qualité $ \chi^2_{vtx} $ de la reconstruction des vertex de conversion. La distribution \ref{conversionSelection900GeV} (c) suggère $ \chi^2_{vtx}<5 $. Enfin, la troisième coupure de sélection appliquée permet d'utiliser les capacités d'identification des particules du TRT. La distribution \ref{} suggère $ PID>0.1 $ pour chacun des électrons de conversion.
 
 \begin{table}[!ht]
   \begin{bigcenter}
@@ -796,13 +777,13 @@ En raison de la statistique limitée, une comparaison, même grossière, n'est poss
 
 La figure \label{mapping_table3_900GeV} (a) montre la distributions des photons convertis en fonction du rayon $ R $. Les figures \label{mapping_table3_900GeV} (c) et (d) montrent respectivement la distributions des photons convertis reconstruits en fonction du rayon $ R $ dans les régions de pseudo-rapidité $ |\eta|<0.7 $ et $ |\eta|<1.4 $. La figure \label{mapping_table3_900GeV} (b) montre la distributions des photons convertis en fonction de la pseudo-rapidité $ \eta $. Le nombre total de conversions dans la simulation Monte-Carlo est renormalisé au nombre total de conversions dans les données. Les barres d'erreurs sont importantes, néanmoins, la simulation Monté-Carlo reproduit bien les données.\\
 
-Remarque : L'asymétrie en pseudo-rapidité observée sur la figure \label{mapping_table3_900GeV} (b) s'explique à cause des modules défectueux du trajectographe à pixels. Cet effet est bien modélisé dans la simulation.
+Remarque : L'asymétrie en pseudo-rapidité observée sur la figure \label{mapping_table3_900GeV} (b) s'explique à par des modules défectueux du trajectographe à pixels. Cet effet est bien modélisé dans la simulation.
 
 \newpage
 
 \subsubsection{Étude quantitative}
 
-Il est possible d'estimer de la quantité de matière $ \frac{X}{X_0} $ en utilisant la méthode présentée dans la sous-section \ref{principe}. Le tableau \ref{mapping_table4_900GeV} montre l'efficacité $ \varepsilon $ de reconstruction des vertex de conversion et la quantités de matière $ \frac{X}{X_0}_{data} $ et $ \frac{X}{X_0}_{MC} $ dans les données et dans la simulation Monte-Carlo pour différents volumes du trajectographe interne. La simulation Monté-Carlo reproduit bien les données.
+Il est possible d'estimer la quantité de matière $ \frac{X}{X_0} $ en utilisant la méthode présentée dans la sous-section \ref{principe}. Le tableau \ref{mapping_table4_900GeV} montre l'efficacité $ \varepsilon $ de reconstruction des vertex de conversion et la quantités de matière $ \frac{X}{X_0}_{data} $ et $ \frac{X}{X_0}_{MC} $ dans les données et dans la simulation Monte-Carlo pour différents volumes du trajectographe interne. La simulation Monté-Carlo reproduit bien les données.
 
 \subsubsection{Conclusion}
 
@@ -860,7 +841,7 @@ Cette étude préliminaire montre qu'avec les premières données, la connaissance d
     \end{tabular}
 
   \end{bigcenter}
-  \caption{\label{mapping_table2_900GeV}La première ligne du tableau montre le nombre de conversions reconstruites dans les données. La deuxième moitié montre le rapport entre les données et la simulation Monte-Carlo. Les valeurs sont intégrées sur l'angle azimutal. Le nombre total de conversions dans la simulation Monte-Carlo est renormalisé au nombre total de conversions dans les données.}
+  \caption{\label{mapping_table2_900GeV}La première moitié du tableau montre le nombre de conversions reconstruites dans les données. La deuxième moitié montre le rapport entre les données et la simulation Monte-Carlo. Les valeurs sont intégrées sur l'angle azimutal. Le nombre total de conversions dans la simulation Monte-Carlo est renormalisée au nombre total de conversions dans les données.}
 \end{table}
 
 \begin{figure}[!p]
@@ -901,7 +882,7 @@ Cette étude préliminaire montre qu'avec les premières données, la connaissance d
     \end{tabular}
 
   \end{bigcenter}
-  \caption{\label{mapping_table4_900GeV}Efficacité $ \varepsilon $ de reconstruction des vertex de conversion, quantités de matière $ \frac{X}{X_0}_{data} $ et $ \frac{X}{X_0}_{MC} $ dans les données et dans la simulation Monte-Carlo pour différents volumes du trajectographe interne.}
+  \caption{\label{mapping_table4_900GeV}Efficacité $ \varepsilon $ de reconstruction des vertex de conversion après sélection, quantités de matière $ \frac{X}{X_0}_{data} $ et $ \frac{X}{X_0}_{MC} $ dans les données et dans la simulation Monte-Carlo pour différents volumes du trajectographe interne.}
 \end{table}
 
 \newpage
@@ -910,7 +891,7 @@ Cette étude préliminaire montre qu'avec les premières données, la connaissance d
 
 Avec la période D des données 2010, soit encore $ L=14nb^{-1} $, la statistique n'est plus un facteur limitant. L'étude de cartographie de la matière dans le trajectographe interne a été reproduite plusieurs fois afin de tester l'accord entre les données et divers jeux de simulations Monte-Carlo. Plus précisément, à chaque nouvelle géométrie proposée, pour décrire le détecteur Atlas, une nouvelle simulation Monte-Carlo a été générée et étudiée afin de contrôler les améliorations et en proposer de nouvelles. Dans ce qui suit, je vais m'attacher à montrer les améliorations apportées par la géométrie ATLAS-GEO-16-00-00 par rapport à la géométrie ATLAS-GEO-10-00-00 utilisée précédemment, je donnerai un aperçu des améliorations apportées par les nouvelles géométries ATLAS-GEO-17-00-00 et ATLAS-GEO-17-00-00, plus particulièrement dans une région problématique appelée PP0, je donnerai la dernière estimation de la quantités de matière $ \frac{X}{X_0}_{data} $ et $ \frac{X}{X_0}_{MC} $ sans les différents sous détecteurs et enfin je donnerai un aperçu de réflexions en cours ainsi que les perspectives.\\
 
-Contrairement à l'étude réalisée avec les données à $ \sqrt{s}=0.9\TeV $, ma contribution à ces études a été plus ponctuelle, j'ai surtout participé à la validation des études qualitatives. L'annexe ??? décrit succinctement, à titre d'exemple, une étude que j'ai réalisé afin de déterminer l'efficacité de l'extension TRT en utilisant une méthode \emph{Tag-and-Probe}.
+Contrairement à l'étude réalisée avec les données à $ \sqrt{s}=0.9\TeV $, ma contribution à ces études a été plus ponctuelle, j'ai surtout participé à la validation des études qualitatives. L'annexe $ 2 $ décrit succinctement, à titre d'exemple, une étude que j'ai réalisé afin de déterminer l'efficacité de l'extension TRT en utilisant une méthode \emph{Tag-and-Probe}.
 
 \subsection{Sélection des conversions}
 
@@ -926,7 +907,7 @@ Les figures \ref{Material_7TeV_pvtxz_conv_xy} (a) et (b) montrent respectivement
 
 La figure \ref{Material_7TeV_pvtxz_Rinetaslices} (a) montre respectivement la distribution des vertex en fonction du rayon $ R $ pour les données et la simulation Monte-Carlo dans la région des tonneaux. figure \ref{Material_7TeV_pvtxz_conv_xy} (a) montre respectivement la distribution des vertex en fonction du rayon $ R $ pour les données et la simulation Monte-Carlo dans la région des bouchons. Les trois tonneaux des pixels, et les deux tonneaux du SCT sont très clairement visibles. Plus particulièrement, les différences observées à $ R\approx200mm $ sont dues au \emph{pixel octagonal supports} et les différences observées à $ R\approx230mm $ sont dues au \emph{pixel support tube}.
 
-La géométrie ATLAS-GEO-10-00-00 contient donc des imperfections importantes dans la région $ 200\lesssim R[mm]\lesssim230 $. Nous allons maintenant étudie la géométrie ATLAS-GEO-16-00-00 qui est utilisée depuis le retraitement d'automne des données 2010.
+La géométrie ATLAS-GEO-10-00-00 modélise de façon irréaliste la région $ 200\lesssim R[mm]\lesssim230 $. Nous allons maintenant étudie la géométrie ATLAS-GEO-16-00-00 qui est utilisée depuis le retraitement d'automne des données 2010.
 
 
 \begin{figure}[!p]
@@ -980,7 +961,7 @@ L'étude précédente a été répétés avec la géométrie ATLAS-GEO-16-00-00 en utilisa
 
 Les figures \ref{Material_7TeV_fallreproc_conv_Rz} (a) et (b) montrent respectivement la distribution des vertex de conversion reconstruits dans le plan $ R-z $ pour les données et la simulation Monte-Carlo. Les lignes rouges indiquent les limites de la région $ |\eta|<2 $ où le TRT cesse de contribué à la reconstruction des traces. Les trois tonneaux des pixels, les deux tonneaux et quelques disques des bouchons du SCT sont très clairement visibles. 
 
-Les figures \ref{Material_7TeV_fallreproc_conv_Rz} (a) et (b) montrent respectivement la distribution des vertex de conversion dans le plan transverse $ x-y $ pour les données et la simulation Monte-Carlo. Les trois tonneaux des pixels, cercles concentriques internes, et les deux tonneaux du SCT, cercles concentriques externes, sont très clairement visibles. Contrairement au cas de la géométrie ATLAS-GEO-10-00-00, l'accord au niveau du rayon $ R\approx200mm $ est très nettement amélioré, la structure hexagonale est comparable pour les données et la simulation Monte-Carlo.
+Les figures \ref{Material_7TeV_fallreproc_conv_Rz} (a) et (b) montrent respectivement la distribution des vertex de conversion dans le plan transverse $ x-y $ pour les données et la simulation Monte-Carlo. Les trois tonneaux des pixels, cercles concentriques internes, et les deux tonneaux du SCT, cercles concentriques externes, sont très clairement visibles. Contrairement au cas de la géométrie ATLAS-GEO-10-00-00, l'accord au niveau du rayon $ R\approx200mm $ est très nettement amélioré, la structure octogonale est comparable pour les données et la simulation Monte-Carlo.
 
 La figure \ref{Material_7TeV_fallreproc_Rinetaslices} (a) montre respectivement la distribution des vertex en fonction du rayon $ R $ pour les données et la simulation Monte-Carlo dans la région des tonneaux. La figure \ref{Material_7TeV_pvtxz_conv_xy} (a) montre respectivement la distribution des vertex en fonction du rayon $ R $ pour les données et la simulation Monte-Carlo dans la région des bouchons. Les trois tonneaux des pixels, et les deux tonneaux du SCT sont très clairement visibles. Le \emph{pixel octagonal supports} et le \emph{pixel support tube} sont désormais décrits de façon comparable dans les données et la simulation Monte-Carlo.
 
@@ -992,7 +973,7 @@ La géométrie ATLAS-GEO-16-00-00 décrit relativement bien le trajectographe inter
 
 Il est possible d'estimer de la quantité de matière $ \frac{X}{X_0} $ en utilisant la méthode présentée dans la sous-section \ref{principe}. Néanmoins, il faut prendre certaines précautions. Lors du calcul de la longueur de radiation, la normalisation est effectuée au niveau du tube à vide. La figure \ref{zvp} montre la distribution de la position $ z_{pv} $ des vertex primaires. La déviation en $ z $ peut atteindre $ 200mm $ (les déviations dans le plan transverse sont négligeables pour celle étude). Les photons qui ne sont pas originaires du centre du détecteur peuvent biaiser la normalisation, c'est pourquoi, l'étude à été réalisée en comparant deux valeurs $ |z_\textrm{vp}|<3mm $ et $ |z_\textrm{vp}|<5mm $. Actuellement, le choix définitif de la valeur de la coupure n'est pas arrêté.
 
-Les tableaux \ref{mapping_table1_7TeV} et \ref{mapping_table2_7TeV} montrent respectivement les quantités de matière $ \frac{X}{X_0}_{data} $ et $ \frac{X}{X_0}_{MC} $ dans les données et dans la simulation Monte-Carlo avec $ |z_\textrm{vp}|<3mm $ et pour $ |z_\textrm{vp}|<5mm $ pour différents volumes du trajectographe interne. Nous constatons que la contribution du tube à vide aux erreurs statistiques est légèrement plus petite petites pour la coupure $ |z_\textrm{vp}|<5mm $, cependant, l'accord entre les données et la simulation Monte-Carlo est moins bonne de $ \sim8\% $ pour le \emph{B-layer}, $ \sim7\% $ pour la première couche de pixels, $ \sim8\% $ pour la seconde couche de pixels, $ \sim6\% $ pour le PSCT, $ \sim7\% $ pour la première couche du SCT et $ \sim10\% $ pour la première couche du SCT. Pour $ |z_\textrm{vp}|<3mm $, l'accord entre les données et la simulation Monte-Carlo est toujours meilleur que $ 5\% $ dans les pixels et $ 9\% $ dans le SCT. Des amélioration de la géométrie et de la méthode sont encore possibles.
+Les tableaux \ref{mapping_table1_7TeV} et \ref{mapping_table2_7TeV} montrent respectivement les quantités de matière $ \frac{X}{X_0}_{data} $ et $ \frac{X}{X_0}_{MC} $ dans les données et dans la simulation Monte-Carlo avec $ |z_\textrm{vp}|<3mm $ et pour $ |z_\textrm{vp}|<5mm $ pour différents volumes du trajectographe interne. Nous constatons que la contribution du tube à vide aux erreurs statistiques est légèrement plus petite pour la coupure $ |z_\textrm{vp}|<5mm $, cependant, l'accord entre les données et la simulation Monte-Carlo est moins bonne de $ \sim8\% $ pour le \emph{B-layer}, $ \sim7\% $ pour la première couche de pixels, $ \sim8\% $ pour la seconde couche de pixels, $ \sim6\% $ pour le PSCT, $ \sim7\% $ pour la première couche du SCT et $ \sim10\% $ pour la première couche du SCT. Pour $ |z_\textrm{vp}|<3mm $, l'accord entre les données et la simulation Monte-Carlo est toujours meilleur que $ 5\% $ dans les pixels et $ 9\% $ dans le SCT. Des amélioration de la géométrie et de la méthode sont encore possibles.
 
 Il est prévu de réaliser une étude détaillée des incertitudes systématiques : i) incertitudes liées au choix de la normalisation. ii) incertitudes liées à l'utilisation de géométries distordues. iii) incertitudes liées au choix de la coupure $ |z_\textrm{vp}| $. iv) incertitudes liées au choix des coupures de sélection. v) incertitudes liées aux photons provenant d'interactions hadroniques tardives (grands $ z_0 $). vi) incertitudes liées aux poids $ w_1 $ et $ w_2 $. vii) incertitudes liées à la connaissance du tube à vide.
 
@@ -1137,6 +1118,6 @@ La région PP0, grossièrement située dans la région en pseudo-rapidité $ 2\lesssi
 
 \section{Conclusion}
 
-Les analyses réalisées à $ \sqrt{s}=0.9\TeV $ et à $ \sqrt{s}=7\TeV $, utilisant des photons de conversion, démontrent les excellentes performances de de l'algorithme de reconstruction des vertex des conversion décrit dans la section \ref{algoconversion}. Il a été possible de cartographier le détecteur interne du \emph{B-layer} jusqu'à la seconde couche du SCT. Des études qualitatives et quantitatives ont permit d'améliorer la description des géométries du détecteur Atlas, en particulier la région PP0. La quantité de matière $ \frac{X}{X_0} $ est connue avec une précision de l'ordre de $ 4\times10^{-4} $ ($ >2\%X_0 $ dans les pixels) et l'accord entre les données et la simulation Monte-Carlo est meilleure que $ 9\% $. Une évaluation détaillé des erreurs systématique est en cours de réalisation et de nouvelles géométries sont en cours d'étude.
+Les analyses réalisées à $ \sqrt{s}=0.9\TeV $ et à $ \sqrt{s}=7\TeV $, utilisant des photons de conversion, démontrent les excellentes performances de de l'algorithme de reconstruction des vertex des conversion décrit dans la section \ref{algoconversion}. Il a été possible de cartographier le détecteur interne du \emph{B-layer} jusqu'à la seconde couche du SCT. Des études qualitatives et quantitatives ont permit d'améliorer la description des géométries du détecteur Atlas, en particulier la région PP0. La quantité de matière $ \frac{X}{X_0} $ est connue avec une précision de l'ordre de $ 4\times10^{-4} $ ($ >2\%X_0 $ dans les pixels) et l'accord entre les données et la simulation Monte-Carlo est meilleure que $ 9\% $. Une évaluation détaillée des erreurs systématiques est en cours de réalisation et de nouvelles géométries sont en cours d'étude.
 
 La connaissance de la matière en amont du calorimètre électromagnétique est importante pour l'identification des électrons et des électrons. Cette problématique sera traitée dans le chapitre suivant.
