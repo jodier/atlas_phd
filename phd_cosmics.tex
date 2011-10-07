@@ -25,7 +25,7 @@ Au cours de l'automne 2008, l'expérience Atlas a enregistré $ \sim300 $ millions
 
 Au cours de l'été 2009, au mois de juin essentiellement, l'expérience Atlas a enregistré $ \sim75 $ millions d'événements cosmiques dont $ \sim25 $ millions en acquisition combinée sur de longues périodes d'au moins un demi million d'événements chacune.\\
 
-Les événements ont été reconstruits par l'environnement Athena sous forme de collection d'objets persistants (.pool.root) au format ESD qui, rappelons-le, contient des objets haut niveau tels que des traces, des amas, des photons, des électrons, des taus, etc\dots\, Ces événements ont ensuite été écrémés et subdivisés en plusieurs voies d'écrémage orientées \og analyse \fg (= DPD). Le tableau \ref{cosmics_ecremage} donne la description des voies d'écrémage disponibles pour les données cosmiques. Pour chacune d'entre elles, plusieurs voies de déclenchement sont disponibles. Nous définissons par \og format de données \fg\, l'association d'une voie d'écrémage et d'une voie de déclenchement. Le tableau \ref{cosmics_formats} donne la description des formats disponibles pour les données cosmiques.
+Les événements ont été reconstruits par l'environnement Athena\cite{} sous forme de collection d'objets persistants (.pool.root) au format ESD qui, rappelons-le, contient des objets haut niveau tels que des traces, des amas, des photons, des électrons, des taus, etc\dots\, Ces événements ont ensuite été écrémés et subdivisés en plusieurs voies d'écrémage orientées \og analyse \fg (= DPD). Le tableau \ref{cosmics_ecremage} donne la description des voies d'écrémage disponibles pour les données cosmiques. Pour chacune d'entre elles, plusieurs voies de déclenchement sont disponibles. Nous définissons par \og format de données \fg\, l'association d'une voie d'écrémage et d'une voie de déclenchement. Le tableau \ref{cosmics_formats} donne la description des formats disponibles pour les données cosmiques.
 
 Pour les données 2009 uniquement, précisons que seuls des ESD étaient disponibles pour notre analyse. La sélection des voies d'écrémage et de déclenchement a été réalisée manuellement.
 
@@ -54,7 +54,7 @@ Pour les données 2009 uniquement, précisons que seuls des ESD étaient disponible
   \end{tabular}
 
   \end{bigcenter}
-  \caption{\label{cosmics_ecremage}Description des voies écrémage disponibles pour les données cosmiques.}
+  \caption{\label{cosmics_ecremage}Description des voies d'écrémage disponibles pour les données cosmiques.}
 \end{table}
 
 \begin{table}[!h]
@@ -304,7 +304,7 @@ L'accord entre les données et la simulation Monte-Carlo n'est pas encore parfait
 
 \subsection{Sélection sur les paramètres d'impact des traces}
 
-La figure \ref{cosmics_coups} montre le paramètre d'impact $ d_0 $ en fonction du paramètre d'impact $ z_0 $ pour des candidats présélectionnés avec une énergie dans l'amas $ E>5\GeV $ et au moins un coup dans le silicium. Après normalisation au nombre d'entrées dans les données, il est possible d'appliquer la coupure $ |d_0|<220mm $. Cette coupure permet d'avoir des acceptances plus comparables entre données et simulations Monte-Carlo sans réduire la statistique disponible de façon trop agressive.
+La figure \ref{cosmics_d0vsz0} montre le paramètre d'impact $ d_0 $ en fonction du paramètre d'impact $ z_0 $ pour des candidats présélectionnés avec une énergie dans l'amas $ E>5\GeV $ et au moins un coup dans le silicium. Après normalisation au nombre d'entrées dans les données, il est possible d'appliquer la coupure $ |d_0|<220mm $. Cette coupure permet d'avoir des acceptances plus comparables entre données et simulations Monte-Carlo sans réduire la statistique disponible de façon trop agressive.
 
 Les figures \ref{cosmics_d0z0_select} a) et \ref{cosmics_d0z0_select} b) rappellent respectivement la distribution des paramètres d'impact $ z_0 $ et $ d_0 $ pour des candidats avant sélection. Les figures \ref{cosmics_d0z0_select} c) et \ref{cosmics_d0z0_select} d) rappellent respectivement la distribution des paramètres d'impact $ z_0 $ et $ d_0 $ pour des candidats sélectionnés avec une énergie dans l'amas $ E>5\GeV $, au moins un coup dans le silicium et $ |d_0|<220mm $. Nous constatons que l'accord entre l'acceptance des données et des simulation Monte-Carlo est suffisamment bon pour l'étude que nous souhaitons mener.
 
@@ -322,7 +322,7 @@ Les figures \ref{cosmics_d0z0_select} a) et \ref{cosmics_d0z0_select} b) rappell
   \end{tabular}
 
   \end{bigcenter}
-  \caption{\label{cosmics_d0z0_select}Paramètres d'impact $ z_0 $ en fonction du paramètres d'impact $ d_0 $ des candidats présélectionnés avec une énergie dans l'amas $ E>5\GeV $ et au moins un coup dans le silicium. Première production de simulation Monte-Carlo (a), seconde production de simulation Monte-Carlo (b) et données (c).}
+  \caption{\label{cosmics_d0vsz0}Paramètres d'impact $ z_0 $ en fonction du paramètre d'impact $ d_0 $ des candidats présélectionnés avec une énergie dans l'amas $ E>5\GeV $ et au moins un coup dans le silicium. Première production de simulation Monte-Carlo (a), seconde production de simulation Monte-Carlo (b) et données (c).}
 \end{figure}
 
 \begin{figure}[!p]
@@ -343,7 +343,7 @@ Les figures \ref{cosmics_d0z0_select} a) et \ref{cosmics_d0z0_select} b) rappell
   \end{tabular}
 
   \end{bigcenter}
-  \caption{Distribution des paramètres d'impact $ z_0 $ (a) et $ d_0 $ (b) des candidats présélectionnés avec une énergie dans l'amas supérieure à $ 5\GeV $. Distribution des paramètres d'impact $ z_0 $ (c) et $ d_0 $ (d) des évènements sélectionnés avec une énergie dans l'amas $ E>5\GeV $, une impulsion de la trace $ p_T>5\GeV $, au moins un coup dans le silicium et enfin $ d_0<220mm $.}
+  \caption{\label{cosmics_d0z0_select}Distribution des paramètres d'impact $ z_0 $ (a) et $ d_0 $ (b) des candidats présélectionnés avec une énergie dans l'amas supérieure à $ 5\GeV $. Distribution des paramètres d'impact $ z_0 $ (c) et $ d_0 $ (d) des évènements sélectionnés avec une énergie dans l'amas $ E>5\GeV $, une impulsion de la trace $ p_T>5\GeV $, au moins un coup dans le silicium et enfin $ d_0<220mm $.}
 \end{figure}
 
 \subsection{Sélection des objets de type \emph{collisions}}
@@ -466,7 +466,7 @@ La figure \ref{cosmics_sens} illustre le déploiement d'une gerbe électromagnétiq
   \end{tabular}
 
   \end{bigcenter}
-  \caption{\label{cosmics_sens}Déploiement d'un gerbe électromagnétique dans la partie inférieur du détecteur Atlas (a), dans la partie supérieur du détecteur Atlas (b). Le premier cas correspond à une situation similaire à celle des évènements de type \emph{collisions}.}
+  \caption{\label{cosmics_sens}Déploiement d'une gerbe électromagnétique dans la partie inférieur du détecteur Atlas (a), dans la partie supérieur du détecteur Atlas (b). Le premier cas correspond à une situation similaire à celle des évènements de type \emph{collisions}.}
 \end{figure}
 
 \pagebreak
@@ -605,7 +605,7 @@ Les données et simulations Monte-Carlo ont été effacées des serveurs en 2010. Il
 
 \subsection{Variables dans le second compartiment}
 
-La figure \ref{cosmics_retaphiendcap} (a) montre la distribution de la variable $ R_\eta $. La simulation Monte-Carlo est en accord avec les données, la distribution est un peu plus large que pour le tonneau, sans doute à cause de la moins bonne projectivité. La figure \ref{cosmics_retaphiendcap} (b) montre la distribution de la variable $ R_\phi $. La simulation Monte-Carlo n'est que moyennement en accord avec données, et ce, d'avantage que précédemment dans le cas du tonneau. Pour aller plus loin, il faudrait plus de statistique et contraindre d'avantage la projectivité.
+La figure \ref{cosmics_retaphiendcap} (a) montre la distribution de la variable $ R_\eta $. La simulation Monte-Carlo est en accord avec les données, la distribution est un peu plus large que pour le tonneau, sans doute à cause de la moins bonne projectivité. La figure \ref{cosmics_retaphiendcap} (b) montre la distribution de la variable $ R_\phi $. La simulation Monte-Carlo n'est que moyennement en accord avec les données, et ce, d'avantage que précédemment dans le cas du tonneau. Pour aller plus loin, il faudrait plus de statistique et contraindre d'avantage la projectivité.
 
 \begin{figure}[!h]
   \begin{bigcenter}
@@ -643,7 +643,7 @@ Au vu de la statistique disponible, il n'est pas possible de traiter séparément 
 
 Dans ce chapitre, nous avons étudié les objets calorimétriques, électrons d'ionisation et photons de radiation, issus de muons cosmiques. Dans ce but, nous avons défini une sélection permettant de disposer d'une accéptance équivalente pour les données et pour la simulation Monte-Carlo. Nous avons ensuite réalisé la première analyse, avec des données réelles, des variables de forme de gerbes électromagnétiques. En dépit de la faible statistiques disponible, nous pouvons conclure que la simulation des variables de forme de gerbes électromagnétiques est réaliste. Finalement, nous avons observé l'effet de la projectivité ainsi que l'effet de l'amélioration de la simulation de la diaphonie entre les cellules des deux premiers compartiments.
 
-Cette étude a fourni la première validation des variables de forme de gerbes électromagnétiques. Celles-ci ont de nouveau été étudiées avec les données 2010 à $ \sqrt{s}=7\TeV $\cite{}. La \ref{data2010_shower} montre l'étalement latéral de la gerbe électromagnétique dans la direction $ \eta $ dans le second compartiment : rapport de l'énergie dans un amas $ \Delta\eta\times\Delta\phi=3\times7 $ par l'énergie dans un amas $ \Delta\eta\times\Delta\phi=7\times7 $ (a) et le second moment de la pseudo-rapidité des cellules d'un amas $ \Delta\eta\times\Delta\phi=3\times5 $ pondérées par leur énergie (b). Nous pouvons pouvons observé un désaccord entre les données et la simulation Monte-Carlo, les largeurs et les moyennes sont décalées. Pour les données cosmiques, la distribution $ R_\eta $ (figure \ref{cosmics_reta}) ne présentait pas de désaccord significatif, sans doute à cause de la faible statistique. La distribution $ W_{\eta2} $ (figure \ref{cosmics_weta2}) présentait déjà le décalage observé avec les données.
+Cette étude a fourni la première validation des variables de forme de gerbes électromagnétiques. Celles-ci ont de nouveau été étudiées avec les données 2010 à $ \sqrt{s}=7\TeV $\cite{}. La \ref{data2010_shower} montre l'étalement latéral de la gerbe électromagnétique dans la direction $ \eta $ dans le second compartiment : rapport de l'énergie dans un amas $ \Delta\eta\times\Delta\phi=3\times7 $ par l'énergie dans un amas $ \Delta\eta\times\Delta\phi=7\times7 $ (a) et le second moment de la pseudo-rapidité des cellules d'un amas $ \Delta\eta\times\Delta\phi=3\times5 $ pondérées par leur énergie (b). Nous pouvons observer un désaccord entre les données et la simulation Monte-Carlo, les largeurs et les moyennes sont décalées. Pour les données cosmiques, la distribution $ R_\eta $ (figure \ref{cosmics_reta}) ne présentait pas de désaccord significatif, sans doute à cause de la faible statistique. La distribution $ W_{\eta2} $ (figure \ref{cosmics_weta2}) présentait déjà le décalage observé avec les données.
 
 \begin{figure}[!h]
   \begin{bigcenter}
