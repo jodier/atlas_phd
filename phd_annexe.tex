@@ -1,0 +1,48 @@
+\begin{appendices}
+
+\chapter{Distribution Crystal Ball}
+
+La distribution Crystal Ball est une distribution par partie formée d'un c\oe ur gaussien et d'une distribution binomiale qui permet de modéliser une distribution Gaussienne avec que queue dissymétrique :
+\begin{equation}
+  \mathcal{CB}(X;\mu,\sigma,a,n)=\left\{\begin{array}{cc} \exp\left(-\frac{\left(X-\mu\right)^2}{2\sigma^2}\right) & \frac{X-\mu}{\sigma}>-a \\ A\left(B-\frac{X-\mu}{\sigma}\right)^{-n} & \frac{X-\mu}{\sigma}\le-a \end{array}\right.
+\end{equation}
+\begin{eqnarray}
+  A & = & \left(\frac{n}{|a|}\right)^n\exp\left(-\frac{|a|^2}{2}\right)\nonumber\\
+  B & = & \frac{n}{|a|}-|a|\nonumber
+\end{eqnarray}
+
+où $ \mu $ est la moyenne de la distribution, $ \sigma $ est la largeur de la distribution, $ a $ est la position du raccord entre la distribution binomiale et la distribution Gaussienne et $ n $ est un paramètre de forme pour la queue binomiale. Cette distribution est généralement utilisée pour modéliser les pertes d'énergie radiatives. La figure \ref{distribution_CB} montre un exemple de distribution Crystal Ball.
+
+\begin{figure}[!ht]
+  \begin{bigcenter}
+    \includegraphics[height=7.0cm, keepaspectratio]{phd_annexe/CB}
+  \end{bigcenter}
+  \caption{\label{distribution_CB}Distribution Crystal Ball (points noirs), $ a=0.6 $, $ n=5 $ utilisée pour modéliser une résonance de boson $ Z $.}
+\end{figure}
+
+\chapter{Extension TRT des traces d'électrons de conversion}
+
+L'efficacité de l'extension TRT des traces d'électrons de conversion, c'est-à-dire, l'efficacité de demander au moins un coup dans le TRT, a été étudiée par une méthode \emph{Tag\&Probe}. La méthodologie générale a été décrite au chapitre \ref{chapitre_higgs}. Nous commençons par sélectionner des électrons \emph{tag} issus de conversion de haute qualité : $ p_{T\,trace}>500\MeV $, $ \eta_{conv.}<0.626 $, $ D-R_1-R_2>0 $, au moins un coup dans les pixels. Il s'agit de la sélection décrite au chapitre \ref{chapitre_low}. Aucune méthode de soustraction du bruit de fond n'a été implémentée. L'efficacité de l'extension TRT est estimé par :
+\begin{equation}
+  \varepsilon=\frac{\textrm{nombre d'électrons \emph{probe} qui ont une extension TRT}}{\textrm{nombre d'électrons \emph{probe}}}
+\end{equation}
+
+La figure \ref{extension_trt} montre respectivement la distribution d'efficacité \emph{Tag\&Probe} de l'extension TRT des traces d'électrons de conversion en fonction de l'impulsion transverse (a) et du rayon (b) des vertex de conversion. L'efficacité et toujours supérieure à $ 92\% $ et atteint $ 97\% $ à grande impulsion transverse et à grand rayon. Nous pouvons noter le bon accord entre la simulation Monte-Carlo (et bleu) et l'efficacité vraie (en rouge). Le petit léger est observé à grande impulsion transverse en les données et la simulation Monte-Carlo, son origine n'est pas complètement expliquée.
+
+\begin{figure}[!h]
+  \begin{bigcenter}
+
+  \begin{tabular}{cc}
+    \includegraphics[height=5.5cm, keepaspectratio]{phd_annexe/eff_pt_16}
+    &
+    \includegraphics[height=5.5cm, keepaspectratio]{phd_annexe/eff_r_16}
+    \\
+    (a) & (b)
+  \end{tabular}
+
+  \end{bigcenter}
+  \caption{\label{extension_trt}Efficacité \emph{Tag\&Probe} de l'extension TRT des traces d'électrons de conversion en fonction de l'impulsion transverse et du rayon des vertex de conversion.}
+\end{figure}
+
+\end{appendices}
+
