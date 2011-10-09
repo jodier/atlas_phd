@@ -705,7 +705,7 @@ Nous allons étudier la mise en \oe uvre de critères d'isolation permettant de di
 
 Il convient de distinguer deux types de d'isolation, l'isolation des amas du calorimètre électromagnétique et l'isolation des traces du détecteur interne. A partir des simulations Monte-Carlo, nous allons proposer une étude d'efficacité sur les signaux et de réjection sur le bruit de fond $ Zb\bar{b} $ afin d'effectuer un choix des coupures d'isolation. Nous montrerons ensuite une estimation de l'efficacités des coupures basée sur les données en utilisant une méthode \emph{Tag and Probe} (T\emph{\&}P).
 
-\subsection{Analyse sur la simulation Monte-Carlo}
+\subsection{Étude sur la simulation Monte-Carlo}
 
 Un lot d'électrons a été sélectionné à partir des simulations Monte-Calo $ Z\to ee $ et $ Z(\to ee)b\bar{b} $. Il est simplement demandé que l'impulsion transverse soit supérieur à $ 7\GeV $ et que les candidats leptons soient reconstruits dans les zones de précision du calorimètre électromagnétique.
 
@@ -879,10 +879,10 @@ La première constatation générale est que la sensibilité à l'empilement \emph{ou
 
 \subparagraph{Correction de l'empilement \emph{in time}} Une correction simple peut être mise en place afin de compenser les effets de l'empilement \emph{in time}. La valeur moyenne des variables etcone dépend linéairement du nombre de vertex primaires. L'expression corrigée des cônes d'isolation peut s'écrire :
 \begin{equation}
-  etcone_{pileup}(\Delta R,\eta)=etcone(\Delta R)-\alpha_\eta(\Delta R)N_{pv}
+  etcone_{pileup}(\Delta R,\eta)=etcone(\Delta R)-\alpha_\eta(\Delta R)n_{vp}
 \end{equation}
 
-où $ \alpha_\eta(\Delta R) $ est la pente de la fonction affine $ \left<etcone(\Delta R)\right>(N_{pv}) $ par classe de pseudo-rapidité $ \eta $ et $ N_{pv} $ est le nombre de vertex primaire. Le groupe électron/photon du détecteur Atlas fournit un outil standard permettant de calculer la correction en fonction de l'ouverture du cône (empilement \emph{in time} et \emph{out of time}). A titre d'information, le tableau \ref{intimecoef} montre les valeurs de $ \alpha_\eta $ pour etcone20 et etcone30.
+où $ \alpha_\eta(\Delta R) $ est la pente de la fonction affine $ \left<etcone(\Delta R)\right>(n_{vp}) $ par classe de pseudo-rapidité $ \eta $ et $ n_{vp} $ est le nombre de vertex primaire. Le groupe électron/photon du détecteur Atlas fournit un outil standard permettant de calculer la correction en fonction de l'ouverture du cône (empilement \emph{in time} et \emph{out of time}). A titre d'information, le tableau \ref{intimecoef} montre les valeurs de $ \alpha_\eta $ pour etcone20 et etcone30.
 
 \begin{table}[!h]
   \begin{bigcenter}
@@ -892,7 +892,7 @@ où $ \alpha_\eta(\Delta R) $ est la pente de la fonction affine $ \left<etcone(\
     \begin{tabular}{|c|c|c|c|c|}
       \hline
       \hline
-        etcone & \multicolumn{4}{c|}{$ \alpha_\eta $ $ [\GeV.N_{pv}^{-1}] $}\\
+        etcone & \multicolumn{4}{c|}{$ \alpha_\eta $ $ [\GeV.n_{vp}^{-1}] $}\\
       \hline
         Ouverture & $ |\eta|<0.6 $ & $ 0.6<|\eta|<0.1.37 $ & $ 1.52|\eta|<1.81 $ & $ 1.81<|\eta|<2.37 $\\
       \hline
@@ -904,7 +904,7 @@ où $ \alpha_\eta(\Delta R) $ est la pente de la fonction affine $ \left<etcone(\
     \end{small}
 
   \end{bigcenter}
-  \caption{\label{intimecoef}Pente de la fonction affine $ \left<etcone(\Delta R)\right>(N_{pv}) $ par classe de pseudo-rapidité $ \eta $ pour deux ouvertures $ \Delta R=0.3 $ et $ \Delta R=0.2 $.}
+  \caption{\label{intimecoef}Pente de la fonction affine $ \left<etcone(\Delta R)\right>(n_{vp}) $ par classe de pseudo-rapidité $ \eta $ pour deux ouvertures $ \Delta R=0.3 $ et $ \Delta R=0.2 $.}
 \end{table}
 
 \subsubsection{Choix du cône d'isolation}
@@ -913,7 +913,7 @@ Toutes les corrections (recouvrement et empilement) sont appliquées. Pour choisi
 
 Comme l'étude est réalisée dans une optique de découverte, l'efficacité est privilégiée, pour $ 98\% $, la coupure $ etcone(0.2)<30\% $ est appliquée. Nous avons choisi d'utiliser des cônes d'ouverture $ \Delta R=0.2 $ qui présentent la meilleure résistance aux effets de l'empilement.\\
 
-\subsection{Isolation des traces}
+\subsubsection{Isolation des traces}
 
 Le calorimètre électromagnétique n'est pas le seul sous-détecteur permettant d'appliquer des coupures d'isolation. Les jets sont également responsables d'un grand nombre de traces c'est pourquoi il est possible d'établir un critère d'isolation à partir des informations issues du trajectographe interne :
 \begin{equation}
@@ -964,7 +964,7 @@ Pour rester cohérent par rapport à l'isolation calorimétrique, nous avons choisi
 
 \newpage
 
-\subsection{Significance du paramètre d'impact}
+\subsubsection{Significance du paramètre d'impact}
 
 Nous nous attendons à ce que des leptons issus de quarks $ b $ (processus $ Zb\bar{b} $) ou issus de quarks top (processus $ t\bar{t} $) soient produits à partir de vertex déplacés. Une méthode, permettant de rejeter ces leptons, consiste à ce que la significance du paramètre d'impact $ \frac{d_0}{\sigma_{d_0}} $, défini comme le paramètre d'impact du lepton, par rapport au vertex primaire, normalisé par son erreur, n'excède pas un seuil prédéfini. Le pouvoir de réjection de la significance du paramètre d'impact face au bruit de fond est limité par : i) la résolution intrinsèque du paramètre d'impact. ii) les incertitudes sur la position du vertex primaire.
 
@@ -1000,11 +1000,11 @@ Pour les bruits de fond irréductibles, les deux électrons de plus basse impulsio
   \caption{\label{signi2}Distribution de la significance du paramètre d'impact pour des électrons de signal et pour des électrons issus du processus $ Z(\to\mu\mu)b\bar{b} $.}% (a). Réjection des muons issus de $ Zb\bar{b} $ en fonction de l'efficacité des électrons issus du signal (b).
 \end{figure}
 
-\subsection{Analyse sur les données}
+\subsection{Étude sur les données}
 
 Pour les électrons, une estimation de l'efficacité des coupures d'isolation et de la coupure de significance du paramètre d'impact a été réalisée à partir des données en utilisant une méthode \emph{Tag \& Probe}. Nous allons décrire la méthode puis montrer les résultats obtenus.
 
-\subsection{Méthode}
+\subsubsection{Méthode}
 
 La méthode \emph{Tag \& Probe} permet d'estimer l'efficacité d'une coupure de sélection directement à partir des données. L'idée consiste à sélectionner une collection d'électrons de qualité stricte ($ p_T>20\GeV $, \emph{tight}) et isolés (ptcone20<0.15), ces électrons sont nommés électrons \emph{tag}. Puis des bosons $ Z $ sont reconstruits à partir des électrons \emph{tag} dans une fenêtre de masse centrée sur la masse nominale des bosons $ Z $ ($ |m_Z-m_{ee}|<10\GeV $). Le second électron de chaque paire est appelé électron \emph{probe}. L'efficacité d'une coupure $ C $ est estimé par :
 \begin{equation}
@@ -1023,11 +1023,11 @@ La fraction de signal $ n_s $ et la fraction de bruit de fond $ n_b $ sont obten
 
 Les erreurs systématiques sur les efficacités ont été étudiées. Pour ce faire, plusieurs fenêtres de masse ont été employées ($ |m_{ee}-m_{Z,PDG}|<10\GeV $ - $ |m_{ee}-m_{Z,PDG}|<5\GeV $ - $ |m_{ee}-m_{Z,PDG}|<10\GeV $). L'erreur systématique par classe est définie comme le RMS des efficacités.
 
-\subsection{Échantillons de données}
+\subsubsection{Échantillons de données}
 
 Pour les données, une luminosité intégrée de $ 2.1fb^{-1} $ a été utilisée, nous verrons que les erreurs statistiques sont quasiment négligeables devant les erreurs systématiques. Pour la simulation Monte-Carlo, deux échantillons ont été utilisés : un échantillons $ Z\to ee $ avec $ 4999076 $ événements et un échantillon di-jets (JF17) avec $ 9997057 $ événements.
 
-\subsection{Résultats dans la région $ 15\GeV $ à $ 50\GeV $}
+\subsubsection{Résultats dans la région $ 15\GeV $ à $ 50\GeV $}
 
 La région de précision $ p_T>15\GeV $ (voir chapitre \ref{chapitre_reco}) a été étudiée. Les figures \ref{masseZ} montrent respectivement la distribution de masse invariante des candidats $ Z $ avec au moins un électron \emph{tag} pour les données (a) et pour la simulation Monte-Carlo (b). Pour cette dernière, nous remarquons que le bruit de fond est très peu important, $ 0.17\% $ des candidats.
 
@@ -1202,9 +1202,9 @@ Une étude similaire à celle présentée dans la section précédente a été réalisée 
   \caption{\label{muonIso}Coupures d'isolation et pour les muons.}
 \end{table}
 
-Pour les corrections de l'empilement \emph{in time}, des valeurs intégrées sur une seule classe de pseudo-rapidité ont été établies, si $ n_{pv} $ est le nombre de vertex primaires :
+Pour les corrections de l'empilement \emph{in time}, des valeurs intégrées sur une seule classe de pseudo-rapidité ont été établies, si $ n_{vp} $ est le nombre de vertex primaires :
 \begin{equation}
-	\textrm{etcone}20_{corr}=\textrm{etcone20}-n_{pv}\times(33.5[\MeV])
+	\textrm{etcone}20_{corr}=\textrm{etcone20}-n_{vp}\times(33.5[\MeV])
 \end{equation}
 
 Les figures \ref{efff_muons1} (a), (b), (c) et (d) montrent respectivement les efficacités des coupures d'isolation ptcone20 et etcone20, de la coupure de significance du paramètre d'impact et de toutes les coupures simultanément pour les données et pour la simulation Monte-Carlo.
