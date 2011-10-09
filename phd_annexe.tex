@@ -2,7 +2,7 @@
 
 \chapter{Distribution Crystal Ball}
 
-La distribution Crystal Ball est une distribution par partie formée d'un c\oe ur gaussien et d'une distribution binomiale qui permet de modéliser une distribution Gaussienne avec que queue dissymétrique :
+La distribution Crystal Ball est une distribution par partie formée d'un c\oe ur gaussien et d'une distribution binomiale. Elle permet de modéliser une distribution Gaussienne avec une queue dissymétrique :
 \begin{equation}
   \mathcal{CB}(X;\mu,\sigma,a,n)=\left\{\begin{array}{cc} \exp\left(-\frac{\left(X-\mu\right)^2}{2\sigma^2}\right) & \frac{X-\mu}{\sigma}>-a \\ A\left(B-\frac{X-\mu}{\sigma}\right)^{-n} & \frac{X-\mu}{\sigma}\le-a \end{array}\right.
 \end{equation}
@@ -22,7 +22,7 @@ où $ \mu $ est la moyenne de la distribution, $ \sigma $ est la largeur de la di
 
 \chapter{Extension TRT des traces d'électrons de conversion}
 
-L'efficacité de l'extension TRT des traces d'électrons de conversion, c'est-à-dire, l'efficacité de demander au moins un coup dans le TRT, a été étudiée par une méthode \emph{Tag\&Probe}. La méthodologie générale a été décrite au chapitre \ref{chapitre_higgs}. Nous commençons par sélectionner des électrons \emph{tag} issus de conversion de haute qualité : $ p_{T\,trace}>500\MeV $, $ \eta_{conv.}<0.626 $, $ D-R_1-R_2>0 $, au moins un coup dans les pixels. Il s'agit de la sélection décrite au chapitre \ref{chapitre_low}. Aucune méthode de soustraction du bruit de fond n'a été implémentée. L'efficacité de l'extension TRT est estimé par :
+L'efficacité de l'extension TRT des traces d'électrons de conversion, c'est-à-dire, l'efficacité de demander au moins un coup dans le TRT, a été étudiée par une méthode \emph{Tag\&Probe}. La méthodologie générale a été décrite au chapitre \ref{chapitre_higgs}. La données 2010 de la période D et la géométrie ATLAS-GEO-16-00-00 ont été utilisées, voir chapitre \ref{chapitre_low}. Nous commençons par sélectionner des électrons \emph{tag} issus de conversion de haute qualité : $ p_{T\,trace}>500\MeV $, $ \eta_{conv.}<0.626 $, $ D-R_1-R_2>0 $, au moins un coup dans les pixels. Il s'agit de la sélection décrite au chapitre \ref{chapitre_low}. Aucune méthode de soustraction du bruit de fond n'a été implémentée. L'efficacité de l'extension TRT est estimé par :
 \begin{equation}
   \varepsilon=\frac{\textrm{nombre d'électrons \emph{probe} qui ont une extension TRT}}{\textrm{nombre d'électrons \emph{probe}}}
 \end{equation}

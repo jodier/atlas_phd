@@ -1,4 +1,4 @@
-\chapter{Recherche du boson de Higgs dans le canal $ H\to ZZ^{(*)}\to4l $}
+\chapter{Recherche du boson de Higgs dans le canal $ H\to ZZ^{(*)}\to4l $}\label{chapitre_higgs}
 
 Ce chapitre est dédié à la recherche du boson de Higgs dans le canal $ H\to ZZ^{(*)}\to4l $. Il s'agit du canal présentant la signature la plus claire sur collisionneur hadronique. Les résultats ont été obtenus avec les données 2011 pour une luminosité intégrée de $ \sim2.1fb^{-1} $.
 
@@ -8,7 +8,7 @@ Je suis impliqué dans la recherche du boson Higgs depuis la seconde moitié du mo
 
 \subsection{Échantillons de données}
 
-Les données utilisées dans cette analyse ont été enregistrées par le détecteur Atlas durant la première moitié de l'année 2011 (périodes B2-K2). Seuls ne sont conservés les événements où les sous-détecteurs impliqués dans le reconstruction du boson de Higgs sont dans un fonctionnement normal. Cette sélection est effectuée à partir d'une liste de \emph{lumiblock}\footnote{Pour le détecteur Atlas, le \emph{lumiblock} est une unité de temps qui correspond à une minute.} valides \emph{run} par \emph{run}, on parle de \emph{Good Run List} (GRL). Nous utilisons trois GRL pour les trois canaux suivants : $ H\to ZZ^{(*)}\to4e $, $ H\to ZZ^{(*)}\to4\mu $ et $ H\to ZZ^{(*)}\to2e2\mu $. Le tableau \ref{larerror} montre les principales sources de perte de données au niveau de l'argon liquide. On estime que $ 8\% $ à $ 10\% $ seront récupérées lors du future retraitement d'automne. Le tableau \ref{higgs_lumi} montre les luminosité intégrées, périodes par périodes, pour chaque GRL.
+Les données utilisées dans cette analyse ont été enregistrées par le détecteur Atlas durant la première moitié de l'année 2011 (périodes B2-K2). Seuls ne sont conservés les événements où les sous-détecteurs impliqués dans la reconstruction du boson de Higgs sont dans un fonctionnement normal. Cette sélection est effectuée à partir d'une liste de \emph{lumiblock}\footnote{Pour le détecteur Atlas, le \emph{lumiblock} est une unité de temps qui correspond à une minute.} valides \emph{run} par \emph{run}, on parle de \emph{Good Run List} (GRL). Nous utilisons trois GRL pour les trois canaux suivants : $ H\to ZZ^{(*)}\to4e $, $ H\to ZZ^{(*)}\to4\mu $ et $ H\to ZZ^{(*)}\to2e2\mu $. Le tableau \ref{larerror} montre les principales sources de perte de données au niveau de l'argon liquide. On estime que $ 8\% $ à $ 10\% $ seront récupérées lors du future retraitement d'automne. Le tableau \ref{higgs_lumi} montre les luminosité intégrées, périodes par périodes, pour chaque GRL.
 
 \begin{table}[!h]
   \begin{bigcenter}
@@ -51,7 +51,7 @@ Les données utilisées dans cette analyse ont été enregistrées par le détecteur A
 
 \subsection{Échantillons de simulation}
 
-\subsubsection{Signaux}Nous disposons d'une collection d'échantillons de signaux $ H\to ZZ^{(*)}\to4l $ pour une gamme de masse $ 110<m_H[\GeV]<600 $. Ils ont été simulés avec le générateur d'événements Monte-Carlo \small{POWHEG}\cite{} qui calcule séparément la fusion de gluons et la fusion de bosons vecteurs avec des éléments de matrice de première ordre (\emph{Next-to-Leading-Order} soit encore NLO). \small{POWHEG} est associé à \small{PYTHIA}\cite{} pour décrire l'hadronisation. Les sections efficaces ainsi que les rapports d'embranchement sont issus de \cite{} et ont été calculés aux précisions Next-to-Next-to-Leading-Log (NNLL) QCD+NLO EW pour la fusion de gluons et Next-to-Next-to-Leading-Order (NNLO) QCD+NLO EW pour la fusion de bosons vecteurs. Les incertitudes sur les sections efficaces de production sont ce l'ordre de $ 15\% $ à $ 20\% $ pour la fusion de gluons et moins de $ 5\% $ pour la fusion de bosons vecteurs.
+\subsubsection{Signaux}Nous disposons d'une collection d'échantillons de signaux $ H\to ZZ^{(*)}\to4l $ pour une gamme de masse $ 110<m_H[\GeV]<600 $. Ils ont été simulés avec le générateur d'événements Monte-Carlo \small{POWHEG}\cite{} qui calcule séparément la fusion de gluons et la fusion de bosons vecteurs avec des éléments de matrice de première ordre (\emph{Next-to-Leading-Order} soit encore NLO). \small{POWHEG} est associé à \small{PYTHIA}\cite{} pour décrire l'hadronisation. Les sections efficaces ainsi que les rapports d'embranchement sont issus de \cite{} et ont été calculés aux précisions Next-to-Next-to-Leading-Log (NNLL) QCD+NLO EW pour la fusion de gluons et Next-to-Next-to-Leading-Order (NNLO) QCD+NLO EW pour la fusion de bosons vecteurs. Les incertitudes sur les sections efficaces de production sont de l'ordre de $ 15\% $ à $ 20\% $ pour la fusion de gluons et moins de $ 5\% $ pour la fusion de bosons vecteurs.
 
 Le tableau \ref{bratiohiggs} montre la section efficace de production $ \sigma(ggF+VBF)\times BR(H\to4l) $ où $ l=e,\mu $ pour différentes masses du boson de Higgs.
 
@@ -259,7 +259,7 @@ Plusieurs corrections sont proposées par les groupes de performance électron/pho
 
 \subsection{Muons}\label{muon_corrections}
 
-Plusieurs corrections sont proposées par les groupes de performance muon. Elles sont de même nature que les trois premières corrections appliquées aux électrons.\\\\voir: \scriptsize{https://twiki.cern.ch/twiki/bin/view/AtlasProtected/MCPAnalysisGuidelinesEPS2011}
+Plusieurs corrections sont proposées par les groupes de performance muon. Elles sont de même nature que les corrections appliquées aux électrons.\\\\voir: \scriptsize{https://twiki.cern.ch/twiki/bin/view/AtlasProtected/MCPAnalysisGuidelinesEPS2011}
 
 \normalsize
 
@@ -309,7 +309,7 @@ La carte des régions défaillantes du calorimètre électromagnétique décrite dans 
 
 \subsubsection{Sélection des muons}
 
-Il existe deux algorithmes concurrents aux performances à peu près identiques pour la reconstruction des muons auprès du détecteur Atlas. Il s'agit de \emph{staco} et \emph{muid}. Les résultats qui seront présentés ont été obtenus avec les deux algorithmes afin de comparer leur performance. La première étape consiste à ne sélectionner que les muons combinés. A la seconde étape, ne sont conservés que les muons ayant un paramètre d'impact $ d_0 $ calculé par rapport au vertex primaire inférieur à $ 1mm $ afin de s'affranchir des muons cosmiques qui ne sont pas très projectifs (cf. chapitre \ref{chapitre_cosmics}). A la troisième étape, pour la même raison que pour les électrons, il est demandé que les muons aient une impulsion transverse supérieure à $ 7\GeV $. De plus, les il doivent être dans la zone de précision du spectromètre à muons, c'est-à-dire, $ |\eta|<2.5 $. Une sélection complexe, proposée par le groupe travaillant sur les performances combinées du spectromètre à muons et basée sur le nombre de coups dans le détecteur interne est appliquée (nombre de coups attendu dans le B-layer, nombre de coups dans les pixels, dans le SCT, dans le TRT, nombre de senseurs défectueux dans les pixels et dans le SCT, nombre de trous dans les pixels et dans le SCT, etc\dots), voir figure \ref{idmuon}. Enfin, il est demandé que le paramètre d'impact $ z_0 $ calculé par rapport au vertex primaire soit inférieur à $ 10mm $.
+Il existe deux algorithmes concurrents aux performances à peu près identiques pour la reconstruction des muons auprès du détecteur Atlas. Il s'agit de \emph{staco} et \emph{muid}. Les résultats qui seront présentés ont été obtenus avec les deux algorithmes afin de comparer leur performance. La première étape consiste à ne sélectionner que les muons combinés. A la seconde étape, ne sont conservés que les muons ayant un paramètre d'impact $ d_0 $ calculé par rapport au vertex primaire inférieur à $ 1mm $ afin de s'affranchir des muons cosmiques qui ne sont pas très projectifs (cf. chapitre \ref{chapitre_cosmics}). A la troisième étape, pour la même raison que pour les électrons, il est demandé que les muons aient une impulsion transverse supérieure à $ 7\GeV $. De plus, les il doivent être dans la zone de précision du spectromètre à muons, c'est-à-dire, $ |\eta|<2.5 $. Une sélection complexe, proposée par le groupe travaillant sur les performances combinées du spectromètre à muons, basée sur le nombre de coups dans le détecteur interne, est appliquée (nombre de coups attendu dans le B-layer, nombre de coups dans les pixels, dans le SCT, dans le TRT, nombre de senseurs défectueux dans les pixels et dans le SCT, nombre de trous dans les pixels et dans le SCT, etc\dots), voir figure \ref{idmuon}. Enfin, il est demandé que le paramètre d'impact $ z_0 $ calculé par rapport au vertex primaire soit inférieur à $ 10mm $.
 
 \begin{figure}[!h]
 \begin{bigcenter}
@@ -391,7 +391,7 @@ La sélection des candidats Higgs se fait en cinq étapes.
 
 \paragraph{sélection 2}Il est demandé que la masse du $ Z $ primaire soit dans une fenêtre de $ 15\GeV $ autour de la masse nominale.
 
-\paragraph{sélection 3}Il est demandé que la masse du $ Z $ secondaire soit supérieure à un seuil $ m_{seuil} $ qui varie en fonction de la masse reconstruite $ m_{4l} $ et qui est toujours inférieure à $ 115\GeV $, voir tableau \ref{m34cut}. Les valeurs intermédiaires sont obtenues par simple interpolation linéaire. Les seuils $ m_{seuil} $ ont été déterminés à partir des largeurs des distributions de masse invariante $ m_{34} $ pour différentes masses du boson de Higgs à partir de la simlation Monte-Carlo.
+\paragraph{sélection 3}Il est demandé que la masse du $ Z $ secondaire soit supérieure à un seuil $ m_{seuil} $ qui varie en fonction de la masse reconstruite $ m_{4l} $ et qui est toujours inférieure à $ 115\GeV $ (queue de distribution), voir tableau \ref{m34cut}. Les valeurs intermédiaires sont obtenues par simple interpolation linéaire. Les seuils $ m_{seuil} $ ont été déterminés à partir des largeurs des distributions de masse invariante $ m_{34} $ pour différentes masses du boson de Higgs à partir de la simlation Monte-Carlo.
 
 \begin{table}[!h]
   \begin{bigcenter}
@@ -412,9 +412,9 @@ La sélection des candidats Higgs se fait en cinq étapes.
 
 \paragraph{sélection 5}Pour évité tout biais, parmi les combinaisons possibles, il n'est conservé que le quadruplet qui a la masse du boson $ Z $ primaire $ m_{12} $ la plus proche de la valeur nominale $ m_{Z\,PDG} $ et qui a la masse du boson $ Z $ secondaire $ m_{34} $ la plus grande.
 
-Tous les candidats qui passent les sélections 1-5 sont concervés. Cependant à ce niveau, rien n'est fait pour diminuer les bruits de fond réductibles $ t\bar{t} $, $ Zb\bar{b} $ ou $ Z $ inclusif. Une sélection supplémentaire basée sur des coupure d'isolation sera décrite à la section \ref{higgs_isolation}.\\
+Tous les candidats qui passent les sélections 1-5 sont concervés. Cependant, à ce niveau, rien n'est fait pour diminuer la contribution des bruits de fond réductibles $ t\bar{t} $, $ Zb\bar{b} $ ou $ Z $ inclusif. Une sélection supplémentaire basée sur des coupure d'isolation sera décrite à la section \ref{higgs_isolation}.\\
 
-\noindent Remarque : comme la résolution sur les variables $ \eta $ et $ \phi $ est meilleure pour les traces que pour les amas, les définitions suivantes sont utilisées dans toute l'analyse :
+\noindent Remarque : comme la résolution sur les variables $ \eta $ et $ \phi $ est meilleure pour les traces que pour les amas, les définitions suivantes sont utilisées pour les électrons :
 \begin{equation}
   \begin{array}{ccc}
       \begin{array}{c} \eta\equiv\eta_\textrm{trace} \\ \phi\equiv\phi_\textrm{trace} \end{array} & & E_T\equiv E_\textrm{amas}/\cosh\eta_\textrm{trace}
@@ -520,7 +520,7 @@ Le tableau \ref{hsg2_eff1} montre les efficacités totales de reconstruction obte
     \end{small}
 
   \end{bigcenter}
-  \caption{\label{hsg2_eff1}Efficacité de chaque coupure de sélection, $ m_H=130\GeV $, $ m_H=150\GeV $, $ m_H=220\GeV $.}
+  \caption{\label{hsg2_eff1}Efficacités totales de reconstruction obtenues à partir de trois échantillons de signaux $ m_H=130\GeV $, $ m_H=150\GeV $, $ m_H=220\GeV $.}
 \end{table}
 
 \begin{table}[!p]
@@ -701,7 +701,7 @@ Nous allons maintenant étudier un nouveau lot de coupures permettant de réduire 
 
 \section{Isolation des électrons}\label{higgs_isolation}
 
-Nous allons étudier la mise en \oe uvre de critères d'isolation permettant de diminuer la contribution des bruits de fond réductibles hadroniques. Les coupures d'isolation sont appliquées en complément de la sélection décrite ci-dessus.
+Nous allons étudier la mise en \oe uvre de critères d'isolation permettant de diminuer la contribution des bruits de fond réductibles hadroniques. Les coupures d'isolation sont appliquées en complément de la sélection décrite à la section précédente.
 
 Il convient de distinguer deux types de d'isolation, l'isolation des amas du calorimètre électromagnétique et l'isolation des traces du détecteur interne. A partir des simulations Monte-Carlo, nous allons proposer une étude d'efficacité sur les signaux et de réjection sur le bruit de fond $ Zb\bar{b} $ afin d'effectuer un choix des coupures d'isolation. Nous montrerons ensuite une estimation de l'efficacités des coupures basée sur les données en utilisant une méthode \emph{Tag and Probe} (T\emph{\&}P).
 
@@ -783,7 +783,7 @@ Lorsque de multiples électrons sont présents dans l'état final, une dégradation 
   \end{tabular}
 
   \end{bigcenter}
-  \caption{\label{iso3}Distribution de la variable etcone d'un premier électron divisée par l'impulsion transverse d'un second électron en fonction de la distance dans le plan transverse $ \Delta R_{ee} $ entre les deux électrons pour deux ouvertures différentes (a). Réjection du signal $ Zb\bar{b} $ en fonction de l'efficacité du signal $ H\to4e $ pour une masse $ m_H=130\GeV $ avec et sans la correction de recouvrement pour trois ouvertures différentes (b).}
+  \caption{\label{iso3}Distribution de la variable etcone d'un premier électron divisée par l'impulsion transverse d'un second électron en fonction de la distance dans le plan transverse $ \Delta R_{e_1e_2} $ entre les deux électrons pour deux ouvertures différentes (a). Réjection du signal $ Zb\bar{b} $ en fonction de l'efficacité du signal $ H\to4e $ pour une masse $ m_H=130\GeV $ avec et sans la correction de recouvrement pour trois ouvertures différentes (b).}
 \end{figure}
 
 Une nouvelle définition $ \textrm{etcone}_{corr}(X) $ des variables d'isolation est proposée, si $ X $ est l'ouverture du cône et $ e_1 $ et $ e_2 $ deux électrons :
@@ -797,7 +797,7 @@ Les améliorations introduites par cette correction ont été étudiées dans \cite{}
 
 L'empilement influe sur les variables d'isolation. Deux types de contribution sont à considérer : i) l'empilements \emph{in time}, où les effets proviennent du nombre de vertex primaires. ii) l'empilements \emph{out of time}, où les effets proviennent du fait que l'intervalle de temps entre les collision de protons est plus petit que la durée de vie des signaux mis en forme au sortir de l'électronique \emph{front-end} du calorimètre électromagnétique (voir figure \ref{pulses}). Il en résulte la présence de cellules présentant une énergie négative qui peut contribuer aux cônes.
 
-Plus un cône possède une grande ouverture, plus il sera sensible aux effets de l'empilement. Sachant qu'il y a environ 4 vertex primaires par événement dans les données 2011, il est nécessaire d'effectuer une étude avant de choisir une ouverture de cône. Nous allons montrer qu'il est même possible d'effectuer une correction afin de soustraire en partie les effets de l'empilement.
+Plus un cône possède une grande ouverture, plus il sera sensible aux effets de l'empilement. Sachant qu'il y a environ 4 vertex primaires par événement dans les données 2011, il est nécessaire d'effectuer une étude avant de choisir une ouverture de cône. Nous allons montrer qu'il est possible d'effectuer une correction pour soustraire en partie les effets de l'empilement.
 
 \subparagraph{Étude (très) qualitative} Afin de comparer la sensibilité à l'empilement des variables etcone20 et etcone30, les probabilités cumulées ont été tracées en fonction du nombre de vertex primaires pour cinq jeux de simulations Monte-Carlo $ Zee $ présentant chacun une configuration différente de l'empilement : pas d'empilement, nombre moyen de vertex primaires $ \left<mu\right>=6\textrm{ ou }10 $ (qui n'était pas forcément représentatif des données où $ \left<mu\right>\approx5 $), intervalle de temps entre la collision entre deux paquets de protons $ bs=50ns\textrm{ ou }75ns $. Les résultats sont montrés sur les figures \ref{pileup1} et \ref{pileup2}.
 
@@ -877,12 +877,12 @@ Plus un cône possède une grande ouverture, plus il sera sensible aux effets de l
 
 La première constatation générale est que la sensibilité à l'empilement \emph{out of time} n'est pas très grande. Pour etcone30, la sensibilité au nombre moyen de vertex primaire par événement est beaucoup plus importante que pour etcone20. La largeur de l'enveloppe de la région hors plateau est d'environ $ 1.5\GeV $ pour $ \left<mu\right>=15 $ pour etcone30 (resp. $ 0.5\GeV $ pour $ \left<mu\right>=15 $ pour etcone20) et d'environ $ 1.0\GeV $ pour $ \left<mu\right>=10 $ pour etcone20 (resp. $ 0.5\GeV $ pour $ \left<mu\right>=10 $ pour etcone20).
 
-\subparagraph{Correction de l'empilement \emph{in time}} Une correction simple peut être mise en place afin de compenser les effets de l'empilement \emph{in time}. La valeur moyenne des variables etcone dépend linéairement du nombre de vertex primaires. La valeur corrigée des cônes d'isolation peut s'écrire :
+\subparagraph{Correction de l'empilement \emph{in time}} Une correction simple peut être mise en place afin de compenser les effets de l'empilement \emph{in time}. La valeur moyenne des variables etcone dépend linéairement du nombre de vertex primaires. L'expression corrigée des cônes d'isolation peut s'écrire :
 \begin{equation}
   etcone_{pileup}(\Delta R,\eta)=etcone(\Delta R)-\alpha_\eta(\Delta R)N_{pv}
 \end{equation}
 
-où $ \alpha_\eta(\Delta R) $ est la pente de la fonction affine $ \left<etcone(\Delta R)\right>(N_{pv}) $ par classe de pseudo-rapidité $ \eta $ et $ N_{pv} $ est le nombre de vertex primaire. Le groupe électrons/photons du détecteur Atlas fournit un outil standard permettant de calculer la correction en fonction de l'ouverture du cône (empilement \emph{in time} et \emph{out of time}). A titre d'information, le tableau \ref{intimecoef} montre les valeurs de $ \alpha_\eta $ pour etcone20 et etcone30.
+où $ \alpha_\eta(\Delta R) $ est la pente de la fonction affine $ \left<etcone(\Delta R)\right>(N_{pv}) $ par classe de pseudo-rapidité $ \eta $ et $ N_{pv} $ est le nombre de vertex primaire. Le groupe électron/photon du détecteur Atlas fournit un outil standard permettant de calculer la correction en fonction de l'ouverture du cône (empilement \emph{in time} et \emph{out of time}). A titre d'information, le tableau \ref{intimecoef} montre les valeurs de $ \alpha_\eta $ pour etcone20 et etcone30.
 
 \begin{table}[!h]
   \begin{bigcenter}
@@ -943,7 +943,7 @@ De même que pour l'isolation calorimétrique, il est possible d'effectuer une cor
   \textrm{$ \forall $ $ e_1 $ et $ e_2 $, si $ \Delta R_{e_1e_2}<X $}\left\{\begin{array}{ll} \textrm{ptcone}_{corr}(X;e_1)\equiv\textrm{ptcone}(X;e_1)-p_{T,e2} \\ \textrm{ptcone}_{corr}(X;e_2)\equiv\textrm{ptcone}(X;e_2)-p_{T,e1} \end{array}\right.
 \end{equation}
 
-La figure \ref{pileup3} montre la distributions des probabilités cumulées respectivement des variables ptcone30 (a) et ptcone20 (b) en fonction du nombre de vertex primaires pour cinq jeux de simulations Monte-Carlo $ Zee $ présentant chacun une configuration différente de l'empilement. Les variables d'isolation des traces restent relativement insensibles aux effets induits par l'empilement.
+La figure \ref{pileup3} montre respectivement la distributions des probabilités cumulées des variables ptcone30 (a) et ptcone20 (b) en fonction du nombre de vertex primaires pour cinq jeux de simulations Monte-Carlo $ Zee $ présentant chacun une configuration différente de l'empilement. Les variables d'isolation des traces restent relativement insensibles aux effets induits par l'empilement.
 
 \begin{figure}[!h]
   \begin{bigcenter}
@@ -1006,12 +1006,12 @@ Pour les électrons, une estimation de l'efficacité des coupures d'isolation et d
 
 \subsection{Méthode}
 
-La méthode \emph{Tag \& Probe} permet d'estimer l'efficacité d'une coupure de sélection directement à partir des données. L'idée consiste à sélectionner une série d'électrons de qualité stricte ($ p_T>20\GeV $, \emph{tight}) et isolés (ptcone20<0.15), ces électrons sont nommés électrons \emph{tag}. Puis des bosons $ Z $ sont reconstruits à partir des électrons \emph{tag} dans une fenêtre de masse centrée sur la masse nominale des bosons $ Z $ ($ |m_Z-m_{ee}|<10\GeV $). Le second électron de chaque paire est appelé électron \emph{probe}. L'efficacité d'une coupure $ C $ est estimé par :
+La méthode \emph{Tag \& Probe} permet d'estimer l'efficacité d'une coupure de sélection directement à partir des données. L'idée consiste à sélectionner une collection d'électrons de qualité stricte ($ p_T>20\GeV $, \emph{tight}) et isolés (ptcone20<0.15), ces électrons sont nommés électrons \emph{tag}. Puis des bosons $ Z $ sont reconstruits à partir des électrons \emph{tag} dans une fenêtre de masse centrée sur la masse nominale des bosons $ Z $ ($ |m_Z-m_{ee}|<10\GeV $). Le second électron de chaque paire est appelé électron \emph{probe}. L'efficacité d'une coupure $ C $ est estimé par :
 \begin{equation}
   \varepsilon=\frac{A\equiv\textrm{nombre d'électrons \emph{probe} qui passent la coupure $ C $}}{B\equiv\textrm{nombre d'électrons \emph{probe}}}
 \end{equation}
 
-Cette formule suppose que nous disposons d'un lot d'électrons parfaitement purs. Lorsque ça n'est pas le cas, il faut soustraire la fraction de bruit de fond aux c\oe fficients $ A $ et $ B $. La méthode mise en \oe uvre effectue un ajustement de la distribution de masse invariante des bosons $ Z $ avant et après application de la coupure de sélection $ C $. Le signal est décrit par le produit de convolution d'une distribution Breit et Wigner et d'une distribution Crystal Ball (voir annexe A). Le bruit de fond est décrit par une distribution exponentielle :
+Cette formule suppose que nous disposons d'un lot d'électrons parfaitement purs. Lorsque ça n'est pas le cas, il faut soustraire la fraction de bruit de fond aux c\oe fficients $ A $ et $ B $. La méthode mise en \oe uvre consiste à effectuer un ajustement de la distribution de masse invariante des bosons $ Z $ avant et après application de la coupure de sélection $ C $. Le signal est décrit par le produit de convolution d'une distribution Breit et Wigner et d'une distribution Crystal Ball (voir annexe A). Le bruit de fond est décrit par une distribution exponentielle :
 \begin{equation}
   \mathcal{P}_\textrm{signal}(m)=\mathcal{BW}(m;\left<m\right>_{CB}=m_{Z,PDG},\sigma_{CB}=2.5)\otimes\mathcal{CB}(m;\left<m\right>_{CB},\sigma_{CB},a_{CB},n_{CB})
 \end{equation}
@@ -1031,7 +1031,7 @@ Pour les données, une luminosité intégrée de $ 2.1fb^{-1} $ a été utilisée, nous
 
 La région de précision $ p_T>15\GeV $ (voir chapitre \ref{chapitre_reco}) a été étudiée. Les figures \ref{masseZ} montrent respectivement la distribution de masse invariante des candidats $ Z $ avec au moins un électron \emph{tag} pour les données (a) et pour la simulation Monte-Carlo (b). Pour cette dernière, nous remarquons que le bruit de fond est très peu important, $ 0.17\% $ des candidats.
 
-Les figures \ref{TandPeff1} montrent respectivement les efficacités des coupures d'isolation et de significance du paramètre d'impact en fonction de l'impulsion transverse $ p_T $ pour les données (a) et pour la simulation Monte-Carlo (b). La figure \ref{TandPeff2} montre le rapport entre les données et la simulation Monte-Carlo des efficacités des coupures d'isolation et de significance du paramètre d'impact en fonction de l'impulsion transverse $ p_T $. L'efficacité des coupures d'isolation est supérieure à $ 99\% $, et l'efficacité de la coupure sur la significance du paramètre d'impact est supérieure à $ 93\% $. L'accord entre les données est toujours meilleur que $ 0.6\% $.
+Les figures \ref{TandPeff1} montrent respectivement les efficacités des coupures d'isolation et de significance du paramètre d'impact en fonction de l'impulsion transverse $ p_T $ pour les données (a) et pour la simulation Monte-Carlo (b). La figure \ref{TandPeff2} montre le rapport entre les données et la simulation Monte-Carlo des efficacités des coupures d'isolation et de significance du paramètre d'impact en fonction de l'impulsion transverse $ p_T $. L'efficacité des coupures d'isolation est supérieure à $ 99\% $ et l'efficacité de la coupure sur la significance du paramètre d'impact est supérieure à $ 93\% $. L'accord entre les données est toujours meilleur que $ 0.6\% $.
 
 \begin{figure}[!p]
   \begin{bigcenter}
@@ -1422,11 +1422,11 @@ Le tableau \ref{rates_muenus} montre les principales voies de déclenchement élec
       \hline
         Voies EF & e20\_medium & e22\_medium & e22\_medium++ & 2e12\_medium\\
         Fréquences \tiny{($ \mathscr{L}=10^{33}cm^{-2}s^{-1} $)} & $ 53 $ Hz & - & - & $ 1.2 $ Hz\\
-        Fréquences \tiny{($ \mathscr{L}=3\times10^{33}cm^{-2}s^{-1} $)} & \emph{prescaled} & $ ?? $ Hz & $ 53.2 $ Hz & $ ?? $ Hz \\
+        Fréquences \tiny{($ \mathscr{L}=3\times10^{33}cm^{-2}s^{-1} $)} & \emph{prescaled} & $ 120 $ Hz & $ 53.2 $ Hz & $ 2.8 $ Hz \\
       \hline
         Voies EF & 2e15\_medium & e10\_medium\_mu6 & e10\_medium\_mu10 & -\\
         Fréquences \tiny{($ \mathscr{L}=10^{33}cm^{-2}s^{-1} $)} & - & $ 4.3 $ Hz & $ 1.4 $ Hz & -\\
-        Fréquences \tiny{($ \mathscr{L}=3\times10^{33}cm^{-2}s^{-1} $)} & $ 2.55 $ Hz & $ 10 $ Hz & $ 3.67 $ Hz & -\\
+        Fréquences \tiny{($ \mathscr{L}=3\times10^{33}cm^{-2}s^{-1} $)} & $ 2.5 $ Hz & $ 10 $ Hz & $ 3.7 $ Hz & -\\
       \hline
     \end{tabular}
 
@@ -1440,7 +1440,7 @@ Le tableau \ref{rates_muenus} montre les principales voies de déclenchement élec
 
 Nous allons présenter quelques pistes d'optimisations du choix de la voie de déclenchement électronique en se basant sur la simulation Monte-Carlo. La figure \ref{trig_eff1} (a) montre l'efficacité de reconstruction et de sélection totale pour le canal $ H\to4e $ pour les principales voies de déclenchement. La figure \ref{trig_eff1} (b) montre la perte d'efficacité de reconstruction et de sélection totale pour le canal $ H\to4e $ relative à EF\_e20\_medium pour les principales voies de déclenchement. Les voies EF\_e22\_medium++ et EF\_2e15\_medium ne sont pas implémentées dans les simulations Monte-Carlo c'est pourquoi elles ont été simulées.
 
-Nous remarquons que les six premières classes des histogrammes présentent des efficacités à peu près similaires à l'exception de EF\_e22\_medium++ qui entraine une perte d'efficacité d'environ $ 9\% $. L'observation la plus importante est que les voies EF\_2e12\_medium et EF\_2e15\_medium peuvent être utilisées à la place de EF\_e20\_medium sans perte significatif de d'efficacité. Comme les plateaux d'efficacité de ces deux voies sont respectivement atteints à $ \sim15\GeV $ et $ \sim18\GeV $, il est alors envisageable de diminuer les coupure en énergie transverse de $ 20\GeV $ (voir section \ref{higgs_event_selection}) à $ 15\GeV $ ou $ 18\GeV $ (voir section \ref{higgs_electron_optimization}). Nous remarquons à titre indicatif que la voie photonique EF\_2g15\_loose donne une efficacité proche de EF\_e22\_medium, elle pourrait servir de grain à la simulation d'une voie électronique avec critères lâches (\emph{loose}+trace+Z reconstruit par exemple).
+Nous remarquons que les six premières classes des histogrammes présentent des efficacités à peu près similaires à l'exception de EF\_e22\_medium++ qui entraine une perte d'efficacité d'environ $ 9\% $. L'observation la plus importante est que les voies EF\_2e12\_medium et EF\_2e15\_medium peuvent être utilisées à la place de EF\_e20\_medium sans perte significative d'efficacité. Comme les plateaux d'efficacité de ces deux voies sont respectivement atteints à $ \sim15\GeV $ et $ \sim18\GeV $, il est alors envisageable de diminuer les coupure en énergie transverse de $ 20\GeV $ (voir section \ref{higgs_event_selection}) à $ 15\GeV $ ou $ 18\GeV $. Nous remarquons à titre indicatif que la voie photonique EF\_2g15\_loose donne une efficacité proche de EF\_e22\_medium, elle pourrait servir de grain à la simulation d'une voie électronique avec critères lâches (\emph{loose}+trace+Z reconstruit par exemple).
 
 \begin{figure}[!h]
   \begin{bigcenter}
@@ -1541,7 +1541,7 @@ Le tableau \ref{allHiggs3} récapitule le nombre de candidats attendus et observé
 
 \paragraph{Excès à $ \sim120\GeV $ ?}
 
-Nous avions montré dans le chapitre \ref{chapitre_ms} que la région de masse de $ 115\GeV $ à $ 156\GeV $ n'a pas été exclue par les expériences LEP et Tevatron. Si le boson de Higgs existe, c'est dans cette région de masse qu'on s'attend à le découvrir. Pour les canaux $ H\to\gamma\gamma $, $ H\to b\bar{b} $, $ H\to WW $ et dans une moindre mesure $ H\to ZZ^{(*)}\to4l $, un excès de candidats est observé à faible masse $ \sim120\GeV $. Sa significance statistique est d'approximativement deux déviations standards au dessus du bruit de fond attendu pour le modèle standard. Une telle fluctuation statistique sur tout le domaine de masse de recherche du boson de Higgs est hautement probable elle se trouve néanmoins dans la région de masse qui n'a pas été exclue.
+Nous avions montré dans le chapitre \ref{chapitre_ms} que la région de masse de $ 115\GeV $ à $ 156\GeV $ n'a pas été exclue par les expériences LEP et Tevatron. Si le boson de Higgs existe, c'est dans cette région de masse qu'on s'attend à le découvrir. Pour les canaux $ H\to\gamma\gamma $, $ H\to b\bar{b} $, $ H\to WW $, un excès de candidats est observé à faible masse $ \sim120\GeV $. Sa significance statistique est d'approximativement deux déviations standards au dessus du bruit de fond attendu pour le modèle standard. Une telle fluctuation statistique sur tout le domaine de masse de recherche du boson de Higgs est hautement probable elle se trouve néanmoins dans la région de masse qui n'a pas été exclue.
 
 \paragraph{Limites d'exclusion}
 
@@ -1627,9 +1627,9 @@ A titre de comparaison, nous nous intéressons aux résultats du détecteur CMS. La
 
 \section{Conclusion}
 
-Dans ce chapitre, nous nous sommes intéressé à la recherche du boson de Higgs dans le canal $ H\to ZZ^{(*)}\to4l $ avec les données 2011 (jusqu'à fin août 2011) soit une statistique supérieure à $ 2fb^{-1} $. Un large éventail des problématiques a été évoqué : le choix du système de déclenchement, la sélection des leptons (électrons et muons), la reconstruction des candidats Higgs, la définition et les performances des coupures de sélection dédiées à la réduction du bruit de fond combinatoire et enfin l'optimisation de l'analyse du point de vue du déclenchement électronique.
+Dans ce chapitre, nous nous sommes intéressé à la recherche du boson de Higgs dans le canal $ H\to ZZ^{(*)}\to4l $ avec les données 2011 (jusqu'à mi-septembre 2011) soit une statistique d'environ $ 2.1fb^{-1} $. Un large éventail des problématiques a été évoqué : le choix du système de déclenchement, la sélection des leptons (électrons et muons), la reconstruction des candidats Higgs, la définition et les performances des coupures de sélection dédiées à la réduction du bruit de fond combinatoire et enfin l'optimisation de l'analyse du point de vue du déclenchement électronique.
 
-Il a été possible d'obtenir un total de $ 29 $ candidats Higgs ($ 6 $ pour le canal $ 4e $, $ 9 $ pour le canal $ 2e2\mu $ et $ 12 $ pour le canal $ 4\mu $). Aucun excès significatif n'est observé. Compte tenu de la luminosité intégrée, il est possible d'exclure les régions de masse de $ 190\GeV $ à $ 200\GeV $ et de $ 214\GeV $ à $ 226\GeV $.
+Il a été possible d'obtenir un total de $ 29 $ candidats Higgs ($ 8 $ pour le canal $ 4e $, $ 9 $ pour le canal $ 2e2\mu $ et $ 12 $ pour le canal $ 4\mu $). Aucun excès significatif n'est observé. Compte tenu de la luminosité intégrée, il est possible d'exclure les régions de masse de $ 190\GeV $ à $ 200\GeV $ et de $ 214\GeV $ à $ 226\GeV $.
 
 Nous avons montré les résultats combinés obtenus auprès du détecteur Atlas pour les principaux canaux $ H\to\gamma\gamma $, $ H\to ZZ^{(*)}\to l^+l^-l^+l^- $, $ WH\to l\nu b\bar{b} $, $ ZH\to l^+l^- b\bar{b} $, $ H\to\tau\tau\to l\tau_{had}3\nu $ et $ H\to\tau\tau\to l^+l^- $. Un excès de candidats est observé à faible masse ($ \sim120\GeV $) avec une significance statistique d'approximativement deux déviations standards au dessus du bruit de fond attendu pour le modèle standard. Une telle fluctuation statistique sur tout le domaine de masse de recherche du boson de Higgs est hautement probable. Les régions de masse de $ 146\GeV $ à $ 232\GeV $, de $ 256\GeV $ à $ 282\GeV $ et de $ 296\GeV $ à $ 466\GeV $ sont exclues à $ 95\% $ de niveau de confiance.
 
