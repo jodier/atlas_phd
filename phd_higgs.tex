@@ -49,9 +49,9 @@ Les données utilisées dans cette analyse ont été enregistrées par le détecteur A
   \caption{\label{higgs_lumi}Luminosité $ [pb^{-1}] $ pour les trois \emph{Good Run List} DetStatus-v27-pro08-07\_CoolRunQuery-00-04-00 $ 4e $, $ 4\mu $, $ 2e2\mu $.}
 \end{table}
 
-\subsection{Échantillons de simulation}
+\subsection{Échantillons de simulation (signaux)}
 
-\subsubsection{Signaux}Nous disposons d'une collection d'échantillons de signaux $ H\to ZZ^{(*)}\to4l $ pour une gamme de masse $ 110<m_H[\GeV]<600 $. Ils ont été simulés avec le générateur d'événements Monte-Carlo \small{POWHEG}\cite{} qui calcule séparément la fusion de gluons et la fusion de bosons vecteurs avec des éléments de matrice de première ordre (\emph{Next-to-Leading-Order} soit encore NLO). \small{POWHEG} est associé à \small{PYTHIA}\cite{} pour décrire l'hadronisation. Les sections efficaces ainsi que les rapports d'embranchement sont issus de \cite{} et ont été calculés aux précisions Next-to-Next-to-Leading-Log (NNLL) QCD+NLO EW pour la fusion de gluons et Next-to-Next-to-Leading-Order (NNLO) QCD+NLO EW pour la fusion de bosons vecteurs. Les incertitudes sur les sections efficaces de production sont de l'ordre de $ 15\% $ à $ 20\% $ pour la fusion de gluons et moins de $ 5\% $ pour la fusion de bosons vecteurs.
+Nous disposons d'une collection d'échantillons de signaux $ H\to ZZ^{(*)}\to4l $ pour une gamme de masse $ 110<m_H[\GeV]<600 $. Ils ont été simulés avec le générateur d'événements Monte-Carlo \small{POWHEG}\cite{frixione-2007}\cite{alioli-2009-0904}\cite{nason-2010-1002} qui calcule séparément la fusion de gluons et la fusion de bosons vecteurs avec des éléments de matrice de première ordre (\emph{Next-to-Leading-Order} soit encore NLO). \small{POWHEG} est associé à \small{PYTHIA}\cite{sjostrand-2006-0605} pour décrire l'hadronisation. Les sections efficaces ainsi que les rapports d'embranchement sont issus de \cite{LHCHiggsCrossSectionWorkingGroup:2011ti} et ont été calculés aux précisions Next-to-Next-to-Leading-Log (NNLL) QCD+NLO EW pour la fusion de gluons et Next-to-Next-to-Leading-Order (NNLO) QCD+NLO EW pour la fusion de bosons vecteurs. Les incertitudes sur les sections efficaces de production sont de l'ordre de $ 15\% $ à $ 20\% $ pour la fusion de gluons et moins de $ 5\% $ pour la fusion de bosons vecteurs.
 
 Le tableau \ref{bratiohiggs} montre la section efficace de production $ \sigma(ggF+VBF)\times BR(H\to4l) $ où $ l=e,\mu $ pour différentes masses du boson de Higgs.
 
@@ -81,11 +81,11 @@ Le tableau \ref{bratiohiggs} montre la section efficace de production $ \sigma(g
   \caption{\label{bratiohiggs}Section efficace de production $ \sigma(ggF+VBF)\times BR(H\to4l) $ où $ l=e,\mu $ pour différentes masses du boson de Higgs.}
 \end{table}
 
-Remarque : une comparaison a été réalisée\cite{} sur les efficacités de reconstruction obtenues à partir des échantillons de signal Higgs \small{POWHEG} et d'échantillons de signal Higgs \small{PYTHIA}. Les résultats sont en accord à environ $ 1\% $.
+Remarque : une comparaison a été réalisée sur les efficacités de reconstruction obtenues à partir des échantillons de signal Higgs \small{POWHEG} et d'échantillons de signal Higgs \small{PYTHIA}. Les résultats sont en accord à environ $ 1\% $. L'avangate des échantillons de signal Higgs \small{POWHEG} est que la fussion de gluons et la fusion de bosons vecteur et séparée.
 
-\subsection{Échantillons de bruit de fond}
+\subsection{Échantillons de simulation (bruits de fond)}
 
-Différents générateurs ont été utilisés. Pour le bruit de fond irréductible $ ZZ^{(*)}\to4l $, le générateur \small{PYTHIA} est utilisé pour le diagramme $ q\bar{q}\to ZZ^{(*)} $, voir figure \ref{ZZprod1} et le programme dédié \small{GG2ZZ}\cite{} est utilisé pour les diagrammes boîte $ qq\to ZZ^{(*)} $. La contribution NLO pour le canal $ q\bar{q}\to ZZ^{(*)} $ est obtenu en multipliant la section efficace LO par le K-facteur\cite{} ($=\sigma^{MCFM}_{NLO}/\sigma^{PYTHIA}_{LO} $) estimé avec le programme \small{MCFM}, voir figure \ref{zzkfactor}. La contribution NNLO des diagrammes boîte est prise en compte en multipliant la section efficace NLO par $ 5.7\% $. Cette correction est également estimée à partir du programme \small{GG2ZZ}.
+Différents générateurs ont été utilisés. Pour le bruit de fond irréductible $ ZZ^{(*)}\to4l $, le générateur \small{PYTHIA} est utilisé pour le diagramme $ q\bar{q}\to ZZ^{(*)} $, voir figure \ref{ZZprod1} et le programme dédié \small{GG2ZZ}\cite{Binoth:arXiv0807.0024} est utilisé pour les diagrammes boîte $ qq\to ZZ^{(*)} $. La contribution NLO pour le canal $ q\bar{q}\to ZZ^{(*)} $ est obtenu en multipliant la section efficace LO par le K-facteur ($=\sigma^{MCFM}_{NLO}/\sigma^{PYTHIA}_{LO} $) estimé avec le programme \small{MCFM}\cite{}, voir figure \ref{zzkfactor}. La contribution NNLO des diagrammes boîte est prise en compte en multipliant la section efficace NLO par $ 5.7\% $. Cette correction est également estimée à partir du programme \small{GG2ZZ}.
 
 \begin{figure}[!ht]
   \begin{bigcenter}
@@ -198,14 +198,14 @@ Différents générateurs ont été utilisés. Pour le bruit de fond irréductible $ ZZ
 
 \begin{figure}[!h]
   \begin{bigcenter}
-    \includegraphics[width=0.495\linewidth]{phd_higgs/k-factor}
+    \includegraphics[width=0.53\linewidth]{phd_higgs/k-factor}
   \end{bigcenter}
   \caption{\label{zzkfactor}K-facteur ($=\sigma^{MCFM}_{NLO}/\sigma^{PYTHIA}_{LO} $) pour le bruit de fond irréductible $ ZZ^{(*)} $ avec $ m_Z>12\GeV $ estimé avec MCFM avec le PDF MSTW2008.}
 \end{figure}
 
 \newpage
 
-Pour les bruits de fond $ Zb\bar{b} $ et $ Z $ inclusif, le générateur \small{ALPGEN}\cite{} est utilisé. Finalement, pour le bruit de fond $ t\bar{t} $, le générateur \small{MC@NLO}\cite{} est utilisé. \small{ALPGEN} comme \small{MC@NLO} sont interfacés avec \small{HERWIG}\cite{} pour les gerbes de partons et pour l'hadronisation et \small{JIMMY}\cite{} pour simuler les événements sous-jacents. Pour le bruit de fond $ Z $ inclusif, \small{PYTHIA} est également utilisé. Des détails supplémentaires peuvent être trouvés dans \cite{}. Le tableau \ref{bkgdxsection} récapitule les sections efficaces de production des quatre composantes de bruit de fond.
+Pour les bruits de fond $ Zb\bar{b} $ et $ Z $ inclusif, le générateur \small{ALPGEN}\cite{1126-6708-2003-07-001} est utilisé. Finalement, pour le bruit de fond $ t\bar{t} $, le générateur \small{MC@NLO}\cite{frixione-2002}\cite{frixione-2002-0206}\cite{frixione-2003-0308} est utilisé. \small{ALPGEN} comme \small{MC@NLO} sont interfacés avec \small{HERWIG}\cite{corcella-2002} pour les gerbes de partons et pour l'hadronisation et \small{JIMMY}\cite{butterworth-1996-72} pour simuler les événements sous-jacents. Pour le bruit de fond $ Z $ inclusif, \small{PYTHIA} est également utilisé. Le tableau \ref{bkgdxsection} récapitule les sections efficaces de production des quatre composantes de bruit de fond.
 
 \begin{table}[!h]
   \begin{bigcenter}
@@ -387,7 +387,7 @@ La reconstruction consiste essentiellement à former des quadruplets de leptons c
 
 La sélection des candidats Higgs se fait en cinq étapes.
 
-\paragraph{sélection 1}Afin d'être compatible avec les exigences du critère de déclenchement EF\_e20\_ medium et EF\_mu18\_MG, il est demandé qu'au moins deux leptons aient une énergie transverse supérieure à $ 20\GeV $. En toute rigueur, EF\_e20\_medium atteint son plateau d'efficacité vers $ 24-25\GeV $, il faudrait couper plus haut en énergie au détriment de la statistique mais nous sommes dans une optique de découverte. Des optimisations liées au déclenchement seront discutées ultérieurement.
+\paragraph{sélection 1}Afin d'être compatible avec les exigences des critères de déclenchement EF\_e20\_ medium et EF\_mu18\_MG et afin d'être compatible avec la reconstruction de bosons $ Z $, il est demandé qu'au moins deux leptons aient une énergie transverse supérieure à $ 20\GeV $. En toute rigueur, EF\_e20\_medium atteint son plateau d'efficacité vers $ 24-25\GeV $, il faudrait couper plus haut en énergie au détriment de la statistique mais nous sommes dans une optique de découverte. Des optimisations liées au déclenchement seront discutées ultérieurement.
 
 \paragraph{sélection 2}Il est demandé que la masse du $ Z $ primaire soit dans une fenêtre de $ 15\GeV $ autour de la masse nominale.
 
@@ -442,7 +442,7 @@ Une simulation Monte-Carlo $ H\to ZZ^{(*)}\to4l $ avec $ m_H=150\GeV $ a été uti
       \hline
         Coupure & \# objets & efficacité & \# objets & efficacité & \# objets & efficacité\\
       \hline
-         - & 163481 & - & 163481 & - & 163481 & -\\
+        $ \varnothing $ & 163481 & $ \varnothing $ & 163481 & $ \varnothing $ & 163481 & $ \varnothing $\\
         vertex & 163481 & $ 100.00\%\pm0.001\% $ & 163481 & $ 100.00\%\pm0.001\% $ & 163481 & $ 100.00\%\pm0.001\% $\\
         déclenchement & 122325 & $ 74.83\%\pm0.11\% $ & 159170 & $ 97.36\%\pm0.04\% $ & 159170 & $ 97.36\%\pm0.04\% $\\
         algorithme & 77510 & $ 63.36\%\pm0.14\% $ & 93893 & $ 58.99\%\pm0.12\% $ & 93893 & $ 58.99\%\pm0.12\% $\\
@@ -451,8 +451,8 @@ Une simulation Monte-Carlo $ H\to ZZ^{(*)}\to4l $ avec $ m_H=150\GeV $ a été uti
         $ E_T>7\GeV $ & 43272 & $ 95.95\%\pm0.09\% $ & 45305 & $ 95.01\%\pm0.10\% $ & 45305 & $ 95.01\%\pm0.10\% $\\
         qualité & 42236 & $ 97.61\%\pm0.07\% $ & 44228 & $ 97.62\%\pm0.07\% $ & 44228 & $ 97.62\%\pm0.07\% $\\
         $ z_0<10mm $ & 42202 & $ 99.92\%\pm0.01\% $ & 44186 & $ 99.91\%\pm0.01\% $ & 44186 & $ 99.91\%\pm0.01\% $\\
-        recouvrement $ e-e $ & 42201 & $ 100.00\%\pm0.003\% $ & 44185 & $ 100.00\%\pm0.003\% $ & 44185 & $ 100.00\%\pm0.003\% $\\
-        recouvrement $ e-\mu $ & 42176 & $ 99.94\%\pm0.01\% $ & 44146 & $ 99.91\%\pm0.01\% $ & 44144 & $ 99.91\%\pm0.01\% $\\
+        recouvre. $ e-e $ & 42201 & $ 100.00\%\pm0.003\% $ & 44185 & $ 100.00\%\pm0.003\% $ & 44185 & $ 100.00\%\pm0.003\% $\\
+        recouvre. $ e-\mu $ & 42176 & $ 99.94\%\pm0.01\% $ & 44146 & $ 99.91\%\pm0.01\% $ & 44144 & $ 99.91\%\pm0.01\% $\\
       \hline
     \end{tabular}
 
@@ -472,7 +472,7 @@ Une simulation Monte-Carlo $ H\to ZZ^{(*)}\to4l $ avec $ m_H=150\GeV $ a été uti
       \hline
         Coupure & \# objets & efficacité & \# objets & efficacité & \# objets & efficacité & \# objets & efficacité\\
       \hline
-         - & 59101 & - & 61455 & - & 59101 & - & 61455 & -\\
+        $ \varnothing $ & 59101 & $ \varnothing $ & 61455 & $ \varnothing $ & 59101 & $ \varnothing $ & 61455 & $ \varnothing $\\
         vertex & 59101 & $ 100.00\%\pm0.00\% $ & 61455 & $ 100.00\%\pm0.00\% $ & 57695 & $ 97.62\%\pm0.06\% $ & 61455 & $ 100.00\%\pm0.00\% $\\
         déclenchement & 54660 & $ 92.49\%\pm0.11\% $ & 54660 & $ 88.94\%\pm0.13\% $ & 56813 & $ 98.47\%\pm0.05\% $ & 59955 & $ 97.56\%\pm0.06\% $\\
         algorithme & 52344 & $ 95.76\%\pm0.09\% $ & 52403 & $ 95.87\%\pm0.09\% $ & 56813 & $ 100.00\%\pm0.00\% $ & 56835 & $ 94.80\%\pm0.09\% $\\
@@ -497,7 +497,7 @@ Une simulation Monte-Carlo $ H\to ZZ^{(*)}\to4l $ avec $ m_H=150\GeV $ a été uti
 
 \subsubsection{Efficacité des coupures pour les candidats Higgs}
 
-Le tableau \ref{hsg2_eff1} montre les efficacités totales de reconstruction obtenues à partir de trois échantillons de signaux $ m_H=130\GeV $, $ m_H=150\GeV $ et $ m_H=220\GeV $, par canal et jusqu'à la coupure n°6 (un seul candidat Higgs). Plus la masse du boson de Higgs est grande, plus l'efficacité de reconstruction est bonne car les performances sont meilleures pour la reconstruction des bosons $ Z $ secondaires de grande masse. Les tableaux \ref{hsg2_eff2} à \ref{hsg2_eff5} montrent les efficacités de chacune des coupures de sélection. Nous constatons que la coupure la plus restrictive correspond à la création d'un d'un quadruplet de leptons passants les coupures de sélection.
+Le tableau \ref{hsg2_eff1} montre les efficacités totales de reconstruction obtenues à partir de trois échantillons de signaux $ m_H=130\GeV $, $ m_H=150\GeV $ et $ m_H=220\GeV $, par canal et jusqu'à la coupure n°6 (un seul candidat Higgs). Plus la masse du boson de Higgs est grande, plus l'efficacité de reconstruction est bonne car les performances de reconstruction des leptons et des bosons $ Z $ secondaires de grande masse sont meilleures. Les tableaux \ref{hsg2_eff2} à \ref{hsg2_eff5} montrent les efficacités de chacune des coupures de sélection, c'est-à-dire, pour une coupure $ C $, le nombre de canditats après la coupure $ C $ divisé par le nombre de canditats avant la coupure $ C $. Les coupures possèdent toutes une efficacité supérieure à $ 97\%$.
 
 \vspace{0.5cm}
 
@@ -533,13 +533,19 @@ Le tableau \ref{hsg2_eff1} montre les efficacités totales de reconstruction obte
       \hline
         Coupure & efficacité & efficacité & efficacité\\
       \hline
-      4 leptons		& $ 2.55\%\pm0.06\% $ & $ 5.31\%\pm0.08\% $ & $ 5.24\%\pm0.08\% $\\
-      paires		& $ 100.00\%\pm0.05\% $ & $ 100.00\%\pm0.02\% $ & $ 100.00\%\pm0.02\% $\\
-      Cinématique	& $ 95.78\%\pm0.45\% $ & $ 94.49\%\pm0.35\% $ & $ 94.70\%\pm0.35\% $\\
-      $ m_{12} $	& $ 83.95\%\pm0.83\% $ & $ 83.13\%\pm0.59\% $ & $ 83.22\%\pm0.59\% $\\
-      $ m_{34} $	& $ 78.50\%\pm1.02\% $ & $ 79.08\%\pm0.70\% $ & $ 79.03\%\pm0.71\% $\\
-      $ min[\Delta R] $	& $ 100.00\%\pm0.08\% $ & $ 98.41\%\pm0.25\% $ & $ 98.70\%\pm0.22\% $\\
-      1 quadruplet	& $ 100.00\%\pm0.08\% $ & $ 100.00\%\pm0.04\% $ & $ 100.00\%\pm0.04\% $\\
+      4 leptons		& & &\\[-2mm]
+                        & $ 100.00\%\pm0.05\% $ & $ 100.00\%\pm0.02\% $ & $ 100.00\%\pm0.02\% $\\[-2mm]
+      paires		& & &\\[-2mm]
+                        & $ 95.78\%\pm0.45\% $ & $ 94.49\%\pm0.35\% $ & $ 94.70\%\pm0.35\% $\\[-2mm]
+      Cinématique	& & &\\[-2mm]
+                        & $ 83.95\%\pm0.83\% $ & $ 83.13\%\pm0.59\% $ & $ 83.22\%\pm0.59\% $\\[-2mm]
+      $ m_{12} $	& & &\\[-2mm]
+                        & $ 78.50\%\pm1.02\% $ & $ 79.08\%\pm0.70\% $ & $ 79.03\%\pm0.71\% $\\[-2mm]
+      $ m_{34} $	& & &\\[-2mm]
+                        & $ 100.00\%\pm0.08\% $ & $ 98.41\%\pm0.25\% $ & $ 98.70\%\pm0.22\% $\\[-2mm]
+      $ min[\Delta R] $	& & &\\[-2mm]
+                        & $ 100.00\%\pm0.08\% $ & $ 100.00\%\pm0.04\% $ & $ 100.00\%\pm0.04\% $\\[-2mm]
+      1 quadruplet	& & &\\
       \hline
     \end{tabular}
 
@@ -552,13 +558,19 @@ Le tableau \ref{hsg2_eff1} montre les efficacités totales de reconstruction obte
       \hline
         Coupure & efficacité & efficacité\\
       \hline
-      4 leptons		& $ 7.29\%\pm0.09\% $ & $ 7.26\%\pm0.09\% $\\
-      paires		& $ 100.00\%\pm0.02\% $ & $ 100.00\%\pm0.02\% $\\
-      Cinématique	& $ 82.92\%\pm0.49\% $ & $ 82.87\%\pm0.49\% $\\
-      $ m_{12} $	& $ 80.54\%\pm0.57\% $ & $ 80.66\%\pm0.57\% $\\
-      $ m_{34} $	& $ 90.52\%\pm0.47\% $ & $ 90.57\%\pm0.47\% $\\
-      $ min[\Delta R] $	& $ 99.21\%\pm0.15\% $ & $ 99.20\%\pm0.15\% $\\
-      1 quadruplet	& $ 100.00|100.00\%\pm0.05|0.07\% $ & $ 100.00|100.00\%\pm0.05|0.07\% $\\
+      4 leptons		& &\\[-2mm]
+                        & $ 100.00\%\pm0.02\% $ & $ 100.00\%\pm0.02\% $\\[-2mm]
+      paires		& &\\[-2mm]
+                        & $ 82.92\%\pm0.49\% $ & $ 82.87\%\pm0.49\% $\\[-2mm]
+      Cinématique	& &\\[-2mm]
+                        & $ 80.54\%\pm0.57\% $ & $ 80.66\%\pm0.57\% $\\[-2mm]
+      $ m_{12} $	& &\\[-2mm]
+                        & $ 90.52\%\pm0.47\% $ & $ 90.57\%\pm0.47\% $\\[-2mm]
+      $ m_{34} $	& &\\[-2mm]
+                        & $ 90.52\%\pm0.47\% $ & $ 90.57\%\pm0.47\% $\\[-2mm]
+      $ min[\Delta R] $	& &\\[-2mm]
+                        & $ 100.00\%\pm0.05\%|100.00\%\pm0.07\% $ & $ 100.00\%\pm0.05\%|100.00\%|0.07\% $\\[-2mm]
+      1 quadruplet	& &\\
       \hline
     \end{tabular}
 
@@ -576,13 +588,19 @@ Le tableau \ref{hsg2_eff1} montre les efficacités totales de reconstruction obte
       \hline
         Coupure & efficacité & efficacité & efficacité\\
       \hline
-      4 leptons		& $ 3.16\% \pm 0.06\% $ & $ 6.48\% \pm 0.09\% $ & $ 6.41\% \pm 0.09\% $\\
-      paires		& $ 100.00\% \pm 0.04\% $ & $ 100.00\% \pm 0.02\% $ & $ 100.00\% \pm 0.02\% $\\
-      Cinématique	& $ 98.42\% \pm 0.25\% $ & $ 97.76\% \pm 0.21\% $ & $ 97.87\% \pm 0.20\% $\\
-      $ m_{12} $	& $ 92.11\% \pm 0.54\% $ & $ 92.52\% \pm 0.37\% $ & $ 92.73\% \pm 0.37\% $\\
-      $ m_{34} $	& $ 85.98\% \pm 0.73\% $ & $ 85.03\% \pm 0.52\% $ & $ 85.08\% \pm 0.52\% $\\
-      $ min[\Delta R] $	& $ 99.95\% \pm 0.07\% $ & $ 98.97\% \pm 0.16\% $ & $ 99.01\% \pm 0.16\% $\\
-      1 quadruplet	& $ 100.00\% \pm 0.05\% $ & $ 100.00\% \pm 0.03\% $ & $ 100.00\% \pm 0.03\% $\\
+      4 leptons		& & &\\[-2mm]
+                        & $ 100.00\%\pm0.04\% $ & $ 100.00\%\pm0.02\% $ & $ 100.00\%\pm0.02\% $\\[-2mm]
+      paires		& & &\\[-2mm]
+                        & $ 98.42\%\pm0.25\% $ & $ 97.76\%\pm0.21\% $ & $ 97.87\%\pm0.20\% $\\[-2mm]
+      Cinématique	& & &\\[-2mm]
+                        & $ 92.11\%\pm0.54\% $ & $ 92.52\%\pm0.37\% $ & $ 92.73\%\pm0.37\% $\\[-2mm]
+      $ m_{12} $	& & &\\[-2mm]
+                        & $ 85.98\%\pm0.73\% $ & $ 85.03\%\pm0.52\% $ & $ 85.08\%\pm0.52\% $\\[-2mm]
+      $ m_{34} $	& & &\\[-2mm]
+                        & $ 99.95\%\pm0.07\% $ & $ 98.97\%\pm0.16\% $ & $ 99.01\%\pm0.16\% $\\[-2mm]
+      $ min[\Delta R] $	& & &\\[-2mm]
+                        & $ 100.00\%\pm0.05\% $ & $ 100.00\%\pm0.03\% $ & $ 100.00\%\pm0.03\% $\\[-2mm]
+      1 quadruplet	& & &\\
       \hline
     \end{tabular}
 
@@ -595,13 +613,19 @@ Le tableau \ref{hsg2_eff1} montre les efficacités totales de reconstruction obte
       \hline
         Coupure & efficacité & efficacité\\
       \hline
-      4 leptons		& $ 9.17\% \pm 0.10\% $ & $ 9.11\% \pm 0.10\% $\\
-      paires		& $ 100.00\% \pm 0.01\% $ & $ 100.00\% \pm 0.01\% $\\
-      Cinématique	& $ 93.35\% \pm 0.29\% $ & $ 93.37\% \pm 0.29\% $\\
-      $ m_{12} $	& $ 89.91\% \pm 0.36\% $ & $ 90.05\% \pm 0.36\% $\\
-      $ m_{34} $	& $ 86.41\% \pm 0.44\% $ & $ 86.48\% \pm 0.44\% $\\
-      $ min[\Delta R] $	& $ 99.55\% \pm 0.09\% $ & $ 99.51\% \pm 0.10\% $\\
-      1 quadruplet	& $ 100.00|100.00\% \pm 0.04|0.04\% $ & $ 100.00|100.00\% \pm 0.04|0.04\% $\\
+      4 leptons		& &\\[-2mm]
+                        & $ 100.00\%\pm0.01\% $ & $ 100.00\%\pm0.01\% $\\[-2mm]
+      paires		& &\\[-2mm]
+                        & $ 93.35\%\pm0.29\% $ & $ 93.37\%\pm0.29\% $\\[-2mm]
+      Cinématique	& &\\[-2mm]
+                        & $ 89.91\%\pm0.36\% $ & $ 90.05\%\pm0.36\% $\\[-2mm]
+      $ m_{12} $	& &\\[-2mm]
+                        & $ 86.41\%\pm0.44\% $ & $ 86.48\%\pm0.44\% $\\[-2mm]
+      $ m_{34} $	& &\\[-2mm]
+                        & $ 99.55\%\pm0.09\% $ & $ 99.51\%\pm0.10\% $\\[-2mm]
+      $ min[\Delta R] $	& &\\[-2mm]
+                        & $ 100.00\%\pm0.04\%|100.00\%\pm0.04\% $ & $ 100.00\%\pm0.04\%|100.00\%\pm0.04\% $\\[-2mm]
+      1 quadruplet	& &\\
       \hline
     \end{tabular}
 
@@ -619,13 +643,19 @@ Le tableau \ref{hsg2_eff1} montre les efficacités totales de reconstruction obte
       \hline
         Coupure & efficacité & efficacité & efficacité\\
       \hline
-      4 leptons		& $ 4.18\%\pm0.07\% $ & $ 7.40\%\pm0.09\% $ & $ 7.31\%\pm0.09\% $\\
-      paires		& $ 100.00\%\pm0.03\% $ & $ 100.00\%\pm0.02\% $ & $ 100.00\%\pm0.02\% $\\
-      Cinématique	& $ 99.79\%\pm0.08\% $ & $ 99.81\%\pm0.06\% $ & $ 99.79\%\pm0.06\% $\\
-      $ m_{12} $	& $ 99.55\%\pm0.12\% $ & $ 99.58\%\pm0.09\% $ & $ 99.52\%\pm0.09\% $\\
-      $ m_{34} $	& $ 97.65\%\pm0.26\% $ & $ 97.94\%\pm0.19\% $ & $ 97.90\%\pm0.19\% $\\
-      $ min[\Delta R] $	& $ 100.00\%\pm0.03\% $ & $ 99.60\%\pm0.08\% $ & $ 99.60\%\pm0.09\% $\\
-      1 quadruplet	& $ 100.00\%\pm0.03\% $ & $ 100.00\%\pm0.02\% $ & $ 100.00\%\pm0.02\% $\\
+      4 leptons		& & &\\[-2mm]
+                        & $ 100.00\%\pm0.03\% $ & $ 100.00\%\pm0.02\% $ & $ 100.00\%\pm0.02\% $\\[-2mm]
+      paires		& & &\\[-2mm]
+                        & $ 99.79\%\pm0.08\% $ & $ 99.81\%\pm0.06\% $ & $ 99.79\%\pm0.06\% $\\[-2mm]
+      Cinématique	& & &\\[-2mm]
+                        & $ 99.55\%\pm0.12\% $ & $ 99.58\%\pm0.09\% $ & $ 99.52\%\pm0.09\% $\\[-2mm]
+      $ m_{12} $	& & &\\[-2mm]
+                        & $ 97.65\%\pm0.26\% $ & $ 97.94\%\pm0.19\% $ & $ 97.90\%\pm0.19\% $\\[-2mm]
+      $ m_{34} $	& & &\\[-2mm]
+                        & $ 100.00\%\pm0.03\% $ & $ 99.60\%\pm0.08\% $ & $ 99.60\%\pm0.09\% $\\[-2mm]
+      $ min[\Delta R] $	& & &\\[-2mm]
+                        & $ 100.00\%\pm0.03\% $ & $ 100.00\%\pm0.02\% $ & $ 100.00\%\pm0.02\% $\\[-2mm]
+      1 quadruplet	& & &\\
       \hline
     \end{tabular}
 
@@ -638,13 +668,19 @@ Le tableau \ref{hsg2_eff1} montre les efficacités totales de reconstruction obte
       \hline
         Coupure & efficacité & efficacité\\
       \hline
-      4 leptons		& $ 11.32\%\pm0.11\% $ & $ 11.26\%\pm0.11\% $\\
-      paires		& $ 100.00\%\pm0.01\% $ & $ 100.00\%\pm0.01\% $\\
-      Cinématique	& $ 99.58\%\pm0.07\% $ & $ 99.52\%\pm0.07\% $\\
-      $ m_{12} $	& $ 99.15\%\pm0.10\% $ & $ 99.19\%\pm0.10\% $\\
-      $ m_{34} $	& $ 97.39\%\pm0.17\% $ & $ 97.34\%\pm0.17\% $\\
-      $ min[\Delta R] $	& $ 99.75\%\pm0.06\% $ & $ 99.76\%\pm0.05\% $\\
-      1 quadruplet	& $ 100.00|100.00\%\pm0.03|0.02\% $ & $ 100.00|100.00\%\pm0.03|0.02\% $\\
+      4 leptons		& &\\[-2mm]
+                        & $ 100.00\%\pm0.01\% $ & $ 100.00\%\pm0.01\% $\\[-2mm]
+      paires		& &\\[-2mm]
+                        & $ 99.58\%\pm0.07\% $ & $ 99.52\%\pm0.07\% $\\[-2mm]
+      Cinématique	& &\\[-2mm]
+                        & $ 99.15\%\pm0.10\% $ & $ 99.19\%\pm0.10\% $\\[-2mm]
+      $ m_{12} $	& &\\[-2mm]
+                        & $ 97.39\%\pm0.17\% $ & $ 97.34\%\pm0.17\% $\\[-2mm]
+      $ m_{34} $	& &\\[-2mm]
+                        & $ 99.75\%\pm0.06\% $ & $ 99.76\%\pm0.05\% $\\[-2mm]
+      $ min[\Delta R] $	& &\\[-2mm]
+                        & $ 100.00\%\pm0.03\%|100.00\%\pm|0.02\% $ & $ 100.00\%\pm0.03\%|100.00\%\pm|0.02\% $\\[-2mm]
+      1 quadruplet	& &\\
       \hline
     \end{tabular}
 
@@ -662,13 +698,19 @@ Le tableau \ref{hsg2_eff1} montre les efficacités totales de reconstruction obte
       \hline
         Coupure & efficacité & efficacité & efficacité\\
       \hline
-      4 leptons		& $ 4.07\%\pm0.05\% $ & $ 7.36\%\pm0.07\% $ & $ 7.36\%\pm0.07\% $\\
-      paires		& $ 100.00\%\pm0.02\% $ & $ 100.00\%\pm0.01\% $ & $ 100.00\%\pm0.01\% $\\
-      Cinématique	& $ 99.38\%\pm0.10\% $ & $ 98.71\%\pm0.11\% $ & $ 98.72\%\pm0.11\% $\\
-      $ m_{12} $	& $ 97.49\%\pm0.20\% $ & $ 97.59\%\pm0.15\% $ & $ 97.66\%\pm0.14\% $\\
-      $ m_{34} $	& $ 89.00\%\pm0.41\% $ & $ 86.87\%\pm0.33\% $ & $ 87.11\%\pm0.32\% $\\
-      $ min[\Delta R] $	& $ 100.00\%\pm0.02\% $ & $ 99.58\%\pm0.07\% $ & $ 99.63\%\pm0.06\% $\\
-      1 quadruplet	& $ 100.00\%\pm0.02\% $ & $ 100.00\%\pm0.01\% $ & $ 100.00\%\pm0.01\% $\\
+      4 leptons		& & &\\[-2mm]
+                        & $ 100.00\%\pm0.02\% $ & $ 100.00\%\pm0.01\% $ & $ 100.00\%\pm0.01\% $\\[-2mm]
+      paires		& & &\\[-2mm]
+                        & $ 99.38\%\pm0.10\% $ & $ 98.71\%\pm0.11\% $ & $ 98.72\%\pm0.11\% $\\[-2mm]
+      Cinématique	& & &\\[-2mm]
+                        & $ 97.49\%\pm0.20\% $ & $ 97.59\%\pm0.15\% $ & $ 97.66\%\pm0.14\% $\\[-2mm]
+      $ m_{12} $	& & &\\[-2mm]
+                        & $ 89.00\%\pm0.41\% $ & $ 86.87\%\pm0.33\% $ & $ 87.11\%\pm0.32\% $\\[-2mm]
+      $ m_{34} $	& & &\\[-2mm]
+                        & $ 100.00\%\pm0.02\% $ & $ 99.58\%\pm0.07\% $ & $ 99.63\%\pm0.06\% $\\[-2mm]
+      $ min[\Delta R] $	& & &\\[-2mm]
+                        & $ 100.00\%\pm0.02\% $ & $ 100.00\%\pm0.01\% $ & $ 100.00\%\pm0.01\% $\\[-2mm]
+      1 quadruplet	& & &\\
       \hline
     \end{tabular}
 
@@ -681,13 +723,19 @@ Le tableau \ref{hsg2_eff1} montre les efficacités totales de reconstruction obte
       \hline
         Coupure & efficacité & efficacité\\
       \hline
-      4 leptons		& $ 10.98\%\pm0.08\% $ & $ 10.97\%\pm0.08\% $\\
-      paires		& $ 100.00\%\pm0.01\% $ & $ 100.00\%\pm0.01\% $\\
-      Cinématique	& $ 96.39\%\pm0.15\% $ & $ 96.41\%\pm0.15\% $\\
-      $ m_{12} $	& $ 97.28\%\pm0.13\% $ & $ 97.30\%\pm0.13\% $\\
-      $ m_{34} $	& $ 88.20\%\pm0.26\% $ & $ 88.12\%\pm0.26\% $\\
-      $ min[\Delta R] $	& $ 99.78\%\pm0.04\% $ & $ 99.79\%\pm0.04\% $\\
-      1 quadruplet	& $ 100.00|100.00\%\pm0.02|0.01\% $ & $ 100.00|100.00\%\pm0.02|0.01\% $\\
+      4 leptons		& &\\[-2mm]
+                        & $ 100.00\%\pm0.01\% $ & $ 100.00\%\pm0.01\% $\\[-2mm]
+      paires		& &\\[-2mm]
+                        & $ 96.39\%\pm0.15\% $ & $ 96.41\%\pm0.15\% $\\[-2mm]
+      Cinématique	& &\\[-2mm]
+                        & $ 97.28\%\pm0.13\% $ & $ 97.30\%\pm0.13\% $\\[-2mm]
+      $ m_{12} $	& &\\[-2mm]
+                        & $ 88.20\%\pm0.26\% $ & $ 88.12\%\pm0.26\% $\\[-2mm]
+      $ m_{34} $	& &\\[-2mm]
+                        & $ 99.78\%\pm0.04\% $ & $ 99.79\%\pm0.04\% $\\[-2mm]
+      $ min[\Delta R] $	& &\\[-2mm]
+                        & $ 100.00\%\pm0.02\%|100.00\%\pm0.01\% $ & $ 100.00\%\pm0.02\%|100.00\%\pm0.01\% $\\[-2mm]
+      1 quadruplet	& &\\
       \hline
     \end{tabular}
 
@@ -728,9 +776,9 @@ La figure \ref{iso1} (a) montre la distribution de la variable etcone pour trois
   \begin{bigcenter}
 
   \begin{tabular}{cc}
-    \includegraphics[height=5.25cm, keepaspectratio]{phd_higgs/el_Zee_Zeebb_etcone}
+    \includegraphics[height=5.5cm, keepaspectratio]{phd_higgs/el_Zee_Zeebb_etcone}
     &
-    \includegraphics[height=5.25cm, keepaspectratio]{phd_higgs/el_Zee_Zeebb_etcone_eff}
+    \includegraphics[height=5.5cm, keepaspectratio]{phd_higgs/el_Zee_Zeebb_etcone_eff}
     \\
     (a) & (b)
   \end{tabular}
@@ -754,9 +802,9 @@ La figure \ref{iso2} (a) montre la distribution de la variable caloIso pour troi
   \begin{bigcenter}
 
   \begin{tabular}{cc}
-    \includegraphics[height=5.25cm, keepaspectratio]{phd_higgs/el_Zee_Zeebb_clIso}
+    \includegraphics[height=5.5cm, keepaspectratio]{phd_higgs/el_Zee_Zeebb_clIso}
     &
-    \includegraphics[height=5.25cm, keepaspectratio]{phd_higgs/el_Zee_Zeebb_clIso_eff}
+    \includegraphics[height=5.5cm, keepaspectratio]{phd_higgs/el_Zee_Zeebb_clIso_eff}
     \\
     (a) & (b)
   \end{tabular}
@@ -775,9 +823,9 @@ Lorsque de multiples électrons sont présents dans l'état final, une dégradation 
   \begin{bigcenter}
 
   \begin{tabular}{ccc}
-    \includegraphics[height=5.25cm, width=7.0cm]{phd_higgs/overlapping}
+    \includegraphics[height=5.535cm, width=7.25cm]{phd_higgs/overlapping}
     &&
-    \includegraphics[height=5.25cm, width=7.0cm]{phd_higgs/clIso}
+    \includegraphics[height=5.5cm, width=7.25cm]{phd_higgs/clIso}
     \\
     (a) && (b)
   \end{tabular}
@@ -791,7 +839,7 @@ Une nouvelle définition $ \textrm{etcone}_{corr}(X) $ des variables d'isolation 
   \textrm{$ \forall $ $ e_1 $ et $ e_2 $, si $ \Delta R_{e_1e_2}<X $}\left\{\begin{array}{ll} \textrm{etcone}_{corr}(X;e_1)\equiv\textrm{etcone}(X;e_1)-p_{T,e2} \\ \textrm{etcone}_{corr}(X;e_2)\equiv\textrm{etcone}(X;e_2)-p_{T,e1} \end{array}\right.
 \end{equation}
 
-Les améliorations introduites par cette correction ont été étudiées dans \cite{}. La figure \ref{iso3} (b) montre la réjection du signal $ Zb\bar{b} $\cite{} en fonction de l'efficacité du signal $ H\to4e $ pour une masse $ m_H=130\GeV $ avec et sans correction de recouvrement pour trois ouvertures différentes. La correction est intéressante pour les cônes de grande taille mais les effets sont plus réduits pour la variable etcone20.
+Les améliorations introduites par cette correction ont été étudiées dans \cite{}. La figure \ref{iso3} (b) montre la réjection du signal $ Zb\bar{b} $ en fonction de l'efficacité du signal $ H\to4e $ pour une masse $ m_H=130\GeV $ avec et sans correction de recouvrement pour trois ouvertures différentes\cite{Anastopoulos:1263107}. La correction est intéressante pour les cônes de grande taille mais les effets sont plus réduits pour la variable etcone20.
 
 \paragraph{Sensibilité à l'empilement}
 
@@ -799,7 +847,7 @@ L'empilement influe sur les variables d'isolation. Deux types de contribution so
 
 Plus un cône possède une grande ouverture, plus il sera sensible aux effets de l'empilement. Sachant qu'il y a environ 4 vertex primaires par événement dans les données 2011, il est nécessaire d'effectuer une étude avant de choisir une ouverture de cône. Nous allons montrer qu'il est possible d'effectuer une correction pour soustraire en partie les effets de l'empilement.
 
-\subparagraph{Étude (très) qualitative} Afin de comparer la sensibilité à l'empilement des variables etcone20 et etcone30, les probabilités cumulées ont été tracées en fonction du nombre de vertex primaires pour cinq jeux de simulations Monte-Carlo $ Zee $ présentant chacun une configuration différente de l'empilement : pas d'empilement, nombre moyen de vertex primaires $ \left<mu\right>=6\textrm{ ou }10 $ (qui n'était pas forcément représentatif des données où $ \left<mu\right>\approx5 $), intervalle de temps entre la collision entre deux paquets de protons $ bs=50ns\textrm{ ou }75ns $. Les résultats sont montrés sur les figures \ref{pileup1} et \ref{pileup2}.
+\subparagraph{Étude (très) qualitative} Afin de comparer la sensibilité à l'empilement des variables etcone20 et etcone30, les probabilités cumulées des deux variables ont été tracées pour des événements avec un nombre de vertex primaires $ 1<n_{vp}<15 $ pour cinq jeux de simulations Monte-Carlo $ Zee $ présentant chacun une configuration différente de l'empilement: pas d'empilement, nombre moyen de vertex primaires $ \left<mu\right>=6\textrm{ ou }10 $ (qui n'était pas forcément représentatif des données où $ \left<mu\right>\approx5 $), intervalle de temps entre la collision entre deux paquets de protons $ bs=50ns\textrm{ ou }75ns $. Les résultats sont montrés sur les figures \ref{pileup1} et \ref{pileup2}.
 
 \begin{figure}[!p]
   \begin{bigcenter}
@@ -834,7 +882,7 @@ Plus un cône possède une grande ouverture, plus il sera sensible aux effets de l
   \end{tabular}
 
   \end{bigcenter}
-  \caption{\label{pileup1}Distributions des probabilités cumulées de la variable etcone30 en fonction du nombre de vertex primaires pour cinq jeux de simulations Monte-Carlo $ Zee $ présentant chacun une configuration différente de l'empilement.}
+  \caption{\label{pileup1}Distributions des probabilités cumulées de la variable etcone30 pour des événements avec un nombre de vertex primaires $ 1<n_{vp}<15 $ pour cinq jeux de simulations Monte-Carlo $ Zee $ présentant chacun une configuration différente de l'empilement.}
 \end{figure}
 
 \begin{figure}[!p]
@@ -870,7 +918,7 @@ Plus un cône possède une grande ouverture, plus il sera sensible aux effets de l
   \end{tabular}
 
   \end{bigcenter}
-  \caption{\label{pileup2}Distributions des probabilités cumulées de la variable etcone20 en fonction du nombre de vertex primaires pour cinq jeux de simulations Monte-Carlo $ Zee $ présentant chacun une configuration différente de l'empilement.}
+  \caption{\label{pileup2}Distributions des probabilités cumulées de la variable etcone20 pour des événements avec un nombre de vertex primaires $ 1<n_{vp}<15 $ pour cinq jeux de simulations Monte-Carlo $ Zee $ présentant chacun une configuration différente de l'empilement.}
 \end{figure}
 
 \newpage
@@ -927,9 +975,9 @@ où $ \delta R=\sqrt{\left(\eta_{trace}-\eta_{trace\,objet}\right)^2+\left(\phi_{
   \begin{bigcenter}
 
   \begin{tabular}{cc}
-    \includegraphics[height=5.25cm, keepaspectratio]{phd_higgs/el_Zee_Zeebb_tkIso}
+    \includegraphics[height=5.5cm, keepaspectratio]{phd_higgs/el_Zee_Zeebb_tkIso}
     &
-    \includegraphics[height=5.25cm, keepaspectratio]{phd_higgs/el_Zee_Zeebb_tkIso_eff}
+    \includegraphics[height=5.5cm, keepaspectratio]{phd_higgs/el_Zee_Zeebb_tkIso_eff}
     \\
     (a) & (b)
   \end{tabular}
@@ -949,9 +997,9 @@ La figure \ref{pileup3} montre respectivement la distributions des probabilités 
   \begin{bigcenter}
 
   \begin{tabular}{ccc}
-    \includegraphics[height=4.9cm, keepaspectratio]{phd_higgs/cumul_proba_ptcone30}
+    \includegraphics[height=5.5cm, keepaspectratio]{phd_higgs/cumul_proba_ptcone30}
     &&
-    \includegraphics[height=4.9cm, keepaspectratio]{phd_higgs/cumul_proba_ptcone20}
+    \includegraphics[height=5.5cm, keepaspectratio]{phd_higgs/cumul_proba_ptcone20}
     \\
     (a) && (b)
   \end{tabular}
@@ -974,7 +1022,7 @@ Pour les bruits de fond irréductibles, les deux électrons de plus basse impulsio
   \begin{bigcenter}
 
 %  \begin{tabular}{cc}
-    \includegraphics[height=4.5cm, width=7.5cm]{phd_higgs/electron-d0sigd0}
+    \includegraphics[height=5.25cm, width=8.0cm]{phd_higgs/electron-d0sigd0}
 %    &
 %    \includegraphics[height=4.5cm, width=7.5cm]{phd_higgs/electron-effvsrej}
 %    \\
@@ -989,7 +1037,7 @@ Pour les bruits de fond irréductibles, les deux électrons de plus basse impulsio
   \begin{bigcenter}
 
 %  \begin{tabular}{cc}
-    \includegraphics[height=4.5cm, width=7.5cm]{phd_higgs/muon-d0sigd0}
+    \includegraphics[height=5.25cm, width=8.0cm]{phd_higgs/muon-d0sigd0}
 %    &
 %    \includegraphics[height=4.5cm, width=7.5cm]{phd_higgs/muon-effvsrej}
 %    \\
@@ -1037,9 +1085,9 @@ Les figures \ref{TandPeff1} montrent respectivement les efficacités des coupures
   \begin{bigcenter}
 
   \begin{tabular}{cc}
-    \includegraphics[height=5.25cm, keepaspectratio]{phd_higgs/mass_data}
+    \includegraphics[height=5.5cm, keepaspectratio]{phd_higgs/mass_data}
     &
-    \includegraphics[height=5.25cm, keepaspectratio]{phd_higgs/mass_mc}
+    \includegraphics[height=5.5cm, keepaspectratio]{phd_higgs/mass_mc}
     \\
     (a) & (b)
   \end{tabular}
@@ -1052,9 +1100,9 @@ Les figures \ref{TandPeff1} montrent respectivement les efficacités des coupures
   \begin{bigcenter}
 
   \begin{tabular}{cc}
-    \includegraphics[height=5.25cm, keepaspectratio]{phd_higgs/eff_pt_data}
+    \includegraphics[height=5.5cm, keepaspectratio]{phd_higgs/eff_pt_data}
     &
-    \includegraphics[height=5.25cm, keepaspectratio]{phd_higgs/eff_pt_mc}
+    \includegraphics[height=5.5cm, keepaspectratio]{phd_higgs/eff_pt_mc}
     \\
     (a) & (b)
   \end{tabular}
@@ -1065,7 +1113,7 @@ Les figures \ref{TandPeff1} montrent respectivement les efficacités des coupures
 
 \begin{figure}[!p]
   \begin{bigcenter}
-    \includegraphics[height=5.25cm, keepaspectratio]{phd_higgs/eff_pt_ratio}
+    \includegraphics[height=5.5cm, keepaspectratio]{phd_higgs/eff_pt_ratio}
   \end{bigcenter}
   \caption{\label{TandPeff2}Rapport entre les données et la simulation Monte-Carlo des efficacités \emph{Tag \& Probe} des coupures d'isolation et de significance du paramètre d'impact.}
 \end{figure}
@@ -1168,9 +1216,9 @@ Remarque : Il est difficile d'étudier la classe $ 7\GeV-15\GeV $. En effet, il f
   \begin{bigcenter}
 
   \begin{tabular}{cc}
-    \includegraphics[height=5.25cm, keepaspectratio]{phd_higgs/mass_data_before}
+    \includegraphics[height=5.3cm, keepaspectratio]{phd_higgs/mass_data_before}
     &
-    \includegraphics[height=5.25cm, keepaspectratio]{phd_higgs/eff_pt_vilain}
+    \includegraphics[height=5.3cm, keepaspectratio]{phd_higgs/eff_pt_vilain}
     \\
     (a) & (b)
   \end{tabular}
@@ -1234,38 +1282,29 @@ Les figures \ref{efff_muons1} (a), (b), (c) et (d) montrent respectivement les e
 
 \subsubsection{Distributions de masse invariante}
 
-La figure \ref{mZ_MC1} (resp. \ref{mZ_MC2}) montre les distributions de masse invariante $ m_{12} $ (a) et $ m_{34} $ (b) pour des candidats Higgs de masse $ m_H=150\GeV $ (resp. $ m_H=480\GeV $) après application de toutes les coupures de sélection et de réjection du bruit de fond réductible. Dans le premier cas, il y a un boson $ Z $ sur couche de masse et un boson $ Z $ hors couche de masse. La coupure à $ 76\GeV $ de la distribution $ m_{12} $ provient de la condition $ |m_{12}-m_{Z,PDG}|<15\GeV $. La coupure à $ 30\GeV $ de la distribution $ m_{34} $ provient de la condition $ m_{34}>m_{seuil}(\left<m_{4l}\right>=150\GeV) $ (voir tableau \ref{m34cut}). Dans le second cas, les deux bosons $ Z $ sont sur couche de masse. La distribution $ m_{12} $ est plus étroite que précédemment car les leptons sont de plus haute énergie et la distribution $ m_{34} $ est formée des candidats $ Z $ tels que $ |m_{12}-m_{Z,PDG}|<|m_{34}-m_{Z,PDG}| $. C'est pourquoi les largeurs sont différentes $ \sigma_{12}<\sigma_{34} $.
+Les figures \ref{mZ_MC} (a) et (b) (resp. \ref{mZ_MC} (c) et (d)) montrent les distributions de masse invariante $ m_{12} $ (a) et $ m_{34} $ (b) pour des candidats Higgs de masse $ m_H=150\GeV $ (resp. $ m_H=480\GeV $) après application de toutes les coupures de sélection et de réjection du bruit de fond réductible. Dans le premier cas, il y a un boson $ Z $ sur couche de masse et un boson $ Z $ hors couche de masse. La coupure à $ 76\GeV $ de la distribution $ m_{12} $ provient de la condition $ |m_{12}-m_{Z,PDG}|<15\GeV $. La coupure à $ 30\GeV $ de la distribution $ m_{34} $ provient de la condition $ m_{34}>m_{seuil}(\left<m_{4l}\right>=150\GeV) $ (voir tableau \ref{m34cut}). Dans le second cas, les deux bosons $ Z $ sont sur couche de masse. La distribution $ m_{12} $ est plus étroite que précédemment car les leptons sont de plus haute énergie et la distribution $ m_{34} $ est formée des candidats $ Z $ tels que $ |m_{12}-m_{Z,PDG}|<|m_{34}-m_{Z,PDG}| $. C'est pourquoi les largeurs sont différentes $ \sigma_{12}<\sigma_{34} $.\\
 
-La figure \ref{mH_MC} montre les distributions de masse invariante $ m_H $ pour quatre échantillons de signaux $ m_H=130\GeV $, $ m_H=150\GeV $, $ m_H=220\GeV $ et  $ m_H=480\GeV $ et pour les bruits de fond. Comme attendu, c'est le bruit de fond irréductible $ ZZ $ qui domine largement. Les significances statistiques $ S/\sqrt{B} $ sont respectivement : $ 1.1 $, $ 1.6 $ et $ 1.8 $.
-
-\begin{figure}[!h]
-  \begin{bigcenter}
-
-  \begin{tabular}{cc}
-    \includegraphics[height=5.25cm, keepaspectratio]{phd_higgs/mZ12_150}
-    &
-    \includegraphics[height=5.25cm, keepaspectratio]{phd_higgs/mZ34_150}
-    \\
-    (a) & (b)
-  \end{tabular}
-
-  \end{bigcenter}
-  \caption{\label{mZ_MC1}Distributions de masse invariante $ m_{12} $ (a) et $ m_{34} $ (b) pour des candidats Higgs de masse $ m_H=150\GeV $. Normalisation pour une luminosité de $ 1.4fb^{-1} $.}
-\end{figure}
+La figures \ref{mH_MC1} et \ref{mH_MC2} montrent les distributions de masse invariante $ m_H $ pour quatre échantillons de signaux $ m_H=130\GeV $, $ m_H=150\GeV $, $ m_H=220\GeV $ et  $ m_H=480\GeV $ et pour les bruits de fond. Le nombre de candidats est renormalisé à une luminosité intégrée de $ 2.48fb^{-1} $. Comme attendu, c'est le bruit de fond irréductible $ ZZ $ qui domine largement. Les significances statistiques $ S/\sqrt{B} $ sont respectivement : $ 1.1 $, $ 1.6 $ et $ 1.8 $.
 
 \begin{figure}[!h]
   \begin{bigcenter}
 
   \begin{tabular}{cc}
-    \includegraphics[height=5.25cm, keepaspectratio]{phd_higgs/mZ12_480}
+    \includegraphics[height=5.5cm, keepaspectratio]{phd_higgs/mZ12_150}
     &
-    \includegraphics[height=5.25cm, keepaspectratio]{phd_higgs/mZ34_480}
+    \includegraphics[height=5.5cm, keepaspectratio]{phd_higgs/mZ34_150}
     \\
     (a) & (b)
+    \\
+    \includegraphics[height=5.5cm, keepaspectratio]{phd_higgs/mZ12_480}
+    &
+    \includegraphics[height=5.5cm, keepaspectratio]{phd_higgs/mZ34_480}
+    \\
+    (c) & (d)
   \end{tabular}
 
   \end{bigcenter}
-  \caption{\label{mZ_MC2}Distributions de masse invariante $ m_{12} $ (a) et $ m_{34} $ (b) pour des candidats Higgs de masse $ m_H=220\GeV $. Normalisation pour une luminosité de $ 1.4fb^{-1} $.}
+  \caption{\label{mZ_MC}Distributions de masse invariante $ m_{12} $ (a) et $ m_{34} $ (b) (resp. $ m_{12} $ (c) et $ m_{34} $ (d)) pour des candidats Higgs de masse $ m_H=150\GeV $ (resp. $ m_H=220\GeV $). Normalisation pour une luminosité de $ 1.4fb^{-1} $.}
 \end{figure}
 
 Nous allons maintenant étudier les résultats obtenus avec les données 2011.
@@ -1274,21 +1313,21 @@ Nous allons maintenant étudier les résultats obtenus avec les données 2011.
   \begin{bigcenter}
     \includegraphics[height=7.0cm, keepaspectratio]{phd_higgs/mH_MC}
   \end{bigcenter}
-  \caption{\label{mH_MC}Distribution de masse invariante $ m_H $ pour trois échantillons de signaux $ m_H=130\GeV $, $ m_H=150\GeV $ et $ m_H=220\GeV $ et pour les bruits de fond (échelle linéaire). Normalisation pour une luminosité de $ 2.48fb^{-1} $.}
+  \caption{\label{mH_MC1}Distribution de masse invariante $ m_H $ pour trois échantillons de signaux $ m_H=130\GeV $, $ m_H=150\GeV $ et $ m_H=220\GeV $ et pour les bruits de fond (échelle linéaire). Normalisation pour une luminosité de $ 2.48fb^{-1} $.}
 \end{figure}
 
 \begin{figure}[!p]
   \begin{bigcenter}
     \includegraphics[height=7.0cm, keepaspectratio]{phd_higgs/mH_MC_log}
   \end{bigcenter}
-  \caption{\label{mH_MC}Distribution de masse invariante $ m_H $ pour trois échantillons de signaux $ m_H=130\GeV $, $ m_H=150\GeV $ et $ m_H=220\GeV $ et pour les bruits de fond (échelle logarithmique). Normalisation pour une luminosité de $ 2.48fb^{-1} $.}
+  \caption{\label{mH_MC2}Distribution de masse invariante $ m_H $ pour trois échantillons de signaux $ m_H=130\GeV $, $ m_H=150\GeV $ et $ m_H=220\GeV $ et pour les bruits de fond (échelle logarithmique). Normalisation pour une luminosité de $ 2.48fb^{-1} $.}
 \end{figure}
 
 \clearpage
 
 \section{Résultats à $ \int\mathscr{L}=1.96-2.28fb^{-1} $}
 
-Dans cette section, nous commençons par montrer les résultats obtenus mi-septembre 2011 par le groupe $ H\to ZZ^{(*)}\to4l $ du Cern. Le tableau \ref{attendu}\cite{} montre le nombre de candidats attendus et observés pour les canaux $ H\to4\mu $, $ H\to2e2\mu $ et $ H\to4e $ pour les données et la simulation. Les candidats sont séparés en une région de faible masses, $ m_{4l}<180\GeV $ et une région de haute masses $ m_{4l}>180\GeV $. Les erreurs systématiques\cite{} sont également indiquées. Il n'existe aucun excès significatif de candidats $ ZZ^{(*)}\to4l $.
+Dans cette section, nous commençons par présenter les résultats obtenus mi-septembre 2011 par le groupe $ H\to ZZ^{(*)}\to4l $ du Cern. Le tableau \ref{attendu} montre\cite{Aad:1385569} le nombre de candidats attendus pour la simulation Monte-Carlo et les 27 candidats observés pour les données dans les canaux $ H\to4\mu $, $ H\to2e2\mu $ et $ H\to4e $. Les candidats sont séparés en une région de faible masses, $ m_{4l}<180\GeV $ et une région de haute masses $ m_{4l}>180\GeV $. Les erreurs systématiques\cite{Aad:1385569} sont également indiquées. Il n'existe aucun excès significatif.
 
 \begin{table}[!h]
   \begin{bigcenter}
@@ -1320,22 +1359,22 @@ Dans cette section, nous commençons par montrer les résultats obtenus mi-septemb
   \caption{\label{attendu}Nombre de candidats attendus et observés avec leur erreur systématique\cite{} pour les bruit de fond, sept masses du boson de Higgs et nombre de candidats observés pour une luminosité intégrée de $ 2fb^{-1} $. Les candidats sont séparés en une région de faible masses, $ m_{4l}<180\GeV $ et une région de haute masses $ m_{4l}>180\GeV $.}
 \end{table}
 
-La figure \ref{higgs_massdistrib}\cite{} montre la distribution de masse invariante des candidats $ H\to ZZ^{(*)}\to4l $ pour les données 2011 et pour la simulation Monte-Carlo. Avec une luminosité supérieure à $ 2fm^{-1} $, il est possible d'exclure des régions de masse. La figure \ref{higgs_limites}\cite{} montre les limites d'exclusion à $ 95\% $ de niveau de confiance du boson de Higgs attendues et observées sur la section efficace du boson de Higgs du modèle standard par rapport à la section efficace totale du modèle standard en fonction de la masse du boson de Higgs. Nous pouvons constater que la sensibilité est suffisante pour exclure les régions de masse de $ 190\GeV $ à $ 200\GeV $ et de $ 214\GeV $ à $ 226\GeV $.\\
+La figure \ref{higgs_massdistrib} montre\cite{Aad:1385569} la distribution de masse invariante des candidats $ H\to ZZ^{(*)}\to4l $ pour les données 2011 et pour la simulation Monte-Carlo. Avec une luminosité supérieure à $ 2fm^{-1} $, il est possible d'exclure des régions de masse. La figure \ref{higgs_limites}\cite{Aad:1385569} montre les limites d'exclusion à $ 95\% $ de niveau de confiance du boson de Higgs attendues et observées sur la section efficace du boson de Higgs du modèle standard par rapport à la section efficace totale du modèle standard en fonction de la masse du boson de Higgs. Nous pouvons constater que la sensibilité est suffisante pour exclure les régions de masse de $ 190\GeV $ à $ 200\GeV $ et de $ 214\GeV $ à $ 226\GeV $.\\
 
-Je vais maintenant montrer les résultats que j'ai obtenu avec la période K complète, ce qui implique un gain en luminosité intégrée d'environ $ 100pb^{-1} $. Il y a deux candidats Higgs supplémentaires. La figure \ref{moi1} montre les distributions d'impulsion transverse (a) et de pseudo-rapidité (b) des leptons issus des candidats Higgs. La figure \ref{moi2} (b) montre la carte des masses invariantes $ m_{12} $ des paires de primaires en fonction des masses invariantes $ m_{23} $ des paires de secondaires. La figure \ref{moi3} montre la distribution de masse invariante des paires de primaires ($ m_{12} $) (a) et des paires secondaires ($ m_{34} $) (b). Les données et la simulation Monte-Carlo sont en accord. Finalement, la figure \ref{moi4} montre la distribution de masse invariante pour les candidats $ H\to ZZ^{(*)}\to4l $ dans les données 2011 pour les données et pour la simulation Monte-Carlo. Il n'existe aucun excès significatif de candidats $ ZZ^{(*)}\to4l $.\\
+Je vais maintenant montrer les résultats que j'ai obtenu avec la période K complète, ce qui introduit un gain en luminosité intégrée d'environ $ 100pb^{-1} $. Il y a deux candidats Higgs supplémentaires. La figure \ref{moi1} montre les distributions d'impulsion transverse (a) et de pseudo-rapidité (b) des leptons issus des candidats Higgs. La figure \ref{moi2} (b) montre la carte des masses invariantes $ m_{12} $ des paires de primaires en fonction des masses invariantes $ m_{23} $ des paires de secondaires. La figure \ref{moi3} montre la distribution de masse invariante des paires de primaires ($ m_{12} $) (a) et des paires secondaires ($ m_{34} $) (b). Les données et la simulation Monte-Carlo sont en accord. Finalement, la figure \ref{moi4} montre la distribution de masse invariante pour les candidats $ H\to ZZ^{(*)}\to4l $ dans les données 2011 pour les données et pour la simulation Monte-Carlo. Il n'existe aucun excès significatif.\\
 
 Les figures \ref{higgs_event1} et \ref{higgs_event2} montrent respectivement une visualisation d'un candidat $ H\to4\mu $ et d'un candidat $ H\to4e $. Ces résultats ont été obtenus à partir des coupures de sélection présentées précédemment.
 
 \begin{figure}[!p]
   \begin{bigcenter}
-    \includegraphics[height=8.25cm, keepaspectratio]{phd_higgs/HSG2/masse_H}
+    \includegraphics[height=9.0cm, keepaspectratio]{phd_higgs/HSG2/masse_H}
   \end{bigcenter}
   \caption{\label{higgs_massdistrib}Distribution de masse invariante des candidats $ H\to ZZ^{(*)}\to4l $ pour les données 2011 et pour la simulation Monte-Carlo.}
 \end{figure}
 
 \begin{figure}[!p]
   \begin{bigcenter}
-    \includegraphics[height=8.25cm, keepaspectratio]{phd_higgs/HSG2/limites-1}
+    \includegraphics[height=9.0cm, keepaspectratio]{phd_higgs/HSG2/limites-1}
   \end{bigcenter}
   \caption{\label{higgs_limites}Limites d'exclusion à $ 95\% $ de niveau de confiance du boson de Higgs attendues et observées sur la section efficace du boson de Higgs du modèle standard par rapport à la section efficace totale du modèle standard en fonction de la masse du boson de Higgs.}
 \end{figure}
@@ -1436,9 +1475,9 @@ Le tableau \ref{rates_muenus} montre les principales voies de déclenchement élec
   \caption{\label{rates_muenus}Principales voies de déclenchement électroniques disponibles, sans \emph{prescale}, ainsi que leur fréquence.}
 \end{table}
 
-\vspace{0.5cm}
+\vspace{0.25cm}
 
-Nous allons présenter quelques pistes d'optimisations du choix de la voie de déclenchement électronique en se basant sur la simulation Monte-Carlo. La figure \ref{trig_eff1} (a) montre l'efficacité de reconstruction et de sélection totale pour le canal $ H\to4e $ pour les principales voies de déclenchement. La figure \ref{trig_eff1} (b) montre la perte d'efficacité de reconstruction et de sélection totale pour le canal $ H\to4e $ relative à EF\_e20\_medium pour les principales voies de déclenchement. Les voies EF\_e22\_medium++ et EF\_2e15\_medium ne sont pas implémentées dans les simulations Monte-Carlo c'est pourquoi elles ont été simulées.
+Nous allons présenter quelques pistes d'optimisations du choix de la voie de déclenchement électronique en se basant sur la simulation Monte-Carlo. La figure \ref{trig_eff1} (a) montre l'efficacité de reconstruction et de sélection totale pour le canal $ H\to4e $ pour les principales voies de déclenchement. La figure \ref{trig_eff1} (b) montre la perte d'efficacité de reconstruction et de sélection totale pour le canal $ H\to4e $ relative à EF\_e20\_medium pour les principales voies de déclenchement. Les voies EF\_e22\_medium++ (également noté EF\_e22\_medium1) et EF\_2e15\_medium ne sont pas implémentées dans les simulations Monte-Carlo c'est pourquoi elles ont été simulées.
 
 Nous remarquons que les six premières classes des histogrammes présentent des efficacités à peu près similaires à l'exception de EF\_e22\_medium++ qui entraine une perte d'efficacité d'environ $ 9\% $. L'observation la plus importante est que les voies EF\_2e12\_medium et EF\_2e15\_medium peuvent être utilisées à la place de EF\_e20\_medium sans perte significative d'efficacité. Comme les plateaux d'efficacité de ces deux voies sont respectivement atteints à $ \sim15\GeV $ et $ \sim18\GeV $, il est alors envisageable de diminuer les coupure en énergie transverse de $ 20\GeV $ (voir section \ref{higgs_event_selection}) à $ 15\GeV $ ou $ 18\GeV $. Nous remarquons à titre indicatif que la voie photonique EF\_2g15\_loose donne une efficacité proche de EF\_e22\_medium, elle pourrait servir de grain à la simulation d'une voie électronique avec critères lâches (\emph{loose}+trace+Z reconstruit par exemple).
 
@@ -1446,9 +1485,9 @@ Nous remarquons que les six premières classes des histogrammes présentent des ef
   \begin{bigcenter}
 
   \begin{tabular}{cc}
-    \includegraphics[height=4.5cm, width=7.5cm]{phd_higgs/4e_1}
+    \includegraphics[height=5.5cm, keepaspectratio]{phd_higgs/4e_1}
     &
-    \includegraphics[height=4.5cm, width=7.5cm]{phd_higgs/4e_2}
+    \includegraphics[height=5.5cm, keepaspectratio]{phd_higgs/4e_2}
     \\
     (a) & (b)
   \end{tabular}
@@ -1465,9 +1504,9 @@ Le figure \ref{trig_eff2} (a) montre l'efficacité de reconstruction et de sélect
   \begin{bigcenter}
 
   \begin{tabular}{cc}
-    \includegraphics[height=4.5cm, width=7.5cm]{phd_higgs/4mu_1}
+    \includegraphics[height=5.5cm, keepaspectratio]{phd_higgs/4mu_1}
     &
-    \includegraphics[height=4.5cm, width=7.5cm]{phd_higgs/4mu_2}
+    \includegraphics[height=5.5cm, keepaspectratio]{phd_higgs/4mu_2}
     \\
     (a) & (b)
   \end{tabular}
@@ -1486,9 +1525,9 @@ Une façon de maximiser la statistique avec les voies de déclenchement disponible
   \begin{bigcenter}
 
   \begin{tabular}{cc}
-    \includegraphics[height=4.5cm, width=7.5cm]{phd_higgs/4e_1_OPT}
+    \includegraphics[height=5.5cm, keepaspectratio]{phd_higgs/4e_1_OPT}
     &
-    \includegraphics[height=4.5cm, width=7.5cm]{phd_higgs/4e_2_OPT}
+    \includegraphics[height=5.5cm, keepaspectratio]{phd_higgs/4e_2_OPT}
     \\
     (a) & (b)
   \end{tabular}
@@ -1511,9 +1550,9 @@ Une façon de maximiser la statistique avec les voies de déclenchement disponible
   \begin{bigcenter}
 
   \begin{tabular}{cc}
-    \includegraphics[height=4.5cm, width=7.5cm]{phd_higgs/2e2mu_1_OPT}
+    \includegraphics[height=5.5cm, keepaspectratio]{phd_higgs/2e2mu_1_OPT}
     &
-    \includegraphics[height=4.5cm, width=7.5cm]{phd_higgs/2e2mu_2_OPT}
+    \includegraphics[height=5.5cm, keepaspectratio]{phd_higgs/2e2mu_2_OPT}
     \\
     (a) & (b)
     \\
@@ -1535,7 +1574,7 @@ Une façon de maximiser la statistique avec les voies de déclenchement disponible
 
 \paragraph{Résultats par canal}
 
-Plusieurs canaux de désintégration du boson de Higgs ont été étudiés après du détecteur Atlas. La figure \ref{allHiggs1}\cite{} montre la distribution de masse invariante des candidats Higgs pour les canaux : $ H\to\gamma\gamma $ (a), $ H\to ZZ^{(*)}\to l^+l^-l^+l^- $ (b), $ WH\to l\nu b\bar{b} $ (c), $ ZH\to l^+l^- b\bar{b} $ (d), $ H\to\tau\tau\to l\tau_{had}3\nu $ (e) et $ H\to\tau\tau\to l^+l^- $ (f). La figure \ref{allHiggs2}\cite{} montre la distribution de masse invariante transverse des candidats Higgs pour les canaux : $ H\to WW^{(*)}\to l^+\nu l^-\bar{\nu} $ avec zero jet (a) ou un jet (b), la distribution de masse invariante des candidats Higgs pour les canaux : $ H\to ZZ^{(*)}\to l^+l^-q\bar{q} $ (c), $ H\to ZZ^{(*)}\to l^+l^-b\bar{b} $ (d) et enfin la distribution de masse invariante transverse des candidats Higgs pour le canal : $ H\to ZZ^{(*)}\to l^+l^-\nu\bar{\nu} $ (e). Les luminosités respectives utilisées pour chaque analyse sont indiquées sur les distributions.
+Plusieurs canaux de désintégration du boson de Higgs ont été étudiés après du détecteur Atlas. La figure \ref{allHiggs1}\cite{Gross:1374945} montre la distribution de masse invariante des candidats Higgs pour les canaux : $ H\to\gamma\gamma $ (a), $ H\to ZZ^{(*)}\to l^+l^-l^+l^- $ (b), $ WH\to l\nu b\bar{b} $ (c), $ ZH\to l^+l^- b\bar{b} $ (d), $ H\to\tau\tau\to l\tau_{had}3\nu $ (e) et $ H\to\tau\tau\to l^+l^- $ (f). La figure \ref{allHiggs2}\cite{} montre la distribution de masse invariante transverse des candidats Higgs pour les canaux : $ H\to WW^{(*)}\to l^+\nu l^-\bar{\nu} $ avec zero jet (a) ou un jet (b), la distribution de masse invariante des candidats Higgs pour les canaux : $ H\to ZZ^{(*)}\to l^+l^-q\bar{q} $ (c), $ H\to ZZ^{(*)}\to l^+l^-b\bar{b} $ (d) et enfin la distribution de masse invariante transverse des candidats Higgs pour le canal : $ H\to ZZ^{(*)}\to l^+l^-\nu\bar{\nu} $ (e). Les luminosités respectives utilisées pour chaque analyse sont indiquées sur les distributions.
 
 Le tableau \ref{allHiggs3} récapitule le nombre de candidats attendus et observés pour les bruits de fond, pour les signaux et pour le nombre de candidats observés dans les canaux utilisés dans l'étude de combinaison.
 
@@ -1545,12 +1584,11 @@ Nous avions montré dans le chapitre \ref{chapitre_ms} que la région de masse de 
 
 \paragraph{Limites d'exclusion}
 
-La figure \ref{allHiggs4} montre\cite{} la limites d'exclusion à $ 95\% $ de niveau de confiance du boson de Higgs attendues et observées sur la section efficace du boson de Higgs du modèle standard par rapport à la section efficace totale du modèle standard en fonction de la masse du boson de Higgs. Les régions de masse de $ 146\GeV $ à $ 232\GeV $, de $ 256\GeV $ à $ 282\GeV $ et de $ 296\GeV $ à $ 466\GeV $ sont exclues à $ 95\% $ de niveau de confiance via les canaux $ H\to WW^{(*)}\to l^+\nu l^-\bar{\nu} $, $ H\to ZZ^{(*)}\to l^+l^-l^+l^- $ et $ H\to ZZ^{(*)}\to l^+l^-\nu\bar{\nu} $. Conformément aux rapports d'embranchement montrées au chapitre \ref{chapitre_atlas}, figure \ref{rapport_branchement_higgs}, à basse masse, c'est le canal $ H\to WW^{(*)}\to l^+\nu l^-\bar{\nu} $ qui contribue à l'exclusion. Autour de $ 220\GeV $, c'est le canal $ H\to ZZ^{(*)}\to l^+l^-l^+l^- $ qui contribue à l'exclusion et à haute masse, c'est le $ H\to WW^{(*)}\to l^+\nu l^-\bar{\nu} $ qui contribue à l'exclusion.\\
+La figure \ref{allHiggs4} (a) montre\cite{Gross:1374945} la limites d'exclusion à $ 95\% $ de niveau de confiance du boson de Higgs attendues et observées sur la section efficace du boson de Higgs du modèle standard par rapport à la section efficace totale du modèle standard en fonction de la masse du boson de Higgs. Les régions de masse de $ 146\GeV $ à $ 232\GeV $, de $ 256\GeV $ à $ 282\GeV $ et de $ 296\GeV $ à $ 466\GeV $ sont exclues à $ 95\% $ de niveau de confiance via les canaux $ H\to WW^{(*)}\to l^+\nu l^-\bar{\nu} $, $ H\to ZZ^{(*)}\to l^+l^-l^+l^- $ et $ H\to ZZ^{(*)}\to l^+l^-\nu\bar{\nu} $. Conformément aux rapports d'embranchement montrées au chapitre \ref{chapitre_atlas}, figure \ref{rapport_branchement_higgs}, à basse masse, c'est le canal $ H\to WW^{(*)}\to l^+\nu l^-\bar{\nu} $ qui contribue à l'exclusion. Autour de $ 220\GeV $, c'est le canal $ H\to ZZ^{(*)}\to l^+l^-l^+l^- $ qui contribue à l'exclusion et à haute masse, c'est le $ H\to WW^{(*)}\to l^+\nu l^-\bar{\nu} $ qui contribue à l'exclusion.
 
-A titre de comparaison, nous nous intéressons aux résultats du détecteur CMS. La figure \ref{allHiggs5} montre\cite{} la limites d'exclusion à $ 95\% $ de niveau de confiance du boson de Higgs attendues et observées sur la section efficace du boson de Higgs du modèle standard par rapport à la section efficace totale du modèle standard en fonction de la masse du boson de Higgs. Les régions de masse de $ 145\GeV $ à $ 216\GeV $, de $ 226\GeV $ à $ 288\GeV $ et $ 310\GeV $ à $ 400\GeV $ sont exclues à $ 95\% $ de niveau de confiance. Ces résultats sont prochent de ceux obtenus avec le déteteur Atlas. 
+A titre de comparaison, nous nous intéressons aux résultats du détecteur CMS. La figure \ref{allHiggs4} (b) montre\cite{CMS-PAS-HIG-11-022} la limites d'exclusion à $ 95\% $ de niveau de confiance du boson de Higgs attendues et observées sur la section efficace du boson de Higgs du modèle standard par rapport à la section efficace totale du modèle standard en fonction de la masse du boson de Higgs. Les régions de masse de $ 145\GeV $ à $ 216\GeV $, de $ 226\GeV $ à $ 288\GeV $ et $ 310\GeV $ à $ 400\GeV $ sont exclues à $ 95\% $ de niveau de confiance. Ces résultats sont prochent de ceux obtenus avec le déteteur Atlas. 
 
-
-\begin{figure}[!p]
+\begin{figure}[!ht]
   \begin{bigcenter}
 
   \begin{tabular}{cc}
@@ -1604,26 +1642,31 @@ A titre de comparaison, nous nous intéressons aux résultats du détecteur CMS. La
 
 \begin{figure}[!ht]
   \begin{bigcenter}
-    \includegraphics[width=0.85\linewidth]{phd_higgs/higgsatlascmb}
+    \includegraphics[width=0.85\linewidth]{phd_higgs/higgsatlascmb}\\
   \end{bigcenter}
   \caption{\label{allHiggs3}Nombre de candidats attendus et observés pour les bruits de fond, pour les signaux et pour le nombre de candidats observés dans les canaux utilisés dans l'étude de combinaison}
 \end{figure}
 
 \begin{figure}[!p]
   \begin{bigcenter}
+
+  \begin{tabular}{c}
     \includegraphics[width=0.75\linewidth]{phd_higgs/limite}
-  \end{bigcenter}
-  \caption{\label{allHiggs4}Détecteur Atlas : limites d'exclusion à $ 95\% $ de niveau de confiance du boson de Higgs attendues et observées sur la section efficace du boson de Higgs du modèle standard par rapport à la section efficace totale du modèle standard en fonction de la masse du boson de Higgs.}
-\end{figure}
-
-\begin{figure}[!p]
-  \begin{bigcenter}
+    \\
+    (a)
+    \\
+    \vspace{1.0cm}
+    \\
     \includegraphics[width=0.75\linewidth]{phd_higgs/limite_cms}
+    \\
+    (b)
+  \end{tabular}
+
   \end{bigcenter}
-  \caption{\label{allHiggs5}Détecteur CMS : limites d'exclusion à $ 95\% $ de niveau de confiance du boson de Higgs attendues et observées sur la section efficace du boson de Higgs du modèle standard par rapport à la section efficace totale du modèle standard en fonction de la masse du boson de Higgs.}
+  \caption{\label{allHiggs4}Limites d'exclusion à $ 95\% $ de niveau de confiance du boson de Higgs attendues et observées sur la section efficace du boson de Higgs du modèle standard par rapport à la section efficace totale du modèle standard en fonction de la masse du boson de Higgs. Détecteur Atlas (a), détecteur CMS (b).}
 \end{figure}
 
-\newpage
+\clearpage
 
 \section{Conclusion}
 
@@ -1633,7 +1676,7 @@ Il a été possible d'obtenir un total de $ 29 $ candidats Higgs ($ 8 $ pour le ca
 
 Nous avons montré les résultats combinés obtenus auprès du détecteur Atlas pour les principaux canaux $ H\to\gamma\gamma $, $ H\to ZZ^{(*)}\to l^+l^-l^+l^- $, $ WH\to l\nu b\bar{b} $, $ ZH\to l^+l^- b\bar{b} $, $ H\to\tau\tau\to l\tau_{had}3\nu $ et $ H\to\tau\tau\to l^+l^- $. Un excès de candidats est observé à faible masse ($ \sim120\GeV $) avec une significance statistique d'approximativement deux déviations standards au dessus du bruit de fond attendu pour le modèle standard. Une telle fluctuation statistique sur tout le domaine de masse de recherche du boson de Higgs est hautement probable. Les régions de masse de $ 146\GeV $ à $ 232\GeV $, de $ 256\GeV $ à $ 282\GeV $ et de $ 296\GeV $ à $ 466\GeV $ sont exclues à $ 95\% $ de niveau de confiance.
 
-Pour finir, la figure \ref{higgs_potentiel}\cite{} montre le potentiel de découverte du boson de Higgs pour une luminosité intégrée jusqu'à $ 10\textrm{ fb}^{-1} $. Pour une luminosité intégrée de $ 3\textrm{ fb}^{-1} $, il sera possible d'avoir une indication à $ 3\sigma $ si la masse du boson de Higgs est telle que $ 125\GeV<M_\textrm{Higgs}<500\GeV $. Une telle statistique sera atteinte au début de l'automne 2011. Pour une luminosité intégrée de $ 10\textrm{ fb}^{-1} $, il sera possible d'avoir une découverte à $ 5\sigma $ si la masse du boson de Higgs est telle que $ 125\GeV<M_\textrm{Higgs}<450\GeV $. Il est raisonnable de penser que cette statistique sera atteinte avant l'arrêt technique de la fin de l'année 2012.
+Pour finir, la figure \ref{higgs_potentiel}\cite{Collaboration:1323856} montre le potentiel de découverte du boson de Higgs pour une luminosité intégrée jusqu'à $ 10\textrm{ fb}^{-1} $. Pour une luminosité intégrée de $ 3\textrm{ fb}^{-1} $, il sera possible d'avoir une indication à $ 3\sigma $ si la masse du boson de Higgs est telle que $ 125\GeV<M_\textrm{Higgs}<500\GeV $. Une telle statistique sera atteinte au début de l'automne 2011. Pour une luminosité intégrée de $ 10\textrm{ fb}^{-1} $, il sera possible d'avoir une découverte à $ 5\sigma $ si la masse du boson de Higgs est telle que $ 125\GeV<M_\textrm{Higgs}<450\GeV $. Il est raisonnable de penser que cette statistique sera atteinte avant l'arrêt technique de la fin de l'année 2012.
 
 \vspace{1.5cm}
 
