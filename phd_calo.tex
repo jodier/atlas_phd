@@ -10,7 +10,7 @@ Le principe élémentaire d'un calorimètre consiste à fournir un milieu très dense
 
 \subsection{Interaction électrons/photons et matière}
 
-La façon dont interagissent les particules chargées et la matière dépend de l'échelle d'énergie. La figure \ref{interpb} montre la distribution de la fraction d'énergie perdue par longueur de radiation en fonction de l'énergie. L'ionisation, la diffusion Compton et l'effet photoélectrique dominent à basse énergie alors que l'émission de photons de freinage (Bremsstrahlung) domine à partir d'une énergie de quelques $ \MeV $. Auprès du LHC, les électrons ont une gamme d'énergie transverse qui s'étend, en moyenne, de quelques $ \GeV $ jusqu'au $ \TeV $. Les deux phénomènes dominants sont donc l'émission de photons de freinage et la production de paires électron/positron.\\
+La façon dont interagissent les particules chargées et la matière dépend de l'échelle d'énergie. La figure \ref{interpb} montre\cite{Nakamura:1299148} la distribution de la fraction d'énergie perdue par longueur de radiation en fonction de l'énergie. L'ionisation, la diffusion Compton et l'effet photoélectrique dominent à basse énergie alors que l'émission de photons de freinage (Bremsstrahlung) domine à partir d'une énergie de quelques $ \MeV $. Auprès du LHC, les électrons ont une gamme d'énergie transverse qui s'étend, en moyenne, de quelques $ \GeV $ jusqu'au $ \TeV $. Les deux phénomènes dominants sont donc l'émission de photons de freinage et la production de paires électron/positron.\\
 
 \begin{figure}[!h]
   \begin{center}
@@ -25,7 +25,7 @@ Dans la pratique, lorsqu'un électron (resp. un photon) de haute énergie pénètre 
 
 \paragraph{Longueur de radiation}
 
-Pour les électrons, on définit la longueur de radiation par l'épaisseur de matière nécessaire pour une perte d'énergie d'un facteur $ \frac{1}{e} $ soit encore $ \sim63\% $. Elle s'exprime en fonction du nombre de masse $ A $ et du nombre de protons $ Z $ :
+Pour les électrons, on définit\cite{Nakamura:1299148} la longueur de radiation par l'épaisseur de matière nécessaire pour une perte d'énergie d'un facteur $ \frac{1}{e} $ soit encore $ \sim63\% $. Elle s'exprime en fonction du nombre de masse $ A $ et du nombre de protons $ Z $ :
 \begin{equation}
   X_0=\frac{1}{4\alpha_{EM}N_Ar^2_e}\frac{A}{Z^2\ln\left(\frac{183}{\sqrt[3]{Z}}\right)}.
 \end{equation}
@@ -35,7 +35,7 @@ Pour les électrons, on définit la longueur de radiation par l'épaisseur de matiè
   \left.-\frac{dE}{dx}\right|_\textrm{Brem.}=\frac{E}{X_0}
 \end{equation}
 
-\paragraph{Libre parcours moyen} Pour les photons, on définit le libre parcours moyen par l'épaisseur de matière nécessaire pour la conversion en paire électron/positron. De même que pour la longueur de radiation, le libre parcours moyen s'exprime\footnote{Le facteur $ \frac{9}{7} $ provient de la section efficace de création de pairs d'électrons : $ \sigma_{paire}=\frac{7}{9}\frac{A}{N_AX_0} $.} en fonction du nombre de masse $ A $ et du nombre de protons $ Z $ :
+\paragraph{Libre parcours moyen} Pour les photons, on définit\cite{Nakamura:1299148} le libre parcours moyen par l'épaisseur de matière nécessaire pour la conversion en paire électron/positron. De même que pour la longueur de radiation, le libre parcours moyen s'exprime\footnote{Le facteur $ \frac{9}{7} $ provient de la section efficace de création de pairs d'électrons : $ \sigma_{paire}=\frac{7}{9}\frac{A}{N_AX_0} $.} en fonction du nombre de masse $ A $ et du nombre de protons $ Z $ :
 \begin{equation}
   X_\gamma=\frac{9}{7}X_0
 \end{equation}
@@ -67,7 +67,7 @@ Plus le milieu est dense, ou encore plus le nombre de masse est élevé, plus la l
   \caption{\label{matcalo} Longueur de radiation, le libre parcours moyen et rayon de Molière de quelques matériaux.}
 \end{table}
 
-\paragraph{Énergie critique} On définit l'énergie critique comme l'énergie au delà de laquelle le rayonnement de freinage est dominant c'est-à-dire telle que :
+\paragraph{Énergie critique} On définit\cite{Nakamura:1299148} l'énergie critique comme l'énergie au delà de laquelle le rayonnement de freinage est dominant c'est-à-dire telle que :
 \begin{equation}
   \left.-\frac{dE}{dx}(E=E_c)\right|_\textrm{Brem.}=\left\{\left.-\frac{dE}{dx}\propto\frac{1}{\beta^2}\right\}(E=E_c)\right|_\textrm{Ion.}
 \end{equation}
@@ -83,7 +83,7 @@ De même que pour la longueur de radiation et le libre parcours moyen, l'énergie 
 \paragraph{Profil longitudinal} Introduisons la variable $ t\equiv\frac{x}{X_0} $ afin de décrire le développement longitudinal des gerbes électromagnétiques. Dans un modèle simpliste, au rang $ t $, chaque particule de la gerbe possède une énergie $ E(t)=E_0\,2^{-t} $ où $ E_0 $ est l'énergie de la particule incidente, voir figure \ref{em_shower}. Il est alors possible d'écrire :
 \begin{eqnarray}
   \frac{dE}{dt}=-E_0\ln2\,e^{-t}\hspace{0.04cm} & \textrm{modèle simpliste}\\
-  \frac{dE}{dt}=E_0\frac{b^at^{a-1}}{\Gamma(a)}e^{-t} & \begin{minipage}{8cm} \begin{center} modèle de Longo et Sestili\\où $ a $ et $ b $ sont des paramètres du milieu \end{center} \end{minipage}
+  \frac{dE}{dt}=E_0\frac{b^at^{a-1}}{\Gamma(a)}e^{-t} & \begin{minipage}{8cm} \begin{center} modèle de Longo et Sestili\cite{LongoSestili}\\où $ a $ et $ b $ sont des paramètres du milieu \end{center} \end{minipage}
 \end{eqnarray}
 
 \begin{figure}[!ht]
@@ -100,12 +100,12 @@ La gerbe électromagnétique commence à décroitre dés que l'énergie des particules
  & \textrm{modèle de Longo et Sestili}
 \end{eqnarray}
 
-Il est alors possible de définir la longueur $ t_{95\%} $ telle que au moins $ 95\% $ de l'énergie de la gerbe électromagnétique soit contenue dans la longeur $ t_{95\%} $ :
+Il est alors possible de définir\cite{Nakamura:1299148} la longueur $ t_{95\%} $ telle que au moins $ 95\% $ de l'énergie de la gerbe électromagnétique soit contenue dans la longeur $ t_{95\%} $ :
 \begin{equation}
   t_{95\%}\approx t_{max}+0.08Z+9.6[X_0]
 \end{equation}
 
-\paragraph{Profil transverse} On montre que l'angle moyen de déflexion des particules de la gerbe, pour le Bremsstrahlung et la production de paires électron/prositron, peut s'écrire :
+\paragraph{Profil transverse} On montre\cite{Nakamura:1299148} que l'angle moyen de déflexion des particules de la gerbe, pour le Bremsstrahlung et la production de paires électron/prositron, peut s'écrire :
 \begin{equation}
   \left<\theta\right>=\underbrace{\sqrt{\frac{4\pi}{\alpha_{EM}}}(m_ec^2)}_{E_s\approx21.2[\MeV]}\left.\frac{1}{E_c}\sqrt{t}\right|_{\beta=c=1}
 \end{equation}
@@ -117,7 +117,7 @@ Il est alors possible de définir la longueur $ t_{95\%} $ telle que au moins $ 9
   \caption{\label{em_moliere}Angle de déflexion moyen des particules de la gerbe électromagnétique.}
 \end{figure}
 
-Comme illustré sur la figure \ref{em_moliere}, il est alors possible de définir le rayon de Molière $ R_M $ tel que au moins $ 90\% $ de l'énergie de la gerbe électromagnétique soit contenue dans la sphère de rayon $ 1\times R_M $ centrée sur l'axe de la gerbe et au moins $ 95\% $ de l'énergie de la gerbe électromagnétique soit contenue dans la sphère de rayon $ 2\times R_M $ centrée sur l'axe de la gerbe :
+Comme illustré sur la figure \ref{em_moliere}, il est alors possible de définir\cite{Nakamura:1299148} le rayon de Molière $ R_M $ tel que au moins $ 90\% $ de l'énergie de la gerbe électromagnétique soit contenue dans la sphère de rayon $ 1\times R_M $ centrée sur l'axe de la gerbe et au moins $ 95\% $ de l'énergie de la gerbe électromagnétique soit contenue dans la sphère de rayon $ 2\times R_M $ centrée sur l'axe de la gerbe :
 \begin{equation}
   R_M=\left<\theta\right>(x=X_0)\,X_0=\frac{E_s}{E_c}X_0
 \end{equation}
@@ -142,7 +142,7 @@ Et citons quelques inconvénients à échantillonnage : i) Seule une partie de l'én
 
 \section{Le calorimètre électromagnétique à argon liquide}
 
-Le calorimètre électromagnétique du détecteur Atlas est composé d'une partie tonneau et de deux parties bouchons aux extrémités. Ces dernières sont constituées d'une grande roue de précision et d'une petite roue. De même que les calorimètres vers l'avant (voir le chapitre précédent) et les bouchons du calorimètre hadronique, il s'agit de calorimètres à échantillonnage où le milieu actif est constitué d'électrodes de cuivre immergées dans de l'argon liquide avec un milieu absorbant est formé de plaques métalliques de plomb. Il s'agit d'une technologie robuste, déjà utilisée par les expériences SLD ou D$ \varnothing $, qui est bien maitrisée et qui dispose d'une bonne tenue dans le temps. L'abordeur ainsi que les électrodes sont pliées en accordéon. Cette particularité inédite confère au calorimètre électromagnétique du détecteur Atlas une herméticité parfaite en $ \phi $.
+Le calorimètre électromagnétique du détecteur Atlas est composé d'une partie tonneau et de deux parties bouchons aux extrémités. Ces dernières sont constituées d'une grande roue de précision et d'une petite roue. De même que les calorimètres vers l'avant (voir le chapitre précédent) et les bouchons du calorimètre hadronique, il s'agit de calorimètres à échantillonnage où le milieu actif est constitué d'électrodes de cuivre immergées dans de l'argon liquide avec un milieu absorbant est formé de plaques métalliques de plomb. Il s'agit d'une technologie robuste, déjà utilisée par les expériences SLD ou DØ, qui est bien maitrisée et qui dispose d'une bonne tenue dans le temps. L'abordeur ainsi que les électrodes sont pliées en accordéon. Cette particularité inédite confère au calorimètre électromagnétique du détecteur Atlas une herméticité parfaite en $ \phi $.
 
 La partie tonneau du calorimètre électromagnétique pocède une couverture angulaire $ |\eta|<1.475 $ pour la pseudo-rapidité et $ 0<|\phi|<2\pi $ pour l'angle azimutal. La partie bouchons du calorimètre électromagnétique pocède une couverture angulaire $ 1.37<|\eta|<2.5 $ (resp. $ 2.5<|\eta|<3.2 $) pour la pseudo-rapidité dans la grande roue (resp. pour la petite roue). La région $ 1.37<|\eta|<1.52 $, qui est appelée \emph{crack}, est une région dédiée aux services.
 
@@ -153,7 +153,7 @@ La partie tonneau du calorimètre électromagnétique pocède une couverture angulai
   \caption{\label{electrodes}Représentation schématique des électrodes du calorimètre électromagnétique du détecteur Atlas. Partie tonneau A et B (en haut), partie bouchon grande roue (en bas à droite) et petite roue (en bas à gauche). Les trois compartiments sont clairement visibles.}
 \end{figure}
 
-La tableau \ref{caloperf} rappelle la résolution en énergie ainsi que la résolution angulaire attendues des calorimètres du détecteur Atlas. A titre de comparaison, nous donnons la résolution en énergie du calorimètre homogène à cristaux de tungstate de plomb du détecteur CMS : $ \frac{\sigma(E)}{E}=\frac{3\%}{\sqrt{E}}\oplus0.5\% $. Celle-ci est, par conception, légèrement meilleure que celle du détecteur Atlas, néanmoins, grâce à sa fine segmentation et son détecteur de pieds de gerbes, le calorimètres électromagnétique du détecteur Atlas dispose d'une très bonne résolution angulaire. Il est tout particulièrement adapté à la recherche du boson de Higgs dans les canaux $ H\to\gamma\gamma $ et $ H\to ZZ^{(*)}\to4l $ où encore à la recherche d'hypothétiques bosons lourds tels que les $ W' $ ou les $ Z' $ qui se désintègrent en leptons de haute énergie.
+La tableau \ref{caloperf} rappelle\cite{TDRlar} la résolution en énergie ainsi que la résolution angulaire attendues des calorimètres du détecteur Atlas. A titre de comparaison, nous donnons\cite{TDRcmsCalo} la résolution en énergie du calorimètre homogène à cristaux de tungstate de plomb du détecteur CMS : $ \frac{\sigma(E)}{E}=\frac{3\%}{\sqrt{E}}\oplus0.5\% $. Celle-ci est, par conception, légèrement meilleure que celle du détecteur Atlas, néanmoins, grâce à sa fine segmentation et son détecteur de pieds de gerbes, le calorimètres électromagnétique du détecteur Atlas dispose d'une très bonne résolution angulaire. Il est tout particulièrement adapté à la recherche du boson de Higgs dans les canaux $ H\to\gamma\gamma $ et $ H\to ZZ^{(*)}\to4l $ où encore à la recherche d'hypothétiques bosons lourds tels que les $ W' $ ou les $ Z' $ qui se désintègrent en leptons de haute énergie.
 
 \begin{table}[!ht]
   \begin{center}
@@ -220,11 +220,11 @@ Les performances du calorimètre électromagnétique ont été mesurées à l'aide de f
 
 \vspace{-0.25cm}
 
-Les études réalisées sur faisceaux de test fournissent $ a\approx10\%[\sqrt{\GeV}] $ et $ c\approx0.2\% $ pour le tonneau et $ a\approx11,4\%[\sqrt{\GeV}] $ et $ c\approx0.35\% $ pour les bouchons. Ces résultats sont en accord avec les spécifications du détecteur Atlas.
+Les études réalisées sur faisceaux de test fournissent\cite{Aharrouche:976098} $ a\approx10\%[\sqrt{\GeV}] $ et $ c\approx0.2\% $ pour le tonneau et $ a\approx11,4\%[\sqrt{\GeV}] $ et $ c\approx0.35\% $ pour les bouchons. Ces résultats sont en accord avec les spécifications du détecteur Atlas.
 
-La mesure de la masse invariante de paires d'électrons issus de bosons $ Z $ avec les données 2010 fournissent $ c\approx1.2\pm0.1\textrm{(stat.)}\pm0.3\textrm{(syst.)}\% $ pour le tonneau, $ c\approx1.8\pm0.4\textrm{(stat.)}\pm0.2\textrm{(syst.)}\% $ pour la grande roue des bouchons et $ c\approx3.3\pm0.2\textrm{(stat.)}\pm1.0\textrm{(syst.)}\% $ pour la petite roue des bouchons. Comme l'inter-calibration des régions en $ \eta $ et en $ \phi $ n'était pas possible, à cause de la statistique, les nombres sont légèrement supérieurs à ceux attendus.
+La mesure de la masse invariante de paires d'électrons issus de bosons $ Z $ avec les données 2010 fournissent\cite{ATL-COM-PHYS-2011-263}\cite{Aubert:606885} $ c\approx1.2\pm0.1\textrm{(stat.)}\pm0.3\textrm{(syst.)}\% $ pour le tonneau, $ c\approx1.8\pm0.4\textrm{(stat.)}\pm0.2\textrm{(syst.)}\% $ pour la grande roue des bouchons et $ c\approx3.3\pm0.2\textrm{(stat.)}\pm1.0\textrm{(syst.)}\% $ pour la petite roue des bouchons. Comme l'inter-calibration des régions en $ \eta $ et en $ \phi $ n'était pas possible, à cause de la statistique, les nombres sont légèrement supérieurs à ceux attendus.
 
-La linéarité de la réponse a été mesurée sur un module avec des faisceaux de test. La non-linéarité est inférieure à $ 1\% $ sur la gamme d'énergie qui s'étend de $ 15\GeV $ à $ 180\GeV $. Elle fut également mesurée avec des faisceaux de test combinés en ajoutant de la matière afin de reproduire les conditions réelles. Elle est inférieure à $ 1\% $ sur la gamme d'énergie qui s'étend de $ 15\GeV $ à $ 180\GeV $. Finalement, la non-linéarité est inférieure à $ 0.5\% $ (resp. inférieure à $ 2\% $) sur la gamme d'énergie qui s'étend de $ 20\GeV $ à $ 180\GeV $ pour le tonneau (resp. sur la gamme d'énergie supérieure à $ 40\GeV $ pour les bouchons).
+La linéarité de la réponse a été mesurée sur un module avec des faisceaux de test\cite{Aharrouche:976098}. La non-linéarité est inférieure à $ 1\% $ sur la gamme d'énergie qui s'étend de $ 15\GeV $ à $ 180\GeV $. Elle fut également mesurée avec des faisceaux de test combinés en ajoutant de la matière afin de reproduire les conditions réelles. Elle est inférieure à $ 1\% $ sur la gamme d'énergie qui s'étend de $ 15\GeV $ à $ 180\GeV $. Finalement, la non-linéarité est inférieure à $ 0.5\% $ (resp. inférieure à $ 2\% $) sur la gamme d'énergie qui s'étend de $ 20\GeV $ à $ 180\GeV $ pour le tonneau (resp. sur la gamme d'énergie supérieure à $ 40\GeV $ pour les bouchons).
 
 \begin{table}[!ht]
   \begin{center}
@@ -262,7 +262,7 @@ La linéarité de la réponse a été mesurée sur un module avec des faisceaux de tes
 
 \section{L'électronique}
 
-La figure \ref{electronique} montre le schéma simplifié de l'électronique de lecture des cellules du calorimètre électromagnétique. Nous constatons la présence de trois sous-systèmes. Le premier sous-systèmes est situé dans le cryostat, il est constitué des cellules et ne fait intervenir que des composants passifs. Le second sous-systèmes est situé sur la paroi des cryostats dans des boîtiers, les FEC (Front End Crate), il contient l'électronique nécessaire pour la mise en forme des signaux, pour la mises en places des signaux servant au déclenchement et pour la calibration électronique. Enfin, le troisième sous-systèmes est situé à l'extérieur du détecteur Atlas, il contient l'électronique nécessaire pour la détermination de l'énergie non calibrée déposée dans chaque cellule ainsi que pour le système de déclenchement L1. Le second sous-systèmes est souvent qualifié de \emph{front-end} et le troisième sous-systèmes est souvent qualifié de \emph{back-end}.
+La figure \ref{electronique} montre\cite{Abreu:1303004} le schéma simplifié de l'électronique de lecture des cellules des calorimètres à argon liquide. Nous constatons la présence de trois sous-systèmes. Le premier est situé à l'intérieur du cryostat, il est constitué des cellules et ne fait intervenir que des composants passifs. Le second est situé sur la paroi des cryostats dans des boîtiers, les FEC (Front End Crate), il contient l'électronique nécessaire pour la mise en forme des signaux, pour la mises en places des signaux servant au déclenchement et pour la calibration électronique. Enfin, le troisième est situé à l'extérieur du détecteur Atlas, il contient l'électronique nécessaire pour la détermination de l'énergie non calibrée déposée dans chaque cellule ainsi que pour le système de déclenchement L1. Le second sous-systèmes est souvent qualifié de \emph{front-end} et le troisième sous-systèmes est souvent qualifié de \emph{back-end}.
 
 \begin{figure}[!p]
   \begin{center}
@@ -273,7 +273,7 @@ La figure \ref{electronique} montre le schéma simplifié de l'électronique de lec
 
 \subsection{L'électronique froide}
 
-La figure \ref{cellule1} montre le schéma des électrodes du calorimètre électromagnétique. Elles sont placées entre les couches des absorbeurs et sont constituées de trois électrodes en cuivre séparées par des couches de polyimide et de kapton en nid l'abeille. L'électrode centrale est chargée de collecter le signal par effet capacitif alors que les deux électrodes périphériques sont reliées à une haute tension d'environ $ 2000V $. Les particules incidentes ionisent l'argon liquide et le champ électrique fait migrer les électrons et les ions afin de créer un courant électrique sur l'électrode centrale.
+La figure \ref{cellule1} montre\cite{Abreu:1303004} le schéma des électrodes du calorimètre électromagnétique. Elles sont placées entre les couches des absorbeurs et sont constituées de trois électrodes en cuivre séparées par des couches de polyimide et de kapton en nid l'abeille. L'électrode centrale est chargée de collecter le signal par effet capacitif alors que les deux électrodes périphériques sont reliées à une haute tension d'environ $ 2000V $. Les particules incidentes ionisent l'argon liquide et le champ électrique fait migrer les électrons et les ions afin de créer un courant électrique sur l'électrode centrale.
 
 Le signal obtenu est triangulaire, le temps de montée est de l'ordre du nanoseconde (contribution des électrons) alors que le temps de descente est de l'ordre de $ 400ns $ pour le tonneau, entre $ 200ns $ et $ 500ns $ pour les bouchons et entre $ 60ns $ et $ 115ns $ pour les calorimètres vers l'avant (contribution des ions). L'amplitude du signal et proportionnelle à l'énergie, elle est entre $ 2\mu A\,\GeV^{-1} $ et $ 3\mu A\,\GeV^{-1} $ pour le calorimètre électromagnétique et entre $ 1\mu A\,\GeV^{-1} $ et $ 3\mu A\,\GeV^{-1} $ pour les calorimètres vers l'avant.
 
@@ -288,7 +288,7 @@ Une cellule est généralement composée de plusieurs électrodes, des cartes sommat
 
 \subsection{L'électronique \emph{front-end}}
 
-Les signaux ce chaque cellule sont envoyés hors du cryostats dans les FEC (Front End Crate). Ceux-ci contiennent trois type de cartes électroniques :
+Les signaux ce chaque cellule sont envoyés hors du cryostats dans les FEC (Front End Crate). Ceux-ci contiennent trois type de cartes électroniques\cite{Abreu:1303004} :
 
 \vspace{-0.25cm}
 
@@ -385,7 +385,7 @@ où $ N_{sample} $ est le nombre d'échantillons du signal, $ s_i $ est la valeur 
 
 où $ g_i $ et $ g'_i $ sont respectivement le signal idéal normalisé et la dérivée du signal idéal normalisé. Les valeurs de $ p $, $ a_i $ et $ b_i $ sont déterminés pour chaque cellule grace à l'électronique de calibration (voir la section suivante).
 
-Une fois l'amplitude maximale du signal reconstruite, il est possible de reconstruire l'énergie dans la cellule $ E_\textrm{cellule} $ :
+Une fois l'amplitude maximale du signal reconstruite, il est possible de reconstruire\cite{Abreu:1303004} l'énergie dans la cellule $ E_\textrm{cellule} $ :
 \begin{equation}
   \boxed{E_\textrm{cellule}=F_{\mu A\to\MeV}F_{DAC\to\mu A}\frac{M_{cali}}{M_{phys}}\sum_j^{M_{rampe}}R_j\left[\underbrace{\sum_i^{N_{sample}}a_i(s_i-p)}_{A}\right]}\label{energy_reco}
 \end{equation}
@@ -446,7 +446,7 @@ Décrivons le contenu de chacun des \emph{runs} :
 
 \subsection{C\oe fficients de filtrage optimal}\label{OFC_formulae}
 
-Présentons rapidement la méthode des c\oe fficients de filtrage optimal. Le signal reconstruit dans l'argon liquide peut être paramétré de la façon suivante :
+Présentons rapidement la méthode des c\oe fficients de filtrage optimal\cite{Abreu:1303004}. Le signal reconstruit dans l'argon liquide peut être paramétré de la façon suivante :
 \begin{eqnarray}
   S(t)&    =    & A\,g(t-\tau)+n(t)\\
       & \approx & A\left\{g(t)-\tau g'(t)\right\}+n(t)\label{lar_signal_approx}
