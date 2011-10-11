@@ -214,7 +214,7 @@ L'énergie et l'impulsion des muons cosmiques au niveau de la mer, figure \ref{mu
 
 \vspace{0.1cm}
 
-Ensuite, le logiciel GEANT4 simule les pertes d'énergie subies par les électrons, au travers de la roche, jusqu'à la caverne du détecteur. Dans le cas particulier du détecteur Atlas, il faut savoir que deux puits de service sont placés de part et d'autre de la caverne dans l'axe du faisceau. Il existe également des voies d'ascenseurs que les muons cosmiques peuvent emprunter. Pour simplifier, nous supposons que les pertes d'énergie se font uniquement par ionisation. En première approximation, il est possible d'écrire :
+Ensuite, le logiciel GEANT4\cite{citeulike:1175885} simule les pertes d'énergie subies par les électrons, au travers de la roche, jusqu'à la caverne du détecteur. Dans le cas particulier du détecteur Atlas, il faut savoir que deux puits de service sont placés de part et d'autre de la caverne dans l'axe du faisceau. Il existe également des voies d'ascenseurs que les muons cosmiques peuvent emprunter. Pour simplifier, nous supposons que les pertes d'énergie se font uniquement par ionisation. En première approximation, il est possible d'écrire :
 \begin{equation}
   E(y_\textrm{caverne})\approx E(y_\textrm{surface})-a\times\rho\times|y_\textrm{surface}-y_\textrm{caverne}|
 \end{equation}
@@ -367,7 +367,7 @@ La figure \ref{cosmics_f1} montre la distribution de la fraction d'énergie dans 
 
 \vspace{-0.55cm}
 
-\section{Accéptances finales}
+\section{Acceptances finales}
 
 La figure \ref{cosmics_selection} (a) montre le résumé des coupures de sélection. La statistique consiste en 1958 candidats pour les données, 2168 candidats pour la première génération de simulation Monte-Carlo et 1524 candidats pour la seconde génération de simulation Monte-Carlo. La figure \ref{cosmics_selection} (b) montre la distribution de l'énergie des amas après sélection pour les données et les deux générations de simulation Monte-Carlo. L'accord est bon.
 
@@ -651,7 +651,7 @@ Au vu de la statistique disponible, il n'est pas possible de traiter séparément 
 
 Dans ce chapitre, nous avons étudié les objets calorimétriques, électrons d'ionisation et photons de radiation, issus de muons cosmiques. Dans ce but, nous avons défini une sélection permettant de disposer d'une accéptance équivalente pour les données et pour la simulation Monte-Carlo. Nous avons ensuite réalisé la première analyse, avec des données réelles, des variables de forme de gerbes électromagnétiques. En dépit de la faible statistiques disponible, nous pouvons conclure que la simulation des variables de forme de gerbes électromagnétiques est réaliste. Finalement, nous avons observé l'effet de la projectivité ainsi que l'effet de l'amélioration de la simulation de la diaphonie entre les cellules des deux premiers compartiments.
 
-Cette étude a fourni la première validation des variables de forme de gerbes électromagnétiques. Celles-ci ont de nouveau été étudiées avec les données 2010 à $ \sqrt{s}=7\TeV $\cite{}. La \ref{data2010_shower} montre l'étalement latéral de la gerbe électromagnétique dans la direction $ \eta $ dans le second compartiment : rapport de l'énergie dans un amas $ \Delta\eta\times\Delta\phi=3\times7 $ par l'énergie dans un amas $ \Delta\eta\times\Delta\phi=7\times7 $ (a) et le second moment de la pseudo-rapidité des cellules d'un amas $ \Delta\eta\times\Delta\phi=3\times5 $ pondérées par leur énergie (b). Nous pouvons observer un désaccord entre les données et la simulation Monte-Carlo, les largeurs et les moyennes sont décalées. Pour les données cosmiques, la distribution $ R_\eta $ (figure \ref{cosmics_reta}) ne présentait pas de désaccord significatif, sans doute à cause de la faible statistique. La distribution $ W_{\eta2} $ (figure \ref{cosmics_weta2}) présentait déjà le décalage observé en 2010. Des investigations sont toujours en cours afin de comprendre la raisons de ces problèmes. Il semble qu'ils proviennent essentiellement du programme GEANT4.
+Cette étude a fourni la première validation des variables de forme de gerbes électromagnétiques. Celles-ci ont de nouveau été étudiées avec les données 2010 à $ \sqrt{s}=7\TeV $. La \ref{data2010_shower} montre l'étalement latéral de la gerbe électromagnétique dans la direction $ \eta $ dans le second compartiment : rapport de l'énergie dans un amas $ \Delta\eta\times\Delta\phi=3\times7 $ par l'énergie dans un amas $ \Delta\eta\times\Delta\phi=7\times7 $ (a) et le second moment de la pseudo-rapidité des cellules d'un amas $ \Delta\eta\times\Delta\phi=3\times5 $ pondérées par leur énergie (b). Nous pouvons observer un désaccord entre les données et la simulation Monte-Carlo, les largeurs et les moyennes sont décalées. Pour les données cosmiques, la distribution $ R_\eta $ (figure \ref{cosmics_reta}) ne présentait pas de désaccord significatif, sans doute à cause de la faible statistique. La distribution $ W_{\eta2} $ (figure \ref{cosmics_weta2}) présentait déjà le décalage observé en 2010. Des investigations sont toujours en cours afin de comprendre la raisons de ces problèmes. Il semble qu'ils proviennent essentiellement du programme GEANT4.
 
 \begin{figure}[!h]
   \begin{bigcenter}
