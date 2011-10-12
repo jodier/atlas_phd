@@ -6,7 +6,7 @@ Dans ce chapitre, je présente des études à basse énergie que j'ai mené afin de t
 
 \subsection{Photons à basse énergie}
 
-Les photons sont reconstruits au niveau du calorimètre électromagnétique. La première étape consiste à reconstruire les dépôts d'énergie localisés sous forme d'amas de cellules. Pour des particules de basse énergie, l'algorithme standard à fenêtre glissante, qui a été décrit précédemment, n'est pas utilisable car il nécessite un dépôt avec une énergie transverse supérieure à $ 2.5\GeV $. C'est pourquoi une méthode dédiée a été développée pour cette étude. Elle s'appuie sur l'utilisation d'un algorithme d'amas topologiques. Il parcourt tout le calorimètre électromagnétique à la recherche de cellules fournissant une énergie supérieure à quatre fois le niveau standard du bruit électronique (RMS) $ |E_\textrm{cellule}|>4\sigma_\textrm{bruit} $, ce sont les cellules \og graines \fg. Chaque amas est constitué de la cellule \og graine \fg\ complétée par toutes les cellules contigües ayant une énergie telle que $ |E_\textrm{cellule}|>2\sigma_\textrm{bruit} $ ainsi que par une ceinture de cellules ayant une énergie non nulle telle que $ |E_\textrm{cellule}|>0\sigma_\textrm{bruit} $. Le problème inhérent aux amas de taille variable est la caractérisation non triviale du bruit électronique. C'est pourquoi, il est préférable de considérer un amas de taille fixe centré sur le barycentre en énergie de l'amas topologique. Le dimensionnement $ 3\times5 $, c'est-à-dire $ \Delta\eta\times\Delta\phi=0.075\times0.125 $, a été choisi afin de rester cohérent avec l'algorithme standard à fenêtre glissante. Précisons qu'une coupure en énergie transverse $ E_T>300\MeV $ est nécessaire afin d'assurer un bon fonctionnement de l'algorithme d'amas topologiques. La figue \ref{topocluster} illustre un amas topologique de cellules construit autour de la cellule \og graine \fg\ et l'amas de taille fixe associé.
+Les photons sont reconstruits\cite{ATLAS-CONF-2010-006} au niveau du calorimètre électromagnétique. La première étape consiste à reconstruire les dépôts d'énergie localisés sous forme d'amas de cellules. Pour des particules de basse énergie, l'algorithme standard à fenêtre glissante, qui a été décrit précédemment, n'est pas utilisable car il nécessite un dépôt avec une énergie transverse supérieure à $ 2.5\GeV $. C'est pourquoi une méthode dédiée a été développée pour cette étude. Elle s'appuie sur l'utilisation d'un algorithme d'amas topologiques. Il parcourt tout le calorimètre électromagnétique à la recherche de cellules fournissant une énergie supérieure à quatre fois le niveau standard du bruit électronique (RMS) $ |E_\textrm{cellule}|>4\sigma_\textrm{bruit} $, ce sont les cellules \og graines \fg. Chaque amas est constitué de la cellule \og graine \fg\ complétée par toutes les cellules contigües ayant une énergie telle que $ |E_\textrm{cellule}|>2\sigma_\textrm{bruit} $ ainsi que par une ceinture de cellules ayant une énergie non nulle telle que $ |E_\textrm{cellule}|>0\sigma_\textrm{bruit} $. Le problème inhérent aux amas de taille variable est la caractérisation non triviale du bruit électronique. C'est pourquoi, il est préférable de considérer un amas de taille fixe centré sur le barycentre en énergie de l'amas topologique. Le dimensionnement $ 3\times5 $, c'est-à-dire $ \Delta\eta\times\Delta\phi=0.075\times0.125 $, a été choisi afin de rester cohérent avec l'algorithme standard à fenêtre glissante. Précisons qu'une coupure en énergie transverse $ E_T>300\MeV $ est nécessaire afin d'assurer un bon fonctionnement de l'algorithme d'amas topologiques. La figue \ref{topocluster} illustre un amas topologique de cellules construit autour de la cellule \og graine \fg\ et l'amas de taille fixe associé.
 
 \begin{figure}[!htp]
   \begin{bigcenter}
@@ -73,7 +73,7 @@ Une identification rigoureuse des électrons et des photons doit s'appuyer sur le
 
 \subsubsection{Calibration en énergie}
 
-Pour déterminer l'énergie d'une particule à partir d'un amas de taille fixe, il faut tenir compte de l'énergie déposée : i) en amont du calorimètre. ii) dans la matière située entre le pré-échantillonneur et l'accordéon. iii) en aval du calorimètre. iv) en dehors de l'amas (fuites latérales). Pour ce faire, la méthode de calibration avec des poids longitudinaux a été mise en \oe uvre. Cette méthode est décrite en détail dans \cite{}. L'énergie calibrée $ E_\textrm{calib} $ s'exprime comme :
+Pour déterminer l'énergie d'une particule à partir d'un amas de taille fixe, il faut tenir compte de l'énergie déposée : i) en amont du calorimètre. ii) dans la matière située entre le pré-échantillonneur et l'accordéon. iii) en aval du calorimètre. iv) en dehors de l'amas (fuites latérales). Pour ce faire, la méthode de calibration avec des poids longitudinaux a été mise en \oe uvre. Cette méthode est décrite en détail dans \cite{Aad:1125884}. L'énergie calibrée $ E_\textrm{calib} $ s'exprime comme :
 \begin{equation}
   E_\textrm{calib}=s\times\left(b+w_0E_\textrm{PS}+E_1+E_2+w_3E_3\right)
 \end{equation}
@@ -103,7 +103,7 @@ Cette calibration est limitée par le fait que nous avons supposé des coefficient
 
 \subsection{Conversions à basse énergie}\label{algoconversion}
 
-A cause de la matière présente à l'intérieur du trajectographe interne du détecteur Atlas, une fraction des photons sont convertis en paires positrons-électrons, voir section \ref{atlas_matiere}, chapitre \ref{chapitre_atlas}. Un algorithme de reconstruction des conversions à basse énergie a été mis en \oe uvre. Sa description est disponible auprès des notes\cite{}, néanmoins, nous rappelons son principe :
+A cause de la matière présente à l'intérieur du trajectographe interne du détecteur Atlas, une fraction des photons sont convertis en paires positrons-électrons, voir section \ref{atlas_matiere}, chapitre \ref{chapitre_atlas}. Un algorithme de reconstruction des conversions à basse énergie a été mis en \oe uvre. Sa description est disponible auprès des notes\cite{ATLAS-CONF-2010-007}, néanmoins, nous rappelons son principe :
 \begin{enumerate}
   \item Sélection des traces bien reconstruites au niveau du trajectographe interne, c'est-à-dire, avec une impulsion transverse supérieure à $ (3|4)00\MeV $\footnote{Cette pré-coupure définie à $ p_T>400\MeV $ pour $ \sqrt{s}=0.9\TeV $ était surestimée. Elle a été redéfinie à $ p_T>300\MeV $ pour $ \sqrt{s}=7\TeV $.} et au moins un impact dans les détecteurs silicium (pixels + SCT) afin de disposer d'une mesure de la pseudo-rapidité.
   \item Sélection des traces selon leur probabilité d'être des traces d'électrons, c'est-à-dire, classement en fonction de la charge électrique et mise à profit des capacités du TRT à distinguer les $ e^\pm $ des $ \pi^\pm $ (seulement pour les traces avec une extension dans le TRT).
@@ -112,7 +112,7 @@ A cause de la matière présente à l'intérieur du trajectographe interne du détect
   \item Les traces sélectionnées sont ajustées à un vertex commun avec la contrainte d'être parallèles au niveau du vertex. La qualité de l'ajustement est caractérisée par un $ \chi^2_\textrm{vtx} $.
 \end{enumerate}
 
-La figure \ref{TRT} du chapitre dédié au détecteur Atlas montrait que la fraction de coups haut seuil $ n_{HT}/n_{TRT} $, au niveau du TRT, est une variable qui permet de distinguer efficacement les $ e^\pm $ des $ \pi^\pm $. Cette variable a été utilisée pour les données à $ \sqrt{s}=7\TeV $. Il existe cependant une autre variable nommée $ PID $\cite{} qui s'interprète directement comme la probabilité pour une trace d'être une trace d'électron (où encore la probabilité pour une trace de ne pas être une trace de pion). Cette variable a été utilisée pour les données à $ \sqrt{s}=0.9\TeV $ de façon très lâche. La figure \ref{PID} (b) montre la distribution de la variable $ PID $ pour la simulation Monte-Carlo. Au niveau de la reconstruction, des coupures très larges sont appliquées : $ D-R_1-R_2<5mm $, $ \Delta(\frac{1}{\tan\theta})<0.3 $ et $ \chi^2_\textrm{vtx}<50 $.\vspace{0.25cm}
+La figure \ref{TRT} du chapitre dédié au détecteur Atlas montrait que la fraction de coups haut seuil $ n_{HT}/n_{TRT} $, au niveau du TRT, est une variable qui permet de distinguer efficacement les $ e^\pm $ des $ \pi^\pm $. Cette variable a été utilisée pour les données à $ \sqrt{s}=7\TeV $. Il existe cependant une autre variable nommée $ PID $\cite{CERN-ATL-COM-INDET-2006-017} qui s'interprète directement comme la probabilité pour une trace d'être une trace d'électron (où encore la probabilité pour une trace de ne pas être une trace de pion). Cette variable a été utilisée pour les données à $ \sqrt{s}=0.9\TeV $ de façon très lâche. La figure \ref{PID} (b) montre la distribution de la variable $ PID $ pour la simulation Monte-Carlo. Au niveau de la reconstruction, des coupures très larges sont appliquées : $ D-R_1-R_2<5mm $, $ \Delta(\frac{1}{\tan\theta})<0.3 $ et $ \chi^2_\textrm{vtx}<50 $.\vspace{0.25cm}
 
 \vspace{-0.25cm}
 
@@ -145,7 +145,7 @@ Remarque : A $ \sqrt{s}=7\TeV $, la période D propose une statistique largement 
 
 \subsubsection{Simulations Monte-Carlo $ \sqrt{s}=0.9\TeV $ et $ \sqrt{s}=7\TeV $}
 
-La simulation Monte-Carlo est composée de $ \sim10^7 $ (resp. $ \sim4\times10^7 $) évènements de biais minimum non-diffractifs à $ \sqrt{s}=0.9\TeV $ (resp. $ \sqrt{s}=7\TeV $). Ils on été générés avec Pythia, en utilisant une configuration spécifique pour Atlas, puis, ont été injectés dans les outils officiels de simulation (Geant4) et de reconstruction (Athena).
+La simulation Monte-Carlo est composée de $ \sim10^7 $ (resp. $ \sim4\times10^7 $) évènements de biais minimum non-diffractifs à $ \sqrt{s}=0.9\TeV $ (resp. $ \sqrt{s}=7\TeV $). Ils on été générés avec Pythia\cite{sjostrand-2006-0605}, en utilisant une configuration spécifique pour Atlas\cite{ATL-PHYS-PUB-2010-002}, puis, ont été injectés dans les outils officiels de simulation (Geant4) et de reconstruction (Athena).
 
 \begin{table}[!ht]
   \begin{bigcenter}
@@ -179,9 +179,10 @@ La simulation Monte-Carlo est composée de $ \sim10^7 $ (resp. $ \sim4\times10^7 
     \hline
       Runs & Périodes & Luminosité \\
     \hline
-      152166-153200 & A & $ \sim??\mu b^{-1} $ \\
-      153565-155160 & B & $ \sim??\mu b^{-1} $ \\
-      155228-156682 & C & $ \sim??\mu b^{-1} $ \\
+      152166-153200 & A & \\
+      153565-155160 & B & $ \sim414.8\mu b^{-1} $ \\
+      155228-156682 & C & \\
+    \hline
       158045-159224 & D & $ \sim14nb^{-1} $ \\
     \hline
   \end{tabular}
@@ -707,7 +708,7 @@ La figure \ref{uniformite} montre le rapport $ \frac{\left<m\right>_\textrm{data
 
 \subsection{Bremsstrahlung}
 
-Le \emph{Dynamic Noise Adjustment} (DNA) est un algorithme d'ajustement des traces qui permet de tenir compte des pertes d'énergie par Bremsstrahlung. Il extrapole les segments de traces vers la couche suivante du détecteur silicium (pixels + SCT). S'il y a une présumée contribution de Bremsstrahlung dur, la perte d'énergie est estimée et un terme additionnel de bruit est inséré dans le filtre de Kalman\footnote{Le filtre de Kalman permet d'estimer les états d'un système dynamique à partir d'une série de mesures incomplètes ou bruitées.} utilisé dans la reconstruction des traces, voir chapitre 6.
+Le \emph{Dynamic Noise Adjustment} (DNA) est un algorithme d'ajustement des traces qui permet de tenir compte des pertes d'énergie par Bremsstrahlung\cite{V2007208}\cite{Elsing:1116070}. Il extrapole les segments de traces vers la couche suivante du détecteur silicium (pixels + SCT). S'il y a une présumée contribution de Bremsstrahlung dur, la perte d'énergie est estimée et un terme additionnel de bruit est inséré dans le filtre de Kalman\footnote{Le filtre de Kalman permet d'estimer les états d'un système dynamique à partir d'une série de mesures incomplètes ou bruitées.} utilisé dans la reconstruction des traces, voir chapitre 6.
 
 La masse invariante des $ \pi^0 $ dans les canaux $ \pi^0\to\gamma e^+e^- $ et $ \pi^0\to e^+e^-e^+e^- $ a été estimée en utilisant l'algorithme (DNA). Les figures \ref{DNA} (a) et \ref{DNA} (b) montrent respectivement la distribution de masse invariante des candidats $ \pi^0\to\gamma e^+e^- $ et $ \pi^0\to e^+e^-e^+e^- $ après sélection pour les données et pour la simulation Monte-Carlo. Un nouveau jeu de poids $ w_1 $ et $ w_2 $ a été déterminé afin d'améliorer l'accord entre les données et la simulation Monte-Carlo. Après ajustement, nous obtenons $ \left<m\right>=134.2\pm0.1\MeV $, $ \sigma=24.1\pm0.1\MeV $ (données) et $ \left<m\right>=134.2\pm0.1\MeV $, $ \sigma=24.4\pm0.1\MeV $ (simulation) pour le canal $ \pi^0\to\gamma e^+e^- $ et $ \left<m\right>=128.5\pm0.5\MeV $, $ \sigma=16.1\pm0.5\MeV $ (données) et $ \left<m\right>=128.4\pm0.5\MeV $, $ \sigma=14.8\pm0.5\MeV $ (simulation) pour le canal $ \pi^0\to e^+e^-e^+e^- $. La première masse moyenne est compatible avec les attentes et la seconde masse moyenne est significativement améliorée par rapport aux valeurs attendues. Les résolutions sont également diminuées par rapport à l'algorithme standard de reconstruction des traces.
 
@@ -730,7 +731,7 @@ La masse invariante des $ \pi^0 $ dans les canaux $ \pi^0\to\gamma e^+e^- $ et $
 
 \subsection{Conclusion pour les $ \pi^0 $}
 
-Les études sur la reconstruction des $ \pi^0 $, montrées dans ce chapitre, ont permis d'utiliser conjointement le calorimètre électromagnétique et le trajectographe interne afin de réaliser une des premières études de physique avec des données de type \og collisions\fg.
+Les résultats, montrées dans ce chapitre, ont fait l'objet de trois notes\cite{ATLAS-CONF-2010-006}\cite{ATLAS-CONF-2010-007}\cite{ATL-COM-PHYS-2010-1023}. La reconstruction des $ \pi^0 $ a permis d'utiliser conjointement le calorimètre électromagnétique et le trajectographe interne afin de réaliser une des premières études de physique avec des données de type \og collisions\fg.
 
 Il a été possible de tester les performances du calorimètre électromagnétique à une échelle d'énergie de l'ordre de $ 500\MeV $. Il a été possible de retrouver la masse des $ \pi^0 $ avec une erreur de l'ordre de $ 1.5\% $ par rapport aux masses nominales grâce à la mise en place d'un algorithme de calibration de l'énergie dans les amas électromagnétiques. L'accord entre les données et la simulation Monte-Carlo est de l'ordre de $ 1\% $ et la largeur des distributions de masse invariante est compatible avec la résolution attendue à ces énergies. Il a été possible de réaliser une étude sur l'uniformité de la réponse du calorimètre électromagnétique, on montre que l'uniformité en $ \eta $ est meilleure que $ 2\% $ (resp. $ 1\% $) dans le tonneau (resp. dans les bouchons) et que l'uniformité en $ \phi $ est toujours meilleure que $ 1\% $.
 
@@ -809,7 +810,7 @@ Il est possible d'estimer la quantité de matière $ \frac{X}{X_0} $ en utilisant 
 
 \subsubsection{Conclusion}
 
-Cette étude préliminaire montre qu'avec les premières données, la connaissance de la distribution de matière à l'intérieur du trajectographe interne est raisonnable. Dans la section suivante, je vais présenter une étude plus fine réalisée avec les données à $ \sqrt{s}=7\TeV $ de la période D.
+Cette étude préliminaire fait l'objet d'une note \cite{ATLAS-CONF-2010-006}. Elle montre qu'avec les premières données, la connaissance de la distribution de matière à l'intérieur du trajectographe interne est réaliste. Dans la section suivante, je vais présenter une étude plus fine réalisée avec les données à $ \sqrt{s}=7\TeV $ de la période D.
 
 \begin{table}[!ht]
   \begin{bigcenter}
