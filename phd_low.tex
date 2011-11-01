@@ -209,9 +209,9 @@ La simulation Monte-Carlo est composée de $ \sim10^7 $ (resp. $ \sim4\times10^7 
 
 Pour les conversions, la justification détaillée du choix des coupures de sélection sera discutée dans la section \ref{selection_7TeV} pour les données à $ \sqrt{s}=7TeV $.\\
 
-Pour la sélection des photons, la première coupure consiste à rejeter les amas situés dans la zone de transition (\emph{crack}) entre le tonneau et les bouchons du calorimètre électromagnétique $ 1.37<|\eta|<1.52 $ ainsi que les amas situés en dehors de la zone de précision du calorimètre $ |\eta|>2.47 $. La seconde consiste à définir une coupure sur l'énergie calibrée $ E_T>400\MeV $ supérieur à la coupure sur l'énergie non calibrée $ E_T>300\MeV $ nécessaire au bon fonctionnement de l'algorithme de reconstruction des amas topologiques.
+Pour la sélection des photons, la première coupure consiste à rejeter les amas situés dans la zone de transition (\emph{crack}), entre le tonneau et les bouchons du calorimètre électromagnétique $ 1.37<|\eta|<1.52 $, ainsi que les amas situés en dehors de la zone de précision du calorimètre $ |\eta|>2.47 $. La seconde consiste à définir une coupure sur l'énergie calibrée $ E_T>400\MeV $ supérieur à la coupure sur l'énergie non calibrée $ E_T>300\MeV $ nécessaire au bon fonctionnement de l'algorithme de reconstruction des amas topologiques.
 
-Pour la sélection des vertex de conversion, il est demandé de ne conserver que les pairs de traces ayant au moins $ 4 $ coups dans les détecteurs silicium (pixels + SCT) et au moins un coup dans le TRT car la coupure lâche $ PID>10\% $ est appliquée afin de rejeter grossièrement des pions chargés, voir figure \ref{PID} (b). La figure \ref{conversionSelection900GeV_nocut} montre la distribution, après sélection des traces seulement, des variables $ \Delta(\frac{1}{\tan\theta}) $ (a), $ D-R_1-R_2 $ (b), $ \chi^2_\textrm{vtx} $ (c) ainsi que l'impulsion transerve (d). Afin de rejeter le bruit de fond, nous appliquons les coupures lâches suivantes : $ D-R_1-R_2>0 $ et $ \chi^2_\textrm{vtx}<10 $.\\
+Pour la sélection des vertex de conversion, il est demandé de ne conserver que les pairs de traces ayant au moins $ 4 $ coups dans les détecteurs silicium (pixels + SCT) et au moins un coup dans le TRT car la coupure lâche $ PID>10\% $ est appliquée afin de rejeter grossièrement des pions chargés, voir figure \ref{PID} (b). La figure \ref{conversionSelection900GeV_nocut} montre les distributions, après sélection des traces seulement, des variables $ \Delta(\frac{1}{\tan\theta}) $ (a), $ D-R_1-R_2 $ (b), $ \chi^2_\textrm{vtx} $ (c) ainsi que l'impulsion transerve (d). Afin de rejeter le bruit de fond, nous appliquons les coupures lâches suivantes : $ D-R_1-R_2>0 $ et $ \chi^2_\textrm{vtx}<10 $.\\
 
 \begin{figure}[!ht]
   \begin{bigcenter}
@@ -266,17 +266,17 @@ Comme la statistique est plus importante, la sélection des conversions est un pe
     \hline
 	\multicolumn{2}{|c|}{Coupures de sélection} & Efficacité $ \frac{\textrm{vraies conv. reco.}}{\textrm{vraies conv.}} $ $ [\%] $ & Taux de faux $ \frac{\textrm{fausses conv. reco.}}{\textrm{conv. reco.}} $ $ [\%] $\\
     \hline
-	\begin{minipage}{4cm}\small{4 coups dans le silicium, $ p_{T\,trace}>500\MeV $}\end{minipage} & $ \varnothing $ & $ 0.88\pm0.03 $ & $ 66.8\pm0.9 $\\
-	& \small{$ D-R1-R2>0 $}                                                                                         & $ 0.77\pm0.03 $ & $ 45.0\pm1.3 $\\
-	& \small{$ \chi^2_{vtx}<2.5 $}                                                                                  & $ 0.59\pm0.02 $ & $ 8.5\pm1.1 $\\
-	& \small{$ PID>10\% $}                                                                                          & $ 0.22\pm0.02 $ & $ 50.3\pm1.2 $\\
-	& \small{$ n_{HT}/n_{TRT}>0.12 $}                                                                               & $ 0.85\pm0.03 $ & $ 12.7\pm2.1 $\\
-	& \small{toutes $ \diagdown $ $ \{\textrm{PID}\} $}                                                             & $ 0.16\pm0.01 $ & $ 1.8\pm1.1 $\\
+	\begin{minipage}{4cm}\small{4 coups silicium, $ p_{T\,trace}>500\MeV $}\end{minipage} & $ \varnothing $ & $ 0.82\pm0.01 $ & $ 69.1\pm0.4 $\\
+	& \small{$ D-R1-R2>0 $}                                                                                 & $ 0.71\pm0.01 $ & $ 49.3\pm0.7 $\\
+	& \small{$ \chi^2_{vtx}<2.5 $}                                                                          & $ 0.56\pm0.01 $ & $ 10.8\pm0.6 $\\
+	& \small{$ PID>10\% $}                                                                                  & $ 0.80\pm0.01 $ & $ 52.0\pm0.6 $\\
+	& \small{$ n_{HT}/n_{TRT}>0.12 $}                                                                       & $ 0.20\pm0.01 $ & $ 14.0\pm1.1 $\\
+	& \small{toutes $ \diagdown $ $ \{\textrm{PID}\} $}                                                     & $ 0.15\pm0.01 $ & $ 2.2\pm0.6 $\\
     \hline
   \end{tabular}
 
   \end{bigcenter}
-  \caption{\label{conv_eff_selec}Efficacité et taux de faux des vertex de conversion avec plusieurs jeux de coupures pour la simulation Monte-Carlo. $ \sqrt{s}=7\TeV $ pour $ 50000 $ événements seulement.}
+  \caption{\label{conv_eff_selec}Efficacité et taux de faux des vertex de conversion avec plusieurs jeux de coupures pour la simulation Monte-Carlo à $ \sqrt{s}=7\TeV $ et $ 200000 $ événements seulement.}
 \end{table}
 
 \begin{figure}[!ht]
@@ -403,7 +403,7 @@ La reconstruction du 4-vecteur énergie-impulsion des photons non convertis est r
                                     &=&(E_{cl};|p_{T\,cl}|\cos\phi_{cl},|p_{T\,cl}|\sin\phi_{cl},|p_{T\,cl}|\sinh\eta_{cl})_{\gamma\,\textrm{non conv.}}
 \end{eqnarray}
 
-La figure \ref{pizerocalo} le dépôt d'énergie dans les trois compartiments du calorimètre électromagnétique issu de la désintégration d'un $ \pi^0 $ en deux photons. A l'échelle d'énergie des $ \pi^0 $, $ E\approx500\MeV $, la résolution du trajectographe interne $ \sigma_\textrm{tracker}\approx1.5\MeV $ est meilleure que la résolution du calorimètre électromagnétique $ \sigma_\textrm{EMcalo}\approx40\MeV $. C'est pourquoi, la reconstruction du 4-vecteur énergie-impulsion des photons convertis est réalisée à partir des informations fournies par le trajectographe interne :
+La figure \ref{pizerocalo} montre le dépôt d'énergie dans le pré-échantillonneur et dans les trois compartiments du calorimètre électromagnétique issu de la désintégration d'un $ \pi^0 $ en deux photons. A l'échelle d'énergie des $ \pi^0 $, $ E\approx500\MeV $, la résolution du trajectographe interne $ \sigma_\textrm{tracker}\approx1.5\MeV $ est meilleure que la résolution du calorimètre électromagnétique $ \sigma_\textrm{EMcalo}\approx40\MeV $. C'est pourquoi, la reconstruction du 4-vecteur énergie-impulsion des photons convertis est réalisée à partir des informations fournies par le trajectographe interne :
 \begin{eqnarray}
   p^\mu_{\gamma\,\textrm{conv.}}&=&(E;\bold{p})_{e^+}+(E;\bold{p})_{e^-}\nonumber\\
                                 &=&(\sqrt{m^2_{e^\pm}+|\bold{p}|^2};|p_{T\,trk}|\cos\phi_{trk},|p_{T\,trk}|\sin\phi_{trk},|p_{T\,trk}|\sinh\eta_{trk})_{e^+}\nonumber\\
@@ -416,7 +416,7 @@ Au final, les trois situations suivantes sont à prendre en compte selon le nombr
   \begin{bigcenter}
     \includegraphics[height=5.5cm, width=7.5cm]{phd_low/pi0}
   \end{bigcenter}
-  \caption{\label{pizerocalo}Dépôt d'énergie dans les trois compartiments du calorimètre électromagnétique issu de la désintégration d'un $ \pi^0 $ en deux photons.}
+  \caption{\label{pizerocalo}Dépôt d'énergie dans le pré-échantillonneur et dans les trois compartiments du calorimètre électromagnétique issu de la désintégration d'un $ \pi^0 $ en deux photons.}
 \end{figure}
 
 \subsection{Sélection des $ \pi^0 $}\label{selection}
@@ -769,7 +769,7 @@ Il a été possible de reconstruire des $ \pi^0 $ avec des photons convertis grâce
 
 \section{Cartographie de la matière du trajectographe interne}
 
-Au chapitre 3, nous avions indiqué que les électrons peuvent perdre jusqu'à $ 50\% $ de leur énergie par Bremsstrahlung et que $ 40\% $ des photons se convertissent en paires d'électrons dans le trajectographe interne. Les algorithmes de reconstruction des électrons est des photons, qui ont été présentés au chapitre \ref{chapitre_reco}, doivent tenir compte de ces phénomènes. Nous savons en particulier que les variables de forme de gerbe électromagnétiques sont affectées. Dans cette section, je vais présenter une méthode de cartographie de la matière située à l'intérieur du trajectographe interne du détecteur Atlas (jusqu'à la deuxième couche du SCT et pour le tonneau seulement $ |\eta|<0.625 $) en utilisant des photons convertis de faible impulsion transverse. L'objectif final serait une connaissance de la distribution de matière de $ 1\%X_0 $.
+Au chapitre 3, nous avions indiqué que les électrons peuvent perdre jusqu'à $ 50\% $ de leur énergie par Bremsstrahlung et que $ 40\% $ des photons se convertissent en paires d'électrons dans le trajectographe interne. Les algorithmes de reconstruction des électrons est des photons, qui ont été présentés au chapitre \ref{chapitre_reco}, doivent tenir compte de ces phénomènes. Nous savons en particulier que les variables de forme de gerbe électromagnétiques sont affectées. Dans cette section, je vais présenter une méthode de cartographie de la matière située à l'intérieur du trajectographe interne du détecteur Atlas (jusqu'à la deuxième couche du SCT et pour le tonneau seulement $ |\eta|<0.625 $) en utilisant des photons convertis de faible impulsion transverse. L'objectif final serait une connaissance de la distribution de matière à $ 1\%X_0 $.
 
 \subsection{Principe général}\label{principe}
 
