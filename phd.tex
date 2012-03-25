@@ -12,6 +12,8 @@
 \strut
 \newpage
 
+\thispagestyle{empty}
+
 \hfill À mes parents
 
 \newpage
@@ -70,10 +72,18 @@
 
 \input{phd_annexe}
 
-%\input{phd_merci}
+\input{phd_merci}
 
-\bibliographystyle{plain}
+\bibliographystyle{unsrt}
 \bibliography{phd}
+
+\newpage
+\strut
+\newpage
+\strut
+\ifodd\thepage ~\newpage~\fi
+
+\input{phd_abstract}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \end{document}
