@@ -18,7 +18,7 @@ all:
 #############################################################################
 
 pdf:
-	@for f in $(MF); do mf $$f; done;
+#	@for f in $(MF); do mf $$f; done;
 
 	pdflatex phd.tex
 

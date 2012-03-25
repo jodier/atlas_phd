@@ -1,6 +1,6 @@
 \chapter[Validation de la simulation des gerbes électromagnétiques]{Validation, avec des muons cosmiques, de la simulation des gerbes électromagnétiques}\label{chapitre_cosmics}
 
-Ce chapitre traite de la validation, avec des muons cosmiques, de la simulation des gerbes électromagnétiques. J'ai montré, au chapitre précédent, que l'identification des électrons et des photons est principalement basée sur des critères de forme de gerbes électromagnétiques. C'est pourquoi, il fut intéressant de réaliser une validation des simulations sur les premières données cosmiques 2008 et 2009. Les résultats concernant les données 2008 et la première génération de simulations Monte-Carlo ont fait l'objet d'une note\cite{Arnaez:1216177}.
+Ce chapitre traite de la validation, avec des muons cosmiques, de la simulation des gerbes électromagnétiques. J'ai montré, au chapitre précédent, que l'identification des électrons et des photons est principalement basée sur des critères de forme de gerbes électromagnétiques. C'est pourquoi il fut intéressant de réaliser une validation des simulations sur les premières données cosmiques 2008 et 2009. Les résultats concernant les données 2008 et la première génération de simulations Monte-Carlo ont fait l'objet d'une note\cite{Arnaez:1216177}.
 
 \section{Méthode}
 
@@ -23,7 +23,7 @@ Par la suite, nous désignerons par \og photon \fg\, les photons de Bremsstrahlun
 
 Au cours de l'automne 2008, l'expérience Atlas a enregistré $ \sim300 $ millions d'événements cosmiques dont $ \sim80 $ millions en acquisition combinée, c'est-à-dire avec le trajectographe interne activé, avec le calorimètre électromagnétique activé et aussi avec le système d'aimants (solénoïdal et toroïdal) en fonctionnement.
 
-Au cours de l'été 2009, au mois de juin essentiellement, l'expérience Atlas a enregistré $ \sim75 $ millions d'événements cosmiques dont $ \sim25 $ millions en acquisition combinée sur de longues périodes d'au moins un demi million d'événements chacune.\\
+Au cours de l'été 2009, au mois de juin essentiellement, l'expérience Atlas a enregistré $ \sim75 $ millions d'événements cosmiques dont $ \sim25 $ millions en acquisition combinée sur de longues périodes d'au moins un demi-million d'événements chacune.\\
 
 Les événements ont été reconstruits par l'environnement d'analyse Athena du détecteur Atlas sous forme de collection d'objets persistants (.pool.root) au format ESD qui contient des objets haut niveau tels que des traces, des amas, des photons, des électrons, des taus, etc\dots\, Ces événements ont ensuite été écrémés et subdivisés en plusieurs voies d'écrémage orientées \og analyse \fg (= DPD). Le tableau \ref{cosmics_ecremage} donne la description des voies d'écrémage disponibles pour les données cosmiques. Pour chacune d'entre elles, plusieurs voies de déclenchement sont disponibles. Nous définissons par \og format de données \fg\, l'association d'une voie d'écrémage et d'une voie de déclenchement. Le tableau \ref{cosmics_formats} donne la description des formats disponibles pour les données cosmiques.
 
@@ -85,15 +85,15 @@ Pour les données 2009 uniquement, précisons que seuls des ESD étaient disponible
 
 \section{Choix du format de données}
 
-Les dépôts d'énergie calorimétriques sont reconstruits par l'algorithme standard, c'est-à-dire l'algorithme de reconstruction d'amas à fenêtres glissantes présenté au chapitre \ref{chapitre_reco}. Nous verrons par la suite que la sélection des candidats requiert une trace associée pour chaque amas. Il apparait immédiatement que les voies d'écrémage IDComm, IDProjComm (qui est défavorable au niveau de la statistique), EMClustComm et enfin EGamTauComm présentent un intérêt car elles contiennent des traces et/ou des amas.
+Les dépôts d'énergie calorimétriques sont reconstruits par l'algorithme standard, c'est-à-dire l'algorithme de reconstruction d'amas à fenêtres glissantes présenté au chapitre \ref{chapitre_reco}. Nous verrons par la suite que la sélection des candidats requiert une trace associée pour chaque amas. Il apparaît immédiatement que les voies d'écrémage IDComm, IDProjComm (qui est défavorable au niveau de la statistique), EMClustComm et enfin EGamTauComm présentent un intérêt, car elles contiennent des traces et/ou des amas.
 
 Le choix définitif du format de données va se faire au niveau des performances des systèmes de déclenchement. Les deux systèmes de déclenchement pertinents pour cette analyse sont IDCosmics et L1CaloEM. EGamTauComm est la seule voie d'écrémage à proposer IDCosmics et L1CaloEM. IDCosmics correspond à une trace de muon reconstruite au niveau L2 et L1CaloEM correspond à un dépôt d'énergie significatif dans le calorimètre électromagnétique au niveau L1. Le format XXX-EGamTauComm signifie donc : événement avec au moins un objet électromagnétique reconstruit, photon, électron ou tau, ayant déclenché sur XXX où XXX sera IDCosmics ou L1CaloEM.\\
 
-La figure \ref{cosmics_cmp1} montre l'angle angle azimutal $ \phi $ en fonction de la pseudo-rapidité $ \eta $ des amas d'énergie des candidats présélectionnés avec une énergie dans l'amas $ E>5\GeV $ et au moins un coup dans le silicium pour la voie IDCosmic-EGamTauComm (a) et pour la voie L1CaloEM-EGamTauComm (b). Les acceptances semblent similaires entre des deux voies de déclenchement. La figure \ref{cosmics_cmp2} montre le paramètre d'impact $ z_0 $ en fonction du paramètre d'impact $ d_0 $ des candidats présélectionnés avec une énergie dans l'amas $ E>5\GeV $ pour la voie IDCosmic-EGamTauComm (a) et pour la voie L1CaloEM-EGamTauComm (b). Les acceptances ne sont pas exactement similaires à cause du déclenchement sur des traces dans le premier cas et sur des objets calorimétriques dans le second cas. Les bandes rouges à $ z\approx0 $ proviennent des traces reconstruites dans le TRT seulement et les carrés centraux correspondent aux traces reconstruites dans les pixels.
+La figure \ref{cosmics_cmp1} montre l'angle angle azimutal $ \phi $ en fonction de la pseudorapidité $ \eta $ des amas d'énergie des candidats présélectionnés avec une énergie dans l'amas $ E>5\GeV $ et au moins un coup dans le silicium pour la voie IDCosmic-EGamTauComm (a) et pour la voie L1CaloEM-EGamTauComm (b). Les acceptances semblent similaires entre des deux voies de déclenchement. La figure \ref{cosmics_cmp2} montre le paramètre d'impact $ z_0 $ en fonction du paramètre d'impact $ d_0 $ des candidats présélectionnés avec une énergie dans l'amas $ E>5\GeV $ pour la voie IDCosmic-EGamTauComm (a) et pour la voie L1CaloEM-EGamTauComm (b). Les acceptances ne sont pas exactement similaires à cause du déclenchement sur des traces dans le premier cas et sur des objets calorimétriques dans le second cas. Les bandes rouges à $ z\approx0 $ proviennent des traces reconstruites dans le TRT seulement et les carrés centraux correspondent aux traces reconstruites dans les pixels.
 
 Connaissant le nombre de candidats dans la voie de déclenchement IDCosmic et connaissant le nombre de candidats dans la voie de déclenchement L1CaloEM, $ N_\textrm{IDCosmic}\approx165000 $ et $ N_\textrm{L1CaloEM}\approx343000 $, il est alors possible de calculer l'efficacité des deux systèmes de déclenchement : $ \varepsilon_\textrm{IDCosmic}\approx89\% $, $ \varepsilon_\textrm{L1CaloEM}\approx64\% $.
 
-Pour cette étude, le choix c'est finalement porté sur le format IDCosmic-EGamTauComm. Notons qu'il aurait été possible d'utiliser conjointement IDCosmic \textbf{et} L1CaloEM afin d'augmenté légèrement la statistique mais il aurait fallu tenir compte du recouvrement.
+Pour cette étude, le choix c'est finalement porté sur le format IDCosmic-EGamTauComm. Notons qu'il aurait été possible d'utiliser conjointement IDCosmic \textbf{et} L1CaloEM afin d'augmenté légèrement la statistique, mais il aurait fallu tenir compte du recouvrement.
 
 \begin{figure}[!h]
   \begin{bigcenter}
@@ -107,7 +107,7 @@ Pour cette étude, le choix c'est finalement porté sur le format IDCosmic-EGamTau
   \end{tabular}
 
   \end{bigcenter}
-  \caption{\label{cosmics_cmp1}Angle azimutal $ \phi $ en fonction de la pseudo-rapidité $ \eta $ des amas d'énergie des candidats présélectionnés avec une énergie dans l'amas $ E>5\GeV $ et au moins un coup dans le silicium. Voie IDCosmic-EGamTauComm (a), voie L1CaloEM-EGamTauComm (b).}
+  \caption{\label{cosmics_cmp1}Angle azimutal $ \phi $ en fonction de la pseudorapidité $ \eta $ des amas d'énergie des candidats présélectionnés avec une énergie dans l'amas $ E>5\GeV $ et au moins un coup dans le silicium. Voie IDCosmic-EGamTauComm (a), voie L1CaloEM-EGamTauComm (b).}
 \end{figure}
 
 \begin{figure}[!h]
@@ -129,7 +129,7 @@ Pour cette étude, le choix c'est finalement porté sur le format IDCosmic-EGamTau
 
 Faut-il traiter les données 2008 et 2009 ensemble ou séparément? Pour répondre à cette question, il faut rechercher les sources de potentielles différences. D'un point de vue de la calorimétrie, ni la réponse du détecteur, ni la définition des variables de forme de gerbes électromagnétiques, ni les algorithmes de reconstruction n'ont changé. D'un point de vue de la trajectographie, quelques améliorations ont été apportées aux algorithmes de reconstruction des traces. Ceci peut influer au niveau du système de déclenchement IDCosmic et aussi au niveau de l'association trace-amas. Il convient alors de vérifier si l'acceptance change en les données 2008 et 2009.
 
-La figure \ref{20082009a} montre l'angle angle azimutal $ \phi $ en fonction de la pseudo-rapidité $ \eta $ des amas d'énergie des candidats avant  pour les données 2008 (a) et pour les données 2009 (b). Les acceptances semblent similaires entre des deux lots de données. Les figures \ref{20082009b} (a) et \ref{20082009b} (b) montrent respectivement la distribution des paramètres d'impact $ z_0 $  et $ d_0 $ pour les données 2008 et 2009 après sélection. Les acceptances sont suffisamment similaires pour conclure à l'\textbf{utilisation cumulée des données 2008 et 2009}. La figure \ref{cosmic_vp1} montre une visualisation d'un événement cosmique.
+La figure \ref{20082009a} montre l'angle angle azimutal $ \phi $ en fonction de la pseudorapidité $ \eta $ des amas d'énergie des candidats avant  pour les données 2008 (a) et pour les données 2009 (b). Les acceptances semblent similaires entre des deux lots de données. Les figures \ref{20082009b} (a) et \ref{20082009b} (b) montrent respectivement la distribution des paramètres d'impact $ z_0 $  et $ d_0 $ pour les données 2008 et 2009 après sélection. Les acceptances sont suffisamment similaires pour conclure à l'\textbf{utilisation cumulée des données 2008 et 2009}. La figure \ref{cosmic_vp1} montre une visualisation d'un événement cosmique.
 
 \begin{figure}[!h]
   \begin{bigcenter}
@@ -143,7 +143,7 @@ La figure \ref{20082009a} montre l'angle angle azimutal $ \phi $ en fonction de 
   \end{tabular}
 
   \end{bigcenter}
-  \caption{\label{20082009a}Angle azimutal $ \phi $ en fonction de la pseudo-rapidité $ \eta $ des amas d'énergie des évènements présélectionnés avec une énergie dans l'amas $ E>5\GeV $. Données 2008 (a), données 2009 (b).}
+  \caption{\label{20082009a}Angle azimutal $ \phi $ en fonction de la pseudorapidité $ \eta $ des amas d'énergie des évènements présélectionnés avec une énergie dans l'amas $ E>5\GeV $. Données 2008 (a), données 2009 (b).}
 \end{figure}
 
 \begin{figure}[!h]
@@ -220,7 +220,7 @@ Ensuite, le logiciel GEANT4\cite{citeulike:1175885} simule les pertes d'énergie 
 
 où $ \rho\approx2.33g.cm^{-2} $ est la densité de la roche et $ a\approx2.44\MeV.g^{-1}.cm^2 $. Utilisons à nouveau la simulation Monte-Carlo \og jouet \fg\, afin d'illustrer l'interaction entre les muons et la roche, avec puits de service, figure \ref{toy2} (a) et sans puits de service \ref{toy2} (b).
 
-GEANT4 effectue encore une sélection (= filtre) afin de sélectionner les particules qui passent par une surface prédéfinie associée au volume d'un sous-détecteur donné. Ainsi, pour le détecteur Alas, nous disposons de plusieurs lots de simulations Monte-Carlo : pour le volume du spectromètre à muons (= MuonVolumeFilter), pour le volume du trajectographe à pixel \textbf{et} pour la partie tonnau du trajectographe à rayonnement de transition (= PixelVolumeFilter) ou encore pour le volume complet du trajectographe interne (= IDVolumeFilter).
+GEANT4 effectue encore une sélection (= filtre) afin de sélectionner les particules qui passent par une surface prédéfinie associée au volume d'un sous-détecteur donné. Ainsi, pour le détecteur Alas, nous disposons de plusieurs lots de simulations Monte-Carlo : pour le volume du spectromètre à muons (= MuonVolumeFilter), pour le volume du trajectographe à pixel \textbf{et} pour la partie tonneau du trajectographe à rayonnement de transition (= PixelVolumeFilter) ou encore pour le volume complet du trajectographe interne (= IDVolumeFilter).
 
 \newpage
 
@@ -228,11 +228,11 @@ GEANT4 effectue encore une sélection (= filtre) afin de sélectionner les particu
 
 Pour cette analyse, nous disposions de deux générations de simulations Monte-Carlo avec muons reconstruits dans le volume du détecteur interne.
 
-La première génération fut produite en 2008 ($ 1.2\times10^7 $ événements) et reconstruite avec la même version d'Athena que les données 2008. Nous disposons d'échantillons où les champs magnétiques, torroïde \textbf{et} solénoïde, sont activés et d'échantillons où les champs magnétiques, torroïde \textbf{et} solénoïde, sont désactivés.
+La première génération fut produite en 2008 ($ 1.2\times10^7 $ événements) et reconstruite avec la même version d'Athena que les données 2008. Nous disposons d'échantillons où les champs magnétiques, toroïde \textbf{et} solénoïde, sont activés et d'échantillons où les champs magnétiques, toroïde \textbf{et} solénoïde, sont désactivés.
 
-La seconde génération fut produite en 2009 ($ 2.5\times10^6 $ événements) et reconstruite avec la même version d'Athena que les données 2009. La simulation de la diaphonie entre les électrodes du calorimètre électromagnétique a été grandement améliorée en introduisant, entre autre, la prise en compte de la diaphonie entres les cellules des deux premiers compartiments. Nous verrons ultérieurement que cela permet d'améliorer l'accord entre les données et la simulation Monte-Carlo pour certaines variables. Indiquons encore que l'environnement du détecteur atlas, la forme de la caverne, les puits de service et les ascenseurs, sont mieux simulés.
+La seconde génération fut produite en 2009 ($ 2.5\times10^6 $ événements) et reconstruite avec la même version d'Athena que les données 2009. La simulation de la diaphonie entre les électrodes du calorimètre électromagnétique a été grandement améliorée en introduisant, entre autres, la prise en compte de la diaphonie entre les cellules des deux premiers compartiments. Nous verrons ultérieurement que cela permet d'améliorer l'accord entre les données et la simulation Monte-Carlo pour certaines variables. Indiquons encore que l'environnement du détecteur Atlas, la forme de la caverne, les puits de service et les ascenseurs sont mieux simulés.
 
-Seuls  ont été utilisés dans cette analyse, les échantillons où les champs magnétiques torroïde \textbf{et} solénoïde sont activés. Les deux générations ont été traitées séparément afin de tester les améliorations.
+Seuls  ont été utilisés dans cette analyse, les échantillons où les champs magnétiques toroïde \textbf{et} solénoïde sont activés. Les deux générations ont été traitées séparément afin de tester les améliorations.
 
 \newpage
 
@@ -265,7 +265,7 @@ Les figures \ref{cosmics_d0z0_unselect} (a) et \ref{cosmics_d0z0_select} (b) mon
 
 Afin d'être compatible avec les spécifications du système de déclenchement, nous ne considérerons que les traces pour lesquels $ p_T>5\GeV $. La figure \ref{cosmics_coups} montre le nombre de coups dans le TRT en fonction du nombre de coups dans le silicium (Pixels + SCT) pour des candidats présélectionnés avec une énergie dans l'amas $ E>5\GeV $. Après normalisation au nombre d'entrées dans les données, nous observons une très grande différence dans la première classe de l'histogramme, c'est-à-dire, pour les traces reconstruites au niveau du TRT seulement. Dans cette étude, nous proposons de ne conserver que les candidats avec au moins un coup dans les pixels. En effet, nous ne conservons pas les traces TRT seulement, cette classe ne permet pas la mesure de $ z_0 $ et ne favorise pas une topologie de type \emph{collisions}.
 
-La figure \ref{cosmics_amas} montre la carte en angle azimutal et en pseudo-rapidité des amas électromagnétiques des candidats avec la présélection précédente. Par convention, les traces dont l'impulsion est négative suivant la direction $ y $ sont associées à des amas dont la coordonnée $ \phi $ est négative. Les entrées situées dans la partie positive sont associées à des muons quasi-horizontaux.
+La figure \ref{cosmics_amas} montre la carte en angle azimutal et en pseudorapidité des amas électromagnétiques des candidats avec la présélection précédente. Par convention, les traces dont l'impulsion est négative suivant la direction $ y $ sont associées à des amas dont la coordonnée $ \phi $ est négative. Les entrées situées dans la partie positive sont associées à des muons quasi horizontaux.
 
 \begin{figure}[!ht]
   \begin{bigcenter}
@@ -300,16 +300,16 @@ L'accord entre les données et la simulation Monte-Carlo n'est pas encore parfait
   \end{tabular}
 
   \end{bigcenter}
-  \caption{\label{cosmics_amas}Angle azimutal $ \phi $ en fonction de la pseudo-rapidité $ \eta $ des amas d'énergie des candidats présélectionnés avec une énergie dans l'amas $ E>5\GeV $, une impulsion de la trace $ p_T>5\GeV $ et au moins un coup dans le silicium. Première production de simulation Monte-Carlo (a), seconde production de simulation Monte-Carlo (b) et données (c).}
+  \caption{\label{cosmics_amas}Angle azimutal $ \phi $ en fonction de la pseudorapidité $ \eta $ des amas d'énergie des candidats présélectionnés avec une énergie dans l'amas $ E>5\GeV $, une impulsion de la trace $ p_T>5\GeV $ et au moins un coup dans le silicium. Première production de simulation Monte-Carlo (a), seconde production de simulation Monte-Carlo (b) et données (c).}
 \end{figure}
 
 \vspace{-0.2cm}
 
 \subsection{Sélection sur les paramètres d'impact des traces}
 
-La figure \ref{cosmics_d0vsz0} montre le paramètre d'impact $ d_0 $ en fonction du paramètre d'impact $ z_0 $ pour des candidats présélectionnés avec une énergie dans l'amas $ E>5\GeV $, une impulsion de la trace $ p_T>5\GeV $ et au moins un coup dans le silicium. Après normalisation au nombre d'entrées dans les données, il apparait une différence importante pour $ d_0 $ pour la première génération de génération Monte-Carlo où l'acceptance des muons simulés n'était pas très réaliste. Il est possible d'appliquer la coupure $ |d_0|<220mm $ sur les donnée comme sur la simulation Monte-Carlo afin d'améliorer l'accord entre les différentes acceptances. Cette coupure présente également l'avantage de sélectionner des muon projectifs qui se rapprochent d'objets de type \emph{collisions}. Une étude sur l'influence de la projectivité sera montrée ultérieurement.
+La figure \ref{cosmics_d0vsz0} montre le paramètre d'impact $ d_0 $ en fonction du paramètre d'impact $ z_0 $ pour des candidats présélectionnés avec une énergie dans l'amas $ E>5\GeV $, une impulsion de la trace $ p_T>5\GeV $ et au moins un coup dans le silicium. Après normalisation au nombre d'entrées dans les données, il apparaît une différence importante pour $ d_0 $ pour la première génération de génération Monte-Carlo où l'acceptance des muons simulés n'était pas très réaliste. Il est possible d'appliquer la coupure $ |d_0|<220mm $ sur les donnée comme sur la simulation Monte-Carlo afin d'améliorer l'accord entre les différentes acceptances. Cette coupure présente également l'avantage de sélectionner des muons projectifs qui se rapprochent d'objets de type \emph{collisions}. Une étude sur l'influence de la projectivité sera montrée ultérieurement.
 
-Les figures \ref{cosmics_d0z0_select} (a) et \ref{cosmics_d0z0_select} (b) rappellent respectivement la distribution des paramètres d'impact $ z_0 $ et $ d_0 $ pour des candidats avant sélection. Les figures \ref{cosmics_d0z0_select} (c) et \ref{cosmics_d0z0_select} (d) montrent respectivement la distribution des paramètres d'impact $ z_0 $ et $ d_0 $ pour des candidats avec la présélection précédente. Nous constatons que l'accord entre l'acceptance des données et des simulation Monte-Carlo est suffisamment bon pour l'étude que nous souhaitons mener avec les premières données du détecteur Atlas.
+Les figures \ref{cosmics_d0z0_select} (a) et \ref{cosmics_d0z0_select} (b) rappellent respectivement la distribution des paramètres d'impact $ z_0 $ et $ d_0 $ pour des candidats avant sélection. Les figures \ref{cosmics_d0z0_select} (c) et \ref{cosmics_d0z0_select} (d) montrent respectivement la distribution des paramètres d'impact $ z_0 $ et $ d_0 $ pour des candidats avec la présélection précédente. Nous constatons que l'accord entre l'acceptance des données et des simulations Monte-Carlo est suffisamment bon pour l'étude que nous souhaitons mener avec les premières données du détecteur Atlas.
 
 \begin{figure}[!p]
   \begin{bigcenter}
@@ -346,14 +346,14 @@ Les figures \ref{cosmics_d0z0_select} (a) et \ref{cosmics_d0z0_select} (b) rappe
   \end{tabular}
 
   \end{bigcenter}
-  \caption{\label{cosmics_d0z0_select}Distribution des paramètres d'impact $ z_0 $ (a) et $ d_0 $ (b) des candidats présélectionnés avec une énergie dans l'amas supérieure à $ 5\GeV $. Distribution des paramètres d'impact $ z_0 $ (c) et $ d_0 $ (d) des évènements sélectionnés avec une énergie dans l'amas $ E>5\GeV $, une impulsion de la trace $ p_T>5\GeV $, au moins un coup dans le silicium et enfin $ d_0<220mm $.}
+  \caption{\label{cosmics_d0z0_select}Distribution des paramètres d'impact $ z_0 $ (a) et $ d_0 $ (b) des candidats présélectionnés avec une énergie dans l'amas supérieur à $ 5\GeV $. Distribution des paramètres d'impact $ z_0 $ (c) et $ d_0 $ (d) des évènements sélectionnés avec une énergie dans l'amas $ E>5\GeV $, une impulsion de la trace $ p_T>5\GeV $, au moins un coup dans le silicium et enfin $ d_0<220mm $.}
 \end{figure}
 
 \subsection{Sélection des objets de type \emph{collisions}}
 
-Comme, la topologie des événements cosmiques est très différente de la topologie de objets de type \emph{collisions}, nous souhaitons effectuer une sélection afin de se rapprocher au maximum de ces derniers. Si nous considérons des photons projectifs, créés au centre du détecteur Atlas, ils doivent déposer plus d'énergie dans le premier compartiment du calorimètre électromagnétique qu'un muon cosmique quelconque. Nous proposons d'effectuer une sélection sur la fraction d'énergie déposée dans le premier compartiment $ f_1\equiv E_1/(E_1+E_2+E_3) $ où $ E_1 $, $ E_2 $ et $ E_3 $ sont respectivement les énergies déposées dans le premier, le second et le troisième compartiment.
+Comme la topologie des événements cosmiques est très différente de celle des objets de type \emph{collisions}, nous souhaitons effectuer une sélection afin de nous rapprocher au maximum de ces derniers. Si nous considérons des photons projectifs, créés au centre du détecteur Atlas, ils doivent déposer plus d'énergie dans le premier compartiment du calorimètre électromagnétique qu'un muon cosmique quelconque. Nous proposons d'effectuer une sélection sur la fraction d'énergie déposée dans le premier compartiment $ f_1\equiv E_1/(E_1+E_2+E_3) $ où $ E_1 $, $ E_2 $ et $ E_3 $ sont respectivement les énergies déposées dans le premier, le second et le troisième compartiment.
 
-La figure \ref{cosmics_f1} montre la distribution de la fraction d'énergie dans le premier compartiment pour les données cosmiques, les deux générations de simulations Monte-Carlo et pour des photons célibataires. Une coupure de sélection naturelle\footnote{Nous aurions pu utiliser la coupure $ f_1>15\% $, pour des raisons historiques, la coupure $ f_1>10\% $ a été conservée.} apparait : $ f_1>10\% $.
+La figure \ref{cosmics_f1} montre la distribution de la fraction d'énergie dans le premier compartiment pour les données cosmiques, les deux générations de simulations Monte-Carlo et pour des photons célibataires. Une coupure de sélection naturelle\footnote{Nous aurions pu utiliser la coupure $ f_1>15\% $, pour des raisons historiques, la coupure $ f_1>10\% $ a été conservée.} apparaît : $ f_1>10\% $.
 
 \begin{figure}[!h]
   \begin{minipage}{1.0\textwidth}
@@ -405,11 +405,11 @@ La figure \ref{cosmics_selection} (a) montre le résumé des coupures de sélection
 
 \section{Variables dans le second compartiment}
 
-Au précédent chapitre, nous avons montré que les variables de forme de gerbe électromagnétiques sont les variables les plus discriminantes pour l'identification des électrons et des photons.\\
+Au précédent chapitre, nous avons montré que les variables de forme de gerbes électromagnétiques sont les variables les plus discriminantes pour l'identification des électrons et des photons.\\
 
 Nous rappelons la définition de l'étalement latéral de la gerbe dans la direction $ \eta $ : $ R_\eta=\frac{E^{s2}_{3\times7}}{E^{s2}_{7\times7}} $ et dans la direction $ \phi $ : $ R_\phi=\frac{E^{s2}_{3\times3}}{E^{s2}_{3\times7}} $ où $ E^{s2}_{X\times Y} $ représente l'énergie de l'amas de taille $ X\times Y $ dans le second compartiment.
 
-La figure \ref{cosmics_reta} montre la distribution de la variable $ R_\eta $. Les deux générations de simulation Monte-Carlo sont en accord avec les données. La figure \ref{cosmics_phi} (a) montre la distribution de la variable $ R_\phi $. Les deux générations de simulation Monte-Carlo décrivent un peu moins bien les données, néanmoins, la seconde génération de simulation Monte-Carlo est meilleure. Ce résultat s'explique par l'ajout de la simulation de la diaphonie entre les cellules du second compartiment. La figure \ref{cosmics_phi} (b) montre la distribution de la variable $ R_\phi $ avec les champs magnétiques désactivés. L'effet observé est très faible $ <R_\phi>_\mathrm{champs}=0.969\pm0.002 $ et $ <R_\phi>_\mathrm{\barre{champs}}=0.971\pm0.002 $, pour les données et $ <R_\phi>_\mathrm{champs}=0.977\pm0.001 $ et $ <R_\phi>_\mathrm{\barre{champs}}=0.979\pm0.001 $, pour la simulation Monte-Carlo. De plus, l'évolution de la valeur moyenne est dans le bon sens car le champ magnétique, qui est dirigé suivant la direction $ z $, a tendance à courber les particules suivant la direction $ \phi $. 
+La figure \ref{cosmics_reta} montre la distribution de la variable $ R_\eta $. Les deux générations de simulation Monte-Carlo sont en accord avec les données. La figure \ref{cosmics_phi} (a) montre la distribution de la variable $ R_\phi $. Les deux générations de simulation Monte-Carlo décrivent un peu moins bien les données, néanmoins, la seconde génération de simulation Monte-Carlo est meilleure. Ce résultat s'explique par l'ajout de la simulation de la diaphonie entre les cellules du second compartiment. La figure \ref{cosmics_phi} (b) montre la distribution de la variable $ R_\phi $ avec les champs magnétiques désactivés. L'effet observé est très faible $ <R_\phi>_\mathrm{champs}=0.969\pm0.002 $ et $ <R_\phi>_\mathrm{\barre{champs}}=0.971\pm0.002 $, pour les données et $ <R_\phi>_\mathrm{champs}=0.977\pm0.001 $ et $ <R_\phi>_\mathrm{\barre{champs}}=0.979\pm0.001 $, pour la simulation Monte-Carlo. De plus, l'évolution de la valeur moyenne est dans le bon sens, car le champ magnétique, qui est dirigé suivant la direction $ z $, a tendance à courber les particules suivant la direction $ \phi $. 
 
 \begin{figure}[!h]
   \begin{bigcenter}
@@ -433,18 +433,18 @@ La figure \ref{cosmics_reta} montre la distribution de la variable $ R_\eta $. L
   \caption{\label{cosmics_phi}Étalement latéral de la gerbe électromagnétique dans la direction $ \phi $ dans le second compartiment : rapport de l'énergie dans un amas $ \Delta\eta\times\Delta\phi=3\times3 $ par l'énergie dans un amas $ \Delta\eta\times\Delta\phi=3\times7 $. Champs magnétiques activés (a) et champs magnétiques désactivés (b) disponible seulement pour la première production de simulation Monte-Carlo.}
 \end{figure}
 
-Nous rappelons la définition du second moment de la pseudo-rapidité des cellules dans un amas $ \Delta\eta\times\Delta\phi=3\times5 $ pondérées par leur énergie :
+Nous rappelons la définition du second moment de la pseudorapidité des cellules dans un amas $ \Delta\eta\times\Delta\phi=3\times5 $ pondérées par leur énergie :
 \begin{equation}
   W_{\eta_2}=\sqrt{\frac{\sum E_i\eta^2_i}{\sum E_i}-\left(\frac{\sum E_i\eta_i}{\sum E_i}\right)^2}
 \end{equation}
 
-La figure \ref{cosmics_weta2} montre la distribution de la variable $ W_{\eta_2} $. De même que précédemment, les deux générations de simulation Monte-Carlo décrivent raisonnablement bien les données. L'accord entre les données et la seconde génération de simulation Monte-Carlo est meilleure.
+La figure \ref{cosmics_weta2} montre la distribution de la variable $ W_{\eta_2} $. De même que précédemment, les deux générations de simulation Monte-Carlo décrivent raisonnablement bien les données. L'accord entre les données et la seconde génération de simulation Monte-Carlo est meilleur.
 
 \begin{figure}[!h]
   \begin{bigcenter}
     \includegraphics[height=5.25cm, keepaspectratio]{phd_cosmics/weta2}
   \end{bigcenter}
-  \caption{\label{cosmics_weta2}Second moment de la pseudo-rapidité des cellules d'un amas $ \Delta\eta\times\Delta\phi=3\times5 $ pondérées par leur énergie.}
+  \caption{\label{cosmics_weta2}Second moment de la pseudorapidité des cellules d'un amas $ \Delta\eta\times\Delta\phi=3\times5 $ pondérées par leur énergie.}
 \end{figure}
 
 \section{Variables dans le premier compartiment}
@@ -471,7 +471,7 @@ La figure \ref{cosmics_sens} illustre le déploiement d'une gerbe électromagnétiq
   \end{tabular}
 
   \end{bigcenter}
-  \caption{\label{cosmics_sens}Déploiement d'une gerbe électromagnétique dans la partie inférieur du détecteur Atlas (a), dans la partie supérieur du détecteur Atlas (b). Le premier cas correspond à une situation similaire à celle des évènements de type \emph{collisions}.}
+  \caption{\label{cosmics_sens}Déploiement d'une gerbe électromagnétique dans la partie inférieure du détecteur Atlas (a), dans la partie supérieure du détecteur Atlas (b). Le premier cas correspond à une situation similaire à celle des évènements de type \emph{collisions}.}
 \end{figure}
 
 \pagebreak
@@ -482,7 +482,7 @@ Rappelons la définition de la variable $ F_{side} $ qui représente l'énergie en 
   F_{side}=\frac{\sum^{+3}_{i=-3}E_i-\sum^{+1}_{i=-1}E_i}{\sum^{+1}_{i=-1}E_i}
 \end{equation}
 
-La figure \ref{cosmics_fside} (a) et (b) montrent respectivement la distribution de la variable $ F_{side} $ pour $ \phi<0 $ et $ \phi>0 $. L'accord entre les données et les simulations Monte-Carlo est bon, plus particulièrement pour la seconde génération quelque soit la configuration $ \phi<0 $ ou $ \phi>0 $. La figure (b) fait apparaitre d'importantes pertes en énergie dans le premier compartiment par dans la partie supérieure par rapport à la partie inférieure.
+La figure \ref{cosmics_fside} (a) et (b) montrent respectivement la distribution de la variable $ F_{side} $ pour $ \phi<0 $ et $ \phi>0 $. L'accord entre les données et les simulations Monte-Carlo est bon, plus particulièrement pour la seconde génération quelque soit la configuration $ \phi<0 $ ou $ \phi>0 $. La figure (b) fait apparaître d'importantes pertes en énergie dans le premier compartiment, dans la partie supérieure.
 
 \begin{figure}[!h]
   \begin{bigcenter}
@@ -496,7 +496,7 @@ La figure \ref{cosmics_fside} (a) et (b) montrent respectivement la distribution
   \end{tabular}
 
   \end{bigcenter}
-  \caption{\label{cosmics_fside}Énergie en dehors du c\oe ur de la gerbe. Partie inférieur du détecteur Atlas (a), partie supérieur du détecteur Atlas (b).}
+  \caption{\label{cosmics_fside}Énergie en dehors du c\oe ur de la gerbe. Partie inférieure du détecteur Atlas (a), partie supérieure du détecteur Atlas (b).}
 \end{figure}
 
 \pagebreak
@@ -509,7 +509,7 @@ Rappelons la définition de la largeur totale de la gerbe électromagnétique dans 
 
 où $ i $ balaye une fenêtre $ \Delta\eta\times\Delta\phi=0.0625\times0.2 $ ($ \sim20 $ cellules en $ \eta $) et $ i_{max} $ est l'index de la cellule la plus énergétique.
 
-La figure \ref{cosmics_fside} (a) et (b) montrent respectivement la distribution de la variable $ w_{stot} $ pour $ \phi<0 $ et $ \phi>0 $. L'accord entre les données et les simulations Monte-Carlo est bon pour la seconde génération de simulation Monte-Carlo et un peu moins pour la première sans la simulation de la diaphonie entre les cellules du second compartiment. Il faut cependant rester prudent car la statistique est peu importante. La largeur de la distribution est plus grande dans la partie inférieure $ \phi<0 $ que dans la partie supérieure $ \phi>0 $.
+La figure \ref{cosmics_fside} (a) et (b) montrent respectivement la distribution de la variable $ w_{stot} $ pour $ \phi<0 $ et $ \phi>0 $. L'accord entre les données et les simulations Monte-Carlo est bon pour la seconde génération de simulation Monte-Carlo et un peu moins pour la première sans la simulation de la diaphonie entre les cellules du second compartiment. Il faut cependant rester prudent, car la statistique est peu importante. La largeur de la distribution est plus grande dans la partie inférieure $ \phi<0 $ que dans la partie supérieure $ \phi>0 $.
 
 \begin{figure}[!h]
   \begin{bigcenter}
@@ -523,7 +523,7 @@ La figure \ref{cosmics_fside} (a) et (b) montrent respectivement la distribution
   \end{tabular}
 
   \end{bigcenter}
-  \caption{Largeur totale de la gerbe électromagnétique. Partie inférieure du détecteur Atlas (a), partie supérieur du détecteur Atlas (b).}
+  \caption{Largeur totale de la gerbe électromagnétique. Partie inférieure du détecteur Atlas (a), partie supérieure du détecteur Atlas (b).}
 \end{figure}
 
 \vspace{-0.2cm}
@@ -541,7 +541,7 @@ Nous définissons la variable $ \Delta\theta $ comme l'angle entre la direction d
   \caption{\label{cosmics_deltatheta}Définition de l'angle de projectivité $ \Delta\theta $ d'une gerbe électromagnétique.}
 \end{figure}
 
-La figure \ref{cosmics_projfside} montre la valeur moyenne de la distribution $ F_{side} $ en fonction de la projectivité $ \Delta\theta $ pour $ \phi<0 $ et $ \phi>0 $. De même que précédemment, la valeur moyenne est plus importante dans la partie supérieure du détecteur Atlas. L'effet de la projectivité est clairement visible. L'étalement des gerbes non-projectives est nettement plus important que pour les gerbes projectives (jusqu'à un facteur 2 pour $ \phi<0 $). L'accord entre les données et la simulation Monte-Carlo est bon.
+La figure \ref{cosmics_projfside} montre la valeur moyenne de la distribution $ F_{side} $ en fonction de la projectivité $ \Delta\theta $ pour $ \phi<0 $ et $ \phi>0 $. De même que précédemment, la valeur moyenne est plus importante dans la partie supérieure du détecteur Atlas. L'effet de la projectivité est clairement visible. L'étalement des gerbes non projectives est nettement plus important que pour les gerbes projectives (jusqu'à un facteur 2 pour $ \phi<0 $). L'accord entre les données et la simulation Monte-Carlo est bon.
 
 \begin{figure}[!h]
   \begin{bigcenter}
@@ -555,7 +555,7 @@ La figure \ref{cosmics_projfside} montre la valeur moyenne de la distribution $ 
   \end{tabular}
 
   \end{bigcenter}
-  \caption{\label{cosmics_projfside}Valeur moyenne de l'énergie en dehors du c\oe ur de la gerbe en de l'angle de projectivité. Partie inférieur du détecteur Atlas (a), partie supérieur du détecteur Atlas (b).}
+  \caption{\label{cosmics_projfside}Valeur moyenne de l'énergie en dehors du c\oe ur de la gerbe en de l'angle de projectivité. Partie inférieure du détecteur Atlas (a), partie supérieure du détecteur Atlas (b).}
 \end{figure}
 
 Nous rappelons la définition de la largeur du c\oe ur de la gerbe électromagnétique dans le premier compartiment :
@@ -578,16 +578,16 @@ La figure \ref{cosmics_projw3eta1} montre la valeur moyenne de la distribution $
   \end{tabular}
 
   \end{bigcenter}
-  \caption{\label{cosmics_projw3eta1}Valeur moyenne de la largeur du c\oe ur de la gerbe $ w^{3}_{\eta1} $ en de l'angle de projectivité. Partie inférieur du détecteur Atlas (a), partie supérieur du détecteur Atlas (b).}
+  \caption{\label{cosmics_projw3eta1}Valeur moyenne de la largeur du c\oe ur de la gerbe $ w^{3}_{\eta1} $ en de l'angle de projectivité. Partie inférieure du détecteur Atlas (a), partie supérieure du détecteur Atlas (b).}
 \end{figure}
 
 \section{Les calorimètres bouchons}
 
-Une étude spécifique a été menée pour les calorimètres bouchons. Un certain nombre de difficultés furent à prendre en compte. Premièrement, la probabilité pour un muon de traverser les bouchons est plus faible d'un facteur $ \sim10 $ que la probabilité pour un muon de traverser le tonneau. Deuxièmement, il n'y a presque aucun amas associé à une trace car la probabilité qu'un muon projectif laisse un dépôt d'énergie dans les bouchons est très faible, $ \mathcal{O}(1) $ candidats pour les données 2008. Le système de déclenchement à utiliser est L1CaloEM, son efficacité est $ \sim28\% $ inférieure à celle de IDCosmics et les spécifications du système de déclenchement imposent une coupure en énergie plus élevée.
+Une étude spécifique a été menée pour les calorimètres bouchons. Un certain nombre de difficultés furent à prendre en compte. Premièrement, la probabilité pour un muon de traverser les bouchons est plus faible d'un facteur $ \sim10 $ que la probabilité pour un muon de traverser le tonneau. Deuxièmement, il n'y a presque aucun amas associé à une trace, car la probabilité qu'un muon projectif laisse un dépôt d'énergie dans les bouchons est très faible, $ \mathcal{O}(1) $ candidats pour les données 2008. Le système de déclenchement à utiliser est L1CaloEM, son efficacité est $ \sim28\% $ inférieure à celle de IDCosmics et les spécifications du système de déclenchement imposent une coupure en énergie plus élevée.
 
 \subsection{Sélection finale}
 
-Comme les amas électromagnétiques des candidats reconstruits dans les bouchons n'ont pas de trace associée, il n'est pas possible d'utiliser le paramètre d'impact comme critère de projectivité. De même que dans la section précédente, il est possible d'utiliser les angles $ \Delta\theta $ et $ \Delta\phi $. Nous avons choisi d'appliquer les coupures lâches suivantes : $ |\Delta\theta|<0.25 $ et $ |\Delta\phi|<0.25 $. Ces choix permettent de garder une statistique satisfaisante. De plus, nous demandons à ce que la position en $ \eta $ de la cellule la plus énergétique du second compartiment soit alignée de façon projective avec la cellule la plus énergétique du premier compartiment, se rappelant de la géométrie des bouchons, voir chapitre \ref{chapitre_calo}. Finalement, nous ré-appliquons la sélection $ f_1>10\% $ afin de ne conserver que les objets de type \emph{collisions}. Les coupures de sélection sont résumées dans le tableau \ref{cosmics_selection_bouchons}.
+Comme les amas électromagnétiques des candidats reconstruits dans les bouchons n'ont pas de trace associée, il n'est pas possible d'utiliser le paramètre d'impact comme critère de projectivité. De même que dans la section précédente, il est possible d'utiliser les angles $ \Delta\theta $ et $ \Delta\phi $. Nous avons choisi d'appliquer les coupures lâches suivantes : $ |\Delta\theta|<0.25 $ et $ |\Delta\phi|<0.25 $. Ces choix permettent de garder une statistique satisfaisante. De plus, nous demandons à ce que la position en $ \eta $ de la cellule la plus énergétique du second compartiment soit alignée de façon projective avec la cellule la plus énergétique du premier compartiment, se rappelant de la géométrie des bouchons, voir chapitre \ref{chapitre_calo}. Finalement, nous réappliquons la sélection $ f_1>10\% $ afin de ne conserver que les objets de type \emph{collisions}. Les coupures de sélection sont résumées dans le tableau \ref{cosmics_selection_bouchons}.
 
 Les données et simulations Monte-Carlo ont été effacées des serveurs en 2010. Il n'a pas été possible d'étudier ni les données 2009, ni la seconde production de simulation Monte-Carlo. Après sélection, il ne reste que $ 506 $ événements pour les données et $ 75 $ événements pour la simulation.
 
@@ -629,7 +629,7 @@ La figure \ref{cosmics_retaphiendcap} (a) montre la distribution de la variable 
 
 \subsection{Variables dans le premier compartiment}
 
-Au vu de la statistique disponible, il n'est pas possible de traiter séparément les parties inférieure $ \phi<0 $ et supérieure $ \phi>0 $ du détecteur Atlas. La figure \ref{cosmics_s2endcap} (b) montrent la distribution de la variable $ F_{side} $. L'accord entre les données et la simulation Monte-Carlo est bon dans la limite de la statistique disponible. La figure \ref{cosmics_s2endcap} (b) montrent la distribution de la variable $ w^3_{\eta1} $. Ici aussi, l'accord entre les données et la simulation Monte-Carlo est bon dans la limite de la statistique disponible.
+Au vu de la statistique disponible, il n'est pas possible de traiter séparément les parties inférieure $ \phi<0 $ et supérieure $ \phi>0 $ du détecteur Atlas. La figure \ref{cosmics_s2endcap} (b) montre la distribution de la variable $ F_{side} $. L'accord entre les données et la simulation Monte-Carlo est bon dans la limite de la statistique disponible. La figure \ref{cosmics_s2endcap} (b) montre la distribution de la variable $ w^3_{\eta1} $. Ici aussi, l'accord entre les données et la simulation Monte-Carlo est bon dans la limite de la statistique disponible.
 
 \begin{figure}[!h]
   \begin{bigcenter}
@@ -648,9 +648,9 @@ Au vu de la statistique disponible, il n'est pas possible de traiter séparément 
 
 \section{Conclusion}
 
-Dans ce chapitre, nous avons étudié les objets calorimétriques, électrons d'ionisation et photons de radiation, issus de muons cosmiques. Dans ce but, nous avons défini une sélection permettant de disposer d'une accéptance équivalente pour les données et pour la simulation Monte-Carlo. Nous avons ensuite réalisé la première analyse, avec des données réelles, des variables de forme de gerbes électromagnétiques. En dépit de la faible statistiques disponible, nous pouvons conclure que la simulation des variables de forme de gerbes électromagnétiques est réaliste. Finalement, nous avons observé l'effet de la projectivité ainsi que l'effet de l'amélioration de la simulation de la diaphonie entre les cellules des deux premiers compartiments.
+Dans ce chapitre, nous avons étudié les objets calorimétriques, électrons d'ionisation et photons de radiation, issus de muons cosmiques. Dans ce but, nous avons défini une sélection permettant de disposer d'une accéptance équivalente pour les données et pour la simulation Monte-Carlo. Nous avons ensuite réalisé la première analyse, avec des données réelles, des variables de forme de gerbes électromagnétiques. En dépit de la faible statistique disponible, nous pouvons conclure que la simulation des variables de forme de gerbes électromagnétiques est réaliste. Finalement, nous avons observé l'effet de la projectivité ainsi que l'effet de l'amélioration de la simulation de la diaphonie entre les cellules des deux premiers compartiments.
 
-Cette étude a fourni la première validation des variables de forme de gerbes électromagnétiques. Celles-ci ont de nouveau été étudiées avec les données 2010 à $ \sqrt{s}=7\TeV $. La \ref{data2010_shower} montre l'étalement latéral de la gerbe électromagnétique dans la direction $ \eta $ dans le second compartiment : rapport de l'énergie dans un amas $ \Delta\eta\times\Delta\phi=3\times7 $ par l'énergie dans un amas $ \Delta\eta\times\Delta\phi=7\times7 $ (a) et le second moment de la pseudo-rapidité des cellules d'un amas $ \Delta\eta\times\Delta\phi=3\times5 $ pondérées par leur énergie (b). Nous pouvons observer un désaccord entre les données (en noir) et la simulation Monte-Carlo (en bleu), les largeurs et les moyennes sont décalées. Pour les données cosmiques, la distribution $ R_\eta $ (figure \ref{cosmics_reta}) ne présentait pas de désaccord significatif, à cause de la faible statistique. La distribution $ W_{\eta_2} $ (figure \ref{cosmics_weta2}) présentait déjà le décalage observé en 2010. Des investigations ont été menées afin de comprendre l'origine de ce problème. Il provient essentiellement du programme GEANT4 qui présente des difficultés pour décrire le milieu multi-couches qui constitue les calorimètres à argon liquide. Une nouvelle version du programme associé à une meilleure description de la matière permet de diminuer d'un facteur $ \sim2 $ le désaccord sur les variables de largeur suivant $ \eta $ (en jaune).
+Cette étude a fourni la première validation des variables de forme de gerbes électromagnétiques. Celles-ci ont de nouveau été étudiées avec les données 2010 à $ \sqrt{s}=7\TeV $. La \ref{data2010_shower} montre l'étalement latéral de la gerbe électromagnétique dans la direction $ \eta $ dans le second compartiment : rapport de l'énergie dans un amas $ \Delta\eta\times\Delta\phi=3\times7 $ par l'énergie dans un amas $ \Delta\eta\times\Delta\phi=7\times7 $ (a) et le second moment de la pseudorapidité des cellules d'un amas $ \Delta\eta\times\Delta\phi=3\times5 $ pondérées par leur énergie (b). Nous pouvons observer un désaccord entre les données (en noir) et la simulation Monte-Carlo (en bleu), les largeurs et les moyennes sont décalées. Pour les données cosmiques, la distribution $ R_\eta $ (figure \ref{cosmics_reta}) ne présentait pas de désaccord significatif, à cause de la faible statistique. La distribution $ W_{\eta_2} $ (figure \ref{cosmics_weta2}) présentait déjà le décalage observé en 2010. Des investigations ont été menées afin de comprendre l'origine de ce problème. Il provient essentiellement du programme GEANT4 qui présente des difficultés pour décrire le milieu multicouche qui constitue les calorimètres à argon liquide. Une nouvelle version du programme associé à une meilleure description de la matière permet de diminuer d'un facteur $ \sim2 $ le désaccord sur les variables de largeur suivant $ \eta $ (en jaune).
 
 \begin{figure}[!h]
   \begin{bigcenter}
@@ -662,10 +662,10 @@ Cette étude a fourni la première validation des variables de forme de gerbes éle
     (a) & (b)
   \end{tabular}
   \end{bigcenter}
-  \caption{\label{data2010_shower}Etalement latéral de la gerbe électromagnétique dans la direction $ \eta $ dans le second compartiment : rapport de l'énergie dans un amas $ \Delta\eta\times\Delta\phi=3\times7 $ par l'énergie dans un amas $ \Delta\eta\times\Delta\phi=7\times7 $ (a). Second moment de la pseudo-rapidité des cellules d'un amas $ \Delta\eta\times\Delta\phi=3\times5 $ pondérées par leur énergie (b).}
+  \caption{\label{data2010_shower}Etalement latéral de la gerbe électromagnétique dans la direction $ \eta $ dans le second compartiment : rapport de l'énergie dans un amas $ \Delta\eta\times\Delta\phi=3\times7 $ par l'énergie dans un amas $ \Delta\eta\times\Delta\phi=7\times7 $ (a). Second moment de la pseudorapidité des cellules d'un amas $ \Delta\eta\times\Delta\phi=3\times5 $ pondérées par leur énergie (b).}
 \end{figure}
 
-Les critères d'identification des électrons et des photons présentés au chapite \ref{chapitre_reco} ont été corrigés afin de tenir compte des différences observées entre les données et la simulation Monte-Carlo. Dans la pratique, une fois les corrections effectuées, l'impact sur l'identification est très limité, il est pris en compte dans l'estimation des erreurs systématiques.\\
+Les critères d'identification des électrons et des photons présentés au chapitre \ref{chapitre_reco} ont été corrigés afin de tenir compte des différences observées entre les données et la simulation Monte-Carlo. Dans la pratique, une fois les corrections effectuées, l'impact sur l'identification est très limité, il est pris en compte dans l'estimation des erreurs systématiques.\\
 
-Pour finir, cette étude avait permit de montrer qu'il était possible d'avoir confiance dans les simulations Monte-Carlo comme dans le calorimètre électromagnétique, même avec des gerbes électromagnétiques atypiques, juste avant les premières collisions.
+Pour finir, cette étude avait permis de montrer qu'il était possible d'avoir confiance dans les simulations Monte-Carlo comme dans le calorimètre électromagnétique, même avec des gerbes électromagnétiques atypiques, juste avant les premières collisions.
 
